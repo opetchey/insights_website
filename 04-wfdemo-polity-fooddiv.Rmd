@@ -1,9 +1,5 @@
----
-title: "Case Study 3 - global food diversity"
-output: html_document
----
 
-# Case study -- Are diets more diverse in more democratic countries?  {#CS3-1}
+#  Are diets more diverse in more democratic countries? {#WFD-2}
 
 ```{r message=FALSE, echo=FALSE, warning=FALSE}
 ## Load the libraries we use

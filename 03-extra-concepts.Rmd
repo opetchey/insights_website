@@ -1,3 +1,3 @@
-# Methods
+# Additional concepts
 
-We describe our methods in this chapter.
+To be completed.

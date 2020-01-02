@@ -23,8 +23,8 @@
 }{}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={A Minimal Book Example},
-            pdfauthor={Yihui Xie},
+            pdftitle={Insights from Data Companion},
+            pdfauthor={Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -116,10 +116,10 @@
 
 \setlength{\droptitle}{-2em}
 
-  \title{A Minimal Book Example}
+  \title{Insights from Data Companion}
     \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-    \author{Yihui Xie}
+    \author{Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs}
     \preauthor{\centering\large\emph}
   \postauthor{\par}
       \predate{\centering\large\emph}
@@ -135,108 +135,29 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{prerequisites}{%
-\chapter{Prerequisites}\label{prerequisites}}
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports, e.g., a math equation \(a^2 + b^2 = c^2\).
-
-The \textbf{bookdown} package can be installed from CRAN or Github:
+To be completed.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{)}
-\CommentTok{# or the development version}
-\CommentTok{# devtools::install_github("rstudio/bookdown")}
+\NormalTok{knitr}\OperatorTok{::}\NormalTok{opts_chunk}\OperatorTok{$}\KeywordTok{set}\NormalTok{(}\DataTypeTok{cache =} \OtherTok{TRUE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading \texttt{\#}.
+\hypertarget{additional-r}{%
+\chapter{Additional R}\label{additional-r}}
 
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.name/tinytex/}.
+To be completed.
 
-\hypertarget{intro}{%
-\chapter{Introduction}\label{intro}}
+\hypertarget{additional-concepts}{%
+\chapter{Additional concepts}\label{additional-concepts}}
 
-You can label chapter and section titles using \texttt{\{\#label\}} after them, e.g., we can reference Chapter \ref{intro}. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \ref{methods}.
+To be completed.
 
-Figures and tables with captions will be placed in \texttt{figure} and \texttt{table} environments, respectively.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{.1}\NormalTok{, }\FloatTok{.1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(pressure, }\DataTypeTok{type =} \StringTok{'b'}\NormalTok{, }\DataTypeTok{pch =} \DecValTok{19}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{insights_website_files/figure-latex/nice-fig-1} 
-
-}
-
-\caption{Here is a nice figure!}\label{fig:nice-fig}
-\end{figure}
-
-Reference a figure by its code chunk label with the \texttt{fig:} prefix, e.g., see Figure \ref{fig:nice-fig}. Similarly, you can reference tables generated from \texttt{knitr::kable()}, e.g., see Table \ref{tab:nice-tab}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(}
-  \KeywordTok{head}\NormalTok{(iris, }\DecValTok{20}\NormalTok{), }\DataTypeTok{caption =} \StringTok{'Here is a nice table!'}\NormalTok{,}
-  \DataTypeTok{booktabs =} \OtherTok{TRUE}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{table}[t]
-
-\caption{\label{tab:nice-tab}Here is a nice table!}
-\centering
-\begin{tabular}{rrrrl}
-\toprule
-Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
-\midrule
-5.1 & 3.5 & 1.4 & 0.2 & setosa\\
-4.9 & 3.0 & 1.4 & 0.2 & setosa\\
-4.7 & 3.2 & 1.3 & 0.2 & setosa\\
-4.6 & 3.1 & 1.5 & 0.2 & setosa\\
-5.0 & 3.6 & 1.4 & 0.2 & setosa\\
-\addlinespace
-5.4 & 3.9 & 1.7 & 0.4 & setosa\\
-4.6 & 3.4 & 1.4 & 0.3 & setosa\\
-5.0 & 3.4 & 1.5 & 0.2 & setosa\\
-4.4 & 2.9 & 1.4 & 0.2 & setosa\\
-4.9 & 3.1 & 1.5 & 0.1 & setosa\\
-\addlinespace
-5.4 & 3.7 & 1.5 & 0.2 & setosa\\
-4.8 & 3.4 & 1.6 & 0.2 & setosa\\
-4.8 & 3.0 & 1.4 & 0.1 & setosa\\
-4.3 & 3.0 & 1.1 & 0.1 & setosa\\
-5.8 & 4.0 & 1.2 & 0.2 & setosa\\
-\addlinespace
-5.7 & 4.4 & 1.5 & 0.4 & setosa\\
-5.4 & 3.9 & 1.3 & 0.4 & setosa\\
-5.1 & 3.5 & 1.4 & 0.3 & setosa\\
-5.7 & 3.8 & 1.7 & 0.3 & setosa\\
-5.1 & 3.8 & 1.5 & 0.3 & setosa\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-You can write citations, too. For example, we are using the \textbf{bookdown} package \citep{R-bookdown} in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015}.
-
-\hypertarget{literature}{%
-\chapter{Literature}\label{literature}}
-
-Here is a review of existing methods.
-
-\hypertarget{methods}{%
-\chapter{Methods}\label{methods}}
-
-We describe our methods in this chapter.
-
-\hypertarget{CS3-1}{%
-\chapter{Case study -- Are diets more diverse in more democratic countries?}\label{CS3-1}}
+\hypertarget{WFD-2}{%
+\chapter{Are diets more diverse in more democratic countries?}\label{WFD-2}}
 
 \hypertarget{about-this-case-study}{%
 \section{About this case study}\label{about-this-case-study}}
@@ -523,7 +444,7 @@ Let's look at the frequency distributions of the two numeric variables. We will 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-19-1.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-18-1.pdf}
 
 The \texttt{Polity2} variable is numeric with a minimum values of -10 and a maximum of 10 (as we already knew). The most common polity score is very democratic (+10), there are relatively few moderately democratic polity score, and there are a number of several levels of autocratic polity scores. That is, the distribution appears somewhat bimodial. We must be aware, that these are distributions of each score, with many scores for each country.
 
@@ -619,7 +540,7 @@ Change in polity in some countries of interest (to the authors at least):
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-24-1.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-23-1.pdf}
 
 \emph{Insight} That the polity score of a country can change so greatly has implications for our subsequent analyses. For example, calculating and using a mean polity score for each country (average across years) may be unwise as it would ignore such temporal change.
 
@@ -1417,14 +1338,6 @@ Here, we will only show the figure for the richness of food items (Figures \ref{
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## Warning in f(...): The default behavior of beeswarm has changed in version
-## 0.6.0. In versions <0.6.0, this plot would have been dodged on the y-
-## axis. In versions >=0.6.0, grouponX=FALSE must be explicitly set to group
-## on y-axis. Please set grouponX=TRUE/FALSE to avoid this warning and ensure
-## proper axis choice.
-\end{verbatim}
-
 \begin{figure}
 
 {\centering \includegraphics[width=0.75\linewidth]{insights_website_files/figure-latex/fao-pol9-1} 
@@ -1474,8 +1387,8 @@ Other things you could think about analysing, for which data are available (thou
 
 Go to the Insights companion website \url{http://insightsfromdata.io} and have a go at the questions and exercises for this chapter.
 
-\hypertarget{CS2-1}{%
-\chapter{Case study 2---Are more diverse diets better?}\label{CS2-1}}
+\hypertarget{WFD-3}{%
+\chapter{Are more diverse diets better?}\label{WFD-3}}
 
 \hypertarget{going-to-the-next-level}{%
 \section{Going to the next level}\label{going-to-the-next-level}}
@@ -2146,18 +2059,18 @@ We could again use the \texttt{skim()} function to take a look at the data more 
 ##  n obs: 680 
 ##  n variables: 12 
 ## 
-## -- Variable type:character ------------------------
+## -- Variable type:character ------------------
 ##               variable missing complete   n min max empty n_unique
 ##  community_composition       0      680 680  19  45     0        7
 ##                species       0      680 680   8  12     0        4
 ## 
-## -- Variable type:factor ---------------------------
+## -- Variable type:factor ---------------------
 ##          variable missing complete   n n_unique
 ##  prey_composition       0      680 680        7
 ##                             top_counts ordered
 ##  Col: 161, Col: 108, Col: 105, Col: 98   FALSE
 ## 
-## -- Variable type:numeric --------------------------
+## -- Variable type:numeric --------------------
 ##       variable missing complete   n   mean      sd    p0   p25   p50
 ##          count       0      680 680  17.05   27.13 0      0     5   
 ##            day       0      680 680   8.79    5    2      4     8   
@@ -2766,6 +2679,9 @@ The truth is, however, that we often found problems once we had got quite far in
 
 Go to the Insights companion website \url{http://insightsfromdata.io} and have a go at the questions and exercises for this chapter.
 
+\hypertarget{WFD-4}{%
+\chapter{Effects of dietary restriction}\label{WFD-4}}
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{## Load the libraries we use}
@@ -2783,9 +2699,6 @@ Go to the Insights companion website \url{http://insightsfromdata.io} and have a
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{introduction-to-study}{%
-\chapter{Introduction to study}\label{introduction-to-study}}
-
 A general article about dietary restriction (DR): \url{https://www.nia.nih.gov/health/calorie-restriction-and-fasting-diets-what-do-we-know}
 
 The case study article: \emph{Reconciling nutritional geometry with classical dietary restriction: effects of nutrient intake, not calories, on survival and reproduction.} Moatt JP, Fyfe MA, Heap E, Mitchell LJM, Moon F, Walling CA (2018) Aging Cell, Volume 18, e12868.
@@ -2799,15 +2712,23 @@ Abstract: ``Here, using a novel nonmodel vertebrate system (the stickleback fish
 \hypertarget{before-working-in-r}{%
 \section{Before working in R}\label{before-working-in-r}}
 
-\textbf{Question}:
-How does diet composition and amount of food individually and in combination affect individual characteristics related to health and fitness?
+\textbf{Question}: How does diet composition and amount of food individually and in combination affect individual characteristics related to health and fitness?
 
 \textbf{Hypotheses/predictions}:
-* Fitness: ``mortality''
-* Fitness: ``reproductive behaviour (time spent courting)''
-* Fitness: ``Female reproduction (total egg production)''
-* Health: ``We use change in fish length as our measure of growth.''
-* Health: ``As a proxy for overall health, we use body condition index, which is a measure of the weight of an individual relative to its length''
+
+\begin{itemize}
+\tightlist
+\item
+  Fitness: ``mortality''
+\item
+  Fitness: ``reproductive behaviour (time spent courting)''
+\item
+  Fitness: ``Female reproduction (total egg production)''
+\item
+  Health: ``We use change in fish length as our measure of growth.''
+\item
+  Health: ``As a proxy for overall health, we use body condition index, which is a measure of the weight of an individual relative to its length''
+\end{itemize}
 
 \textbf{Study methods and design} (\textbf{numbers of ``things''}) ``We fed 300 male and 300 female individually housed three‐spine sticklebacks one of five diets varying in protein and lipid content (Table 2) at one of three provisioning levels (100\%, 75\% or 50\% of ad lib), therefore using a restriction of food availability rather than a dilution of the diets to achieve calorie restriction. This gave a total of 15 dietary treatments (see methods and supplementary materials for full details). Fish were maintained on diets for life and measured for numerous traits including survival, reproductive investment, growth and body condition. Given the broad range of traits examined, we present data for each trait separately, with an accompanying short interpretation section.''
 
@@ -2816,26 +2737,51 @@ How does diet composition and amount of food individually and in combination aff
 Q: How many fish per treatment combination? A. 20
 
 \textbf{Type of response variable:}
-* Mortality---binary, dead or alive.
-* Time spent courting---cannot be negative, will likely be numeric, may be distrete (e.g.~10 mins or 20 minutes) or continuous, ratio type.
-* Female reproduction egg production---count type data, not negative, discrete (integers), ratio type.
-* Change in fish length---could be negative or positive, ratio type.
-* Body condition index (a measure of the weight of an individual relative to its length)-only positive, likely continuous, ratio type.
+
+\begin{itemize}
+\tightlist
+\item
+  Mortality---binary, dead or alive.
+\item
+  Time spent courting---cannot be negative, will likely be numeric, may be distrete (e.g.~10 mins or 20 minutes) or continuous, ratio type.
+\item
+  Female reproduction egg production---count type data, not negative, discrete (integers), ratio type.
+\item
+  Change in fish length---could be negative or positive, ratio type.
+\item
+  Body condition index (a measure of the weight of an individual relative to its length)-only positive, likely continuous, ratio type.
+\end{itemize}
 
 \textbf{Explanatory variables:}
-* A variable about the diet composition treatment.
-* A variable about the provisioning level treatment.
-* Perhaps some others.
+
+\begin{itemize}
+\tightlist
+\item
+  A variable about the diet composition treatment.
+\item
+  A variable about the provisioning level treatment.
+\item
+  Perhaps some others.
+\end{itemize}
 
 \textbf{Predictions}:
 What were the predictions?
 
 \textbf{Data birth}:
-Number of variables: not too many as a designed experiment with clear question.
-Number of observations: number of fish (they were ``individually housed'', and assigned treatment on an individual level).
-Variables describing manipulations: yes, two.
-Correlation among variables: low (factorial experiment, though some imbalance likely)
-Independence of observations: there may be multiple observations per fish (repeated measures). Fish may share mothers, fathers, and other pre-experiment conditions.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Number of variables}: not too many as a designed experiment with clear question.
+\item
+  \textbf{Number of observations}: number of fish (they were ``individually housed'', and assigned treatment on an individual level).
+\item
+  \textbf{Variables describing manipulations}: yes, two.
+\item
+  \textbf{Correlation among variables}: low (factorial experiment, though some imbalance likely)
+\item
+  \textbf{Independence of observations}: there may be multiple observations per fish (repeated measures). Fish may share mothers, fathers, and other pre-experiment conditions.
+\end{itemize}
 
 \textbf{Secure resources and perform study}
 
@@ -2987,10 +2933,18 @@ Which variables in which dataset can be used to calculate each of the five respo
 
 \textbf{Number of rows and columns in the dataset}:
 (By looking at the datasets in a spreadsheet programme)
-\texttt{Moatt\_et\_al\_Data\_S1.csv}: 33'049 rows, 24 variables
-\texttt{Moatt\_et\_al\_Data\_S5.csv}: 228, 16
-\texttt{Moatt\_et\_al\_Data\_S6.csv}: 269, 14
-\texttt{Moatt\_et\_al\_Data\_S15.csv}:6000, 18
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{Moatt\_et\_al\_Data\_S1.csv}: 33'049 rows, 24 variables
+\item
+  \texttt{Moatt\_et\_al\_Data\_S5.csv}: 228, 16
+\item
+  \texttt{Moatt\_et\_al\_Data\_S6.csv}: 269, 14
+\item
+  \texttt{Moatt\_et\_al\_Data\_S15.csv}:6000, 18
+\end{itemize}
 
 \hypertarget{after-importing-the-data-into-r}{%
 \section{After importing the data into R}\label{after-importing-the-data-into-r}}
@@ -3188,7 +3142,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##  n obs: 228 
 ##  n variables: 8 
 ## 
-## -- Variable type:character ------------------------
+## -- Variable type:character ------------------
 ##     variable missing complete   n min max empty n_unique
 ##    Diet_comp       0      228 228   5   6     0        5
 ##       Family       0      228 228   4   4     0       22
@@ -3196,7 +3150,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##    Fish_size       0      228 228   5   5     0        2
 ##  Shelf_stack       0      228 228   2   2     0       36
 ## 
-## -- Variable type:numeric --------------------------
+## -- Variable type:numeric --------------------
 ##     variable missing complete   n   mean     sd p0 p25 p50 p75 p100
 ##   Prov_level       0      228 228  74.45  20.38 50  50  75 100  100
 ##  Total_court       1      227 228 453.23 456.2   0  64 337 713 2666
@@ -3234,7 +3188,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##  n obs: 269 
 ##  n variables: 7 
 ## 
-## -- Variable type:character ------------------------
+## -- Variable type:character ------------------
 ##     variable missing complete   n min max empty n_unique
 ##    Diet_comp       0      269 269   5   6     0        5
 ##       Family       0      269 269   4   4     0       20
@@ -3242,7 +3196,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##    Fish_size       0      269 269   5   5     0        2
 ##  Shelf_stack       0      269 269   2   2     0       36
 ## 
-## -- Variable type:numeric --------------------------
+## -- Variable type:numeric --------------------
 ##    variable missing complete   n    mean     sd p0 p25  p50  p75 p100
 ##  Prov_level       0      269 269   75.09  20.32 50  50   75  100  100
 ##   Total_egg       1      268 269 1069.56 631.56 66 609 1001 1402 3608
@@ -3277,7 +3231,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##  n obs: 6000 
 ##  n variables: 10 
 ## 
-## -- Variable type:character ------------------------
+## -- Variable type:character ------------------
 ##     variable missing complete    n min max empty n_unique
 ##    Diet_comp       0     6000 6000   5   6     0        5
 ##      Fish_ID       0     6000 6000   5   5     0      600
@@ -3285,7 +3239,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##          Sex       0     6000 6000   4   6     0        2
 ##  Shelf_stack       0     6000 6000   2   2     0       36
 ## 
-## -- Variable type:numeric --------------------------
+## -- Variable type:numeric --------------------
 ##    variable missing complete    n     mean    sd    p0    p25      p50
 ##       Batch       0     6000 6000  5.5      2.87  1     3      5.5    
 ##  Cond_index    2088     3912 6000  1.2e-05  0.15 -0.84 -0.085 -0.00046
@@ -3313,7 +3267,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##  n obs: 33049 
 ##  n variables: 7 
 ## 
-## -- Variable type:character ------------------------
+## -- Variable type:character ------------------
 ##   variable missing complete     n min max empty n_unique
 ##  Diet_comp       0    33049 33049   5   6     0        5
 ##    Fish_ID       0    33049 33049   5   5     0      594
@@ -3321,7 +3275,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##        Sex       0    33049 33049   4   6     0        2
 ##     Status       0    33049 33049   4   5     0        2
 ## 
-## -- Variable type:numeric --------------------------
+## -- Variable type:numeric --------------------
 ##    variable missing complete     n  mean    sd p0 p25 p50 p75 p100
 ##  Prov_level       0    33049 33049 74.49 20.43 50  50  75 100  100
 ##        Week       0    33049 33049 37.84 26.49  1  16  33  57  107
@@ -3826,17 +3780,17 @@ We need to calculate the response variable for the change in fish length and cha
 ##  n obs: 594 
 ##  n variables: 6 
 ## 
-## -- Variable type:character ------------------------
+## -- Variable type:character ------------------
 ##   variable missing complete   n min max empty n_unique
 ##  Diet_comp       0      594 594   5   6     0        5
 ##    Fish_ID       0      594 594   5   5     0      594
 ##        Sex       8      586 594   4   6     0        2
 ## 
-## -- Variable type:logical --------------------------
+## -- Variable type:logical --------------------
 ##  variable missing complete   n  mean                    count
 ##  Censored       0      594 594 0.089 FAL: 541, TRU: 53, NA: 0
 ## 
-## -- Variable type:numeric --------------------------
+## -- Variable type:numeric --------------------
 ##    variable missing complete   n  mean    sd p0 p25 p50 p75 p100     hist
 ##    Lifespan       0      594 594 54.73 32.73  0  31  47  84  107 ▅▂▇▃▂▃▆▅
 ##  Prov_level       0      594 594 75.04 20.46 50  50  75 100  100 ▇▁▁▇▁▁▁▇
@@ -3974,7 +3928,7 @@ About:
 ## Warning: Removed 367 rows containing non-finite values (stat_bin).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-137-1.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-136-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3991,7 +3945,7 @@ About:
 ## Warning: Removed 326 rows containing non-finite values (stat_bin).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-137-2.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-136-2.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4004,7 +3958,7 @@ About:
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-137-3.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-136-3.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4021,7 +3975,7 @@ About:
 ## Warning: Removed 26 rows containing non-finite values (stat_bin).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-137-4.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-136-4.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4038,7 +3992,7 @@ About:
 ## Warning: Removed 26 rows containing non-finite values (stat_bin).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-137-5.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-136-5.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4061,7 +4015,7 @@ About:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-138-1.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-137-1.pdf}
 
 ``Female risk was generally reduced by low protein intakes.''
 
@@ -4074,7 +4028,7 @@ About:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-139-1.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-138-1.pdf}
 
 ``The effect of macronutrient intake on reproduction was similar between the sexes, with high protein intakes maximizing reproduction.''
 
@@ -4090,7 +4044,7 @@ About:
 ## Warning: Removed 67 rows containing missing values (geom_point).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-140-1.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-139-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4104,7 +4058,7 @@ About:
 ## Warning: Removed 292 rows containing missing values (geom_point).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-140-2.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-139-2.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4118,7 +4072,7 @@ About:
 ## Warning: Removed 288 rows containing missing values (geom_point).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-141-1.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-140-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4136,95 +4090,182 @@ About:
 ## Warning: Removed 30 rows containing missing values (geom_point).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-141-2.pdf}
+\includegraphics{insights_website_files/figure-latex/unnamed-chunk-140-2.pdf}
 
 \hypertarget{moatt-et-al-data-s1-mortality-data}{%
 \section{Moatt et al Data S1 -- Mortality Data}\label{moatt-et-al-data-s1-mortality-data}}
 
-FID -- Unique ID for each individual.
-Diet -- Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
-Sex -- Sex of individual (M = male, F = female).
-Size -- Size classification of individual (L = large, S = Small).
-Level -- Provisioning level, values represent percentages of monthly ad libitum monitoring.
-Total\_eaten -- Total pellet eaten in g from the start of the experiment.
-Eaten\_wk -- Amount of pellet consumed that week (gweek-1).
-P\_tot - Total protein eaten in g from the start of the experiment.
-P2\_total -- P\_tot2 squared (i.e.~the total protein eaten squared).
-P\_wk -- Amount of protein consumed that week (gweek-1).
-P2\_wk -- P\_wk2 squared (i.e.~the weekly protein intake squared).
-L\_tot - Total lipid eaten in g from the start of the experiment.
-L2\_total -- L\_tot2 squared (i.e.~the total lipid eaten squared).
-L\_wk -- Amount of lipid consumed that week (gweek-1).
-L2\_wk -- L\_wk2 squared (i.e.~the weekly lipid intake squared).
-Weight -- Weight of fish from last weighing (g).
-Week\_F -- Experimental week.
-Status -- Survival status (0= alive, 1 = Dead).
-T\_group -- Time period of the experiment (see Fig. S1).
-Initial\_weight -- Initial weight of individual at the start of the experiment.
-ZP -- P\_wk z transformed (mean of 0 and standard deviation of 1).
-ZP2 -- P2\_wk z transformed (mean of 0 and standard deviation of 1).
-ZL -- L\_wk z transformed (mean of 0 and standard deviation of 1).
-ZL2 -- L2\_wk z transformed (mean of 0 and standard deviation of 1).
+\begin{itemize}
+\tightlist
+\item
+  FID -- Unique ID for each individual.
+\item
+  Diet -- Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
+\item
+  Sex -- Sex of individual (M = male, F = female).
+\item
+  Size -- Size classification of individual (L = large, S = Small).
+\item
+  Level -- Provisioning level, values represent percentages of monthly ad libitum monitoring.
+\item
+  Total\_eaten -- Total pellet eaten in g from the start of the experiment.
+\item
+  Eaten\_wk -- Amount of pellet consumed that week (gweek-1).
+\item
+  P\_tot - Total protein eaten in g from the start of the experiment.
+\item
+  P2\_total -- P\_tot2 squared (i.e.~the total protein eaten squared).
+\item
+  P\_wk -- Amount of protein consumed that week (gweek-1).
+\item
+  P2\_wk -- P\_wk2 squared (i.e.~the weekly protein intake squared).
+\item
+  L\_tot - Total lipid eaten in g from the start of the experiment.
+\item
+  L2\_total -- L\_tot2 squared (i.e.~the total lipid eaten squared).
+\item
+  L\_wk -- Amount of lipid consumed that week (gweek-1).
+\item
+  L2\_wk -- L\_wk2 squared (i.e.~the weekly lipid intake squared).
+\item
+  Weight -- Weight of fish from last weighing (g).
+\item
+  Week\_F -- Experimental week.
+\item
+  Status -- Survival status (0= alive, 1 = Dead).
+\item
+  T\_group -- Time period of the experiment (see Fig. S1).
+\item
+  Initial\_weight -- Initial weight of individual at the start of the experiment.
+\item
+  ZP -- P\_wk z transformed (mean of 0 and standard deviation of 1).
+\item
+  ZP2 -- P2\_wk z transformed (mean of 0 and standard deviation of 1).
+\item
+  ZL -- L\_wk z transformed (mean of 0 and standard deviation of 1).
+\item
+  ZL2 -- L2\_wk z transformed (mean of 0 and standard deviation of 1).
+\end{itemize}
 
 \hypertarget{moatt-et-al-data-s5-courtship-data}{%
 \section{Moatt et al Data S5 -- Courtship Data}\label{moatt-et-al-data-s5-courtship-data}}
 
-FID -- Unique ID for each individual.
-Family -- Unique code for family group (i.e.~clutch of origin). Each clutch produced from a unique sire and dam.
-Shelf\_stack -- Unique code for the stack and shelf of fish home tank.
-Diet -- Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
-Level -- Provisioning level, values represent percentages of monthly ad libitum monitoring.
-Size -- Size classification of individual (L = large, S = Small).
-Trial -- Number of trials that individual experienced.
-Days\_breeding -- Length of breeding season for that individual.
-P\_day -- Average protein intake per day during the breeding season (gday-1).
-P2\_day -- P\_day2 squared (i.e.~daily protein intake squared).
-L\_day - Average lipid intake per day during the breeding season (gday-1).
-L2\_day -- L\_day2 squared (i.e.~daily lipid intake squared).
-Mean\_react -- Mean reaction time across all trials for that individual.
-Total\_ZZ -- Total number of zigzags across all trials.
-Total\_leads -- Total number of leads across all trials.
-Total\_court -- Total time courting across all trials.
+\begin{itemize}
+\tightlist
+\item
+  FID -- Unique ID for each individual.
+\item
+  Family -- Unique code for family group (i.e.~clutch of origin). Each clutch produced from a unique sire and dam.
+\item
+  Shelf\_stack -- Unique code for the stack and shelf of fish home tank.
+\item
+  Diet -- Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
+\item
+  Level -- Provisioning level, values represent percentages of monthly ad libitum monitoring.
+\item
+  Size -- Size classification of individual (L = large, S = Small).
+\item
+  Trial -- Number of trials that individual experienced.
+\item
+  Days\_breeding -- Length of breeding season for that individual.
+\item
+  P\_day -- Average protein intake per day during the breeding season (gday-1).
+\item
+  P2\_day -- P\_day2 squared (i.e.~daily protein intake squared).
+\item
+  L\_day - Average lipid intake per day during the breeding season (gday-1).
+\item
+  L2\_day -- L\_day2 squared (i.e.~daily lipid intake squared).
+\item
+  Mean\_react -- Mean reaction time across all trials for that individual.
+\item
+  Total\_ZZ -- Total number of zigzags across all trials.
+\item
+  Total\_leads -- Total number of leads across all trials.
+\item
+  Total\_court -- Total time courting across all trials.
+\end{itemize}
 
 \hypertarget{moatt-et-al-data-s6-eggs-data}{%
 \section{Moatt et al Data S6 -- Eggs Data}\label{moatt-et-al-data-s6-eggs-data}}
 
-FID -- Unique ID for each individual.
-Family -- Unique code for family group (i.e.~clutch of origin). Each clutch produced from a unique sire and dam.
-Shelf\_stack -- Unique code for the stack and shelf of fish home tank.
-Diet -- Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
-Level -- Provisioning level, values represent percentages of monthly ad libitum monitoring.
-Size -- Size classification of individual (L = large, S = Small).
-P\_day -- Average protein intake per day during the breeding season (gday-1).
-P2\_day -- P\_day2 squared (i.e.~daily protein intake squared).
-L\_day - Average lipid intake per day during the breeding season (gday-1).
-L2\_day -- L\_day2 squared (i.e.~daily lipid intake squared).
-Days\_breeding -- Length of breeding season for that individual.
-Number\_clutches -- Number of clutches produced by that individual.
-Mean\_number -- Mean number of eggs per clutch.
-Total\_egg -- Total number of eggs produced.
+\begin{itemize}
+\tightlist
+\item
+  FID -- Unique ID for each individual.
+\item
+  Family -- Unique code for family group (i.e.~clutch of origin). Each clutch produced from a unique sire and dam.
+\item
+  Shelf\_stack -- Unique code for the stack and shelf of fish home tank.
+\item
+  Diet -- Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
+\item
+  Level -- Provisioning level, values represent percentages of monthly ad libitum monitoring.
+\item
+  Size -- Size classification of individual (L = large, S = Small).
+\item
+  P\_day -- Average protein intake per day during the breeding season (gday-1).
+\item
+  P2\_day -- P\_day2 squared (i.e.~daily protein intake squared).
+\item
+  L\_day - Average lipid intake per day during the breeding season (gday-1).
+\item
+  L2\_day -- L\_day2 squared (i.e.~daily lipid intake squared).
+\item
+  Days\_breeding -- Length of breeding season for that individual.
+\item
+  Number\_clutches -- Number of clutches produced by that individual.
+\item
+  Mean\_number -- Mean number of eggs per clutch.
+\item
+  Total\_egg -- Total number of eggs produced.
+\end{itemize}
 
 \hypertarget{moatt-et-al-data-s15-length-weight-and-condition-index-data}{%
 \section{Moatt et al Data S15 -- Length, Weight and Condition Index Data}\label{moatt-et-al-data-s15-length-weight-and-condition-index-data}}
 
-FID -- Unique ID for each individual.
-StackShelf -- Unique code for the stack and shelf of fish home tank.
-Sex -- Sex of individual (M = male, F = female).
-Diet -- Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
-Level -- Provisioning level, values represent percentages of monthly ad libitum monitoring.
-Size -- Size classification of individual (L = large, S = Small).
-Batch -- Weighing batch. NB Batch 1 is prior to diet treatments therefore has no corresponding values for protein and lipid intake.
-P\_day -- Average protein intake per day during the breeding season (gday-1).
-P2\_day -- P\_day2 squared (i.e.~daily protein intake squared).
-L\_day - Average lipid intake per day during the breeding season (gday-1).
-L2\_day -- L\_day2 squared (i.e.~daily lipid intake squared).
-ZP -- Daily protein intake z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
-ZP2 -- Daily protein intake squared, z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
-ZL -- Daily lipid intake z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
-ZL2 -- Daily lipid intake squared, z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
-Ln -- Length of individual in mm.
-Wt -- Weight of individual in g.
-CI -- Condition Index for each individual.
+\begin{itemize}
+\tightlist
+\item
+  FID -- Unique ID for each individual.
+\item
+  StackShelf -- Unique code for the stack and shelf of fish home tank.
+\item
+  Sex -- Sex of individual (M = male, F = female).
+\item
+  Diet -- Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
+\item
+  Level -- Provisioning level, values represent percentages of monthly ad libitum monitoring.
+\item
+  Size -- Size classification of individual (L = large, S = Small).
+\item
+  Batch -- Weighing batch. NB Batch 1 is prior to diet treatments therefore has no corresponding values for protein and lipid intake.
+\item
+  P\_day -- Average protein intake per day during the breeding season (gday-1).
+\item
+  P2\_day -- P\_day2 squared (i.e.~daily protein intake squared).
+\item
+  L\_day - Average lipid intake per day during the breeding season (gday-1).
+\item
+  L2\_day -- L\_day2 squared (i.e.~daily lipid intake squared).
+\item
+  ZP -- Daily protein intake z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
+\item
+  ZP2 -- Daily protein intake squared, z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
+\item
+  ZL -- Daily lipid intake z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
+\item
+  ZL2 -- Daily lipid intake squared, z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
+\item
+  Ln -- Length of individual in mm.
+\item
+  Wt -- Weight of individual in g.
+\item
+  CI -- Condition Index for each individual.
+\end{itemize}
+
+\hypertarget{summing-up}{%
+\chapter{Summing up}\label{summing-up}}
 
 \bibliography{book.bib,packages.bib}
 

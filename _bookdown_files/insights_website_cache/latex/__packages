@@ -1,0 +1,16 @@
+base
+dplyr
+ggplot2
+readr
+stringr
+lubridate
+tidyr
+permute
+lattice
+vegan
+ggbeeswarm
+skimr
+forcats
+ggrepel
+taxize
+broom

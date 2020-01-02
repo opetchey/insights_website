@@ -1,9 +1,6 @@
----
-title: "Case study 4 (guided online only)"
-author: "Owen"
-date: "2/10/2019"
-output: html_document
----
+
+#  Effects of dietary restriction {#WFD-4}
+
 
 ```{r message=FALSE, echo=TRUE, warning=FALSE}
 ## Load the libraries we use
@@ -20,8 +17,6 @@ library(broom)
 library(forcats)
 ```
 
-# Introduction to study
-
 A general article about dietary restriction (DR): https://www.nia.nih.gov/health/calorie-restriction-and-fasting-diets-what-do-we-know
 
 The case study article: *Reconciling nutritional geometry with classical dietary restriction: effects of nutrient intake, not calories, on survival and reproduction.* Moatt JP, Fyfe MA, Heap E, Mitchell LJM, Moon F, Walling CA (2018) Aging Cell, Volume 18, e12868.
@@ -36,10 +31,10 @@ Abstract: "Here, using a novel nonmodel vertebrate system (the stickleback fish,
 
 ## Before working in R
 
-**Question**:
-How does diet composition and amount of food individually and in combination affect individual characteristics related to health and fitness?
+**Question**: How does diet composition and amount of food individually and in combination affect individual characteristics related to health and fitness?
 
 **Hypotheses/predictions**:
+
 * Fitness: "mortality"
 * Fitness: "reproductive behaviour (time spent courting)"
 * Fitness: "Female reproduction (total egg production)"
@@ -53,6 +48,7 @@ How does diet composition and amount of food individually and in combination aff
 Q: How many fish per treatment combination? A. 20
 
 **Type of response variable:**
+
 * Mortality---binary, dead or alive.
 * Time spent courting---cannot be negative, will likely be numeric, may be distrete (e.g. 10 mins or 20 minutes) or continuous, ratio type.
 * Female reproduction egg production---count type data, not negative, discrete (integers), ratio type.
@@ -60,6 +56,7 @@ Q: How many fish per treatment combination? A. 20
 * Body condition index (a measure of the weight of an individual relative to its length)-only positive, likely continuous, ratio type.
 
 **Explanatory variables:**
+
 * A variable about the diet composition treatment.
 * A variable about the provisioning level treatment.
 * Perhaps some others.
@@ -69,11 +66,12 @@ What were the predictions?
 
 
 **Data birth**:
-Number of variables: not too many as a designed experiment with clear question.
-Number of observations: number of fish (they were "individually housed", and assigned treatment on an individual level).
-Variables describing manipulations: yes, two.
-Correlation among variables: low (factorial experiment, though some imbalance likely)
-Independence of observations: there may be multiple observations per fish (repeated measures). Fish may share mothers, fathers, and other pre-experiment conditions.
+
+* **Number of variables**: not too many as a designed experiment with clear question.
+* **Number of observations**: number of fish (they were "individually housed", and assigned treatment on an individual level).
+* **Variables describing manipulations**: yes, two.
+* **Correlation among variables**: low (factorial experiment, though some imbalance likely)
+* **Independence of observations**: there may be multiple observations per fish (repeated measures). Fish may share mothers, fathers, and other pre-experiment conditions.
 
 
 **Secure resources and perform study**
@@ -115,18 +113,21 @@ Which variables in which dataset can be used to calculate each of the five respo
 
 **Number of rows and columns in the dataset**:
 (By looking at the datasets in a spreadsheet programme)
-`Moatt_et_al_Data_S1.csv`:  33'049 rows, 24 variables
-`Moatt_et_al_Data_S5.csv`: 228, 16
-`Moatt_et_al_Data_S6.csv`: 269, 14
-`Moatt_et_al_Data_S15.csv`:6000, 18
+
+* `Moatt_et_al_Data_S1.csv`:  33'049 rows, 24 variables
+* `Moatt_et_al_Data_S5.csv`: 228, 16
+* `Moatt_et_al_Data_S6.csv`: 269, 14
+* `Moatt_et_al_Data_S15.csv`:6000, 18
 
 ## After importing the data into R
+
 * number of rows and columns: as expected
 * tidy: all four datasets appear tidy, at the moment.
 * variable types: all as expected
 * fix dates: none present
 
 **Make more informative variable names (and discard variables not obviously of use)**:
+
 ```{r}
 courtship <- courtship %>%
   select(Fish_ID=FID, Family, Shelf_stack, Diet_comp=Diet,
@@ -145,6 +146,7 @@ mortality <- mortality %>%
 
 
 **Replace codes with informative words**:
+
 ```{r}
 courtship <- courtship %>%
   mutate(Diet_comp = case_when(Diet_comp == 1 ~ "10.2:1",
@@ -190,7 +192,7 @@ mortality <- mortality %>%
 
 ```
 
-*duplicates*:
+### Checking for duplicates
 
 Question: which of the four datasets contains an odd duplicate entry? And which fish is involved? What should we do next?
 
@@ -205,7 +207,7 @@ filter(mortality, Fish_ID=="LR504", Week==2)
 filter(mortality, Fish_ID=="LR504")
 ```
 
-*NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of "things"*
+### NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of "things"*
 
 How many missing values in the courtship dataset (remember to reduce the variables to those mentioned above)?
 
@@ -461,82 +463,86 @@ ggplot(aes(x=Protein, y=Total_egg, col=Prov_level)) +
 
 
 ## Moatt et al Data S1 – Mortality Data
-FID – Unique ID for each individual.
-Diet – Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
-Sex – Sex of individual (M = male, F = female).
-Size – Size classification of individual (L = large, S = Small).
-Level – Provisioning level, values represent percentages of monthly ad libitum monitoring.
-Total_eaten – Total pellet eaten in g from the start of the experiment.
-Eaten_wk – Amount of pellet consumed that week (gweek-1).
-P_tot - Total protein eaten in g from the start of the experiment.
-P2_total – P_tot2 squared (i.e. the total protein eaten squared). 
-P_wk – Amount of protein consumed that week (gweek-1).
-P2_wk – P_wk2 squared (i.e. the weekly protein intake squared).
-L_tot - Total lipid eaten in g from the start of the experiment.
-L2_total – L_tot2 squared (i.e. the total lipid eaten squared). 
-L_wk – Amount of lipid consumed that week (gweek-1).
-L2_wk – L_wk2 squared (i.e. the weekly lipid intake squared).
-Weight – Weight of fish from last weighing (g).
-Week_F – Experimental week.
-Status – Survival status (0= alive, 1 = Dead).
-T_group – Time period of the experiment (see Fig. S1).
-Initial_weight – Initial weight of individual at the start of the experiment.
-ZP – P_wk z transformed (mean of 0 and standard deviation of 1).
-ZP2 – P2_wk z transformed (mean of 0 and standard deviation of 1).
-ZL – L_wk z transformed (mean of 0 and standard deviation of 1).
-ZL2 – L2_wk z transformed (mean of 0 and standard deviation of 1).
+
+* FID – Unique ID for each individual.
+* Diet – Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
+* Sex – Sex of individual (M = male, F = female).
+* Size – Size classification of individual (L = large, S = Small).
+* Level – Provisioning level, values represent percentages of monthly ad libitum monitoring.
+* Total_eaten – Total pellet eaten in g from the start of the experiment.
+* Eaten_wk – Amount of pellet consumed that week (gweek-1).
+* P_tot - Total protein eaten in g from the start of the experiment.
+* P2_total – P_tot2 squared (i.e. the total protein eaten squared). 
+* P_wk – Amount of protein consumed that week (gweek-1).
+* P2_wk – P_wk2 squared (i.e. the weekly protein intake squared).
+* L_tot - Total lipid eaten in g from the start of the experiment.
+* L2_total – L_tot2 squared (i.e. the total lipid eaten squared). 
+* L_wk – Amount of lipid consumed that week (gweek-1).
+* L2_wk – L_wk2 squared (i.e. the weekly lipid intake squared).
+* Weight – Weight of fish from last weighing (g).
+* Week_F – Experimental week.
+* Status – Survival status (0= alive, 1 = Dead).
+* T_group – Time period of the experiment (see Fig. S1).
+* Initial_weight – Initial weight of individual at the start of the experiment.
+* ZP – P_wk z transformed (mean of 0 and standard deviation of 1).
+* ZP2 – P2_wk z transformed (mean of 0 and standard deviation of 1).
+* ZL – L_wk z transformed (mean of 0 and standard deviation of 1).
+* ZL2 – L2_wk z transformed (mean of 0 and standard deviation of 1).
 
 ## Moatt et al Data S5 – Courtship Data
-FID – Unique ID for each individual.
-Family – Unique code for family group (i.e. clutch of origin). Each clutch produced from a unique sire and dam.
-Shelf_stack – Unique code for the stack and shelf of fish home tank.
-Diet – Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
-Level – Provisioning level, values represent percentages of monthly ad libitum monitoring.
-Size – Size classification of individual (L = large, S = Small).
-Trial – Number of trials that individual experienced.
-Days_breeding – Length of breeding season for that individual.
-P_day – Average protein intake per day during the breeding season (gday-1).
-P2_day – P_day2 squared (i.e. daily protein intake squared).
-L_day - Average lipid intake per day during the breeding season (gday-1).
-L2_day – L_day2 squared (i.e. daily lipid intake squared).
-Mean_react – Mean reaction time across all trials for that individual.
-Total_ZZ – Total number of zigzags across all trials.
-Total_leads – Total number of leads across all trials.
-Total_court – Total time courting across all trials.
+
+* FID – Unique ID for each individual.
+* Family – Unique code for family group (i.e. clutch of origin). Each clutch produced from a unique sire and dam.
+* Shelf_stack – Unique code for the stack and shelf of fish home tank.
+* Diet – Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
+* Level – Provisioning level, values represent percentages of monthly ad libitum monitoring.
+* Size – Size classification of individual (L = large, S = Small).
+* Trial – Number of trials that individual experienced.
+* Days_breeding – Length of breeding season for that individual.
+* P_day – Average protein intake per day during the breeding season (gday-1).
+* P2_day – P_day2 squared (i.e. daily protein intake squared).
+* L_day - Average lipid intake per day during the breeding season (gday-1).
+* L2_day – L_day2 squared (i.e. daily lipid intake squared).
+* Mean_react – Mean reaction time across all trials for that individual.
+* Total_ZZ – Total number of zigzags across all trials.
+* Total_leads – Total number of leads across all trials.
+* Total_court – Total time courting across all trials.
 
 ## Moatt et al Data S6 – Eggs Data
-FID – Unique ID for each individual.
-Family – Unique code for family group (i.e. clutch of origin). Each clutch produced from a unique sire and dam.
-Shelf_stack – Unique code for the stack and shelf of fish home tank.
-Diet – Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
-Level – Provisioning level, values represent percentages of monthly ad libitum monitoring.
-Size – Size classification of individual (L = large, S = Small).
-P_day – Average protein intake per day during the breeding season (gday-1).
-P2_day – P_day2 squared (i.e. daily protein intake squared).
-L_day - Average lipid intake per day during the breeding season (gday-1).
-L2_day – L_day2 squared (i.e. daily lipid intake squared).
-Days_breeding – Length of breeding season for that individual.
-Number_clutches – Number of clutches produced by that individual.
-Mean_number – Mean number of eggs per clutch.
-Total_egg – Total number of eggs produced.
+
+* FID – Unique ID for each individual.
+* Family – Unique code for family group (i.e. clutch of origin). Each clutch produced from a unique sire and dam.
+* Shelf_stack – Unique code for the stack and shelf of fish home tank.
+* Diet – Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
+* Level – Provisioning level, values represent percentages of monthly ad libitum monitoring.
+* Size – Size classification of individual (L = large, S = Small).
+* P_day – Average protein intake per day during the breeding season (gday-1).
+* P2_day – P_day2 squared (i.e. daily protein intake squared).
+* L_day - Average lipid intake per day during the breeding season (gday-1).
+* L2_day – L_day2 squared (i.e. daily lipid intake squared).
+* Days_breeding – Length of breeding season for that individual.
+* Number_clutches – Number of clutches produced by that individual.
+* Mean_number – Mean number of eggs per clutch.
+* Total_egg – Total number of eggs produced.
 
 ## Moatt et al Data S15 – Length, Weight and Condition Index Data
-FID – Unique ID for each individual.
-StackShelf – Unique code for the stack and shelf of fish home tank.
-Sex – Sex of individual (M = male, F = female).
-Diet – Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
-Level – Provisioning level, values represent percentages of monthly ad libitum monitoring.
-Size – Size classification of individual (L = large, S = Small).
-Batch – Weighing batch. NB Batch 1 is prior to diet treatments therefore has no corresponding values for protein and lipid intake.
-P_day – Average protein intake per day during the breeding season (gday-1).
-P2_day – P_day2 squared (i.e. daily protein intake squared).
-L_day - Average lipid intake per day during the breeding season (gday-1).
-L2_day – L_day2 squared (i.e. daily lipid intake squared).
-ZP – Daily protein intake z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
-ZP2 – Daily protein intake squared, z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
-ZL – Daily lipid intake z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
-ZL2 – Daily lipid intake squared, z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
-Ln – Length of individual in mm.
-Wt – Weight of individual in g.
-CI – Condition Index for each individual. 
+
+* FID – Unique ID for each individual.
+* StackShelf – Unique code for the stack and shelf of fish home tank.
+* Sex – Sex of individual (M = male, F = female).
+* Diet – Diet Treatment (Diet P:L: 1 = 10.2:1, 2 = 4.6:1, 3 = 2.5:1, 4 = 8.5:1, 5 = 1.6:1).
+* Level – Provisioning level, values represent percentages of monthly ad libitum monitoring.
+* Size – Size classification of individual (L = large, S = Small).
+* Batch – Weighing batch. NB Batch 1 is prior to diet treatments therefore has no corresponding values for protein and lipid intake.
+* P_day – Average protein intake per day during the breeding season (gday-1).
+* P2_day – P_day2 squared (i.e. daily protein intake squared).
+* L_day - Average lipid intake per day during the breeding season (gday-1).
+* L2_day – L_day2 squared (i.e. daily lipid intake squared).
+* ZP – Daily protein intake z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
+* ZP2 – Daily protein intake squared, z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
+* ZL – Daily lipid intake z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
+* ZL2 – Daily lipid intake squared, z transformed (mean of 0 and standard deviation of 1), calculated for each sex independently.
+* Ln – Length of individual in mm.
+* Wt – Weight of individual in g.
+* CI – Condition Index for each individual. 
 
