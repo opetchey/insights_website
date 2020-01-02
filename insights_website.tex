@@ -1,3 +1,6 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
 \documentclass[]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -6,30 +9,31 @@
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
 \else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
+  \usepackage{unicode-math}
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{%
-\usepackage{microtype}
+\usepackage[]{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
 \usepackage{hyperref}
-\hypersetup{unicode=true,
+\hypersetup{
             pdftitle={Insights from Data Companion},
             pdfauthor={Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
-\usepackage{natbib}
-\bibliographystyle{apalike}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -71,21 +75,8 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
-\usepackage{graphicx,grffile}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -100,36 +91,152 @@
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
-%%% Use protect on footnotes to avoid problems with footnotes in titles
-\let\rmarkdownfootnote\footnote%
-\def\footnote{\protect\rmarkdownfootnote}
-
-%%% Change title format to be more compact
-\usepackage{titling}
-
-% Create subtitle command for use in maketitle
-\providecommand{\subtitle}[1]{
-  \posttitle{
-    \begin{center}\large#1\end{center}
-    }
-}
-
-\setlength{\droptitle}{-2em}
-
-  \title{Insights from Data Companion}
-    \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-    \author{Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs}
-    \preauthor{\centering\large\emph}
-  \postauthor{\par}
-      \predate{\centering\large\emph}
-  \postdate{\par}
-    \date{2020-01-02}
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
 
 \usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[bf,singlelinecheck=off]{caption}
+
+
+\usepackage{framed,color}
+\definecolor{shadecolor}{RGB}{248,248,248}
+
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\floatpagefraction}{0.75}
+
+\renewenvironment{quote}{\begin{VF}}{\end{VF}}
+\let\oldhref\href
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+
+\ifxetex
+  \usepackage{letltxmacro}
+  \setlength{\XeTeXLinkMargin}{1pt}
+  \LetLtxMacro\SavedIncludeGraphics\includegraphics
+  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
+    \IncludeGraphicsAux{#1}%
+  }%
+  \newcommand*{\IncludeGraphicsAux}[2]{%
+    \XeTeXLinkBox{%
+      \SavedIncludeGraphics#1{#2}%
+    }%
+  }%
+\fi
+
+\makeatletter
+\newenvironment{kframe}{%
+\medskip{}
+\setlength{\fboxsep}{.8em}
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\makeatletter
+\@ifundefined{Shaded}{
+}{\renewenvironment{Shaded}{\begin{kframe}}{\end{kframe}}}
+\makeatother
+
+\newenvironment{rmdblock}[1]
+  {
+  \begin{itemize}
+  \renewcommand{\labelitemi}{
+    \raisebox{-.7\height}[0pt][0pt]{
+      {\setkeys{Gin}{width=3em,keepaspectratio}\includegraphics{images/#1}}
+    }
+  }
+  \setlength{\fboxsep}{1em}
+  \begin{kframe}
+  \item
+  }
+  {
+  \end{kframe}
+  \end{itemize}
+  }
+\newenvironment{rmdnote}
+  {\begin{rmdblock}{note}}
+  {\end{rmdblock}}
+\newenvironment{rmdcaution}
+  {\begin{rmdblock}{caution}}
+  {\end{rmdblock}}
+\newenvironment{rmdimportant}
+  {\begin{rmdblock}{important}}
+  {\end{rmdblock}}
+\newenvironment{rmdtip}
+  {\begin{rmdblock}{tip}}
+  {\end{rmdblock}}
+\newenvironment{rmdwarning}
+  {\begin{rmdblock}{warning}}
+  {\end{rmdblock}}
+\newenvironment{action}
+  {\begin{rmdblock}{action}}
+  {\end{rmdblock}}
+\newenvironment{warning}
+  {\begin{rmdblock}{warning}}
+  {\end{rmdblock}}
+\newenvironment{info}
+  {\begin{rmdblock}{info}}
+  {\end{rmdblock}}
+\newenvironment{efficiency}
+  {\begin{rmdblock}{efficiency}}
+  {\end{rmdblock}}
+\newenvironment{safety}
+  {\begin{rmdblock}{safety}}
+  {\end{rmdblock}}
+\newenvironment{reliability}
+  {\begin{rmdblock}{reliability}}
+  {\end{rmdblock}}
+
+\usepackage{makeidx}
+\makeindex
+
+\urlstyle{tt}
+
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\frontmatter
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{Insights from Data Companion}
+\author{Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs}
+\date{2020-01-02}
 
 \begin{document}
 \maketitle
+
+
+%\cleardoublepage\newpage\thispagestyle{empty}\null
+%\cleardoublepage\newpage\thispagestyle{empty}\null
+%\cleardoublepage\newpage
+%\thispagestyle{empty}
+%\begin{center}
+%\includegraphics{images/dedication.pdf}
+%\end{center}
+
+%\setlength{\abovedisplayskip}{-5pt}
+%\setlength{\abovedisplayshortskip}{-5pt}
 
 {
 \setcounter{tocdepth}{1}
@@ -138,13 +245,357 @@
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
-To be completed.
-
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\NormalTok{opts_chunk}\OperatorTok{$}\KeywordTok{set}\NormalTok{(}\DataTypeTok{cache =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{knitr}\OperatorTok{::}\NormalTok{opts_chunk}\OperatorTok{$}\KeywordTok{set}\NormalTok{(}\DataTypeTok{cache =} \OtherTok{FALSE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\emph{Welcome!}
+
+\{\{\textless{} youtube EHLLmEcqRlk \textgreater{}\}\}
+
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
+
+The \href{hyperlink\%20to\%20pdf\%20of\%20Preface?}{preface} of \emph{Insights} informs about features of the book, such as its aims, content, structure, intended readership, and content that it does not include. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in \emph{Insights} and why. Read the preface and answer \href{insightsfromdata.org}{questions here (directs to a different website)}, directly concerning the content of the Preface, might also help that understanding.
+
+Here you will find the additional information mentioned in the book:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{link\%20to\%20other\%20web\%20site}{Questions and exercises (on a different web site)} with instant feedback that go alongside the material in the book. Use the questions and exercises to check, consolidate, and further your understanding of the material in the book.
+\item
+  One or two \protect\hyperlink{more-case-studies}{additional case studies}, with exercises and questions .
+\item
+  Links to the \protect\hyperlink{datasets}{datasets} used in the three case studies in the book.
+\item
+  \protect\hyperlink{live-data-demo}{Details of a live data analysis demonstration} we often use in our introductory undergraduate classes.
+\item
+  A list of \protect\hyperlink{more-case-studies}{additional case studies/datasets} that you might practice with (students), or add to your class (instructors).
+\item
+  A list of \protect\hyperlink{related-books}{Related Books and further reading}.
+\end{itemize}
+
+\hypertarget{workflowchecklist}{%
+\section{Workflow/checklist}\label{workflowchecklist}}
+
+Refer to this post: 2019-03-14-workflow-checklist-for-data-analysis
+
+\hypertarget{r-project-setup}{%
+\section{R-project setup}\label{r-project-setup}}
+
+Here are the ready made empty folders and Rproject files (compressed in a zip file you need to unzip -- \{\{\% staticref ``files/Insights\_projects.zip'' ``newtab'' \%\}\}Insights\_projects.zip\{\{\% /staticref \%\}\}) mentioned in \emph{Insights} (the book) section \emph{R-Projects, the best thing since sliced bread.}
+
+\hypertarget{for-instructors}{%
+\section{For instructors}\label{for-instructors}}
+
+Perhaps add the ``Notes/ideas for instructors section from the book Preface.''
+
+\hypertarget{live-data-demo}{%
+\subsection{Live data analysis demonstration}\label{live-data-demo}}
+
+In the first class of the first week of an \emph{Introduction to Data Analysis} course, we lead a \emph{live data analysis demonstration}. Within one hour we go from question to answer, including collection of some data about each of the students. We believe this demonstration helps students connect with the importance and fun of the content of the course. A walkthrough of the live data demonstration is provided as an \{\{\% staticref ``files/live\_data\_demo.Rmarkdown'' ``newtab'' \%\}\}Rmarkdown file\{\{\% /staticref \%\}\} and as \{\{\% staticref ``files/live\_data\_demo.html'' ``newtab'' \%\}\}html\{\{\% /staticref \%\}\} rendered from the rmarkdown.
+
+\hypertarget{datasets}{%
+\section{Datasets}\label{datasets}}
+
+Here are the datasets you will need in order to work along with the three case studies in \emph{Insights}:
+
+\begin{itemize}
+\item
+  \textbf{Case Study 1 (bat diets)} is about what bats eat and in it we work the data from the published study: \emph{Female dietary bias towards large migratory moths in the European free-tailed bat (Tadarida teniotis)}, by Mata and colleagues in 2016 in the journal \emph{Biology Letters} \href{http://rsbl.royalsocietypublishing.org/content/12/3/20150988}{paper on Biology Letters website}. You must get the dataset from the online data repository in which the researchers deposited it. Get the \texttt{dataset\_Mata.et.al.2016.xlsx} from the folder \textbf{Diet analysis dataset} from the \href{https://doi.org/10.5061/dryad.m8t72.2}{dryad repository}. Please make sure you get the file from version 2 of the dryad data publication. The dataset is stored on dryad in Excel format.
+\item
+  \textbf{Case Study 2 (prey diversity)} is about the hypotheses that more pathways of energy flow into a predator (i.e.~more prey species) stabilise the predator population dynamics (\href{https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2656.2000.00446.x}{the article about case study 2 is published here}). Get the data the data file \texttt{dileptus\ expt\ data.csv} from the \href{https://datadryad.org/resource/doi:10.5061/dryad.7h62c8t.2}{dryad repository} associated with the publication about the data (make sure you get version 2 of the dataset).
+\item
+  \textbf{Case Study 3 (dietary diversty and polity)} is about whether the diversity of food available to the population of a country is associated with the political system of that country. It requires three datasets:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A dataset containing information about country's political system. You can acquire the full dataset from \href{http://www.systemicpeace.org/inscrdata.html}{this web page of the Center for Systemic Peace}. Scroll down to the section \emph{Polity IV: Regime Authority Characteristics and Transitions Datasets} and click on the \emph{Excel Series} link to the right of the \emph{Polity IV Annual Time-Series, 1800-2017} box.
+  \item
+    A dataset of food available in countries (FAO food balance sheet data) from the \href{http://www.fao.org/faostat/en/\#data/FBS/metadata}{FAO website}. The datafile could get is called \texttt{FoodBalanceSheets\_E\_All\_Data.csv} and is 206MB. You can, as mentioned in the book, opt for the trimmed-down version of the dataset that we supply \href{www/FoodBalanceSheets_E_All_Data_reduced.Rdata}{click here to start download}.
+  \item
+    A dataset that matches some country names between the political system and FAO datasets \href{www/data/countryname_map.csv}{click here to start download}.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{more-case-studies}{%
+\section{More case studies}\label{more-case-studies}}
+
+Here are several more datasets, again all about food, and due to the bias of the authors of the book, mostly analyses of diet composition of various organisms. As the book goes to press, and unless we have since added additional information below, we only give the link to the original publication and to the dataset, and we have not ourselves worked through these data. Its all up to you! But don't hesitate to get in touch if you do work through them, and if you find something odd, difficult, or even impossible.
+
+\hypertarget{hungry-ladybirds}{%
+\subsection{Hungry ladybirds}\label{hungry-ladybirds}}
+
+An analysis of what determines how fast ladybirds eat.
+
+\begin{itemize}
+\tightlist
+\item
+  Original publications: \url{https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2664.13159}
+\item
+  Data: \url{https://datadryad.org/resource/doi:10.5061/dryad.gq224h3}
+\end{itemize}
+
+\hypertarget{seal-suppers}{%
+\subsection{Seal suppers}\label{seal-suppers}}
+
+An analysis of what seals eat.
+
+\begin{itemize}
+\tightlist
+\item
+  Original publication: \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/ece3.4474?af=R}
+\item
+  Data: \url{https://doi.org/10.5061/dryad.g23j32s}
+\end{itemize}
+
+\hypertarget{more-bat-poop}{%
+\subsection{More bat poop}\label{more-bat-poop}}
+
+Another analysis of bat diets. This one of data from 1'252 faecal pellets of five species of bat.
+
+\begin{itemize}
+\tightlist
+\item
+  Original publication: \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/ece3.4559}
+\item
+  Data: \url{https://doi.org/10.5061/dryad.6880rf1}.
+\end{itemize}
+
+\hypertarget{marten-isotopes}{%
+\subsection{Marten isotopes}\label{marten-isotopes}}
+
+Analysis of marten diets by stable isotope analysis
+
+\begin{itemize}
+\tightlist
+\item
+  Original publication: \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/ece3.4559}
+\item
+  Data: \url{https://doi.org/10.5061/dryad.6880rf1}.
+\end{itemize}
+
+\hypertarget{snake-diets}{%
+\subsection{Snake diets}\label{snake-diets}}
+
+\begin{itemize}
+\tightlist
+\item
+  Original publication: \url{https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/1365-2656.12972}
+\item
+  Data: \url{https://datadryad.org/resource/doi:10.5061/dryad.8kt4675}
+\end{itemize}
+
+\hypertarget{desert-bat-diets}{%
+\subsection{Desert bat diets}\label{desert-bat-diets}}
+
+\begin{itemize}
+\tightlist
+\item
+  Original publication: \url{https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.4896}
+\item
+  Data: \url{https://datadryad.org/resource/doi:10.5061/dryad.7j0c8dm}
+\end{itemize}
+
+\hypertarget{desert-bat-diets-1}{%
+\subsection{Desert bat diets}\label{desert-bat-diets-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Original publication: \url{https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.4896}
+\item
+  Data: \url{https://datadryad.org/resource/doi:10.5061/dryad.7j0c8dm}
+\end{itemize}
+
+\hypertarget{birds-eating-insects}{%
+\subsection{Birds eating insects}\label{birds-eating-insects}}
+
+\begin{itemize}
+\tightlist
+\item
+  Original publication: \url{https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.4787}
+\item
+  Data: \url{https://datadryad.org/resource/doi:10.5061/dryad.4f1n785}
+\end{itemize}
+
+\hypertarget{diets-of-predatory-fish}{%
+\subsection{Diets of predatory fish}\label{diets-of-predatory-fish}}
+
+\begin{itemize}
+\tightlist
+\item
+  Original publication: \url{https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.4857}
+\item
+  Data: \url{https://datadryad.org/resource/doi:10.5061/dryad.0jm1dt2}
+\end{itemize}
+
+\hypertarget{cervical-spine-compression-and-mri-not-food-related}{%
+\subsection{Cervical spine compression and MRI (not food related)}\label{cervical-spine-compression-and-mri-not-food-related}}
+
+\begin{itemize}
+\tightlist
+\item
+  Original publication: \url{https://doi.org/10.5061/dryad.kk653rs}
+\item
+  Data: \url{https://datadryad.org/resource/doi:10.5061/dryad.kk653rs}
+\end{itemize}
+
+\hypertarget{lots-of-other-datasets-here}{%
+\subsection{Lots of other datasets here:}\label{lots-of-other-datasets-here}}
+
+\url{https://www.nature.com/articles/s41559-017-0458-2/tables/1}
+
+and here:
+
+\url{https://cran.r-project.org/web/packages/TH.data}
+
+\hypertarget{related-books}{%
+\section{Related reading}\label{related-books}}
+
+Refer to this article: 2019-03-14-some-useful-r-help-tutorial-reference-websites
+
+\begin{itemize}
+\tightlist
+\item
+  Grafen \& Hails (2002) Modern Statistics for the Life Sciences. 368 pages. Focuses on and thoroughly covers statistics, using general linear models. Works with Minitab, SAS, SPSS.
+\item
+  Crawley (2005) Statistics - An Introduction Using R. 327 pages. A concise introduction focused on statistical analyses using R.
+  Crawley (2012) The R Book. 1076 pages. A comparatively encyclopedic account of R; ``extensive and comprehensive''.
+  Hothorn \& Everitt (2014) A Handbook of Statistical Analysis Using R. 456 pages. Focuses on statistical analyses; probably more graduate level.
+\item
+  Whitlock \& Schluter (2015) The Analysis of Biological Data. 818 pages. Contains practice \& assignment problems. Focused on statistics, covers data management/visualization in passing.
+\item
+  Maindonald \& Braun (2010) Data Analysis and Graphics Using R. 549 pages. Assumes some existing knowledge of statistics and data analysis. For final year undergraduate / graduate level. Reaches to Bayesian methods, GLMMs, and random forests.
+\item
+  Hector (2015) The New Statistics with R. 199 pages. Focused on statistics, specifically linear models. ``New'' refers to new methods that are included, and focusing on effect sizes rather than p-values.
+\item
+  Field, Miles, \& Field (2012) Discovering Statistics using R. 957 pages. Focused on statistics, though covers data management and visualization. Goes up to multilevel linear models. Classic R and R Commander (no RStudio). Written with humour, has ``characters'', associated website with datasets, scripts, webcasts, self-assessment question, additional material, answers, powerpoint slides, links, and cyberworms of knowledge.
+\item
+  Field (2016) An Adventure in Statistics. 768 pages. At first (and perhaps later) sight quite inspirational. Starts with a chapter on why we need science (maybe to get insights?) followed by one on reporting findings. As such, has similar approach to Insights, to start with motivation and with the end in mind. Continues with a thorough account of data analysis and statistics suitable for undergraduates.
+\item
+  Bolker (2008) Ecological Models and Data in R. 396 pages. Page 3 states ``I assume that you've had the equivalent of a one-semester undergraduate statistics course\ldots{}'' and on page 4 ``If you have used R already, you'll have a big head start.''
+  Venables, Smith, et al (2009) An Introduction to R. Reference book for the R Language (classic R). Very concise. Contains a 15-page chapter on statistics, including linear and non-linear models.
+\item
+  Grolemund \& Wickham (2017) R for Data Science. 492 pages. Focus on ``Data Science'', ``an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.'' Book organized broadly by the workflow: Explore, Wrangle, Program, Model, Communicate. Quite comprehensive in coverage of the ``tidyverse'' approach to using R.
+\item
+  McKillup (2012) Statistics Explained. An Introductory Guide for Life Scientists. 400 pages. Quite well rounded, including experimental design, collecting and displaying data, doing science, ethics. Majority walks through statistical tests\ldots{} linear models, non-parametric tests, multivariate.
+\item
+  Dytham (2010) Choosing and Using Statistics: A Biologist's Guide. 320 pages. Focused on statistics, as the title suggests.
+\item
+  Adler (2012) R in a Nutshell. A Desktop Quick Reference. 611 pages. A great reference book.
+\item
+  Dalgaard (2008) Introductory Statistics with R. 364 pages. A concise introduction focused on statistical analyses using R.
+  S* pector (2008) Data Manipulation with R. 154 pages. Covers importing data, working with databases, character manipulation, dealing with dates, using loops, conversion to data frames.
+\item
+  Ellis (2010) The Essential Guide to Effect Sizes. 188 pages. Focuses on interpreting the practical everyday importance of research results, power, and synthesizing disparate results. Does this via effect sizes. Based on a course for honed on ``smart graduate students''.
+\item
+  Gotelli \& Ellison (2012) A Primer of Ecological Statistics. 614 pages. Upper-undergraduate to graduate level. Probability and statistical thinking, distributions, central tendency and spread, p-values, etc. Then experimental design; then specific analyses. Finishes by covering estimates of diversity and occurrence.
+\item
+  Gonick \& Smith (1993) The Cartoon Guide to Statistics. 230 pages. Covers summary and display of data, probability, central limit theorem, confidence interval estimation, etc.
+\item
+  McKillup (2011) Statistics Explained. An Introductory Guide for Life Scientists. 416 pages. Begins by explaining about doing science, collecting and displaying data, experimental design, and responsibility and ethics. Then works through a good list of statistical methods for beginning to upper-level undergraduates.
+\item
+  Sokal \& Rohlf (1995) Biometry. The Principles and Practices of Statistics in Biological Research. 880 pages. Thorough, comprehensive, and often quite technical title focused on statistics.
+\item
+  Zar (2010) Biostatistical Analysis. 960 pages. Thorough and comprehensive coverage of ``statistics analysis methods used by researchers to collect, summarise, analyse and draw conclusions from biological research. Suitable for beginners to advanced users.
+\item
+  McElreath (2016) Statistical Rethinking. 469 pages. Brilliant. What should be taught to undergraduates, if only the world would then be ready for them.
+\item
+  Healy (2017) Data Visualisation for Social Science. A practical introduction with R and ggplot2. Focuses on appropriate visualization for getting knowledge from data. Covers principles and practices of looking and presenting data.
+\item
+  Zumel \& Mount (2019) Practical Data Science with R.
+\end{itemize}
+
+\hypertarget{insights-workflow}{%
+\chapter{Insights Workflow}\label{insights-workflow}}
+
+\hypertarget{before-touching-rrstudio}{%
+\chapter{Before touching R/RStudio}\label{before-touching-rrstudio}}
+
+\begin{itemize}
+\tightlist
+\item
+  Question
+\item
+  Hypothesis(es)
+\item
+  Study methods, materials, design.
+\item
+  Response variable(s)
+\item
+  Explanatory variable(s)
+\item
+  Prediction(s)
+\item
+  Secure resources
+\item
+  Perform study, including data collection.
+\end{itemize}
+
+If you don't know, e.g.~because you did not conduct the study, \emph{before} import into R inspect the datafiles in a spreadsheet program (so long as they're not too big) and note the following:
+
+\begin{itemize}
+\tightlist
+\item
+  if multiple datafiles are used, which contains what
+\item
+  what variable names are used in the datafiles, and what these mean (i.e.~which are response variables, which are explanatory, and what are others)
+\item
+  number of rows and columns in the datafiles
+\item
+  arrangement of the data in the datafile, e.g.~tidy or not tidy
+\item
+  any obvious things to deal with (e.g.~how missing values are coded, date/time information, codes that need expanding, variable/column names that will need changing)
+\end{itemize}
+
+\hypertarget{after-we-read-the-datafiles-into-r}{%
+\chapter{After we read the datafile(s) into R:}\label{after-we-read-the-datafiles-into-r}}
+
+\begin{itemize}
+\tightlist
+\item
+  number of variables/columns
+\item
+  number of rows
+\item
+  variable types
+\item
+  appropriate reprentation of missing values
+\item
+  tidy the data (at some point)
+\item
+  check for innapropriate duplicates
+\item
+  fix dates
+\item
+  replace any codes with informative words
+\item
+  check for appropriate variable entries, e.g.~levels of characters, ranges of numerics
+\item
+  numbers of ``things'', number of experimental units, treatments, treatment combinations, temporal samples
+\item
+  calculate response and/or explanatory variable(s) (if required)
+\end{itemize}
+
+\hypertarget{after-data-tidying-and-cleaning}{%
+\chapter{After data tidying and cleaning}\label{after-data-tidying-and-cleaning}}
+
+\begin{itemize}
+\tightlist
+\item
+  Shapes of variables (i.e.~inspect the histograms of explanatory and response variables).
+\item
+  Relationships among explanatory variables.
+\item
+  Relationships relevant to hypotheses/predictions.
+\item
+  Assess confidence in revealed patterns.
+\end{itemize}
 
 \hypertarget{additional-r}{%
 \chapter{Additional R}\label{additional-r}}
@@ -444,7 +895,7 @@ Let's look at the frequency distributions of the two numeric variables. We will 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-18-1.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-23-1} \end{center}
 
 The \texttt{Polity2} variable is numeric with a minimum values of -10 and a maximum of 10 (as we already knew). The most common polity score is very democratic (+10), there are relatively few moderately democratic polity score, and there are a number of several levels of autocratic polity scores. That is, the distribution appears somewhat bimodial. We must be aware, that these are distributions of each score, with many scores for each country.
 
@@ -540,7 +991,7 @@ Change in polity in some countries of interest (to the authors at least):
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-23-1.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-28-1} \end{center}
 
 \emph{Insight} That the polity score of a country can change so greatly has implications for our subsequent analyses. For example, calculating and using a mean polity score for each country (average across years) may be unwise as it would ignore such temporal change.
 
@@ -1538,19 +1989,14 @@ Now we should check some basic things about the imported data. Let's start by ch
 
 \begin{verbatim}
 ## # A tibble: 806 x 10
-##      day count    w1    w2     w3 species prey.richness prey.composition
-##    <dbl> <chr> <dbl> <dbl>  <dbl>   <dbl>         <dbl>            <dbl>
-##  1     2 52    0.356  6.32 0.322        1             1                1
-##  2     2 0     0.356  1    1            4             1                1
-##  3     2 66    0.360  6.56 0.323        1             1                1
-##  4     2 0     0.360  1    1            4             1                1
-##  5     2 21    0.303  5.67 0.0843       2             1                2
-##  6     2 0     0.303  1    1            4             1                2
-##  7     2 44    0.365  4.06 0.0843       2             1                2
-##  8     2 0     0.365  1    1            4             1                2
-##  9     2 114   0.354  1    1            3             1                3
-## 10     2 0     0.354  1    1            4             1                3
-## # ... with 796 more rows, and 2 more variables: replicate <dbl>, jar <dbl>
+##     day count    w1    w2     w3 species prey.richness prey.composition
+##   <dbl> <chr> <dbl> <dbl>  <dbl>   <dbl>         <dbl>            <dbl>
+## 1     2 52    0.356  6.32 0.322        1             1                1
+## 2     2 0     0.356  1    1            4             1                1
+## 3     2 66    0.360  6.56 0.323        1             1                1
+## 4     2 0     0.360  1    1            4             1                1
+## 5     2 21    0.303  5.67 0.0843       2             1                2
+## # ... with 801 more rows, and 2 more variables: replicate <dbl>, jar <dbl>
 \end{verbatim}
 
 We are told the object is \texttt{A\ tibble:\ 806\ x\ 10}. This is what we expect if we look at the datafile. All looks good so far then.
@@ -1629,19 +2075,14 @@ Let's break this down. We're doing a \texttt{group\_by}---\texttt{summarise}. Th
 \begin{verbatim}
 ## # A tibble: 35 x 2
 ## # Groups:   prey.composition [7]
-##    prey.composition community_composition 
-##               <dbl> <chr>                 
-##  1                1 Colpidium, Dileptus   
-##  2                1 Colpidium, Dileptus   
-##  3                1 Colpidium, Dileptus   
-##  4                1 Colpidium, Dileptus   
-##  5                1 Colpidium, Dileptus   
-##  6                2 Collodictyon, Dileptus
-##  7                2 Collodictyon, Dileptus
-##  8                2 Collodictyon, Dileptus
-##  9                2 Collodictyon, Dileptus
-## 10                2 Collodictyon, Dileptus
-## # ... with 25 more rows
+##   prey.composition community_composition
+##              <dbl> <chr>                
+## 1                1 Colpidium, Dileptus  
+## 2                1 Colpidium, Dileptus  
+## 3                1 Colpidium, Dileptus  
+## 4                1 Colpidium, Dileptus  
+## 5                1 Colpidium, Dileptus  
+## # ... with 30 more rows
 \end{verbatim}
 
 We also make the new \texttt{prey\_richness} variable. The code was \texttt{prey\_richness\ =\ length(unique(species))\ -\ 1}. The \texttt{length} function tells us the number of unique (because we used the \texttt{unique} function) species, and we subtract the 1 to remove the 1 added by the predator species being present.
@@ -1703,19 +2144,14 @@ Before we do this, look at the \texttt{prey\_composition} variable in its curren
 
 \begin{verbatim}
 ## # A tibble: 806 x 1
-##    prey_composition
-##    <chr>           
-##  1 Colpidium       
-##  2 Colpidium       
-##  3 Colpidium       
-##  4 Colpidium       
-##  5 Collodictyon    
-##  6 Collodictyon    
-##  7 Collodictyon    
-##  8 Collodictyon    
-##  9 Paramecium      
-## 10 Paramecium      
-## # ... with 796 more rows
+##   prey_composition
+##   <chr>           
+## 1 Colpidium       
+## 2 Colpidium       
+## 3 Colpidium       
+## 4 Colpidium       
+## 5 Collodictyon    
+## # ... with 801 more rows
 \end{verbatim}
 
 It is a character variable (\texttt{\textless{}chr\textgreater{}}). If we try to see what the levels of this variable are, we get \texttt{NULL}; there are no levels:
@@ -1757,19 +2193,14 @@ Now let's see how the \texttt{prey\_composition} variable looks:
 
 \begin{verbatim}
 ## # A tibble: 806 x 1
-##    prey_composition
-##    <fct>           
-##  1 Colpidium       
-##  2 Colpidium       
-##  3 Colpidium       
-##  4 Colpidium       
-##  5 Collodictyon    
-##  6 Collodictyon    
-##  7 Collodictyon    
-##  8 Collodictyon    
-##  9 Paramecium      
-## 10 Paramecium      
-## # ... with 796 more rows
+##   prey_composition
+##   <fct>           
+## 1 Colpidium       
+## 2 Colpidium       
+## 3 Colpidium       
+## 4 Colpidium       
+## 5 Collodictyon    
+## # ... with 801 more rows
 \end{verbatim}
 
 \begin{Shaded}
@@ -1913,19 +2344,14 @@ Let's now get the number of counts for each replicate community, and while we're
 \begin{verbatim}
 ## # A tibble: 35 x 4
 ## # Groups:   prey_composition [7]
-##    prey_composition   jar num_samples max_day
-##    <fct>            <dbl>       <int>   <dbl>
-##  1 Collodictyon         3          11      12
-##  2 Collodictyon         4          11      12
-##  3 Collodictyon        18          14      14
-##  4 Collodictyon        19          14      14
-##  5 Collodictyon        20           4       4
-##  6 Colpidium            1          12      12
-##  7 Colpidium            2          12      12
-##  8 Colpidium           15          20      20
-##  9 Colpidium           16          20      20
-## 10 Colpidium           17          20      20
-## # ... with 25 more rows
+##   prey_composition   jar num_samples max_day
+##   <fct>            <dbl>       <int>   <dbl>
+## 1 Collodictyon         3          11      12
+## 2 Collodictyon         4          11      12
+## 3 Collodictyon        18          14      14
+## 4 Collodictyon        19          14      14
+## 5 Collodictyon        20           4       4
+## # ... with 30 more rows
 \end{verbatim}
 
 \begin{info}
@@ -1952,15 +2378,14 @@ We can have R confirm the number of replicates per prey composition with a quick
 
 \begin{verbatim}
 ## # A tibble: 7 x 2
-##   prey_composition                    number_of_replicate
-##   <fct>                                             <int>
-## 1 Collodictyon                                          5
-## 2 Colpidium                                             5
-## 3 Paramecium                                            5
-## 4 Colpidium, Collodictyon                               5
-## 5 Colpidium, Paramecium                                 5
-## 6 Collodictyon, Paramecium                              5
-## 7 Colpidium, Collodictyon, Paramecium                   5
+##   prey_composition        number_of_replicate
+##   <fct>                                 <int>
+## 1 Collodictyon                              5
+## 2 Colpidium                                 5
+## 3 Paramecium                                5
+## 4 Colpidium, Collodictyon                   5
+## 5 Colpidium, Paramecium                     5
+## # ... with 2 more rows
 \end{verbatim}
 
 We can also get the number of counts made of each species by using the same code with \texttt{species} added as a grouping variable:
@@ -1978,19 +2403,14 @@ We can also get the number of counts made of each species by using the same code
 \begin{verbatim}
 ## # A tibble: 95 x 5
 ## # Groups:   prey_composition, jar [35]
-##    prey_composition   jar species      num_samples max_day
-##    <fct>            <dbl> <chr>              <int>   <dbl>
-##  1 Collodictyon         3 Collodictyon           5      10
-##  2 Collodictyon         3 Dileptus               6      12
-##  3 Collodictyon         4 Collodictyon           5      10
-##  4 Collodictyon         4 Dileptus               6      12
-##  5 Collodictyon        18 Collodictyon           7      14
-##  6 Collodictyon        18 Dileptus               7      14
-##  7 Collodictyon        19 Collodictyon           7      14
-##  8 Collodictyon        19 Dileptus               7      14
-##  9 Collodictyon        20 Collodictyon           2       4
-## 10 Collodictyon        20 Dileptus               2       4
-## # ... with 85 more rows
+##   prey_composition   jar species      num_samples max_day
+##   <fct>            <dbl> <chr>              <int>   <dbl>
+## 1 Collodictyon         3 Collodictyon           5      10
+## 2 Collodictyon         3 Dileptus               6      12
+## 3 Collodictyon         4 Collodictyon           5      10
+## 4 Collodictyon         4 Dileptus               6      12
+## 5 Collodictyon        18 Collodictyon           7      14
+## # ... with 90 more rows
 \end{verbatim}
 
 Here we see that two of the microcosms had only two samples taken. These are the ones in which the last day sampled was day four (confirm this for yourself if you wish; \texttt{View(temp2)} is useful for this).
@@ -2059,18 +2479,18 @@ We could again use the \texttt{skim()} function to take a look at the data more 
 ##  n obs: 680 
 ##  n variables: 12 
 ## 
-## -- Variable type:character ------------------
+## -- Variable type:character -----------------------
 ##               variable missing complete   n min max empty n_unique
 ##  community_composition       0      680 680  19  45     0        7
 ##                species       0      680 680   8  12     0        4
 ## 
-## -- Variable type:factor ---------------------
+## -- Variable type:factor --------------------------
 ##          variable missing complete   n n_unique
 ##  prey_composition       0      680 680        7
 ##                             top_counts ordered
 ##  Col: 161, Col: 108, Col: 105, Col: 98   FALSE
 ## 
-## -- Variable type:numeric --------------------
+## -- Variable type:numeric -------------------------
 ##       variable missing complete   n   mean      sd    p0   p25   p50
 ##          count       0      680 680  17.05   27.13 0      0     5   
 ##            day       0      680 680   8.79    5    2      4     8   
@@ -3029,7 +3449,8 @@ Which variables in which dataset can be used to calculate each of the five respo
 \end{Highlighting}
 \end{Shaded}
 
-\emph{duplicates}:
+\hypertarget{checking-for-duplicates}{%
+\subsection{Checking for duplicates}\label{checking-for-duplicates}}
 
 Question: which of the four datasets contains an odd duplicate entry? And which fish is involved? What should we do next?
 
@@ -3117,7 +3538,8 @@ Question: which of the four datasets contains an odd duplicate entry? And which 
 ## 4 LR504   1.6:1     Male         100 Small         4 dead
 \end{verbatim}
 
-\emph{NAs, variable entries, e.g.~levels of characters, ranges of numerics, numbers of ``things''}
+\hypertarget{nas-variable-entries-e.g.levels-of-characters-ranges-of-numerics-numbers-of-things}{%
+\subsection{NAs, variable entries, e.g.~levels of characters, ranges of numerics, numbers of ``things''*}\label{nas-variable-entries-e.g.levels-of-characters-ranges-of-numerics-numbers-of-things}}
 
 How many missing values in the courtship dataset (remember to reduce the variables to those mentioned above)?
 
@@ -3142,7 +3564,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##  n obs: 228 
 ##  n variables: 8 
 ## 
-## -- Variable type:character ------------------
+## -- Variable type:character -----------------------
 ##     variable missing complete   n min max empty n_unique
 ##    Diet_comp       0      228 228   5   6     0        5
 ##       Family       0      228 228   4   4     0       22
@@ -3150,7 +3572,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##    Fish_size       0      228 228   5   5     0        2
 ##  Shelf_stack       0      228 228   2   2     0       36
 ## 
-## -- Variable type:numeric --------------------
+## -- Variable type:numeric -------------------------
 ##     variable missing complete   n   mean     sd p0 p25 p50 p75 p100
 ##   Prov_level       0      228 228  74.45  20.38 50  50  75 100  100
 ##  Total_court       1      227 228 453.23 456.2   0  64 337 713 2666
@@ -3188,7 +3610,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##  n obs: 269 
 ##  n variables: 7 
 ## 
-## -- Variable type:character ------------------
+## -- Variable type:character -----------------------
 ##     variable missing complete   n min max empty n_unique
 ##    Diet_comp       0      269 269   5   6     0        5
 ##       Family       0      269 269   4   4     0       20
@@ -3196,7 +3618,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##    Fish_size       0      269 269   5   5     0        2
 ##  Shelf_stack       0      269 269   2   2     0       36
 ## 
-## -- Variable type:numeric --------------------
+## -- Variable type:numeric -------------------------
 ##    variable missing complete   n    mean     sd p0 p25  p50  p75 p100
 ##  Prov_level       0      269 269   75.09  20.32 50  50   75  100  100
 ##   Total_egg       1      268 269 1069.56 631.56 66 609 1001 1402 3608
@@ -3231,7 +3653,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##  n obs: 6000 
 ##  n variables: 10 
 ## 
-## -- Variable type:character ------------------
+## -- Variable type:character -----------------------
 ##     variable missing complete    n min max empty n_unique
 ##    Diet_comp       0     6000 6000   5   6     0        5
 ##      Fish_ID       0     6000 6000   5   5     0      600
@@ -3239,7 +3661,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##          Sex       0     6000 6000   4   6     0        2
 ##  Shelf_stack       0     6000 6000   2   2     0       36
 ## 
-## -- Variable type:numeric --------------------
+## -- Variable type:numeric -------------------------
 ##    variable missing complete    n     mean    sd    p0    p25      p50
 ##       Batch       0     6000 6000  5.5      2.87  1     3      5.5    
 ##  Cond_index    2088     3912 6000  1.2e-05  0.15 -0.84 -0.085 -0.00046
@@ -3267,7 +3689,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##  n obs: 33049 
 ##  n variables: 7 
 ## 
-## -- Variable type:character ------------------
+## -- Variable type:character -----------------------
 ##   variable missing complete     n min max empty n_unique
 ##  Diet_comp       0    33049 33049   5   6     0        5
 ##    Fish_ID       0    33049 33049   5   5     0      594
@@ -3275,7 +3697,7 @@ What are the units of the \texttt{Total\_court} variable? (From paper only, seco
 ##        Sex       0    33049 33049   4   6     0        2
 ##     Status       0    33049 33049   4   5     0        2
 ## 
-## -- Variable type:numeric --------------------
+## -- Variable type:numeric -------------------------
 ##    variable missing complete     n  mean    sd p0 p25 p50 p75 p100
 ##  Prov_level       0    33049 33049 74.49 20.43 50  50  75 100  100
 ##        Week       0    33049 33049 37.84 26.49  1  16  33  57  107
@@ -3674,23 +4096,14 @@ Check below.
 \begin{verbatim}
 ## # A tibble: 15 x 4
 ## # Groups:   Diet_comp [5]
-##    Diet_comp Prov_level `n()` n_unique
-##    <chr>          <dbl> <int>    <int>
-##  1 1.6:1             50   400       40
-##  2 1.6:1             75   400       40
-##  3 1.6:1            100   400       40
-##  4 10.2:1            50   400       40
-##  5 10.2:1            75   400       40
-##  6 10.2:1           100   400       40
-##  7 2.5:1             50   400       40
-##  8 2.5:1             75   400       40
-##  9 2.5:1            100   400       40
-## 10 4.6:1             50   400       40
-## 11 4.6:1             75   400       40
-## 12 4.6:1            100   400       40
-## 13 8.5:1             50   400       40
-## 14 8.5:1             75   400       40
-## 15 8.5:1            100   400       40
+##   Diet_comp Prov_level `n()` n_unique
+##   <chr>          <dbl> <int>    <int>
+## 1 1.6:1             50   400       40
+## 2 1.6:1             75   400       40
+## 3 1.6:1            100   400       40
+## 4 10.2:1            50   400       40
+## 5 10.2:1            75   400       40
+## # ... with 10 more rows
 \end{verbatim}
 
 \begin{Shaded}
@@ -3717,23 +4130,14 @@ Check below.
 \begin{verbatim}
 ## # A tibble: 15 x 4
 ## # Groups:   Diet_comp [5]
-##    Diet_comp Prov_level `n()` n_unique
-##    <chr>          <dbl> <int>    <int>
-##  1 1.6:1             50  2239       39
-##  2 1.6:1             75  2519       40
-##  3 1.6:1            100  2258       40
-##  4 10.2:1            50  1951       40
-##  5 10.2:1            75  1668       39
-##  6 10.2:1           100  1645       40
-##  7 2.5:1             50  2635       40
-##  8 2.5:1             75  2420       40
-##  9 2.5:1            100  2172       39
-## 10 4.6:1             50  2260       39
-## 11 4.6:1             75  2124       39
-## 12 4.6:1            100  2392       40
-## 13 8.5:1             50  2296       40
-## 14 8.5:1             75  2229       39
-## 15 8.5:1            100  2241       40
+##   Diet_comp Prov_level `n()` n_unique
+##   <chr>          <dbl> <int>    <int>
+## 1 1.6:1             50  2239       39
+## 2 1.6:1             75  2519       40
+## 3 1.6:1            100  2258       40
+## 4 10.2:1            50  1951       40
+## 5 10.2:1            75  1668       39
+## # ... with 10 more rows
 \end{verbatim}
 
 39 or 40 of each (six of 39, hence 594 fish IDs)
@@ -3780,17 +4184,17 @@ We need to calculate the response variable for the change in fish length and cha
 ##  n obs: 594 
 ##  n variables: 6 
 ## 
-## -- Variable type:character ------------------
+## -- Variable type:character -----------------------
 ##   variable missing complete   n min max empty n_unique
 ##  Diet_comp       0      594 594   5   6     0        5
 ##    Fish_ID       0      594 594   5   5     0      594
 ##        Sex       8      586 594   4   6     0        2
 ## 
-## -- Variable type:logical --------------------
+## -- Variable type:logical -------------------------
 ##  variable missing complete   n  mean                    count
 ##  Censored       0      594 594 0.089 FAL: 541, TRU: 53, NA: 0
 ## 
-## -- Variable type:numeric --------------------
+## -- Variable type:numeric -------------------------
 ##    variable missing complete   n  mean    sd p0 p25 p50 p75 p100     hist
 ##    Lifespan       0      594 594 54.73 32.73  0  31  47  84  107 ▅▂▇▃▂▃▆▅
 ##  Prov_level       0      594 594 75.04 20.46 50  50  75 100  100 ▇▁▁▇▁▁▁▇
@@ -3928,7 +4332,7 @@ About:
 ## Warning: Removed 367 rows containing non-finite values (stat_bin).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-136-1.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-143-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3945,7 +4349,7 @@ About:
 ## Warning: Removed 326 rows containing non-finite values (stat_bin).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-136-2.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-143-2} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3958,7 +4362,7 @@ About:
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-136-3.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-143-3} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3975,7 +4379,7 @@ About:
 ## Warning: Removed 26 rows containing non-finite values (stat_bin).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-136-4.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-143-4} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3992,7 +4396,7 @@ About:
 ## Warning: Removed 26 rows containing non-finite values (stat_bin).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-136-5.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-143-5} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4015,7 +4419,7 @@ About:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-137-1.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-144-1} \end{center}
 
 ``Female risk was generally reduced by low protein intakes.''
 
@@ -4028,7 +4432,7 @@ About:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-138-1.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-145-1} \end{center}
 
 ``The effect of macronutrient intake on reproduction was similar between the sexes, with high protein intakes maximizing reproduction.''
 
@@ -4044,7 +4448,7 @@ About:
 ## Warning: Removed 67 rows containing missing values (geom_point).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-139-1.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-146-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4058,7 +4462,7 @@ About:
 ## Warning: Removed 292 rows containing missing values (geom_point).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-139-2.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-146-2} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4072,7 +4476,7 @@ About:
 ## Warning: Removed 288 rows containing missing values (geom_point).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-140-1.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-147-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4090,7 +4494,7 @@ About:
 ## Warning: Removed 30 rows containing missing values (geom_point).
 \end{verbatim}
 
-\includegraphics{insights_website_files/figure-latex/unnamed-chunk-140-2.pdf}
+\begin{center}\includegraphics{insights_website_files/figure-latex/unnamed-chunk-147-2} \end{center}
 
 \hypertarget{moatt-et-al-data-s1-mortality-data}{%
 \section{Moatt et al Data S1 -- Mortality Data}\label{moatt-et-al-data-s1-mortality-data}}
@@ -4269,5 +4673,7 @@ About:
 
 \bibliography{book.bib,packages.bib}
 
+\backmatter
+\printindex
 
 \end{document}

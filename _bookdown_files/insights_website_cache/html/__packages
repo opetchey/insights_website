@@ -1,7 +1,11 @@
 base
 dplyr
-ggplot2
 readr
+ggplot2
+nasaweather
+magrittr
+knitr
+hexbin
 stringr
 lubridate
 tidyr
@@ -14,3 +18,4 @@ forcats
 ggrepel
 taxize
 broom
+gdtools

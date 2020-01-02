@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="9.10 Relationships | Insights from Data" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="To be completed" />
+
+
+<meta name="author" content="Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs" />
+
+<meta name="date" content="2020-01-02" />
+
+
+<meta name="description" content="To be completed">
+
+<title>9.10 Relationships | Insights from Data</title>
+
+<script src="libs/jquery/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap/shim/respond.min.js"></script>
+<script src="libs/navigation/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#introduction"><span class="toc-section-number">1</span> Introduction</a><ul>
+<li><a href="1-1-introduction-1.html#introduction-1"><span class="toc-section-number">1.1</span> Introduction</a></li>
+<li><a href="1-2-workflowchecklist.html#workflowchecklist"><span class="toc-section-number">1.2</span> Workflow/checklist</a></li>
+<li><a href="1-3-r-project-setup.html#r-project-setup"><span class="toc-section-number">1.3</span> R-project setup</a></li>
+<li class="has-sub"><a href="1-4-for-instructors.html#for-instructors"><span class="toc-section-number">1.4</span> For instructors</a><ul>
+<li><a href="1-4-for-instructors.html#live-data-demo"><span class="toc-section-number">1.4.1</span> Live data analysis demonstration</a></li>
+</ul></li>
+<li><a href="1-5-datasets.html#datasets"><span class="toc-section-number">1.5</span> Datasets</a></li>
+<li class="has-sub"><a href="1-6-more-case-studies.html#more-case-studies"><span class="toc-section-number">1.6</span> More case studies</a><ul>
+<li><a href="1-6-more-case-studies.html#hungry-ladybirds"><span class="toc-section-number">1.6.1</span> Hungry ladybirds</a></li>
+<li><a href="1-6-more-case-studies.html#seal-suppers"><span class="toc-section-number">1.6.2</span> Seal suppers</a></li>
+<li><a href="1-6-more-case-studies.html#more-bat-poop"><span class="toc-section-number">1.6.3</span> More bat poop</a></li>
+<li><a href="1-6-more-case-studies.html#marten-isotopes"><span class="toc-section-number">1.6.4</span> Marten isotopes</a></li>
+<li><a href="1-6-more-case-studies.html#snake-diets"><span class="toc-section-number">1.6.5</span> Snake diets</a></li>
+<li><a href="1-6-more-case-studies.html#desert-bat-diets"><span class="toc-section-number">1.6.6</span> Desert bat diets</a></li>
+<li><a href="1-6-more-case-studies.html#desert-bat-diets-1"><span class="toc-section-number">1.6.7</span> Desert bat diets</a></li>
+<li><a href="1-6-more-case-studies.html#birds-eating-insects"><span class="toc-section-number">1.6.8</span> Birds eating insects</a></li>
+<li><a href="1-6-more-case-studies.html#diets-of-predatory-fish"><span class="toc-section-number">1.6.9</span> Diets of predatory fish</a></li>
+<li><a href="1-6-more-case-studies.html#cervical-spine-compression-and-mri-not-food-related"><span class="toc-section-number">1.6.10</span> Cervical spine compression and MRI (not food related)</a></li>
+<li><a href="1-6-more-case-studies.html#lots-of-other-datasets-here"><span class="toc-section-number">1.6.11</span> Lots of other datasets here:</a></li>
+</ul></li>
+<li><a href="1-7-related-books.html#related-books"><span class="toc-section-number">1.7</span> Related reading</a></li>
+</ul></li>
+<li><a href="2-insights-workflow.html#insights-workflow"><span class="toc-section-number">2</span> Insights Workflow</a></li>
+<li><a href="3-before-touching-rrstudio.html#before-touching-rrstudio"><span class="toc-section-number">3</span> Before touching R/RStudio</a></li>
+<li><a href="4-after-we-read-the-datafiles-into-r.html#after-we-read-the-datafiles-into-r"><span class="toc-section-number">4</span> After we read the datafile(s) into R:</a></li>
+<li><a href="5-after-data-tidying-and-cleaning.html#after-data-tidying-and-cleaning"><span class="toc-section-number">5</span> After data tidying and cleaning</a></li>
+<li><a href="6-additional-r.html#additional-r"><span class="toc-section-number">6</span> Additional R</a></li>
+<li><a href="7-additional-concepts.html#additional-concepts"><span class="toc-section-number">7</span> Additional concepts</a></li>
+<li class="has-sub"><a href="8-WFD-2.html#WFD-2"><span class="toc-section-number">8</span> Are diets more diverse in more democratic countries?</a><ul>
+<li><a href="8-1-about-this-case-study.html#about-this-case-study"><span class="toc-section-number">8.1</span> About this case study</a></li>
+<li><a href="8-2-introduction-to-the-study-and-data.html#introduction-to-the-study-and-data"><span class="toc-section-number">8.2</span> Introduction to the study and data</a></li>
+<li><a href="8-3-a-little-preparation.html#a-little-preparation"><span class="toc-section-number">8.3</span> A little preparation</a></li>
+<li class="has-sub"><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><span class="toc-section-number">8.4</span> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a><ul>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#data-origins-and-acquisition"><span class="toc-section-number">8.4.1</span> Data origins and acquisition</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#data-import"><span class="toc-section-number">8.4.2</span> Data import</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#tidy-and-clean"><span class="toc-section-number">8.4.3</span> Tidy and clean</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#deal-with-nas"><span class="toc-section-number">8.4.4</span> Deal with NAs</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#deal-with-innapropriate-duplicates"><span class="toc-section-number">8.4.5</span> Deal with innapropriate duplicates</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#check-ranges-of-numeric-variables"><span class="toc-section-number">8.4.6</span> Check ranges of numeric variables</a></li>
+</ul></li>
+<li><a href="8-5-first-insights-from-the-polity-data.html#first-insights-from-the-polity-data"><span class="toc-section-number">8.5</span> First insights from the polity data</a></li>
+<li class="has-sub"><a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#acquire-import-check-the-fao-food-balance-sheet-data"><span class="toc-section-number">8.6</span> Acquire, import, check the FAO Food balance sheet data</a><ul>
+<li><a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#tidying-FAO"><span class="toc-section-number">8.6.1</span> Tidy the FAO data</a></li>
+<li><a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#clean-the-fao-data"><span class="toc-section-number">8.6.2</span> Clean the FAO data</a></li>
+<li><a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#calculating-our-response-variables"><span class="toc-section-number">8.6.3</span> Calculating our response variables</a></li>
+</ul></li>
+<li><a href="8-7-merge-the-two-datasets.html#merge-the-two-datasets"><span class="toc-section-number">8.7</span> Merge the two datasets</a></li>
+<li><a href="8-8-tidying-up.html#tidying-up"><span class="toc-section-number">8.8</span> Tidying up</a></li>
+<li><a href="8-9-shapes.html#shapes"><span class="toc-section-number">8.9</span> Shapes</a></li>
+<li><a href="8-10-relationships.html#relationships"><span class="toc-section-number">8.10</span> Relationships</a></li>
+<li><a href="8-11-wrapping-up.html#wrapping-up"><span class="toc-section-number">8.11</span> Wrapping up</a></li>
+<li><a href="8-12-some-questions.html#some-questions"><span class="toc-section-number">8.12</span> Some questions</a></li>
+</ul></li>
+<li class="has-sub"><a href="9-WFD-3.html#WFD-3"><span class="toc-section-number">9</span> Are more diverse diets better?</a><ul>
+<li><a href="9-1-going-to-the-next-level.html#going-to-the-next-level"><span class="toc-section-number">9.1</span> Going to the next level</a></li>
+<li><a href="9-2-introduction-to-the-study-and-data-1.html#introduction-to-the-study-and-data-1"><span class="toc-section-number">9.2</span> Introduction to the study and data</a></li>
+<li><a href="9-3-what-type-of-response-variable.html#what-type-of-response-variable"><span class="toc-section-number">9.3</span> What type of response variable?</a></li>
+<li><a href="9-4-a-little-preparation-1.html#a-little-preparation-1"><span class="toc-section-number">9.4</span> A little preparation</a></li>
+<li><a href="9-5-acquire-the-dataset.html#acquire-the-dataset"><span class="toc-section-number">9.5</span> Acquire the dataset</a></li>
+<li><a href="9-6-import-the-dataset.html#import-the-dataset"><span class="toc-section-number">9.6</span> Import the dataset</a></li>
+<li><a href="9-7-checking-the-import-worked-correctly.html#checking-the-import-worked-correctly"><span class="toc-section-number">9.7</span> Checking the import worked correctly</a></li>
+<li class="has-sub"><a href="9-8-cleaning-and-tidying.html#cleaning-and-tidying"><span class="toc-section-number">9.8</span> Cleaning and tidying</a><ul>
+<li><a href="9-8-cleaning-and-tidying.html#recode-some-names"><span class="toc-section-number">9.8.1</span> Recode some names</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#make-the-prey_composition-variable-a-factor-with-specific-order"><span class="toc-section-number">9.8.2</span> Make the <code>prey_composition</code> variable a factor with specific order</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#fix-those-variable-names"><span class="toc-section-number">9.8.3</span> Fix those variable names</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#calculate-an-important-variable"><span class="toc-section-number">9.8.4</span> Calculate an important variable</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#remove-nas"><span class="toc-section-number">9.8.5</span> Remove NAs</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#checking-some-specifics"><span class="toc-section-number">9.8.6</span> Checking some specifics</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#a-closer-look-at-the-data"><span class="toc-section-number">9.8.7</span> A closer look at the data</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#calculate-the-three-response-variables"><span class="toc-section-number">9.8.8</span> Calculate the three response variables</a></li>
+</ul></li>
+<li><a href="9-9-shapes-1.html#shapes-1"><span class="toc-section-number">9.9</span> Shapes</a></li>
+<li class="has-sub"><a href="9-10-relationships-1.html#relationships-1"><span class="toc-section-number">9.10</span> Relationships</a><ul>
+<li><a href="9-10-relationships-1.html#maximum-predator-density"><span class="toc-section-number">9.10.1</span> Maximum predator density</a></li>
+<li><a href="9-10-relationships-1.html#predator-population-variability-cv"><span class="toc-section-number">9.10.2</span> Predator population variability (CV)</a></li>
+<li><a href="9-10-relationships-1.html#predator-persistence-time"><span class="toc-section-number">9.10.3</span> Predator persistence time</a></li>
+<li><a href="9-10-relationships-1.html#all-three-at-once"><span class="toc-section-number">9.10.4</span> All three at once</a></li>
+</ul></li>
+<li><a href="9-11-wrapping-up-1.html#wrapping-up-1"><span class="toc-section-number">9.11</span> Wrapping up</a></li>
+<li><a href="9-12-some-questions-1.html#some-questions-1"><span class="toc-section-number">9.12</span> Some questions</a></li>
+</ul></li>
+<li class="has-sub"><a href="10-WFD-4.html#WFD-4"><span class="toc-section-number">10</span> Effects of dietary restriction</a><ul>
+<li><a href="10-1-before-working-in-r.html#before-working-in-r"><span class="toc-section-number">10.1</span> Before working in R</a></li>
+<li class="has-sub"><a href="10-2-after-importing-the-data-into-r.html#after-importing-the-data-into-r"><span class="toc-section-number">10.2</span> After importing the data into R</a><ul>
+<li><a href="10-2-after-importing-the-data-into-r.html#checking-for-duplicates"><span class="toc-section-number">10.2.1</span> Checking for duplicates</a></li>
+<li><a href="10-2-after-importing-the-data-into-r.html#nas-variable-entries-e.g.levels-of-characters-ranges-of-numerics-numbers-of-things"><span class="toc-section-number">10.2.2</span> NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of “things”*</a></li>
+</ul></li>
+<li><a href="10-3-independence.html#independence"><span class="toc-section-number">10.3</span> Independence</a></li>
+<li><a href="10-4-balance-in-experimental-design.html#balance-in-experimental-design"><span class="toc-section-number">10.4</span> Balance in experimental design</a></li>
+<li class="has-sub"><a href="10-5-calculate-response-variables-if-required.html#calculate-response-variables-if-required"><span class="toc-section-number">10.5</span> Calculate response variable(s) (if required)</a><ul>
+<li><a href="10-5-calculate-response-variables-if-required.html#time-of-death"><span class="toc-section-number">10.5.1</span> Time of death</a></li>
+<li><a href="10-5-calculate-response-variables-if-required.html#change-in-length"><span class="toc-section-number">10.5.2</span> Change in length</a></li>
+<li><a href="10-5-calculate-response-variables-if-required.html#change-in-condition"><span class="toc-section-number">10.5.3</span> Change in condition</a></li>
+</ul></li>
+<li><a href="10-6-merge-all-datasets-together-and-check-for-correct-number-of-rows.html#merge-all-datasets-together-and-check-for-correct-number-of-rows"><span class="toc-section-number">10.6</span> Merge all datasets together and check for correct number of rows</a></li>
+<li><a href="10-7-super-sleuth-questions.html#super-sleuth-questions"><span class="toc-section-number">10.7</span> Super sleuth questions</a></li>
+<li><a href="10-8-inspect-shapes-distributions.html#inspect-shapes-distributions"><span class="toc-section-number">10.8</span> Inspect shapes (distributions)</a></li>
+<li><a href="10-9-inspect-relationships.html#inspect-relationships"><span class="toc-section-number">10.9</span> Inspect relationships</a></li>
+<li><a href="10-10-moatt-et-al-data-s1-mortality-data.html#moatt-et-al-data-s1-mortality-data"><span class="toc-section-number">10.10</span> Moatt et al Data S1 – Mortality Data</a></li>
+<li><a href="10-11-moatt-et-al-data-s5-courtship-data.html#moatt-et-al-data-s5-courtship-data"><span class="toc-section-number">10.11</span> Moatt et al Data S5 – Courtship Data</a></li>
+<li><a href="10-12-moatt-et-al-data-s6-eggs-data.html#moatt-et-al-data-s6-eggs-data"><span class="toc-section-number">10.12</span> Moatt et al Data S6 – Eggs Data</a></li>
+<li><a href="10-13-moatt-et-al-data-s15-length-weight-and-condition-index-data.html#moatt-et-al-data-s15-length-weight-and-condition-index-data"><span class="toc-section-number">10.13</span> Moatt et al Data S15 – Length, Weight and Condition Index Data</a></li>
+</ul></li>
+<li><a href="11-summing-up.html#summing-up"><span class="toc-section-number">11</span> Summing up</a></li>
+<li><a href="references.html#references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="relationships-1" class="section level2">
+<h2><span class="header-section-number">9.10</span> Relationships</h2>
+<p>Recall the question we’re interested in. Do predators have more stable populations when they have more prey to feed on. We expected this to be so if maximum predator population was greater, if predator population variability was lower, and if predator population persistence was longer when there were more prey available. For each of these we must look at the relationship between the response variable and prey richness (the explanatory variable). We can also look at prey composition as an explanatory variable, to see if there is much difference between effects of prey communities with same number of prey species, but different compositions of prey species.</p>
+<div id="maximum-predator-density" class="section level3">
+<h3><span class="header-section-number">9.10.1</span> Maximum predator density</h3>
+<p>Recall that we have one tibble <code>rr</code> with all three response variables. Clearly then, if we want to plot data about only maximum prey density we will need to filter the data according to <code>Response_type == &quot;max_dens</code>. We then do a pretty straightforward <code>ggplot</code> with <code>prey_richness</code> mapped onto the x-axis, the <code>Value</code> of maximum density mapped onto the y-axis, and then a <code>geom_jitter</code> with jitter only along the x-axis (<code>width</code>). Here’s the code, and the result is in Figure <a href="9-10-relationships-1.html#fig:microbe4-0">9.4</a>:</p>
+<div class="figure" style="text-align: center"><span id="fig:microbe4-0"></span>
+<img src="insights_website_files/figure-html/microbe4-0-1.png" alt="A not so useful graph due to the y-axis label being totally uninformative. Value of what?" width="100%" />
+<p class="caption">
+FIGURE 9.4: A not so useful graph due to the y-axis label being totally uninformative. Value of what?
+</p>
+</div>
+<p>There is a big problem with this. Our figure does not tell us what is on the y-axis (“Value” is not particularly informative!) We could fix this by changing the y-axis like this (no figure is presented for this code):</p>
+<pre class="sourceCode r"><code class="sourceCode r">rr <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Response_type <span class="op">==</span><span class="st"> &quot;max_dens&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> prey_richness, <span class="dt">y =</span> Value, <span class="dt">col =</span> prey_composition)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">height =</span> <span class="dv">0</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;max_dens&quot;</span>)</code></pre>
+<p>This is a bit dangerous, in fact, because we have to make sure we have <code>max_dens</code> written in two places. If we accidentally to write <code>max_dens</code> in the filter and <code>CV</code> in the <code>ylab</code> we will get no warning, no error, and have no idea we did anything wrong. We should spot the error if we carefully compare the graphs among the three different response variables, as there should be some inconsistencies (e.g. exactly the same data plotted in two, or two with different data but the same <code>ylab</code>).</p>
+<p>Let’s do the graph so we making this error is impossible. First we define an object (we name it <code>rv_oi</code> which is an abbreviation of “response variable of interest”) and assign to it the name of the response variable we want to graph (<code>max_dens</code> in this case):</p>
+<pre class="sourceCode r"><code class="sourceCode r">rv_oi &lt;-<span class="st"> &quot;max_dens&quot;</span></code></pre>
+<p>Then we use the same <code>ggplot</code> code as before, but with <code>rv_oi</code> in place of <code>&quot;max_dens&quot;</code> (the resulting graph is in Figure <a href="9-10-relationships-1.html#fig:microbe4-1">9.5</a>):</p>
+<div class="figure" style="text-align: center"><span id="fig:microbe4-1"></span>
+<img src="insights_website_files/figure-html/microbe4-1-1.png" alt="A reasonably nice graph of maximum predator density in a community against the number of prey available to the predator." width="100%" />
+<p class="caption">
+FIGURE 9.5: A reasonably nice graph of maximum predator density in a community against the number of prey available to the predator.
+</p>
+</div>
+<p>Super. We have a safe approach and a useful graph. Do you think there is strong evidence of higher maximum predator abundance at higher prey richness? Neither do we. Strike one.</p>
+<div class="reliability">
+<p>
+<strong>Plot the data points</strong> Note that we are plotting the data points, and not bars with error bars, or even box-and-whisker plots. There are few enough data points in this study that we experience no problems when we plot the data itself, rather than some summary of the data (e.g. the mean plus and minus the standard deviation). As a rule, always plot the data.
+</p>
+</div>
+<p>If we feel that we can’t so easily see the differences among prey compositions within the prey richness levels, we can make Figure <a href="9-10-relationships-1.html#fig:microbe4-2">9.6</a>, and flip the x and y-axis since the prey composition names then fit better:</p>
+<div class="figure" style="text-align: center"><span id="fig:microbe4-2"></span>
+<img src="insights_website_files/figure-html/microbe4-2-1.png" alt="This time maximum predator density plotted against prey composition, with prey composition on the y-axis as an easy method for having the tick-labels (prey composition) not overlap." width="100%" />
+<p class="caption">
+FIGURE 9.6: This time maximum predator density plotted against prey composition, with prey composition on the y-axis as an easy method for having the tick-labels (prey composition) not overlap.
+</p>
+</div>
+<p>Some things are a bit clearer. 1) The predator seems to like the prey <em>Colpidium</em> when alone more than either of the other two when alone. 2) Adding <em>Paramecium</em> into a mix with <em>Colpidium</em> gets rid of the beneficial nature of <em>Colpidium</em> (i.e. these two act non-additively). 3) There is huge variation in predator abundance when feeding on a mixture of <em>Colpdium</em> and <em>Collodictyon</em>. Overall, there are strong effects of prey composition, and they sometimes involve non-additive effects, but little evidence of increases in predator abundance with increases in prey richness. Let’s move on to the next response variable.</p>
+</div>
+<div id="predator-population-variability-cv" class="section level3">
+<h3><span class="header-section-number">9.10.2</span> Predator population variability (CV)</h3>
+<p>Making the graphs for CV is now a doddle. We just set <code>rv_oi = &quot;CV</code> and then run exactly the same code as before, resulting in Figure <a href="9-10-relationships-1.html#fig:microbe5-1">9.7</a>:</p>
+<pre><code>## Warning: Removed 6 rows containing missing values
+## (geom_point).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe5-1"></span>
+<img src="insights_website_files/figure-html/microbe5-1-1.png" alt="A quite informative graph of predator population variability (measured as the coefficient of variation--CV) in a community against the number of prey available to the predator." width="100%" />
+<p class="caption">
+FIGURE 9.7: A quite informative graph of predator population variability (measured as the coefficient of variation–CV) in a community against the number of prey available to the predator.
+</p>
+</div>
+<p>And Figure <a href="9-10-relationships-1.html#fig:microbe5-2">9.8</a>:</p>
+<pre><code>## Warning: Removed 6 rows containing missing values
+## (geom_point).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe5-2"></span>
+<img src="insights_website_files/figure-html/microbe5-2-1.png" alt="Predator population variability (CV) for each of the prey compositions. It would be nice to know from which jar the very low value for one of the *Collodictyon* replicate comes. We show how to do that next." width="100%" />
+<p class="caption">
+FIGURE 9.8: Predator population variability (CV) for each of the prey compositions. It would be nice to know from which jar the very low value for one of the <em>Collodictyon</em> replicate comes. We show how to do that next.
+</p>
+</div>
+<p>What do you think? Would you be confident stating that there was a negative relationship here, such that increases in prey richness cause decreases in predator population variability? Put another way, how much would you bet that in reality there is an effect? One problem here is that we have rather few data points, and quite a bit of variability even within prey compositions. Indeed, the amount of variability in the CV of the replicates of the <em>Collodictyon</em> prey composition is greater than all of the other data! In large part this is due to one very low CV <em>Collodictyon</em> replicate.</p>
+<p>Looking back at Figure <a href="9-8-cleaning-and-tidying.html#fig:microbe1">9.1</a>, can you guess which of the <em>Collodictyon</em> replicates resulted in this very low CV. It is replicate 5, the one with only two samples. But this raises a couple of important points:</p>
+<ol style="list-style-type: decimal">
+<li><p>How could be label data points in Figure <a href="9-10-relationships-1.html#fig:microbe5-2">9.8</a> and facets in Figure <a href="9-8-cleaning-and-tidying.html#fig:microbe1">9.1</a> with the jar identifier, so we can directly see the corresponding data?</p></li>
+<li><p>What if anything should we do about data points that seem rather extreme?</p></li>
+</ol>
+<p>Let’s deal with number 1 first. We can put on the jar number as a labels on the facets of <a href="9-8-cleaning-and-tidying.html#fig:microbe1">9.1</a> and beside the data points in Figure <a href="9-10-relationships-1.html#fig:microbe5-2">9.8</a>. Here’s the code for putting the jar numbers onto the facets. First we get a tibble with the <code>jar</code> number for each <code>prey_composition</code> and <code>replicate</code>, by selecting only those three columns and getting unique rows:</p>
+<pre class="sourceCode r"><code class="sourceCode r">jar_text &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(prey_composition, replicate, jar) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">unique</span>()</code></pre>
+<p>The resulting tibble has 35 rows, one for each jar (microcosm). Then we use the same code as before but with an extra <code>geom_text</code> in which we give the data to use <code>jar_text</code>, tell it the x and y positions for the label, and then give the aesthetic mappings <code>label = jar</code> (i.e. make the <code>label</code> aesthetic correspond to <code>jar</code>) and the aesthetic mapping <code>col = NULL</code> (so that the previously defined <code>col = species</code> mapping is not used). Here’s the code, and the resulting graph is in Figure <a href="9-10-relationships-1.html#fig:microbe1-1">9.9</a>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> day, <span class="dt">y =</span> <span class="kw">log10</span>(dens_per_ml), <span class="dt">col =</span> species)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_grid</span>(prey_composition <span class="op">~</span><span class="st"> </span>replicate) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">data =</span> jar_text, <span class="dt">x =</span> <span class="dv">18</span>, <span class="dt">y =</span> <span class="fl">3.5</span>, <span class="kw">aes</span>(<span class="dt">label =</span> jar, <span class="dt">col =</span> <span class="ot">NULL</span>))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe1-1"></span>
+<img src="insights_website_files/figure-html/microbe1-1-1.png" alt="Jar numbers added to the plot of population dynamics observed during the experiment." width="100%" />
+<p class="caption">
+FIGURE 9.9: Jar numbers added to the plot of population dynamics observed during the experiment.
+</p>
+</div>
+<p>Next we add points to the graph of the CV (Figure <a href="9-10-relationships-1.html#fig:microbe5-2">9.8</a>). First we need to remake the tibble containing the CVs, this time keeping the <code>jar</code> variable by adding it as a (albeit redundant) variable in the <code>group_by</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">pred_CV &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(species <span class="op">==</span><span class="st"> &quot;Dileptus&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(jar, prey_richness, prey_composition, replicate) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">CV =</span> <span class="kw">sd</span>(dens_per_ml) <span class="op">/</span><span class="st"> </span><span class="kw">mean</span>(dens_per_ml),
+            <span class="dt">all_zero =</span> <span class="kw">sum</span>(dens_per_ml <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)</code></pre>
+<div class="action">
+<p>
+Install the <strong>ggrepel</strong> add-on package. It moves labels on graphs so they don’t lie on top of each other, i.e. they repel each other.
+</p>
+</div>
+<p>Now we remake the CV figure with the jar numbers labeling the data points. We simply add a <code>geom_text_repel</code> with the <code>jar</code> numbers mapped onto the <code>label</code> aesthetic. Here’s the code, and the resulting graph is in Figure <a href="9-10-relationships-1.html#fig:microbe5-3">9.10</a>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggrepel)
+<span class="kw">ggplot</span>(pred_CV, <span class="kw">aes</span>(<span class="dt">x =</span> prey_composition, <span class="dt">y =</span> CV)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">height =</span> <span class="dv">0</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_text_repel</span>(<span class="kw">aes</span>(<span class="dt">label =</span> jar))</code></pre>
+<pre><code>## Warning: Removed 6 rows containing missing values
+## (geom_point).</code></pre>
+<pre><code>## Warning: Removed 6 rows containing missing values
+## (geom_text_repel).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe5-3"></span>
+<img src="insights_website_files/figure-html/microbe5-3-1.png" alt="Again the predator population variability data, but this time with jar numbers added as label by the data points." width="100%" />
+<p class="caption">
+FIGURE 9.10: Again the predator population variability data, but this time with jar numbers added as label by the data points.
+</p>
+</div>
+<p>Super. It’s extremely useful to be able to add labels to data point in graphs, so we can see which replicate, individual, site, etc., the data point corresponds to. This is especially useful when we see what appear to be rather extreme values, which bring us to the next general point—what can and should we do when we see what might be extreme values? Here is a checklist:</p>
+<ol style="list-style-type: decimal">
+<li><p>Use your best judgment about if a value seems extreme. If you’re in doubt, consider it extreme. Nothing we subsequently do will with these apparently extreme values will cause problems if we include some values as being extreme that other people might not.</p></li>
+<li><p>Check that each extreme value is not the result of an error. E.g. in data entry, or subsequent assumptions in calculations. If you ever meet us in person, ask us to tell you the badger testicle size story. It involves using -9999 as the missing value indicator, calculation of testicle volume that involved squaring the measured testicle width, and some apparently very well endowed badgers.</p></li>
+<li><p>Plot your graphs with and without the extreme values and see if this leads to you changing your opinion about the presence, absence, or nature of any patterns. If it seems that including or excluding them is important, well, that’s your answer. Your conclusions are not so robust.</p></li>
+<li><p>It’s beyond the scope of this book, but still worth mentioning that there are quantitative ways to assess if data points are extreme (also known as <em>outliers</em>) and if they affect quantitative conclusions (i.e. result of statistical analyses), but ultimately all include some element of subjectivity in their use and interpretation.</p></li>
+</ol>
+<p>While we’re on the subject of subjectivity and perception, we should think about whether flipping the axis does more than just make room for the prey composition labels. Does having the graph flipped change our perception of pattern (or lack thereof) in the data? Figure <a href="9-10-relationships-1.html#fig:microbe5-4">9.11</a>A and B. We (personally) tend to see more evidence of a negative relationship in panel B (with prey richness on the x-axis) but you might be different. We need to be careful to not exploit, or fall prey to, any such effects in the presentation of data. The data should, as far as possible, do all the talking.</p>
+<pre><code>## Warning: Removed 6 rows containing missing values
+## (geom_point).
+
+## Warning: Removed 6 rows containing missing values
+## (geom_point).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe5-4"></span>
+<img src="insights_website_files/figure-html/microbe5-4-1.png" alt="The same graph twice, but with the axis flipped between them. Do you think pattern is more apparent in one versus the other?" width="100%" />
+<p class="caption">
+FIGURE 9.11: The same graph twice, but with the axis flipped between them. Do you think pattern is more apparent in one versus the other?
+</p>
+</div>
+</div>
+<div id="predator-persistence-time" class="section level3">
+<h3><span class="header-section-number">9.10.3</span> Predator persistence time</h3>
+<p>Visualising predator persistence time (the last day on which a predator was observed) uses the same code as the previous two response variables, but with one tweek. We should differentiate in the visualisation data points that are and are not censored. One method is to make their data points have different shapes. That is, we map the shape aesthetic to the <code>censored</code> variable (the resulting graph is in Figure <a href="9-10-relationships-1.html#fig:microbe7-1">9.12</a>):</p>
+<pre><code>## Warning: Removed 6 rows containing missing values
+## (geom_point).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe7-1"></span>
+<img src="insights_website_files/figure-html/microbe7-1-1.png" alt="A reasonably nice graph of predator population persistence time against the number of prey available to the predator." width="100%" />
+<p class="caption">
+FIGURE 9.12: A reasonably nice graph of predator population persistence time against the number of prey available to the predator.
+</p>
+</div>
+<p>There is pretty strong evidence that more prey species available to a predator increases the time for which the predator population persists. With three prey species available, three of the persistence times were censored, and two of these were censored after 20 days—the longest of any population observed. There isn’t such a clear difference between persistence times between one and two prey communities.</p>
+<p>We also show, as before, the same data for each prey composition, again showing which observations of persistence time are censored (the resulting graph is in Figure <a href="9-10-relationships-1.html#fig:microbe7-2">9.13</a>):</p>
+<div class="figure" style="text-align: center"><span id="fig:microbe7-2"></span>
+<img src="insights_website_files/figure-html/microbe7-2-1.png" alt="Predator population persistence time for each of the prey compositions." width="100%" />
+<p class="caption">
+FIGURE 9.13: Predator population persistence time for each of the prey compositions.
+</p>
+</div>
+<p>Here we can see that one of the two prey species compositions (<em>Collodictyon</em> and <em>Paramecium</em>) results in predator persistence times as long as with three prey species. And that one of the one prey species composition (<em>Colpidium</em>) results in persistence times as long as some of the two prey species compositions. So there are quite strong compositional effects as well as the richness effect mentioned above.</p>
+<div class="efficiency">
+<p>
+Look at Figure <span class="citation">(<span class="citeproc-not-found" data-reference-id="ref"><strong>???</strong></span>)</span>(fig:microbe6-3) showing what happens if <code>prey_composition</code> is just a character variable and not an ordered factor. The ordering of the prey compositions is not quite as desirable.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:microbe6-3"></span>
+<img src="insights_website_files/figure-html/microbe6-3-1.png" alt="Notice how the prey compositions are ordered when we let R choose the order. This happens when we fail to specify ourselves what the order should be, by making the prey composition variable an ordered factor type variable." width="100%" />
+<p class="caption">
+FIGURE 9.14: Notice how the prey compositions are ordered when we let R choose the order. This happens when we fail to specify ourselves what the order should be, by making the prey composition variable an ordered factor type variable.
+</p>
+</div>
+</div>
+<div id="all-three-at-once" class="section level3">
+<h3><span class="header-section-number">9.10.4</span> All three at once</h3>
+<p>You might be wondering why we went to the lengths of putting all three response variables into one tibble and the having to filter in order to plot each of the three graphs. This was a bit of a faff. We could have just continued using the three separate tibbles we made. Here comes the answer, or at least here comes one answer. If we put all three response variables into the same tibble the we can plot all three graphs at the same time, in one ggplot with three facets (Figure <a href="9-10-relationships-1.html#fig:microbe8-1">9.15</a>):</p>
+<pre class="sourceCode r"><code class="sourceCode r">rr <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> prey_richness, <span class="dt">y =</span> Value, <span class="dt">col =</span> prey_composition)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">height =</span> <span class="dv">0</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>Response_type, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>)  <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;top&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">guides</span>(<span class="dt">colour =</span> <span class="kw">guide_legend</span>(<span class="dt">title.position =</span> <span class="st">&quot;top&quot;</span>,
+                               <span class="dt">nrow =</span> <span class="dv">3</span>,
+                               <span class="dt">position =</span> <span class="st">&quot;top&quot;</span>))</code></pre>
+<pre><code>## Warning: Removed 12 rows containing missing values
+## (geom_point).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe8-1"></span>
+<img src="insights_website_files/figure-html/microbe8-1-1.png" alt="All three reponse variables efficiently made in one call to ggplot with a facet for each variable, and some fiddling with the legend to get it at the top and not too wide." width="100%" />
+<p class="caption">
+FIGURE 9.15: All three reponse variables efficiently made in one call to ggplot with a facet for each variable, and some fiddling with the legend to get it at the top and not too wide.
+</p>
+</div>
+<p>How useful is it to be able to plot all response variables in one go like this? We’re not too sure. We now have the problem of how to show the censored data points in the <code>last_day_observed</code> data. We also see that the order of the facets is different from the order of the response variables presented in the text above. This would need changing for consistency (you can probably guess how we would do this… the same thing we did with the <code>prey_composition</code> variable). We’ll leave this for you to do. And also to make the version of this graph with <code>prey_composition</code> as the explanatory variable.</p>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="9-9-shapes-1.html"><button class="btn btn-default">Previous</button></a>
+<a href="9-11-wrapping-up-1.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

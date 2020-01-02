@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Chapter 11 Summing up | Insights from Data" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="To be completed" />
+
+
+<meta name="author" content="Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs" />
+
+<meta name="date" content="2020-01-02" />
+
+
+<meta name="description" content="To be completed">
+
+<title>Chapter 11 Summing up | Insights from Data</title>
+
+<script src="libs/jquery/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap/shim/respond.min.js"></script>
+<script src="libs/navigation/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#introduction"><span class="toc-section-number">1</span> Introduction</a><ul>
+<li><a href="1-1-introduction-1.html#introduction-1"><span class="toc-section-number">1.1</span> Introduction</a></li>
+<li><a href="1-2-workflowchecklist.html#workflowchecklist"><span class="toc-section-number">1.2</span> Workflow/checklist</a></li>
+<li><a href="1-3-r-project-setup.html#r-project-setup"><span class="toc-section-number">1.3</span> R-project setup</a></li>
+<li class="has-sub"><a href="1-4-for-instructors.html#for-instructors"><span class="toc-section-number">1.4</span> For instructors</a><ul>
+<li><a href="1-4-for-instructors.html#live-data-demo"><span class="toc-section-number">1.4.1</span> Live data analysis demonstration</a></li>
+</ul></li>
+<li><a href="1-5-datasets.html#datasets"><span class="toc-section-number">1.5</span> Datasets</a></li>
+<li class="has-sub"><a href="1-6-more-case-studies.html#more-case-studies"><span class="toc-section-number">1.6</span> More case studies</a><ul>
+<li><a href="1-6-more-case-studies.html#hungry-ladybirds"><span class="toc-section-number">1.6.1</span> Hungry ladybirds</a></li>
+<li><a href="1-6-more-case-studies.html#seal-suppers"><span class="toc-section-number">1.6.2</span> Seal suppers</a></li>
+<li><a href="1-6-more-case-studies.html#more-bat-poop"><span class="toc-section-number">1.6.3</span> More bat poop</a></li>
+<li><a href="1-6-more-case-studies.html#marten-isotopes"><span class="toc-section-number">1.6.4</span> Marten isotopes</a></li>
+<li><a href="1-6-more-case-studies.html#snake-diets"><span class="toc-section-number">1.6.5</span> Snake diets</a></li>
+<li><a href="1-6-more-case-studies.html#desert-bat-diets"><span class="toc-section-number">1.6.6</span> Desert bat diets</a></li>
+<li><a href="1-6-more-case-studies.html#desert-bat-diets-1"><span class="toc-section-number">1.6.7</span> Desert bat diets</a></li>
+<li><a href="1-6-more-case-studies.html#birds-eating-insects"><span class="toc-section-number">1.6.8</span> Birds eating insects</a></li>
+<li><a href="1-6-more-case-studies.html#diets-of-predatory-fish"><span class="toc-section-number">1.6.9</span> Diets of predatory fish</a></li>
+<li><a href="1-6-more-case-studies.html#cervical-spine-compression-and-mri-not-food-related"><span class="toc-section-number">1.6.10</span> Cervical spine compression and MRI (not food related)</a></li>
+<li><a href="1-6-more-case-studies.html#lots-of-other-datasets-here"><span class="toc-section-number">1.6.11</span> Lots of other datasets here:</a></li>
+</ul></li>
+<li><a href="1-7-related-books.html#related-books"><span class="toc-section-number">1.7</span> Related reading</a></li>
+</ul></li>
+<li><a href="2-insights-workflow.html#insights-workflow"><span class="toc-section-number">2</span> Insights Workflow</a></li>
+<li><a href="3-before-touching-rrstudio.html#before-touching-rrstudio"><span class="toc-section-number">3</span> Before touching R/RStudio</a></li>
+<li><a href="4-after-we-read-the-datafiles-into-r.html#after-we-read-the-datafiles-into-r"><span class="toc-section-number">4</span> After we read the datafile(s) into R:</a></li>
+<li><a href="5-after-data-tidying-and-cleaning.html#after-data-tidying-and-cleaning"><span class="toc-section-number">5</span> After data tidying and cleaning</a></li>
+<li><a href="6-additional-r.html#additional-r"><span class="toc-section-number">6</span> Additional R</a></li>
+<li><a href="7-additional-concepts.html#additional-concepts"><span class="toc-section-number">7</span> Additional concepts</a></li>
+<li class="has-sub"><a href="8-WFD-2.html#WFD-2"><span class="toc-section-number">8</span> Are diets more diverse in more democratic countries?</a><ul>
+<li><a href="8-1-about-this-case-study.html#about-this-case-study"><span class="toc-section-number">8.1</span> About this case study</a></li>
+<li><a href="8-2-introduction-to-the-study-and-data.html#introduction-to-the-study-and-data"><span class="toc-section-number">8.2</span> Introduction to the study and data</a></li>
+<li><a href="8-3-a-little-preparation.html#a-little-preparation"><span class="toc-section-number">8.3</span> A little preparation</a></li>
+<li class="has-sub"><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><span class="toc-section-number">8.4</span> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a><ul>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#data-origins-and-acquisition"><span class="toc-section-number">8.4.1</span> Data origins and acquisition</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#data-import"><span class="toc-section-number">8.4.2</span> Data import</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#tidy-and-clean"><span class="toc-section-number">8.4.3</span> Tidy and clean</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#deal-with-nas"><span class="toc-section-number">8.4.4</span> Deal with NAs</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#deal-with-innapropriate-duplicates"><span class="toc-section-number">8.4.5</span> Deal with innapropriate duplicates</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#check-ranges-of-numeric-variables"><span class="toc-section-number">8.4.6</span> Check ranges of numeric variables</a></li>
+</ul></li>
+<li><a href="8-5-first-insights-from-the-polity-data.html#first-insights-from-the-polity-data"><span class="toc-section-number">8.5</span> First insights from the polity data</a></li>
+<li class="has-sub"><a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#acquire-import-check-the-fao-food-balance-sheet-data"><span class="toc-section-number">8.6</span> Acquire, import, check the FAO Food balance sheet data</a><ul>
+<li><a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#tidying-FAO"><span class="toc-section-number">8.6.1</span> Tidy the FAO data</a></li>
+<li><a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#clean-the-fao-data"><span class="toc-section-number">8.6.2</span> Clean the FAO data</a></li>
+<li><a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#calculating-our-response-variables"><span class="toc-section-number">8.6.3</span> Calculating our response variables</a></li>
+</ul></li>
+<li><a href="8-7-merge-the-two-datasets.html#merge-the-two-datasets"><span class="toc-section-number">8.7</span> Merge the two datasets</a></li>
+<li><a href="8-8-tidying-up.html#tidying-up"><span class="toc-section-number">8.8</span> Tidying up</a></li>
+<li><a href="8-9-shapes.html#shapes"><span class="toc-section-number">8.9</span> Shapes</a></li>
+<li><a href="8-10-relationships.html#relationships"><span class="toc-section-number">8.10</span> Relationships</a></li>
+<li><a href="8-11-wrapping-up.html#wrapping-up"><span class="toc-section-number">8.11</span> Wrapping up</a></li>
+<li><a href="8-12-some-questions.html#some-questions"><span class="toc-section-number">8.12</span> Some questions</a></li>
+</ul></li>
+<li class="has-sub"><a href="9-WFD-3.html#WFD-3"><span class="toc-section-number">9</span> Are more diverse diets better?</a><ul>
+<li><a href="9-1-going-to-the-next-level.html#going-to-the-next-level"><span class="toc-section-number">9.1</span> Going to the next level</a></li>
+<li><a href="9-2-introduction-to-the-study-and-data-1.html#introduction-to-the-study-and-data-1"><span class="toc-section-number">9.2</span> Introduction to the study and data</a></li>
+<li><a href="9-3-what-type-of-response-variable.html#what-type-of-response-variable"><span class="toc-section-number">9.3</span> What type of response variable?</a></li>
+<li><a href="9-4-a-little-preparation-1.html#a-little-preparation-1"><span class="toc-section-number">9.4</span> A little preparation</a></li>
+<li><a href="9-5-acquire-the-dataset.html#acquire-the-dataset"><span class="toc-section-number">9.5</span> Acquire the dataset</a></li>
+<li><a href="9-6-import-the-dataset.html#import-the-dataset"><span class="toc-section-number">9.6</span> Import the dataset</a></li>
+<li><a href="9-7-checking-the-import-worked-correctly.html#checking-the-import-worked-correctly"><span class="toc-section-number">9.7</span> Checking the import worked correctly</a></li>
+<li class="has-sub"><a href="9-8-cleaning-and-tidying.html#cleaning-and-tidying"><span class="toc-section-number">9.8</span> Cleaning and tidying</a><ul>
+<li><a href="9-8-cleaning-and-tidying.html#recode-some-names"><span class="toc-section-number">9.8.1</span> Recode some names</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#make-the-prey_composition-variable-a-factor-with-specific-order"><span class="toc-section-number">9.8.2</span> Make the <code>prey_composition</code> variable a factor with specific order</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#fix-those-variable-names"><span class="toc-section-number">9.8.3</span> Fix those variable names</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#calculate-an-important-variable"><span class="toc-section-number">9.8.4</span> Calculate an important variable</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#remove-nas"><span class="toc-section-number">9.8.5</span> Remove NAs</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#checking-some-specifics"><span class="toc-section-number">9.8.6</span> Checking some specifics</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#a-closer-look-at-the-data"><span class="toc-section-number">9.8.7</span> A closer look at the data</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#calculate-the-three-response-variables"><span class="toc-section-number">9.8.8</span> Calculate the three response variables</a></li>
+</ul></li>
+<li><a href="9-9-shapes-1.html#shapes-1"><span class="toc-section-number">9.9</span> Shapes</a></li>
+<li class="has-sub"><a href="9-10-relationships-1.html#relationships-1"><span class="toc-section-number">9.10</span> Relationships</a><ul>
+<li><a href="9-10-relationships-1.html#maximum-predator-density"><span class="toc-section-number">9.10.1</span> Maximum predator density</a></li>
+<li><a href="9-10-relationships-1.html#predator-population-variability-cv"><span class="toc-section-number">9.10.2</span> Predator population variability (CV)</a></li>
+<li><a href="9-10-relationships-1.html#predator-persistence-time"><span class="toc-section-number">9.10.3</span> Predator persistence time</a></li>
+<li><a href="9-10-relationships-1.html#all-three-at-once"><span class="toc-section-number">9.10.4</span> All three at once</a></li>
+</ul></li>
+<li><a href="9-11-wrapping-up-1.html#wrapping-up-1"><span class="toc-section-number">9.11</span> Wrapping up</a></li>
+<li><a href="9-12-some-questions-1.html#some-questions-1"><span class="toc-section-number">9.12</span> Some questions</a></li>
+</ul></li>
+<li class="has-sub"><a href="10-WFD-4.html#WFD-4"><span class="toc-section-number">10</span> Effects of dietary restriction</a><ul>
+<li><a href="10-1-before-working-in-r.html#before-working-in-r"><span class="toc-section-number">10.1</span> Before working in R</a></li>
+<li class="has-sub"><a href="10-2-after-importing-the-data-into-r.html#after-importing-the-data-into-r"><span class="toc-section-number">10.2</span> After importing the data into R</a><ul>
+<li><a href="10-2-after-importing-the-data-into-r.html#checking-for-duplicates"><span class="toc-section-number">10.2.1</span> Checking for duplicates</a></li>
+<li><a href="10-2-after-importing-the-data-into-r.html#nas-variable-entries-e.g.levels-of-characters-ranges-of-numerics-numbers-of-things"><span class="toc-section-number">10.2.2</span> NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of “things”*</a></li>
+</ul></li>
+<li><a href="10-3-independence.html#independence"><span class="toc-section-number">10.3</span> Independence</a></li>
+<li><a href="10-4-balance-in-experimental-design.html#balance-in-experimental-design"><span class="toc-section-number">10.4</span> Balance in experimental design</a></li>
+<li class="has-sub"><a href="10-5-calculate-response-variables-if-required.html#calculate-response-variables-if-required"><span class="toc-section-number">10.5</span> Calculate response variable(s) (if required)</a><ul>
+<li><a href="10-5-calculate-response-variables-if-required.html#time-of-death"><span class="toc-section-number">10.5.1</span> Time of death</a></li>
+<li><a href="10-5-calculate-response-variables-if-required.html#change-in-length"><span class="toc-section-number">10.5.2</span> Change in length</a></li>
+<li><a href="10-5-calculate-response-variables-if-required.html#change-in-condition"><span class="toc-section-number">10.5.3</span> Change in condition</a></li>
+</ul></li>
+<li><a href="10-6-merge-all-datasets-together-and-check-for-correct-number-of-rows.html#merge-all-datasets-together-and-check-for-correct-number-of-rows"><span class="toc-section-number">10.6</span> Merge all datasets together and check for correct number of rows</a></li>
+<li><a href="10-7-super-sleuth-questions.html#super-sleuth-questions"><span class="toc-section-number">10.7</span> Super sleuth questions</a></li>
+<li><a href="10-8-inspect-shapes-distributions.html#inspect-shapes-distributions"><span class="toc-section-number">10.8</span> Inspect shapes (distributions)</a></li>
+<li><a href="10-9-inspect-relationships.html#inspect-relationships"><span class="toc-section-number">10.9</span> Inspect relationships</a></li>
+<li><a href="10-10-moatt-et-al-data-s1-mortality-data.html#moatt-et-al-data-s1-mortality-data"><span class="toc-section-number">10.10</span> Moatt et al Data S1 – Mortality Data</a></li>
+<li><a href="10-11-moatt-et-al-data-s5-courtship-data.html#moatt-et-al-data-s5-courtship-data"><span class="toc-section-number">10.11</span> Moatt et al Data S5 – Courtship Data</a></li>
+<li><a href="10-12-moatt-et-al-data-s6-eggs-data.html#moatt-et-al-data-s6-eggs-data"><span class="toc-section-number">10.12</span> Moatt et al Data S6 – Eggs Data</a></li>
+<li><a href="10-13-moatt-et-al-data-s15-length-weight-and-condition-index-data.html#moatt-et-al-data-s15-length-weight-and-condition-index-data"><span class="toc-section-number">10.13</span> Moatt et al Data S15 – Length, Weight and Condition Index Data</a></li>
+</ul></li>
+<li><a href="11-summing-up.html#summing-up"><span class="toc-section-number">11</span> Summing up</a></li>
+<li><a href="references.html#references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="summing-up" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Summing up</h1>
+</div>
+<p style="text-align: center;">
+<a href="10-13-moatt-et-al-data-s15-length-weight-and-condition-index-data.html"><button class="btn btn-default">Previous</button></a>
+<a href="references.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

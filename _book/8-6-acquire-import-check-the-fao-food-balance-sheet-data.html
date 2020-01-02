@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="8.6 Acquire, import, check the FAO Food balance sheet data | Insights from Data" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="To be completed" />
+
+
+<meta name="author" content="Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs" />
+
+<meta name="date" content="2020-01-02" />
+
+
+<meta name="description" content="To be completed">
+
+<title>8.6 Acquire, import, check the FAO Food balance sheet data | Insights from Data</title>
+
+<script src="libs/jquery/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap/shim/respond.min.js"></script>
+<script src="libs/navigation/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#introduction"><span class="toc-section-number">1</span> Introduction</a><ul>
+<li><a href="1-1-introduction-1.html#introduction-1"><span class="toc-section-number">1.1</span> Introduction</a></li>
+<li><a href="1-2-workflowchecklist.html#workflowchecklist"><span class="toc-section-number">1.2</span> Workflow/checklist</a></li>
+<li><a href="1-3-r-project-setup.html#r-project-setup"><span class="toc-section-number">1.3</span> R-project setup</a></li>
+<li class="has-sub"><a href="1-4-for-instructors.html#for-instructors"><span class="toc-section-number">1.4</span> For instructors</a><ul>
+<li><a href="1-4-for-instructors.html#live-data-demo"><span class="toc-section-number">1.4.1</span> Live data analysis demonstration</a></li>
+</ul></li>
+<li><a href="1-5-datasets.html#datasets"><span class="toc-section-number">1.5</span> Datasets</a></li>
+<li class="has-sub"><a href="1-6-more-case-studies.html#more-case-studies"><span class="toc-section-number">1.6</span> More case studies</a><ul>
+<li><a href="1-6-more-case-studies.html#hungry-ladybirds"><span class="toc-section-number">1.6.1</span> Hungry ladybirds</a></li>
+<li><a href="1-6-more-case-studies.html#seal-suppers"><span class="toc-section-number">1.6.2</span> Seal suppers</a></li>
+<li><a href="1-6-more-case-studies.html#more-bat-poop"><span class="toc-section-number">1.6.3</span> More bat poop</a></li>
+<li><a href="1-6-more-case-studies.html#marten-isotopes"><span class="toc-section-number">1.6.4</span> Marten isotopes</a></li>
+<li><a href="1-6-more-case-studies.html#snake-diets"><span class="toc-section-number">1.6.5</span> Snake diets</a></li>
+<li><a href="1-6-more-case-studies.html#desert-bat-diets"><span class="toc-section-number">1.6.6</span> Desert bat diets</a></li>
+<li><a href="1-6-more-case-studies.html#desert-bat-diets-1"><span class="toc-section-number">1.6.7</span> Desert bat diets</a></li>
+<li><a href="1-6-more-case-studies.html#birds-eating-insects"><span class="toc-section-number">1.6.8</span> Birds eating insects</a></li>
+<li><a href="1-6-more-case-studies.html#diets-of-predatory-fish"><span class="toc-section-number">1.6.9</span> Diets of predatory fish</a></li>
+<li><a href="1-6-more-case-studies.html#cervical-spine-compression-and-mri-not-food-related"><span class="toc-section-number">1.6.10</span> Cervical spine compression and MRI (not food related)</a></li>
+<li><a href="1-6-more-case-studies.html#lots-of-other-datasets-here"><span class="toc-section-number">1.6.11</span> Lots of other datasets here:</a></li>
+</ul></li>
+<li><a href="1-7-related-books.html#related-books"><span class="toc-section-number">1.7</span> Related reading</a></li>
+</ul></li>
+<li><a href="2-insights-workflow.html#insights-workflow"><span class="toc-section-number">2</span> Insights Workflow</a></li>
+<li><a href="3-before-touching-rrstudio.html#before-touching-rrstudio"><span class="toc-section-number">3</span> Before touching R/RStudio</a></li>
+<li><a href="4-after-we-read-the-datafiles-into-r.html#after-we-read-the-datafiles-into-r"><span class="toc-section-number">4</span> After we read the datafile(s) into R:</a></li>
+<li><a href="5-after-data-tidying-and-cleaning.html#after-data-tidying-and-cleaning"><span class="toc-section-number">5</span> After data tidying and cleaning</a></li>
+<li><a href="6-additional-r.html#additional-r"><span class="toc-section-number">6</span> Additional R</a></li>
+<li><a href="7-additional-concepts.html#additional-concepts"><span class="toc-section-number">7</span> Additional concepts</a></li>
+<li class="has-sub"><a href="8-WFD-2.html#WFD-2"><span class="toc-section-number">8</span> Are diets more diverse in more democratic countries?</a><ul>
+<li><a href="8-1-about-this-case-study.html#about-this-case-study"><span class="toc-section-number">8.1</span> About this case study</a></li>
+<li><a href="8-2-introduction-to-the-study-and-data.html#introduction-to-the-study-and-data"><span class="toc-section-number">8.2</span> Introduction to the study and data</a></li>
+<li><a href="8-3-a-little-preparation.html#a-little-preparation"><span class="toc-section-number">8.3</span> A little preparation</a></li>
+<li class="has-sub"><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><span class="toc-section-number">8.4</span> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a><ul>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#data-origins-and-acquisition"><span class="toc-section-number">8.4.1</span> Data origins and acquisition</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#data-import"><span class="toc-section-number">8.4.2</span> Data import</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#tidy-and-clean"><span class="toc-section-number">8.4.3</span> Tidy and clean</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#deal-with-nas"><span class="toc-section-number">8.4.4</span> Deal with NAs</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#deal-with-innapropriate-duplicates"><span class="toc-section-number">8.4.5</span> Deal with innapropriate duplicates</a></li>
+<li><a href="8-4-polity-data-origins-acquire-import-clean-tidy-nas-duplicates.html#check-ranges-of-numeric-variables"><span class="toc-section-number">8.4.6</span> Check ranges of numeric variables</a></li>
+</ul></li>
+<li><a href="8-5-first-insights-from-the-polity-data.html#first-insights-from-the-polity-data"><span class="toc-section-number">8.5</span> First insights from the polity data</a></li>
+<li class="has-sub"><a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#acquire-import-check-the-fao-food-balance-sheet-data"><span class="toc-section-number">8.6</span> Acquire, import, check the FAO Food balance sheet data</a><ul>
+<li><a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#tidying-FAO"><span class="toc-section-number">8.6.1</span> Tidy the FAO data</a></li>
+<li><a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#clean-the-fao-data"><span class="toc-section-number">8.6.2</span> Clean the FAO data</a></li>
+<li><a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#calculating-our-response-variables"><span class="toc-section-number">8.6.3</span> Calculating our response variables</a></li>
+</ul></li>
+<li><a href="8-7-merge-the-two-datasets.html#merge-the-two-datasets"><span class="toc-section-number">8.7</span> Merge the two datasets</a></li>
+<li><a href="8-8-tidying-up.html#tidying-up"><span class="toc-section-number">8.8</span> Tidying up</a></li>
+<li><a href="8-9-shapes.html#shapes"><span class="toc-section-number">8.9</span> Shapes</a></li>
+<li><a href="8-10-relationships.html#relationships"><span class="toc-section-number">8.10</span> Relationships</a></li>
+<li><a href="8-11-wrapping-up.html#wrapping-up"><span class="toc-section-number">8.11</span> Wrapping up</a></li>
+<li><a href="8-12-some-questions.html#some-questions"><span class="toc-section-number">8.12</span> Some questions</a></li>
+</ul></li>
+<li class="has-sub"><a href="9-WFD-3.html#WFD-3"><span class="toc-section-number">9</span> Are more diverse diets better?</a><ul>
+<li><a href="9-1-going-to-the-next-level.html#going-to-the-next-level"><span class="toc-section-number">9.1</span> Going to the next level</a></li>
+<li><a href="9-2-introduction-to-the-study-and-data-1.html#introduction-to-the-study-and-data-1"><span class="toc-section-number">9.2</span> Introduction to the study and data</a></li>
+<li><a href="9-3-what-type-of-response-variable.html#what-type-of-response-variable"><span class="toc-section-number">9.3</span> What type of response variable?</a></li>
+<li><a href="9-4-a-little-preparation-1.html#a-little-preparation-1"><span class="toc-section-number">9.4</span> A little preparation</a></li>
+<li><a href="9-5-acquire-the-dataset.html#acquire-the-dataset"><span class="toc-section-number">9.5</span> Acquire the dataset</a></li>
+<li><a href="9-6-import-the-dataset.html#import-the-dataset"><span class="toc-section-number">9.6</span> Import the dataset</a></li>
+<li><a href="9-7-checking-the-import-worked-correctly.html#checking-the-import-worked-correctly"><span class="toc-section-number">9.7</span> Checking the import worked correctly</a></li>
+<li class="has-sub"><a href="9-8-cleaning-and-tidying.html#cleaning-and-tidying"><span class="toc-section-number">9.8</span> Cleaning and tidying</a><ul>
+<li><a href="9-8-cleaning-and-tidying.html#recode-some-names"><span class="toc-section-number">9.8.1</span> Recode some names</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#make-the-prey_composition-variable-a-factor-with-specific-order"><span class="toc-section-number">9.8.2</span> Make the <code>prey_composition</code> variable a factor with specific order</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#fix-those-variable-names"><span class="toc-section-number">9.8.3</span> Fix those variable names</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#calculate-an-important-variable"><span class="toc-section-number">9.8.4</span> Calculate an important variable</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#remove-nas"><span class="toc-section-number">9.8.5</span> Remove NAs</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#checking-some-specifics"><span class="toc-section-number">9.8.6</span> Checking some specifics</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#a-closer-look-at-the-data"><span class="toc-section-number">9.8.7</span> A closer look at the data</a></li>
+<li><a href="9-8-cleaning-and-tidying.html#calculate-the-three-response-variables"><span class="toc-section-number">9.8.8</span> Calculate the three response variables</a></li>
+</ul></li>
+<li><a href="9-9-shapes-1.html#shapes-1"><span class="toc-section-number">9.9</span> Shapes</a></li>
+<li class="has-sub"><a href="9-10-relationships-1.html#relationships-1"><span class="toc-section-number">9.10</span> Relationships</a><ul>
+<li><a href="9-10-relationships-1.html#maximum-predator-density"><span class="toc-section-number">9.10.1</span> Maximum predator density</a></li>
+<li><a href="9-10-relationships-1.html#predator-population-variability-cv"><span class="toc-section-number">9.10.2</span> Predator population variability (CV)</a></li>
+<li><a href="9-10-relationships-1.html#predator-persistence-time"><span class="toc-section-number">9.10.3</span> Predator persistence time</a></li>
+<li><a href="9-10-relationships-1.html#all-three-at-once"><span class="toc-section-number">9.10.4</span> All three at once</a></li>
+</ul></li>
+<li><a href="9-11-wrapping-up-1.html#wrapping-up-1"><span class="toc-section-number">9.11</span> Wrapping up</a></li>
+<li><a href="9-12-some-questions-1.html#some-questions-1"><span class="toc-section-number">9.12</span> Some questions</a></li>
+</ul></li>
+<li class="has-sub"><a href="10-WFD-4.html#WFD-4"><span class="toc-section-number">10</span> Effects of dietary restriction</a><ul>
+<li><a href="10-1-before-working-in-r.html#before-working-in-r"><span class="toc-section-number">10.1</span> Before working in R</a></li>
+<li class="has-sub"><a href="10-2-after-importing-the-data-into-r.html#after-importing-the-data-into-r"><span class="toc-section-number">10.2</span> After importing the data into R</a><ul>
+<li><a href="10-2-after-importing-the-data-into-r.html#checking-for-duplicates"><span class="toc-section-number">10.2.1</span> Checking for duplicates</a></li>
+<li><a href="10-2-after-importing-the-data-into-r.html#nas-variable-entries-e.g.levels-of-characters-ranges-of-numerics-numbers-of-things"><span class="toc-section-number">10.2.2</span> NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of “things”*</a></li>
+</ul></li>
+<li><a href="10-3-independence.html#independence"><span class="toc-section-number">10.3</span> Independence</a></li>
+<li><a href="10-4-balance-in-experimental-design.html#balance-in-experimental-design"><span class="toc-section-number">10.4</span> Balance in experimental design</a></li>
+<li class="has-sub"><a href="10-5-calculate-response-variables-if-required.html#calculate-response-variables-if-required"><span class="toc-section-number">10.5</span> Calculate response variable(s) (if required)</a><ul>
+<li><a href="10-5-calculate-response-variables-if-required.html#time-of-death"><span class="toc-section-number">10.5.1</span> Time of death</a></li>
+<li><a href="10-5-calculate-response-variables-if-required.html#change-in-length"><span class="toc-section-number">10.5.2</span> Change in length</a></li>
+<li><a href="10-5-calculate-response-variables-if-required.html#change-in-condition"><span class="toc-section-number">10.5.3</span> Change in condition</a></li>
+</ul></li>
+<li><a href="10-6-merge-all-datasets-together-and-check-for-correct-number-of-rows.html#merge-all-datasets-together-and-check-for-correct-number-of-rows"><span class="toc-section-number">10.6</span> Merge all datasets together and check for correct number of rows</a></li>
+<li><a href="10-7-super-sleuth-questions.html#super-sleuth-questions"><span class="toc-section-number">10.7</span> Super sleuth questions</a></li>
+<li><a href="10-8-inspect-shapes-distributions.html#inspect-shapes-distributions"><span class="toc-section-number">10.8</span> Inspect shapes (distributions)</a></li>
+<li><a href="10-9-inspect-relationships.html#inspect-relationships"><span class="toc-section-number">10.9</span> Inspect relationships</a></li>
+<li><a href="10-10-moatt-et-al-data-s1-mortality-data.html#moatt-et-al-data-s1-mortality-data"><span class="toc-section-number">10.10</span> Moatt et al Data S1 – Mortality Data</a></li>
+<li><a href="10-11-moatt-et-al-data-s5-courtship-data.html#moatt-et-al-data-s5-courtship-data"><span class="toc-section-number">10.11</span> Moatt et al Data S5 – Courtship Data</a></li>
+<li><a href="10-12-moatt-et-al-data-s6-eggs-data.html#moatt-et-al-data-s6-eggs-data"><span class="toc-section-number">10.12</span> Moatt et al Data S6 – Eggs Data</a></li>
+<li><a href="10-13-moatt-et-al-data-s15-length-weight-and-condition-index-data.html#moatt-et-al-data-s15-length-weight-and-condition-index-data"><span class="toc-section-number">10.13</span> Moatt et al Data S15 – Length, Weight and Condition Index Data</a></li>
+</ul></li>
+<li><a href="11-summing-up.html#summing-up"><span class="toc-section-number">11</span> Summing up</a></li>
+<li><a href="references.html#references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="acquire-import-check-the-fao-food-balance-sheet-data" class="section level2">
+<h2><span class="header-section-number">8.6</span> Acquire, import, check the FAO Food balance sheet data</h2>
+<p>This data shows, for various <em>Areas</em> in the world, such as countries and continents, the annual supply and use of various food <em>Items</em> such as “Wheat and products”, “Honey”, and “Crustaceans”. Supply and use includes what are called <em>Elements</em> of the food supply equation; elements such as “Production”, Import Quantity“, and”Food supply quantity (kg/capita/yr)&quot;. The words <em>Area</em>, <em>Item</em>, and <em>Element</em> are emphasised because they are variables in the dataset, as described further below. There is a lot of important information about this data available on the <a href="http://www.fao.org/faostat/en/#data/FBS/metadata">FAO Food Balance Sheet Metadata</a> web page web page. And even more in the <a href="http://www.fao.org/economic/ess/fbs/ess-fbs02/en/">Food Balance Sheet Methodology Handbook</a>.</p>
+<p>The full dataset is about 210MB and can be downloaded from the FAO web page. Importing this takes about 4 seconds on a reasonably fast laptop. As you will see below, we will make a smaller dataset (about 15MB) and save it, so we don’t have to work with the full dataset.</p>
+<p>The full dataset has 238,560 rows and 113 variables. The first nine variables are:</p>
+<ul>
+<li><strong>Area.code</strong> - A numeric variable containing number codes for the <em>Area</em> variable.</li>
+<li><strong>Area</strong> - A character variable containing the geographic area that a row is about, for example, a country name or a continent name.</li>
+<li><strong>Item.code</strong> - A numeric variable containing number codes for the food items in the <em>Item</em> variable.</li>
+<li><strong>Item</strong> - A character variable containing the food item a row is about.</li>
+<li><strong>Element.code</strong> - A numeric variable contains number codes for the <em>Element</em> variable.</li>
+<li><strong>Element</strong> - A character variable showing the particular supply or utlilisation element a row is about. These are the elements of the food balance equation.</li>
+<li><strong>Unit</strong> - The units of measure of the quantity in the row.</li>
+<li><strong>Y1961</strong> - A numeric variable giving the quantity in year 1961</li>
+<li><strong>Y1961F</strong> - A character variable giving information about the data (F is for Flag), such as “Official data”, “FAO data”, etc.</li>
+</ul>
+<p>The <em>Definitions and standard button</em> on this web page <a href="http://www.fao.org/faostat/en/#data/FBS/metadata" class="uri">http://www.fao.org/faostat/en/#data/FBS/metadata</a> leads to much much more information about the variables and entries.</p>
+<p>You could get the FAO food balance data from the <a href="http://www.fao.org/faostat/en/#data/FBS/metadata">FAO website</a>. The datafile you would get is called <code>FoodBalanceSheets_E_All_Data.csv</code> and is 206MB, i.e. it is quite big. We need, however, only a small amount of the information in this dataset. So to make things easier for ourselves and for you, we created a smaller dataset containing only the data we need, and saved it as an <code>Rdata</code> file. This file type fits more data into a smaller space—the resulting file <code>FoodBalanceSheets_E_All_Data_reduced.Rdata</code> is 1.9MB. We put this smaller data file on the <a href="insightsfromdata.io">Insights Website</a>, so if you don’t want to make it yourself, please get it from there.</p>
+<p>If you do want to go through this process, feel free to use the code immediately below, otherwise skip over this. It’s pretty straightforward, apart from two things. First, we give the <code>read_csv</code> an argument you didn’t previously see: <code>encoding</code>. This helps <code>read_csv</code> properly recognise otherwise problematic symbols. In this case, it ensure that country names such as <em>Côte d’Ivoire</em> don’t cause problems (the ô can do so). Second, the penultimate line saves the produced tibble <code>ff</code> to a <code>Rdata</code> type of data file; though even that new type of instruction should be quite transparent to you by now.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## Get the full food balance sheet dataset *All data* from the FAO website:</span>
+<span class="co">## http://www.fao.org/faostat/en/#data/FBS/metadata.</span>
+<span class="co">## Reduce the size of the FAO data, so easier to deal with</span>
+<span class="co">## import FAO data</span>
+ff &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/FoodBalanceSheets_E_All_Data.csv&quot;</span>,
+               <span class="dt">locale =</span> <span class="kw">locale</span>(<span class="dt">encoding =</span> <span class="st">&#39;ISO-8859-1&#39;</span>))
+<span class="co">## First fix some variable names:</span>
+<span class="kw">names</span>(ff) &lt;-<span class="st"> </span><span class="kw">str_replace_all</span>(<span class="kw">names</span>(ff), <span class="kw">c</span>(<span class="st">&quot; &quot;</span> =<span class="st"> &quot;_&quot;</span>))
+<span class="co">## Remove all non-countries</span>
+ff &lt;-<span class="st"> </span><span class="kw">filter</span>(ff, Country_Code <span class="op">&lt;</span><span class="st"> </span><span class="dv">5000</span>)
+<span class="co">## keep only some of the elements</span>
+ff &lt;-<span class="st"> </span><span class="kw">filter</span>(ff, Element <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Food supply quantity (kg/capita/yr)&quot;</span>))
+<span class="co">## remove some other variables that won&#39;t be used</span>
+ff &lt;-<span class="st"> </span><span class="kw">select</span>(ff, <span class="op">-</span>Country_Code, <span class="op">-</span>Item_Code,
+             <span class="op">-</span>Element_Code, <span class="op">-</span>Element, <span class="op">-</span>Unit,
+             <span class="op">-</span><span class="kw">ends_with</span>(<span class="st">&quot;F&quot;</span>))
+<span class="co">## save the reduced file</span>
+<span class="kw">saveRDS</span>(ff, <span class="st">&quot;data/FoodBalanceSheets_E_All_Data_reduced.Rdata&quot;</span>)
+<span class="kw">rm</span>(ff)</code></pre>
+<p>The next line reads in that smaller dataset:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#rm(list = ls())</span>
+fbs &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/FoodBalanceSheets_E_All_Data_reduced.Rdata&quot;</span>)</code></pre>
+<p>Feel free to have a look at the whole dataset with the <code>skim</code> function. We <code>select</code> a few columns first, as otherwise the output is rather long due to there being 112 variables in the dataset.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#select(fbs, Country, Item, Y1961, Y1971, Y1981, Y1991, Y2001, Y2011) %&gt;%</span>
+<span class="co">#  skim()</span></code></pre>
+<p>There are 17’953 observations/rows in the tibble. There are 182 countries, so 11 fewer than in the Polity data. We will later check which ones are not in the Polity data, and if any in the Polity data are not in the FAO data. There are 114 food <code>Items</code>… wow, that’s a lot of different types of food! Take a look at some of the values… it’s quite interesting to see what’s recorded. Both the <code>Country</code> variable and the <code>Item</code> variable are characters type variables as expected. If the data contained every possible combination of country and item we would expect 182 * 114 = 20’748 observations. That there are only 17’953 tells us that some combinations are missing. We will find out which these are.</p>
+<p>The six year variables are, as expected numeric—they are amounts of food available (food supply quantities in kg per capita per year). We see there are quite a lot of missing values in the earlier years, and fewer in the later years. This might be expected if development of methods and adoption of them becomes more complete through time.</p>
+<div id="tidying-FAO" class="section level3">
+<h3><span class="header-section-number">8.6.1</span> Tidy the FAO data</h3>
+<p>The FAO data is not tidy. You should be able to figure out in what respect it is “dirty”. Yes, the same information is spread across multiple columns/variables, such that there are multiple observations in each row. More specifically, the data for each year is in a separate column—data for different years are spread across columns—each row contains lots of observations each from a different year.</p>
+<p>Before we make the data tidy, let’s try to figure out how many rows it should have when tidy. We will gather all the information that is currently spread across columns and put it in one column. A visualisation of a simplified version of the dataset is in Figure <a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#fig:long-wide">7.1</a>. The answer is the amount of information that’s in the columns that we want to gather into a single column. In the untidy/wide data there are 55 variables containing the data we wish to gather (because we are not gathering the information from <code>Country</code> or <code>Item</code>). Each of those variables has 17,953 rows, so we expect the long/tidy data to have 55 * 17,953 = 987,415 rows.</p>
+<div class="figure" style="text-align: center"><span id="fig:long-wide"></span>
+<img src="images/long_wide.jpg" alt="The same data (a) in long/tidy format and (b) in wide format, with colours and arrows linking the same data in the two different formats." width="100%" />
+<p class="caption">
+FIGURE 7.1: The same data (a) in long/tidy format and (b) in wide format, with colours and arrows linking the same data in the two different formats.
+</p>
+</div>
+<p>Let’s now make the data tidy, and clean up the year variable. We first gather all the same data from columns three through 57 (<code>3:57</code>) into a new variable called <code>Food_Supply_Quantity</code> and put the information about which year each observation belongs to in a new variable called <code>Year</code>. Because the column names begin with Y (e.g. <code>Y1961</code>) we then need to keep only the 2nd through to 5th character in the <code>Year</code> variable (using the <code>substr</code> function), and convert the result to a numeric type variable (with the <code>as.numeric</code> function), doing all this within a <code>mutate</code> in order to replace the old year variable with the converted one. Let’s then take a look at the data with <code>skim</code>. Here’s the code for all that:</p>
+<pre class="sourceCode r"><code class="sourceCode r">fbs_long &lt;-<span class="st"> </span>fbs <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">gather</span>(<span class="dt">key =</span> Year, <span class="dt">value =</span> Food_Supply_Quantity, <span class="dv">3</span><span class="op">:</span><span class="dv">57</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Year =</span> <span class="kw">as.numeric</span>(<span class="kw">substr</span>(Year, <span class="dv">2</span>, <span class="dv">5</span>)))
+<span class="co">#skim(fbs_long)</span></code></pre>
+<p>We see that as expected the new tibble contains 987,415. Excellent! This near-magical gather function has done a lot of very tedious work for us, very quickly. There are still the same number of countries (182) and food items (114). Now we see that the data covers from year 1961 to 2015. We also get the distribution of the food supply quantity variable… it looks to have lots of small values, and a few large. Is this what you would expect? Perhaps supply is large for a few basic foods (e.g. grains) and then there are lots of relatively rare food items. But beware that at present we are looking at the distribution including data from across years and countries. We will soon look more closely at this distribution. The <code>skim</code> also tells us that only the food supply quantity variable contains any missing values, and that there are 158,307 of them.</p>
+</div>
+<div id="clean-the-fao-data" class="section level3">
+<h3><span class="header-section-number">8.6.2</span> Clean the FAO data</h3>
+<p>Are all the years represented in the dataset? Let’s look at the unique values of the year variable:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Year))</code></pre>
+<pre><code>##  [1] 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970
+## [11] 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980
+## [21] 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990
+## [31] 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000
+## [41] 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010
+## [51] 2011 2012 2013 2014 2015</code></pre>
+<p>Yes, every year from 1961 to 2015 is represented (by at least one observation). There are 15 years in the dataset.</p>
+<p>Another good check to do on a dataset is for duplicated rows, if one can reasonably conclude that there should be none. Do we think there can be any duplicated rows in this dataset? That would be the exactly the same value of Country, Item, Year, and Food Supply Quantity.</p>
+<p>Finding any duplicated rows is fairly straightforward thanks to the <code>duplicated</code> function, which returns a TRUE or FALSE for each row of a dataset, TRUE if the row is duplicated somewhere, or FALSE otherwise. Then we can <code>filter</code> the rows by these TRUE/FALSE values to give only the duplicated rows:</p>
+<pre class="sourceCode r"><code class="sourceCode r">duplicated_records &lt;-<span class="st"> </span><span class="kw">filter</span>(fbs_long, <span class="kw">duplicated</span>(fbs_long))</code></pre>
+<p>Note that the resulting tibble contains only one example of each duplicate (look at the data with <code>View(duplicated_rows)</code>.</p>
+<p>There are, in fact, 9,287 rows that are duplicated (not unique). Let’s assume that these are mistaken duplicate entries, and so reduce to a dataset with only unique rows:</p>
+<pre class="sourceCode r"><code class="sourceCode r">fbs_long &lt;-<span class="st"> </span><span class="kw">unique</span>(fbs_long)</code></pre>
+<p>Now, if we’re being really paranoid, we might wonder if there were ever two different values of food supply recorded for the same country in the same year. Put another way, if we look at only the Country, Year, and Item variables, do we see duplicated rows?</p>
+<pre class="sourceCode r"><code class="sourceCode r">part_duplicated_records &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(Country, Item, Year) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">duplicated</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(fbs_long, .)</code></pre>
+<p>Looking at the result we see there are 10,733 rows with duplicated Country, Year, and Item. This is weird. And that these duplicates are only for food items “Eggs” and “Milk - Excluding Butter”. We have no idea why there are multiple entries for these two items! Here’s an example of one of the duplicates:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(fbs_long,
+       Country <span class="op">==</span><span class="st"> &quot;Albania&quot;</span>,
+       Item <span class="op">==</span><span class="st"> &quot;Eggs&quot;</span>,
+       Year <span class="op">==</span><span class="st"> </span><span class="dv">1961</span>)</code></pre>
+<pre><code>## # A tibble: 2 x 4
+##   Country Item   Year Food_Supply_Quantity
+##   &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;                &lt;dbl&gt;
+## 1 Albania Eggs   1961                  1.5
+## 2 Albania Eggs   1961                  1.8</code></pre>
+<p>In the same year for the same country there are two values of Food_Supply_Quantity: 1.5 and 1.8. But it’s quite reasonable to think there can be only one. Let’s solve this problem by rather arbitrarily calculating one value, the average, of these duplicated records:</p>
+<pre class="sourceCode r"><code class="sourceCode r">fbs_long &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Country, Year, Item) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Food_Supply_Quantity =</span> <span class="kw">mean</span>(Food_Supply_Quantity)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ungroup</span>(fbs_long)</code></pre>
+<div class="info">
+<p>
+Time to tell the truth. It took us a long long time to realise there were duplicated records in the FAO dataset. We did not pro-actively think to check for duplicates. We only realised there must be duplicates when we tried to get the numbers to add up below. They did not before we removed the duplicates, and this led us to find the duplicates. Once we found them, we removed them above. Now it looks like we were really smart to think they might occur, check for them, find them, and remove them. In reality we were not so smart. What we were, however, was **absolutely determined* to understand why the numbers did not add up. You must also be as strict in your work. After we found the duplicates in this dataset, we also looked in the Polity data, found some, and then decided to add a check for duplicates to all case studies, and to advise you to make this a standard sanity check when you start looking at a dataset.
+</p>
+</div>
+<p>That was a major step forward. Now we know our dataset has only unique observations.</p>
+<p>Now let’s do another sanity check. Because there are 182 countries and 114 food items we know there could be 20,748 observations for each year. Let’s see how many there really are:</p>
+<pre class="sourceCode r"><code class="sourceCode r">obs_per_year &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">n</span>())</code></pre>
+<p>There are only 17,589 observation per year. Either not all countries reported in all years, not all items were reported by each country in each year, or both!</p>
+<p>First let’s see how many countries there are per year:</p>
+<pre class="sourceCode r"><code class="sourceCode r">countries_per_year &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Country)))</code></pre>
+<p>There are indeed 182 countries per year. All countries are included in all years.</p>
+<p>Let’s see how many Items each country reported (across all years):</p>
+<pre class="sourceCode r"><code class="sourceCode r">items_per_country &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Country) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Item)))</code></pre>
+<p>Aha. Not all items were reported by all countries. Turkmenistan reported on the fewest (62), while China reported on the most (110). Let’s see if the sum of the number of items reported by each country is the number of observations per year.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">pull</span>(items_per_country, num))</code></pre>
+<pre><code>## [1] 17589</code></pre>
+<p>Yes! This is the same as the number of observations per year. All this pretty much guarantees that each country consistently (across all years) reported on a constant set of the items, or there is an observation for this set of items in each year.</p>
+<div class="safety">
+<p>
+We didn’t just now find out anything new about the data, but we did confirm that we understand it properly. Checks and balances increase confidence.
+</p>
+</div>
+<p>Now let’s look at the missing values:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#skim(fbs_long)</span></code></pre>
+<p>We still have 155,003 missing values. Why? Where are they coming from?</p>
+<p>Let’s dig a bit deeper by getting the number of observations per year, and the number and proportion of these that are missing values:</p>
+<pre class="sourceCode r"><code class="sourceCode r">obs_per_year &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">n</span>(),
+            <span class="dt">num_na =</span> <span class="kw">sum</span>(<span class="kw">is.na</span>(Food_Supply_Quantity)),
+            <span class="dt">prop_na =</span> num_na <span class="op">/</span><span class="st"> </span>num)</code></pre>
+<p>And take a look at the data using <code>View(obs_per_year)</code>. We can also see quite a bit if we plot the summary data (<a href="8-6-acquire-import-check-the-fao-food-balance-sheet-data.html#fig:long-wide">7.1</a>) with the following code:</p>
+<div class="figure" style="text-align: center"><span id="fig:fao-pol1"></span>
+<img src="insights_website_files/figure-html/fao-pol1-1.png" alt="The number of observations, the number of missing values and the proportion of missing values in each year of the data." width="100%" />
+<p class="caption">
+FIGURE 7.2: The number of observations, the number of missing values and the proportion of missing values in each year of the data.
+</p>
+</div>
+<p>We see that from 1961 to 1989 there are 2,592 (14.74%) missing values per year. In 1990 and 1991 there are 2,493 (14.17%) missing values per year. From 1992 to 2011 less than 5% of the values are missing, and from 2012 to 2015 (the last year in the dataset) most or all the values are missing. Can you think of why there might be fewer missing values after 1991? Let’s look at one country (its identity might give you a clue)… Belarus. Let’s get the number of values, missing values, and proportion of missing values for Belarus in each year.</p>
+<pre class="sourceCode r"><code class="sourceCode r">Belarus_obs_per_year &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(Country <span class="op">==</span><span class="st"> &quot;Belarus&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">n</span>(),
+            <span class="dt">num_na =</span> <span class="kw">sum</span>(<span class="kw">is.na</span>(Food_Supply_Quantity)),
+            <span class="dt">prop_na =</span> num_na <span class="op">/</span><span class="st"> </span>num)</code></pre>
+<p>Looking at this dataset we see that all values are missing until 1992, and then there are no missing values until 2012, when all are again missing. it’s probably clear by now that all values are missing until 1992 because Belarus only became an independent state in 1991. Likely there are lots of other countries in the dataset that have missing values for this reason.</p>
+<p>There’s some other weird stuff going on here: Belgium and Luxembourg did not separately report data during the period 1992-1999, and instead reported jointly. Then from 2000 until 2011 reported separately, so there we have lots of missing values. Then we have some countries that ceased to exist in their former state, e.g. Czechoslovakia after 1993 contains only missing values due to its dissolution into the Czech Republic and Slovakia. Similarly, USSR reports only missing values after 1991 when the USSR collapsed.</p>
+<p>And why more missing values from 2012 to 2015? Actually, the description of the data on the FAO web site says the data is from 1961 to only 2013, so it’s not surprising that 2014 and 2015 are empty. We will remove these years. We don’t know why there are more missing values in 2012 and 2013, so let’s also remove those:</p>
+<pre class="sourceCode r"><code class="sourceCode r">fbs_long &lt;-<span class="st"> </span><span class="kw">filter</span>(fbs_long, Year <span class="op">&lt;</span><span class="st"> </span><span class="dv">2012</span>)
+<span class="co">#skim(fbs_long)</span></code></pre>
+<p><strong>What are we going to do???</strong> This seems very messy! Let’s aim for a dataset that contains only country/year combinations where a country actually existed (i.e. there were not all NAs reported), and also where there is an entry for all 114 food items for each country year combination (by putting zeros in for no reported item).</p>
+<p>First we get a list of years in which each country does not contain all missing values. This we will use as a master list of years and countries to include in our analysis. We will not include year/country combinations where there were only missing values (the reason we need to be this specific is that we will soon turn the missing values into zeros). Let’s get that list of country/year combinations to include:</p>
+<pre class="sourceCode r"><code class="sourceCode r">country_year_not_all_missing &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Country, Year) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">keep =</span> <span class="kw">n</span>() <span class="op">!=</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">is.na</span>(Food_Supply_Quantity))) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(keep) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>keep) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ungroup</span>()</code></pre>
+<p>Does that look rather complicated? The difficult(ish) line is the summarise, in which we create a new variable <code>keep</code> that is TRUE or FALSE depending if all values of <code>Food_Supply_Quantity</code> are NA or not. The <code>n()</code> give the number of values, the <code>sum(is.na(Food_Supply_Quantity))</code> gives the number of NAs, and the <code>!=</code> asks if the two are not the same, and returns TRUE if so. The other lines should be possible for you to work out (though not necessarily easy).</p>
+<p>Note that there are 8,272 combinations of years and countries in the dataset. This is an important number. It is the number of data points we should have data for after we calculate the diversity of food available in each country in each year.</p>
+<p>Now we must decide what to assume when a country did not report a value for an item. We will assume that this means there was always zero supply of that food item, so the country did not bother ever including it, i.e. it’s really a zero. Hence we’re going to pad out the data so that all countries report on all 114 items, with zero <code>Food Supply Quantity</code> for the items they did not report.</p>
+<p>First we make a dataset the all combinations of <code>Country</code>, <code>Year</code>, and <code>Item</code>. It should have 182 * 51 * 182 = 1,058,148 rows. We use the quite lovely <code>expand.grid</code> function, which creates all possible combinations of the variables it’s given. We give it all the unique values of <code>Country</code>, <code>Year</code>, and <code>Item</code>, and it expands them to give all possible combinations. Each argument to <code>expand.grid</code> should be a name-value pair, and the name should be the same in the original data, to aid further operations:</p>
+<pre class="sourceCode r"><code class="sourceCode r">all_cases &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">Country =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Country)),
+                         <span class="dt">Year =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Year)),
+                         <span class="dt">Item =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Item))) </code></pre>
+<p>Super. This has 1,058,148 rows as expected. Now we want to only keep from this the country/year combinations for which we already found there were countries that existed. There are 8,272 of these and each should have 114 items, so we should get 943,008 observations. We do this with a <code>left_join</code> to keep only the cases of the join that have values in the first (left) dataset in the join:</p>
+<pre class="sourceCode r"><code class="sourceCode r">temp2 &lt;-<span class="st"> </span><span class="kw">left_join</span>(country_year_not_all_missing, all_cases)</code></pre>
+<pre><code>## Joining, by = c(&quot;Country&quot;, &quot;Year&quot;)</code></pre>
+<pre><code>## Warning: Column `Country` joining character vector and
+## factor, coercing into character vector</code></pre>
+<p>We get a warning, and know that we should never ignore warnings. The warning is <em>Column <code>Country</code> joining character vector and factor, coercing into character vector</em>. This is caused because <code>expand.grid</code> automatically converts character variables to factors. We can stop this happening (by adding the argument <code>stringsAsFactors = FALSE</code> in our call to <code>expand.grid</code> and hopefully the remove the warning:</p>
+<pre class="sourceCode r"><code class="sourceCode r">all_cases &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">Country =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Country)),
+                         <span class="dt">Year =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Year)),
+                         <span class="dt">Item =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Item)),
+                         <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+temp2 &lt;-<span class="st"> </span><span class="kw">left_join</span>(country_year_not_all_missing, all_cases)</code></pre>
+<pre><code>## Joining, by = c(&quot;Country&quot;, &quot;Year&quot;)</code></pre>
+<p>Perfect… and we have the expected number of 943,008 observations.</p>
+<p>Next we do another left join to add the food supply quantity data (in <code>fbs_long</code>) to the cases/observations we want to keep (in <code>temp2</code>)</p>
+<pre class="sourceCode r"><code class="sourceCode r">temp3 &lt;-<span class="st"> </span><span class="kw">left_join</span>(temp2, fbs_long)</code></pre>
+<pre><code>## Joining, by = c(&quot;Country&quot;, &quot;Year&quot;, &quot;Item&quot;)</code></pre>
+<p>Good, we still have 943’008 observations.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#skim(temp3)</span></code></pre>
+<p>The number of missing values is now 139,252. Each of these is a case when a country reported values for some items in a year, but did not report values for others, and these others are given a value of NA. As we said above, we’re going to assume these are real zeros, and so we need to turn them all into zeros:</p>
+<pre class="sourceCode r"><code class="sourceCode r">fao_final &lt;-<span class="st"> </span>temp3 <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Food_Supply_Quantity =</span> <span class="kw">ifelse</span>(<span class="op">!</span><span class="kw">is.na</span>(Food_Supply_Quantity),
+                                       Food_Supply_Quantity,
+                                       <span class="dv">0</span>))
+<span class="co">#skim(fao_final)</span></code></pre>
+<p>No missing values now. And we have a dataset that we very well understand. Let’s check again though.</p>
+<p>We should have 114 items reported per country per year:</p>
+<pre class="sourceCode r"><code class="sourceCode r">items_per_country_per_year &lt;-<span class="st"> </span>fao_final <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Country, Year) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Item)))</code></pre>
+<p>And we should have varying numbers of countries per year:</p>
+<pre class="sourceCode r"><code class="sourceCode r">countries_per_year &lt;-<span class="st"> </span>fao_final <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Country)))</code></pre>
+<p>And the sum of the number of countries per year multiplied by 114 should equal 943,008:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">pull</span>(countries_per_year, num)) <span class="op">*</span><span class="st"> </span><span class="dv">114</span></code></pre>
+<pre><code>## [1] 943008</code></pre>
+<p>Yes! Wow! Can you believe so much effort was needed to make a solid foundation of data! And we’re not even there yet… we still have wrangling work to do: we need to merge/join the FAO and the Polity datasets. But first…</p>
+</div>
+<div id="calculating-our-response-variables" class="section level3">
+<h3><span class="header-section-number">8.6.3</span> Calculating our response variables</h3>
+<p>The final step of preparation of the FAO data is to calculate our response variables. Our question is about food diversity so we need response variables that quantify this. We will use number of items available per year, and diversity of items available per year, where diversity accounts for the amount of each item as well as number of items using the Shannon index.</p>
+<pre class="sourceCode r"><code class="sourceCode r">fao_div &lt;-<span class="st"> </span>fao_final <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Country, Year) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">diversity =</span> <span class="kw">diversity</span>(Food_Supply_Quantity,
+                                        <span class="dt">index =</span> <span class="st">&quot;shannon&quot;</span>),
+            <span class="dt">richness =</span> <span class="kw">sum</span>(Food_Supply_Quantity<span class="op">&gt;</span><span class="dv">0</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ungroup</span>(fao_div)</code></pre>
+<p>Excellent. We have 8,272 data points, exactly as we should. (We previously saw this was the number of combinations of country and year for which not all data was NA. I.e. the number of rows in <code>country_year_not_all_missing</code>).</p>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="8-5-first-insights-from-the-polity-data.html"><button class="btn btn-default">Previous</button></a>
+<a href="8-7-merge-the-two-datasets.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>
