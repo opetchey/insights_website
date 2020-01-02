@@ -1,0 +1,78 @@
+---
+title: "Case study 4 (guided online only)"
+author: "Owen"
+date: "2/10/2019"
+output: html_document
+---
+
+General article about dietary restriction (DR): https://www.nia.nih.gov/health/calorie-restriction-and-fasting-diets-what-do-we-know
+
+Evolution under dietary restriction increases male reproductive performance without survival cost
+
+Zajitschek F, Zajitschek SRK, Canton C, Georgolopoulos G, Friberg U, Maklakov AA
+
+Date Published: January 29, 2016
+
+Article: https://doi.org/10.1098/rspb.2015.2726
+
+DOI: https://doi.org/10.5061/dryad.2fp25
+
+"We populated each cage with 150 males and 150 females, and set up four replicate cages per diet. We used three diets that differed in their yeast concentration (40, 100 or 270 g per 1 litre of diet: from here on DR, standard and high protein diet, respectively""
+
+"108 experimental vials."
+
+"Flies were provided with one of the three diets used in the experimental evolution cages, with three replicate vials per cage and diet combination (12 cages, three diets per cage, four replicates)."
+
+```{r message=FALSE, echo=TRUE, warning=FALSE}
+## Load the libraries we use
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(stringr)
+library(lubridate)
+library(skimr)
+library(tidyr)
+library(ggbeeswarm)
+library(taxize)
+```
+
+
+```{r}
+survival <- read_csv("www/dryad Zajitschek et al 2016 ProcB Data male survival.csv")
+```
+
+
+```{r}
+repr_perf <- read_csv("www/dryad Zajitschek et al 2016 ProcB Data male repro perf.csv")
+```
+
+## Checklist
+
+### Before working in R
+question
+hypothesis
+study methods and design
+numbers of "things"
+type of response variable
+variables and their meaning of variables (given as comments in the Excel file)
+
+### After importing the data into R
+number of rows and columns
+tidy?
+variable types
+duplicates
+NAs
+fix dates
+replace codes with informative words
+variable entries, e.g. levels of characters, ranges of numerics
+numbers of "things"
+
+## Calculate response variable(s) (if required)
+
+
+## Inspect shapes (distributions)
+
+
+## Inspect relationships
+
+
