@@ -12,7 +12,7 @@ library(ggplot2)
 library(readr)
 library(stringr)
 library(lubridate)
-library(skimr)
+#library(skimr)
 library(tidyr)
 library(vegan)
 library(ggbeeswarm)
@@ -65,6 +65,7 @@ The *revised combined polity score*, according to the *Dataset User's Manual* is
 If you did the preparation mentioned above, made a project, made a `csv` file from the Excel file, and put the data file in the data folder of that project, and you started R by double clicking on the RProject file (or switching to this project), the following code should import the data:
 
 ```{r}
+rm(list = ls())
 pol <- read_csv("data/p4v2015.csv")
 ```
 
@@ -325,14 +326,15 @@ rm(ff)
  The next line reads in that smaller dataset:
 
 ```{r eval=TRUE}
+#rm(list = ls())
 fbs <- readRDS("data/FoodBalanceSheets_E_All_Data_reduced.Rdata")
 ```
 
 Feel free to have a look at the whole dataset with the `skim` function. We `select` a few columns first, as otherwise the output is rather long due to there being 112 variables in the dataset.
 
 ```{r}
-select(fbs, Country, Item, Y1961, Y1971, Y1981, Y1991, Y2001, Y2011) %>%
-  skim()
+#select(fbs, Country, Item, Y1961, Y1971, Y1981, Y1991, Y2001, Y2011) %>%
+#  skim()
 ```
 
 There are 17'953 observations/rows in the tibble. There are 182 countries, so 11 fewer than in the Polity data. We will later check which ones are not in the Polity data, and if any in the Polity data are not in the FAO data. There are 114 food `Items`... wow, that's a lot of different types of food! Take a look at some of the values... it's quite interesting to see what's recorded. Both the `Country` variable and the `Item` variable are characters type variables as expected. If the data contained every possible combination of country and item we would expect 182 * 114 = 20'748 observations. That there are only 17'953 tells us that some combinations are missing. We will find out which these are.
@@ -357,7 +359,7 @@ Let's now make the data tidy, and clean up the year variable. We first gather al
 fbs_long <- fbs %>%
   gather(key = Year, value = Food_Supply_Quantity, 3:57) %>%
   mutate(Year = as.numeric(substr(Year, 2, 5)))
-skim(fbs_long)
+#skim(fbs_long)
 ```
 
 We see that as expected the new tibble contains 987,415. Excellent! This near-magical gather function has done a lot of very tedious work for us, very quickly. There are still the same number of countries (182) and food items (114). Now we see that the data covers from year 1961 to 2015. We also get the distribution of the food supply quantity variable... it looks to have lots of small values, and a few large. Is this what you would expect? Perhaps supply is large for a few basic foods (e.g. grains) and then there are lots of relatively rare food items. But beware that at present we are looking at the distribution including data from across years and countries. We will soon look more closely at this distribution. The `skim` also tells us that only the food supply quantity variable contains any missing values, and that there are 158,307 of them.
@@ -377,7 +379,7 @@ Another good check to do on a dataset is for duplicated rows, if one can reasona
 
 Finding any duplicated rows is fairly straightforward thanks to the `duplicated` function, which returns a TRUE or FALSE for each row of a dataset, TRUE if the row is duplicated somewhere, or FALSE otherwise. Then we can `filter` the rows by these TRUE/FALSE values to give only the duplicated rows:
 
-```{r}
+```{r dupe-1, cache = FALSE}
 duplicated_records <- filter(fbs_long, duplicated(fbs_long))
 ```
 
@@ -385,13 +387,13 @@ Note that the resulting tibble contains only one example of each duplicate (look
 
 There are, in fact, 9,287 rows that are duplicated (not unique). Let's assume that these are mistaken duplicate entries, and so reduce to a dataset with only unique rows:
 
-```{r}
+```{r dupe-2, cache = FALSE}
 fbs_long <- unique(fbs_long)
 ```
 
 Now, if we're being really paranoid, we might wonder if there were ever two different values of food supply recorded for the same country in the same year. Put another way, if we look at only the Country, Year, and Item variables, do we see duplicated rows? 
 
-```{r}
+```{r dupe-3, cache = FALSE}
 part_duplicated_records <- fbs_long %>%
   select(Country, Item, Year) %>%
   duplicated() %>%
@@ -401,12 +403,15 @@ part_duplicated_records <- fbs_long %>%
 Looking at the result we see there are 10,733 rows with duplicated Country, Year, and Item. This is weird. And that these duplicates are only for food items "Eggs" and "Milk - Excluding Butter". We have no idea why there are multiple entries for these two items! Here's an example of one of the duplicates:
 
 ```{r}
-filter(fbs_long, Country == "Albania", Item == "Eggs", Year == 1961)
+filter(fbs_long,
+       Country == "Albania",
+       Item == "Eggs",
+       Year == 1961)
 ```
 
 In the same year for the same country there are two values of Food_Supply_Quantity: 1.5 and 1.8. But it's quite reasonable to think there can be only one. Let's solve this problem by rather arbitrarily calculating one value, the average, of these duplicated records:
 
-```{r}
+```{r failing, cache = FALSE}
 fbs_long <- fbs_long %>%
   group_by(Country, Year, Item) %>%
   summarise(Food_Supply_Quantity = mean(Food_Supply_Quantity)) %>%
@@ -441,7 +446,7 @@ There are indeed 182 countries per year. All countries are included in all years
 
 Let's see how many Items each country reported (across all years):
 
-```{r}
+```{r here_xxx}
 items_per_country <- fbs_long %>%
   group_by(Country) %>%
   summarise(num = length(unique(Item)))
@@ -462,7 +467,7 @@ We didn't just now find out anything new about the data, but we did confirm that
 Now let's look at the missing values:
 
 ```{r}
-skim(fbs_long)
+#skim(fbs_long)
 ```
 
 We still have 155,003 missing values. Why? Where are they coming from?
@@ -506,7 +511,7 @@ And why more missing values from 2012 to 2015? Actually, the description of the 
 
 ```{r}
 fbs_long <- filter(fbs_long, Year < 2012)
-skim(fbs_long)
+#skim(fbs_long)
 ```
 
 **What are we going to do???** This seems very messy! Let's aim for a dataset that contains only country/year combinations where a country actually existed (i.e. there were not all NAs reported), and also where there is an entry for all 114 food items for each country year combination (by putting zeros in for no reported item).
@@ -563,7 +568,7 @@ temp3 <- left_join(temp2, fbs_long)
 Good, we still have 943'008 observations.
 
 ```{r}
-skim(temp3)
+#skim(temp3)
 ```
 
 The number of missing values is now 139,252. Each of these is a case when a country reported values for some items in a year, but did not report values for others, and these others are given a value of NA. As we said above, we're going to assume these are real zeros, and so we need to turn them all into zeros:
@@ -573,7 +578,7 @@ fao_final <- temp3 %>%
   mutate(Food_Supply_Quantity = ifelse(!is.na(Food_Supply_Quantity),
                                        Food_Supply_Quantity,
                                        0))
-skim(fao_final)
+#skim(fao_final)
 ```
 
 No missing values now. And we have a dataset that we very well understand. Let's check again though.
@@ -646,14 +651,14 @@ pol1 <- left_join(pol, countryname_map, by =c ("Country" = "in_pol")) %>%
                                 Country,
                                 in_fao)) %>%
   select(-in_fao)
-skim(pol1)
+#skim(pol1)
 ```
 
 And let's check the effect of this renaming of countries on the number of NAs. Here is the merge of the FAO and Polity data on the original Polity country names:
 
 ```{r}
-dd <- left_join(fao_div, pol)
-sum(is.na(pull(dd, Polity2)))
+fao_pol <- left_join(fao_div, pol)
+sum(is.na(pull(fao_pol, Polity2)))
 ```
 
 We get 2,607 missing polity values. And here after the renaming:
@@ -669,21 +674,21 @@ Now we have 1,819 missing polity values. Fewer, but still quite a lot. These are
 One last thing: let's remove the NAs from the dataset:
 
 ```{r}
-dd <- na.omit(dd)
+fao_pol <- na.omit(fao_pol)
 ```
 
 
 ## Tidying up
 
-We have a lot of objects in R's brain. We only need one: `dd`. We can remove all the other variables. We don't need to run all the code above every time we do an analysis. In this situation we can save the `dd` dataset, remove everything from R's brain using `rm(list = ls())` or by clicking the little broom icon in RStudio, and load it again:
+We have a lot of objects in R's brain. We only need one: `fao_pol`. We can remove all the other variables. We don't need to run all the code above every time we do an analysis. In this situation we can save the `fao_pol` dataset, remove everything from R's brain using `rm(list = ls())` or by clicking the little broom icon in RStudio, and load it again:
 
 ```{r eval=FALSE}
-saveRDS(dd, "data/fao_pol.Rdata")
+saveRDS(fao_pol, "data/fao_pol.Rdata")
 ```
 
 ```{r}
 rm(list = ls())
-dd <- readRDS("data/fao_pol.Rdata")
+fao_pol <- readRDS("data/fao_pol.Rdata")
 ```
 
 
@@ -733,7 +738,7 @@ fao %>%
 As usual we look at the distribution of our variables. First the distribution of number of food items available in each country, across all countries and all years. The code for this you are quite familiar with by now, using `ggplot` and `geom_histogram` (Figure \@ref(fig:fao-pol2):
 
 ```{r fao-pol2, fig.cap='Frequency distribution of richness of food items across all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
-ggplot(dd, aes(x = richness)) +
+ggplot(fao_pol, aes(x = richness)) +
   geom_histogram(bins = 10)
 ```
 
@@ -742,7 +747,7 @@ Some countries in some years have only between 30 and 40 food items available, o
 And looking at the distribution of diversity of food item quantities with the following code (Figure \@ref(fig:fao-pol3):
 
 ```{r fao-pol3, fig.cap='Frequency distribution of diversity of food items across all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
-ggplot(dd, aes(x = diversity)) +
+ggplot(fao_pol, aes(x = diversity)) +
   geom_histogram(bins = 10)
 ```
 
@@ -751,7 +756,7 @@ The diversity distribution is quite similar to the richness distribution, with a
 And looking at the distribution of the Polity variable with the following code (Figure \@ref(fig:fao-pol3x):
 
 ```{r fao-pol3x, fig.cap='Frequency distribution of Polity2 all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
-ggplot(dd, aes(x = Polity2)) +
+ggplot(fao_pol, aes(x = Polity2)) +
   geom_histogram(bins = 10)
 ```
 
@@ -762,7 +767,7 @@ Is this what you were expecting? A rather bimodal distribution with most countri
 First we'll look at the relationship between richness and diversity. We might imagine that they're quite closely associated since 1) diversity includes richness, and 2) their distributions look quite similar. By now the following code to make a scatter plot of richness against diversity should be familiar, though we add some transparency to the points since lots lie on top of each other (Figure \@ref(fig:fao-pol4):
 
 ```{r fao-pol4, fig.cap='Relationship between the two response variables, richness of items and diversity of items, across all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
-ggplot(dd, aes(x = richness, y = diversity)) +
+ggplot(fao_pol, aes(x = richness, y = diversity)) +
   geom_point(alpha = 0.05)
 ```
 
@@ -771,14 +776,14 @@ Not quite as close a relationship as we expected. There is certainly enough spre
 And now, drum-roll, for the answer to our question. Is there a relationship between the political system of a country and the richness of food available for human consumption. Again, by now the R-code is hopefully no challenge for you (and gives Figure \@ref(fig:fao-pol5)):
 
 ```{r fao-pol5, fig.cap='Richness of food items available versus Polity score, across all countries and all available years.', out.width='75%', fig.asp=.75, fig.align='center'}
-ggplot(dd, aes(x = Polity2, y = richness)) +
+ggplot(fao_pol, aes(x = Polity2, y = richness)) +
   geom_point(alpha = 0.05)
 ```
 
 What do you think? Is there a relationship? And how confident are you that the relationship is not just the result of chance? Before we conclude, let's look at the relationship for diversity of food items (Figure \@ref(fig:fao-pol6)).
 
 ```{r fao-pol6, fig.cap='Diversit of food items available versus Polity score, across all countries and all available years.', out.width='75%', fig.asp=.75, fig.align='center'}
-ggplot(dd, aes(x = Polity2, y = diversity)) +
+ggplot(fao_pol, aes(x = Polity2, y = diversity)) +
   geom_point(alpha = 0.05)
 ```
 
@@ -787,7 +792,7 @@ Well, to our eyes, it certainly looks like the countries with high Polity scores
 We are being a little bit naughty, however. Each country can be contributing multiple data points to these graphs, one for each year it is present in the dataset. Countries with more years will tend to influence our conclusions more than those with fewer years. And the different years of data from one country are not independent... they are repeated measures. Let's remove this non-independence and differential contributions of different countries in one of the crudest (though very simple and effective) ways---by getting the average value for each country. The `group_by`, `summarise` we use should be familiar:
 
 ```{r}
-dd_year <- dd %>%
+dd_year <- fao_pol %>%
   group_by(Country) %>%
   summarise(Polity2 = mean(Polity2),
             richness = mean(richness),

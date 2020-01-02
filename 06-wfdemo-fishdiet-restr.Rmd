@@ -84,10 +84,10 @@ Independence of observations: there may be multiple observations per fish (repea
 **Which datafiles:** Have a look at the data files on the dryad repository. Which data files are required for which response variable?
 
 ```{r}
-mortality <- read_csv("www/data/Moatt_et_al_Data_S1.csv")
-courtship <- read_csv("www/data/Moatt_et_al_Data_S5.csv")
-eggs <- read_csv("www/data/Moatt_et_al_Data_S6.csv")
-length_weight_condition <- read_csv("www/data/Moatt_et_al_Data_S15.csv")
+mortality <- read_csv("data/Moatt_et_al_Data_S1.csv")
+courtship <- read_csv("data/Moatt_et_al_Data_S5.csv")
+eggs <- read_csv("data/Moatt_et_al_Data_S6.csv")
+length_weight_condition <- read_csv("data/Moatt_et_al_Data_S15.csv")
 ```
 
 **Variables in the datafiles**: Look at the `data file key` word document in the dryad repository.
@@ -365,7 +365,7 @@ dd <- full_join(courtship, eggs) %>%
 
 Bring in and merge the diet comp data
 ```{r}
-diet_comp <- read_csv("www/data/diet_comp_treatments.csv")
+diet_comp <- read_csv("data/diet_comp_treatments.csv")
 dd <- full_join(dd, diet_comp)
 ```
 

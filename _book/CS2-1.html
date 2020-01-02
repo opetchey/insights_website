@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Case study 2—Are more diverse diets better? | A Minimal Book Example</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Case study 2—Are more diverse diets better? | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Case study 2—Are more diverse diets better? | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Yihui Xie" />
+
+
+<meta name="date" content="2020-01-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="CS3-1.html">
+<link rel="next" href="introduction-to-study.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
+<li class="chapter" data-level="5" data-path="CS3-1.html"><a href="CS3-1.html"><i class="fa fa-check"></i><b>5</b> Case study – Are diets more diverse in more democratic countries?</a><ul>
+<li class="chapter" data-level="5.1" data-path="CS3-1.html"><a href="CS3-1.html#about-this-case-study"><i class="fa fa-check"></i><b>5.1</b> About this case study</a></li>
+<li class="chapter" data-level="5.2" data-path="CS3-1.html"><a href="CS3-1.html#introduction-to-the-study-and-data"><i class="fa fa-check"></i><b>5.2</b> Introduction to the study and data</a></li>
+<li class="chapter" data-level="5.3" data-path="CS3-1.html"><a href="CS3-1.html#a-little-preparation"><i class="fa fa-check"></i><b>5.3</b> A little preparation</a></li>
+<li class="chapter" data-level="5.4" data-path="CS3-1.html"><a href="CS3-1.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><i class="fa fa-check"></i><b>5.4</b> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="CS3-1.html"><a href="CS3-1.html#data-origins-and-acquisition"><i class="fa fa-check"></i><b>5.4.1</b> Data origins and acquisition</a></li>
+<li class="chapter" data-level="5.4.2" data-path="CS3-1.html"><a href="CS3-1.html#data-import"><i class="fa fa-check"></i><b>5.4.2</b> Data import</a></li>
+<li class="chapter" data-level="5.4.3" data-path="CS3-1.html"><a href="CS3-1.html#tidy-and-clean"><i class="fa fa-check"></i><b>5.4.3</b> Tidy and clean</a></li>
+<li class="chapter" data-level="5.4.4" data-path="CS3-1.html"><a href="CS3-1.html#deal-with-nas"><i class="fa fa-check"></i><b>5.4.4</b> Deal with NAs</a></li>
+<li class="chapter" data-level="5.4.5" data-path="CS3-1.html"><a href="CS3-1.html#deal-with-innapropriate-duplicates"><i class="fa fa-check"></i><b>5.4.5</b> Deal with innapropriate duplicates</a></li>
+<li class="chapter" data-level="5.4.6" data-path="CS3-1.html"><a href="CS3-1.html#check-ranges-of-numeric-variables"><i class="fa fa-check"></i><b>5.4.6</b> Check ranges of numeric variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="CS3-1.html"><a href="CS3-1.html#first-insights-from-the-polity-data"><i class="fa fa-check"></i><b>5.5</b> First insights from the polity data</a></li>
+<li class="chapter" data-level="5.6" data-path="CS3-1.html"><a href="CS3-1.html#acquire-import-check-the-fao-food-balance-sheet-data"><i class="fa fa-check"></i><b>5.6</b> Acquire, import, check the FAO Food balance sheet data</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="CS3-1.html"><a href="CS3-1.html#tidying-FAO"><i class="fa fa-check"></i><b>5.6.1</b> Tidy the FAO data</a></li>
+<li class="chapter" data-level="5.6.2" data-path="CS3-1.html"><a href="CS3-1.html#clean-the-fao-data"><i class="fa fa-check"></i><b>5.6.2</b> Clean the FAO data</a></li>
+<li class="chapter" data-level="5.6.3" data-path="CS3-1.html"><a href="CS3-1.html#calculating-our-response-variables"><i class="fa fa-check"></i><b>5.6.3</b> Calculating our response variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="CS3-1.html"><a href="CS3-1.html#merge-the-two-datasets"><i class="fa fa-check"></i><b>5.7</b> Merge the two datasets</a></li>
+<li class="chapter" data-level="5.8" data-path="CS3-1.html"><a href="CS3-1.html#tidying-up"><i class="fa fa-check"></i><b>5.8</b> Tidying up</a></li>
+<li class="chapter" data-level="5.9" data-path="CS3-1.html"><a href="CS3-1.html#shapes"><i class="fa fa-check"></i><b>5.9</b> Shapes</a></li>
+<li class="chapter" data-level="5.10" data-path="CS3-1.html"><a href="CS3-1.html#relationships"><i class="fa fa-check"></i><b>5.10</b> Relationships</a></li>
+<li class="chapter" data-level="5.11" data-path="CS3-1.html"><a href="CS3-1.html#wrapping-up"><i class="fa fa-check"></i><b>5.11</b> Wrapping up</a></li>
+<li class="chapter" data-level="5.12" data-path="CS3-1.html"><a href="CS3-1.html#some-questions"><i class="fa fa-check"></i><b>5.12</b> Some questions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="CS2-1.html"><a href="CS2-1.html"><i class="fa fa-check"></i><b>6</b> Case study 2—Are more diverse diets better?</a><ul>
+<li class="chapter" data-level="6.1" data-path="CS2-1.html"><a href="CS2-1.html#going-to-the-next-level"><i class="fa fa-check"></i><b>6.1</b> Going to the next level</a></li>
+<li class="chapter" data-level="6.2" data-path="CS2-1.html"><a href="CS2-1.html#introduction-to-the-study-and-data-1"><i class="fa fa-check"></i><b>6.2</b> Introduction to the study and data</a></li>
+<li class="chapter" data-level="6.3" data-path="CS2-1.html"><a href="CS2-1.html#what-type-of-response-variable"><i class="fa fa-check"></i><b>6.3</b> What type of response variable?</a></li>
+<li class="chapter" data-level="6.4" data-path="CS2-1.html"><a href="CS2-1.html#a-little-preparation-1"><i class="fa fa-check"></i><b>6.4</b> A little preparation</a></li>
+<li class="chapter" data-level="6.5" data-path="CS2-1.html"><a href="CS2-1.html#acquire-the-dataset"><i class="fa fa-check"></i><b>6.5</b> Acquire the dataset</a></li>
+<li class="chapter" data-level="6.6" data-path="CS2-1.html"><a href="CS2-1.html#import-the-dataset"><i class="fa fa-check"></i><b>6.6</b> Import the dataset</a></li>
+<li class="chapter" data-level="6.7" data-path="CS2-1.html"><a href="CS2-1.html#checking-the-import-worked-correctly"><i class="fa fa-check"></i><b>6.7</b> Checking the import worked correctly</a></li>
+<li class="chapter" data-level="6.8" data-path="CS2-1.html"><a href="CS2-1.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>6.8</b> Cleaning and tidying</a><ul>
+<li class="chapter" data-level="6.8.1" data-path="CS2-1.html"><a href="CS2-1.html#recode-some-names"><i class="fa fa-check"></i><b>6.8.1</b> Recode some names</a></li>
+<li class="chapter" data-level="6.8.2" data-path="CS2-1.html"><a href="CS2-1.html#make-the-prey_composition-variable-a-factor-with-specific-order"><i class="fa fa-check"></i><b>6.8.2</b> Make the <code>prey_composition</code> variable a factor with specific order</a></li>
+<li class="chapter" data-level="6.8.3" data-path="CS2-1.html"><a href="CS2-1.html#fix-those-variable-names"><i class="fa fa-check"></i><b>6.8.3</b> Fix those variable names</a></li>
+<li class="chapter" data-level="6.8.4" data-path="CS2-1.html"><a href="CS2-1.html#calculate-an-important-variable"><i class="fa fa-check"></i><b>6.8.4</b> Calculate an important variable</a></li>
+<li class="chapter" data-level="6.8.5" data-path="CS2-1.html"><a href="CS2-1.html#remove-nas"><i class="fa fa-check"></i><b>6.8.5</b> Remove NAs</a></li>
+<li class="chapter" data-level="6.8.6" data-path="CS2-1.html"><a href="CS2-1.html#checking-some-specifics"><i class="fa fa-check"></i><b>6.8.6</b> Checking some specifics</a></li>
+<li class="chapter" data-level="6.8.7" data-path="CS2-1.html"><a href="CS2-1.html#a-closer-look-at-the-data"><i class="fa fa-check"></i><b>6.8.7</b> A closer look at the data</a></li>
+<li class="chapter" data-level="6.8.8" data-path="CS2-1.html"><a href="CS2-1.html#calculate-the-three-response-variables"><i class="fa fa-check"></i><b>6.8.8</b> Calculate the three response variables</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="CS2-1.html"><a href="CS2-1.html#shapes-1"><i class="fa fa-check"></i><b>6.9</b> Shapes</a></li>
+<li class="chapter" data-level="6.10" data-path="CS2-1.html"><a href="CS2-1.html#relationships-1"><i class="fa fa-check"></i><b>6.10</b> Relationships</a><ul>
+<li class="chapter" data-level="6.10.1" data-path="CS2-1.html"><a href="CS2-1.html#maximum-predator-density"><i class="fa fa-check"></i><b>6.10.1</b> Maximum predator density</a></li>
+<li class="chapter" data-level="6.10.2" data-path="CS2-1.html"><a href="CS2-1.html#predator-population-variability-cv"><i class="fa fa-check"></i><b>6.10.2</b> Predator population variability (CV)</a></li>
+<li class="chapter" data-level="6.10.3" data-path="CS2-1.html"><a href="CS2-1.html#predator-persistence-time"><i class="fa fa-check"></i><b>6.10.3</b> Predator persistence time</a></li>
+<li class="chapter" data-level="6.10.4" data-path="CS2-1.html"><a href="CS2-1.html#all-three-at-once"><i class="fa fa-check"></i><b>6.10.4</b> All three at once</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="CS2-1.html"><a href="CS2-1.html#wrapping-up-1"><i class="fa fa-check"></i><b>6.11</b> Wrapping up</a></li>
+<li class="chapter" data-level="6.12" data-path="CS2-1.html"><a href="CS2-1.html#some-questions-1"><i class="fa fa-check"></i><b>6.12</b> Some questions</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="introduction-to-study.html"><a href="introduction-to-study.html"><i class="fa fa-check"></i><b>7</b> Introduction to study</a><ul>
+<li class="chapter" data-level="7.1" data-path="introduction-to-study.html"><a href="introduction-to-study.html#before-working-in-r"><i class="fa fa-check"></i><b>7.1</b> Before working in R</a></li>
+<li class="chapter" data-level="7.2" data-path="introduction-to-study.html"><a href="introduction-to-study.html#after-importing-the-data-into-r"><i class="fa fa-check"></i><b>7.2</b> After importing the data into R</a></li>
+<li class="chapter" data-level="7.3" data-path="introduction-to-study.html"><a href="introduction-to-study.html#independence"><i class="fa fa-check"></i><b>7.3</b> Independence</a></li>
+<li class="chapter" data-level="7.4" data-path="introduction-to-study.html"><a href="introduction-to-study.html#balance-in-experimental-design"><i class="fa fa-check"></i><b>7.4</b> Balance in experimental design</a></li>
+<li class="chapter" data-level="7.5" data-path="introduction-to-study.html"><a href="introduction-to-study.html#calculate-response-variables-if-required"><i class="fa fa-check"></i><b>7.5</b> Calculate response variable(s) (if required)</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="introduction-to-study.html"><a href="introduction-to-study.html#time-of-death"><i class="fa fa-check"></i><b>7.5.1</b> Time of death</a></li>
+<li class="chapter" data-level="7.5.2" data-path="introduction-to-study.html"><a href="introduction-to-study.html#change-in-length"><i class="fa fa-check"></i><b>7.5.2</b> Change in length</a></li>
+<li class="chapter" data-level="7.5.3" data-path="introduction-to-study.html"><a href="introduction-to-study.html#change-in-condition"><i class="fa fa-check"></i><b>7.5.3</b> Change in condition</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="introduction-to-study.html"><a href="introduction-to-study.html#merge-all-datasets-together-and-check-for-correct-number-of-rows"><i class="fa fa-check"></i><b>7.6</b> Merge all datasets together and check for correct number of rows</a></li>
+<li class="chapter" data-level="7.7" data-path="introduction-to-study.html"><a href="introduction-to-study.html#super-sleuth-questions"><i class="fa fa-check"></i><b>7.7</b> Super sleuth questions</a></li>
+<li class="chapter" data-level="7.8" data-path="introduction-to-study.html"><a href="introduction-to-study.html#inspect-shapes-distributions"><i class="fa fa-check"></i><b>7.8</b> Inspect shapes (distributions)</a></li>
+<li class="chapter" data-level="7.9" data-path="introduction-to-study.html"><a href="introduction-to-study.html#inspect-relationships"><i class="fa fa-check"></i><b>7.9</b> Inspect relationships</a></li>
+<li class="chapter" data-level="7.10" data-path="introduction-to-study.html"><a href="introduction-to-study.html#moatt-et-al-data-s1-mortality-data"><i class="fa fa-check"></i><b>7.10</b> Moatt et al Data S1 – Mortality Data</a></li>
+<li class="chapter" data-level="7.11" data-path="introduction-to-study.html"><a href="introduction-to-study.html#moatt-et-al-data-s5-courtship-data"><i class="fa fa-check"></i><b>7.11</b> Moatt et al Data S5 – Courtship Data</a></li>
+<li class="chapter" data-level="7.12" data-path="introduction-to-study.html"><a href="introduction-to-study.html#moatt-et-al-data-s6-eggs-data"><i class="fa fa-check"></i><b>7.12</b> Moatt et al Data S6 – Eggs Data</a></li>
+<li class="chapter" data-level="7.13" data-path="introduction-to-study.html"><a href="introduction-to-study.html#moatt-et-al-data-s15-length-weight-and-condition-index-data"><i class="fa fa-check"></i><b>7.13</b> Moatt et al Data S15 – Length, Weight and Condition Index Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="CS2-1" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Case study 2—Are more diverse diets better?</h1>
+<p><img src="images/CS2_icon.jpg" width="60"/></p>
+<div id="going-to-the-next-level" class="section level2">
+<h2><span class="header-section-number">6.1</span> Going to the next level</h2>
+<p>This case study includes a bit more complexity than the first one and covers a few new topics in R and in general. The complexity mainly occurs in the calculations we do to obtain the response variables (i.e. the variables we examine to answer our biological question). The calculations involve some conceptually challenging manipulations, and the corresponding pipelines of <strong>dplyr</strong> functions will at first seem complex and daunting.</p>
+<p>It’s fine to be concerned, even a bit stressed, by this complexity. If you feel so, just take a break, have a chat with friends, and while doing that think about how we only travel great distances and climb high peaks by taking one small step at a time. The same applies to what seem like complex and daunting tasks in getting insights from data. It’s amazing how far we get taking one step at a time. When we show you what seems like a complex task, like a complex pipeline of functions, break it down into its component steps. Let’s take a first step by introducing the case study and data that was collected.</p>
+<p>Again: as you work through this chapter, try following along with the <a href="http://r4all.org/posts/workflow-checklist-for-data-analysis/">workflow/checklist on this web page</a>.</p>
+</div>
+<div id="introduction-to-the-study-and-data-1" class="section level2">
+<h2><span class="header-section-number">6.2</span> Introduction to the study and data</h2>
+<p>The data comes from <a href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2656.2000.00446.x">a study of how the number of available prey species for a predator consume affects the stability of the predator population dynamics</a>. The study was designed to address the hypotheses that more pathways of energy flow to a predator (i.e. more prey species) would stabilise the predator population dynamics, 1) by increasing the abundance of the predator, 2) by reducing how much it varies, and 3) by delaying extinction.</p>
+<p>The experiment involved three prey species and one predator. One, two or three prey species were present, with every combination of each. The experimental units were small jars of nutrient containing liquid and the predator and prey species were aquatic microbes feeding on bacteria also present in the liquid. The small size of the prey and predators (about 20 to 400 microns) means that in just a few weeks individuals can reproduce many times, and also die. There were five replicates of each of the seven prey species compositions (so 35 experimental units).</p>
+<p>During the experiment the data was written onto paper, then at a later date the data was entered into a spreadsheet. The data in the spreadsheet was checked for errors, by comparing it with the original paper copy of the data. The data recording and entry was done with tidiness and cleanliness in mind, so tidying and cleaning will be minimal. The data file contains the data exactly as it was recorded on the paper data sheet, and after data entry was double checked to correct any errors.</p>
+<p>Looking at the dataset in Excel or something similar, you will see the following variables:</p>
+<ul>
+<li><strong>day</strong> - the day of the experiment the observation in the row belongs to.</li>
+<li><strong>count</strong> - the number of individuals counted in the sample; used to calculate density per ml. Counts were made by eye, looking down a microscope.</li>
+<li><strong>w1</strong> - the volume of liquid in ml removed from the community for sampling abundance. Used to calculate density per ml.</li>
+<li><strong>w2</strong> - the volume of diluent added to the volume sampled, plus the volume sampled. Used to calculate density per ml.</li>
+<li><strong>w3</strong> - the volume of the sub-sample taken of the mixture of diluent and sample removed. Used to calculate density per ml.</li>
+<li><strong>species</strong> - a numeric code for the species that the observation in the row belongs to.</li>
+<li><strong>prey.richness</strong> - the number of prey species added to the jar.</li>
+<li><strong>prey.composition</strong> - a number that identifies the combination of prey species added to the jar.</li>
+<li><strong>replicate</strong> - a replicate identifier, unique within prey composition.</li>
+<li><strong>jar</strong> - a number that uniquely identifies each experimental unit.</li>
+</ul>
+<p>How does the data measure up to the features of data we mentioned in the first chapter?</p>
+<ul>
+<li>Number of variables. Not too many. Really there are only two or three explanatory variables, and one response variable (population size, though we will derive three separate response variables). Certainly we are not up in the range of tens of explanatory variables. And because this was an experiment, we only have variables already thought to be important.</li>
+<li>Number of observations. Not too many. Just 35. Our ability to detect patterns is going to be low.</li>
+<li>If and how many of the variables describe experimental manipulations. Yes the data are from an experiment. Prey composition was manipulated, and so therefore was prey richness. So we know that any apparent relationships between the predator population and the prey composition is a result of a causative relationships. I.e. if we alter prey composition and only prey composition (as is the case here) and see changes in the predator population then we know that prey composition <em>caused</em> those changes.</li>
+<li>The amount of correlation among the variables. There is no correlation to speak of; this is not so uncommon in an experiment.</li>
+<li>How independent are the observations. Here we need to be a bit careful. There were 35 experimental units, so there should be 35 data points in our analyses. Multiple samples through time were taken from each experimental unit, however—we have repeated measures. We will take care of this, and not fall into a trap of trying to interpret patterns in graphs with lots of non-independent data points.</li>
+</ul>
+</div>
+<div id="what-type-of-response-variable" class="section level2">
+<h2><span class="header-section-number">6.3</span> What type of response variable?</h2>
+<p>This question is worth asking at the beginning of a study. There were, in fact, three main response variables used in this study and these correspond to the three hypotheses mentioned above. I.e. there is one response variable for each of the three hypotheses/questions. These response variables were: 1) the population size of the predator population, 2) the temporal variability of the predator population size, and 3) the amount of time for which the predator population persisted. Each of these is an component/influence on the stability of the predator population. Each will have to be calculated from the time series of predator population density (number of individuals predators per ml) in each replicate. First though we will have to calculate population density from <code>count</code>, <code>w1</code>, <code>w2</code>, and <code>w3</code>, because during the experiment the volume of liquid in which the number of individuals of each species was counted varied (i.e. <code>w1</code>, <code>w2</code>, and <code>w3</code> are not constant). The reason for this variation is that dilution is required when populations are very dense, otherwise the dense swarm of individuals would be near impossible to count.</p>
+</div>
+<div id="a-little-preparation-1" class="section level2">
+<h2><span class="header-section-number">6.4</span> A little preparation</h2>
+<p>Make a new folder for this case study, and in it a folder called <code>data</code> (this will contain any datasets for this case study/project). In RStudio create an RStudio project and save it in the project folder (not the <code>data</code> folder). Close RStudio and double click on the project file to re-open RStudio. Create a new R script file and load the libraries we will use:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## Load the libraries we use</span>
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(readr)
+<span class="kw">library</span>(stringr)
+<span class="kw">library</span>(lubridate)
+<span class="kw">library</span>(skimr)
+<span class="kw">library</span>(tidyr)
+<span class="kw">library</span>(forcats)</code></pre>
+<div class="action">
+<p>
+Install the <code>forcats</code> library if you have not already done so, otherwise <code>library(forcats)</code> will not work. Look at the Packages section of the Getting Acquainted chapter if you need help with installation.
+</p>
+</div>
+</div>
+<div id="acquire-the-dataset" class="section level2">
+<h2><span class="header-section-number">6.5</span> Acquire the dataset</h2>
+<p>Get the data file <code>dileptus expt data.csv</code> from the <a href="https://datadryad.org/resource/doi:10.5061/dryad.7h62c8t.2">dryad repository</a> associated with the publication about the data (make sure you get version 2 of the dataset). The dataset is stored on dryad in comma separated value (csv) format. Put the file in your <code>data</code> folder for this project.</p>
+</div>
+<div id="import-the-dataset" class="section level2">
+<h2><span class="header-section-number">6.6</span> Import the dataset</h2>
+<p>Import the dataset using the <code>read_csv()</code> function from the <code>readr</code> package.</p>
+<div class="warning">
+<p>
+Make sure you opened RStudio by clicking on your project file for this case study (or switch to the RProject in the top right of the RStudio window. This will ensure RStudio is looking at the correct folder, and that the <code>relative path</code> used before the file name will be correct:
+</p>
+</div>
+<pre class="sourceCode r"><code class="sourceCode r">dd &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/dileptus_predator_prey_data.csv&quot;</span>)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   day = col_double(),
+##   count = col_character(),
+##   w1 = col_double(),
+##   w2 = col_double(),
+##   w3 = col_double(),
+##   species = col_double(),
+##   prey.richness = col_double(),
+##   prey.composition = col_double(),
+##   replicate = col_double(),
+##   jar = col_double()
+## )</code></pre>
+<p>Great, we didn’t get an error. The <code>read_csv()</code> function has done two things. It read in the data and the <code>dd &lt;-</code> assigns the data to a new object called <code>dd</code> (you could give it a name other than <code>dd</code> if you wish).</p>
+<p>The <code>read_csv()</code> function also gives a summary of what it found.</p>
+</div>
+<div id="checking-the-import-worked-correctly" class="section level2">
+<h2><span class="header-section-number">6.7</span> Checking the import worked correctly</h2>
+<p>Now we should check some basic things about the imported data. Let’s start by checking if it has the correct number of rows and variables, and if variables are the expected (i.e. correct type). We can look at these features of the imported data in many ways. One useful method is to type the name of the data object in the Console and press enter:</p>
+<pre class="sourceCode r"><code class="sourceCode r">dd</code></pre>
+<pre><code>## # A tibble: 806 x 10
+##      day count    w1    w2     w3 species prey.richness prey.composition
+##    &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;
+##  1     2 52    0.356  6.32 0.322        1             1                1
+##  2     2 0     0.356  1    1            4             1                1
+##  3     2 66    0.360  6.56 0.323        1             1                1
+##  4     2 0     0.360  1    1            4             1                1
+##  5     2 21    0.303  5.67 0.0843       2             1                2
+##  6     2 0     0.303  1    1            4             1                2
+##  7     2 44    0.365  4.06 0.0843       2             1                2
+##  8     2 0     0.365  1    1            4             1                2
+##  9     2 114   0.354  1    1            3             1                3
+## 10     2 0     0.354  1    1            4             1                3
+## # … with 796 more rows, and 2 more variables: replicate &lt;dbl&gt;, jar &lt;dbl&gt;</code></pre>
+<p>We are told the object is <code>A tibble: 806 x 10</code>. This is what we expect if we look at the datafile. All looks good so far then.</p>
+<p>Not all is well, however, as some of the variables that should be numeric are character, and vice versa. We expect <code>count</code> to be numeric. Looking that the <code>count</code> variable we see some entries are a full stop. This is because the dataset was originally made to be used by software (SAS) which by default uses the full stop to indicate a missing value. So we need to repeat the import the a full stop as the missing value indicator:</p>
+<pre class="sourceCode r"><code class="sourceCode r">dd &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/dileptus_predator_prey_data.csv&quot;</span>, <span class="dt">na =</span> <span class="st">&quot;.&quot;</span>)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   day = col_double(),
+##   count = col_double(),
+##   w1 = col_double(),
+##   w2 = col_double(),
+##   w3 = col_double(),
+##   species = col_double(),
+##   prey.richness = col_double(),
+##   prey.composition = col_double(),
+##   replicate = col_double(),
+##   jar = col_double()
+## )</code></pre>
+<p>Good, now <code>count</code> is an integer type variable.</p>
+</div>
+<div id="cleaning-and-tidying" class="section level2">
+<h2><span class="header-section-number">6.8</span> Cleaning and tidying</h2>
+<div id="recode-some-names" class="section level3">
+<h3><span class="header-section-number">6.8.1</span> Recode some names</h3>
+<p>We expect the <code>species</code> and the <code>prey.composition</code> variables should probably be character variables. Indeed, they really should be characters, but they appear to be integers. Always use the proper word when you have one —don’t ever use codes like this (the person who entered this data was probably not thinking about this carefully enough! Or was constrained by time. Or both.). Let’s fix this by replacing the species code numbers with their names (we found the correct names for each code in the lab book for this experiment, it is not in the dataset):</p>
+<pre class="sourceCode r"><code class="sourceCode r">dd &lt;-<span class="st"> </span><span class="kw">mutate</span>(dd, <span class="dt">species =</span> <span class="kw">recode</span>(species,
+                                <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;Colpidium&quot;</span>,
+                                <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;Collodictyon&quot;</span>,
+                                <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;Paramecium&quot;</span>,
+                                <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;Dileptus&quot;</span>))</code></pre>
+<p>Here we do a <code>mutate</code> to make a new version of the <code>species</code> variable, and the <code>recode</code> function to change the numbers to the species names. We first give <code>recode</code> the variable to work on (<code>species</code>) and then tell it to change each 1 to “Colpidium” and so on for the other numbers.</p>
+<p>Next we work on the <code>prey.composition</code> variable. In fact, we’re just going to throw it away as it is redundant, because we can construct it from the species variable. Let’s do that. While we’re at it, let’s also get the prey richness from the other columns, rather than use the existing imported <code>prey.richness</code> column.</p>
+<p>The first thing we’ll do is make a new dataset containing these two new variables, <code>community_composition</code> and <code>prey_richness</code>, and we’ll get these variables for each prey composition and replicate combination:</p>
+<pre class="sourceCode r"><code class="sourceCode r">comm_comp &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(prey.composition, replicate) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">community_composition =</span> <span class="kw">paste</span>(<span class="kw">unique</span>(species), <span class="dt">collapse =</span> <span class="st">&quot;, &quot;</span>),
+            <span class="dt">prey_richness =</span> <span class="kw">length</span>(<span class="kw">unique</span>(species)) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</code></pre>
+<p>Let’s break this down. We’re doing a <code>group_by</code>—<code>summarise</code>. The <code>group_by</code> is by <code>prey.composition</code> (seven compositions) and <code>replicate</code> (five replicates), so we’re expecting 7 * 5 = 35 rows in this new dataset. Then in the <code>summarise</code> we create in the first line the new <code>community_composition</code> variable, and in the second the new <code>prey_richness</code> variable. To make the new <code>community_composition</code> variable we paste together the species present in the group (composition by replicate combination); we use <code>unique</code> to remove repeats of the species names, and <code>collapse</code> to make the species names in a group be pasted together into one string. Take a look at the new <code>community_composition</code> variable, and then look again at the code above and the description of how we just made this new <code>prey_composition</code> variable.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(comm_comp, community_composition)</code></pre>
+<pre><code>## Adding missing grouping variables: `prey.composition`</code></pre>
+<pre><code>## # A tibble: 35 x 2
+## # Groups:   prey.composition [7]
+##    prey.composition community_composition 
+##               &lt;dbl&gt; &lt;chr&gt;                 
+##  1                1 Colpidium, Dileptus   
+##  2                1 Colpidium, Dileptus   
+##  3                1 Colpidium, Dileptus   
+##  4                1 Colpidium, Dileptus   
+##  5                1 Colpidium, Dileptus   
+##  6                2 Collodictyon, Dileptus
+##  7                2 Collodictyon, Dileptus
+##  8                2 Collodictyon, Dileptus
+##  9                2 Collodictyon, Dileptus
+## 10                2 Collodictyon, Dileptus
+## # … with 25 more rows</code></pre>
+<p>We also make the new <code>prey_richness</code> variable. The code was <code>prey_richness = length(unique(species)) - 1</code>. The <code>length</code> function tells us the number of unique (because we used the <code>unique</code> function) species, and we subtract the 1 to remove the 1 added by the predator species being present.</p>
+<p>Next we do more or less the same thing to get a new variable <code>prey_composition</code>. This will be the same as the community composition variable we just made, but without the predator species name included. The code is more or less the same, but with the predator (<em>Dileptus</em>) rows filtered out before the <code>summarise</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">prey_comp &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(prey.composition, replicate) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(species <span class="op">!=</span><span class="st"> &quot;Dileptus&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">prey_composition =</span> <span class="kw">paste</span>(<span class="kw">unique</span>(species), <span class="dt">collapse =</span> <span class="st">&quot;, &quot;</span>))</code></pre>
+<p>The final thing to do is to add the new variables to the original dataset. We do this by merging (joining) the datasets with the new variables into the original dataset, one then the other, then we clean a bit by removing the old <code>prey.composition</code> and <code>prey.richness</code> variables, and by removing the <code>comm_comp</code> and <code>prey_comp</code> datasets which were only of temporary use.</p>
+<pre class="sourceCode r"><code class="sourceCode r">dd &lt;-<span class="st"> </span><span class="kw">full_join</span>(dd, comm_comp) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">full_join</span>(prey_comp) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>prey.composition, <span class="op">-</span>prey.richness)</code></pre>
+<pre><code>## Joining, by = c(&quot;prey.composition&quot;, &quot;replicate&quot;)
+## Joining, by = c(&quot;prey.composition&quot;, &quot;replicate&quot;)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(comm_comp, prey_comp)</code></pre>
+<div class="safety">
+<p>
+It’s not necessary to remove variables that we’re not interested in using anymore, but is often a good idea to do so. It can prevent us accidentally using them, or just from getting confused about what they are and if they are in fact important when we come back to our work after a gap of a few months, as often happens. If we have a rather large dataset, keeping only the essential variables can usefully reduce the size of the dataset.
+</p>
+</div>
+</div>
+<div id="make-the-prey_composition-variable-a-factor-with-specific-order" class="section level3">
+<h3><span class="header-section-number">6.8.2</span> Make the <code>prey_composition</code> variable a factor with specific order</h3>
+<p>What on earth did that mean? So far we have not mentioned <em>factors</em>. These are a type of variable that contains words (a bit like character variables) but in which the different words/categories are referred to as <em>levels</em> and have an explicit order. This order affects how some things are done in R, and this is why we want to determine the specific order of the levels of the <code>prey_composition</code> variable. For example, when we make a graph with <code>prey_composition</code> on the x axis we would like the three single-species prey compositions first on the left, then the three two-species prey compositions, then the three-species prey composition on the right.</p>
+<p>Before we do this, look at the <code>prey_composition</code> variable in its current state:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(dd, prey_composition)</code></pre>
+<pre><code>## # A tibble: 806 x 1
+##    prey_composition
+##    &lt;chr&gt;           
+##  1 Colpidium       
+##  2 Colpidium       
+##  3 Colpidium       
+##  4 Colpidium       
+##  5 Collodictyon    
+##  6 Collodictyon    
+##  7 Collodictyon    
+##  8 Collodictyon    
+##  9 Paramecium      
+## 10 Paramecium      
+## # … with 796 more rows</code></pre>
+<p>It is a character variable (<code>&lt;chr&gt;</code>). If we try to see what the levels of this variable are, we get <code>NULL</code>; there are no levels:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(<span class="kw">pull</span>(dd, prey_composition))</code></pre>
+<pre><code>## NULL</code></pre>
+<p>To change this to an ordered factor type variable, we use the <code>fct_relevel</code> function from the <strong>forcats</strong> package inside a <code>mutate</code> change the <code>prey_composition</code> variable:</p>
+<pre class="sourceCode r"><code class="sourceCode r">dd &lt;-<span class="st"> </span><span class="kw">mutate</span>(dd,
+             <span class="dt">prey_composition =</span> <span class="kw">fct_relevel</span>(prey_composition,
+                                            <span class="st">&quot;Collodictyon&quot;</span>,
+                                            <span class="st">&quot;Colpidium&quot;</span>,
+                                            <span class="st">&quot;Paramecium&quot;</span>,
+                                            <span class="st">&quot;Colpidium, Collodictyon&quot;</span>,
+                                            <span class="st">&quot;Colpidium, Paramecium&quot;</span>,
+                                            <span class="st">&quot;Collodictyon, Paramecium&quot;</span>,
+                                            <span class="st">&quot;Colpidium, Collodictyon, Paramecium&quot;</span>)
+                                            )</code></pre>
+<p>Now let’s see how the <code>prey_composition</code> variable looks:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(dd, prey_composition)</code></pre>
+<pre><code>## # A tibble: 806 x 1
+##    prey_composition
+##    &lt;fct&gt;           
+##  1 Colpidium       
+##  2 Colpidium       
+##  3 Colpidium       
+##  4 Colpidium       
+##  5 Collodictyon    
+##  6 Collodictyon    
+##  7 Collodictyon    
+##  8 Collodictyon    
+##  9 Paramecium      
+## 10 Paramecium      
+## # … with 796 more rows</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(<span class="kw">pull</span>(dd, prey_composition))</code></pre>
+<pre><code>## [1] &quot;Collodictyon&quot;                       
+## [2] &quot;Colpidium&quot;                          
+## [3] &quot;Paramecium&quot;                         
+## [4] &quot;Colpidium, Collodictyon&quot;            
+## [5] &quot;Colpidium, Paramecium&quot;              
+## [6] &quot;Collodictyon, Paramecium&quot;           
+## [7] &quot;Colpidium, Collodictyon, Paramecium&quot;</code></pre>
+<p>Excellent. The variable is now a factor (<code>&lt;fct&gt;</code>) and we can see its levels.</p>
+<div class="info">
+<p>
+Do not worry if it’s not immediately apparent why we made this variable an ordered factor—we emphasise the point a couple of times below where the benefits of this are very clear and obviously desirable.
+</p>
+</div>
+</div>
+<div id="fix-those-variable-names" class="section level3">
+<h3><span class="header-section-number">6.8.3</span> Fix those variable names</h3>
+<p>We don’t have any spaces, brackets, or other special characters in variable names, and there is no date variable we need to correctly format. Great – the person who entered the data did something right!</p>
+</div>
+<div id="calculate-an-important-variable" class="section level3">
+<h3><span class="header-section-number">6.8.4</span> Calculate an important variable</h3>
+<p>When we first introduced the data, we identified four variables that would be used to calculate the number of individual organisms <em>per ml</em>. We must do this because different volumes and dilutions of liquid were counted at different times in the experiment. Standardising the abundance measures to number of individuals per ml will also allow interoperability with data from other studies that have also been standardised.</p>
+<p>Look at the definitions of the four variables <code>count</code>, <code>w1</code>, <code>w2</code>, and <code>w3</code> and see if you can figure out how to convert the count to per ml. It’s not easy, but not too difficult perhaps. Really, give it a go. The challenge of getting insights from data is in large part about being able to solve problems like these. After solving them on paper we can then move to R to implement the solution.</p>
+<p>Start by simplifying the problem. Imagine we made no dilution of <code>w1</code> such that <code>w2 = w1</code> and counted all of <code>w1</code> such that <code>w3 = w1</code>. In effect we just took the volume <code>w1</code> from the experimental culture and counted the number of individuals in it. If <code>w1</code> is 1 ml, then then the number of individuals counted (in variable <code>count</code>) is per ml. If <code>w1</code> is 0.5ml, we need to multiple the count by 2 (i.e. divide by 0.5) to get to per ml. If <code>w1</code> is 2 ml we need to divide by 2 to get to per ml. In this case we could use the formula <code>count / w1</code> to convert to number of individuals per ml.</p>
+<p>Now think about if we sampled 1 ml (<code>w1</code> = 1 ml), added 1 ml of diluent (<code>w2</code> = 2 ml), and then counted 1 ml of that diluted sample (<code>w3</code> = 1). We have diluted by a factor of 2 (<code>w2 / w1</code> = 2) and counted 1 ml of that dilution, so we need to multiply the count by 2 to get to per ml. That is, we multiply the count by the dilution factor to get the count per ml (so long as <code>w3</code> = 1 ml).</p>
+<p>Finally, think about if we count only 0.1 ml of the diluted sample (<code>w3</code> = 0.1 ml). That is a tenth of a ml, so we need to multiply by ten (or divide by 0.1). That is, we divide by <code>w3</code> to correct to count per ml when <code>w3</code> is not 1 ml.</p>
+<p>Putting these parts together we see that we multiply by the dilution factor <code>w2/w1</code> and then divide by the volume counted (<code>w3</code>). We, of course, add the new <code>dens_per_ml</code> variable and calculation using the <code>mutate</code> function:</p>
+<pre class="sourceCode r"><code class="sourceCode r">dd &lt;-<span class="st"> </span><span class="kw">mutate</span>(dd, <span class="dt">dens_per_ml=</span>count<span class="op">*</span>w2<span class="op">/</span>w1<span class="op">/</span>w3)</code></pre>
+<p>Super-simple! Now we have a standardised, comparable, and interoperable measurement of population size of each species.</p>
+<div class="efficiency">
+<p>
+Actually, the dataset as it was entered was done so to make this calculation work very easily. In particular, <code>w2</code> is very purposefully the sum of the sampled volume and the diluent, and is <em>not</em> just the volume of the diluent. Furthermore, if there was no dilution, and the count was made of <code>w1</code> we might have entered <code>NA</code> for <code>w2</code> and <code>w3</code> since they did not exist. Instead, the both <code>w2</code> and <code>w3</code> are set to 1 in this case, which means they have no effect in the calculation (multiplication and division by 1 has no effect). This is an example of designing and planning before and during data entry with downstream calculations in mind. (The researcher responsible for the dataset can’t take credit for this very useful forethought—he received great advice from a colleague!)
+</p>
+</div>
+</div>
+<div id="remove-nas" class="section level3">
+<h3><span class="header-section-number">6.8.5</span> Remove NAs</h3>
+<p>When we imported the data we noticed some values of <code>count</code> were missing (<code>NA</code>). The reason these particular counts are NA while there are still values of <code>w1</code>, <code>w2</code>, and <code>w3</code> is a bit of a puzzle. One might imagine that the <code>NA</code> should really be a zero. In fact, what the researcher did was to sometimes enter <code>NA</code> after a species had become apparently extinct, because after not seeing individuals of a species for several days there was no attempt to observe that species, even though a sample was taken to observe any other still extant species in that community. So these <code>NA</code> values are when a species has gone extinct, and so could be zero, but since no count was attempted, it was appropriate to enter missing value <code>NA</code>. A consequence of all that is that we can remove all observations/rows containing an <code>NA</code>.</p>
+<p>We can do this with a <code>filter</code> so that we remove only rows with an <code>NA</code> in the <code>count</code> variable:</p>
+<pre class="sourceCode r"><code class="sourceCode r">temp1 &lt;-<span class="st"> </span><span class="kw">filter</span>(dd, <span class="op">!</span><span class="kw">is.na</span>(count))
+<span class="kw">nrow</span>(temp1)</code></pre>
+<pre><code>## [1] 680</code></pre>
+<p>Or remove we can remove rows with and <code>NA</code> in any of the variables:</p>
+<pre class="sourceCode r"><code class="sourceCode r">temp2 &lt;-<span class="st"> </span><span class="kw">na.omit</span>(dd)
+<span class="kw">nrow</span>(temp2)</code></pre>
+<pre><code>## [1] 680</code></pre>
+<p>Since the number of remaining rows is the same for both approaches we know there we no observations in which a variable other than <code>count</code> contained an <code>NA</code> when the <code>count</code> variable did not. So we’re safe doing it either way. Let’s overwrite <code>dd</code> with a new version with no <code>NA</code> values.</p>
+<pre class="sourceCode r"><code class="sourceCode r">dd &lt;-<span class="st"> </span><span class="kw">na.omit</span>(dd)</code></pre>
+</div>
+<div id="checking-some-specifics" class="section level3">
+<h3><span class="header-section-number">6.8.6</span> Checking some specifics</h3>
+<p>We should check some feature of the dataset specific to the study.</p>
+<p>Which days were samples taken on? To find this we <code>pull</code> the <code>day</code> variable from the tibble <code>dd</code> and get its <code>unique</code> values:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(<span class="kw">pull</span>(dd, day))</code></pre>
+<pre><code>##  [1]  2  4  6  8 10 12 14 16 18 20</code></pre>
+<p>Samples were taken every two days from day to until a maximum of day 20. So we expect a maximum number of counts of species abundances in a particular replicate to be 10 multiplied by the number of species in a replicate community. I.e. the maximum number of counts in a community with two prey species and the predator (recall that all communities contained the predator) will be 30. Maximum number of counts will be 20 for communities with only one prey species. Note that this is the maximum because we know some values of count were <code>NA</code>.</p>
+<p>Let’s now get the number of counts for each replicate community, and while we’re at it, the last day sampled for each replicate. We do this with a <code>group_by %&gt;% summarise</code> pipeline, grouping by the <code>jar</code> and <code>prey_composition</code> variables. We include the <code>prey_composition</code> variable in the grouping so that we have it to refer to in the resulting summary dataset, and place it first in the <code>group_by</code> function so that the summary dataset is arranged by this variable.</p>
+<pre class="sourceCode r"><code class="sourceCode r">temp1 &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(prey_composition, jar) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_samples =</span> <span class="kw">n</span>(),
+            <span class="dt">max_day =</span> <span class="kw">max</span>(day))
+temp1</code></pre>
+<pre><code>## # A tibble: 35 x 4
+## # Groups:   prey_composition [7]
+##    prey_composition   jar num_samples max_day
+##    &lt;fct&gt;            &lt;dbl&gt;       &lt;int&gt;   &lt;dbl&gt;
+##  1 Collodictyon         3          11      12
+##  2 Collodictyon         4          11      12
+##  3 Collodictyon        18          14      14
+##  4 Collodictyon        19          14      14
+##  5 Collodictyon        20           4       4
+##  6 Colpidium            1          12      12
+##  7 Colpidium            2          12      12
+##  8 Colpidium           15          20      20
+##  9 Colpidium           16          20      20
+## 10 Colpidium           17          20      20
+## # … with 25 more rows</code></pre>
+<div class="info">
+<p>
+Notice how the dataset is arranged in the same order as the levels of the <code>prey_composition</code> variable that we specified when we made this variable an ordered factor type variable. The order is as we planned. If we had not made the <code>prey_composition</code> variable into an ordered factor, R would have chosen its preferred arrangement/ordering, and often this is not our preference. You can see R’s preferred arrangement if you replace <code>prey_composition</code> with <code>as.character(prey_composition)</code> in the <code>group_by</code>.
+</p>
+</div>
+<p>Looking at the summary tibble <code>temp1</code> (remember you can use <code>View(temp1)</code> or click on <code>temp1</code> in the <em>Environment</em> tab) we see that each of the prey compositions has five replicates, exactly as expected. And, also as expected, the maximum number of samples is 10 times the number of species, though often this maximum was not realised. We also see that some communities were sampled for longer than others (we assume this is due to sampling ceasing when all species went extinct).</p>
+<p>We can have R confirm the number of replicates per prey composition with a quick <code>group_by %&gt;% summarise</code> pipeline working on <code>temp1</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">temp1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(prey_composition) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">number_of_replicate =</span> <span class="kw">n</span>())</code></pre>
+<pre><code>## # A tibble: 7 x 2
+##   prey_composition                    number_of_replicate
+##   &lt;fct&gt;                                             &lt;int&gt;
+## 1 Collodictyon                                          5
+## 2 Colpidium                                             5
+## 3 Paramecium                                            5
+## 4 Colpidium, Collodictyon                               5
+## 5 Colpidium, Paramecium                                 5
+## 6 Collodictyon, Paramecium                              5
+## 7 Colpidium, Collodictyon, Paramecium                   5</code></pre>
+<p>We can also get the number of counts made of each species by using the same code with <code>species</code> added as a grouping variable:</p>
+<pre class="sourceCode r"><code class="sourceCode r">temp2 &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(prey_composition, jar, species) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_samples =</span> <span class="kw">n</span>(),
+            <span class="dt">max_day =</span> <span class="kw">max</span>(day))
+temp2</code></pre>
+<pre><code>## # A tibble: 95 x 5
+## # Groups:   prey_composition, jar [35]
+##    prey_composition   jar species      num_samples max_day
+##    &lt;fct&gt;            &lt;dbl&gt; &lt;chr&gt;              &lt;int&gt;   &lt;dbl&gt;
+##  1 Collodictyon         3 Collodictyon           5      10
+##  2 Collodictyon         3 Dileptus               6      12
+##  3 Collodictyon         4 Collodictyon           5      10
+##  4 Collodictyon         4 Dileptus               6      12
+##  5 Collodictyon        18 Collodictyon           7      14
+##  6 Collodictyon        18 Dileptus               7      14
+##  7 Collodictyon        19 Collodictyon           7      14
+##  8 Collodictyon        19 Dileptus               7      14
+##  9 Collodictyon        20 Collodictyon           2       4
+## 10 Collodictyon        20 Dileptus               2       4
+## # … with 85 more rows</code></pre>
+<p>Here we see that two of the microcosms had only two samples taken. These are the ones in which the last day sampled was day four (confirm this for yourself if you wish; <code>View(temp2)</code> is useful for this).</p>
+<div class="safety">
+<p>
+All this might seem like overkill, particularly if we imagine that we had collected and entered the data into the spreadsheet. Surely then we would know all this, and therefore not have to check it? It’s not overkill, however. It’s about making efforts to ensure that we and R are in perfect agreement about the nature and contents of the data. Reaching such agreement is absolutely essential, and often involves resolving differences of opinion by highlighting hidden (and potentially dangerous) assumptions made by us and/or by R about the nature and contents of the data. By taking such efforts we are investing in the foundations of our insights. We need solid foundations for reliable, robust, and accurate insights.
+</p>
+</div>
+</div>
+<div id="a-closer-look-at-the-data" class="section level3">
+<h3><span class="header-section-number">6.8.7</span> A closer look at the data</h3>
+<p>We so far have not looked at the species abundances and have not yet calculated the three required response variables. Let’s begin by looking at the species abundances, and do this by plotting the dynamics of the species in each microcosm. Now you will begin to see the power, elegance, and amazingness of <code>ggplot</code>. We will map the log 10 transformed abundance data onto the y-axis. We will map the <code>day</code> variable onto the x-axis. We will plot the data as points and lines (so use <code>geom_line</code> and <code>geom_point</code>) and we will map the <code>species</code> variable onto the colour of the points and lines. And we will make a grid of facets using <code>facet_grid</code> with rows of the grid corresponding to prey composition and columns for the replicates. Translating that into <code>ggplot</code> terms we get the following code (producing Figure <a href="CS2-1.html#fig:microbe1">6.1</a>):</p>
+<pre class="sourceCode r"><code class="sourceCode r">dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> day, <span class="dt">y =</span> <span class="kw">log10</span>(dens_per_ml), <span class="dt">col =</span> species)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_grid</span>(prey_composition <span class="op">~</span><span class="st"> </span>replicate)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe1"></span>
+<img src="insights_website_files/figure-html/microbe1-1.png" alt="Population dynamics observed during the experiment." width="100%" />
+<p class="caption">
+Figure 6.1: Population dynamics observed during the experiment.
+</p>
+</div>
+<div class="info">
+<p>
+Notice the order of the rows—it is from top to bottom the order we specified when we made the <code>prey_composition</code> variable an ordered factor. So <code>ggplot</code> is using this order. If you like to see what the order would have been if we hadn’t specified it, replace <code>prey_composition</code> with <code>as.character(prey_composition)</code>.
+</p>
+</div>
+<p>The dynamics in Figure <a href="CS2-1.html#fig:microbe1">6.1</a> are those shown in figure 1 of the original publication. Everything seems reasonable, though I (Owen) wish I’d recorded more information about why I stopped sampling the microcosms when I did. I think I still have my lab books from this experiment somewhere inaccessible like my parents loft but haven’t had the chance to get them.</p>
+<p>The predator (<em>Dileptus</em>) does not seem to grow well when <em>Collodictyon</em> is the only available prey species, but grows very well on and decimates <em>Colpidium</em>, after which the predator appears to go extinct and then the <em>Colpidium</em> population recovers. We can also notice that the predator population persists to the end of the experiment on day 20 only when all three prey species are present. It is probably worth emphasising that 20 days corresponds to around 20 generations of these organisms; this is a lot of time for birth and death to affect population abundances (if each individual divided into two daughters each day, the population would increase in size by a factor of 2^20, i.e. grow to be 1 million times larger).</p>
+<p>We could again use the <code>skim()</code> function to take a look at the data more closely.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">skim</span>(dd)</code></pre>
+<pre><code>## Skim summary statistics
+##  n obs: 680 
+##  n variables: 12 
+## 
+## ── Variable type:character ────────────────────────
+##               variable missing complete   n min max empty n_unique
+##  community_composition       0      680 680  19  45     0        7
+##                species       0      680 680   8  12     0        4
+## 
+## ── Variable type:factor ───────────────────────────
+##          variable missing complete   n n_unique
+##  prey_composition       0      680 680        7
+##                             top_counts ordered
+##  Col: 161, Col: 108, Col: 105, Col: 98   FALSE
+## 
+## ── Variable type:numeric ──────────────────────────
+##       variable missing complete   n   mean      sd    p0   p25   p50
+##          count       0      680 680  17.05   27.13 0      0     5   
+##            day       0      680 680   8.79    5    2      4     8   
+##    dens_per_ml       0      680 680 500.2  1880.55 0      0    16.41
+##            jar       0      680 680  20.73   10.2  1     12    22   
+##  prey_richness       0      680 680   1.93    0.73 1      1     2   
+##      replicate       0      680 680   3.21    1.41 1      2     3   
+##             w1       0      680 680   0.61    0.78 0.018  0.3   0.4 
+##             w2       0      680 680   1.67    2.48 1      1     1   
+##             w3       0      680 680   0.8     0.33 0.084  0.38  1   
+##     p75     p100     hist
+##   22      200    ▇▁▁▁▁▁▁▁
+##   12       20    ▇▃▃▃▃▂▁▂
+##  270.27 26609.54 ▇▁▁▁▁▁▁▁
+##   30       35    ▃▃▃▅▂▅▅▇
+##    2        3    ▆▁▁▇▁▁▁▅
+##    4        5    ▆▆▁▇▁▇▁▇
+##    0.81    12.22 ▇▁▁▁▁▁▁▁
+##    1.96    59.24 ▇▁▁▁▁▁▁▁
+##    1        2.14 ▂▁▁▇▁▁▁▁</code></pre>
+</div>
+<div id="calculate-the-three-response-variables" class="section level3">
+<h3><span class="header-section-number">6.8.8</span> Calculate the three response variables</h3>
+<p>There are three response variables corresponding to the three hypotheses about why increased prey diversity might increase predator population stability:</p>
+<ul>
+<li>Predator population abundance.</li>
+<li>Predator population variability.</li>
+<li>Predator population persistence time.</li>
+</ul>
+<div id="calculating-predator-dileptus-abundance" class="section level4">
+<h4><span class="header-section-number">6.8.8.1</span> Calculating predator (<em>Dileptus</em>) abundance</h4>
+<p>You might be thinking “we already have predator abundance”, and you’d be correct. We have estimates of the number per ml on each of the sample days. The issue that we now have to deal with, and solve somehow, is that of independence of observations. When we take repeated measures of the same thing, here the same predator population in the same experimental community, the repeated measures are not independent, and measures closer together in time are less independent than are those further apart in time. There are some rather complex and perhaps sophisticated ways of accounting for the non-independence in repeated measures, but they are beyond the scope of what we want to cover. Instead we are going to use a rather crude, but also quite valid solution. That is to use the maximum predator abundance in each of the experimental unit (communities). There are 35 experimental communities, so we expect to have 35 estimates of average predator abundance.</p>
+<p>To make the calculation in R we will use a <code>filter %&gt;% group_by %&gt;% summarise</code> pipeline. We filter to keep only the observations of the predator (<em>Dileptus</em>), then group the data by <code>prey_richness</code>, <code>prey_composition</code>, and <code>replicate</code>, then calculate two summary values. The first summary value, named by us <code>pred_max_dens</code> is the maximum density of the predator population observed in each experimental community. The second variable calculated, named by us <code>all_zero</code> is TRUE if all the predator densities were zero, or is otherwise FALSE. Here is the R code:</p>
+<pre class="sourceCode r"><code class="sourceCode r">pred_max_dens &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(species <span class="op">==</span><span class="st"> &quot;Dileptus&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(prey_richness, prey_composition, replicate) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">max_dens =</span> <span class="kw">max</span>(dens_per_ml),
+            <span class="dt">all_zero =</span> <span class="kw">sum</span>(dens_per_ml <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) </code></pre>
+<p>As expected, the resulting tibble contains 35 observations and four variables. Lovely. We will look at the values after we calculate the other two response variables.</p>
+<div class="info">
+<p>
+In the <code>group_by</code> we included a redundant grouping variable <code>prey_richness</code>. It is redundant in the sense that we would have got the same resulting tibble if we had not included it, the only difference being that the resulting tibble would not have contained the <code>prey_richness</code> variable. We will often find ourselves including redundant variables in a <code>group_by</code> because we would like to them to appear in the resulting tibble so we can use them later.
+</p>
+</div>
+<div class="warning">
+<p>
+We calculated the maximum of the predator abundance, but could have chosen the mean, median, or the geometric mean, or harmonic mean. It is really important to recognise that the choice of mean here is quite arbitrary, and so introduces an element of subjectivity into our journey from data to insights. Such subjectivity is a rather common feature of this journey.
+</p>
+</div>
+<div class="reliability">
+<p>
+We must make sure our insights are robust to subjective decisions about how to reach them. We can do this by looking at whether the insights are sensitive to changes in these decisions. This is quite different, however, from selecting the decision that gives a result we might desire, which would clearly be a totally inappropriate practice.
+</p>
+</div>
+</div>
+<div id="calculating-predator-dileptus-population-variability" class="section level4">
+<h4><span class="header-section-number">6.8.8.2</span> Calculating predator (<em>Dileptus</em>) population variability</h4>
+<p>We will use the coefficient of variation as the measure of predator population variable. The coefficient of variation, or CV for short, is the standard deviation of the abundances divided by the mean of the abundances. What values might we expect? Well, one thing to expect is some undefined values, since we know that in six of the communities there were no predators observed. The mean will therefore be zero, and the result of division by zero is undefined. So we expect the CV to be <code>NaN</code> for the six communities in which the predator was never observed.</p>
+<p>The R code is very similar to that used in the previous section to calculate maximum predator abundance:</p>
+<pre class="sourceCode r"><code class="sourceCode r">pred_CV &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(species <span class="op">==</span><span class="st"> &quot;Dileptus&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(prey_richness, prey_composition, replicate) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">CV =</span> <span class="kw">sd</span>(dens_per_ml) <span class="op">/</span><span class="st"> </span><span class="kw">mean</span>(dens_per_ml),
+            <span class="dt">all_zero =</span> <span class="kw">sum</span>(dens_per_ml <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)</code></pre>
+<p>Looking at the data (e.g. with <code>View(pred_CV</code>) shows us that indeed there are six <code>NaN</code> values of CV. We will look at the other CV values after we calculate the third response variable.</p>
+<div class="efficiency">
+<p>
+<strong>Congratulations</strong> if you noticed that we could have calculated maximum abundance and CV of abundance in the same summarise. This would have been more efficient, in the sense that we would have had less code. It would also have been safer since then we could not have accidentally done something different (e.g. a different grouping) for the two.
+</p>
+</div>
+</div>
+<div id="calculating-predator-dileptus-persistence-time" class="section level4">
+<h4><span class="header-section-number">6.8.8.3</span> Calculating predator (<em>Dileptus</em>) persistence time</h4>
+<p>Before we do, what type of variable is this? One characteristic is that it is “time to event” data… we are observing the amount of time taken for a particular event (here extinction) to occur. The values can’t be negative. They could be continuous, but in this case are not, because we sampled only every other day. Hence the variable is discrete numbers. We will go into a bit more detail about this nature of values of persistence time after we calculate them.</p>
+<p>We get the last day on which <em>Dileptus</em> was observed with a <code>filter %&gt;% group_by %&gt;% summarise</code> pipeline. We filter to retain only observations of <em>Dileptus</em> being present (i.e. we exclude observations when <em>Dileptus</em> had zero count/density per ml). Then we group the data by prey richness, prey composition, and replicate (prey richness is redundant but we want to keep it to work with later). Then we use <code>summarise</code> to get the maximum value of the <code>day</code> variable in the filtered data. Translated into R this looks like:</p>
+<pre class="sourceCode r"><code class="sourceCode r">temp_persistence_time &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(species <span class="op">==</span><span class="st"> &quot;Dileptus&quot;</span>, dens_per_ml <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(prey_richness, prey_composition, replicate) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">last_day_observed =</span> <span class="kw">max</span>(day))</code></pre>
+<p>Note that the created tibble has only 29 observations, whereas there were 35 experimental communities. This difference occurs because <em>Dileptus</em> was never observed in six of the experimental communities and so these are filtered out of this analysis. We will add them in below as a side effect of another manipulation, so don’t need to take care of this further here.</p>
+<p>Next we need to recognise that the last day on which <em>Dileptus</em> was observed might have been the last day observed because it was after that observed to be extinct, or that it was never sampled again (e.g. if the last day observed was day 20). If we stop an experiment before we observe the event being watched for (e.g. before we observe extinction) then we say that the observation is <em>censored</em>.</p>
+<p>We really should include this information in the persistence time dataset. To do so we need to get and add the day of last sample of <em>Dileptus</em>. We do this with the same pipeline as we used to get the last day observed, except we don’t exclude the observations when <em>Dileptus</em> was sampled and found to have zero abundance:</p>
+<pre class="sourceCode r"><code class="sourceCode r">pred_last_day &lt;-<span class="st"> </span>dd  <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(species<span class="op">==</span><span class="st">&quot;Dileptus&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(prey_richness, prey_composition, replicate) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">last_sample=</span><span class="kw">max</span>(day))</code></pre>
+<p>The created tibble has the expected number of observations: 35.</p>
+<p>We then join the two created tibbles and create a new variable that contains <code>TRUE</code> if the observation of persistence time was censored (indicated if the persistence time is the same as the last day sampled) or <code>FALSE</code> if a sample was taken after the observed persistence time (i.e. the observation is not censored).</p>
+<pre class="sourceCode r"><code class="sourceCode r">pred_persistence_time &lt;-<span class="st"> </span><span class="kw">full_join</span>(temp_persistence_time, pred_last_day) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">censored=</span><span class="kw">ifelse</span>(last_day_observed<span class="op">==</span>last_sample, T, F))</code></pre>
+<pre><code>## Joining, by = c(&quot;prey_richness&quot;, &quot;prey_composition&quot;, &quot;replicate&quot;)</code></pre>
+<p>Because we used <code>full_join</code> we have 35 observations in the resulting tibble, with six <code>NA</code> values of persistence time (and also therefore <code>censored</code>) corresponding to the six communities that are missing from the <code>persistence_time</code> tibble because <em>Dileptus</em> was never observed in those communities.</p>
+<div class="info">
+<p>
+<strong>Censored observations in time to event data</strong> Often we do not have the exact time at which the event of interest occurred. In this experiment we sampled only one every two days. If we observed some individuals on day 14, for example, and then none on or after day 16, we know that extinction occurred somewhere in the time interval between day 14 and day 16. Thus we have what is called “interval censored” time to event data. That is, unless extinction was not observed by the last sample, in which case the data are right censored, and we can only say that extinction (since it is at some point inevitable) will happen sometime after the day of the last sample. Censoring of time to event data is very common and is formally accounted for in statistical analyses of time to event type data. It certainly complicates and adds potential for misinterpreting visualisation of the data, so we must then at least differentiate data points by the type of censoring they have.
+</p>
+</div>
+</div>
+<div id="put-the-all-together" class="section level4">
+<h4><span class="header-section-number">6.8.8.4</span> Put the all together</h4>
+<p>Let’s put all three response variables into the same tibble, since it will make some of the subsequent things easier and more efficient. We want them all in the same column. “But wait”, you say! If all three response variables are in the same column/variable, how will we know which is which. Easy—we make another variable that tells us the response variable in each row. The new tibble will have 35 * 3 = 105 rows. There are lots of ways to do this. The approach we show is to merge/join the three tibbles containing each of the response variables (<code>pred_max_dens</code>, <code>pred_CV</code>, and <code>pred_persistence_time</code>) which creates a wide-formatted arrangement of the data (a different variable for each of the response variables). And then we’ll transform it into tidy (long) format by gather the information from each of the three separate response variables into one variable.</p>
+<p>The first step is to merge all three tibbles:</p>
+<pre class="sourceCode r"><code class="sourceCode r">spread_rr &lt;-<span class="st"> </span>pred_max_dens <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">full_join</span>(pred_CV) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">full_join</span>(pred_persistence_time)</code></pre>
+<pre><code>## Joining, by = c(&quot;prey_richness&quot;, &quot;prey_composition&quot;, &quot;replicate&quot;, &quot;all_zero&quot;)</code></pre>
+<pre><code>## Joining, by = c(&quot;prey_richness&quot;, &quot;prey_composition&quot;, &quot;replicate&quot;)</code></pre>
+<p>We get told both joins are being done by <code>prey_richness</code>, <code>prey_composition</code>, and <code>replicate</code> and also <code>all_zero</code> for the first of the two joins. Lovely—thanks very much. (The join is done by these because R looks for variables shared by the two tibbles being joined, and by default joins by these.)</p>
+<p>Next step is to gather the three response variables into one variable:</p>
+<pre class="sourceCode r"><code class="sourceCode r">rr &lt;-<span class="st"> </span>spread_rr <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">gather</span>(<span class="dt">key =</span> <span class="st">&quot;Response_type&quot;</span>, <span class="dt">value =</span> Value, max_dens, CV, last_day_observed)</code></pre>
+<p>We tell <code>gather</code> that we’d like the values in the variables <code>max_dens</code>, <code>CV</code>, and <code>last_day_observed</code> gathered together an put into one variable called <code>Values</code> and that we’d like the <code>key</code> variable, i.e. the one that says which response variable each observation is about, to be named <code>Response_type</code>. If how <code>gather</code> works is unclear then please wait until Case Study 3, where the explanation goes into more depth, including a figure showing tidy/long data and the corresponding untidy/wide data (Figure <a href="CS3-1.html#fig:long-wide">5.1</a>).</p>
+<p>Excellent. We now have a tibble <code>rr</code> with 105 observations (as expected), a variable named <code>Response_type</code> with entries <code>max_dens</code>, <code>CV</code>, and <code>last_day_observed</code>, and the values of each of these in the <code>Value</code> variable. We have the other variables <code>all_zero</code>, <code>last_sample</code>, and <code>censored</code> also (which is just fine).</p>
+</div>
+</div>
+</div>
+<div id="shapes-1" class="section level2">
+<h2><span class="header-section-number">6.9</span> Shapes</h2>
+<p>Let’s get the mean, standard deviation, and number of observations of each of the response variables for each prey composition. You have seen how to do this before. Take a look back through the book/your notes/your brain to remind yourself.</p>
+<p>Yes… it’s a pretty straightforward <code>group_by %&gt;% summarise</code> pipeline:</p>
+<pre class="sourceCode r"><code class="sourceCode r">summry_rr &lt;-<span class="st"> </span>rr <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(prey_richness, prey_composition, Response_type) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(Value, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
+            <span class="dt">sd =</span> <span class="kw">sd</span>(Value, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
+            <span class="dt">n =</span> <span class="kw">sum</span>(<span class="op">!</span><span class="kw">is.na</span>(Value)))</code></pre>
+<p>The resulting tibble <code>summry_rr</code> has 21 observations (7 prey compositions by 3 response variables) and six variables, three of which are the calculated mean, standard deviation, and number of non-NA values.</p>
+<div class="info">
+<p>
+We counted the number of non-NA values by asking which of the entries in <code>Value</code> were not NA using <code>!is.na</code>, which gives a series of TRUE and FALSE values. Then we use <code>sum</code> to count the number of TRUEs.
+</p>
+</div>
+<p>Take a look at the resulting tibble (<code>View(summry_rr)</code>). Can you see any patterns? Do you get clear insights? Probably not. The lesson here is tables are quite difficult to interpret. We need some visualisations of relationships between the response variables differ and the treatments. Before we do this, let’s have a look at the distributions of the response variables. Try to think about how you would produce graphs of the frequency distributions of each of the response variables.</p>
+<p>Here is how we did it (producing Figure <a href="CS2-1.html#fig:microbe2">6.2</a>):</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(rr, <span class="kw">aes</span>(<span class="dt">x =</span> Value)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">5</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>Response_type, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>)</code></pre>
+<pre><code>## Warning: Removed 12 rows containing non-finite values (stat_bin).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe2"></span>
+<img src="insights_website_files/figure-html/microbe2-1.png" alt="Histograms of the three response variables." width="100%" />
+<p class="caption">
+Figure 6.2: Histograms of the three response variables.
+</p>
+</div>
+<p>First note that we are told that 12 non-finite values have been removed and therefore are not in the visualisation. These are the <code>CV</code> and <code>last_day_observed</code> for the six communities were no predators were ever observed.</p>
+<p>What do you think about the shapes of these distributions? Maximum density looks quite skewed, with lots of small values and few large. This might be expected for an abundance type variable, since growth is a multiplicative process. We would expect a more symmetric distribution of logged abundance (though see Figure <a href="CS2-1.html#fig:microbe3">6.3</a>).</p>
+<pre><code>## Warning: Removed 6 rows containing non-finite values (stat_bin).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe3"></span>
+<img src="insights_website_files/figure-html/microbe3-1.png" alt="Histogram of log10 maximum abundance. We thought that log transformation would make the distribution more symmetric, but it has not... it just made it asymmetric in the opposite direction!" width="70%" />
+<p class="caption">
+Figure 6.3: Histogram of log10 maximum abundance. We thought that log transformation would make the distribution more symmetric, but it has not… it just made it asymmetric in the opposite direction!
+</p>
+</div>
+<p>There are two reasons why we need to be cautious, however, about interpreting much about these distributions. First, they each contain data from seven different treatments (<code>prey_composition</code>)—only five of the values in each distribution might be expected to come from the same population. In effect, we might be looking at seven distributions superimposed on top of each other. Second, sure, we could plot a separate distribution for each of the prey compositions, but we would only have five values per distribution, and that is not enough to say much about their shapes. I.e. we could not say with any confidence if they are symmetric of not. All is not lost, however, as you will see in the next section in which we look at relationships.</p>
+</div>
+<div id="relationships-1" class="section level2">
+<h2><span class="header-section-number">6.10</span> Relationships</h2>
+<p>Recall the question we’re interested in. Do predators have more stable populations when they have more prey to feed on. We expected this to be so if maximum predator population was greater, if predator population variability was lower, and if predator population persistence was longer when there were more prey available. For each of these we must look at the relationship between the response variable and prey richness (the explanatory variable). We can also look at prey composition as an explanatory variable, to see if there is much difference between effects of prey communities with same number of prey species, but different compositions of prey species.</p>
+<div id="maximum-predator-density" class="section level3">
+<h3><span class="header-section-number">6.10.1</span> Maximum predator density</h3>
+<p>Recall that we have one tibble <code>rr</code> with all three response variables. Clearly then, if we want to plot data about only maximum prey density we will need to filter the data according to <code>Response_type == &quot;max_dens</code>. We then do a pretty straightforward <code>ggplot</code> with <code>prey_richness</code> mapped onto the x-axis, the <code>Value</code> of maximum density mapped onto the y-axis, and then a <code>geom_jitter</code> with jitter only along the x-axis (<code>width</code>). Here’s the code, and the result is in Figure <a href="CS2-1.html#fig:microbe4-0">6.4</a>:</p>
+<div class="figure" style="text-align: center"><span id="fig:microbe4-0"></span>
+<img src="insights_website_files/figure-html/microbe4-0-1.png" alt="A not so useful graph due to the y-axis label being totally uninformative. Value of what?" width="100%" />
+<p class="caption">
+Figure 6.4: A not so useful graph due to the y-axis label being totally uninformative. Value of what?
+</p>
+</div>
+<p>There is a big problem with this. Our figure does not tell us what is on the y-axis (“Value” is not particularly informative!) We could fix this by changing the y-axis like this (no figure is presented for this code):</p>
+<pre class="sourceCode r"><code class="sourceCode r">rr <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Response_type <span class="op">==</span><span class="st"> &quot;max_dens&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> prey_richness, <span class="dt">y =</span> Value, <span class="dt">col =</span> prey_composition)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">height =</span> <span class="dv">0</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;max_dens&quot;</span>)</code></pre>
+<p>This is a bit dangerous, in fact, because we have to make sure we have <code>max_dens</code> written in two places. If we accidentally to write <code>max_dens</code> in the filter and <code>CV</code> in the <code>ylab</code> we will get no warning, no error, and have no idea we did anything wrong. We should spot the error if we carefully compare the graphs among the three different response variables, as there should be some inconsistencies (e.g. exactly the same data plotted in two, or two with different data but the same <code>ylab</code>).</p>
+<p>Let’s do the graph so we making this error is impossible. First we define an object (we name it <code>rv_oi</code> which is an abbreviation of “response variable of interest”) and assign to it the name of the response variable we want to graph (<code>max_dens</code> in this case):</p>
+<pre class="sourceCode r"><code class="sourceCode r">rv_oi &lt;-<span class="st"> &quot;max_dens&quot;</span></code></pre>
+<p>Then we use the same <code>ggplot</code> code as before, but with <code>rv_oi</code> in place of <code>&quot;max_dens&quot;</code> (the resulting graph is in Figure <a href="CS2-1.html#fig:microbe4-1">6.5</a>):</p>
+<div class="figure" style="text-align: center"><span id="fig:microbe4-1"></span>
+<img src="insights_website_files/figure-html/microbe4-1-1.png" alt="A reasonably nice graph of maximum predator density in a community against the number of prey available to the predator." width="100%" />
+<p class="caption">
+Figure 6.5: A reasonably nice graph of maximum predator density in a community against the number of prey available to the predator.
+</p>
+</div>
+<p>Super. We have a safe approach and a useful graph. Do you think there is strong evidence of higher maximum predator abundance at higher prey richness? Neither do we. Strike one.</p>
+<div class="reliability">
+<p>
+<strong>Plot the data points</strong> Note that we are plotting the data points, and not bars with error bars, or even box-and-whisker plots. There are few enough data points in this study that we experience no problems when we plot the data itself, rather than some summary of the data (e.g. the mean plus and minus the standard deviation). As a rule, always plot the data.
+</p>
+</div>
+<p>If we feel that we can’t so easily see the differences among prey compositions within the prey richness levels, we can make Figure <a href="CS2-1.html#fig:microbe4-2">6.6</a>, and flip the x and y-axis since the prey composition names then fit better:</p>
+<div class="figure" style="text-align: center"><span id="fig:microbe4-2"></span>
+<img src="insights_website_files/figure-html/microbe4-2-1.png" alt="This time maximum predator density plotted against prey composition, with prey composition on the y-axis as an easy method for having the tick-labels (prey composition) not overlap." width="100%" />
+<p class="caption">
+Figure 6.6: This time maximum predator density plotted against prey composition, with prey composition on the y-axis as an easy method for having the tick-labels (prey composition) not overlap.
+</p>
+</div>
+<p>Some things are a bit clearer. 1) The predator seems to like the prey <em>Colpidium</em> when alone more than either of the other two when alone. 2) Adding <em>Paramecium</em> into a mix with <em>Colpidium</em> gets rid of the beneficial nature of <em>Colpidium</em> (i.e. these two act non-additively). 3) There is huge variation in predator abundance when feeding on a mixture of <em>Colpdium</em> and <em>Collodictyon</em>. Overall, there are strong effects of prey composition, and they sometimes involve non-additive effects, but little evidence of increases in predator abundance with increases in prey richness. Let’s move on to the next response variable.</p>
+</div>
+<div id="predator-population-variability-cv" class="section level3">
+<h3><span class="header-section-number">6.10.2</span> Predator population variability (CV)</h3>
+<p>Making the graphs for CV is now a doddle. We just set <code>rv_oi = &quot;CV</code> and then run exactly the same code as before, resulting in Figure <a href="CS2-1.html#fig:microbe5-1">6.7</a>:</p>
+<pre><code>## Warning: Removed 6 rows containing missing values (geom_point).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe5-1"></span>
+<img src="insights_website_files/figure-html/microbe5-1-1.png" alt="A quite informative graph of predator population variability (measured as the coefficient of variation--CV) in a community against the number of prey available to the predator." width="100%" />
+<p class="caption">
+Figure 6.7: A quite informative graph of predator population variability (measured as the coefficient of variation–CV) in a community against the number of prey available to the predator.
+</p>
+</div>
+<p>And Figure <a href="CS2-1.html#fig:microbe5-2">6.8</a>:</p>
+<pre><code>## Warning: Removed 6 rows containing missing values (geom_point).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe5-2"></span>
+<img src="insights_website_files/figure-html/microbe5-2-1.png" alt="Predator population variability (CV) for each of the prey compositions. It would be nice to know from which jar the very low value for one of the *Collodictyon* replicate comes. We show how to do that next." width="100%" />
+<p class="caption">
+Figure 6.8: Predator population variability (CV) for each of the prey compositions. It would be nice to know from which jar the very low value for one of the <em>Collodictyon</em> replicate comes. We show how to do that next.
+</p>
+</div>
+<p>What do you think? Would you be confident stating that there was a negative relationship here, such that increases in prey richness cause decreases in predator population variability? Put another way, how much would you bet that in reality there is an effect? One problem here is that we have rather few data points, and quite a bit of variability even within prey compositions. Indeed, the amount of variability in the CV of the replicates of the <em>Collodictyon</em> prey composition is greater than all of the other data! In large part this is due to one very low CV <em>Collodictyon</em> replicate.</p>
+<p>Looking back at Figure <a href="CS2-1.html#fig:microbe1">6.1</a>, can you guess which of the <em>Collodictyon</em> replicates resulted in this very low CV. It is replicate 5, the one with only two samples. But this raises a couple of important points:</p>
+<ol style="list-style-type: decimal">
+<li><p>How could be label data points in Figure <a href="CS2-1.html#fig:microbe5-2">6.8</a> and facets in Figure <a href="CS2-1.html#fig:microbe1">6.1</a> with the jar identifier, so we can directly see the corresponding data?</p></li>
+<li><p>What if anything should we do about data points that seem rather extreme?</p></li>
+</ol>
+<p>Let’s deal with number 1 first. We can put on the jar number as a labels on the facets of <a href="CS2-1.html#fig:microbe1">6.1</a> and beside the data points in Figure <a href="CS2-1.html#fig:microbe5-2">6.8</a>. Here’s the code for putting the jar numbers onto the facets. First we get a tibble with the <code>jar</code> number for each <code>prey_composition</code> and <code>replicate</code>, by selecting only those three columns and getting unique rows:</p>
+<pre class="sourceCode r"><code class="sourceCode r">jar_text &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(prey_composition, replicate, jar) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">unique</span>()</code></pre>
+<p>The resulting tibble has 35 rows, one for each jar (microcosm). Then we use the same code as before but with an extra <code>geom_text</code> in which we give the data to use <code>jar_text</code>, tell it the x and y positions for the label, and then give the aesthetic mappings <code>label = jar</code> (i.e. make the <code>label</code> aesthetic correspond to <code>jar</code>) and the aesthetic mapping <code>col = NULL</code> (so that the previously defined <code>col = species</code> mapping is not used). Here’s the code, and the resulting graph is in Figure <a href="CS2-1.html#fig:microbe1-1">6.9</a>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> day, <span class="dt">y =</span> <span class="kw">log10</span>(dens_per_ml), <span class="dt">col =</span> species)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_grid</span>(prey_composition <span class="op">~</span><span class="st"> </span>replicate) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">data =</span> jar_text, <span class="dt">x =</span> <span class="dv">18</span>, <span class="dt">y =</span> <span class="fl">3.5</span>, <span class="kw">aes</span>(<span class="dt">label =</span> jar, <span class="dt">col =</span> <span class="ot">NULL</span>))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe1-1"></span>
+<img src="insights_website_files/figure-html/microbe1-1-1.png" alt="Jar numbers added to the plot of population dynamics observed during the experiment." width="100%" />
+<p class="caption">
+Figure 6.9: Jar numbers added to the plot of population dynamics observed during the experiment.
+</p>
+</div>
+<p>Next we add points to the graph of the CV (Figure <a href="CS2-1.html#fig:microbe5-2">6.8</a>). First we need to remake the tibble containing the CVs, this time keeping the <code>jar</code> variable by adding it as a (albeit redundant) variable in the <code>group_by</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">pred_CV &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(species <span class="op">==</span><span class="st"> &quot;Dileptus&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(jar, prey_richness, prey_composition, replicate) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">CV =</span> <span class="kw">sd</span>(dens_per_ml) <span class="op">/</span><span class="st"> </span><span class="kw">mean</span>(dens_per_ml),
+            <span class="dt">all_zero =</span> <span class="kw">sum</span>(dens_per_ml <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)</code></pre>
+<div class="action">
+<p>
+Install the <strong>ggrepel</strong> add-on package. It moves labels on graphs so they don’t lie on top of each other, i.e. they repel each other.
+</p>
+</div>
+<p>Now we remake the CV figure with the jar numbers labeling the data points. We simply add a <code>geom_text_repel</code> with the <code>jar</code> numbers mapped onto the <code>label</code> aesthetic. Here’s the code, and the resulting graph is in Figure <a href="CS2-1.html#fig:microbe5-3">6.10</a>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggrepel)
+<span class="kw">ggplot</span>(pred_CV, <span class="kw">aes</span>(<span class="dt">x =</span> prey_composition, <span class="dt">y =</span> CV)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">height =</span> <span class="dv">0</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_text_repel</span>(<span class="kw">aes</span>(<span class="dt">label =</span> jar))</code></pre>
+<pre><code>## Warning: Removed 6 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 6 rows containing missing values (geom_text_repel).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe5-3"></span>
+<img src="insights_website_files/figure-html/microbe5-3-1.png" alt="Again the predator population variability data, but this time with jar numbers added as label by the data points." width="100%" />
+<p class="caption">
+Figure 6.10: Again the predator population variability data, but this time with jar numbers added as label by the data points.
+</p>
+</div>
+<p>Super. It’s extremely useful to be able to add labels to data point in graphs, so we can see which replicate, individual, site, etc., the data point corresponds to. This is especially useful when we see what appear to be rather extreme values, which bring us to the next general point—what can and should we do when we see what might be extreme values? Here is a checklist:</p>
+<ol style="list-style-type: decimal">
+<li><p>Use your best judgment about if a value seems extreme. If you’re in doubt, consider it extreme. Nothing we subsequently do will with these apparently extreme values will cause problems if we include some values as being extreme that other people might not.</p></li>
+<li><p>Check that each extreme value is not the result of an error. E.g. in data entry, or subsequent assumptions in calculations. If you ever meet us in person, ask us to tell you the badger testicle size story. It involves using -9999 as the missing value indicator, calculation of testicle volume that involved squaring the measured testicle width, and some apparently very well endowed badgers.</p></li>
+<li><p>Plot your graphs with and without the extreme values and see if this leads to you changing your opinion about the presence, absence, or nature of any patterns. If it seems that including or excluding them is important, well, that’s your answer. Your conclusions are not so robust.</p></li>
+<li><p>It’s beyond the scope of this book, but still worth mentioning that there are quantitative ways to assess if data points are extreme (also known as <em>outliers</em>) and if they affect quantitative conclusions (i.e. result of statistical analyses), but ultimately all include some element of subjectivity in their use and interpretation.</p></li>
+</ol>
+<p>While we’re on the subject of subjectivity and perception, we should think about whether flipping the axis does more than just make room for the prey composition labels. Does having the graph flipped change our perception of pattern (or lack thereof) in the data? Figure <a href="CS2-1.html#fig:microbe5-4">6.11</a>A and B. We (personally) tend to see more evidence of a negative relationship in panel B (with prey richness on the x-axis) but you might be different. We need to be careful to not exploit, or fall prey to, any such effects in the presentation of data. The data should, as far as possible, do all the talking.</p>
+<pre><code>## Warning: Removed 6 rows containing missing values (geom_point).
+
+## Warning: Removed 6 rows containing missing values (geom_point).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe5-4"></span>
+<img src="insights_website_files/figure-html/microbe5-4-1.png" alt="The same graph twice, but with the axis flipped between them. Do you think pattern is more apparent in one versus the other?" width="100%" />
+<p class="caption">
+Figure 6.11: The same graph twice, but with the axis flipped between them. Do you think pattern is more apparent in one versus the other?
+</p>
+</div>
+</div>
+<div id="predator-persistence-time" class="section level3">
+<h3><span class="header-section-number">6.10.3</span> Predator persistence time</h3>
+<p>Visualising predator persistence time (the last day on which a predator was observed) uses the same code as the previous two response variables, but with one tweek. We should differentiate in the visualisation data points that are and are not censored. One method is to make their data points have different shapes. That is, we map the shape aesthetic to the <code>censored</code> variable (the resulting graph is in Figure <a href="CS2-1.html#fig:microbe7-1">6.12</a>):</p>
+<pre><code>## Warning: Removed 6 rows containing missing values (geom_point).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe7-1"></span>
+<img src="insights_website_files/figure-html/microbe7-1-1.png" alt="A reasonably nice graph of predator population persistence time against the number of prey available to the predator." width="100%" />
+<p class="caption">
+Figure 6.12: A reasonably nice graph of predator population persistence time against the number of prey available to the predator.
+</p>
+</div>
+<p>There is pretty strong evidence that more prey species available to a predator increases the time for which the predator population persists. With three prey species available, three of the persistence times were censored, and two of these were censored after 20 days—the longest of any population observed. There isn’t such a clear difference between persistence times between one and two prey communities.</p>
+<p>We also show, as before, the same data for each prey composition, again showing which observations of persistence time are censored (the resulting graph is in Figure <a href="CS2-1.html#fig:microbe7-2">6.13</a>):</p>
+<div class="figure" style="text-align: center"><span id="fig:microbe7-2"></span>
+<img src="insights_website_files/figure-html/microbe7-2-1.png" alt="Predator population persistence time for each of the prey compositions." width="100%" />
+<p class="caption">
+Figure 6.13: Predator population persistence time for each of the prey compositions.
+</p>
+</div>
+<p>Here we can see that one of the two prey species compositions (<em>Collodictyon</em> and <em>Paramecium</em>) results in predator persistence times as long as with three prey species. And that one of the one prey species composition (<em>Colpidium</em>) results in persistence times as long as some of the two prey species compositions. So there are quite strong compositional effects as well as the richness effect mentioned above.</p>
+<div class="efficiency">
+<p>
+Look at Figure <span class="citation">(<span class="citeproc-not-found" data-reference-id="ref"><strong>???</strong></span>)</span>(fig:microbe6-3) showing what happens if <code>prey_composition</code> is just a character variable and not an ordered factor. The ordering of the prey compositions is not quite as desirable.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:microbe6-3"></span>
+<img src="insights_website_files/figure-html/microbe6-3-1.png" alt="Notice how the prey compositions are ordered when we let R choose the order. This happens when we fail to specify ourselves what the order should be, by making the prey composition variable an ordered factor type variable." width="100%" />
+<p class="caption">
+Figure 6.14: Notice how the prey compositions are ordered when we let R choose the order. This happens when we fail to specify ourselves what the order should be, by making the prey composition variable an ordered factor type variable.
+</p>
+</div>
+</div>
+<div id="all-three-at-once" class="section level3">
+<h3><span class="header-section-number">6.10.4</span> All three at once</h3>
+<p>You might be wondering why we went to the lengths of putting all three response variables into one tibble and the having to filter in order to plot each of the three graphs. This was a bit of a faff. We could have just continued using the three separate tibbles we made. Here comes the answer, or at least here comes one answer. If we put all three response variables into the same tibble the we can plot all three graphs at the same time, in one ggplot with three facets (Figure <a href="CS2-1.html#fig:microbe8-1">6.15</a>):</p>
+<pre class="sourceCode r"><code class="sourceCode r">rr <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> prey_richness, <span class="dt">y =</span> Value, <span class="dt">col =</span> prey_composition)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">height =</span> <span class="dv">0</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>Response_type, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>)  <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;top&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">guides</span>(<span class="dt">colour =</span> <span class="kw">guide_legend</span>(<span class="dt">title.position =</span> <span class="st">&quot;top&quot;</span>,
+                               <span class="dt">nrow =</span> <span class="dv">3</span>,
+                               <span class="dt">position =</span> <span class="st">&quot;top&quot;</span>))</code></pre>
+<pre><code>## Warning: Removed 12 rows containing missing values (geom_point).</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:microbe8-1"></span>
+<img src="insights_website_files/figure-html/microbe8-1-1.png" alt="All three reponse variables efficiently made in one call to ggplot with a facet for each variable, and some fiddling with the legend to get it at the top and not too wide." width="100%" />
+<p class="caption">
+Figure 6.15: All three reponse variables efficiently made in one call to ggplot with a facet for each variable, and some fiddling with the legend to get it at the top and not too wide.
+</p>
+</div>
+<p>How useful is it to be able to plot all response variables in one go like this? We’re not too sure. We now have the problem of how to show the censored data points in the <code>last_day_observed</code> data. We also see that the order of the facets is different from the order of the response variables presented in the text above. This would need changing for consistency (you can probably guess how we would do this… the same thing we did with the <code>prey_composition</code> variable). We’ll leave this for you to do. And also to make the version of this graph with <code>prey_composition</code> as the explanatory variable.</p>
+</div>
+</div>
+<div id="wrapping-up-1" class="section level2">
+<h2><span class="header-section-number">6.11</span> Wrapping up</h2>
+<p>The published paper on this dataset had a few other analyses, but not too many. So what you learned above is very much a replica of a real and quite complete representation of the results and insights in the that study. Yes, we didn’t do the statistics, but our conclusions are pretty much the same (though this could easily be in part influenced by Owen knowing in the conclusions before he wrote this chapter).</p>
+<p>One important thing. It would be very very wrong for you to get the impression that one can think through all the likely issues with the data and in a lovely linear process work from the data to the Insights. Probably this impression comes from this chapter and those of the first case study. For example, we do things early on in the data manipulation in order to make things easier later on. It looks like we anticipate a problem that will arise and prevent it ever occurring.</p>
+<p>The truth is, however, that we often found problems once we had got quite far into the data processing, and then realised we should go back and fix their cause. E.g. we found a problem while plotting the data, realised this was caused by an issue that could be sorted out much earlier on, and therefore have positive effects on all subsequent analyses. We did not just do a quick fix on the problematic graph… we fixed the source of the problem. This is a very very good habit to get into. Fix the cause, don’t just treat the symptom. Fixing the cause will increase efficiency, reliability, and all round happiness.</p>
+</div>
+<div id="some-questions-1" class="section level2">
+<h2><span class="header-section-number">6.12</span> Some questions</h2>
+<p>Go to the Insights companion website <a href="http://insightsfromdata.io" class="uri">http://insightsfromdata.io</a> and have a go at the questions and exercises for this chapter.</p>
+
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## Load the libraries we use</span>
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(readr)
+<span class="kw">library</span>(stringr)
+<span class="kw">library</span>(lubridate)
+<span class="kw">library</span>(skimr)
+<span class="kw">library</span>(tidyr)
+<span class="kw">library</span>(ggbeeswarm)
+<span class="kw">library</span>(taxize)
+<span class="kw">library</span>(broom)
+<span class="kw">library</span>(forcats)</code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="CS3-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introduction-to-study.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["insights_website.pdf", "insights_website.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
