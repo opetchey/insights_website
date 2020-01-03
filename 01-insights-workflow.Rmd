@@ -1,21 +1,35 @@
 # Insights Workflow {#insights-workflow}
 
+Here are the steps of our general workflow. It is quite common and uncontroversial.
 
-## Workflow/checklist
+**Planning and preparation steps:**
 
-Refer to this post: 2019-03-14-workflow-checklist-for-data-analysis
+* Decide upon a question.
+* Sketch an answer.
+* Research expectations.
+* Get feedback and revise.
+* Specify hypotheses.
+* Get feedback and revise.
+* Specify response variables.
+* Make predictions.
+* Design study.
+* Get feedback and revise.
+* Write formal proposal.
 
-
-# Before touching R/RStudio
-
-* Question
-* Hypothesis(es)
-* Study methods, materials, design.
-* Response variable(s)
-* Explanatory variable(s)
-* Prediction(s)
-* Secure resources
+**Performing the study and getting insights steps:**
 * Perform study, including data collection.
+* Backup raw data.
+* Prepare the data (make it "research and resuse ready").
+* Prepare computer, R, and RStudio.
+* Read the data into R, and refine the import.
+* Tidy the data.
+* Clean the data.
+* Initial insights.
+* Insights about question.
+
+Below we go into a little more detail about the second set of steps, which concern getting insights. These are covered in even more detail the book.
+
+## Preparing the data
 
 If you don't know, e.g. because you did not conduct the study, *before* import into R inspect the datafiles in a spreadsheet program (so long as they're not too big) and note the following:
 
@@ -25,24 +39,44 @@ If you don't know, e.g. because you did not conduct the study, *before* import i
 * arrangement of the data in the datafile, e.g. tidy or not tidy
 * any obvious things to deal with (e.g. how missing values are coded, date/time information, codes that need expanding, variable/column names that will need changing)
 
-# After we read the datafile(s) into R:
+## Prepare computer, R, and RStudio
 
-* number of variables/columns
-* number of rows
-* variable types
-* appropriate reprentation of missing values
-* tidy the data (at some point)
-* check for innapropriate duplicates
-* fix dates
-* replace any codes with informative words
-* check for appropriate variable entries, e.g. levels of characters, ranges of numerics
-* numbers of "things", number of experimental units, treatments, treatment combinations, temporal samples
-* calculate response and/or explanatory variable(s) (if required)
+* Make a project folder, and data subfolder.
+* Make other subfolders, as you like.
+* Set up and RProject.
+* Create a new script file.
+* Describe project in the new script.
+* Load any required add-on libraries.
 
-# After data tidying and cleaning
+## Read the data into R
 
-* Shapes of variables (i.e. inspect the histograms of explanatory and response variables).
-* Relationships among explanatory variables.
-* Relationships relevant to hypotheses/predictions.
+* Check number of variables/columns.
+* Check number of rows.
+* Check variable types.
+* Check appropriate reprentation of missing values.
+
+## Tidy the data 
+
+* Ensure there is one observation per row.
+* Ensure one type of information is not spread across multiple columns.
+* Gather observations into a single column (i.e. tidy the data).
+
+## Clean the data.
+
+* Check for innapropriate duplicates.
+* Fix date formatting.
+* Replace any codes with informative words.
+* Check for appropriate/plausible variable entries, e.g. levels of characters, ranges of numerics.
+
+## Initial insights
+
+* Check numbers of "things", number of experimental units, treatments, treatment combinations, temporal samples
+* Calculate response and/or explanatory variable(s) (if required)
+* Examine shapes of variables (i.e. inspect the histograms of explanatory and response variables).
+
+## Insights about question posed
+
+* Examine relationships among explanatory variables.
+* Reveal and examine relationships relevant to hypotheses/predictions.
 * Assess confidence in revealed patterns.
 
