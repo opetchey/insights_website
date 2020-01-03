@@ -4,3 +4,8 @@
 ## R-project setup
 
 Here are the ready made empty folders and Rproject files (compressed in a zip file you need to unzip -- {{% staticref "files/Insights_projects.zip" "newtab" %}}Insights_projects.zip{{% /staticref %}}) mentioned in *Insights* (the book) section *R-Projects, the best thing since sliced bread.*
+
+## Base and tidyverse comparison
+
+A section on translation between base and modern R (Use table 3.2 from GSwR
+Add pull)

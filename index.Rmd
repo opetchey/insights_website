@@ -1,6 +1,6 @@
 ---
-title: "Insights from Data"
-subtitle: "Online companion"
+title: "Insights from Data with R --- Online Companion"
+subtitle: "An Introduction for the Life and Environmental Sciences"
 author: "Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs"
 date: "`r Sys.Date()`"
 knit: "bookdown::render_book"
