@@ -1,16 +1,6 @@
----
-title: "Live data analysis demonstration"
-author: "Owen Petchey"
-date: "2/12/2019"
-output:
-  html_document:
-    df_print: paged
----
+# Live data analysis demonstration {#live-data-demo)}
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
+In the first class of the first week of an *Introduction to Data Analysis* course, we lead a *live data analysis demonstration*. Within one hour we go from question to answer, including collection of some data about each of the students. We believe this demonstration helps students connect with the importance and fun of the content of the course.
 
 ## Introduction for intructors
 
@@ -25,7 +15,6 @@ Lets get started.
 ## Meta-task
 
 Write things that you don't understand, and need to know about in subsequent classes. We will cover these things.
-
 
 ## The question
 

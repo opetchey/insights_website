@@ -1,4 +1,10 @@
-# Insights Workflow
+# Insights Workflow {#insights-workflow}
+
+
+## Workflow/checklist
+
+Refer to this post: 2019-03-14-workflow-checklist-for-data-analysis
+
 
 # Before touching R/RStudio
 

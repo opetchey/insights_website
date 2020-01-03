@@ -1,5 +1,5 @@
 
-#  Are diets more diverse in more democratic countries? {#WFD-2}
+#  Are diets more diverse in more democratic countries? {#WFD-food-pol}
 
 ```{r message=FALSE, echo=FALSE, warning=FALSE}
 ## Load the libraries we use
@@ -275,7 +275,7 @@ pol %>%
 
 ## Acquire, import, check the FAO Food balance sheet data
 
-This data shows, for various *Areas* in the world, such as countries and continents, the annual supply and use of various food *Items* such as "Wheat and products", "Honey", and "Crustaceans". Supply and use includes what are called *Elements* of the food supply equation; elements such as "Production", Import Quantity", and "Food supply quantity (kg/capita/yr)". The words *Area*, *Item*, and *Element* are emphasised because they are variables in the dataset, as described further below. There is a lot of important information about this data available on the [FAO Food Balance Sheet Metadata]( http://www.fao.org/faostat/en/#data/FBS/metadata) web page web page. And even more in the [Food Balance Sheet Methodology Handbook](http://www.fao.org/economic/ess/fbs/ess-fbs02/en/).
+This dataset gives, for various *Areas* in the world, such as countries and continents, the annual supply and use of various food *Items* such as "Wheat and products", "Honey", and "Crustaceans". Supply and use includes what are called *Elements* of the food supply equation; elements such as "Production", Import Quantity", and "Food supply quantity (kg/capita/yr)". The words *Area*, *Item*, and *Element* are emphasised because they are variables in the dataset, as described further below. There is a lot of important information about this data available on the [FAO Food Balance Sheet Metadata]( http://www.fao.org/faostat/en/#data/FBS/metadata) web page web page. And even more in the [Food Balance Sheet Methodology Handbook](http://www.fao.org/economic/ess/fbs/ess-fbs02/en/).
 
 The full dataset is about 210MB and can be downloaded from the FAO web page. Importing this takes about 4 seconds on a reasonably fast laptop. As you will see below, we will make a smaller dataset (about 15MB) and save it, so we don't have to work with the full dataset.
 
@@ -293,9 +293,9 @@ The full dataset has 238,560 rows and 113 variables. The first nine variables ar
 
 The *Definitions and standard button* on this web page http://www.fao.org/faostat/en/#data/FBS/metadata leads to much much more information about the variables and entries.
 
-You could get the FAO food balance data from the [FAO website](http://www.fao.org/faostat/en/#data/FBS/metadata). The datafile you would get is called `FoodBalanceSheets_E_All_Data.csv` and is 206MB, i.e. it is quite big. We need, however, only a small amount of the information in this dataset. So to make things easier for ourselves and for you, we created a smaller dataset containing only the data we need, and saved it as an `Rdata` file. This file type fits more data into a smaller space---the resulting file `FoodBalanceSheets_E_All_Data_reduced.Rdata` is 1.9MB. We put this smaller data file on the [Insights Website](insightsfromdata.io), so if you don't want to make it yourself, please get it from there.
+You could get the FAO food balance data from the [FAO website](http://www.fao.org/faostat/en/#data/FBS/metadata). The datafile you would get is called `FoodBalanceSheets_E_All_Data.csv` and is 206MB, i.e. it is quite big. We need, however, only a small amount of the information in this dataset. So to make things easier for ourselves and for you, we created a smaller dataset containing only the data we need, and saved it as an `Rdata` file. This file type fits more data into a smaller space---the resulting file `FoodBalanceSheets_E_All_Data_reduced.Rdata` is 1.9MB. You can download that data here: [direct download small FAO balance sheet data](data/FoodBalanceSheets_E_All_Data_reduced.Rdata).
 
-If you do want to go through this process, feel free to use the code immediately below, otherwise skip over this. It's pretty straightforward, apart from two things. First, we give the `read_csv` an argument you didn't previously see: `encoding`. This helps `read_csv` properly recognise otherwise problematic symbols. In this case, it ensure that country names such as *Côte d'Ivoire* don't cause problems (the ô can do so). Second, the penultimate line saves the produced tibble `ff` to a `Rdata` type of data file; though even that new type of instruction should be quite transparent to you by now.
+If you do want to go through the process of getting the 206MB file, and reducing it down to something more manageable, feel free to use the code immediately below, otherwise skip over this. It's pretty straightforward, apart from two things. First, we give the `read_csv` an argument you didn't previously see: `encoding`. This helps `read_csv` properly recognise otherwise problematic symbols. In this case, it ensure that country names such as *Côte d'Ivoire* don't cause problems (the ô can do so). Second, the penultimate line saves the produced tibble `ff` to a `Rdata` type of data file; though even that new type of instruction should be quite transparent to you by now.
 
 ```{r eval=FALSE}
 ## Get the full food balance sheet dataset *All data* from the FAO website:
@@ -319,7 +319,7 @@ saveRDS(ff, "data/FoodBalanceSheets_E_All_Data_reduced.Rdata")
 rm(ff)
 ```
 
- The next line reads in that smaller dataset:
+The next line reads in that smaller dataset:
 
 ```{r eval=TRUE}
 #rm(list = ls())
@@ -632,7 +632,7 @@ write_csv(tibble(in_pol), "data/in_pol.csv")
 write_csv(tibble(in_fao), "data/in_fao.csv")
 ```
 
-Then it's a matter of some manual spreadsheet work to find the matches, and to put these in a data file, and bring that matching back into R. You can get the country matching data file `countryname_map.csv` from http://insightsfromdata.io.
+Then it's a matter of some manual spreadsheet work to find the matches, and to put these in a data file, and bring that matching back into R. You can get the country matching data file `countryname_map.csv` here: [direct download country name mapping file](data/countryname_map.csv).
 
 ```{r}
 countryname_map <- read_csv("data/countryname_map.csv",

@@ -1,5 +1,5 @@
 
-#  Effects of dietary restriction {#WFD-4}
+#  What are the effects of dietary restriction? {#WFD-diet-restrict}
 
 
 ```{r message=FALSE, echo=TRUE, warning=FALSE}
