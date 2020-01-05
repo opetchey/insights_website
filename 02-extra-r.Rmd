@@ -9,3 +9,9 @@ Here are the ready made empty folders and Rproject files (compressed in a zip fi
 
 A section on translation between base and modern R (Use table 3.2 from GSwR
 Add pull)
+
+# Multiple graphs in one figure
+
+We showed how to make multiple facets in one graph, but what about if we'd like to arrange multiple different `ggplot` graphs in one figure. There are a number of approaches to doing this 
+
+https://patchwork.data-imaginist.com/index.html
