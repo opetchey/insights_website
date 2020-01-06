@@ -27,7 +27,13 @@ Data: https://doi.org/10.5061/dryad.g12p0j2
 
 Abstract: "Here, using a novel nonmodel vertebrate system (the stickleback fish, *Gasterosteus aculeatus*), we test the effect of macronutrient versus calorie intake on key fitness‐related traits, both using the GF and avoiding dietary dilution. We find that the intake of macronutrients rather than calories determines both mortality risk and reproduction. Male mortality risk was lowest on intermediate lipid intakes, and female risk was generally reduced by low protein intakes. The effect of macronutrient intake on reproduction was similar between the sexes, with high protein intakes maximizing reproduction."
 
+A discussion of these features of the case study data (put info in a box? A new type of box?):
 
+The number of variables (columns) they contain.
+The number of observations (rows).
+If and how many of the variables describe experimental manipulations.
+The amount of correlation among the variables.
+How independent are the observations.
 
 ## Before working in R
 

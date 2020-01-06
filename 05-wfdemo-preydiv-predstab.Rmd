@@ -11,6 +11,15 @@ It's fine to be concerned, even a bit stressed, by this complexity. If you feel 
 
 Again: as you work through this chapter, try following along with the [workflow/checklist on this web page](http://r4all.org/posts/workflow-checklist-for-data-analysis/). 
 
+
+A discussion of these features of the case study data (put info in a box? A new type of box?):
+
+The number of variables (columns) they contain.
+The number of observations (rows).
+If and how many of the variables describe experimental manipulations.
+The amount of correlation among the variables.
+How independent are the observations.
+
 ## Introduction to the study and data
 
 The data comes from [a study of how the number of available prey species for a predator consume affects the stability of the predator population dynamics](https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2656.2000.00446.x). The study was designed to address the hypotheses that more pathways of energy flow to a predator (i.e. more prey species) would stabilise the predator population dynamics, 1) by increasing the abundance of the predator, 2) by reducing how much it varies, and 3) by delaying extinction.

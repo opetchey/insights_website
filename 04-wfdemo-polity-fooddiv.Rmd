@@ -19,6 +19,14 @@ library(ggbeeswarm)
 
 This case study is primarily meant to supplement the material in the book *Insights from Data* by Petchey, Beckerman, Childs, and Cooper. If you don't understand something in the case study, have a look at that book (perhaps again), or search for help, or get in touch with us.
 
+A discussion of these features of the case study data (put info in a box? A new type of box?):
+
+The number of variables (columns) they contain.
+The number of observations (rows).
+If and how many of the variables describe experimental manipulations.
+The amount of correlation among the variables.
+How independent are the observations.
+
 
 ##  Introduction to the study and data
 

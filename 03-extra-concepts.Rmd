@@ -84,8 +84,21 @@ We can easily think of situations that are not so amenable to the approaches you
 One example of such a situation is if we have two continuous explanatory variables that are relatively strongly correlated with each other. And we are looking at how they are related to a response variable.  It is quite possible that we see a positive relationship between one explanatory variable and the response variable, when the relationship is in fact negative. We can see the negative relationship only once we have accounted for the other explanatory variable. If this sounds a bit concerning then good... it is. It illustrates how very important is checking for, and understanding implications of, correlations among explanatory variables.
 
 
-## Influence and outliers We sometimes observe one or a few data point that are quite different from all others. How can we tell if they are so different that we should treat them differently? How can we know if they are different and likely to have high influence on our conclusions? What influence on our conclusions (analysis) does an individual data point have? This will depend on various things, including: 1) number of other data points, with more other data points resulting in any individual one having less influence; 2)
+## Influence and outliers
+
+We sometimes observe one or a few data point that are quite different from all others. How can we tell if they are so different that we should treat them differently? How can we know if they are different and likely to have high influence on our conclusions? What influence on our conclusions (analysis) does an individual data point have? This will depend on various things, including: 1) number of other data points, with more other data points resulting in any individual one having less influence; 2)
 the value of the data point (y-value)... large ones (either in the positive or negative direction) tend to have larger influence; 2) the x value of the data point... where larger ones (in positive or negative direction) have more influence.
 We can think of this by anology with a children's playground toy... the seesaw. Can you put together what I write above, and this toy? How would the analogy work?
 
 ## Transformations
+
+
+
+## Interactions
+
+https://github.com/opetchey/insights1_edition1/issues/4
+
+## Distributions
+
+https://blog.cloudera.com/blog/2015/12/common-probability-distributions-the-data-scientists-crib-sheet/
+
