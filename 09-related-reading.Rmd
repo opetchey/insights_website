@@ -28,3 +28,12 @@ S* pector (2008) Data Manipulation with R. 154 pages. Covers importing data, wor
 * McElreath (2016) Statistical Rethinking. 469 pages. Brilliant. What should be taught to undergraduates, if only the world would then be ready for them.
 * Healy (2017) Data Visualisation for Social Science. A practical introduction with R and ggplot2. Focuses on appropriate visualization for getting knowledge from data. Covers principles and practices of looking and presenting data.
 * Zumel & Mount (2019) Practical Data Science with R.
+
+## Data science related reading
+
+* https://teachdatascience.com/peerj/
+
+## Study design related reading
+
+https://www.amazon.com/Asking-Questions-Biology-Experimental-Presentation/dp/1292085991
+
