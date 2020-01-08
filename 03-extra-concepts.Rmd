@@ -1,5 +1,16 @@
 # Additional concepts
 
+
+## Modes of data analysis
+
+Talk about these three:
+* Exploration of patterns
+* Prediction of patterns
+* Confirmation of causes
+Look here for inspiration, of some kind.
+https://dynamicecology.wordpress.com/2013/10/16/in-praise-of-exploratory-statistics/
+
+
 ## Interoperability
 
 ### Standardising terms

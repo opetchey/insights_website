@@ -40,6 +40,12 @@ The data about what food is available to the people of a country is from the *FA
 
 As you work through this chapter, try following along with the [workflow/checklist on this web page](http://r4all.org/posts/workflow-checklist-for-data-analysis/). 
 
+## Independence
+
+We have time series (dealt with below in Relationships section)
+And geographic closeness, historical effects, among countries.
+
+
 ##  A little preparation
 
 Make a new folder for this case study, and in it a folder called in `data` (this will contain any datasets for this case study/project). In *RStudio* create an *RStudio* project and save it in the project folder (not the `data` folder). Close *RStudio* and double click on the project file to re-open *RStudio*. Create a new R script file. In this new script file make a comment about what it will contains, and then load all the libraries we so far used. Then save the file and give it a filename that is intuitive, unique, and memorable, so it is easy to search for and find.

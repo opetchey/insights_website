@@ -31,6 +31,8 @@ S* pector (2008) Data Manipulation with R. 154 pages. Covers importing data, wor
 
 ## Data science related reading
 
+[*Data Science for Undergraduates: Opportunities and Options. (2018) National Academies Press, Washington, D.C.*](https://www.nap.edu/catalog/25104/data-science-for-undergraduates-opportunities-and-options)
+
 * https://teachdatascience.com/peerj/
 
 ## Study design related reading
