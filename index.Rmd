@@ -67,6 +67,16 @@ Here you will find information additional to that in the book:
 
 Perhaps add the "Notes/ideas for instructors section from the book Preface."
 
+## Workflow demonstration
+
+<img src="images/WF1_icon.jpg" width="60"/>
+
+<img src="images/WF2_icon.jpg" width="60"/>
+
+<img src="images/WF3_icon.jpg" width="60"/>
+
+<img src="images/WF4_icon.jpg" width="60"/>
+
 
 
 
