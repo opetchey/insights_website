@@ -1,6 +1,4 @@
 
-#  Are diets more diverse in more democratic countries? {#WFD-food-pol}
-
 ```{r message=FALSE, echo=FALSE, warning=FALSE}
 ## Load the libraries we use
 library(dplyr)
@@ -15,7 +13,13 @@ library(ggbeeswarm)
 #library(ggridges)
 ```
 
+
+#  Are diets more diverse in more democratic countries? {#WFD-food-pol}
+
+<img src="images/WF1_icon.jpg" width="60"/>
+
 ## About this case study
+
 
 This case study is primarily meant to supplement the material in the book *Insights from Data* by Petchey, Beckerman, Childs, and Cooper. If you don't understand something in the case study, have a look at that book (perhaps again), or search for help, or get in touch with us.
 

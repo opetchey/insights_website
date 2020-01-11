@@ -17,6 +17,9 @@ library(broom)
 library(forcats)
 ```
 
+<img src="images/WF4_icon.jpg" width="60"/>
+
+
 A general article about dietary restriction (DR): https://www.nia.nih.gov/health/calorie-restriction-and-fasting-diets-what-do-we-know
 
 The case study article: *Reconciling nutritional geometry with classical dietary restriction: effects of nutrient intake, not calories, on survival and reproduction.* Moatt JP, Fyfe MA, Heap E, Mitchell LJM, Moon F, Walling CA (2018) Aging Cell, Volume 18, e12868.

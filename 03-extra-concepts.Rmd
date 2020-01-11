@@ -17,7 +17,7 @@ https://dynamicecology.wordpress.com/2013/10/16/in-praise-of-exploratory-statist
 
 It's certainly nice to know that we accurately entered the prey species names, in the sense that they match the names of known prey species. Doing so will also ensure that our results could be compared with and combined with other studies of moth species (put another way, we would have assured our data are *interoperable* with other studies involving these moth species). To do this, we can use a very nice set of packages that make the whole process a total breeze. Let's try this for the first ten species in the dataset. Note that the first line below installs the __taxize__ add-on package, and is commented out as we only need to run it once).
 
-```{r}
+```{r eval = FALSE}
 ## install.packages("taxize")
 ## the previous line was commented out. Uncomment it by removing
 ## the two pounds (##) if you want to run it.
@@ -55,13 +55,14 @@ dd
 ```
 
 ```{r masked-rels-1, fig.cap='(a and b) Little evidence of a relationship between the response variable *y* and either of the two explanatory variables *x1*, or *x2*. (c) Strong correlation between the two explanatory variables *x1* and *x2*', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
+library(patchwork)
 p1 <- ggplot(dd, aes(x=x1, y=y)) +
   geom_point()
 p2 <- ggplot(dd, aes(x=x2, y=y)) +
   geom_point()
 p3 <- ggplot(dd, aes(x=x1, y=x2)) +
   geom_point()
-plot_grid(p1, p2, p3, labels="auto", nrow = 1)
+p1 + p2 + p3
 ```
 
 
