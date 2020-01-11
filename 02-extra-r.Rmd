@@ -1,31 +1,3 @@
-# More R {#more-R}
+# Test
 
-
-## R-project setup
-
-Here are the ready made empty folders and Rproject files (compressed in a zip file you need to unzip -- {{% staticref "files/Insights_projects.zip" "newtab" %}}Insights_projects.zip{{% /staticref %}}) mentioned in *Insights* (the book) section *R-Projects, the best thing since sliced bread.*
-
-## Base and tidyverse comparison
-
-A section on translation between base and modern R (Use table 3.2 from GSwR
-Add pull)
-
-## Multiple graphs in one figure
-
-We showed how to make multiple facets in one graph, but what about if we'd like to arrange multiple different `ggplot` graphs in one figure. There are a number of approaches to doing this 
-
-https://patchwork.data-imaginist.com/index.html
-
-## Simulating data
-
-https://www.r-bloggers.com/the-birthday-paradox-puzzle-tidy-simulation-in-r/
-
-## Avoiding "loops"
-
-do()
-Used I think in the fish diet restriction workflow demo.
-
-## Comparing base R with tidyverse R
-
-Add to website a section on translation between base and modern R (Use table 3.2 from GSwR
-Add pull)
+Test
