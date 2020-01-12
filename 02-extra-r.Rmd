@@ -1,9 +1,9 @@
 # More R {#more-R}
 
 
-## R-project setup
+## RStudio Project setup
 
-Here are the ready made empty folders and Rproject files (compressed in a zip file you need to unzip -- {{% staticref "files/Insights_projects.zip" "newtab" %}}Insights_projects.zip{{% /staticref %}}) mentioned in *Insights* (the book) section *R-Projects, the best thing since sliced bread.*
+Here are the ready made empty folders and Project files (compressed in a zip file you need to unzip -- {{% staticref "files/Insights_projects.zip" "newtab" %}}Insights_projects.zip{{% /staticref %}}) mentioned in *Insights* (the book) section *Projects in RStudio*
 
 ## Base and tidyverse comparison
 
@@ -24,6 +24,17 @@ https://www.r-bloggers.com/the-birthday-paradox-puzzle-tidy-simulation-in-r/
 
 do()
 Used I think in the fish diet restriction workflow demo.
+
+
+## Syntax highlighting
+
+From the book:
+
+```{block, type="info"}
+Throughout this book you will see that different parts of our R commands have different colours. We could here explain all the different parts and different colours. But then we would have to explain the grammar and syntax in more detail than we feel is currently useful for you. In case you wonder, however, please look on the Insights companion website (http://insightsfromdata.io).
+```
+
+
 
 ## summarise
 

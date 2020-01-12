@@ -43,7 +43,7 @@ If you don't know, e.g. because you did not conduct the study, *before* import i
 
 * Make a project folder, and data subfolder.
 * Make other subfolders, as you like.
-* Set up and RProject.
+* Set up and Project.
 * Create a new script file.
 * Describe project in the new script.
 * Load any required add-on libraries.
