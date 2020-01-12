@@ -25,7 +25,6 @@ https://www.r-bloggers.com/the-birthday-paradox-puzzle-tidy-simulation-in-r/
 do()
 Used I think in the fish diet restriction workflow demo.
 
-## Comparing base R with tidyverse R
+## summarise
 
-Add to website a section on translation between base and modern R (Use table 3.2 from GSwR
-Add pull)
+a bit about other summarise functions, such as summarise all. And the other option of doing a gather and group_by and summarise.
