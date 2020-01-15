@@ -38,6 +38,11 @@ lapply(c('DT', 'citr', 'formatR', 'svglite'), function(pkg) {
 ```
 
 
+**Standardise scripts**:
+
+- Single hash for comments
+- Minimise nesting, max. piping
+- Nothing in ggplot()... all in the geoms (unless piping data in)
 
 # Introduction
 

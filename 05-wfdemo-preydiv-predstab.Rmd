@@ -1,3 +1,6 @@
+**Rename dataset from dd to something informative.**
+
+
 # How does dietary diversity affect populations?  {#WFD-dietdiv-effect}
 
 <img src="images/CS2_icon.jpg" width="60"/>
@@ -242,7 +245,7 @@ dd <- mutate(dd, dens_per_ml=count*w2/w1/w3)
 Super-simple! Now we have a standardised, comparable, and interoperable measurement of population size of each species.
 
 ```{block, type="efficiency"}
-Actually, the dataset as it was entered was done so to make this calculation work very easily. In particular, `w2` is very purposefully the sum of the sampled volume and the diluent, and is *not* just the volume of the diluent. Furthermore, if there was no dilution, and the count was made of `w1` we might have entered `NA` for `w2` and `w3` since they did not exist. Instead, the both `w2` and `w3` are set to 1 in this case, which means they have no effect in the calculation (multiplication and division by 1 has no effect). This is an example of designing and planning before and during data entry with downstream calculations in mind. (The researcher responsible for the dataset can't take credit for this very useful forethought---he received great advice from a colleague!)
+Actually, the dataset as it was entered was done so to make this calculation work very easily. In particular, `w2` is very purposefully the sum of the sampled volume and the diluent, and is *not* just the volume of the diluent. Furthermore, if there was no dilution, and the count was made of `w1` we might have entered `NA` for `w2` and `w3` since they did not exist. Instead, the both `w2` and `w3` are set to 1 in this case, which means they have no effect in the calculation (multiplication and division by 1 has no effect). This is an example of designing and planning before and during data entry with downstream calculations in mind.
 ```
 
 
@@ -749,6 +752,8 @@ rr %>%
 ## Wrapping up
 
 The published paper on this dataset had a few other analyses, but not too many. So what you learned above is very much a replica of a real and quite complete representation of the results and insights in the that study. Yes, we didn't do the statistics, but our conclusions are pretty much the same (though this could easily be in part influenced by Owen knowing in the conclusions before he wrote this chapter).
+
+
 
 One important thing. It would be very very wrong for you to get the impression that one can think through all the likely issues with the data and in a lovely linear process work from the data to the Insights. Probably this impression comes from this chapter and those of the first case study. For example, we do things early on in the data manipulation in order to make things easier later on. It looks like we anticipate a problem that will arise and prevent it ever occurring.
 

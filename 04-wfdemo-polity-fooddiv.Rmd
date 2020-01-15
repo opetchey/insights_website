@@ -1,3 +1,6 @@
+**Rename datasets from dd_??? to something informative. (search for dd!)**
+
+**At least say how we could improve country name matching. And that this is an interoperability issue...**
 
 ```{r message=FALSE, echo=FALSE, warning=FALSE}
 ## Load the libraries we use
@@ -83,10 +86,11 @@ rm(list = ls())
 pol <- read_csv("data/p4v2015.csv")
 ```
 
-If you want to read direct from the Excel file, use this:
+If you want to read direct from the Excel file, use this (you will need to install the __readxl__ package if you have not already done so):
 
 ```{r eval=FALSE}
-pol <- readxl::read_excel("data/p4v2015.xls")
+library(readxl)
+pol <- read_excel("data/p4v2015.xls")
 ```
 
 Is RStudio showing the correct number of rows and columns? Is it showing the appropriate variable types for each of the three variables? The `Country` variable should be a character variable, the other two should be numeric).
@@ -132,7 +136,7 @@ rm(pol_nas)
 ```
 
 
-### Deal with innapropriate duplicates
+### Check for innapropriate duplicate observations
 
 We expect there to not exist any more than one Polity score per country per year. We check this by first selecting only the `Country` and `Year` variables, then getting any duplicate rows with the `duplicated` function. The `duplicated` function returns a vector of TRUE and FALSE, where TRUE means a row is a duplicate. We can then get the `sum` of this vector to count the number of TRUEs (i.e. number of duplicated rows).
 
@@ -313,7 +317,7 @@ The *Definitions and standard button* on this web page http://www.fao.org/faosta
 
 You could get the FAO food balance data from the [FAO website](http://www.fao.org/faostat/en/#data/FBS/metadata). The datafile you would get is called `FoodBalanceSheets_E_All_Data.csv` and is 206MB, i.e. it is quite big. We need, however, only a small amount of the information in this dataset. So to make things easier for ourselves and for you, we created a smaller dataset containing only the data we need, and saved it as an `Rdata` file. This file type fits more data into a smaller space---the resulting file `FoodBalanceSheets_E_All_Data_reduced.Rdata` is 1.9MB. You can download that data here: [direct download small FAO balance sheet data](data/FoodBalanceSheets_E_All_Data_reduced.Rdata).
 
-If you do want to go through the process of getting the 206MB file, and reducing it down to something more manageable, feel free to use the code immediately below, otherwise skip over this. It's pretty straightforward, apart from two things. First, we give the `read_csv` an argument you didn't previously see: `encoding`. This helps `read_csv` properly recognise otherwise problematic symbols. In this case, it ensure that country names such as *Côte d'Ivoire* don't cause problems (the ô can do so). Second, the penultimate line saves the produced tibble `ff` to a `Rdata` type of data file; though even that new type of instruction should be quite transparent to you by now.
+If you do want to go through the process of getting the 206MB file, and reducing it down to something more manageable, feel free to use the code immediately below, otherwise skip over this. It's pretty straightforward, apart from two things. First, we give the `read_csv` an argument you didn't previously see: `encoding`. This helps `read_csv` properly recognise otherwise problematic symbols. In this case, it ensure that country names such as *Côte d'Ivoire* don't cause problems (the "ô" can otherwise do so). Second, the penultimate line saves the produced tibble `ff` to a `Rdata` type of data file; though even that new type of instruction should be quite transparent to you by now.
 
 ```{r eval=FALSE}
 ## Get the full food balance sheet dataset *All data* from the FAO website:
@@ -389,9 +393,10 @@ unique(pull(fbs_long, Year))
 
 Yes, every year from 1961 to 2015 is represented (by at least one observation). There are 15 years in the dataset.
 
-Another good check to do on a dataset is for duplicated rows, if one can reasonably conclude that there should be none. Do we think there can be any duplicated rows in this dataset? That would be the exactly the same value of Country, Item, Year, and Food Supply Quantity. 
+### Check for innapropriate duplicate observations
 
-Finding any duplicated rows is fairly straightforward thanks to the `duplicated` function, which returns a TRUE or FALSE for each row of a dataset, TRUE if the row is duplicated somewhere, or FALSE otherwise. Then we can `filter` the rows by these TRUE/FALSE values to give only the duplicated rows:
+As before, we should check for innapropriate duplicate observations. Do we think there can be/should be any duplicated rows in this dataset? That would be the exactly the same value of Country, Item, Year, and Food Supply Quantity. Lets check:
+
 
 ```{r dupe-1, cache = FALSE}
 duplicated_records <- filter(fbs_long, duplicated(fbs_long))
@@ -399,7 +404,7 @@ duplicated_records <- filter(fbs_long, duplicated(fbs_long))
 
 Note that the resulting tibble contains only one example of each duplicate (look at the data with `View(duplicated_rows)`.
 
-There are, in fact, 9,287 rows that are duplicated (not unique). Let's assume that these are mistaken duplicate entries, and so reduce to a dataset with only unique rows:
+There are, in fact, 9,287 rows that are duplicated (not unique). Let's assume (somewhat dangerously perhaps) that these are mistaken duplicate entries, and so reduce to a dataset with only unique rows:
 
 ```{r dupe-2, cache = FALSE}
 fbs_long <- unique(fbs_long)
@@ -414,7 +419,7 @@ part_duplicated_records <- fbs_long %>%
   filter(fbs_long, .)
 ```
 
-Looking at the result we see there are 10,733 rows with duplicated Country, Year, and Item. This is weird. And that these duplicates are only for food items "Eggs" and "Milk - Excluding Butter". We have no idea why there are multiple entries for these two items! Here's an example of one of the duplicates:
+Looking at the result we see there are 10,733 rows with duplicated Country, Year, and Item. This is weird. And these these duplicates are only for food items "Eggs" and "Milk - Excluding Butter". We have no idea why there are multiple entries for these two items! Here's an example of one of the duplicates:
 
 ```{r}
 filter(fbs_long,
@@ -433,10 +438,12 @@ fbs_long <- fbs_long %>%
 ```
 
 ```{block, type="info"}
-Time to tell the truth. It took us a long long time to realise there were duplicated records in the FAO dataset. We did not pro-actively think to check for duplicates. We only realised there must be duplicates when we tried to get the numbers to add up below. They did not before we removed the duplicates, and this led us to find the duplicates. Once we found them, we removed them above. Now it looks like we were really smart to think they might occur, check for them, find them, and remove them. In reality we were not so smart. What we were, however, was **absolutely determined* to understand why the numbers did not add up. You must also be as strict in your work. After we found the duplicates in this dataset, we also looked in the Polity data, found some, and then decided to add a check for duplicates to all case studies, and to advise you to make this a standard sanity check when you start looking at a dataset.
+Time to tell the truth. It took us a long long time to realise there were duplicated records in the FAO dataset. We only realised there must be duplicates when we tried to get the numbers to add up below. They did not before we removed the duplicates, and this led us to find the duplicates. Once we found them, we removed them above. In the text above, it may look like we were really smart to think they might occur, check for them, find them, and remove them. In reality we were not so smart. We were, however, absolutely determined to understand why the numbers did not add up. You must also be as strict in your work. After we found the duplicates in this dataset, we also looked in the Polity data, found some, and then decided to add a check for duplicates to all case studies, and to advise you to make this a standard sanity check when you start looking at a dataset.
 ```
 
 That was a major step forward. Now we know our dataset has only unique observations.
+
+### Checking something else...
 
 Now let's do another sanity check. Because there are 182 countries and 114 food items we know there could be 20,748 observations for each year. Let's see how many there really are:
 
