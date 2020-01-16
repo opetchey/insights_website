@@ -62,9 +62,10 @@ Here you will find information additional to that in the book:
 2. [More topics in R](#more-r).
 3. [Additional data analysis concepts](#more-concepts).
 4. (5,6) Three additional Workflow Demonstrations: [polity and food diversity](#WFD-food-pol), [effects of dietary diversity on populations](#WFD-dietdiv-effect), and [effects of dietary restriction on individuals](#WFD-diet-restrict).
-7. Details of a [live data analysis demonstration](#live-data-demo) we often use in our introductory undergraduate classes.
-8. [More questions and datasets](#more-questions-data) that could be developed into new Workflow Demonstrations (perhaps for students to practice with and/or instructors to use.).
-9. Some [Related reading](#related-reading).
+7. Model scripts for each workflow demonstration.
+8. Details of a [live data analysis demonstration](#live-data-demo) we often use in our introductory undergraduate classes.
+9. [More questions and datasets](#more-questions-data) that could be developed into new Workflow Demonstrations (perhaps for students to practice with and/or instructors to use.).
+10. Some [Related reading](#related-reading).
 
 
 
