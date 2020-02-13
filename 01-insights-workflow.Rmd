@@ -17,6 +17,7 @@ Here are the steps of our general workflow. It is quite common and uncontroversi
 * Write formal proposal.
 
 **Performing the study and getting insights steps:**
+
 * Perform study, including data collection.
 * Backup raw data.
 * Prepare the data (make it "research and resuse ready").

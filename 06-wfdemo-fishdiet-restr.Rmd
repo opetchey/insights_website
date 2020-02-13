@@ -216,6 +216,16 @@ filter(mortality, Fish_ID=="LR504", Week==2)
 filter(mortality, Fish_ID=="LR504")
 ```
 
+In the mortality dataset fish LR504 has two record for week 2.
+
+```{r}
+check <- mortality %>% group_by(Fish_ID) %>%
+  summarise(check = length(unique(Week))==max(Week))
+
+```
+
+
+
 ### NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of "things"*
 
 How many missing values in the courtship dataset (remember to reduce the variables to those mentioned above)?

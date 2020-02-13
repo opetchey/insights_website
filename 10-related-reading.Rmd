@@ -39,6 +39,8 @@ S* pector (2008) Data Manipulation with R. 154 pages. Covers importing data, wor
 
 https://www.amazon.com/Asking-Questions-Biology-Experimental-Presentation/dp/1292085991
 
+
+
 ## Beautifying graphs (ggplot2)
 
 GSwR chapter.
