@@ -16,6 +16,10 @@ We showed how to make multiple facets in one graph, but what about if we'd like 
 
 https://patchwork.data-imaginist.com/index.html
 
+## Other pipes
+
+https://www.r-bloggers.com/upping-your-pipe-game/
+
 ## Simulating data
 
 https://www.r-bloggers.com/the-birthday-paradox-puzzle-tidy-simulation-in-r/
