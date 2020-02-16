@@ -697,15 +697,81 @@ fbs_div <- fbs_final %>%
 Excellent. We have 8,272 data points, exactly as we should. (We previously saw this was the number of combinations of country and year for which not all data was NA. I.e. the number of rows in `country_year_not_all_missing`).
 
 
-##### TO HERE 13.2.2020
 
 ## Merge the two datasets
 
-The final step of data preparation is to merge the Polity and FAO data. One nasty issue we must deal with before we do the merge is to check the country names in the two datasets. It's quite possible, even likely, there are instances of the same country having different names in the two. The following code gets the country names from each, looks for ones that appear in one and not the other, and vice versa, and writes these to csv files.
+The final step of data preparation is to merge the Polity and FAO data. One nasty issue we must deal with before we do the merge is to check the country names in the two datasets. If both datasets had been made with **interoperability** in mind, they would have used a standard naming of countries, such as ISO (International Organisation for Standardization) 3166-1. We acquired this standard from https://datahub.io/core/country-list. Here we read it into R:
+
+```{r}
+ISO_country_names <- read_csv("data/ISO_country_data_csv.csv") %>%
+  rename(ISO2_Code = Code)
+```
+
+```{r}
+fbs_countries <- unique(pull(fbs_div, Country))
+iso_countries <- pull(ISO_country_names, Name)
+setdiff(fbs_countries, iso_countries)
+setdiff(iso_countries, fbs_countries)
+
+```
+
+
+Seems odd that FAO would not have used standardised (ISO 3166-1) naming. Digging into their metadata a bit we can find a page of Definitions and Standards: http://www.fao.org/faostat/en/#definitions. In the tab *Country/Region* we find a dataset with country names and various country codes, including ISO2 and ISO3 codes. Excellent. We downloaded this dataset and now read it into R and merge with the food balance sheet dataset `fbs`:
+
+```{r}
+FAO_country_standards <- read_csv("data/FAOSTAT_data_country_name_standards.csv")
+names(FAO_country_standards) <- str_replace_all(names(FAO_country_standards), c(" " = "_"))
+FAO_country_standards <- FAO_country_standards %>%
+  rename(Country_name_FAO = Country) %>%
+  filter(Country_Code < 5000)
+```
+
+Swaziland in Food Balance sheet is ...Eswatini!!!
+
+```{r}
+fbs_country_name_code <- read_csv("data/FoodBalanceSheets_E_All_Data.csv",
+               locale = locale(encoding = 'ISO-8859-1'))
+fbs_country_name_code <- fbs_country_name_code %>%
+  select(Country, Country_Code='Country Code') %>%
+  unique() %>%
+  filter(Country_Code < 5000)
+```
+
+```{r}
+
+
+fbs_div_standardised <- full_join(fbs_div, fbs_country_name_code) %>%
+  rename(Country_name_fbs = Country) %>%
+  full_join(FAO_country_standards) %>%
+  select(-Start_Year, -End_Year)
+
+merge_check <- fbs_div_standardised %>%
+  filter(is.na(Country_name_fbs) |
+         is.na(Year) |
+         is.na(diversity) |
+         is.na(richness) |
+         is.na(Country_Code) |
+         is.na(Country_name_FAO) |
+         is.na(M49_Code) |
+         is.na(ISO2_Code) |
+         is.na(ISO3_Code)) %>%
+  select(-Year, -diversity, -richness) %>%
+  unique()
+                    
+
+#%>%
+#  full_join(ISO_country_names)
+```
+
+
+First let us deal with making the FAO data interoperable. The dataset (as downloaded from the FAO) does not contain ISO country names/codes
+
+
+It's quite possible, even likely, there are instances of the same country having different names in the two. The following code gets the country names from each, looks for ones that appear in one and not the other, and vice versa, and writes these to csv files.
 
 ```{r eval=FALSE}
 pol_countries <- unique(pull(pol, Country))
-fbs_countries <- unique(pull(fbs_div, Country))
+
 in_pol <- setdiff(pol_countries, fbs_countries)
 in_fbs <- setdiff(fbs_countries, pol_countries)
 write_csv(tibble(in_pol), "data/in_pol.csv")
