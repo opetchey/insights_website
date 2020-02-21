@@ -13,6 +13,10 @@ https://dynamicecology.wordpress.com/2013/10/16/in-praise-of-exploratory-statist
 
 ## Interoperability
 
+Countries in the fao polity study
+
+https://www.r-bloggers.com/taxadb-a-high-performance-local-taxonomic-database-interface/
+
 ### Standardising terms
 
 It's certainly nice to know that we accurately entered the prey species names, in the sense that they match the names of known prey species. Doing so will also ensure that our results could be compared with and combined with other studies of moth species (put another way, we would have assured our data are *interoperable* with other studies involving these moth species). To do this, we can use a very nice set of packages that make the whole process a total breeze. Let's try this for the first ten species in the dataset. Note that the first line below installs the __taxize__ add-on package, and is commented out as we only need to run it once).
