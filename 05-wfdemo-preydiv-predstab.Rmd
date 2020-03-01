@@ -1,6 +1,3 @@
-**Rename dataset from dd to something informative.**
-
-
 # How does dietary diversity affect populations?  {#WFD-dietdiv-effect}
 
 <img src="images/CS2_icon.jpg" width="60"/>
@@ -67,7 +64,6 @@ library(ggplot2)
 library(readr)
 library(stringr)
 library(lubridate)
-library(skimr)
 library(tidyr)
 library(forcats)
 ```
@@ -89,10 +85,10 @@ Make sure you opened RStudio by clicking on your project file for this case stud
 ```
 
 ```{r}
-dd <- read_csv("data/dileptus_predator_prey_data.csv")
+stab <- read_csv("data/dileptus_predator_prey_data.csv")
 ```
 
-Great, we didn't get an error. The `read_csv()` function has done two things. It read in the data and the `dd <-` assigns the data to a new object called `dd` (you could give it a name other than `dd` if you wish).
+Great, we didn't get an error. The `read_csv()` function has done two things. It read in the data and the `stab <-` assigns the data to a new object called `stab` (you could give it a name other than `stab` if you wish).
 
 The `read_csv()` function also gives a summary of what it found. 
 
@@ -103,7 +99,7 @@ The `read_csv()` function also gives a summary of what it found.
 Now we should check some basic things about the imported data. Let's start by checking if it has the correct number of rows and variables, and if variables are the expected (i.e. correct type). We can look at these features of the imported data in many ways. One useful method is to type the name of the data object in the Console and press enter:
 
 ```{r}
-dd
+stab
 ```
 
 We are told the object is `A tibble: 806 x 10`. This is what we expect if we look at the datafile. All looks good so far then.
@@ -111,7 +107,7 @@ We are told the object is `A tibble: 806 x 10`. This is what we expect if we loo
 Not all is well, however, as some of the variables that should be numeric are character, and vice versa. We expect `count` to be numeric. Looking that the `count` variable we see some entries are a full stop. This is because the dataset was originally made to be used by software (SAS) which by default uses the full stop to indicate a missing value. So we need to repeat the import the a full stop as the missing value indicator:
 
 ```{r}
-dd <- read_csv("data/dileptus_predator_prey_data.csv", na = ".")
+stab <- read_csv("data/dileptus_predator_prey_data.csv", na = ".")
 ```
 
 Good, now `count` is an integer type variable.
@@ -125,11 +121,12 @@ Good, now `count` is an integer type variable.
 We expect the `species` and the `prey.composition` variables should probably be character variables. Indeed, they really should be characters, but they appear to be integers. Always use the proper word when you have one ---don't ever use codes like this (the person who entered this data was probably not thinking about this carefully enough! Or was constrained by time. Or both.). Let's fix this by replacing the species code numbers with their names (we found the correct names for each code in the lab book for this experiment, it is not in the dataset):
 
 ```{r}
-dd <- mutate(dd, species = recode(species,
-                                "1" = "Colpidium",
-                                "2" = "Collodictyon",
-                                "3" = "Paramecium",
-                                "4" = "Dileptus"))
+stab <- stab %>%
+  mutate(species = recode(species,
+                          "1" = "Colpidium",
+                          "2" = "Collodictyon",
+                          "3" = "Paramecium",
+                          "4" = "Dileptus"))
 ```
 
 Here we do a `mutate` to make a new version of the `species` variable, and the `recode` function to change the numbers to the species names. We first give `recode` the variable to work on (`species`) and then tell it to change each 1 to "Colpidium" and so on for the other numbers.
@@ -139,7 +136,7 @@ Next we work on the `prey.composition` variable. In fact, we're just going to th
 The first thing we'll do is make a new dataset containing these two new variables, `community_composition` and `prey_richness`, and we'll get these variables for each prey composition and replicate combination:
 
 ```{r}
-comm_comp <- dd %>%
+comm_comp <- stab %>%
   group_by(prey.composition, replicate) %>%
   summarise(community_composition = paste(unique(species), collapse = ", "),
             prey_richness = length(unique(species)) - 1)
@@ -148,7 +145,8 @@ comm_comp <- dd %>%
 Let's break this down. We're doing a `group_by`---`summarise`. The `group_by` is by `prey.composition` (seven compositions) and `replicate` (five replicates), so we're expecting 7 * 5 = 35 rows in this new dataset. Then in the `summarise` we create in the first line the new `community_composition` variable, and in the second the new `prey_richness` variable. To make the new `community_composition` variable we paste together the species present in the group (composition by replicate combination); we use `unique` to remove repeats of the species names, and `collapse` to make the species names in a group be pasted together into one string. Take a look at the new `community_composition` variable, and then look again at the code above and the description of how we just made this new `prey_composition` variable.
 
 ```{r}
-select(comm_comp, community_composition)
+comm_comp %>%
+  select(community_composition)
 ```
 
 We also make the new `prey_richness` variable. The code was `prey_richness = length(unique(species)) - 1`. The `length` function tells us the number of unique (because we used the `unique` function) species, and we subtract the 1 to remove the 1 added by the predator species being present.
@@ -156,7 +154,7 @@ We also make the new `prey_richness` variable. The code was `prey_richness = len
 Next we do more or less the same thing to get a new variable `prey_composition`. This will be the same as the community composition variable we just made, but without the predator species name included. The code is more or less the same, but with the predator (*Dileptus*) rows filtered out before the `summarise`.
 
 ```{r}
-prey_comp <- dd %>%
+prey_comp <- stab %>%
   group_by(prey.composition, replicate) %>%
   filter(species != "Dileptus") %>%
   summarise(prey_composition = paste(unique(species), collapse = ", "))
@@ -165,14 +163,15 @@ prey_comp <- dd %>%
 The final thing to do is to add the new variables to the original dataset. We do this by merging (joining) the datasets with the new variables into the original dataset, one then the other, then we clean a bit by removing the old `prey.composition` and `prey.richness` variables, and by removing the `comm_comp` and `prey_comp` datasets which were only of temporary use.
 
 ```{r}
-dd <- full_join(dd, comm_comp) %>%
+stab <- full_join(stab, comm_comp) %>%
   full_join(prey_comp) %>%
-  select(-prey.composition, -prey.richness)
+  select(-prey.composition, -prey.richness) %>%
+  ungroup()
 rm(comm_comp, prey_comp)
 ```
 
 ```{block, type="safety"}
-It's not necessary to remove variables that we're not interested in using anymore, but is often a good idea to do so. It can prevent us accidentally using them, or just from getting confused about what they are and if they are in fact important when we come back to our work after a gap of a few months, as often happens. If we have a rather large dataset, keeping only the essential variables can usefully reduce the size of the dataset.
+It's not necessary to remove variables and datasets that we're not interested in using anymore, but is often a good idea to do so. It can prevent us accidentally using them, or just from getting confused about what they are and if they are in fact important when we come back to our work after a gap of a few months, as often happens. If we have a rather large dataset, keeping only the essential variables can usefully reduce the size of the dataset.
 ```
 
 ### Make the `prey_composition` variable a factor with specific order
@@ -182,35 +181,40 @@ What on earth did that mean? So far we have not mentioned *factors*. These are a
 Before we do this, look at the `prey_composition` variable in its current state:
 
 ```{r}
-select(dd, prey_composition)
+stab %>%
+  select(prey_composition)
 ```
 
 It is a character variable (`<chr>`). If we try to see what the levels of this variable are, we get `NULL`; there are no levels:
 
 ```{r}
-levels(pull(dd, prey_composition))
+stab %>%
+  pull(prey_composition) %>%
+  levels()
 ```
 
 To change this to an ordered factor type variable, we use the `fct_relevel` function from the **forcats** package inside a `mutate` change the `prey_composition` variable:
 
 ```{r}
-dd <- mutate(dd,
-             prey_composition = fct_relevel(prey_composition,
-                                            "Collodictyon",
-                                            "Colpidium",
-                                            "Paramecium",
-                                            "Colpidium, Collodictyon",
-                                            "Colpidium, Paramecium",
-                                            "Collodictyon, Paramecium",
-                                            "Colpidium, Collodictyon, Paramecium")
-                                            )
+stab <- stab %>%
+  mutate(prey_composition =
+           fct_relevel(prey_composition,
+                       "Collodictyon",
+                       "Colpidium",
+                       "Paramecium",
+                       "Colpidium, Collodictyon",
+                       "Colpidium, Paramecium",
+                       "Collodictyon, Paramecium",
+                       "Colpidium, Collodictyon, Paramecium")
+  )
 ```
 
 Now let's see how the `prey_composition` variable looks:
 
 ```{r}
-select(dd, prey_composition)
-levels(pull(dd, prey_composition))
+stab %>%
+  pull(prey_composition) %>%
+  levels()
 ```
 
 Excellent. The variable is now a factor (`<fct>`) and we can see its levels.
@@ -239,7 +243,8 @@ Finally, think about if we count only 0.1 ml of the diluted sample (`w3` = 0.1 m
 Putting these parts together we see that we multiply by the dilution factor `w2/w1` and then divide by the volume counted (`w3`). We, of course, add the new `dens_per_ml` variable and calculation using the `mutate` function:
 
 ```{r}
-dd <- mutate(dd, dens_per_ml=count*w2/w1/w3)
+stab <- stab %>%
+  mutate(dens_per_ml=count*w2/w1/w3)
 ```
 
 Super-simple! Now we have a standardised, comparable, and interoperable measurement of population size of each species.
@@ -256,21 +261,24 @@ When we imported the data we noticed some values of `count` were missing (`NA`).
 We can do this with a `filter` so that we remove only rows with an `NA` in the `count` variable:
 
 ```{r}
-temp1 <- filter(dd, !is.na(count))
+temp1 <- stab %>%
+  filter(!is.na(count))
 nrow(temp1)
 ```
 
 Or remove we can remove rows with and `NA` in any of the variables:
 
 ```{r}
-temp2 <- na.omit(dd)
+temp2 <- stab %>%
+  na.omit()
 nrow(temp2)
 ```
 
-Since the number of remaining rows is the same for both approaches we know there we no observations in which a variable other than `count` contained an `NA` when the `count` variable did not. So we're safe doing it either way. Let's overwrite `dd` with a new version with no `NA` values.
+Since the number of remaining rows is the same for both approaches we know there we no observations in which a variable other than `count` contained an `NA` when the `count` variable did not. So we're safe doing it either way. Let's overwrite `stab` with a new version with no `NA` values.
 
 ```{r}
-dd <- na.omit(dd)
+stab <- stab %>%
+  na.omit()
 ```
 
 
@@ -278,10 +286,12 @@ dd <- na.omit(dd)
 
 We should check some feature of the dataset specific to the study.
 
-Which days were samples taken on? To find this we `pull` the `day` variable from the tibble `dd` and get its `unique` values:
+Which days were samples taken on? To find this we `pull` the `day` variable from the tibble `stab` and get its `unique` values:
 
 ```{r}
-unique(pull(dd, day))
+stab %>%
+  pull(day) %>%
+  unique()
 ```
 
 Samples were taken every two days from day to until a maximum of day 20. So we expect a maximum number of counts of species abundances in a particular replicate to be 10 multiplied by the number of species in a replicate community. I.e. the maximum number of counts in a community with two prey species and the predator (recall that all communities contained the predator) will be 30. Maximum number of counts will be 20 for communities with only one prey species. Note that this is the maximum because we know some values of count were `NA`.
@@ -289,7 +299,7 @@ Samples were taken every two days from day to until a maximum of day 20. So we e
 Let's now get the number of counts for each replicate community, and while we're at it, the last day sampled for each replicate. We do this with a `group_by %>% summarise` pipeline, grouping by the `jar` and `prey_composition` variables. We include the `prey_composition` variable in the grouping so that we have it to refer to in the resulting summary dataset, and place it first in the `group_by` function so that the summary dataset is arranged by this variable.
 
 ```{r}
-temp1 <- dd %>%
+temp1 <-stab %>%
   group_by(prey_composition, jar) %>%
   summarise(num_samples = n(),
             max_day = max(day))
@@ -305,14 +315,15 @@ Looking at the summary tibble `temp1` (remember you can use `View(temp1)` or cli
 We can have R confirm the number of replicates per prey composition with a quick `group_by %>% summarise` pipeline working on `temp1`:
 
 ```{r}
-temp1 %>% group_by(prey_composition) %>%
+temp1 %>%
+  group_by(prey_composition) %>%
   summarise(number_of_replicate = n())
 ```
 
 We can also get the number of counts made of each species by using the same code with `species` added as a grouping variable:
 
 ```{r}
-temp2 <- dd %>%
+temp2 <- stab %>%
   group_by(prey_composition, jar, species) %>%
   summarise(num_samples = n(),
             max_day = max(day))
@@ -330,26 +341,25 @@ All this might seem like overkill, particularly if we imagine that we had collec
 We so far have not looked at the species abundances and have not yet calculated the three required response variables. Let's begin by looking at the species abundances, and do this by plotting the dynamics of the species in each microcosm. Now you will begin to see the power, elegance, and amazingness of `ggplot`. We will map the log 10 transformed abundance data onto the y-axis. We will map the `day` variable onto the x-axis. We will plot the data as points and lines (so use `geom_line` and `geom_point`) and we will map the `species` variable onto the colour of the points and lines. And we will make a grid of facets using `facet_grid` with rows of the grid corresponding to prey composition and columns for the replicates. Translating that into `ggplot` terms we get the following code (producing Figure \@ref(fig:microbe1)):
 
 ```{r microbe1, fig.cap='Population dynamics observed during the experiment.', out.width='100%', fig.align='center', fig.width=8, fig.height=12}
-dd %>%
+stab %>%
   ggplot(aes(x = day, y = log10(dens_per_ml), col = species)) +
   geom_point() + 
   geom_line() +
   facet_grid(prey_composition ~ replicate)
 ```
 
+```{block, type="beaware"}
+Notice that we gave the aesthetic mappings as an argument to the `ggplot` function (we have mostly been giving the aesthetic mappings to the geoms). We give the mappings to ggplot here because we have two geoms... and we would like both to use the same mappings. And because we don't give them any mappings, they are inherited from the mappings giving to ggplot. This "inheritance is explained and illustrated in more detail in the book.
+```
+
 ```{block, type="info"}
-Notice the order of the rows---it is from top to bottom the order we specified when we made the `prey_composition` variable an ordered factor. So `ggplot` is using this order. If you like to see what the order would have been if we hadn't specified it, replace `prey_composition` with `as.character(prey_composition)`.
+Notice the order of the rows of facets in the graph (Figure \@ref(fig:microbe1))---it is from top to bottom the order we specified when we made the `prey_composition` variable an ordered factor. So `ggplot` is using this order. If you like to see what the order would have been if we hadn't specified it, replace `prey_composition` with `as.character(prey_composition)`.
 ```
 
 The dynamics in Figure \@ref(fig:microbe1) are those shown in figure 1 of the original publication. Everything seems reasonable, though I (Owen) wish I'd recorded more information about why I stopped sampling the microcosms when I did. I think I still have my lab books from this experiment somewhere inaccessible like my parents loft but haven't had the chance to get them.
 
 The predator (*Dileptus*) does not seem to grow well when *Collodictyon* is the only available prey species, but grows very well on and decimates *Colpidium*, after which the predator appears to go extinct and then the *Colpidium* population recovers. We can also notice that the predator population persists to the end of the experiment on day 20 only when all three prey species are present. It is probably worth emphasising that 20 days corresponds to around 20 generations of these organisms; this is a lot of time for birth and death to affect population abundances (if each individual divided into two daughters each day, the population would increase in size by a factor of 2^20, i.e. grow to be 1 million times larger).
 
-We could again use the `skim()` function to take a look at the data more closely.
-
-```{r}
-skim(dd)
-```
 
 
 
@@ -369,7 +379,7 @@ You might be thinking "we already have predator abundance", and you'd be correct
 To make the calculation in R we will use a `filter %>% group_by %>% summarise` pipeline. We filter to keep only the observations of the predator (*Dileptus*), then group the data by `prey_richness`, `prey_composition`, and `replicate`, then calculate two summary values. The first summary value, named by us `pred_max_dens` is the maximum density of the predator population observed in each experimental community. The second variable calculated, named by us `all_zero` is TRUE if all the predator densities were zero, or is otherwise FALSE. Here is the R code:
 
 ```{r}
-pred_max_dens <- dd %>%
+pred_max_dens <- stab %>%
   filter(species == "Dileptus") %>%
   group_by(prey_richness, prey_composition, replicate) %>%
   summarise(max_dens = max(dens_per_ml),
@@ -398,7 +408,7 @@ We will use the coefficient of variation as the measure of predator population v
 The R code is very similar to that used in the previous section to calculate maximum predator abundance:
 
 ```{r}
-pred_CV <- dd %>%
+pred_CV <- stab %>%
   filter(species == "Dileptus") %>%
   group_by(prey_richness, prey_composition, replicate) %>%
   summarise(CV = sd(dens_per_ml) / mean(dens_per_ml),
@@ -419,7 +429,7 @@ Before we do, what type of variable is this? One characteristic is that it is "t
 We get the last day on which *Dileptus* was observed with a `filter %>% group_by %>% summarise` pipeline. We filter to retain only observations of *Dileptus* being present (i.e. we exclude observations when *Dileptus* had zero count/density per ml). Then we group the data by prey richness, prey composition, and replicate (prey richness is redundant but we want to keep it to work with later). Then we use `summarise` to get the maximum value of the `day` variable in the filtered data. Translated into R this looks like:
 
 ```{r}
-temp_persistence_time <- dd %>%
+temp_persistence_time <- stab %>%
   filter(species == "Dileptus", dens_per_ml != 0) %>%
   group_by(prey_richness, prey_composition, replicate) %>%
   summarise(last_day_observed = max(day))
@@ -432,7 +442,7 @@ Next we need to recognise that the last day on which *Dileptus* was observed mig
 We really should include this information in the persistence time dataset. To do so we need to get and add the day of last sample of *Dileptus*. We do this with the same pipeline as we used to get the last day observed, except we don't exclude the observations when *Dileptus* was sampled and found to have zero abundance:
 
 ```{r}
-pred_last_day <- dd  %>%
+pred_last_day <- stab %>%
   filter(species=="Dileptus") %>%
   group_by(prey_richness, prey_composition, replicate) %>%
   summarise(last_sample=max(day))
@@ -443,7 +453,8 @@ The created tibble has the expected number of observations: 35.
 We then join the two created tibbles and create a new variable that contains `TRUE` if the observation of persistence time was censored (indicated if the persistence time is the same as the last day sampled) or `FALSE` if a sample was taken after the observed persistence time (i.e. the observation is not censored).
 
 ```{r}
-pred_persistence_time <- full_join(temp_persistence_time, pred_last_day) %>%
+pred_persistence_time <- temp_persistence_time %>%
+  full_join(pred_last_day) %>%
   mutate(censored=ifelse(last_day_observed==last_sample, T, F))
 ```
 
@@ -453,14 +464,14 @@ Because we used `full_join` we have 35 observations in the resulting tibble, wit
 **Censored observations in time to event data** Often we do not have the exact time at which the event of interest occurred. In this experiment we sampled only one every two days. If we observed some individuals on day 14, for example, and then none on or after day 16, we know that extinction occurred somewhere in the time interval between day 14 and day 16. Thus we have what is called "interval censored" time to event data. That is, unless extinction was not observed by the last sample, in which case the data are right censored, and we can only say that extinction (since it is at some point inevitable) will happen sometime after the day of the last sample. Censoring of time to event data is very common and is formally accounted for in statistical analyses of time to event type data. It certainly complicates and adds potential for misinterpreting visualisation of the data, so we must then at least differentiate data points by the type of censoring they have.
 ```
 
-#### Put the all together
+#### Put them all together
 
 Let's put all three response variables into the same tibble, since it will make some of the subsequent things easier and more efficient. We want them all in the same column. "But wait", you say! If all three response variables are in the same column/variable, how will we know which is which. Easy---we make another variable that tells us the response variable in each row. The new tibble will have 35 * 3 = 105 rows. There are lots of ways to do this. The approach we show is to merge/join the three tibbles containing each of the response variables (`pred_max_dens`, `pred_CV`, and `pred_persistence_time`) which creates a wide-formatted arrangement of the data (a different variable for each of the response variables). And then we'll transform it into tidy (long) format by gather the information from each of the three separate response variables into one variable.
 
 The first step is to merge all three tibbles:
 
 ```{r}
-spread_rr <- pred_max_dens %>%
+spread_rv <- pred_max_dens %>%
   full_join(pred_CV) %>%
   full_join(pred_persistence_time)
 ```
@@ -470,13 +481,13 @@ We get told both joins are being done by `prey_richness`, `prey_composition`, an
 Next step is to gather the three response variables into one variable:
 
 ```{r}
-rr <- spread_rr %>%
+rv <- spread_rv %>%
   gather(key = "Response_type", value = Value, max_dens, CV, last_day_observed)
 ```
 
 We tell `gather` that we'd like the values in the variables `max_dens`, `CV`, and `last_day_observed` gathered together an put into one variable called `Values` and that we'd like the `key` variable, i.e. the one that says which response variable each observation is about, to be named `Response_type`. If how `gather` works is unclear then please wait until Case Study 3, where the explanation goes into more depth, including a figure showing tidy/long data and the corresponding untidy/wide data (Figure \@ref(fig:long-wide)).
 
-Excellent. We now have a tibble `rr` with 105 observations (as expected), a variable named `Response_type` with entries `max_dens`, `CV`, and `last_day_observed`, and the values of each of these in the `Value` variable. We have the other variables `all_zero`, `last_sample`, and `censored` also (which is just fine).
+Excellent. We now have a tibble `rv` with 105 observations (as expected), a variable named `Response_type` with entries `max_dens`, `CV`, and `last_day_observed`, and the values of each of these in the `Value` variable. We have the other variables `all_zero`, `last_sample`, and `censored` also (which is just fine).
 
 ## Shapes
 
@@ -485,26 +496,27 @@ Let's get the mean, standard deviation, and number of observations of each of th
 Yes... it's a pretty straightforward `group_by %>% summarise` pipeline:
 
 ```{r}
-summry_rr <- rr %>%
+summry_rv <- rv %>%
   group_by(prey_richness, prey_composition, Response_type) %>%
   summarise(mean = mean(Value, na.rm = TRUE),
             sd = sd(Value, na.rm = TRUE),
             n = sum(!is.na(Value)))
 ```
 
-The resulting tibble `summry_rr` has 21 observations (7 prey compositions by 3 response variables) and six variables, three of which are the calculated mean, standard deviation, and number of non-NA values.
+The resulting tibble `summry_rv` has 21 observations (7 prey compositions by 3 response variables) and six variables, three of which are the calculated mean, standard deviation, and number of non-NA values.
 
 ```{block, type="info"}
 We counted the number of non-NA values by asking which of the entries in `Value` were not NA using `!is.na`, which gives a series of TRUE and FALSE values. Then we use `sum` to count the number of TRUEs.
 ```
 
-Take a look at the resulting tibble (`View(summry_rr)`). Can you see any patterns? Do you get clear insights? Probably not. The lesson here is tables are quite difficult to interpret. We need some visualisations of relationships between the response variables differ and the treatments. Before we do this, let's have a look at the distributions of the response variables. Try to think about how you would produce graphs of the frequency distributions of each of the response variables.
+Take a look at the resulting tibble (`View(summry_rv)`). Can you see any patterns? Do you get clear insights? Probably not. The lesson here is tables are quite difficult to interpret. We need some visualisations of relationships between the response variables differ and the treatments. Before we do this, let's have a look at the distributions of the response variables. Try to think about how you would produce graphs of the frequency distributions of each of the response variables.
 
 Here is how we did it (producing Figure \@ref(fig:microbe2)):
 
 ```{r microbe2, fig.cap='Histograms of the three response variables.', out.width='100%', fig.align='center', fig.height=3}
-ggplot(rr, aes(x = Value)) +
-  geom_histogram(bins = 5) +
+rv %>%
+  ggplot() +
+  geom_histogram(aes(x = Value), bins = 5) +
   facet_wrap(~ Response_type, scales = "free")
 ```
 
@@ -513,10 +525,10 @@ First note that we are told that 12 non-finite values have been removed and ther
 What do you think about the shapes of these distributions? Maximum density looks quite skewed, with lots of small values and few large. This might be expected for an abundance type variable, since growth is a multiplicative process. We would expect a more symmetric distribution of logged abundance (though see Figure \@ref(fig:microbe3)).
 
 ```{r microbe3, echo=FALSE, fig.cap='Histogram of log10 maximum abundance. We thought that log transformation would make the distribution more symmetric, but it has not... it just made it asymmetric in the opposite direction!', out.width='70%', fig.align='center'}
-rr %>%
+rv %>%
   filter(Response_type == "max_dens") %>%
-  ggplot(aes(x = log10(Value))) +
-  geom_histogram(bins = 5)
+  ggplot() +
+  geom_histogram(aes(x = log10(Value)), bins = 5)
 ```
 
 There are two reasons why we need to be cautious, however, about interpreting much about these distributions. First, they each contain data from seven different treatments (`prey_composition`)---only five of the values in each distribution might be expected to come from the same population. In effect, we might be looking at seven distributions superimposed on top of each other. Second, sure, we could plot a separate distribution for each of the prey compositions, but we would only have five values per distribution, and that is not enough to say much about their shapes. I.e. we could not say with any confidence if they are symmetric of not. All is not lost, however, as you will see in the next section in which we look at relationships.
@@ -527,20 +539,24 @@ Recall the question we're interested in. Do predators have more stable populatio
 
 ### Maximum predator density
 
-Recall that we have one tibble `rr` with all three response variables. Clearly then, if we want to plot data about only maximum prey density we will need to filter the data according to `Response_type == "max_dens`. We then do a pretty straightforward `ggplot` with `prey_richness` mapped onto the x-axis, the `Value` of maximum density mapped onto the y-axis, and then a `geom_jitter` with jitter only along the x-axis (`width`). Here's the code, and the result is in Figure \@ref(fig:microbe4-0):
+Recall that we have one tibble `rv` with all three response variables. Clearly then, if we want to plot data about only maximum prey density we will need to filter the data according to `Response_type == "max_dens`. We then do a pretty straightforward `ggplot` with `prey_richness` mapped onto the x-axis, the `Value` of maximum density mapped onto the y-axis, and then a `geom_jitter` with jitter only along the x-axis (`width`). Here's the code, and the result is in Figure \@ref(fig:microbe4-0):
 
 ```{r microbe4-0, echo=FALSE, fig.cap='A not so useful graph due to the y-axis label being totally uninformative. Value of what?', out.width='100%', fig.align='center', fig.width=8}
-rr %>% filter(Response_type == "max_dens") %>%
-  ggplot(aes(x = prey_richness, y = Value, col = prey_composition)) +
-  geom_jitter(width = 0.1, height = 0)
+rv %>% filter(Response_type == "max_dens") %>%
+  ggplot() +
+  geom_jitter(aes(x = prey_richness,
+                  y = Value,
+                  col = prey_composition),
+              width = 0.1, height = 0)
 ```
 
 There is a big problem with this. Our figure does not tell us what is on the y-axis ("Value" is not particularly informative!) We could fix this by changing the y-axis like this (no figure is presented for this code):
 
 ```{r eval=FALSE}
-rr %>% filter(Response_type == "max_dens") %>%
-  ggplot(aes(x = prey_richness, y = Value, col = prey_composition)) +
-  geom_jitter(width = 0.1, height = 0) +
+rv %>% filter(Response_type == "max_dens") %>%
+  ggplot() +
+  geom_jitter(aes(x = prey_richness, y = Value, col = prey_composition),
+              width = 0.1, height = 0) +
   ylab("max_dens")
 ```
 
@@ -554,10 +570,11 @@ rv_oi <- "max_dens"
 
 Then we use the same `ggplot` code as before, but with `rv_oi` in place of `"max_dens"` (the resulting graph is in Figure \@ref(fig:microbe4-1)):
 
-```{r microbe4-1, echo=FALSE, fig.cap='A reasonably nice graph of maximum predator density in a community against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=8}
-rr %>% filter(Response_type == rv_oi) %>%
-  ggplot(aes(x = prey_richness, y = Value, col = prey_composition)) +
-  geom_jitter(width = 0.1, height = 0) +
+```{r microbe4-1, echo=FALSE, fig.cap='A reasonably nice graph of maximum predator density in a community against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=3}
+rv %>% filter(Response_type == rv_oi) %>%
+  ggplot() +
+  geom_jitter(aes(x = prey_richness, y = Value, col = prey_composition),
+              width = 0.1, height = 0) +
   ylab(rv_oi)
 ```
 
@@ -569,10 +586,11 @@ Super. We have a safe approach and a useful graph. Do you think there is strong 
 
 If we feel that we can't so easily see the differences among prey compositions within the prey richness levels, we can make Figure \@ref(fig:microbe4-2), and flip the x and y-axis since the prey composition names then fit better:
 
-```{r microbe4-2, echo=FALSE, fig.cap='This time maximum predator density plotted against prey composition, with prey composition on the y-axis as an easy method for having the tick-labels (prey composition) not overlap.', out.width='100%', fig.align='center', fig.width=8}
-rr %>% filter(Response_type == rv_oi) %>%
-  ggplot(aes(x = prey_composition, y = Value)) +
-  geom_jitter(width = 0.1, height = 0) +
+```{r microbe4-2, echo=FALSE, fig.cap='This time maximum predator density plotted against prey composition, with prey composition on the y-axis as an easy method for having the tick-labels (prey composition) not overlap.', out.width='100%', fig.align='center', fig.width=3}
+rv %>% filter(Response_type == rv_oi) %>%
+  ggplot() +
+  geom_jitter(aes(x = prey_composition, y = Value),
+              width = 0.1, height = 0) +
   coord_flip() +
   ylab(rv_oi)
 ```
@@ -583,21 +601,24 @@ Some things are a bit clearer. 1) The predator seems to like the prey *Colpidium
 
 Making the graphs for CV is now a doddle. We just set `rv_oi = "CV` and then run exactly the same code as before, resulting in Figure \@ref(fig:microbe5-1):
 
-```{r microbe5-1, echo=FALSE, fig.cap='A quite informative graph of predator population variability (measured as the coefficient of variation--CV) in a community against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=8}
+```{r microbe5-1, echo=FALSE, fig.cap='A quite informative graph of predator population variability (measured as the coefficient of variation--CV) in a community against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=3}
 rv_oi <- "CV"
-rr %>% filter(Response_type == rv_oi) %>%
-  ggplot(aes(x = prey_richness, y = Value, col = prey_composition)) +
-  geom_jitter(width = 0.1, height = 0) +
+rv %>% filter(Response_type == rv_oi) %>%
+  ggplot() +
+  geom_jitter(aes(x = prey_richness, y = Value, col = prey_composition),
+              width = 0.1, height = 0) +
   ylab(rv_oi)
   
 ```
 
 And Figure \@ref(fig:microbe5-2):
 
-```{r microbe5-2, echo=FALSE, fig.cap='Predator population variability (CV) for each of the prey compositions. It would be nice to know from which jar the very low value for one of the *Collodictyon* replicate comes. We show how to do that next.', out.width='100%', fig.align='center', fig.width=8}
-rr %>% filter(Response_type == rv_oi) %>%
-  ggplot(aes(x = prey_composition, y = Value)) +
-  geom_jitter(width = 0.1, height = 0) +
+```{r microbe5-2, echo=FALSE, fig.cap='Predator population variability (CV) for each of the prey compositions. It would be nice to know from which jar the very low value for one of the *Collodictyon* replicate comes. We show how to do that next.', out.width='100%', fig.align='center', fig.width=3}
+rv %>%
+  filter(Response_type == rv_oi) %>%
+  ggplot() +
+  geom_jitter(aes(x = prey_composition, y = Value),
+              width = 0.1, height = 0) +
   coord_flip() +
   ylab(rv_oi)
 ```
@@ -613,7 +634,7 @@ Looking back at Figure \@ref(fig:microbe1), can you guess which of the *Collodic
 Let's deal with number 1 first. We can put on the jar number as a labels on the facets of \@ref(fig:microbe1) and beside the data points in Figure \@ref(fig:microbe5-2). Here's the code for putting the jar numbers onto the facets. First we get a tibble with the `jar` number for each `prey_composition` and `replicate`, by selecting only those three columns and getting unique rows:
 
 ```{r}
-jar_text <- dd %>%
+jar_text <- stab %>%
   select(prey_composition, replicate, jar) %>%
   unique()
 ```
@@ -621,7 +642,7 @@ jar_text <- dd %>%
 The resulting tibble has 35 rows, one for each jar (microcosm). Then we use the same code as before but with an extra `geom_text` in which we give the data to use `jar_text`, tell it the x and y positions for the label, and then give the aesthetic mappings `label = jar` (i.e. make the `label` aesthetic correspond to `jar`) and the aesthetic mapping `col = NULL` (so that the previously defined `col = species` mapping is not used). Here's the code, and the resulting graph is in Figure \@ref(fig:microbe1-1):
 
 ```{r microbe1-1, fig.cap='Jar numbers added to the plot of population dynamics observed during the experiment.', out.width='100%', fig.align='center', fig.width=7, fig.height=11}
-dd %>%
+stab %>%
   ggplot(aes(x = day, y = log10(dens_per_ml), col = species)) +
   geom_point() + 
   geom_line() +
@@ -632,7 +653,7 @@ dd %>%
 Next we add points to the graph of the CV (Figure \@ref(fig:microbe5-2)). First we need to remake the tibble containing the CVs, this time keeping the `jar` variable by adding it as a (albeit redundant) variable in the `group_by`:
 
 ```{r}
-pred_CV <- dd %>%
+pred_CV <- stab %>%
   filter(species == "Dileptus") %>%
   group_by(jar, prey_richness, prey_composition, replicate) %>%
   summarise(CV = sd(dens_per_ml) / mean(dens_per_ml),
@@ -646,9 +667,10 @@ Install the **ggrepel** add-on package. It moves labels on graphs so they don't 
 
 Now we remake the CV figure with the jar numbers labeling the data points. We simply add a `geom_text_repel` with the `jar` numbers mapped onto the `label` aesthetic. Here's the code, and the resulting graph is in Figure \@ref(fig:microbe5-3). 
 
-```{r microbe5-3, fig.cap='Again the predator population variability data, but this time with jar numbers added as label by the data points.', out.width='100%', fig.align='center', fig.width=8}
+```{r microbe5-3, fig.cap='Again the predator population variability data, but this time with jar numbers added as label by the data points.', out.width='100%', fig.align='center', fig.width=3}
 library(ggrepel)
-ggplot(pred_CV, aes(x = prey_composition, y = CV)) +
+pred_CV %>%
+ggplot(aes(x = prey_composition, y = CV)) +
   geom_jitter(width = 0.1, height = 0) +
   coord_flip() +
   geom_text_repel(aes(label = jar))
@@ -666,16 +688,24 @@ Super. It's extremely useful to be able to add labels to data point in graphs, s
 
 While we're on the subject of subjectivity and perception, we should think about whether flipping the axis does more than just make room for the prey composition labels. Does having the graph flipped change our perception of pattern (or lack thereof) in the data? Figure \@ref(fig:microbe5-4)A and B. We (personally) tend to see more evidence of a negative relationship in panel B (with prey richness on the x-axis) but you might be different. We need to be careful to not exploit, or fall prey to, any such effects in the presentation of data. The data should, as far as possible, do all the talking.
 
-```{r microbe5-4, echo=FALSE, fig.cap='The same graph twice, but with the axis flipped between them. Do you think pattern is more apparent in one versus the other?', out.width='100%', fig.align='center', fig.width=8}
-p1 <- rr %>% filter(Response_type == rv_oi) %>%
-  ggplot(aes(x = prey_richness, y = Value, col = prey_composition)) +
-  geom_jitter(width = 0.1, height = 0) +
+```{r microbe5-4, echo=FALSE, fig.cap='The same graph twice, but with the axis flipped between them. Do you think pattern is more apparent in one versus the other?', out.width='100%', fig.align='center', fig.width=3}
+p1 <- rv %>%
+  filter(Response_type == rv_oi) %>%
+  ggplot() +
+  geom_jitter(aes(x = prey_richness,
+                  y = Value,
+                  col = prey_composition),
+              width = 0.1, height = 0) +
   coord_flip() +
   ylab(rv_oi) +
   scale_color_discrete(guide = FALSE)
-p2 <-rr %>% filter(Response_type == rv_oi) %>%
-  ggplot(aes(x = prey_richness, y = Value, col = prey_composition)) +
-  geom_jitter(width = 0.1, height = 0) +
+p2 <- rv %>%
+  filter(Response_type == rv_oi) %>%
+  ggplot() +
+  geom_jitter(aes(x = prey_richness,
+                  y = Value,
+                  col = prey_composition),
+              width = 0.1, height = 0) +
   ylab(rv_oi)
 cowplot::plot_grid(p1, p2, labels = c("A", "B"), rel_widths = c(1, 2))
 ```
@@ -685,11 +715,16 @@ cowplot::plot_grid(p1, p2, labels = c("A", "B"), rel_widths = c(1, 2))
 
 Visualising predator persistence time (the last day on which a predator was observed) uses the same code as the previous two response variables, but with one tweek. We should differentiate in the visualisation data points that are and are not censored. One method is to make their data points have different shapes. That is, we map the shape aesthetic to the `censored` variable (the resulting graph is in Figure \@ref(fig:microbe7-1)):
 
-```{r microbe7-1, echo=FALSE, fig.cap='A reasonably nice graph of predator population persistence time against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=8}
+```{r microbe7-1, echo=FALSE, fig.cap='A reasonably nice graph of predator population persistence time against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=3}
 rv_oi <- "last_day_observed"
-rr %>% filter(Response_type == rv_oi) %>%
-  ggplot(aes(x = prey_richness, y = Value, col = prey_composition, shape = censored)) +
-  geom_jitter(width = 0.1, height = 0, size = 3) +
+rv %>%
+  filter(Response_type == rv_oi) %>%
+  ggplot() +
+  geom_jitter(aes(x = prey_richness,
+                  y = Value,
+                  col = prey_composition,
+                  shape = censored),
+              width = 0.1, height = 0, size = 3) +
   ylab(rv_oi)
 ```
 
@@ -697,11 +732,15 @@ There is pretty strong evidence that more prey species available to a predator i
 
 We also show, as before, the same data for each prey composition, again showing which observations of persistence time are censored (the resulting graph is in Figure \@ref(fig:microbe7-2)):
 
-```{r microbe7-2, echo=FALSE, warning=FALSE, fig.cap='Predator population persistence time for each of the prey compositions.', out.width='100%', fig.align='center', fig.width=8}
+```{r microbe7-2, echo=FALSE, warning=FALSE, fig.cap='Predator population persistence time for each of the prey compositions.', out.width='100%', fig.align='center', fig.width=3}
 rv_oi <- "last_day_observed"
-rr %>% filter(Response_type == rv_oi) %>%
-  ggplot(aes(x = prey_composition, y = Value, shape = censored)) +
-  geom_jitter(width = 0.1, height = 0, size = 3) +
+rv %>%
+  filter(Response_type == rv_oi) %>%
+  ggplot() +
+  geom_jitter(aes(x = prey_composition,
+                  y = Value,
+                  shape = censored),
+              width = 0.1, height = 0, size = 3) +
   coord_flip() +
   ylab(rv_oi)
 ```
@@ -714,10 +753,14 @@ Here we can see that one of the two prey species compositions (*Collodictyon* an
 Look at Figure \@ref(fig:microbe6-3) showing what happens if `prey_composition` is just a character variable and not an ordered factor. The ordering of the prey compositions is not quite as desirable.
 ```
 
-```{r microbe6-3, echo=FALSE, warning=FALSE, fig.cap='Notice how the prey compositions are ordered when we let R choose the order. This happens when we fail to specify ourselves what the order should be, by making the prey composition variable an ordered factor type variable.', out.width='100%', fig.align='center', fig.width=8}
-rr %>% filter(Response_type == rv_oi) %>%
-  ggplot(aes(x = as.character(prey_composition), y = Value, shape = censored)) +
-  geom_jitter(width = 0.1, height = 0, size = 3) +
+```{r microbe6-3, echo=FALSE, warning=FALSE, fig.cap='Notice how the prey compositions are ordered when we let R choose the order. This happens when we fail to specify ourselves what the order should be, by making the prey composition variable an ordered factor type variable.', out.width='100%', fig.align='center', fig.width=3}
+rv %>%
+  filter(Response_type == rv_oi) %>%
+  ggplot() +
+  geom_jitter(aes(x = as.character(prey_composition),
+                  y = Value,
+                  shape = censored),
+              width = 0.1, height = 0, size = 3) +
   coord_flip() +
   ylab(rv_oi)
 ```
@@ -726,10 +769,13 @@ rr %>% filter(Response_type == rv_oi) %>%
 
 You might be wondering why we went to the lengths of putting all three response variables into one tibble and the having to filter in order to plot each of the three graphs. This was a bit of a faff. We could have just continued using the three separate tibbles we made. Here comes the answer, or at least here comes one answer. If we put all three response variables into the same tibble the we can plot all three graphs at the same time, in one ggplot with three facets (Figure \@ref(fig:microbe8-1)):
 
-```{r microbe8-1, fig.cap='All three reponse variables efficiently made in one call to ggplot with a facet for each variable, and some fiddling with the legend to get it at the top and not too wide.', out.width='100%', fig.align='center', fig.width=8}
-rr %>%
-  ggplot(aes(x = prey_richness, y = Value, col = prey_composition)) +
-  geom_jitter(width = 0.1, height = 0) +
+```{r microbe8-1, fig.cap='All three reponse variables efficiently made in one call to ggplot with a facet for each variable, and some fiddling with the legend to get it at the top and not too wide.', out.width='100%', fig.align='center', fig.width=4}
+rv %>%
+  ggplot() +
+  geom_jitter(aes(x = prey_richness,
+                  y = Value,
+                  col = prey_composition),
+              width = 0.1, height = 0) +
   facet_wrap(~ Response_type, scales = "free_y")  +
   theme(legend.position = "top") +
   guides(colour = guide_legend(title.position = "top",
@@ -740,9 +786,9 @@ rr %>%
 How useful is it to be able to plot all response variables in one go like this? We're not too sure. We now have the problem of how to show the censored data points in the `last_day_observed` data. We also see that the order of the facets is different from the order of the response variables presented in the text above. This would need changing for consistency (you can probably guess how we would do this... the same thing we did with the `prey_composition` variable). We'll leave this for you to do. And also to make the version of this graph with `prey_composition` as the explanatory variable.
 
 ```{r microbe8-2, eval=FALSE, echo=FALSE, fig.cap='   ', out.width='100%', fig.align='center', fig.width=8}
-rr %>%
-  ggplot(aes(x = prey_composition, y=Value)) +
-  geom_boxplot() +
+rv %>%
+  ggplot() +
+  geom_boxplot(aes(x = prey_composition, y=Value)) +
   coord_flip() +
   facet_wrap(~ Response_type, scales = "free_x")
 ```
@@ -753,13 +799,7 @@ rr %>%
 
 The published paper on this dataset had a few other analyses, but not too many. So what you learned above is very much a replica of a real and quite complete representation of the results and insights in the that study. Yes, we didn't do the statistics, but our conclusions are pretty much the same (though this could easily be in part influenced by Owen knowing in the conclusions before he wrote this chapter).
 
-
-
 One important thing. It would be very very wrong for you to get the impression that one can think through all the likely issues with the data and in a lovely linear process work from the data to the Insights. Probably this impression comes from this chapter and those of the first case study. For example, we do things early on in the data manipulation in order to make things easier later on. It looks like we anticipate a problem that will arise and prevent it ever occurring.
 
 The truth is, however, that we often found problems once we had got quite far into the data processing, and then realised we should go back and fix their cause. E.g. we found a problem while plotting the data, realised this was caused by an issue that could be sorted out much earlier on, and therefore have positive effects on all subsequent analyses. We did not just do a quick fix on the problematic graph... we fixed the source of the problem. This is a very very good habit to get into. Fix the cause, don't just treat the symptom. Fixing the cause will increase efficiency, reliability, and all round happiness.
 
-
-## Some questions
-
-Go to the Insights companion website http://insightsfromdata.io and have a go at the questions and exercises for this chapter.
