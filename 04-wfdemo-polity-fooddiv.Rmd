@@ -3,7 +3,7 @@
 
 #  Are diets more diverse in more democratic countries? {#WFD-food-pol}
 
-<img src="images/WF1_icon.jpg" width="60"/>
+<img src="images/WF3_icon.jpg" width="60"/>
 
 ## About this Workflow Demonstration
 
@@ -18,7 +18,7 @@ In this WD we will look at the diversity of food available to people living in d
 
 There are likely lots of factors governing the diversity of food available to the population of a country, and political system is just one. We could also look at gross domestic product, location, population size, and so on. But let's keep things relatively simple and straightforward for the moment. You can make things more complex if you choose to look further into the question. Just wait until after you've mastered the simpler though perhaps still challenging enough material in this WD.
 
-To be clear, we are asking the question of whether the diversity of food available to the population of a country is associated with the political system of that country. We hypothesise that more freedom will result in more diversity of food availability (figure \@ref(fig:insight-sketch-1)). We will restrict ourselves to two variables: diversity of food available and political system. Let's explore two measures of diversity: the richness of food items, which is just the number of different food types, and a measure of diversity known as the Shannon index, which is greater if there are more food types and if the amount of each is more evenly distributed among them. As far as we know, the analyses are novel. Any insights will be new! Though, since the findings are not published / peer reviewed, they should be treated as preliminary and (as usual) be critically assessed.
+To be clear, we are asking the question of whether the diversity of food available to the population of a country is associated with the political system of that country. We hypothesise that more freedom will result in more diversity of food availability (figure \@ref(fig:insight-sketch-2)). We will restrict ourselves to two variables: diversity of food available and political system. Let's explore two measures of diversity: the richness of food items, which is just the number of different food types, and a measure of diversity known as the Shannon index, which is greater if there are more food types and if the amount of each is more evenly distributed among them. As far as we know, the analyses are novel. Any insights will be new! Though, since the findings are not published / peer reviewed, they should be treated as preliminary and (as usual) be critically assessed.
 
 ```{r insight-sketch-2, fig.cap='A hypothetical outcome of the demonstration study of relationship between the political system of a country and the diversity of food available.', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("images/insights_sketches_002.jpeg")
@@ -987,9 +987,9 @@ fbs_pol %>%
 
 Is this what you were expecting? A rather bimodal distribution with most countries either very autocratic (low scores) or very democratic (high scores). Perhaps this in itself is an interesting pattern, though political scientists may find it obvious. Probably the creators of the Polity2 data have commented on it.
 
-We can also make the three histograms more efficiently by first gathering all the variables into one column and then creating a graph with a facet for each of the original variables:
+We can also make the three histograms more efficiently by first gathering all the variables into one column and then creating a graph with a facet for each of the original variables (Figure \@ref(fig:fbs-pol3x1):
 
-```{r fbs-pol3x, fig.cap='Frequency distribution of Polity2 all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol3x1, fig.cap='Frequency distribution of Polity2 all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
 fbs_pol %>%
   select(Richness, Diversity, Polity2) %>%
   gather(key = "Variable", value = "Value") %>%
