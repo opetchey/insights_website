@@ -19,30 +19,23 @@ library(forcats)
 
 <img src="images/WF4_icon.jpg" width="60"/>
 
+## Introduction
 
-A general article about dietary restriction (DR): https://www.nia.nih.gov/health/calorie-restriction-and-fasting-diets-what-do-we-know
+In this final Workflow Demonstration we, your instructors take a step back, and invite you to be more independent. There will be less guidance, less instruction, and more challenges for you. In a sense then, this is less of a Workflow Demonstration, and more of a Workflow Challenge.
 
-The case study article: *Reconciling nutritional geometry with classical dietary restriction: effects of nutrient intake, not calories, on survival and reproduction.* Moatt JP, Fyfe MA, Heap E, Mitchell LJM, Moon F, Walling CA (2018) Aging Cell, Volume 18, e12868.
+For this Workflow Demonstration we turn to published data from a study of the effects of dietary restriction (DR). For some general background on dietary restriction, please look here https://www.nia.nih.gov/health/calorie-restriction-and-fasting-diets-what-do-we-know
 
-Article: https://doi.org/10.1111/acel.12868
+The particular study we work with is described in the article *Reconciling nutritional geometry with classical dietary restriction: effects of nutrient intake, not calories, on survival and reproduction.* Moatt JP, Fyfe MA, Heap E, Mitchell LJM, Moon F, Walling CA (2018) Aging Cell, Volume 18, e12868. The article is here https://doi.org/10.1111/acel.12868. And the data is here: https://doi.org/10.5061/dryad.g12p0j2
 
-Data: https://doi.org/10.5061/dryad.g12p0j2
+The Abstract of the article reads: "Here, using a novel nonmodel vertebrate system (the stickleback fish, *Gasterosteus aculeatus*), we test the effect of macronutrient versus calorie intake on key fitness‐related traits, both using the GF and avoiding dietary dilution. We find that the intake of macronutrients rather than calories determines both mortality risk and reproduction. Male mortality risk was lowest on intermediate lipid intakes, and female risk was generally reduced by low protein intakes. The effect of macronutrient intake on reproduction was similar between the sexes, with high protein intakes maximizing reproduction."
 
-Abstract: "Here, using a novel nonmodel vertebrate system (the stickleback fish, *Gasterosteus aculeatus*), we test the effect of macronutrient versus calorie intake on key fitness‐related traits, both using the GF and avoiding dietary dilution. We find that the intake of macronutrients rather than calories determines both mortality risk and reproduction. Male mortality risk was lowest on intermediate lipid intakes, and female risk was generally reduced by low protein intakes. The effect of macronutrient intake on reproduction was similar between the sexes, with high protein intakes maximizing reproduction."
-
-A discussion of these features of the case study data (put info in a box? A new type of box?):
-
-The number of variables (columns) they contain.
-The number of observations (rows).
-If and how many of the variables describe experimental manipulations.
-The amount of correlation among the variables.
-How independent are the observations.
+**Important**: There are two available versions of some of the datasets for this study. Some of the original (non-updated) versions contained some very minor errors that the researchers then corrected. In this Workflow Demonstration we first challenge you to find those errors in the original datasets, and then to check the updated datasets do not contain them errors, and to then continue with those updated datasets.
 
 ## Before working in R
 
-**Question**: How does diet composition and amount of food individually and in combination affect individual characteristics related to health and fitness?
+**Be clear about the general question:** How does diet composition and amount of food individually and in combination affect individual characteristics related to health and fitness?
 
-**Hypotheses/predictions**:
+**Individual characteristics we will here focus on are:**
 
 * Fitness: "mortality"
 * Fitness: "reproductive behaviour (time spent courting)"
@@ -50,19 +43,19 @@ How independent are the observations.
 * Health: "We use change in fish length as our measure of growth."
 * Health: "As a proxy for overall health, we use body condition index, which is a measure of the weight of an individual relative to its length"
 
-**Study methods and design** (**numbers of "things"**) "We fed 300 male and 300 female individually housed three‐spine sticklebacks one of five diets varying in protein and lipid content (Table 2) at one of three provisioning levels (100%, 75% or 50% of ad lib), therefore using a restriction of food availability rather than a dilution of the diets to achieve calorie restriction. This gave a total of 15 dietary treatments (see methods and supplementary materials for full details). Fish were maintained on diets for life and measured for numerous traits including survival, reproductive investment, growth and body condition. Given the broad range of traits examined, we present data for each trait separately, with an accompanying short interpretation section." 
-
-"Mortality was checked twice daily and date of death was recorded. We quantified male lifetime reproductive investment as the total time spent courting (in seconds) across all courtship attempts. Males were also assayed for other common reproductive behaviours (e.g., territory defence, nesting and nuptial coloration—see supplementary methods and analysis). Female lifetime reproductive investment was taken as the total number of eggs produced). Fish were monitored for growth (length (mm) and weight (g)) approximately every 1–2 months (Supporting Information Table S26). From these measures, body condition (overall health) was also quantified (Moatt et al., 2017 and supplementary methods)."
-
-Q: How many fish per treatment combination? A. 20
-
-**Type of response variable:**
+**Type of response variable for each individual characteristic:**
 
 * Mortality---binary, dead or alive.
 * Time spent courting---cannot be negative, will likely be numeric, may be distrete (e.g. 10 mins or 20 minutes) or continuous, ratio type.
 * Female reproduction egg production---count type data, not negative, discrete (integers), ratio type.
 * Change in fish length---could be negative or positive, ratio type.
 * Body condition index (a measure of the weight of an individual relative to its length)-only positive, likely continuous, ratio type.
+
+
+**Study methods and design** (**numbers of "things"**) "We fed 300 male and 300 female individually housed three‐spine sticklebacks one of five diets varying in protein and lipid content (Table 2) at one of three provisioning levels (100%, 75% or 50% of ad lib), therefore using a restriction of food availability rather than a dilution of the diets to achieve calorie restriction. This gave a total of 15 dietary treatments (see methods and supplementary materials for full details). Fish were maintained on diets for life and measured for numerous traits including survival, reproductive investment, growth and body condition. Given the broad range of traits examined, we present data for each trait separately, with an accompanying short interpretation section." 
+
+"Mortality was checked twice daily and date of death was recorded. We quantified male lifetime reproductive investment as the total time spent courting (in seconds) across all courtship attempts. Males were also assayed for other common reproductive behaviours (e.g., territory defence, nesting and nuptial coloration—see supplementary methods and analysis). Female lifetime reproductive investment was taken as the total number of eggs produced). Fish were monitored for growth (length (mm) and weight (g)) approximately every 1–2 months (Supporting Information Table S26). From these measures, body condition (overall health) was also quantified (Moatt et al., 2017 and supplementary methods)."
+
 
 **Explanatory variables:**
 
@@ -74,7 +67,7 @@ Q: How many fish per treatment combination? A. 20
 What were the predictions?
 
 
-**Data birth**:
+**Data features**:
 
 * **Number of variables**: not too many as a designed experiment with clear question.
 * **Number of observations**: number of fish (they were "individually housed", and assigned treatment on an individual level).
@@ -85,6 +78,7 @@ What were the predictions?
 
 **Secure resources and perform study**
 
+...
 
 
 
@@ -274,6 +268,9 @@ table(pull(mortality, Fish_ID))
 
 
 ## Balance in experimental design
+
+Q: How many fish per treatment combination? A. 20
+
 
 ```{r}
 temp <- courtship %>%
