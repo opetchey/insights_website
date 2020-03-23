@@ -1,4 +1,4 @@
-#  {#modelwf-scripts}
+# Workflow demonstration naked R scripts {#modelwf-scripts}
 
 <img src="images/WF1_icon.jpg" width="60"/>
 

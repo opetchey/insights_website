@@ -1,0 +1,17 @@
+# Answers and solutions {#answers}
+
+## Chapter 1
+
+**Q1.1** Yes, it is possible to get insights from data without all these things. And we think doing so is a great starting point to learn fundamental skills for getting insights from data. Getting insights from more complex and larger datasets than used in the book can, however, be greatly assisted by statistical models, machine learning, and many other more advanced methods.
+
+**Q1.2** We will focus on important characteristics of the data and the patterns in it. We are more likely to think about the strength of and practical importance of patterns in the data. We are less likely to focus on statistical significance at the expense of everything else.
+
+**Q1.3** Out of the four options given, a question is the first we should think about. The clearer and more specific the better. Making a clear and specific question can be assisted by sketching a graph. We must be careful to minimise the possibility for our insights to be affected by what we would like to find.
+
+**Q1.4** With a randomised manipulative experiment we have a chance of inferring causation... that changing somethings caused a change in something else. On the down side, logistical constraints of make such experiments occur in rather controlled and less realistic settings than other types of studies.
+
+**Q1.5** We focus on rectangular data, i.e. a table of data with rows and columns. A spreadsheet is an example of such rectangular data. We focus on this as it is a simple, useful, and flexible way of arranging data. Furhtermore, there are many convenient and powerful approaches for working with data thus arranged.
+
+**Q1.6** A *response variable* contains the data (measurements/observations) that we are interested in understand the variation in. This is the variable that is "responding" to other variables. It is also know as the *dependent* variable. Typically we put the response variable on the y-axis of a graph (i.e. we *map* variation in the response variable to variation along the y-axis).
+
+**Q1.7** An explanatory variable is a variable that contains measurements that can *explain* variation in a response variable. They are also termed the "independent" variable and the "predictor" variable. The rationale for these names is that an explanatory variable is not dependent on other variables, and can be used to predict variation in the response variable.

@@ -112,21 +112,6 @@ Q10. Rename the following variables to be more intepretable:
 
 (Make sure you use consistent naming across the four datasets.)
 
-```{r}
-courtship <- courtship %>%
-  select(Fish_ID=FID, Family, Shelf_stack, Diet_comp=Diet,
-         Prov_level=Level, Fish_size=Size, Trial, Total_court)
-eggs <- eggs %>%
-  select(Fish_ID=FID, Family, Shelf_stack=Stack_shelf, Diet_comp=Diet,
-         Prov_level=Level, Fish_size=Size, Total_egg)
-length_weight_condition <- length_weight_condition %>%
-  select(Fish_ID=FID, Shelf_stack, Diet_comp=Diet, Sex=Sex,
-         Batch,
-         Prov_level=Level, Fish_size=Size, Length=Ln, Weigth=Wt, Cond_index=CI)
-mortality <- mortality %>%
-  select(Fish_ID=FID, Diet_comp=Diet, Sex,
-         Prov_level=Level, Fish_size=Size, Week=Week_F, Status)
-```
 
 
 ## Replace codes with informative words

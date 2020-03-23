@@ -1,4 +1,4 @@
-# Live data analysis demonstration {#live-data-demo)}
+# Live data analysis demonstration {#live-data-demo}
 
 In the first class of the first week of an *Introduction to Data Analysis* course, we lead a *live data analysis demonstration*. Within one hour we go from question to answer, including collection of some data about each of the students. We believe this demonstration helps students connect with the importance and fun of the content of the course.
 

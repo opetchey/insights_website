@@ -1,0 +1,23 @@
+
+# Questions and exercises {#questions-exercises}
+
+## Chapter 1
+
+**Q1.1** Can we get insights from data without using complex statistical models and analyses, without machine learning, without being a master data scientist?
+
+**Q1.2** What is an advantage of focusing on the data without any statistical models/tests to think about?
+
+**Q1.3** With what should we start our journey from data to insights?
+
+* A dataset.
+* A graph showing the result we would like to find.
+* A clear and specific question.
+* Expectation about what we might find and why we might find it.
+
+**Q1.4** Why is it important to know if a study resulting in a dataset was a randomised manipulative experiment?
+
+**1.5** Datasets, i.e. convenient arrangements of data, come in many forms. Which arrangement is used throughout this book?
+
+**1.6** What is a "response variable" and what are other names for one?
+
+**1.7** What is an "explanatory variable" and what are other names for one?
