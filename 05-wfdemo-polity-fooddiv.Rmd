@@ -1136,3 +1136,48 @@ Other things you could think about analysing, for which data are available (thou
 * FAO Population data (e.g. population size by country by year) (http://www.fao.org/faostat/en/#data)
 * World Bank, e.g. country land area https://data.worldbank.org/indicator/AG.LND.TOTL.K2
 * Maybe: SDG indicators: http://data.un.org/Explorer.aspx?d=SDGs
+
+
+
+
+### A challenge for you...
+
+Check to see if GDP or GDP per capita can explain variation in dietary diversity? What, if anything, would you imagine is the causation among political system, GDP, and dietary diversity (you might use the data to try to infer this, or just think about it)?
+
+Get the GDP data from here: http://www.fao.org/faostat/en/#data/MK 
+
+```{r eval = FALSE}
+gdp <- read_csv("~/Desktop/Macro-Statistics_Key_Indicators_E_All_Data.csv",
+               locale = locale(encoding = 'ISO-8859-1'))
+## First fix some variable names:
+names(gdp) <- str_replace_all(names(gdp), c(" " = "_"))
+## Remove all non-countries
+## keep only some of the elements
+#gdp <-   filter(gdp, Item_Code==22008 & Element_Code==6110)
+gdp <-   filter(gdp, Item_Code==22014 & Element_Code==6119)
+gdp <- select(gdp, -Item_Code, -Area_Code,
+             -Element_Code, -Element, -Unit, -Item,
+             -ends_with("F")) %>%
+  gather(key=Year, value=GDP, 2:48) %>%
+  mutate(Year=as.numeric(substr(Year, 2, 5))) %>%
+  rename(Country=Area)
+dd_all <- full_join(dd, gdp)
+
+dd_sum <- group_by(dd_all, Country) %>%
+  summarise(mean_div=mean(diversity, na.rm=TRUE),
+            mean_pol=mean(Polity2, na.rm=TRUE),
+            mean_GDP=mean(GDP, na.rm=TRUE))
+
+ggplot(dd_sum, aes(x=log10(mean_GDP), y=mean_div, col=mean_pol)) +
+  geom_point(size=3)
+
+ggplot(dd_sum, aes(x=mean_pol, y=mean_div, col=log10(mean_GDP))) +
+  geom_point(size=3)
+
+ggplot(dd_sum, aes(x=mean_pol, y=log10(mean_GDP), col=mean_div)) +
+  geom_point(size=3)
+
+
+```
+
+

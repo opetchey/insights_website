@@ -1,6 +1,43 @@
 # Answers and solutions {#answers}
 
-## Chapter 1
+## Preface
+
+**Q0.1** Who is the intended audience/users/readers of *Insights*?
+
+**A**, **C**, and **D** are correct. *Insights* is intended for beginner scientists in the life and environmental scientist that will be working with quantitative data. Our other book, *Getting Started with R* is for folk that what an introduction to R and who already know a bit about data analysis (just not in R).
+
+**B**: If you already have good knowledge of data analysis and statistics and need an introduction to R, you might like to look at our other book, *Getting Started with R, 2nd Edition*.
+
+**Q0.2** *Insights* teaches a newer (i.e. tidyverse) approach to using R, and not what might be called the “classic” or “traditional” approach. What does this mean?
+
+**A**, **C**, **D**, and **E** are correct. We teach the newer (tidyverse) approach in our own Undergraduate-Level Introduction to Data Analysis courses. It works really well. The newer (tidyverse) approach is not advanced R, it is simple, intuitive, and powerful R.
+
+*Insights* contains not a single square bracket or dollar sign.
+
+**Q0.3** *Insights* is a book about the process of getting insights from data, and yet it contains no statistical analyses (e.g. no regression, ANOVA, linear models, or generalised linear models. Why are such things not included?
+
+Every answers is a good reason for starting learning about data analysis without considering statistics.
+
+**Q0.4** What proportion of a data analyists time and effort is spent on tasks such as preparation, import, cleaning, tidying, checking, double-checking, manipulating, summarising and visualizating data?
+
+We write "about 80%". Though really we just mean *a lot*. Care and attention to this work is essential to provide a found foundation dataset from which to derive insights.
+
+**Q0.5** From where do you get the datasets that you need to work along with the demonstrations in the book?
+
+Only **D** is correct. You get the data from the online data repositories where the authors of the original studies deposited their data. Unlike the majority of Introduction to Data Analysis books, *Insights* starts from the usual dirty and messy state data usual begins in. Its lot of work, but absolutely essential work to do safely and reliably, to get the data tidy, clean, and arranged so that visualisation and summarisation (and in the end, statistics) are straightforward and efficient, and that the insights derived from them are accurate, reliable, and robust.
+
+**Q0.6** Natalie.
+
+**Q0.7** Owen.
+
+**Q0.8** Andrew.
+
+**Q0.9** Dylan.
+
+
+
+
+## Chapter 1 (Introduction)
 
 **Q1.1** Yes, it is possible to get insights from data without all these things. And we think doing so is a great starting point to learn fundamental skills for getting insights from data. Getting insights from more complex and larger datasets than used in the book can, however, be greatly assisted by statistical models, machine learning, and many other more advanced methods.
 
@@ -15,3 +52,87 @@
 **Q1.6** A *response variable* contains the data (measurements/observations) that we are interested in understand the variation in. This is the variable that is "responding" to other variables. It is also know as the *dependent* variable. Typically we put the response variable on the y-axis of a graph (i.e. we *map* variation in the response variable to variation along the y-axis).
 
 **Q1.7** An explanatory variable is a variable that contains measurements that can *explain* variation in a response variable. They are also termed the "independent" variable and the "predictor" variable. The rationale for these names is that an explanatory variable is not dependent on other variables, and can be used to predict variation in the response variable.
+
+**Q1.8** The five given in *Insights* are 1) the number of observations, 2) the number of variables, 3) if variables describe the manipulations of a randomised experiment, 4) correlation among the variatbles, and 5) how independent are the observations. See the text of the book for why we think these are important. Great if you have thought of other important features... drop us a line to let us know.
+
+**Q1.9** The all concern food!
+
+**Q1.10* Perhaps lots were missing, and some of the presented steps could be broken up into multiple steps. Its always risky to present a general recipe for something as ultimately diverse as getting insights from data. Still, its a good idea to start somewhere. The missing step mentioned was communication, by the way.
+
+## Chapter 2 (Getting Acquainted)
+
+**Q2.1** True or false: R and RStudio are the same software program?
+
+This is false. They are two separate programs. RStudio is like a helper program that surrounds R. We only use R via RStudio. Because they're separate programs we must update each. I.e. updating one will not update the other.
+
+**Q2.2** What will R tell us if we type into the Console `1 + 3 * 3`?
+
+The answer is 10. R does the multiplication first, as it should.
+
+**Q2.3** What will R tell us if we type into the Console `log(100)`?
+
+The answer is 4.60517. This is because the `log` function is the natural log, often written as "ln". If you answered 2 you were thinking of `log10(100)`
+
+**Q2.5** How would we assign to the name "my_constant" the value of "log(100)"?
+
+`my_constant <- log(100)`
+
+**Q2.5** What commands should we be typing directly into the Console?
+
+Any that we know that we don't want to remember and don't want to use again. I.e. very very few. The vast majority we type in our script, and then "send" to the Console. This practice will result in our script containing a complete record of everything we did.
+
+**Q2.6** What is the error in the code?
+
+In the second line of code the name `my_x_variable` was mispelled (the second "a" was missing). Hence we get the error: `object 'my_x_variable' not found`.
+
+**Q2.7** When we give a function some arguments, when should we name the arguments?
+
+Name them whenever you are not sure about what order the function expects the arguments in. When staring with R, it can be comforting to always name the arguments, and then to relax this when one becomes more used to what individual functions expect.
+
+**Q2.8** True or false: it is a good time to have a the top of our script a command to *install* each of the packages we would like to use.
+
+False. Do not do this. We only need to load the add-on package with, for example, `library(dplyr)`. Installing packages every time you run your code is a waste of time.
+
+**Q2.9** True or false: When asking help from others it is sufficient to email them a verbal description of the problem, and a copy of the error message R gave.
+
+False. This will rarely be enough for someone to help find the problem. Even sending the line of code that produces the error is often not sufficient. Better to send more code than less, and if possible code that works, at least up until if fails. And send sample data if the code reads in and uses data.
+
+**Q2.10** If RStudio freezes, are we going to lose all our work?
+
+Probably not. RStudio has very likely autosaved the very latest version of our script. Just in case, attempt to copy the script from RStudio and paste it somewhere safe, before then restarting RStudio.
+
+
+## Chapter 3 (Workflow Demonstration--Part 1)
+
+
+
+
+## Chapter 4 (Workflow Demonstration--Part 2)
+
+
+
+## Chapter 5 (Deeper R--Wrangling Data--Part 1)
+
+
+
+## Chapter 6 (Deeper R--Wrangling Data--Part 2)
+
+
+
+## Chapter 7 (Deeper R--Graphing)
+
+
+
+## Chapter 8 (Deeper Concepts--Part 1)
+
+
+
+## Chapter 9 (Deeper Concepts--Part 1)
+
+
+
+## Chapter 10 (Looking backwards and forwards)
+
+
+
+
