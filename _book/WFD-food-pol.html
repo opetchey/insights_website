@@ -24,7 +24,7 @@
 <meta name="author" content="Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs" />
 
 
-<meta name="date" content="2020-03-26" />
+<meta name="date" content="2020-03-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -146,7 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a><ul>
 <li class="chapter" data-level="3.1" data-path="questions-exercises.html"><a href="questions-exercises.html#preface"><i class="fa fa-check"></i><b>3.1</b> Preface</a></li>
-<li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1"><i class="fa fa-check"></i><b>3.2</b> Chapter 1</a></li>
+<li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1-introduction"><i class="fa fa-check"></i><b>3.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="3.3" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-2-getting-acquainted"><i class="fa fa-check"></i><b>3.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="3.4" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-3-workflow-demonstrationpart-1"><i class="fa fa-check"></i><b>3.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="3.5" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-4-workflow-demonstrationpart-2"><i class="fa fa-check"></i><b>3.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
@@ -330,7 +330,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a><ul>
 <li class="chapter" data-level="14.1" data-path="answers.html"><a href="answers.html#preface-1"><i class="fa fa-check"></i><b>14.1</b> Preface</a></li>
-<li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
+<li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction-1"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="14.3" data-path="answers.html"><a href="answers.html#chapter-2-getting-acquainted-1"><i class="fa fa-check"></i><b>14.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="14.4" data-path="answers.html"><a href="answers.html#chapter-3-workflow-demonstrationpart-1-1"><i class="fa fa-check"></i><b>14.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="14.5" data-path="answers.html"><a href="answers.html#chapter-4-workflow-demonstrationpart-2-1"><i class="fa fa-check"></i><b>14.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
@@ -396,15 +396,15 @@ FIGURE 6.1: A hypothetical outcome of the demonstration study of relationship be
 <div id="a-little-preparation" class="section level2">
 <h2><span class="header-section-number">6.4</span> A little preparation</h2>
 <p>Make a new folder for this Workflow Demonstration (WD), and in it a folder called in <code>data</code> (this will contain any datasets for this WD/project). In <em>RStudio</em> create an <em>RStudio</em> project and save it in the project folder (not the <code>data</code> folder). Close <em>RStudio</em> and double click on the project file to re-open <em>RStudio</em>. Create a new R script file. In this new script file make a comment about what it will contains, and then load some libraries.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co">## Load the libraries we use</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="kw">library</span>(readr)</a>
-<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="kw">library</span>(stringr)</a>
-<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="kw">library</span>(lubridate)</a>
-<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="kw">library</span>(tidyr)</a>
-<a class="sourceLine" id="cb13-8" data-line-number="8"><span class="kw">library</span>(vegan)</a>
-<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="kw">library</span>(ggbeeswarm)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co">## Load the libraries we use</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw">library</span>(readr)</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="kw">library</span>(stringr)</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="kw">library</span>(lubridate)</a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="kw">library</span>(tidyr)</a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="kw">library</span>(vegan)</a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="kw">library</span>(ggbeeswarm)</a></code></pre></div>
 <div class="action">
 <p>
 Install the <code>vegan</code> and <code>ggbeeswarm</code> library if you have not already done so, otherwise <code>library(vegan)</code> and <code>library(ggbeeswarm)</code> will not work. Look at the <strong>Packages</strong> section of the Getting Acquainted chapter of the book if you need help with installation.
@@ -429,8 +429,8 @@ Install the <code>vegan</code> and <code>ggbeeswarm</code> library if you have n
 <div id="data-import" class="section level3">
 <h3><span class="header-section-number">6.5.2</span> Data import</h3>
 <p>If you did the preparation mentioned above, made a project, made a <code>csv</code> file from the Excel file, and put the data file in the data folder of that project, and you started R by double clicking on the RProject file (or switching to this project), the following code should import the data:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">rm</span>(<span class="dt">list =</span> <span class="kw">ls</span>())</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">pol &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/p4v2015.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">rm</span>(<span class="dt">list =</span> <span class="kw">ls</span>())</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">pol &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/p4v2015.csv&quot;</span>)</a></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_double(),
@@ -439,17 +439,17 @@ Install the <code>vegan</code> and <code>ggbeeswarm</code> library if you have n
 ## )</code></pre>
 <pre><code>## See spec(...) for full column specifications.</code></pre>
 <p>If you want to read direct from the Excel file, use this (you will need to install the <strong>readxl</strong> package if you have not already done so):</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">library</span>(readxl)</a>
-<a class="sourceLine" id="cb17-2" data-line-number="2">pol &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;data/p4v2015.xls&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">library</span>(readxl)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">pol &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;data/p4v2015.xls&quot;</span>)</a></code></pre></div>
 <p>Is RStudio showing the correct number of rows and columns (you would have had to look at the file in Excel (or another spreadsheet program to know this)? Is it showing the appropriate variable types for each of the three variables? The <code>Country</code> variable should be a character variable, the other two should be numeric.</p>
 </div>
 <div id="tidy-and-clean" class="section level3">
 <h3><span class="header-section-number">6.5.3</span> Tidy and clean</h3>
 <p>We only want to work with three of the 36 variables, so we use the <code>select</code> function to keep only these, and at the same time rename them to standardise the variable names by making them all begin with an upper case letter and then have lower case:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">pol &lt;-<span class="st"> </span>pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Country =</span> country,</a>
-<a class="sourceLine" id="cb18-3" data-line-number="3">         <span class="dt">Year =</span> year,</a>
-<a class="sourceLine" id="cb18-4" data-line-number="4">         <span class="dt">Polity2 =</span> polity2)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">pol &lt;-<span class="st"> </span>pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Country =</span> country,</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">         <span class="dt">Year =</span> year,</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">         <span class="dt">Polity2 =</span> polity2)</a></code></pre></div>
 <div class="info">
 <p>
 Please note that here and below we do not describe at all or in much detail the R code used. This is because it is described in detail in the book.
@@ -461,9 +461,9 @@ Please note that here and below we do not describe at all or in much detail the 
 <div id="deal-with-nas" class="section level3">
 <h3><span class="header-section-number">6.5.4</span> Deal with NAs</h3>
 <p>As usual, we should see if there are any NAs in the data, understand what they might result from, and decide what how to treat them. The next code makes a new dataset <code>pol_nas</code> that contains the rows that contain a missing value in any of the three variables.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">pol_nas &lt;-<span class="st"> </span>pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="st">  </span><span class="kw">filter_all</span>(<span class="kw">any_vars</span>(<span class="kw">is.na</span>(.))) </a>
-<a class="sourceLine" id="cb19-3" data-line-number="3">pol_nas</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">pol_nas &lt;-<span class="st"> </span>pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="st">  </span><span class="kw">filter_all</span>(<span class="kw">any_vars</span>(<span class="kw">is.na</span>(.))) </a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">pol_nas</a></code></pre></div>
 <pre><code>## # A tibble: 235 x 3
 ##   Country      Year Polity2
 ##   &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;
@@ -476,84 +476,84 @@ Please note that here and below we do not describe at all or in much detail the 
 <p>This dataset contains 235 rows, and viewing it we see that it is only the <code>polity2</code> variables that contains NAs. I.e. there are 235 missing <code>Polity2</code> values.</p>
 <p>A brief perusal of the <em>Dataset User’s Manual</em> reveals a clue about why some of all of these NAs exist: “Cases of foreign “interruption” are treated as “system missing.”</p>
 <p>Let us decide to treat these missing values as unimportant for further analyses, and to not include them in any further analyses, by removing them from the dataset. We know this should leave us with 17,061 - 235 = 16,826 rows of data:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">pol &lt;-<span class="st"> </span>pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="st">  </span><span class="kw">na.omit</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">pol &lt;-<span class="st"> </span>pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="st">  </span><span class="kw">na.omit</span>()</a></code></pre></div>
 <p>You should see that we do, indeed, now have 16,826 rows of data.</p>
 <p>We might now like to clean up a little, by removing the <code>pol_nas</code> dataset from R (you will see it dissapear from the <em>Environment</em> pane):</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">rm</span>(pol_nas)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">rm</span>(pol_nas)</a></code></pre></div>
 </div>
 <div id="check-for-innapropriate-duplicate-observations" class="section level3">
 <h3><span class="header-section-number">6.5.5</span> Check for innapropriate duplicate observations</h3>
 <p>We expect there to not exist any more than one Polity score per country per year. We check this by first selecting only the <code>Country</code> and <code>Year</code> variables, then getting any duplicate rows with the <code>duplicated</code> function. The <code>duplicated</code> function returns a vector of TRUE and FALSE, where TRUE means a row is a duplicate. We can then get the <code>sum</code> of this vector to count the number of TRUEs (i.e. number of duplicated rows).</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Country, Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb23-3" data-line-number="3"><span class="st">  </span><span class="kw">duplicated</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb23-4" data-line-number="4"><span class="st">  </span><span class="kw">sum</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Country, Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="st">  </span><span class="kw">duplicated</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="st">  </span><span class="kw">sum</span>()</a></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>Interesting. There are two cases that contain duplicates. Let’s see which Country-Year combinations these are:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Country, Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(<span class="kw">duplicated</span>(.))</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Country, Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(<span class="kw">duplicated</span>(.))</a></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   Country     Year
 ##   &lt;chr&gt;      &lt;dbl&gt;
 ## 1 Ethiopia    1993
 ## 2 Yugoslavia  1991</code></pre>
 <p>And look at the duplicated cases:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Country <span class="op">==</span><span class="st"> &quot;Yugoslavia&quot;</span>,</a>
-<a class="sourceLine" id="cb27-3" data-line-number="3">         Year <span class="op">==</span><span class="st"> </span><span class="dv">1991</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Country <span class="op">==</span><span class="st"> &quot;Yugoslavia&quot;</span>,</a>
+<a class="sourceLine" id="cb21-3" data-line-number="3">         Year <span class="op">==</span><span class="st"> </span><span class="dv">1991</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 2 x 3
 ##   Country     Year Polity2
 ##   &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;
 ## 1 Yugoslavia  1991      -5
 ## 2 Yugoslavia  1991      -5</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Country <span class="op">==</span><span class="st"> &quot;Ethiopia&quot;</span>,</a>
-<a class="sourceLine" id="cb29-3" data-line-number="3">         Year <span class="op">==</span><span class="st"> </span><span class="dv">1993</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Country <span class="op">==</span><span class="st"> &quot;Ethiopia&quot;</span>,</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">         Year <span class="op">==</span><span class="st"> </span><span class="dv">1993</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 2 x 3
 ##   Country   Year Polity2
 ##   &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;
 ## 1 Ethiopia  1993       0
 ## 2 Ethiopia  1993       1</code></pre>
 <p>Looking through the <em>Dataset User’s Manual</em> does not readily shed light on these duplicates. Let’s remove both cases of duplication by taking the average <code>Polity2</code> score. This should result in a dataset with 16,824 rows.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">pol &lt;-<span class="st"> </span>pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country, Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb31-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Polity2 =</span> <span class="kw">mean</span>(Polity2))</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">pol &lt;-<span class="st"> </span>pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country, Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Polity2 =</span> <span class="kw">mean</span>(Polity2))</a></code></pre></div>
 <div class="warning">
 <p>
 We just made a decision about how to deal with the duplicated scores. We took the mean. There are other things we could have done (e.g. use a different measure of central tendency, such as the median). So we have made an arbitrary choice in our analysis pathway. We went down one path when we could have chosen another. We need to 1) recognise and record when we make decisions like this, and 2) check to see if our conclusions are robust to variation in what we choose to do. (Here, conclusions would not be affected by using the median, as there are only two values being averaged.)
 </p>
 </div>
 <p>Let us again check for duplicate Country-Year combinations:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Country, Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="st">  </span><span class="kw">duplicated</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="st">  </span><span class="kw">sum</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Country, Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="st">  </span><span class="kw">duplicated</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb26-4" data-line-number="4"><span class="st">  </span><span class="kw">sum</span>()</a></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 <p>Good, there are now no duplicated cases.</p>
 </div>
 <div id="check-ranges-of-numeric-variables" class="section level3">
 <h3><span class="header-section-number">6.5.6</span> Check ranges of numeric variables</h3>
 <p>Its a good idea to check if numeric variables contain any unexpected values. From the <em>Dataset User’s Manual</em> we expect the <code>Year</code> variable to be values including the 19th, 20th, and 21st centuries, and the <code>Polity2</code> variable to have a minimum of -10 and maximum of 10. Write code to check these are true in the imported data. Make the summary dataset and have a look at it for yourself. You should see that the expected ranges of the year and polity variables are respected.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">pol_summ &lt;-<span class="st"> </span>pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb34-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">min_year =</span> <span class="kw">min</span>(Year),</a>
-<a class="sourceLine" id="cb34-3" data-line-number="3">            <span class="dt">max_year =</span> <span class="kw">max</span>(Year),</a>
-<a class="sourceLine" id="cb34-4" data-line-number="4">            <span class="dt">min_pol =</span> <span class="kw">min</span>(Polity2),</a>
-<a class="sourceLine" id="cb34-5" data-line-number="5">            <span class="dt">max_pol =</span> <span class="kw">max</span>(Polity2))</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">pol_summ &lt;-<span class="st"> </span>pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb28-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">min_year =</span> <span class="kw">min</span>(Year),</a>
+<a class="sourceLine" id="cb28-3" data-line-number="3">            <span class="dt">max_year =</span> <span class="kw">max</span>(Year),</a>
+<a class="sourceLine" id="cb28-4" data-line-number="4">            <span class="dt">min_pol =</span> <span class="kw">min</span>(Polity2),</a>
+<a class="sourceLine" id="cb28-5" data-line-number="5">            <span class="dt">max_pol =</span> <span class="kw">max</span>(Polity2))</a></code></pre></div>
 <p>We will now save this dataset so we don’t have to run all that code every time:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">write_rds</span>(pol, <span class="st">&quot;data/pol.RDS&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">write_rds</span>(pol, <span class="st">&quot;data/pol.RDS&quot;</span>)</a></code></pre></div>
 </div>
 </div>
 <div id="first-insights-from-the-polity-data" class="section level2">
 <h2><span class="header-section-number">6.6</span> First insights from the polity data</h2>
 <p>Before we move on to the FAO dataset, lets have quick look at some features of the Polity data.</p>
 <p>Let’s look at the frequency distributions of the two numeric variables. We will do this efficiently by first gathering the information in the two variables into one, then plotting. This is the method used and described in detail in the <em>Insights</em> book. Here is the code that produces figure @ref{fig:pol1}:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="st">  </span><span class="kw">gather</span>(<span class="dt">key =</span> Variable, <span class="dt">value =</span> Value, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb36-3" data-line-number="3"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb36-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Value), <span class="dt">bins =</span> <span class="dv">21</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb36-5" data-line-number="5"><span class="st">  </span><span class="kw">facet_wrap</span>( <span class="op">~</span><span class="st"> </span>Variable, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>, <span class="dt">nrow =</span> <span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="st">  </span><span class="kw">gather</span>(<span class="dt">key =</span> Variable, <span class="dt">value =</span> Value, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Value), <span class="dt">bins =</span> <span class="dv">21</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb30-5" data-line-number="5"><span class="st">  </span><span class="kw">facet_wrap</span>( <span class="op">~</span><span class="st"> </span>Variable, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>, <span class="dt">nrow =</span> <span class="dv">2</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:pol1"></span>
 <img src="insights_website_files/figure-html/pol1-1.svg" alt="Frequency distributions of the polity score and of the year in which observations were made." width="100%" />
 <p class="caption">
@@ -576,11 +576,11 @@ FIGURE 6.2: Frequency distributions of the polity score and of the year in which
 </ul>
 <p>Answers for some of these are below.</p>
 <p>Number of countries, years, first year and last year:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_countries =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Country)),</a>
-<a class="sourceLine" id="cb37-3" data-line-number="3">            <span class="dt">num_years =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Year)),</a>
-<a class="sourceLine" id="cb37-4" data-line-number="4">            <span class="dt">first_year =</span> <span class="kw">min</span>(Year),</a>
-<a class="sourceLine" id="cb37-5" data-line-number="5">            <span class="dt">last_year =</span> <span class="kw">max</span>(Year))</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_countries =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Country)),</a>
+<a class="sourceLine" id="cb31-3" data-line-number="3">            <span class="dt">num_years =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Year)),</a>
+<a class="sourceLine" id="cb31-4" data-line-number="4">            <span class="dt">first_year =</span> <span class="kw">min</span>(Year),</a>
+<a class="sourceLine" id="cb31-5" data-line-number="5">            <span class="dt">last_year =</span> <span class="kw">max</span>(Year))</a></code></pre></div>
 <pre><code>## # A tibble: 193 x 5
 ##   Country     num_countries num_years first_year last_year
 ##   &lt;chr&gt;               &lt;int&gt;     &lt;int&gt;      &lt;dbl&gt;     &lt;dbl&gt;
@@ -591,35 +591,35 @@ FIGURE 6.2: Frequency distributions of the polity score and of the year in which
 ## 5 Argentina               1       191       1825      2015
 ## # … with 188 more rows</code></pre>
 <p>For each country, number of years of records, first year, last year, number of years between first and last, and if there are gaps of no data:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">per_country_pol &lt;-<span class="st"> </span>pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb39-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_years =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Year)),</a>
-<a class="sourceLine" id="cb39-4" data-line-number="4">            <span class="dt">first_year =</span> <span class="kw">min</span>(Year),</a>
-<a class="sourceLine" id="cb39-5" data-line-number="5">            <span class="dt">last_year =</span> <span class="kw">max</span>(Year),</a>
-<a class="sourceLine" id="cb39-6" data-line-number="6">            <span class="dt">years_interval =</span> last_year <span class="op">-</span><span class="st"> </span>first_year <span class="op">+</span><span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb39-7" data-line-number="7">            <span class="dt">gaps =</span> num_years <span class="op">!=</span><span class="st"> </span>years_interval)</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">per_country_pol &lt;-<span class="st"> </span>pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb33-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_years =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Year)),</a>
+<a class="sourceLine" id="cb33-4" data-line-number="4">            <span class="dt">first_year =</span> <span class="kw">min</span>(Year),</a>
+<a class="sourceLine" id="cb33-5" data-line-number="5">            <span class="dt">last_year =</span> <span class="kw">max</span>(Year),</a>
+<a class="sourceLine" id="cb33-6" data-line-number="6">            <span class="dt">years_interval =</span> last_year <span class="op">-</span><span class="st"> </span>first_year <span class="op">+</span><span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb33-7" data-line-number="7">            <span class="dt">gaps =</span> num_years <span class="op">!=</span><span class="st"> </span>years_interval)</a></code></pre></div>
 <p>Number of countries with gappy information:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">per_country_pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">sum</span>(gaps))</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">per_country_pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">sum</span>(gaps))</a></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   `sum(gaps)`
 ##         &lt;int&gt;
 ## 1          46</code></pre>
 <p>Code for a graph of the number of countries with records in each year:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_countries =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Country))) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb42-4" data-line-number="4"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Year, <span class="dt">y=</span>num_countries))</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb36-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_countries =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Country))) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb36-4" data-line-number="4"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb36-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Year, <span class="dt">y=</span>num_countries))</a></code></pre></div>
 <p>Change in polity in some countries of interest (to the authors at least) (the code below produces figure :</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1">countries_of_interest &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Bhutan&quot;</span>, <span class="st">&quot;Brasil&quot;</span>, <span class="st">&quot;Cuba&quot;</span>, <span class="st">&quot;Cambodia&quot;</span>,</a>
-<a class="sourceLine" id="cb43-2" data-line-number="2">                           <span class="st">&quot;Estonia&quot;</span>, <span class="st">&quot;Yugoslavia&quot;</span>, <span class="st">&quot;Australia&quot;</span>)</a>
-<a class="sourceLine" id="cb43-3" data-line-number="3">pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb43-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(Country <span class="op">%in%</span><span class="st"> </span>countries_of_interest) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb43-5" data-line-number="5"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb43-6" data-line-number="6"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>Country) <span class="op">+</span></a>
-<a class="sourceLine" id="cb43-7" data-line-number="7"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Year, <span class="dt">y=</span>Polity2, <span class="dt">col=</span>Country)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb43-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Year, <span class="dt">y=</span>Polity2, <span class="dt">col=</span>Country))</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">countries_of_interest &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Bhutan&quot;</span>, <span class="st">&quot;Brasil&quot;</span>, <span class="st">&quot;Cuba&quot;</span>, <span class="st">&quot;Cambodia&quot;</span>,</a>
+<a class="sourceLine" id="cb37-2" data-line-number="2">                           <span class="st">&quot;Estonia&quot;</span>, <span class="st">&quot;Yugoslavia&quot;</span>, <span class="st">&quot;Australia&quot;</span>)</a>
+<a class="sourceLine" id="cb37-3" data-line-number="3">pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb37-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(Country <span class="op">%in%</span><span class="st"> </span>countries_of_interest) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb37-5" data-line-number="5"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb37-6" data-line-number="6"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>Country) <span class="op">+</span></a>
+<a class="sourceLine" id="cb37-7" data-line-number="7"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Year, <span class="dt">y=</span>Polity2, <span class="dt">col=</span>Country)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb37-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Year, <span class="dt">y=</span>Polity2, <span class="dt">col=</span>Country))</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:pol2"></span>
 <img src="insights_website_files/figure-html/pol2-1.svg" alt="Change in polity in some countries of interest (to the authors at least)" width="100%" />
 <p class="caption">
@@ -649,32 +649,32 @@ FIGURE 6.3: Change in polity in some countries of interest (to the authors at le
 <p>If you do want to go through the process of getting the 206MB file, and reducing it down to something more manageable, feel free to use the next code below, otherwise skip over this. It’s pretty straightforward, apart from two things.</p>
 <p>First, we give the <code>read_csv</code> an argument you didn’t previously see: <code>encoding</code>. This helps <code>read_csv</code> properly recognise otherwise problematic symbols. In this case, it ensure that country names such as <em>Côte d’Ivoire</em> don’t cause problems (the “ô” can otherwise do so).</p>
 <p>Second, the penultimate line saves the produced tibble <code>ff</code> to a <code>Rdata</code> type of data file; though even that new type of instruction should be quite transparent to you by now.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="co">## Get the full food balance sheet dataset *All data* from the FAO website:</span></a>
-<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="co">## http://www.fao.org/faostat/en/#data/FBS/metadata.</span></a>
-<a class="sourceLine" id="cb44-3" data-line-number="3"><span class="co">## Reduce the size of the FAO data, so easier to deal with</span></a>
-<a class="sourceLine" id="cb44-4" data-line-number="4"><span class="co">## import FAO data</span></a>
-<a class="sourceLine" id="cb44-5" data-line-number="5">fbs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/FoodBalanceSheets_E_All_Data.csv&quot;</span>,</a>
-<a class="sourceLine" id="cb44-6" data-line-number="6">               <span class="dt">locale =</span> <span class="kw">locale</span>(<span class="dt">encoding =</span> <span class="st">&#39;ISO-8859-1&#39;</span>))</a>
-<a class="sourceLine" id="cb44-7" data-line-number="7"><span class="co">## First fix some variable names:</span></a>
-<a class="sourceLine" id="cb44-8" data-line-number="8"><span class="kw">names</span>(fbs) &lt;-<span class="st"> </span><span class="kw">str_replace_all</span>(<span class="kw">names</span>(fbs), <span class="kw">c</span>(<span class="st">&quot; &quot;</span> =<span class="st"> &quot;_&quot;</span>))</a>
-<a class="sourceLine" id="cb44-9" data-line-number="9"><span class="co">## Remove all non-countries</span></a>
-<a class="sourceLine" id="cb44-10" data-line-number="10">fbs &lt;-<span class="st"> </span><span class="kw">filter</span>(fbs, Country_Code <span class="op">&lt;</span><span class="st"> </span><span class="dv">5000</span>)</a>
-<a class="sourceLine" id="cb44-11" data-line-number="11"><span class="co">## keep only some of the elements</span></a>
-<a class="sourceLine" id="cb44-12" data-line-number="12">fbs &lt;-<span class="st"> </span><span class="kw">filter</span>(fbs, Element <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Food supply quantity (kg/capita/yr)&quot;</span>))</a>
-<a class="sourceLine" id="cb44-13" data-line-number="13"><span class="co">## remove some other variables that won&#39;t be used</span></a>
-<a class="sourceLine" id="cb44-14" data-line-number="14">fbs &lt;-<span class="st"> </span><span class="kw">select</span>(fbs, <span class="op">-</span>Country_Code, <span class="op">-</span>Item_Code,</a>
-<a class="sourceLine" id="cb44-15" data-line-number="15">             <span class="op">-</span>Element_Code, <span class="op">-</span>Element, <span class="op">-</span>Unit,</a>
-<a class="sourceLine" id="cb44-16" data-line-number="16">             <span class="op">-</span><span class="kw">ends_with</span>(<span class="st">&quot;F&quot;</span>))</a>
-<a class="sourceLine" id="cb44-17" data-line-number="17"><span class="co">## save the reduced file</span></a>
-<a class="sourceLine" id="cb44-18" data-line-number="18"><span class="kw">saveRDS</span>(fbs, <span class="st">&quot;data/FoodBalanceSheets_E_All_Data_reduced.Rdata&quot;</span>)</a>
-<a class="sourceLine" id="cb44-19" data-line-number="19"><span class="kw">rm</span>(fbs)</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="co">## Get the full food balance sheet dataset *All data* from the FAO website:</span></a>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">## http://www.fao.org/faostat/en/#data/FBS/metadata.</span></a>
+<a class="sourceLine" id="cb38-3" data-line-number="3"><span class="co">## Reduce the size of the FAO data, so easier to deal with</span></a>
+<a class="sourceLine" id="cb38-4" data-line-number="4"><span class="co">## import FAO data</span></a>
+<a class="sourceLine" id="cb38-5" data-line-number="5">fbs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/FoodBalanceSheets_E_All_Data.csv&quot;</span>,</a>
+<a class="sourceLine" id="cb38-6" data-line-number="6">               <span class="dt">locale =</span> <span class="kw">locale</span>(<span class="dt">encoding =</span> <span class="st">&#39;ISO-8859-1&#39;</span>))</a>
+<a class="sourceLine" id="cb38-7" data-line-number="7"><span class="co">## First fix some variable names:</span></a>
+<a class="sourceLine" id="cb38-8" data-line-number="8"><span class="kw">names</span>(fbs) &lt;-<span class="st"> </span><span class="kw">str_replace_all</span>(<span class="kw">names</span>(fbs), <span class="kw">c</span>(<span class="st">&quot; &quot;</span> =<span class="st"> &quot;_&quot;</span>))</a>
+<a class="sourceLine" id="cb38-9" data-line-number="9"><span class="co">## Remove all non-countries</span></a>
+<a class="sourceLine" id="cb38-10" data-line-number="10">fbs &lt;-<span class="st"> </span><span class="kw">filter</span>(fbs, Country_Code <span class="op">&lt;</span><span class="st"> </span><span class="dv">5000</span>)</a>
+<a class="sourceLine" id="cb38-11" data-line-number="11"><span class="co">## keep only some of the elements</span></a>
+<a class="sourceLine" id="cb38-12" data-line-number="12">fbs &lt;-<span class="st"> </span><span class="kw">filter</span>(fbs, Element <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Food supply quantity (kg/capita/yr)&quot;</span>))</a>
+<a class="sourceLine" id="cb38-13" data-line-number="13"><span class="co">## remove some other variables that won&#39;t be used</span></a>
+<a class="sourceLine" id="cb38-14" data-line-number="14">fbs &lt;-<span class="st"> </span><span class="kw">select</span>(fbs, <span class="op">-</span>Country_Code, <span class="op">-</span>Item_Code,</a>
+<a class="sourceLine" id="cb38-15" data-line-number="15">             <span class="op">-</span>Element_Code, <span class="op">-</span>Element, <span class="op">-</span>Unit,</a>
+<a class="sourceLine" id="cb38-16" data-line-number="16">             <span class="op">-</span><span class="kw">ends_with</span>(<span class="st">&quot;F&quot;</span>))</a>
+<a class="sourceLine" id="cb38-17" data-line-number="17"><span class="co">## save the reduced file</span></a>
+<a class="sourceLine" id="cb38-18" data-line-number="18"><span class="kw">saveRDS</span>(fbs, <span class="st">&quot;data/FoodBalanceSheets_E_All_Data_reduced.Rdata&quot;</span>)</a>
+<a class="sourceLine" id="cb38-19" data-line-number="19"><span class="kw">rm</span>(fbs)</a></code></pre></div>
 <p>The next line reads in that smaller dataset:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="co">#rm(list = ls())</span></a>
-<a class="sourceLine" id="cb45-2" data-line-number="2">fbs &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/FoodBalanceSheets_E_All_Data_reduced.Rdata&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="co">#rm(list = ls())</span></a>
+<a class="sourceLine" id="cb39-2" data-line-number="2">fbs &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/FoodBalanceSheets_E_All_Data_reduced.Rdata&quot;</span>)</a></code></pre></div>
 <p>Feel free to have a look at the dataset with the <code>glimpse</code> function. We <code>select</code> a few columns first, as otherwise the output is rather long due to there being 112 variables in the dataset.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1">fbs <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Country, Item, Y1961, Y1971, Y1981, Y1991, Y2001, Y2011) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb46-3" data-line-number="3"><span class="st">  </span><span class="kw">glimpse</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">fbs <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Country, Item, Y1961, Y1971, Y1981, Y1991, Y2001, Y2011) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb40-3" data-line-number="3"><span class="st">  </span><span class="kw">glimpse</span>()</a></code></pre></div>
 <pre><code>## Observations: 17,953
 ## Variables: 8
 ## $ Country &lt;chr&gt; &quot;China&quot;, &quot;China&quot;, &quot;China&quot;, &quot;China&quot;, &quot;China&quot;, &quot;China&quot;, &quot;China&quot;…
@@ -687,9 +687,9 @@ FIGURE 6.3: Change in polity in some countries of interest (to the authors at le
 ## $ Y2011   &lt;dbl&gt; 63.03, 79.24, 0.17, 7.38, 0.10, 0.11, 0.47, 0.68, 0.28, 1.83,…</code></pre>
 <p>There are 17’953 observations/rows in the dataset. The country and food item variables are character variables, the year variables (which contain amounts of food for each year) contain numeric (double) variables.</p>
 <p>Now find the number of countries and the number of food items:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">fbs <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_countries =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Country)),</a>
-<a class="sourceLine" id="cb48-3" data-line-number="3">            <span class="dt">num_food_items =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Item)))</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">fbs <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_countries =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Country)),</a>
+<a class="sourceLine" id="cb42-3" data-line-number="3">            <span class="dt">num_food_items =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Item)))</a></code></pre></div>
 <pre><code>## # A tibble: 1 x 2
 ##   num_countries num_food_items
 ##           &lt;int&gt;          &lt;int&gt;
@@ -712,10 +712,10 @@ FIGURE 6.4: The same data (a) in long/tidy format and (b) in wide format, with c
 </p>
 </div>
 <p>Let’s now make the data tidy, and clean up the year variable. We first gather all the same data from columns three through 57 (<code>3:57</code>) into a new variable called <code>Food_Supply_Quantity</code> and put the information about which year each observation belongs to in a new variable called <code>Year</code>. Because the column names begin with Y (e.g. <code>Y1961</code>) we then need to keep only the 2nd through to 5th character in the <code>Year</code> variable (using the <code>substr</code> function), and convert the result to a numeric type variable (with the <code>as.numeric</code> function), doing all this within a <code>mutate</code> in order to replace the old year variable with the converted one. Let’s then <code>glimpse</code> the data. Here’s the code for all that:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1">fbs_long &lt;-<span class="st"> </span>fbs <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb50-2" data-line-number="2"><span class="st">  </span><span class="kw">gather</span>(<span class="dt">key =</span> Year, <span class="dt">value =</span> Food_Supply_Quantity, <span class="dv">3</span><span class="op">:</span><span class="dv">57</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb50-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Year =</span> <span class="kw">as.numeric</span>(<span class="kw">substr</span>(Year, <span class="dv">2</span>, <span class="dv">5</span>)))</a>
-<a class="sourceLine" id="cb50-4" data-line-number="4"><span class="kw">glimpse</span>(fbs_long)</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1">fbs_long &lt;-<span class="st"> </span>fbs <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="st">  </span><span class="kw">gather</span>(<span class="dt">key =</span> Year, <span class="dt">value =</span> Food_Supply_Quantity, <span class="dv">3</span><span class="op">:</span><span class="dv">57</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb44-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Year =</span> <span class="kw">as.numeric</span>(<span class="kw">substr</span>(Year, <span class="dv">2</span>, <span class="dv">5</span>)))</a>
+<a class="sourceLine" id="cb44-4" data-line-number="4"><span class="kw">glimpse</span>(fbs_long)</a></code></pre></div>
 <pre><code>## Observations: 987,415
 ## Variables: 4
 ## $ Country              &lt;chr&gt; &quot;China&quot;, &quot;China&quot;, &quot;China&quot;, &quot;China&quot;, &quot;China&quot;, &quot;Ch…
@@ -735,9 +735,9 @@ FIGURE 6.4: The same data (a) in long/tidy format and (b) in wide format, with c
 <div id="clean-the-fao-data" class="section level3">
 <h3><span class="header-section-number">6.7.2</span> Clean the FAO data</h3>
 <p>Are all the years represented in the dataset? Let’s look at the unique values of the year variable:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1">fbs_long <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb52-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb52-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1">fbs_long <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb46-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
 <pre><code>##  [1] 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975
 ## [16] 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990
 ## [31] 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005
@@ -747,41 +747,41 @@ FIGURE 6.4: The same data (a) in long/tidy format and (b) in wide format, with c
 <div id="check-for-innapropriate-duplicate-observations-1" class="section level3">
 <h3><span class="header-section-number">6.7.3</span> Check for innapropriate duplicate observations</h3>
 <p>As before, we should check for innapropriate duplicate observations. Do we think there can be/should be any duplicated rows in this dataset? That would be the exactly the same value of Country, Item, Year, and Food Supply Quantity. Lets check:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">duplicated_records &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb54-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(<span class="kw">duplicated</span>(.))</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">duplicated_records &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(<span class="kw">duplicated</span>(.))</a></code></pre></div>
 <p>Note that the resulting tibble contains only one example of each duplicate (look at the data with <code>View(duplicated_rows)</code>.</p>
 <p>And have a look at one of these duplicates:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1">fbs_long <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb55-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Country <span class="op">==</span><span class="st"> &quot;Afghanistan&quot;</span>,</a>
-<a class="sourceLine" id="cb55-3" data-line-number="3">         Item <span class="op">==</span><span class="st"> &quot;Eggs&quot;</span>,</a>
-<a class="sourceLine" id="cb55-4" data-line-number="4">         Year <span class="op">==</span><span class="st"> </span><span class="dv">1961</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1">fbs_long <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Country <span class="op">==</span><span class="st"> &quot;Afghanistan&quot;</span>,</a>
+<a class="sourceLine" id="cb49-3" data-line-number="3">         Item <span class="op">==</span><span class="st"> &quot;Eggs&quot;</span>,</a>
+<a class="sourceLine" id="cb49-4" data-line-number="4">         Year <span class="op">==</span><span class="st"> </span><span class="dv">1961</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 2 x 4
 ##   Country     Item   Year Food_Supply_Quantity
 ##   &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;                &lt;dbl&gt;
 ## 1 Afghanistan Eggs   1961                 0.94
 ## 2 Afghanistan Eggs   1961                 0.94</code></pre>
 <p>There are 9,287 rows that are duplicated (not unique). Let’s assume (somewhat dangerously perhaps) that these are mistaken duplicate entries, and so reduce to a dataset with only unique rows:</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1">fbs_long &lt;-<span class="st"> </span><span class="kw">unique</span>(fbs_long)</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1">fbs_long &lt;-<span class="st"> </span><span class="kw">unique</span>(fbs_long)</a></code></pre></div>
 <p>Now, if we’re being really paranoid, we might wonder if there were ever two different values of food supply recorded for the same country in the same year. Put another way, if we look at only the Country, Year, and Item variables, do we see duplicated rows?</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">part_duplicated_records &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Country, Item, Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb58-3" data-line-number="3"><span class="st">  </span><span class="kw">duplicated</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb58-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(fbs_long, .)</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1">part_duplicated_records &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb52-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Country, Item, Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb52-3" data-line-number="3"><span class="st">  </span><span class="kw">duplicated</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb52-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(fbs_long, .)</a></code></pre></div>
 <p>Looking at the result we see there are 10733 rows with duplicated <code>Country</code>, <code>Year</code>, and <code>Item</code>. This is weird. And these these duplicates are only for food items “Eggs” and “Milk - Excluding Butter”. We have no idea why there are multiple entries for these two items! Here’s an example of one of the duplicates:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="kw">filter</span>(fbs_long,</a>
-<a class="sourceLine" id="cb59-2" data-line-number="2">       Country <span class="op">==</span><span class="st"> &quot;Albania&quot;</span>,</a>
-<a class="sourceLine" id="cb59-3" data-line-number="3">       Item <span class="op">==</span><span class="st"> &quot;Eggs&quot;</span>,</a>
-<a class="sourceLine" id="cb59-4" data-line-number="4">       Year <span class="op">==</span><span class="st"> </span><span class="dv">1961</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="kw">filter</span>(fbs_long,</a>
+<a class="sourceLine" id="cb53-2" data-line-number="2">       Country <span class="op">==</span><span class="st"> &quot;Albania&quot;</span>,</a>
+<a class="sourceLine" id="cb53-3" data-line-number="3">       Item <span class="op">==</span><span class="st"> &quot;Eggs&quot;</span>,</a>
+<a class="sourceLine" id="cb53-4" data-line-number="4">       Year <span class="op">==</span><span class="st"> </span><span class="dv">1961</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 2 x 4
 ##   Country Item   Year Food_Supply_Quantity
 ##   &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;                &lt;dbl&gt;
 ## 1 Albania Eggs   1961                  1.5
 ## 2 Albania Eggs   1961                  1.8</code></pre>
 <p>In the same year, for the same country, for the same item, there are two values of Food_Supply_Quantity: 1.5 and 1.8. But it’s quite reasonable to think there should be only one. Let’s solve this problem by rather arbitrarily calculating one value, the average, of these duplicated records:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">fbs_long &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb61-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country, Year, Item) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb61-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Food_Supply_Quantity =</span> <span class="kw">mean</span>(Food_Supply_Quantity)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb61-4" data-line-number="4"><span class="st">  </span><span class="kw">ungroup</span>(fbs_long)</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1">fbs_long &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb55-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country, Year, Item) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb55-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Food_Supply_Quantity =</span> <span class="kw">mean</span>(Food_Supply_Quantity)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb55-4" data-line-number="4"><span class="st">  </span><span class="kw">ungroup</span>(fbs_long)</a></code></pre></div>
 <div class="info">
 <p>
 Time to tell the truth. It took us a some considerable time to realise there were duplicated records in the FAO dataset. We only realised there must be duplicates when we tried to get the numbers to add up below. They did not before we removed the duplicates, and this led us to find the duplicates. Once we found them, we removed them above. In the text above, it may look like we were really smart to think they might occur, check for them, find them, and remove them. In reality we were not so smart. We were, however, absolutely determined to understand why the numbers did not add up. You must also be as strict in your work. After we found the duplicates in this dataset, we also looked in the Polity data, found some, and then decided to add a check for duplicates to all our Workflow Demostrations, and to advise you to make this a standard sanity check when you start looking at a dataset.
@@ -792,22 +792,22 @@ Time to tell the truth. It took us a some considerable time to realise there wer
 <div id="checking-something-else" class="section level3">
 <h3><span class="header-section-number">6.7.4</span> Checking something else…</h3>
 <p>Now let’s do another sanity check. Because there are 182 countries and 114 food items we know there could be 20,748 observations for each year. Let’s see how many there really are:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1">obs_per_year &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb62-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb62-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">n</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1">obs_per_year &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb56-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb56-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">n</span>())</a></code></pre></div>
 <p>There are only 17,589 observation per year. Either not all countries reported in all years, not all items were reported by each country in each year, or both!</p>
 <p>First let’s see how many countries there are per year:</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1">countries_per_year &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb63-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb63-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Country)))</a></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1">countries_per_year &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb57-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Country)))</a></code></pre></div>
 <p>There are indeed 182 countries per year. All countries are included in all years.</p>
 <p>Let’s see how many Items each country reported (across all years):</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1">items_per_country &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb64-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb64-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Item)))</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">items_per_country &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb58-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Item)))</a></code></pre></div>
 <p>Aha. Not all items were reported by all countries. Turkmenistan reported on the fewest (62), while China reported on the most (110). Let’s see if the sum of the number of items reported by each country is the number of observations per year.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">items_per_country <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb65-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total =</span> <span class="kw">sum</span>(num))</a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1">items_per_country <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb59-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total =</span> <span class="kw">sum</span>(num))</a></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   total
 ##   &lt;int&gt;
@@ -822,9 +822,9 @@ We didn’t just now find out anything new about the data, but we did confirm th
 <div id="missing-values" class="section level3">
 <h3><span class="header-section-number">6.7.5</span> Missing values</h3>
 <p>Now let’s look at the missing values:</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">fbs_long <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb67-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise_all</span>(<span class="kw">list</span>( <span class="op">~</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">is.na</span>(.)))) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb67-3" data-line-number="3"><span class="st">  </span><span class="kw">glimpse</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">fbs_long <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb61-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise_all</span>(<span class="kw">list</span>( <span class="op">~</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">is.na</span>(.)))) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb61-3" data-line-number="3"><span class="st">  </span><span class="kw">glimpse</span>()</a></code></pre></div>
 <pre><code>## Observations: 1
 ## Variables: 4
 ## $ Country              &lt;int&gt; 0
@@ -833,11 +833,11 @@ We didn’t just now find out anything new about the data, but we did confirm th
 ## $ Food_Supply_Quantity &lt;int&gt; 155003</code></pre>
 <p>We still have 158,307 missing values. Why? Where are they coming from?</p>
 <p>Let’s dig a bit deeper by getting the number of observations per year, and the number and proportion of these that are missing values:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">obs_per_year &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb69-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb69-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">n</span>(),</a>
-<a class="sourceLine" id="cb69-4" data-line-number="4">            <span class="dt">num_na =</span> <span class="kw">sum</span>(<span class="kw">is.na</span>(Food_Supply_Quantity)),</a>
-<a class="sourceLine" id="cb69-5" data-line-number="5">            <span class="dt">prop_na =</span> num_na <span class="op">/</span><span class="st"> </span>num)</a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1">obs_per_year &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb63-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb63-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">n</span>(),</a>
+<a class="sourceLine" id="cb63-4" data-line-number="4">            <span class="dt">num_na =</span> <span class="kw">sum</span>(<span class="kw">is.na</span>(Food_Supply_Quantity)),</a>
+<a class="sourceLine" id="cb63-5" data-line-number="5">            <span class="dt">prop_na =</span> num_na <span class="op">/</span><span class="st"> </span>num)</a></code></pre></div>
 <p>And take a look at the data using <code>View(obs_per_year)</code>. We can also see quite a bit if we plot the summary data (<a href="WFD-food-pol.html#fig:long-wide">6.4</a>) with the following code:</p>
 <div class="figure" style="text-align: center"><span id="fig:fao-pol1"></span>
 <img src="insights_website_files/figure-html/fao-pol1-1.svg" alt="The number of observations, the number of missing values and the proportion of missing values in each year of the data." width="100%" />
@@ -847,12 +847,12 @@ FIGURE 6.5: The number of observations, the number of missing values and the pro
 </div>
 <p>We see that from 1961 to 1991 there are around 2,500 (15%) missing values per year. From 1992 to 2011 there are less than 5% of the values are missing, and from 2012 to 2015 (the last year in the dataset) most or all the values are missing. Can you think of why there might be fewer missing values after 1991?</p>
 <p>Let’s look at one country (its identity might give you a clue)… Belarus. Let’s get the number of values, missing values, and proportion of missing values for Belarus in each year.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">Belarus_obs_per_year &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb70-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Country <span class="op">==</span><span class="st"> &quot;Belarus&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb70-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb70-4" data-line-number="4"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">n</span>(),</a>
-<a class="sourceLine" id="cb70-5" data-line-number="5">            <span class="dt">num_na =</span> <span class="kw">sum</span>(<span class="kw">is.na</span>(Food_Supply_Quantity)),</a>
-<a class="sourceLine" id="cb70-6" data-line-number="6">            <span class="dt">prop_na =</span> num_na <span class="op">/</span><span class="st"> </span>num)</a></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1">Belarus_obs_per_year &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb64-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Country <span class="op">==</span><span class="st"> &quot;Belarus&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb64-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb64-4" data-line-number="4"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">n</span>(),</a>
+<a class="sourceLine" id="cb64-5" data-line-number="5">            <span class="dt">num_na =</span> <span class="kw">sum</span>(<span class="kw">is.na</span>(Food_Supply_Quantity)),</a>
+<a class="sourceLine" id="cb64-6" data-line-number="6">            <span class="dt">prop_na =</span> num_na <span class="op">/</span><span class="st"> </span>num)</a></code></pre></div>
 <p>Looking at this dataset we see that all values are missing until 1992, and then there are no missing values until 2012, when all are again missing. It’s probably clear by now that all values are missing until 1992 because Belarus only became an independent state in 1991. Likely there are lots of other countries in the dataset that have missing values for this reason.</p>
 <p>There’s some stuff going on:</p>
 <ul>
@@ -861,59 +861,59 @@ FIGURE 6.5: The number of observations, the number of missing values and the pro
 <li>Similarly, the USSR reports only missing values after 1991 when the USSR ceased to exist.</li>
 </ul>
 <p>And why more missing values from 2012 to 2015? Actually, the description of the data on the FAO web site says the data is from 1961 to only 2013, so it’s not surprising that 2014 and 2015 are empty. We will remove these years. We don’t know why there are more missing values in 2012 and 2013, so let’s also remove those:</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1">fbs_long &lt;-<span class="st"> </span><span class="kw">filter</span>(fbs_long, Year <span class="op">&lt;</span><span class="st"> </span><span class="dv">2012</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">fbs_long &lt;-<span class="st"> </span><span class="kw">filter</span>(fbs_long, Year <span class="op">&lt;</span><span class="st"> </span><span class="dv">2012</span>)</a></code></pre></div>
 </div>
 <div id="more-cleaning" class="section level3">
 <h3><span class="header-section-number">6.7.6</span> More cleaning</h3>
 <p>This seems still rather messy! Let’s aim for a dataset that contains only country/year combinations where a country actually existed (i.e. there were not all NAs reported). And also a dataset in which there is an entry for all 114 food items for each country-year combination (by putting zeros in for no reported item). (Note that this could be quite dangerous, as its possible that an item not being reported is not because it was not present in that country and year. It may have been not reported for other reasons.)</p>
 <p>First we get a list of the years in which each country does not contain all missing values. This we will use as a master list of years and countries to include in our analysis. We will not include year/country combinations where there were only missing values (the reason we need to be this specific is that we will soon turn the missing values into zeros). Let’s get that list of country/year combinations to include:</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1">country_year_not_all_missing &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb72-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country, Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb72-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">keep =</span> <span class="kw">n</span>() <span class="op">!=</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">is.na</span>(Food_Supply_Quantity))) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb72-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(keep) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb72-5" data-line-number="5"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>keep) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb72-6" data-line-number="6"><span class="st">  </span><span class="kw">ungroup</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1">country_year_not_all_missing &lt;-<span class="st"> </span>fbs_long <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country, Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb66-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">keep =</span> <span class="kw">n</span>() <span class="op">!=</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">is.na</span>(Food_Supply_Quantity))) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb66-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(keep) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb66-5" data-line-number="5"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>keep) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb66-6" data-line-number="6"><span class="st">  </span><span class="kw">ungroup</span>()</a></code></pre></div>
 <p>Does that look rather complicated? The difficult(ish) line is the summarise, in which we create a new variable <code>keep</code> that is TRUE or FALSE depending if all values of <code>Food_Supply_Quantity</code> are NA or not. The <code>n()</code> give the number of values, the <code>sum(is.na(Food_Supply_Quantity))</code> gives the number of NAs, and the <code>!=</code> asks if the two are not the same, and returns TRUE if so. The other lines should be possible for you to work out (though not necessarily easy).</p>
 <p>Note that there are 8,272 combinations of years and countries in the dataset. This is an important number. It is the number of data points we should have data for after we calculate the diversity of food available in each country in each year.</p>
 <p>Recall that we already decided to assume that when a country did not report a value for an item that this means there was always zero supply of that food item, so the country did not bother including it in the reported, i.e. it’s really a zero. Hence we’re going to pad out the data so that all countries report on all 114 items, with zero <code>Food Supply Quantity</code> for the items they did not report.</p>
 <p>First we make a dataset with all combinations of <code>Country</code>, <code>Year</code>, and <code>Item</code>. It should have 182 * 51 * 182 = 1,058,148 rows. We use the quite lovely <code>expand.grid</code> function, which creates all possible combinations of the variables it’s given. We give it all the unique values of <code>Country</code>, <code>Year</code>, and <code>Item</code>, and it expands them to give all possible combinations. Each argument to <code>expand.grid</code> should be a name-value pair, and the name should be the same in the original data, to aid further operations:</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1">all_cases &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">Country =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Country)),</a>
-<a class="sourceLine" id="cb73-2" data-line-number="2">                         <span class="dt">Year =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Year)),</a>
-<a class="sourceLine" id="cb73-3" data-line-number="3">                         <span class="dt">Item =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Item))) </a></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">all_cases &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">Country =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Country)),</a>
+<a class="sourceLine" id="cb67-2" data-line-number="2">                         <span class="dt">Year =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Year)),</a>
+<a class="sourceLine" id="cb67-3" data-line-number="3">                         <span class="dt">Item =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Item))) </a></code></pre></div>
 <p>Super. This has 1,058,148 rows as expected. Now we want to only keep from this the country/year combinations for which we already found there were countries that existed. There are 8,272 of these and each should have 114 items, so we should get 943,008 observations. We do this with a <code>left_join</code> to keep only the cases of the join that have values in the first (left) dataset in the join:</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1">temp2 &lt;-<span class="st"> </span><span class="kw">left_join</span>(country_year_not_all_missing, all_cases)</a></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1">temp2 &lt;-<span class="st"> </span><span class="kw">left_join</span>(country_year_not_all_missing, all_cases)</a></code></pre></div>
 <pre><code>## Joining, by = c(&quot;Country&quot;, &quot;Year&quot;)</code></pre>
 <pre><code>## Warning: Column `Country` joining character vector and factor, coercing into
 ## character vector</code></pre>
 <p>We get a warning, and know that we should never ignore warnings. The warning is <em>Column <code>Country</code> joining character vector and factor, coercing into character vector</em>. This is caused because <code>expand.grid</code> automatically converts character variables to factors. We can stop this happening (by adding the argument <code>stringsAsFactors = FALSE</code> in our call to <code>expand.grid</code> and hopefully the remove the warning:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1">all_cases &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">Country =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Country)),</a>
-<a class="sourceLine" id="cb77-2" data-line-number="2">                         <span class="dt">Year =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Year)),</a>
-<a class="sourceLine" id="cb77-3" data-line-number="3">                         <span class="dt">Item =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Item)),</a>
-<a class="sourceLine" id="cb77-4" data-line-number="4">                         <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb77-5" data-line-number="5">temp2 &lt;-<span class="st"> </span><span class="kw">left_join</span>(country_year_not_all_missing, all_cases)</a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1">all_cases &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">Country =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Country)),</a>
+<a class="sourceLine" id="cb71-2" data-line-number="2">                         <span class="dt">Year =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Year)),</a>
+<a class="sourceLine" id="cb71-3" data-line-number="3">                         <span class="dt">Item =</span> <span class="kw">unique</span>(<span class="kw">pull</span>(fbs_long, Item)),</a>
+<a class="sourceLine" id="cb71-4" data-line-number="4">                         <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb71-5" data-line-number="5">temp2 &lt;-<span class="st"> </span><span class="kw">left_join</span>(country_year_not_all_missing, all_cases)</a></code></pre></div>
 <pre><code>## Joining, by = c(&quot;Country&quot;, &quot;Year&quot;)</code></pre>
 <p>Perfect… and we still have the expected number of 943,008 observations.</p>
 <p>Next we do another left join to add the food supply quantity data (in <code>fbs_long</code>) to the cases/observations we want to keep (in <code>temp2</code>)</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1">temp3 &lt;-<span class="st"> </span><span class="kw">left_join</span>(temp2, fbs_long)</a></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1">temp3 &lt;-<span class="st"> </span><span class="kw">left_join</span>(temp2, fbs_long)</a></code></pre></div>
 <pre><code>## Joining, by = c(&quot;Country&quot;, &quot;Year&quot;, &quot;Item&quot;)</code></pre>
 <p>Good, we still have 943’008 observations.</p>
 <p>The number of missing values is now 139,252 (please confirm this for yourself). Each of these is a case when a country reported values for some items in a year, but did not report values for others, and these others are given a value of NA. As we said above, we’re going to assume these are real zeros, and so we need to turn them all into zeros:</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1">fbs_final &lt;-<span class="st"> </span>temp3 <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb81-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Food_Supply_Quantity =</span> <span class="kw">ifelse</span>(<span class="op">!</span><span class="kw">is.na</span>(Food_Supply_Quantity),</a>
-<a class="sourceLine" id="cb81-3" data-line-number="3">                                       Food_Supply_Quantity,</a>
-<a class="sourceLine" id="cb81-4" data-line-number="4">                                       <span class="dv">0</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1">fbs_final &lt;-<span class="st"> </span>temp3 <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb75-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Food_Supply_Quantity =</span> <span class="kw">ifelse</span>(<span class="op">!</span><span class="kw">is.na</span>(Food_Supply_Quantity),</a>
+<a class="sourceLine" id="cb75-3" data-line-number="3">                                       Food_Supply_Quantity,</a>
+<a class="sourceLine" id="cb75-4" data-line-number="4">                                       <span class="dv">0</span>))</a></code></pre></div>
 <p>No missing values now (again, please confirm this for yourself). And we have a dataset that we very well understand. Let’s check again though.</p>
 <p>We should have 114 items reported per country per year:</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1">items_per_country_per_year &lt;-<span class="st"> </span>fbs_final <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb82-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country, Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb82-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Item)))</a></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1">items_per_country_per_year &lt;-<span class="st"> </span>fbs_final <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb76-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country, Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb76-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Item)))</a></code></pre></div>
 <p>And we should have varying numbers of countries per year:</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1">countries_per_year &lt;-<span class="st"> </span>fbs_final <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb83-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb83-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Country)))</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1">countries_per_year &lt;-<span class="st"> </span>fbs_final <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb77-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Country)))</a></code></pre></div>
 <p>And the sum of the number of countries per year multiplied by 114 should equal 943,008:</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1">countries_per_year <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb84-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total =</span> <span class="kw">sum</span>(num) <span class="op">*</span><span class="st"> </span><span class="dv">114</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1">countries_per_year <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb78-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total =</span> <span class="kw">sum</span>(num) <span class="op">*</span><span class="st"> </span><span class="dv">114</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##    total
 ##    &lt;dbl&gt;
@@ -923,57 +923,57 @@ FIGURE 6.5: The number of observations, the number of missing values and the pro
 <div id="calculating-our-response-variables" class="section level3">
 <h3><span class="header-section-number">6.7.7</span> Calculating our response variables</h3>
 <p>The final step of preparation of the FAO data is to calculate our response variables. Our question is about food diversity so we need response variables that quantify this. We will use number of items available per year, and diversity of items available per year, where diversity accounts for the amount of each item as well as number of items using the Shannon index.</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1">fbs_div &lt;-<span class="st"> </span>fbs_final <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb86-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country, Year) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb86-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">richness =</span> <span class="kw">sum</span>(Food_Supply_Quantity<span class="op">&gt;</span><span class="dv">0</span>),</a>
-<a class="sourceLine" id="cb86-4" data-line-number="4">            <span class="dt">diversity =</span> <span class="kw">diversity</span>(Food_Supply_Quantity,</a>
-<a class="sourceLine" id="cb86-5" data-line-number="5">                                        <span class="dt">index =</span> <span class="st">&quot;shannon&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1">fbs_div &lt;-<span class="st"> </span>fbs_final <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb80-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country, Year) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb80-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">richness =</span> <span class="kw">sum</span>(Food_Supply_Quantity<span class="op">&gt;</span><span class="dv">0</span>),</a>
+<a class="sourceLine" id="cb80-4" data-line-number="4">            <span class="dt">diversity =</span> <span class="kw">diversity</span>(Food_Supply_Quantity,</a>
+<a class="sourceLine" id="cb80-5" data-line-number="5">                                        <span class="dt">index =</span> <span class="st">&quot;shannon&quot;</span>))</a></code></pre></div>
 <p>Excellent. We have 8,272 data points, exactly as we should. (We previously saw this was the number of combinations of country and year for which not all data was NA. I.e. the number of rows in <code>country_year_not_all_missing</code>).</p>
 <p>We will now save this dataset so we don’t have to run all that code every time:</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="kw">write_rds</span>(fbs_div, <span class="st">&quot;data/fbs_div.RDS&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="kw">write_rds</span>(fbs_div, <span class="st">&quot;data/fbs_div.RDS&quot;</span>)</a></code></pre></div>
 </div>
 </div>
 <div id="merge-the-two-datasets" class="section level2">
 <h2><span class="header-section-number">6.8</span> Merge the two datasets</h2>
 <p>First let’s clear R and reload the two datasets:</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1"><span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>()) <span class="co">## clear R</span></a>
-<a class="sourceLine" id="cb88-2" data-line-number="2">pol &lt;-<span class="st"> </span><span class="kw">read_rds</span>(<span class="st">&quot;data/pol.rds&quot;</span>)</a>
-<a class="sourceLine" id="cb88-3" data-line-number="3">fbs_div &lt;-<span class="st"> </span><span class="kw">read_rds</span>(<span class="st">&quot;data/fbs_div.RDS&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>()) <span class="co">## clear R</span></a>
+<a class="sourceLine" id="cb82-2" data-line-number="2">pol &lt;-<span class="st"> </span><span class="kw">read_rds</span>(<span class="st">&quot;data/pol.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb82-3" data-line-number="3">fbs_div &lt;-<span class="st"> </span><span class="kw">read_rds</span>(<span class="st">&quot;data/fbs_div.RDS&quot;</span>)</a></code></pre></div>
 <p>The final step of data preparation is to merge the Polity and FAO data. The main issue we must deal with before we do the merge is to make the country names in the two dataset <strong>interoperable</strong>. That is, we must ensure that we can match country names. If both datasets had been made with <strong>interoperability</strong> in mind, they would have used a standard naming of countries, such as ISO (International Organisation for Standardization) 3166-1 (this code denotes the standard for country naming).</p>
 <p>At present we have a <code>Country</code> variable in both datasets. This contains an English language name for each country. Take a look at some of the names in the FAO derived food diversity dataset; here we find names containing the string <code>United</code>:</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1">fbs_div <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country, <span class="st">&quot;United&quot;</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb89-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb89-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1">fbs_div <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country, <span class="st">&quot;United&quot;</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb83-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Country) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb83-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
 <pre><code>## [1] &quot;United Arab Emirates&quot;        &quot;United Kingdom&quot;             
 ## [3] &quot;United Republic of Tanzania&quot; &quot;United States of America&quot;</code></pre>
 <p>And also in the Polity dataset the counrty names containing <code>United</code>:</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1">pol <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country, <span class="st">&quot;United&quot;</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb91-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb91-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1">pol <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country, <span class="st">&quot;United&quot;</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb85-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Country) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb85-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
 <pre><code>## [1] &quot;United Kingdom&quot;     &quot;United Province CA&quot; &quot;United States&quot;</code></pre>
 <p>The FAO data uses “United States of America” while the polity data uses “United States”.</p>
 <p>Here’s another example:</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">pol <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country, <span class="st">&quot;Tanz&quot;</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb93-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb93-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1">pol <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country, <span class="st">&quot;Tanz&quot;</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb87-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Country) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb87-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
 <pre><code>## [1] &quot;Tanzania&quot;</code></pre>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1">fbs_div <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country, <span class="st">&quot;Tanz&quot;</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb95-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb95-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1">fbs_div <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country, <span class="st">&quot;Tanz&quot;</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb89-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Country) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb89-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
 <pre><code>## [1] &quot;United Republic of Tanzania&quot;</code></pre>
 <p>What a mess!!! These are not the only mismatches. We need a standard.</p>
 <p>Both <em>original</em> datasets contain country <em>codes</em> as well as names. First look at the FAO food balance raw data. It contains the variable “Country Code” (beware that the code reads in the original 200 MB data file):</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1">fbs_temp &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/FoodBalanceSheets_E_All_Data.csv&quot;</span>,</a>
-<a class="sourceLine" id="cb97-2" data-line-number="2">               <span class="dt">locale =</span> <span class="kw">locale</span>(<span class="dt">encoding =</span> <span class="st">&#39;ISO-8859-1&#39;</span>))</a>
-<a class="sourceLine" id="cb97-3" data-line-number="3">fbs_country &lt;-<span class="st"> </span>fbs_temp <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb97-4" data-line-number="4"><span class="st">  </span><span class="kw">select</span>(Country, <span class="dt">Country_Code=</span><span class="st">&#39;Country Code&#39;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb97-5" data-line-number="5"><span class="st">  </span><span class="kw">unique</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb97-6" data-line-number="6"><span class="st">  </span><span class="kw">filter</span>(Country_Code <span class="op">&lt;</span><span class="st"> </span><span class="dv">5000</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1">fbs_temp &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/FoodBalanceSheets_E_All_Data.csv&quot;</span>,</a>
+<a class="sourceLine" id="cb91-2" data-line-number="2">               <span class="dt">locale =</span> <span class="kw">locale</span>(<span class="dt">encoding =</span> <span class="st">&#39;ISO-8859-1&#39;</span>))</a>
+<a class="sourceLine" id="cb91-3" data-line-number="3">fbs_country &lt;-<span class="st"> </span>fbs_temp <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb91-4" data-line-number="4"><span class="st">  </span><span class="kw">select</span>(Country, <span class="dt">Country_Code=</span><span class="st">&#39;Country Code&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb91-5" data-line-number="5"><span class="st">  </span><span class="kw">unique</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb91-6" data-line-number="6"><span class="st">  </span><span class="kw">filter</span>(Country_Code <span class="op">&lt;</span><span class="st"> </span><span class="dv">5000</span>)</a></code></pre></div>
 <p>Let us put the code into the <code>fbs_div</code> dataset. There both contain the common <code>Country</code> variable we want to merge by:</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1">fbs_div &lt;-<span class="st"> </span><span class="kw">left_join</span>(fbs_div, fbs_country)</a></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1">fbs_div &lt;-<span class="st"> </span><span class="kw">left_join</span>(fbs_div, fbs_country)</a></code></pre></div>
 <pre><code>## Joining, by = &quot;Country&quot;</code></pre>
 <p>It is not immediately clear what this code is, however, i.e. what standard. Digging into their metadata a bit we can find a page of <em>Definitions and Standards</em>: <a href="http://www.fao.org/faostat/en/#definitions" class="uri">http://www.fao.org/faostat/en/#definitions</a>. In the tab <em>Country/Region</em> we find a dataset with country names and various country codes, including ISO2 and ISO3 codes (of ISO 3166-1). Excellent. We downloaded this dataset and now read it into R and merge with the food balance sheet dataset <code>fbs_div</code>:</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1">FAO_country_standards &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/FAOSTAT_data_country_name_standards.csv&quot;</span>, <span class="dt">na =</span> <span class="st">&quot;&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1">FAO_country_standards &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/FAOSTAT_data_country_name_standards.csv&quot;</span>, <span class="dt">na =</span> <span class="st">&quot;&quot;</span>)</a></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   `Country Code` = col_double(),
@@ -984,23 +984,23 @@ FIGURE 6.5: The number of observations, the number of missing values and the pro
 ##   `Start Year` = col_double(),
 ##   `End Year` = col_double()
 ## )</code></pre>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="kw">names</span>(FAO_country_standards) &lt;-<span class="st"> </span><span class="kw">str_replace_all</span>(<span class="kw">names</span>(FAO_country_standards), <span class="kw">c</span>(<span class="st">&quot; &quot;</span> =<span class="st"> &quot;_&quot;</span>))</a>
-<a class="sourceLine" id="cb102-2" data-line-number="2">FAO_country_standards &lt;-<span class="st"> </span>FAO_country_standards <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb102-3" data-line-number="3"><span class="st">  </span><span class="kw">rename</span>(<span class="dt">Country_name_FAO =</span> Country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb102-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(Country_Code <span class="op">&lt;</span><span class="st"> </span><span class="dv">5000</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="kw">names</span>(FAO_country_standards) &lt;-<span class="st"> </span><span class="kw">str_replace_all</span>(<span class="kw">names</span>(FAO_country_standards), <span class="kw">c</span>(<span class="st">&quot; &quot;</span> =<span class="st"> &quot;_&quot;</span>))</a>
+<a class="sourceLine" id="cb96-2" data-line-number="2">FAO_country_standards &lt;-<span class="st"> </span>FAO_country_standards <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb96-3" data-line-number="3"><span class="st">  </span><span class="kw">rename</span>(<span class="dt">Country_name_FAO =</span> Country) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb96-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(Country_Code <span class="op">&lt;</span><span class="st"> </span><span class="dv">5000</span>)</a></code></pre></div>
 <p>Before we do the merge, take a look at this:</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" data-line-number="1">FAO_country_standards <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country_name_FAO, <span class="st">&quot;Swaz&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1">FAO_country_standards <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country_name_FAO, <span class="st">&quot;Swaz&quot;</span>))</a></code></pre></div>
 <pre><code>## # A tibble: 0 x 7
 ## # … with 7 variables: Country_Code &lt;dbl&gt;, Country_name_FAO &lt;chr&gt;,
 ## #   M49_Code &lt;dbl&gt;, ISO2_Code &lt;chr&gt;, ISO3_Code &lt;chr&gt;, Start_Year &lt;dbl&gt;,
 ## #   End_Year &lt;dbl&gt;</code></pre>
 <p>In the standard (ISO) there is no country named “Swaziland”. There is in the FAO food balance sheet dataset, however:</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1">fbs_div <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country, <span class="st">&quot;Swaz&quot;</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb105-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb105-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1">fbs_div <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country, <span class="st">&quot;Swaz&quot;</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb99-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Country) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb99-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
 <pre><code>## [1] &quot;Swaziland&quot;</code></pre>
 <p>A quick search tells us that Swaziland changed name to Eswatini. And here we find it in the ISO standard list:</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1">FAO_country_standards <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country_name_FAO, <span class="st">&quot;Esw&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1">FAO_country_standards <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(Country_name_FAO, <span class="st">&quot;Esw&quot;</span>))</a></code></pre></div>
 <pre><code>## # A tibble: 1 x 7
 ##   Country_Code Country_name_FAO M49_Code ISO2_Code ISO3_Code Start_Year End_Year
 ##          &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;
@@ -1008,70 +1008,70 @@ FIGURE 6.5: The number of observations, the number of missing values and the pro
 <p>The implication is that even two datasets from the same source (UN stats) used different English language names for the same country. Standards are critical!!</p>
 <p>So, we are going to do the merge by the <code>Country_code</code> variable. The variable renaming we previously did has resulted in no other variables common between the two dataset, so we are good to go!</p>
 <p>If we merge the FAO country standards dataset into the food balance data, we should get the same number of rows as in the food balance data. Anything less would indicate the standards data does not include some country codes that are the food balance data.</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1">fbs_div_stand &lt;-<span class="st"> </span><span class="kw">left_join</span>(fbs_div, FAO_country_standards) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb109-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>Start_Year, <span class="op">-</span>End_Year)</a></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" data-line-number="1">fbs_div_stand &lt;-<span class="st"> </span><span class="kw">left_join</span>(fbs_div, FAO_country_standards) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb103-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>Start_Year, <span class="op">-</span>End_Year)</a></code></pre></div>
 <pre><code>## Joining, by = &quot;Country_Code&quot;</code></pre>
 <p>Excellent, the <code>fbs_div</code> dataset now contains the ISO standard codes. Now we need to get the standards into the Polity data.</p>
 <div id="polity-standardisation" class="section level3">
 <h3><span class="header-section-number">6.8.1</span> Polity standardisation</h3>
 <p>Good. Now let us look at the polity data. The original data file contains various country codes. Looking in the Polity user manual and a bit of further sleuthing reveals that the country codes are from the “Correlates of War” project: <a href="https://correlatesofwar.org/data-sets/cow-country-codes" class="uri">https://correlatesofwar.org/data-sets/cow-country-codes</a>. The dataset there `COW country codes.csv&quot; was developed before the ISO country codes, and so has does not use an international standard (a personal communication with a developer confirmed this).</p>
 <p>We decided, therefore, to make our own dataset that mapped the Polity country names to ISO standards. The steps to do this were to export the Polity country names as a csv file and import then into a spreadsheet programme (e.g. Excel). We then copy-pasted in the ISO standards. And then over about four hours of manual matching work made as many correspondences as possible. Yes, we did manipulate data in Excel… but the “data” is just the country names and codes. It was horrid, tedious, and risky (i.e. errors could easily be made and not seen) work. The resulting mapping carries no guarantees. It should be double, triple and quadruple checked. We will use it with great caution here…</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1">pol_iso_mapping &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/pol_iso_mapping.csv&quot;</span>,</a>
-<a class="sourceLine" id="cb111-2" data-line-number="2">                            <span class="dt">na =</span> <span class="st">&quot;.&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb111-3" data-line-number="3"><span class="st">  </span><span class="kw">rename</span>(<span class="dt">Country =</span> Country_pol)</a></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1">pol_iso_mapping &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/pol_iso_mapping.csv&quot;</span>,</a>
+<a class="sourceLine" id="cb105-2" data-line-number="2">                            <span class="dt">na =</span> <span class="st">&quot;.&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb105-3" data-line-number="3"><span class="st">  </span><span class="kw">rename</span>(<span class="dt">Country =</span> Country_pol)</a></code></pre></div>
 <div class="beaware">
 <p>
 <strong>Be aware</strong> You may have noticed that in the <code>read_csv</code> just above we wrote <code>na = “.”</code>. This is because when we created the spreadsheet of mapping between Polity and ISO country names we used “.” and not “NA” as the missing value indicator. Can you guess why we did not use “NA”? The reason is that “NA” is the ISO2 code for Namibia. If we had used NA for missing value then Namibia would have been given a missing value for the ISO2 code. The general message here is to be careful when a variable contains entries that might include “NA” as a real value.
 </p>
 </div>
 <p>Merge the ISO codes into the polity data:</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" data-line-number="1">pol_stand &lt;-<span class="st"> </span><span class="kw">left_join</span>(pol, pol_iso_mapping)</a></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1">pol_stand &lt;-<span class="st"> </span><span class="kw">left_join</span>(pol, pol_iso_mapping)</a></code></pre></div>
 <pre><code>## Joining, by = &quot;Country&quot;</code></pre>
 </div>
 <div id="the-final-merge" class="section level3">
 <h3><span class="header-section-number">6.8.2</span> The final merge</h3>
 <p>We are about as ready as we ever will be to merge the two datasets. Lets just go for it and see what happens (though better would be to see before doing so what we should expect). We will use <code>inner_join</code> to get keep only the rows with entries for both food diversity and polity. There can be a maximum number of rows of the smaller dataset, here 8’272 for the food diversity dataset. (We also select and rename variables–a bit of cleaning.)</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" data-line-number="1">fbs_pol &lt;-<span class="st"> </span><span class="kw">inner_join</span>(fbs_div_stand,</a>
-<a class="sourceLine" id="cb114-2" data-line-number="2">                     pol_stand,</a>
-<a class="sourceLine" id="cb114-3" data-line-number="3">                     <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;ISO2_Code&quot;</span> =<span class="st"> &quot;ISO2_Code&quot;</span>,</a>
-<a class="sourceLine" id="cb114-4" data-line-number="4">                            <span class="st">&quot;Year&quot;</span> =<span class="st"> &quot;Year&quot;</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb114-5" data-line-number="5"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Country =</span> Country.x,</a>
-<a class="sourceLine" id="cb114-6" data-line-number="6">         Year,</a>
-<a class="sourceLine" id="cb114-7" data-line-number="7">         <span class="dt">Richness =</span> richness,</a>
-<a class="sourceLine" id="cb114-8" data-line-number="8">         <span class="dt">Diversity =</span> diversity,</a>
-<a class="sourceLine" id="cb114-9" data-line-number="9">         Polity2,</a>
-<a class="sourceLine" id="cb114-10" data-line-number="10">         <span class="dt">Official_name_en =</span> official_name_en,</a>
-<a class="sourceLine" id="cb114-11" data-line-number="11">         <span class="dt">M49_Code =</span> M49_Code.x,</a>
-<a class="sourceLine" id="cb114-12" data-line-number="12">         ISO2_Code,</a>
-<a class="sourceLine" id="cb114-13" data-line-number="13">         <span class="dt">ISO3_Code =</span> ISO3_Code.x) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb114-14" data-line-number="14"><span class="st">  </span><span class="kw">ungroup</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1">fbs_pol &lt;-<span class="st"> </span><span class="kw">inner_join</span>(fbs_div_stand,</a>
+<a class="sourceLine" id="cb108-2" data-line-number="2">                     pol_stand,</a>
+<a class="sourceLine" id="cb108-3" data-line-number="3">                     <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;ISO2_Code&quot;</span> =<span class="st"> &quot;ISO2_Code&quot;</span>,</a>
+<a class="sourceLine" id="cb108-4" data-line-number="4">                            <span class="st">&quot;Year&quot;</span> =<span class="st"> &quot;Year&quot;</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb108-5" data-line-number="5"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Country =</span> Country.x,</a>
+<a class="sourceLine" id="cb108-6" data-line-number="6">         Year,</a>
+<a class="sourceLine" id="cb108-7" data-line-number="7">         <span class="dt">Richness =</span> richness,</a>
+<a class="sourceLine" id="cb108-8" data-line-number="8">         <span class="dt">Diversity =</span> diversity,</a>
+<a class="sourceLine" id="cb108-9" data-line-number="9">         Polity2,</a>
+<a class="sourceLine" id="cb108-10" data-line-number="10">         <span class="dt">Official_name_en =</span> official_name_en,</a>
+<a class="sourceLine" id="cb108-11" data-line-number="11">         <span class="dt">M49_Code =</span> M49_Code.x,</a>
+<a class="sourceLine" id="cb108-12" data-line-number="12">         ISO2_Code,</a>
+<a class="sourceLine" id="cb108-13" data-line-number="13">         <span class="dt">ISO3_Code =</span> ISO3_Code.x) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb108-14" data-line-number="14"><span class="st">  </span><span class="kw">ungroup</span>()</a></code></pre></div>
 <p>This merged dataset has 7472 rows, because some of the country-year combinations in the food diversity dataset are not in the polity dataset. Note that many more of the country-year combinations in the polity data are not in the food diversity dataset. This is largely due to the polity data covering many more years, but also because it contains some countries that are not in the food diversity dataset.</p>
 </div>
 </div>
 <div id="tidying-up" class="section level2">
 <h2><span class="header-section-number">6.9</span> Tidying up</h2>
 <p>Again, we have a lot of objects in R’s brain. We only need one: <code>fbs_pol</code>. We can remove all the other variables. We don’t need to run all the code above every time we do an analysis. Save the <code>fbs_pol</code> dataset, and in the next section we will start anew.</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="kw">saveRDS</span>(fbs_pol, <span class="st">&quot;data/fbs_pol.Rdata&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="kw">saveRDS</span>(fbs_pol, <span class="st">&quot;data/fbs_pol.Rdata&quot;</span>)</a></code></pre></div>
 </div>
 <div id="shapes" class="section level2">
 <h2><span class="header-section-number">6.10</span> Shapes</h2>
 <p>We will not look at the shapes of the distributions of the variables. As usual, start by loading libraries and our dataset:</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="co">## Load libraries</span></a>
-<a class="sourceLine" id="cb116-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb116-3" data-line-number="3"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb116-4" data-line-number="4"><span class="kw">library</span>(readr)</a>
-<a class="sourceLine" id="cb116-5" data-line-number="5"><span class="kw">library</span>(stringr)</a>
-<a class="sourceLine" id="cb116-6" data-line-number="6"><span class="kw">library</span>(lubridate)</a>
-<a class="sourceLine" id="cb116-7" data-line-number="7"><span class="kw">library</span>(tidyr)</a>
-<a class="sourceLine" id="cb116-8" data-line-number="8"><span class="kw">library</span>(vegan)</a>
-<a class="sourceLine" id="cb116-9" data-line-number="9"><span class="kw">library</span>(ggbeeswarm)</a>
-<a class="sourceLine" id="cb116-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb116-11" data-line-number="11"><span class="co">## load dataset</span></a>
-<a class="sourceLine" id="cb116-12" data-line-number="12">fbs_pol &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/fbs_pol.Rdata&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="co">## Load libraries</span></a>
+<a class="sourceLine" id="cb110-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb110-3" data-line-number="3"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb110-4" data-line-number="4"><span class="kw">library</span>(readr)</a>
+<a class="sourceLine" id="cb110-5" data-line-number="5"><span class="kw">library</span>(stringr)</a>
+<a class="sourceLine" id="cb110-6" data-line-number="6"><span class="kw">library</span>(lubridate)</a>
+<a class="sourceLine" id="cb110-7" data-line-number="7"><span class="kw">library</span>(tidyr)</a>
+<a class="sourceLine" id="cb110-8" data-line-number="8"><span class="kw">library</span>(vegan)</a>
+<a class="sourceLine" id="cb110-9" data-line-number="9"><span class="kw">library</span>(ggbeeswarm)</a>
+<a class="sourceLine" id="cb110-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb110-11" data-line-number="11"><span class="co">## load dataset</span></a>
+<a class="sourceLine" id="cb110-12" data-line-number="12">fbs_pol &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;data/fbs_pol.Rdata&quot;</span>)</a></code></pre></div>
 <p>First the distribution of number of food items available in each country, across all countries and all years. The code for this you are quite familiar with by now, using <code>ggplot</code> and <code>geom_histogram</code> (Figure <a href="WFD-food-pol.html#fig:fbs-pol2">6.6</a>:</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb117-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb117-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Richness), <span class="dt">bins =</span> <span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb111-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb111-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Richness), <span class="dt">bins =</span> <span class="dv">10</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fbs-pol2"></span>
 <img src="insights_website_files/figure-html/fbs-pol2-1.svg" alt="Frequency distribution of richness of food items across all countries and years." width="75%" />
 <p class="caption">
@@ -1080,9 +1080,9 @@ FIGURE 6.6: Frequency distribution of richness of food items across all countrie
 </div>
 <p>Some countries in some years have only between 30 and 40 food items available, others have over 90. This is a large difference. The most common number is around 80. The distribution is somewhat left skewed, with a longer tail of smaller values. The distribution is not, however, horribly asymmetric.</p>
 <p>And looking at the distribution of diversity of food item quantities with the following code (Figure <a href="WFD-food-pol.html#fig:fbs-pol3">6.7</a>:</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb118-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb118-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Diversity), <span class="dt">bins =</span> <span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb112-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb112-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Diversity), <span class="dt">bins =</span> <span class="dv">10</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fbs-pol3"></span>
 <img src="insights_website_files/figure-html/fbs-pol3-1.svg" alt="Frequency distribution of diversity of food items across all countries and years." width="75%" />
 <p class="caption">
@@ -1091,9 +1091,9 @@ FIGURE 6.7: Frequency distribution of diversity of food items across all countri
 </div>
 <p>The diversity distribution is quite similar to the richness distribution, with a bit of left skew, but not too much. The values of diversity are rather arbitrary—not as intuitive as richness. Higher values indicate some combination of high richness and high evenness in the quantities of the items.</p>
 <p>And looking at the distribution of the Polity variable with the following code (Figure <a href="WFD-food-pol.html#fig:fbs-pol3x">6.8</a>:</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb119-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb119-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Polity2), <span class="dt">bins =</span> <span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb113-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb113-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Polity2), <span class="dt">bins =</span> <span class="dv">10</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fbs-pol3x"></span>
 <img src="insights_website_files/figure-html/fbs-pol3x-1.svg" alt="Frequency distribution of Polity2 all countries and years." width="75%" />
 <p class="caption">
@@ -1102,12 +1102,12 @@ FIGURE 6.8: Frequency distribution of Polity2 all countries and years.
 </div>
 <p>Is this what you were expecting? A rather bimodal distribution with most countries either very autocratic (low scores) or very democratic (high scores). Perhaps this in itself is an interesting pattern, though political scientists may find it obvious. Probably the creators of the Polity2 data have commented on it.</p>
 <p>We can also make the three histograms more efficiently by first gathering all the variables into one column and then creating a graph with a facet for each of the original variables (Figure <a href="WFD-food-pol.html#fig:fbs-pol3x1">6.9</a>:</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb120-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Richness, Diversity, Polity2) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb120-3" data-line-number="3"><span class="st">  </span><span class="kw">gather</span>(<span class="dt">key =</span> <span class="st">&quot;Variable&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;Value&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb120-4" data-line-number="4"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb120-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Value), <span class="dt">bins =</span> <span class="dv">10</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb120-6" data-line-number="6"><span class="st">  </span><span class="kw">facet_wrap</span>( <span class="op">~</span><span class="st"> </span>Variable, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>, )</a></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb114-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Richness, Diversity, Polity2) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb114-3" data-line-number="3"><span class="st">  </span><span class="kw">gather</span>(<span class="dt">key =</span> <span class="st">&quot;Variable&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;Value&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb114-4" data-line-number="4"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb114-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Value), <span class="dt">bins =</span> <span class="dv">10</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb114-6" data-line-number="6"><span class="st">  </span><span class="kw">facet_wrap</span>( <span class="op">~</span><span class="st"> </span>Variable, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>, )</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fbs-pol3x1"></span>
 <img src="insights_website_files/figure-html/fbs-pol3x1-1.svg" alt="Frequency distribution of Polity2 all countries and years." width="75%" />
 <p class="caption">
@@ -1119,10 +1119,10 @@ FIGURE 6.9: Frequency distribution of Polity2 all countries and years.
 <h2><span class="header-section-number">6.11</span> Relationships</h2>
 <p>This is what we’ve been waiting for. We are about to answer our question. Can you believe it has been so long to get here. All the work was worthwhile, however. We understand our data; it is neat and tidy.</p>
 <p>First we’ll look at the relationship between richness and diversity. We might imagine that they’re quite closely associated since 1) diversity includes richness, and 2) their distributions look quite similar. By now the following code to make a scatter plot of richness against diversity should be familiar, though we add some transparency to the points since lots lie on top of each other (Figure <a href="WFD-food-pol.html#fig:fbs-pol4">6.10</a>:</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb121-2" data-line-number="2"><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb121-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Richness, <span class="dt">y =</span> Diversity),</a>
-<a class="sourceLine" id="cb121-4" data-line-number="4">             <span class="dt">alpha =</span> <span class="fl">0.1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb115-2" data-line-number="2"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb115-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Richness, <span class="dt">y =</span> Diversity),</a>
+<a class="sourceLine" id="cb115-4" data-line-number="4">             <span class="dt">alpha =</span> <span class="fl">0.1</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fbs-pol4"></span>
 <img src="insights_website_files/figure-html/fbs-pol4-1.svg" alt="Relationship between the two response variables, richness of items and diversity of items, across all countries and years." width="75%" />
 <p class="caption">
@@ -1130,9 +1130,9 @@ FIGURE 6.10: Relationship between the two response variables, richness of items 
 </p>
 </div>
 <p>We can also visualise the relationship with a two-dimensional histogram, such as that show in figure <a href="WFD-food-pol.html#fig:fbs-pol4">6.10</a> that was created with the following code:</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb122-2" data-line-number="2"><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb122-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_hex</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Richness, <span class="dt">y =</span> Diversity))</a></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb116-2" data-line-number="2"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb116-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_hex</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Richness, <span class="dt">y =</span> Diversity))</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fbs-pol4-1"></span>
 <img src="insights_website_files/figure-html/fbs-pol4-1-1.svg" alt="Relationship between the two response variables, richness of items and diversity of items, across all countries and years." width="75%" />
 <p class="caption">
@@ -1141,10 +1141,10 @@ FIGURE 6.11: Relationship between the two response variables, richness of items 
 </div>
 <p>Not quite as close a relationship between richness and diversity as we expected. There is certainly enough spread that we could get different insights from looking at each of the variables separately… they don’t have to tell the same story.</p>
 <p>And now, drum-roll, for the answer to our question. Is there a relationship between the political system of a country and the richness of food available for human consumption? Again, by now the R-code is hopefully no challenge for you (and gives Figure <a href="WFD-food-pol.html#fig:fbs-pol5">6.12</a>):</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb123-2" data-line-number="2"><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb123-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Polity2, <span class="dt">y =</span> Richness),</a>
-<a class="sourceLine" id="cb123-4" data-line-number="4">             <span class="dt">alpha =</span> <span class="fl">0.05</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb117-2" data-line-number="2"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb117-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Polity2, <span class="dt">y =</span> Richness),</a>
+<a class="sourceLine" id="cb117-4" data-line-number="4">             <span class="dt">alpha =</span> <span class="fl">0.05</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fbs-pol5"></span>
 <img src="insights_website_files/figure-html/fbs-pol5-1.svg" alt="Richness of food items available versus Polity score, across all countries and all available years." width="75%" />
 <p class="caption">
@@ -1152,10 +1152,10 @@ FIGURE 6.12: Richness of food items available versus Polity score, across all co
 </p>
 </div>
 <p>What do you think? Is there a relationship? And how confident are you that the relationship is not just the result of chance? Before we conclude, let’s look at the relationship for diversity of food items (Figure <a href="WFD-food-pol.html#fig:fbs-pol6">6.13</a>).</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb124-2" data-line-number="2"><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb124-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Polity2, <span class="dt">y =</span> Diversity),</a>
-<a class="sourceLine" id="cb124-4" data-line-number="4">             <span class="dt">alpha =</span> <span class="fl">0.05</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1">fbs_pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb118-2" data-line-number="2"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb118-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Polity2, <span class="dt">y =</span> Diversity),</a>
+<a class="sourceLine" id="cb118-4" data-line-number="4">             <span class="dt">alpha =</span> <span class="fl">0.05</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fbs-pol6"></span>
 <img src="insights_website_files/figure-html/fbs-pol6-1.svg" alt="Diversit of food items available versus Polity score, across all countries and all available years." width="75%" />
 <p class="caption">
@@ -1164,24 +1164,24 @@ FIGURE 6.13: Diversit of food items available versus Polity score, across all co
 </div>
 <p>Well, to our eyes, it certainly looks like the countries with high Polity scores have higher richness and diversity of food available than the countries with low Polity scores. There is also <em>a lot</em> of variation, such that any country (regardless of Polity) can have nearly the highest or lowest observed diversity of richness.</p>
 <p>We are being a little bit naughty, however. Each country can be contributing multiple data points to these graphs, one for each year it is present in the dataset. Countries with more years will tend to influence our conclusions more than those with fewer years. And the different years of data from one country are not independent… they are repeated measures. Let’s remove this non-independence and differential contributions of different countries in one of the crudest (though very simple and effective) ways—by getting the average value for each country. The <code>group_by</code>, <code>summarise</code> we use should be familiar:</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1">fbs_pol_year &lt;-<span class="st"> </span>fbs_pol <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb125-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb125-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Ave_Polity2 =</span> <span class="kw">mean</span>(Polity2),</a>
-<a class="sourceLine" id="cb125-4" data-line-number="4">            <span class="dt">Ave_Richness =</span> <span class="kw">mean</span>(Richness),</a>
-<a class="sourceLine" id="cb125-5" data-line-number="5">            <span class="dt">Ave_Diversity =</span> <span class="kw">mean</span>(Diversity))</a></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1">fbs_pol_year &lt;-<span class="st"> </span>fbs_pol <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb119-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Country) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb119-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Ave_Polity2 =</span> <span class="kw">mean</span>(Polity2),</a>
+<a class="sourceLine" id="cb119-4" data-line-number="4">            <span class="dt">Ave_Richness =</span> <span class="kw">mean</span>(Richness),</a>
+<a class="sourceLine" id="cb119-5" data-line-number="5">            <span class="dt">Ave_Diversity =</span> <span class="kw">mean</span>(Diversity))</a></code></pre></div>
 <p>We have gone from a dataset with 7,472 observations to one with 159, one data point for each country in the data. Here’s the code for the graphs of Polity score and richness/diversity for this country level data:</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1">fbs_pol_year <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb126-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb126-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Ave_Polity2, <span class="dt">y =</span> Ave_Richness))</a></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1">fbs_pol_year <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb120-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb120-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Ave_Polity2, <span class="dt">y =</span> Ave_Richness))</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fbs-pol7"></span>
 <img src="insights_website_files/figure-html/fbs-pol7-1.svg" alt="Richness of food items available versus Polity score; average value for each country." width="75%" />
 <p class="caption">
 FIGURE 6.14: Richness of food items available versus Polity score; average value for each country.
 </p>
 </div>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1">fbs_pol_year <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb127-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb127-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Ave_Polity2, <span class="dt">y =</span> Ave_Diversity))</a></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">fbs_pol_year <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb121-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb121-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Ave_Polity2, <span class="dt">y =</span> Ave_Diversity))</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fbs-pol8"></span>
 <img src="insights_website_files/figure-html/fbs-pol8-1.svg" alt="Diversity of food items available versus Polity score; average value for each country." width="75%" />
 <p class="caption">
@@ -1190,35 +1190,35 @@ FIGURE 6.15: Diversity of food items available versus Polity score; average valu
 </div>
 <p>The country level data (Figures <a href="WFD-food-pol.html#fig:fbs-pol7">6.14</a> and <a href="WFD-food-pol.html#fig:fbs-pol8">6.15</a>) appear to show stronger evidence of a positive relationship between polity score and richness/diversity of food available, with more democratic countries (higher polity scores) having more diversity of food available than less democratic ones.</p>
 <p>Let’s look at the data another way, by categorising the Polity score. To do this we make a new variable using <code>mutate</code> and use the <code>cut</code> function to cut the Polity scores into five categories, and we name the categories:</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" data-line-number="1">fbs_pol_year &lt;-<span class="st"> </span>fbs_pol_year <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb128-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Ave_Polity2_cat =</span> <span class="kw">cut</span>(Ave_Polity2,</a>
-<a class="sourceLine" id="cb128-3" data-line-number="3">                           <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="op">-</span><span class="dv">11</span>, <span class="dv">11</span>, <span class="dt">length =</span> <span class="dv">6</span>),</a>
-<a class="sourceLine" id="cb128-4" data-line-number="4">                           <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Very autocratic&quot;</span>,</a>
-<a class="sourceLine" id="cb128-5" data-line-number="5">                                      <span class="st">&quot;Quite autocratic&quot;</span>,</a>
-<a class="sourceLine" id="cb128-6" data-line-number="6">                                      <span class="st">&quot;Neutral&quot;</span>,</a>
-<a class="sourceLine" id="cb128-7" data-line-number="7">                                      <span class="st">&quot;Quite democratic&quot;</span>,</a>
-<a class="sourceLine" id="cb128-8" data-line-number="8">                                      <span class="st">&quot;Very democratic&quot;</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1">fbs_pol_year &lt;-<span class="st"> </span>fbs_pol_year <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb122-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Ave_Polity2_cat =</span> <span class="kw">cut</span>(Ave_Polity2,</a>
+<a class="sourceLine" id="cb122-3" data-line-number="3">                           <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="op">-</span><span class="dv">11</span>, <span class="dv">11</span>, <span class="dt">length =</span> <span class="dv">6</span>),</a>
+<a class="sourceLine" id="cb122-4" data-line-number="4">                           <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Very autocratic&quot;</span>,</a>
+<a class="sourceLine" id="cb122-5" data-line-number="5">                                      <span class="st">&quot;Quite autocratic&quot;</span>,</a>
+<a class="sourceLine" id="cb122-6" data-line-number="6">                                      <span class="st">&quot;Neutral&quot;</span>,</a>
+<a class="sourceLine" id="cb122-7" data-line-number="7">                                      <span class="st">&quot;Quite democratic&quot;</span>,</a>
+<a class="sourceLine" id="cb122-8" data-line-number="8">                                      <span class="st">&quot;Very democratic&quot;</span>)))</a></code></pre></div>
 <p>Here, we will only show the figure for the richness of food items (Figures <a href="WFD-food-pol.html#fig:fbs-pol7">6.14</a>) and not diversity (you can make that graph yourself):</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1">fbs_pol_year <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb129-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb129-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Ave_Polity2_cat, <span class="dt">y =</span> Ave_Richness)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb129-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_beeswarm</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Ave_Polity2_cat, <span class="dt">y =</span> Ave_Richness)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb129-5" data-line-number="5"><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Dietary richness</span><span class="ch">\n</span><span class="st">[number of food items]&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb129-6" data-line-number="6"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Type of political system&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb129-7" data-line-number="7"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1">fbs_pol_year <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb123-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb123-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Ave_Polity2_cat, <span class="dt">y =</span> Ave_Richness)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb123-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_beeswarm</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Ave_Polity2_cat, <span class="dt">y =</span> Ave_Richness)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb123-5" data-line-number="5"><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Dietary richness</span><span class="ch">\n</span><span class="st">[number of food items]&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb123-6" data-line-number="6"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Type of political system&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb123-7" data-line-number="7"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fbs-pol9"></span>
 <img src="insights_website_files/figure-html/fbs-pol9-1.svg" alt="Frequency distribution of diversity of food items across all countries and years." width="75%" />
 <p class="caption">
 FIGURE 6.16: Frequency distribution of diversity of food items across all countries and years.
 </p>
 </div>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" data-line-number="1">fbs_pol_year <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb130-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb130-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Ave_Polity2_cat, <span class="dt">y =</span> Ave_Diversity)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb130-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_beeswarm</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Ave_Polity2_cat, <span class="dt">y =</span> Ave_Diversity)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb130-5" data-line-number="5"><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Dietary diversity</span><span class="ch">\n</span><span class="st">[Shannon diversity of food items]&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb130-6" data-line-number="6"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Type of political system&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb130-7" data-line-number="7"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1">fbs_pol_year <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb124-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb124-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Ave_Polity2_cat, <span class="dt">y =</span> Ave_Diversity)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb124-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_beeswarm</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Ave_Polity2_cat, <span class="dt">y =</span> Ave_Diversity)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb124-5" data-line-number="5"><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Dietary diversity</span><span class="ch">\n</span><span class="st">[Shannon diversity of food items]&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb124-6" data-line-number="6"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Type of political system&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb124-7" data-line-number="7"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fbs-pol10"></span>
 <img src="insights_website_files/figure-html/fbs-pol10-1.svg" alt="Frequency distribution of diversity of food items across all countries and years." width="75%" />
 <p class="caption">
@@ -1249,35 +1249,35 @@ FIGURE 6.17: Frequency distribution of diversity of food items across all countr
 <h3><span class="header-section-number">6.12.1</span> A challenge for you…</h3>
 <p>Check to see if GDP or GDP per capita can explain variation in dietary diversity? What, if anything, would you imagine is the causation among political system, GDP, and dietary diversity (you might use the data to try to infer this, or just think about it)?</p>
 <p>Get the GDP data from here: <a href="http://www.fao.org/faostat/en/#data/MK" class="uri">http://www.fao.org/faostat/en/#data/MK</a></p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" data-line-number="1">gdp &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;~/Desktop/Macro-Statistics_Key_Indicators_E_All_Data.csv&quot;</span>,</a>
-<a class="sourceLine" id="cb131-2" data-line-number="2">               <span class="dt">locale =</span> <span class="kw">locale</span>(<span class="dt">encoding =</span> <span class="st">&#39;ISO-8859-1&#39;</span>))</a>
-<a class="sourceLine" id="cb131-3" data-line-number="3"><span class="co">## First fix some variable names:</span></a>
-<a class="sourceLine" id="cb131-4" data-line-number="4"><span class="kw">names</span>(gdp) &lt;-<span class="st"> </span><span class="kw">str_replace_all</span>(<span class="kw">names</span>(gdp), <span class="kw">c</span>(<span class="st">&quot; &quot;</span> =<span class="st"> &quot;_&quot;</span>))</a>
-<a class="sourceLine" id="cb131-5" data-line-number="5"><span class="co">## Remove all non-countries</span></a>
-<a class="sourceLine" id="cb131-6" data-line-number="6"><span class="co">## keep only some of the elements</span></a>
-<a class="sourceLine" id="cb131-7" data-line-number="7"><span class="co">#gdp &lt;-   filter(gdp, Item_Code==22008 &amp; Element_Code==6110)</span></a>
-<a class="sourceLine" id="cb131-8" data-line-number="8">gdp &lt;-<span class="st">   </span><span class="kw">filter</span>(gdp, Item_Code<span class="op">==</span><span class="dv">22014</span> <span class="op">&amp;</span><span class="st"> </span>Element_Code<span class="op">==</span><span class="dv">6119</span>)</a>
-<a class="sourceLine" id="cb131-9" data-line-number="9">gdp &lt;-<span class="st"> </span><span class="kw">select</span>(gdp, <span class="op">-</span>Item_Code, <span class="op">-</span>Area_Code,</a>
-<a class="sourceLine" id="cb131-10" data-line-number="10">             <span class="op">-</span>Element_Code, <span class="op">-</span>Element, <span class="op">-</span>Unit, <span class="op">-</span>Item,</a>
-<a class="sourceLine" id="cb131-11" data-line-number="11">             <span class="op">-</span><span class="kw">ends_with</span>(<span class="st">&quot;F&quot;</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb131-12" data-line-number="12"><span class="st">  </span><span class="kw">gather</span>(<span class="dt">key=</span>Year, <span class="dt">value=</span>GDP, <span class="dv">2</span><span class="op">:</span><span class="dv">48</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb131-13" data-line-number="13"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Year=</span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(Year, <span class="dv">2</span>, <span class="dv">5</span>))) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb131-14" data-line-number="14"><span class="st">  </span><span class="kw">rename</span>(<span class="dt">Country=</span>Area)</a>
-<a class="sourceLine" id="cb131-15" data-line-number="15">dd_all &lt;-<span class="st"> </span><span class="kw">full_join</span>(dd, gdp)</a>
-<a class="sourceLine" id="cb131-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb131-17" data-line-number="17">dd_sum &lt;-<span class="st"> </span><span class="kw">group_by</span>(dd_all, Country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb131-18" data-line-number="18"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_div=</span><span class="kw">mean</span>(diversity, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb131-19" data-line-number="19">            <span class="dt">mean_pol=</span><span class="kw">mean</span>(Polity2, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb131-20" data-line-number="20">            <span class="dt">mean_GDP=</span><span class="kw">mean</span>(GDP, <span class="dt">na.rm=</span><span class="ot">TRUE</span>))</a>
-<a class="sourceLine" id="cb131-21" data-line-number="21"></a>
-<a class="sourceLine" id="cb131-22" data-line-number="22"><span class="kw">ggplot</span>(dd_sum, <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">log10</span>(mean_GDP), <span class="dt">y=</span>mean_div, <span class="dt">col=</span>mean_pol)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb131-23" data-line-number="23"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb131-24" data-line-number="24"></a>
-<a class="sourceLine" id="cb131-25" data-line-number="25"><span class="kw">ggplot</span>(dd_sum, <span class="kw">aes</span>(<span class="dt">x=</span>mean_pol, <span class="dt">y=</span>mean_div, <span class="dt">col=</span><span class="kw">log10</span>(mean_GDP))) <span class="op">+</span></a>
-<a class="sourceLine" id="cb131-26" data-line-number="26"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb131-27" data-line-number="27"></a>
-<a class="sourceLine" id="cb131-28" data-line-number="28"><span class="kw">ggplot</span>(dd_sum, <span class="kw">aes</span>(<span class="dt">x=</span>mean_pol, <span class="dt">y=</span><span class="kw">log10</span>(mean_GDP), <span class="dt">col=</span>mean_div)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb131-29" data-line-number="29"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size=</span><span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1">gdp &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;~/Desktop/Macro-Statistics_Key_Indicators_E_All_Data.csv&quot;</span>,</a>
+<a class="sourceLine" id="cb125-2" data-line-number="2">               <span class="dt">locale =</span> <span class="kw">locale</span>(<span class="dt">encoding =</span> <span class="st">&#39;ISO-8859-1&#39;</span>))</a>
+<a class="sourceLine" id="cb125-3" data-line-number="3"><span class="co">## First fix some variable names:</span></a>
+<a class="sourceLine" id="cb125-4" data-line-number="4"><span class="kw">names</span>(gdp) &lt;-<span class="st"> </span><span class="kw">str_replace_all</span>(<span class="kw">names</span>(gdp), <span class="kw">c</span>(<span class="st">&quot; &quot;</span> =<span class="st"> &quot;_&quot;</span>))</a>
+<a class="sourceLine" id="cb125-5" data-line-number="5"><span class="co">## Remove all non-countries</span></a>
+<a class="sourceLine" id="cb125-6" data-line-number="6"><span class="co">## keep only some of the elements</span></a>
+<a class="sourceLine" id="cb125-7" data-line-number="7"><span class="co">#gdp &lt;-   filter(gdp, Item_Code==22008 &amp; Element_Code==6110)</span></a>
+<a class="sourceLine" id="cb125-8" data-line-number="8">gdp &lt;-<span class="st">   </span><span class="kw">filter</span>(gdp, Item_Code<span class="op">==</span><span class="dv">22014</span> <span class="op">&amp;</span><span class="st"> </span>Element_Code<span class="op">==</span><span class="dv">6119</span>)</a>
+<a class="sourceLine" id="cb125-9" data-line-number="9">gdp &lt;-<span class="st"> </span><span class="kw">select</span>(gdp, <span class="op">-</span>Item_Code, <span class="op">-</span>Area_Code,</a>
+<a class="sourceLine" id="cb125-10" data-line-number="10">             <span class="op">-</span>Element_Code, <span class="op">-</span>Element, <span class="op">-</span>Unit, <span class="op">-</span>Item,</a>
+<a class="sourceLine" id="cb125-11" data-line-number="11">             <span class="op">-</span><span class="kw">ends_with</span>(<span class="st">&quot;F&quot;</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb125-12" data-line-number="12"><span class="st">  </span><span class="kw">gather</span>(<span class="dt">key=</span>Year, <span class="dt">value=</span>GDP, <span class="dv">2</span><span class="op">:</span><span class="dv">48</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb125-13" data-line-number="13"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Year=</span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(Year, <span class="dv">2</span>, <span class="dv">5</span>))) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb125-14" data-line-number="14"><span class="st">  </span><span class="kw">rename</span>(<span class="dt">Country=</span>Area)</a>
+<a class="sourceLine" id="cb125-15" data-line-number="15">dd_all &lt;-<span class="st"> </span><span class="kw">full_join</span>(dd, gdp)</a>
+<a class="sourceLine" id="cb125-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb125-17" data-line-number="17">dd_sum &lt;-<span class="st"> </span><span class="kw">group_by</span>(dd_all, Country) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb125-18" data-line-number="18"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_div=</span><span class="kw">mean</span>(diversity, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb125-19" data-line-number="19">            <span class="dt">mean_pol=</span><span class="kw">mean</span>(Polity2, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb125-20" data-line-number="20">            <span class="dt">mean_GDP=</span><span class="kw">mean</span>(GDP, <span class="dt">na.rm=</span><span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb125-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb125-22" data-line-number="22"><span class="kw">ggplot</span>(dd_sum, <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">log10</span>(mean_GDP), <span class="dt">y=</span>mean_div, <span class="dt">col=</span>mean_pol)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb125-23" data-line-number="23"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb125-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb125-25" data-line-number="25"><span class="kw">ggplot</span>(dd_sum, <span class="kw">aes</span>(<span class="dt">x=</span>mean_pol, <span class="dt">y=</span>mean_div, <span class="dt">col=</span><span class="kw">log10</span>(mean_GDP))) <span class="op">+</span></a>
+<a class="sourceLine" id="cb125-26" data-line-number="26"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb125-27" data-line-number="27"></a>
+<a class="sourceLine" id="cb125-28" data-line-number="28"><span class="kw">ggplot</span>(dd_sum, <span class="kw">aes</span>(<span class="dt">x=</span>mean_pol, <span class="dt">y=</span><span class="kw">log10</span>(mean_GDP), <span class="dt">col=</span>mean_div)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb125-29" data-line-number="29"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size=</span><span class="dv">3</span>)</a></code></pre></div>
 
 </div>
 </div>

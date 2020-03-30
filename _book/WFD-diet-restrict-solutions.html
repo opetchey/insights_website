@@ -24,7 +24,7 @@
 <meta name="author" content="Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs" />
 
 
-<meta name="date" content="2020-03-26" />
+<meta name="date" content="2020-03-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -146,7 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a><ul>
 <li class="chapter" data-level="3.1" data-path="questions-exercises.html"><a href="questions-exercises.html#preface"><i class="fa fa-check"></i><b>3.1</b> Preface</a></li>
-<li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1"><i class="fa fa-check"></i><b>3.2</b> Chapter 1</a></li>
+<li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1-introduction"><i class="fa fa-check"></i><b>3.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="3.3" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-2-getting-acquainted"><i class="fa fa-check"></i><b>3.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="3.4" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-3-workflow-demonstrationpart-1"><i class="fa fa-check"></i><b>3.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="3.5" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-4-workflow-demonstrationpart-2"><i class="fa fa-check"></i><b>3.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
@@ -330,7 +330,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a><ul>
 <li class="chapter" data-level="14.1" data-path="answers.html"><a href="answers.html#preface-1"><i class="fa fa-check"></i><b>14.1</b> Preface</a></li>
-<li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
+<li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction-1"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="14.3" data-path="answers.html"><a href="answers.html#chapter-2-getting-acquainted-1"><i class="fa fa-check"></i><b>14.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="14.4" data-path="answers.html"><a href="answers.html#chapter-3-workflow-demonstrationpart-1-1"><i class="fa fa-check"></i><b>14.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="14.5" data-path="answers.html"><a href="answers.html#chapter-4-workflow-demonstrationpart-2-1"><i class="fa fa-check"></i><b>14.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
@@ -390,7 +390,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Independence of observations</strong>: there may be multiple observations per fish (repeated measures). Fish may share mothers, fathers, and other pre-experiment conditions.</li>
 </ul>
 <p><strong>Q5. Which datafiles do you need?</strong></p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" data-line-number="1">mortality &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S1.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" data-line-number="1">mortality &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S1.csv&quot;</span>)</a></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_double(),
@@ -399,7 +399,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   Size = col_character()
 ## )</code></pre>
 <pre><code>## See spec(...) for full column specifications.</code></pre>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb202-1" data-line-number="1">courtship &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S5.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" data-line-number="1">courtship &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S5.csv&quot;</span>)</a></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   FID = col_character(),
@@ -419,7 +419,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   Total_lead = col_double(),
 ##   Total_court = col_double()
 ## )</code></pre>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb204-1" data-line-number="1">eggs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S6.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb198-1" data-line-number="1">eggs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S6.csv&quot;</span>)</a></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   FID = col_character(),
@@ -437,7 +437,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   mean_number = col_double(),
 ##   Total_egg = col_double()
 ## )</code></pre>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb206-1" data-line-number="1">length_weight_condition &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S15.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb200-1" data-line-number="1">length_weight_condition &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S15.csv&quot;</span>)</a></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   FID = col_character(),
@@ -487,83 +487,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Q9. Which of the datasets are tidy and which are not?</strong></p>
 <p>All four datasets appear tidy, at the moment.</p>
 <p><strong>Q10. Rename the following variables to be more intepretable, and only keep necessary variables:</strong></p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb208-1" data-line-number="1">courtship &lt;-<span class="st"> </span>courtship <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb208-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, Family, Shelf_stack, <span class="dt">Diet_comp=</span>Diet,</a>
-<a class="sourceLine" id="cb208-3" data-line-number="3">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, Trial, Total_court)</a>
-<a class="sourceLine" id="cb208-4" data-line-number="4">eggs &lt;-<span class="st"> </span>eggs <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb208-5" data-line-number="5"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, Family, <span class="dt">Shelf_stack=</span>Stack_shelf, <span class="dt">Diet_comp=</span>Diet,</a>
-<a class="sourceLine" id="cb208-6" data-line-number="6">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, Total_egg)</a>
-<a class="sourceLine" id="cb208-7" data-line-number="7">length_weight_condition &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb208-8" data-line-number="8"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, Shelf_stack, <span class="dt">Diet_comp=</span>Diet, <span class="dt">Sex=</span>Sex,</a>
-<a class="sourceLine" id="cb208-9" data-line-number="9">         Batch,</a>
-<a class="sourceLine" id="cb208-10" data-line-number="10">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, <span class="dt">Length=</span>Ln, <span class="dt">Weigth=</span>Wt, <span class="dt">Cond_index=</span>CI)</a>
-<a class="sourceLine" id="cb208-11" data-line-number="11">mortality &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb208-12" data-line-number="12"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, <span class="dt">Diet_comp=</span>Diet, Sex,</a>
-<a class="sourceLine" id="cb208-13" data-line-number="13">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, <span class="dt">Week=</span>Week_F, Status)</a></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb202-1" data-line-number="1">courtship &lt;-<span class="st"> </span>courtship <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb202-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, Family, Shelf_stack, <span class="dt">Diet_comp=</span>Diet,</a>
+<a class="sourceLine" id="cb202-3" data-line-number="3">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, Trial, Total_court)</a>
+<a class="sourceLine" id="cb202-4" data-line-number="4">eggs &lt;-<span class="st"> </span>eggs <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb202-5" data-line-number="5"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, Family, <span class="dt">Shelf_stack=</span>Stack_shelf, <span class="dt">Diet_comp=</span>Diet,</a>
+<a class="sourceLine" id="cb202-6" data-line-number="6">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, Total_egg)</a>
+<a class="sourceLine" id="cb202-7" data-line-number="7">length_weight_condition &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb202-8" data-line-number="8"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, Shelf_stack, <span class="dt">Diet_comp=</span>Diet, <span class="dt">Sex=</span>Sex,</a>
+<a class="sourceLine" id="cb202-9" data-line-number="9">         Batch,</a>
+<a class="sourceLine" id="cb202-10" data-line-number="10">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, <span class="dt">Length=</span>Ln, <span class="dt">Weigth=</span>Wt, <span class="dt">Cond_index=</span>CI)</a>
+<a class="sourceLine" id="cb202-11" data-line-number="11">mortality &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb202-12" data-line-number="12"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, <span class="dt">Diet_comp=</span>Diet, Sex,</a>
+<a class="sourceLine" id="cb202-13" data-line-number="13">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, <span class="dt">Week=</span>Week_F, Status)</a></code></pre></div>
 <p><strong>Q11. Replace codes with informative words, for at least the <code>Diet</code> variable (or what you renamed it to), the <code>Fish_size</code> variable, the <code>Sex</code> variable, and the <code>Status</code> variable.</strong></p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb209-1" data-line-number="1">courtship &lt;-<span class="st"> </span>courtship <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb209-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-3" data-line-number="3">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-4" data-line-number="4">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-5" data-line-number="5">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-6" data-line-number="6">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
-<a class="sourceLine" id="cb209-7" data-line-number="7">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
-<a class="sourceLine" id="cb209-8" data-line-number="8">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>))</a>
-<a class="sourceLine" id="cb209-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb209-10" data-line-number="10">eggs &lt;-<span class="st"> </span>eggs <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb209-11" data-line-number="11"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-12" data-line-number="12">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-13" data-line-number="13">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-14" data-line-number="14">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-15" data-line-number="15">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
-<a class="sourceLine" id="cb209-16" data-line-number="16">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
-<a class="sourceLine" id="cb209-17" data-line-number="17">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>))</a>
-<a class="sourceLine" id="cb209-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb209-19" data-line-number="19">length_weight_condition &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb209-20" data-line-number="20"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-21" data-line-number="21">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-22" data-line-number="22">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-23" data-line-number="23">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-24" data-line-number="24">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
-<a class="sourceLine" id="cb209-25" data-line-number="25">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
-<a class="sourceLine" id="cb209-26" data-line-number="26">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>),</a>
-<a class="sourceLine" id="cb209-27" data-line-number="27">         <span class="dt">Sex =</span> <span class="kw">case_when</span>(Sex <span class="op">==</span><span class="st"> &quot;M&quot;</span> <span class="op">~</span><span class="st"> &quot;Male&quot;</span>,</a>
-<a class="sourceLine" id="cb209-28" data-line-number="28">                         Sex <span class="op">==</span><span class="st"> &quot;F&quot;</span> <span class="op">~</span><span class="st"> &quot;Female&quot;</span>))</a>
-<a class="sourceLine" id="cb209-29" data-line-number="29"></a>
-<a class="sourceLine" id="cb209-30" data-line-number="30">mortality &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb209-31" data-line-number="31"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-32" data-line-number="32">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-33" data-line-number="33">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-34" data-line-number="34">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb209-35" data-line-number="35">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
-<a class="sourceLine" id="cb209-36" data-line-number="36">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
-<a class="sourceLine" id="cb209-37" data-line-number="37">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>),</a>
-<a class="sourceLine" id="cb209-38" data-line-number="38">         <span class="dt">Sex =</span> <span class="kw">case_when</span>(Sex <span class="op">==</span><span class="st"> &quot;M&quot;</span> <span class="op">~</span><span class="st"> &quot;Male&quot;</span>,</a>
-<a class="sourceLine" id="cb209-39" data-line-number="39">                         Sex <span class="op">==</span><span class="st"> &quot;F&quot;</span> <span class="op">~</span><span class="st"> &quot;Female&quot;</span>),</a>
-<a class="sourceLine" id="cb209-40" data-line-number="40">         <span class="dt">Status =</span> <span class="kw">case_when</span>(Status <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;alive&quot;</span>,</a>
-<a class="sourceLine" id="cb209-41" data-line-number="41">                            Status <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;dead&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb203-1" data-line-number="1">courtship &lt;-<span class="st"> </span>courtship <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb203-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-3" data-line-number="3">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-4" data-line-number="4">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-5" data-line-number="5">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-6" data-line-number="6">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
+<a class="sourceLine" id="cb203-7" data-line-number="7">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
+<a class="sourceLine" id="cb203-8" data-line-number="8">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>))</a>
+<a class="sourceLine" id="cb203-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb203-10" data-line-number="10">eggs &lt;-<span class="st"> </span>eggs <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb203-11" data-line-number="11"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-12" data-line-number="12">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-13" data-line-number="13">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-14" data-line-number="14">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-15" data-line-number="15">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
+<a class="sourceLine" id="cb203-16" data-line-number="16">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
+<a class="sourceLine" id="cb203-17" data-line-number="17">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>))</a>
+<a class="sourceLine" id="cb203-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb203-19" data-line-number="19">length_weight_condition &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb203-20" data-line-number="20"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-21" data-line-number="21">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-22" data-line-number="22">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-23" data-line-number="23">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-24" data-line-number="24">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
+<a class="sourceLine" id="cb203-25" data-line-number="25">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
+<a class="sourceLine" id="cb203-26" data-line-number="26">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>),</a>
+<a class="sourceLine" id="cb203-27" data-line-number="27">         <span class="dt">Sex =</span> <span class="kw">case_when</span>(Sex <span class="op">==</span><span class="st"> &quot;M&quot;</span> <span class="op">~</span><span class="st"> &quot;Male&quot;</span>,</a>
+<a class="sourceLine" id="cb203-28" data-line-number="28">                         Sex <span class="op">==</span><span class="st"> &quot;F&quot;</span> <span class="op">~</span><span class="st"> &quot;Female&quot;</span>))</a>
+<a class="sourceLine" id="cb203-29" data-line-number="29"></a>
+<a class="sourceLine" id="cb203-30" data-line-number="30">mortality &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb203-31" data-line-number="31"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-32" data-line-number="32">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-33" data-line-number="33">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-34" data-line-number="34">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb203-35" data-line-number="35">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
+<a class="sourceLine" id="cb203-36" data-line-number="36">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
+<a class="sourceLine" id="cb203-37" data-line-number="37">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>),</a>
+<a class="sourceLine" id="cb203-38" data-line-number="38">         <span class="dt">Sex =</span> <span class="kw">case_when</span>(Sex <span class="op">==</span><span class="st"> &quot;M&quot;</span> <span class="op">~</span><span class="st"> &quot;Male&quot;</span>,</a>
+<a class="sourceLine" id="cb203-39" data-line-number="39">                         Sex <span class="op">==</span><span class="st"> &quot;F&quot;</span> <span class="op">~</span><span class="st"> &quot;Female&quot;</span>),</a>
+<a class="sourceLine" id="cb203-40" data-line-number="40">         <span class="dt">Status =</span> <span class="kw">case_when</span>(Status <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;alive&quot;</span>,</a>
+<a class="sourceLine" id="cb203-41" data-line-number="41">                            Status <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;dead&quot;</span>))</a></code></pre></div>
 <p><strong>Q12. which of the four datasets contains an odd duplicate entry? And which fish is involved? What should we do next?</strong></p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb210-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">duplicated</span>(<span class="kw">select</span>(courtship, Fish_ID)))</a></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb204-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">duplicated</span>(<span class="kw">select</span>(courtship, Fish_ID)))</a></code></pre></div>
 <pre><code>## [1] 0</code></pre>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb212-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">duplicated</span>(<span class="kw">select</span>(eggs, Fish_ID)))</a></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb206-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">duplicated</span>(<span class="kw">select</span>(eggs, Fish_ID)))</a></code></pre></div>
 <pre><code>## [1] 0</code></pre>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb214-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">duplicated</span>(<span class="kw">select</span>(length_weight_condition, Fish_ID, Batch)))</a></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb208-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">duplicated</span>(<span class="kw">select</span>(length_weight_condition, Fish_ID, Batch)))</a></code></pre></div>
 <pre><code>## [1] 0</code></pre>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb216-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">duplicated</span>(<span class="kw">select</span>(mortality, Fish_ID, Week)))</a></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb210-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">duplicated</span>(<span class="kw">select</span>(mortality, Fish_ID, Week)))</a></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb218-1" data-line-number="1">dupl &lt;-<span class="st"> </span><span class="kw">duplicated</span>(<span class="kw">select</span>(mortality, Fish_ID, Week))</a>
-<a class="sourceLine" id="cb218-2" data-line-number="2"><span class="kw">filter</span>(mortality, dupl)</a></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb212-1" data-line-number="1">dupl &lt;-<span class="st"> </span><span class="kw">duplicated</span>(<span class="kw">select</span>(mortality, Fish_ID, Week))</a>
+<a class="sourceLine" id="cb212-2" data-line-number="2"><span class="kw">filter</span>(mortality, dupl)</a></code></pre></div>
 <pre><code>## # A tibble: 1 x 7
 ##   Fish_ID Diet_comp Sex   Prov_level Fish_size  Week Status
 ##   &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; 
 ## 1 LR504   1.6:1     Male         100 Small         2 alive</code></pre>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb220-1" data-line-number="1"><span class="kw">filter</span>(mortality, Fish_ID<span class="op">==</span><span class="st">&quot;LR504&quot;</span>, Week<span class="op">==</span><span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb214-1" data-line-number="1"><span class="kw">filter</span>(mortality, Fish_ID<span class="op">==</span><span class="st">&quot;LR504&quot;</span>, Week<span class="op">==</span><span class="dv">2</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 2 x 7
 ##   Fish_ID Diet_comp Sex   Prov_level Fish_size  Week Status
 ##   &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; 
 ## 1 LR504   1.6:1     Male         100 Small         2 dead  
 ## 2 LR504   1.6:1     Male         100 Small         2 alive</code></pre>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb222-1" data-line-number="1"><span class="kw">filter</span>(mortality, Fish_ID<span class="op">==</span><span class="st">&quot;LR504&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb216-1" data-line-number="1"><span class="kw">filter</span>(mortality, Fish_ID<span class="op">==</span><span class="st">&quot;LR504&quot;</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 4 x 7
 ##   Fish_ID Diet_comp Sex   Prov_level Fish_size  Week Status
 ##   &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; 
@@ -572,12 +572,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3 LR504   1.6:1     Male         100 Small         2 alive 
 ## 4 LR504   1.6:1     Male         100 Small         4 dead</code></pre>
 <p>In the mortality dataset fish LR504 has two records for week 2.</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb224-1" data-line-number="1"><span class="co">## here we check if this is the only fish with fewer records than weeks it was observed in</span></a>
-<a class="sourceLine" id="cb224-2" data-line-number="2">check &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb224-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb224-4" data-line-number="4"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">check =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Week))<span class="op">==</span><span class="kw">max</span>(Week))</a>
-<a class="sourceLine" id="cb224-5" data-line-number="5">check <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb224-6" data-line-number="6"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>check)</a></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb218-1" data-line-number="1"><span class="co">## here we check if this is the only fish with fewer records than weeks it was observed in</span></a>
+<a class="sourceLine" id="cb218-2" data-line-number="2">check &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb218-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb218-4" data-line-number="4"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">check =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Week))<span class="op">==</span><span class="kw">max</span>(Week))</a>
+<a class="sourceLine" id="cb218-5" data-line-number="5">check <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb218-6" data-line-number="6"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>check)</a></code></pre></div>
 <pre><code>## # A tibble: 1 x 2
 ##   Fish_ID check
 ##   &lt;chr&gt;   &lt;lgl&gt;
@@ -585,8 +585,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="nas-variable-entries-e.g.levels-of-characters-ranges-of-numerics-numbers-of-things-1" class="section level3">
 <h3><span class="header-section-number">9.0.1</span> NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of “things”*</h3>
 <p><strong>Q13. How many missing values in the courtship dataset (remember to reduce the variables to those mentioned above)?</strong></p>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb226-1" data-line-number="1">courtship <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb226-2" data-line-number="2"><span class="st">  </span><span class="kw">filter_all</span>(<span class="kw">any_vars</span>(<span class="kw">is.na</span>(.))) </a></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb220-1" data-line-number="1">courtship <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb220-2" data-line-number="2"><span class="st">  </span><span class="kw">filter_all</span>(<span class="kw">any_vars</span>(<span class="kw">is.na</span>(.))) </a></code></pre></div>
 <pre><code>## # A tibble: 1 x 8
 ##   Fish_ID Family Shelf_stack Diet_comp Prov_level Fish_size Trial Total_court
 ##   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;       &lt;dbl&gt;
@@ -596,35 +596,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Q15. Which fish have missing values?</strong></p>
 <p><em>See answer for previous question.</em></p>
 <p><strong>Q16. How many different entries are there in the <code>Shelf_stack</code> variable?</strong></p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb228-1" data-line-number="1">courtship <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb228-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Shelf_stack) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb228-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb222-1" data-line-number="1">courtship <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb222-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Shelf_stack) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb222-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>()</a></code></pre></div>
 <pre><code>##  [1] &quot;A1&quot; &quot;A2&quot; &quot;A3&quot; &quot;B1&quot; &quot;B2&quot; &quot;B3&quot; &quot;C1&quot; &quot;C2&quot; &quot;C3&quot; &quot;D1&quot; &quot;D2&quot; &quot;D3&quot; &quot;E1&quot; &quot;E2&quot; &quot;E3&quot;
 ## [16] &quot;F1&quot; &quot;F2&quot; &quot;F3&quot; &quot;G1&quot; &quot;G2&quot; &quot;G3&quot; &quot;H1&quot; &quot;H2&quot; &quot;H3&quot; &quot;I1&quot; &quot;I2&quot; &quot;I3&quot; &quot;J1&quot; &quot;J2&quot; &quot;J3&quot;
 ## [31] &quot;K1&quot; &quot;K2&quot; &quot;K3&quot; &quot;L1&quot; &quot;L3&quot; &quot;L2&quot;</code></pre>
 <p><strong>Q17. What are the mean and median of the <code>Total_court</code> variable?</strong></p>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb230-1" data-line-number="1">courtship <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb230-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_total_court =</span> <span class="kw">mean</span>(Total_court, <span class="dt">na.rm=</span>T),</a>
-<a class="sourceLine" id="cb230-3" data-line-number="3">            <span class="dt">media_total_court =</span> <span class="kw">median</span>(Total_court, <span class="dt">na.rm=</span>T))</a></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb224-1" data-line-number="1">courtship <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb224-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_total_court =</span> <span class="kw">mean</span>(Total_court, <span class="dt">na.rm=</span>T),</a>
+<a class="sourceLine" id="cb224-3" data-line-number="3">            <span class="dt">media_total_court =</span> <span class="kw">median</span>(Total_court, <span class="dt">na.rm=</span>T))</a></code></pre></div>
 <pre><code>## # A tibble: 1 x 2
 ##   mean_total_court media_total_court
 ##              &lt;dbl&gt;             &lt;dbl&gt;
 ## 1             453.               337</code></pre>
 <p><strong>Q18 What are the units of the <code>Total_court</code> variable? (This is a trick/sneaky question.)</strong></p>
 <p><strong>Q19. How many fish are in each of the datasets?</strong></p>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb232-1" data-line-number="1">courtship <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb232-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Fish_ID) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb232-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb232-4" data-line-number="4"><span class="st">  </span><span class="kw">length</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb226-1" data-line-number="1">courtship <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb226-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Fish_ID) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb226-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb226-4" data-line-number="4"><span class="st">  </span><span class="kw">length</span>()</a></code></pre></div>
 <pre><code>## [1] 228</code></pre>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb234-1" data-line-number="1">eggs <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb234-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Fish_ID) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb234-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb234-4" data-line-number="4"><span class="st">  </span><span class="kw">length</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb228-1" data-line-number="1">eggs <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb228-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Fish_ID) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb228-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb228-4" data-line-number="4"><span class="st">  </span><span class="kw">length</span>()</a></code></pre></div>
 <pre><code>## [1] 269</code></pre>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb236-1" data-line-number="1"><span class="kw">skim</span>(eggs)</a></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb230-1" data-line-number="1"><span class="kw">skim</span>(eggs)</a></code></pre></div>
 <table>
-<caption><span id="tab:unnamed-chunk-163">TABLE 9.1: </span>Data summary</caption>
+<caption><span id="tab:unnamed-chunk-156">TABLE 9.1: </span>Data summary</caption>
 <tbody>
 <tr class="odd">
 <td align="left">Name</td>
@@ -777,47 +777,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb237-1" data-line-number="1"><span class="kw">filter</span>(eggs, <span class="kw">is.na</span>(Total_egg))</a></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb231-1" data-line-number="1"><span class="kw">filter</span>(eggs, <span class="kw">is.na</span>(Total_egg))</a></code></pre></div>
 <pre><code>## # A tibble: 1 x 7
 ##   Fish_ID Family Shelf_stack Diet_comp Prov_level Fish_size Total_egg
 ##   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;
 ## 1 LR212   F121   D3          2.5:1             75 Small            NA</code></pre>
 <p>269 fish IDs</p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb239-1" data-line-number="1">length_weight_condition <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb239-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Fish_ID) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb239-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb239-4" data-line-number="4"><span class="st">  </span><span class="kw">length</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb233-1" data-line-number="1">length_weight_condition <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb233-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Fish_ID) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb233-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb233-4" data-line-number="4"><span class="st">  </span><span class="kw">length</span>()</a></code></pre></div>
 <pre><code>## [1] 600</code></pre>
 <p>600 fish IDs</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb241-1" data-line-number="1">mortality <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb241-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Fish_ID) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb241-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb241-4" data-line-number="4"><span class="st">  </span><span class="kw">length</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb235-1" data-line-number="1">mortality <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb235-2" data-line-number="2"><span class="st">  </span><span class="kw">pull</span>(Fish_ID) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb235-3" data-line-number="3"><span class="st">  </span><span class="kw">unique</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb235-4" data-line-number="4"><span class="st">  </span><span class="kw">length</span>()</a></code></pre></div>
 <pre><code>## [1] 594</code></pre>
 </div>
 <div id="independence-1" class="section level2">
 <h2><span class="header-section-number">9.1</span> Independence</h2>
 <p><strong>Q20. Which of the datasets contains only one observation per fish, and which contain repeated (i.e. multiple) observations of each fish?</strong></p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb243-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">table</span>(<span class="kw">pull</span>(courtship, Fish_ID)) <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb237-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">table</span>(<span class="kw">pull</span>(courtship, Fish_ID)) <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 <p>Zero shows that no fish have more than one observation.</p>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb245-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">table</span>(<span class="kw">pull</span>(eggs, Fish_ID)) <span class="op">!=</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb239-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">table</span>(<span class="kw">pull</span>(eggs, Fish_ID)) <span class="op">!=</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 <p>Zero shows that no fish have more than one observation.</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb247-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">table</span>(<span class="kw">pull</span>(length_weight_condition, Fish_ID)) <span class="op">!=</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb241-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">table</span>(<span class="kw">pull</span>(length_weight_condition, Fish_ID)) <span class="op">!=</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
 <pre><code>## [1] 600</code></pre>
 <p>All 600 fish have more than one observation… there is non-independence that we’ll have to deal with.</p>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb249-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">table</span>(<span class="kw">pull</span>(mortality, Fish_ID)) <span class="op">!=</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb243-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">table</span>(<span class="kw">pull</span>(mortality, Fish_ID)) <span class="op">!=</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
 <pre><code>## [1] 586</code></pre>
 <p>586 of the 594 fish in the mortality dataset have more than one observation… there is non-independence that we’ll have to deal with.</p>
 </div>
 <div id="balance-in-experimental-design-1" class="section level2">
 <h2><span class="header-section-number">9.2</span> Balance in experimental design</h2>
 <p><strong>Q21: From the description of the experiment in the paper, how many fish are there per treatment combination?</strong></p>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb251-1" data-line-number="1">courtship <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb251-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb251-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">count=</span><span class="kw">n</span>(),</a>
-<a class="sourceLine" id="cb251-4" data-line-number="4">            <span class="dt">n_unique=</span><span class="kw">length</span>(<span class="kw">unique</span>(Fish_ID)))</a></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb245-1" data-line-number="1">courtship <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb245-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb245-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">count=</span><span class="kw">n</span>(),</a>
+<a class="sourceLine" id="cb245-4" data-line-number="4">            <span class="dt">n_unique=</span><span class="kw">length</span>(<span class="kw">unique</span>(Fish_ID)))</a></code></pre></div>
 <pre><code>## # A tibble: 15 x 4
 ##   Diet_comp Prov_level count n_unique
 ##   &lt;chr&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
@@ -827,10 +827,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 10.2:1            50    12       12
 ## 5 10.2:1            75    12       12
 ## # … with 10 more rows</code></pre>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb253-1" data-line-number="1">eggs <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb253-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb253-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">n</span>(),</a>
-<a class="sourceLine" id="cb253-4" data-line-number="4">            <span class="dt">n_unique=</span><span class="kw">length</span>(<span class="kw">unique</span>(Fish_ID)))</a></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb247-1" data-line-number="1">eggs <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb247-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb247-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">n</span>(),</a>
+<a class="sourceLine" id="cb247-4" data-line-number="4">            <span class="dt">n_unique=</span><span class="kw">length</span>(<span class="kw">unique</span>(Fish_ID)))</a></code></pre></div>
 <pre><code>## # A tibble: 15 x 4
 ##   Diet_comp Prov_level `n()` n_unique
 ##   &lt;chr&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
@@ -840,10 +840,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 10.2:1            50    18       18
 ## 5 10.2:1            75    18       18
 ## # … with 10 more rows</code></pre>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb255-1" data-line-number="1">length_weight_condition <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb255-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb255-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">n</span>(),</a>
-<a class="sourceLine" id="cb255-4" data-line-number="4">            <span class="dt">n_unique=</span><span class="kw">length</span>(<span class="kw">unique</span>(Fish_ID)))</a></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb249-1" data-line-number="1">length_weight_condition <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb249-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb249-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">n</span>(),</a>
+<a class="sourceLine" id="cb249-4" data-line-number="4">            <span class="dt">n_unique=</span><span class="kw">length</span>(<span class="kw">unique</span>(Fish_ID)))</a></code></pre></div>
 <pre><code>## # A tibble: 15 x 4
 ##   Diet_comp Prov_level `n()` n_unique
 ##   &lt;chr&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
@@ -853,10 +853,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 10.2:1            50   400       40
 ## 5 10.2:1            75   400       40
 ## # … with 10 more rows</code></pre>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb257-1" data-line-number="1">mortality <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb257-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb257-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">n</span>(),</a>
-<a class="sourceLine" id="cb257-4" data-line-number="4">            <span class="dt">n_unique=</span><span class="kw">length</span>(<span class="kw">unique</span>(Fish_ID)))</a></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb251-1" data-line-number="1">mortality <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb251-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb251-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">n</span>(),</a>
+<a class="sourceLine" id="cb251-4" data-line-number="4">            <span class="dt">n_unique=</span><span class="kw">length</span>(<span class="kw">unique</span>(Fish_ID)))</a></code></pre></div>
 <pre><code>## # A tibble: 15 x 4
 ##   Diet_comp Prov_level `n()` n_unique
 ##   &lt;chr&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
@@ -871,72 +871,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">9.3</span> Calculate response variable(s) (if required)</h2>
 <p>The courtship and eggs datasets already contain the response variable.</p>
 <p><strong>Q22. Calculate the response variable for the change in fish length and change in body condition from the <code>length_weight_condition</code> dataset, and the time of death (or no death [censored]) from the <code>mortality</code> dataset.</strong></p>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb259-1" data-line-number="1"><span class="co">### Time of death</span></a>
-<a class="sourceLine" id="cb259-2" data-line-number="2">temp_mortality2 &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb259-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(Status<span class="op">==</span><span class="st">&quot;alive&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb259-4" data-line-number="4"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level, Sex) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb259-5" data-line-number="5"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Lifespan=</span><span class="kw">max</span>(Week))</a>
-<a class="sourceLine" id="cb259-6" data-line-number="6">last_obs &lt;-<span class="st"> </span>mortality  <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb259-7" data-line-number="7"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb259-8" data-line-number="8"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Last_sample=</span><span class="kw">max</span>(Week))</a>
-<a class="sourceLine" id="cb259-9" data-line-number="9">mortality2 &lt;-<span class="st"> </span><span class="kw">full_join</span>(temp_mortality2, last_obs) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb259-10" data-line-number="10"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Censored=</span><span class="kw">ifelse</span>(Lifespan<span class="op">==</span>Last_sample, T, F),</a>
-<a class="sourceLine" id="cb259-11" data-line-number="11">         <span class="dt">Lifespan=</span><span class="kw">ifelse</span>(<span class="kw">is.na</span>(Lifespan), <span class="dv">0</span>, Lifespan),</a>
-<a class="sourceLine" id="cb259-12" data-line-number="12">         <span class="dt">Censored=</span><span class="kw">ifelse</span>(Lifespan<span class="op">==</span><span class="dv">0</span>, <span class="ot">FALSE</span>, Censored)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb259-13" data-line-number="13"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb259-14" data-line-number="14"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>Last_sample)</a></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb253-1" data-line-number="1"><span class="co">### Time of death</span></a>
+<a class="sourceLine" id="cb253-2" data-line-number="2">temp_mortality2 &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb253-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(Status<span class="op">==</span><span class="st">&quot;alive&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb253-4" data-line-number="4"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level, Sex) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb253-5" data-line-number="5"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Lifespan=</span><span class="kw">max</span>(Week))</a>
+<a class="sourceLine" id="cb253-6" data-line-number="6">last_obs &lt;-<span class="st"> </span>mortality  <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb253-7" data-line-number="7"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb253-8" data-line-number="8"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Last_sample=</span><span class="kw">max</span>(Week))</a>
+<a class="sourceLine" id="cb253-9" data-line-number="9">mortality2 &lt;-<span class="st"> </span><span class="kw">full_join</span>(temp_mortality2, last_obs) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb253-10" data-line-number="10"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Censored=</span><span class="kw">ifelse</span>(Lifespan<span class="op">==</span>Last_sample, T, F),</a>
+<a class="sourceLine" id="cb253-11" data-line-number="11">         <span class="dt">Lifespan=</span><span class="kw">ifelse</span>(<span class="kw">is.na</span>(Lifespan), <span class="dv">0</span>, Lifespan),</a>
+<a class="sourceLine" id="cb253-12" data-line-number="12">         <span class="dt">Censored=</span><span class="kw">ifelse</span>(Lifespan<span class="op">==</span><span class="dv">0</span>, <span class="ot">FALSE</span>, Censored)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb253-13" data-line-number="13"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb253-14" data-line-number="14"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>Last_sample)</a></code></pre></div>
 <pre><code>## Joining, by = c(&quot;Fish_ID&quot;, &quot;Diet_comp&quot;, &quot;Prov_level&quot;)</code></pre>
 <p>Above, we set the eight fish that were already dead at week 1 as having a lifespan of zero.</p>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb261-1" data-line-number="1"><span class="co">### Change in length</span></a>
-<a class="sourceLine" id="cb261-2" data-line-number="2">change1 &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb261-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb261-4" data-line-number="4"><span class="st">  </span><span class="kw">do</span>(<span class="dt">m1 =</span> <span class="kw">lm</span>(Length <span class="op">~</span><span class="st"> </span>Batch, <span class="dt">data=</span>.)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb261-5" data-line-number="5"><span class="st">  </span><span class="kw">tidy</span>(m1) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb261-6" data-line-number="6"><span class="st">  </span><span class="kw">filter</span>(term<span class="op">==</span><span class="st">&quot;Batch&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb261-7" data-line-number="7"><span class="st">  </span><span class="kw">select</span>(Fish_ID, Diet_comp, Prov_level, <span class="dt">Length_change=</span>estimate)</a></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb255-1" data-line-number="1"><span class="co">### Change in length</span></a>
+<a class="sourceLine" id="cb255-2" data-line-number="2">change1 &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb255-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb255-4" data-line-number="4"><span class="st">  </span><span class="kw">do</span>(<span class="dt">m1 =</span> <span class="kw">lm</span>(Length <span class="op">~</span><span class="st"> </span>Batch, <span class="dt">data=</span>.)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb255-5" data-line-number="5"><span class="st">  </span><span class="kw">tidy</span>(m1) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb255-6" data-line-number="6"><span class="st">  </span><span class="kw">filter</span>(term<span class="op">==</span><span class="st">&quot;Batch&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb255-7" data-line-number="7"><span class="st">  </span><span class="kw">select</span>(Fish_ID, Diet_comp, Prov_level, <span class="dt">Length_change=</span>estimate)</a></code></pre></div>
 <p>Note that <code>tidy</code> silently drops NA coefficients.</p>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb262-1" data-line-number="1"><span class="co">### Change in condition</span></a>
-<a class="sourceLine" id="cb262-2" data-line-number="2">change2 &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb262-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb262-4" data-line-number="4"><span class="st">  </span><span class="kw">do</span>(<span class="dt">m1 =</span> <span class="kw">lm</span>(Cond_index <span class="op">~</span><span class="st"> </span>Batch, <span class="dt">data=</span>.)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb262-5" data-line-number="5"><span class="st">  </span><span class="kw">tidy</span>(m1) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb262-6" data-line-number="6"><span class="st">  </span><span class="kw">filter</span>(term<span class="op">==</span><span class="st">&quot;Batch&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb262-7" data-line-number="7"><span class="st">  </span><span class="kw">select</span>(Fish_ID, Diet_comp, Prov_level, <span class="dt">CI_change=</span>estimate)</a></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb256-1" data-line-number="1"><span class="co">### Change in condition</span></a>
+<a class="sourceLine" id="cb256-2" data-line-number="2">change2 &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb256-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb256-4" data-line-number="4"><span class="st">  </span><span class="kw">do</span>(<span class="dt">m1 =</span> <span class="kw">lm</span>(Cond_index <span class="op">~</span><span class="st"> </span>Batch, <span class="dt">data=</span>.)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb256-5" data-line-number="5"><span class="st">  </span><span class="kw">tidy</span>(m1) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb256-6" data-line-number="6"><span class="st">  </span><span class="kw">filter</span>(term<span class="op">==</span><span class="st">&quot;Batch&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb256-7" data-line-number="7"><span class="st">  </span><span class="kw">select</span>(Fish_ID, Diet_comp, Prov_level, <span class="dt">CI_change=</span>estimate)</a></code></pre></div>
 <p>Note that <code>tidy</code> silently drops NA coefficients.</p>
 <p><strong>Q23. Merge all the datasets.</strong></p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb263-1" data-line-number="1">dd &lt;-<span class="st"> </span><span class="kw">full_join</span>(courtship, eggs) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb263-2" data-line-number="2"><span class="st">  </span><span class="kw">full_join</span>(mortality2) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb263-3" data-line-number="3"><span class="st">  </span><span class="kw">full_join</span>(change1) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb263-4" data-line-number="4"><span class="st">  </span><span class="kw">full_join</span>(change2)</a></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb257-1" data-line-number="1">dd &lt;-<span class="st"> </span><span class="kw">full_join</span>(courtship, eggs) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb257-2" data-line-number="2"><span class="st">  </span><span class="kw">full_join</span>(mortality2) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb257-3" data-line-number="3"><span class="st">  </span><span class="kw">full_join</span>(change1) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb257-4" data-line-number="4"><span class="st">  </span><span class="kw">full_join</span>(change2)</a></code></pre></div>
 <pre><code>## Joining, by = c(&quot;Fish_ID&quot;, &quot;Family&quot;, &quot;Shelf_stack&quot;, &quot;Diet_comp&quot;, &quot;Prov_level&quot;,
 ## &quot;Fish_size&quot;)Joining, by = c(&quot;Fish_ID&quot;, &quot;Diet_comp&quot;, &quot;Prov_level&quot;)Joining, by =
 ## c(&quot;Fish_ID&quot;, &quot;Diet_comp&quot;, &quot;Prov_level&quot;)Joining, by = c(&quot;Fish_ID&quot;, &quot;Diet_comp&quot;,
 ## &quot;Prov_level&quot;)</code></pre>
 <p><strong>Q24. Bring in and merge the diet composition dataset (<code>diet_comp_treatments.csv</code>).</strong></p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb265-1" data-line-number="1">diet_comp &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/diet_comp_treatments.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb259-1" data-line-number="1">diet_comp &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/diet_comp_treatments.csv&quot;</span>)</a></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   Protein = col_double(),
 ##   Lipid = col_double(),
 ##   Diet_comp = col_character()
 ## )</code></pre>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb267-1" data-line-number="1">dd &lt;-<span class="st"> </span><span class="kw">full_join</span>(dd, diet_comp)</a></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb261-1" data-line-number="1">dd &lt;-<span class="st"> </span><span class="kw">full_join</span>(dd, diet_comp)</a></code></pre></div>
 <pre><code>## Joining, by = &quot;Diet_comp&quot;</code></pre>
 <p><strong>Q25. Reorder the <code>Diet_comp</code> variable, and make the <code>Prov_level</code> a factor with appropriate order.</strong></p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb269-1" data-line-number="1">dd &lt;-<span class="st"> </span><span class="kw">mutate</span>(dd,</a>
-<a class="sourceLine" id="cb269-2" data-line-number="2">             <span class="dt">Diet_comp =</span> <span class="kw">fct_relevel</span>(Diet_comp,</a>
-<a class="sourceLine" id="cb269-3" data-line-number="3">                                            <span class="st">&quot;1.6:1&quot;</span>,</a>
-<a class="sourceLine" id="cb269-4" data-line-number="4">                                            <span class="st">&quot;2.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb269-5" data-line-number="5">                                            <span class="st">&quot;4.6:1&quot;</span>,</a>
-<a class="sourceLine" id="cb269-6" data-line-number="6">                                            <span class="st">&quot;8.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb269-7" data-line-number="7">                                            <span class="st">&quot;10.2:1&quot;</span>),</a>
-<a class="sourceLine" id="cb269-8" data-line-number="8">             <span class="dt">Prov_level =</span> <span class="kw">fct_relevel</span>(<span class="kw">as.character</span>(Prov_level),</a>
-<a class="sourceLine" id="cb269-9" data-line-number="9">                                            <span class="st">&quot;50&quot;</span>,</a>
-<a class="sourceLine" id="cb269-10" data-line-number="10">                                            <span class="st">&quot;75&quot;</span>,</a>
-<a class="sourceLine" id="cb269-11" data-line-number="11">                                            <span class="st">&quot;100&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb263-1" data-line-number="1">dd &lt;-<span class="st"> </span><span class="kw">mutate</span>(dd,</a>
+<a class="sourceLine" id="cb263-2" data-line-number="2">             <span class="dt">Diet_comp =</span> <span class="kw">fct_relevel</span>(Diet_comp,</a>
+<a class="sourceLine" id="cb263-3" data-line-number="3">                                            <span class="st">&quot;1.6:1&quot;</span>,</a>
+<a class="sourceLine" id="cb263-4" data-line-number="4">                                            <span class="st">&quot;2.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb263-5" data-line-number="5">                                            <span class="st">&quot;4.6:1&quot;</span>,</a>
+<a class="sourceLine" id="cb263-6" data-line-number="6">                                            <span class="st">&quot;8.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb263-7" data-line-number="7">                                            <span class="st">&quot;10.2:1&quot;</span>),</a>
+<a class="sourceLine" id="cb263-8" data-line-number="8">             <span class="dt">Prov_level =</span> <span class="kw">fct_relevel</span>(<span class="kw">as.character</span>(Prov_level),</a>
+<a class="sourceLine" id="cb263-9" data-line-number="9">                                            <span class="st">&quot;50&quot;</span>,</a>
+<a class="sourceLine" id="cb263-10" data-line-number="10">                                            <span class="st">&quot;75&quot;</span>,</a>
+<a class="sourceLine" id="cb263-11" data-line-number="11">                                            <span class="st">&quot;100&quot;</span>))</a></code></pre></div>
 <p><strong>Q26. There are some irregularities in this merged dataset. Can you spot them?</strong></p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb270-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb270-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Sex <span class="op">==</span><span class="st"> &quot;Female&quot;</span>, <span class="op">!</span><span class="kw">is.na</span>(Total_court))</a></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb264-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb264-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Sex <span class="op">==</span><span class="st"> &quot;Female&quot;</span>, <span class="op">!</span><span class="kw">is.na</span>(Total_court))</a></code></pre></div>
 <pre><code>## # A tibble: 2 x 16
 ##   Fish_ID Family Shelf_stack Diet_comp Prov_level Fish_size Trial Total_court
 ##   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;       &lt;fct&gt;     &lt;fct&gt;      &lt;chr&gt;     &lt;dbl&gt;       &lt;dbl&gt;
@@ -945,8 +945,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 8 more variables: Total_egg &lt;dbl&gt;, Sex &lt;chr&gt;, Lifespan &lt;dbl&gt;,
 ## #   Censored &lt;lgl&gt;, Length_change &lt;dbl&gt;, CI_change &lt;dbl&gt;, Protein &lt;dbl&gt;,
 ## #   Lipid &lt;dbl&gt;</code></pre>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb272-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb272-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Sex <span class="op">==</span><span class="st"> &quot;Male&quot;</span>, <span class="op">!</span><span class="kw">is.na</span>(Total_egg))</a></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb266-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb266-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Sex <span class="op">==</span><span class="st"> &quot;Male&quot;</span>, <span class="op">!</span><span class="kw">is.na</span>(Total_egg))</a></code></pre></div>
 <pre><code>## # A tibble: 4 x 16
 ##   Fish_ID Family Shelf_stack Diet_comp Prov_level Fish_size Trial Total_court
 ##   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;       &lt;fct&gt;     &lt;fct&gt;      &lt;chr&gt;     &lt;dbl&gt;       &lt;dbl&gt;
@@ -958,140 +958,140 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   Censored &lt;lgl&gt;, Length_change &lt;dbl&gt;, CI_change &lt;dbl&gt;, Protein &lt;dbl&gt;,
 ## #   Lipid &lt;dbl&gt;</code></pre>
 <p><strong>Q27. Now use the versions of the datafiles that have the word “udpated” in their name.</strong></p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb274-1" data-line-number="1"><span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>())</a>
-<a class="sourceLine" id="cb274-2" data-line-number="2">mortality &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S1_updated.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb274-3" data-line-number="3">courtship &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S5_updated.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb274-4" data-line-number="4">eggs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S6_updated.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb274-5" data-line-number="5">length_weight_condition &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S15_updated.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb274-6" data-line-number="6">courtship &lt;-<span class="st"> </span>courtship <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb274-7" data-line-number="7"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, Family, Shelf_stack, <span class="dt">Diet_comp=</span>Diet,</a>
-<a class="sourceLine" id="cb274-8" data-line-number="8">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, Trial, Total_court)</a>
-<a class="sourceLine" id="cb274-9" data-line-number="9">eggs &lt;-<span class="st"> </span>eggs <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb274-10" data-line-number="10"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, Family, <span class="dt">Shelf_stack=</span>Stack_shelf, <span class="dt">Diet_comp=</span>Diet,</a>
-<a class="sourceLine" id="cb274-11" data-line-number="11">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, Total_egg)</a>
-<a class="sourceLine" id="cb274-12" data-line-number="12">length_weight_condition &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb274-13" data-line-number="13"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, Shelf_stack, <span class="dt">Diet_comp=</span>Diet, <span class="dt">Sex=</span>Sex,</a>
-<a class="sourceLine" id="cb274-14" data-line-number="14">         Batch,</a>
-<a class="sourceLine" id="cb274-15" data-line-number="15">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, <span class="dt">Length=</span>Ln, <span class="dt">Weigth=</span>Wt, <span class="dt">Cond_index=</span>CI)</a>
-<a class="sourceLine" id="cb274-16" data-line-number="16">mortality &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb274-17" data-line-number="17"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, <span class="dt">Diet_comp=</span>Diet, Sex,</a>
-<a class="sourceLine" id="cb274-18" data-line-number="18">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, <span class="dt">Week=</span>Week_F, Status)</a>
-<a class="sourceLine" id="cb274-19" data-line-number="19">courtship &lt;-<span class="st"> </span>courtship <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb274-20" data-line-number="20"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-21" data-line-number="21">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-22" data-line-number="22">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-23" data-line-number="23">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-24" data-line-number="24">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
-<a class="sourceLine" id="cb274-25" data-line-number="25">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
-<a class="sourceLine" id="cb274-26" data-line-number="26">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>))</a>
-<a class="sourceLine" id="cb274-27" data-line-number="27"></a>
-<a class="sourceLine" id="cb274-28" data-line-number="28">eggs &lt;-<span class="st"> </span>eggs <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb274-29" data-line-number="29"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-30" data-line-number="30">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-31" data-line-number="31">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-32" data-line-number="32">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-33" data-line-number="33">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
-<a class="sourceLine" id="cb274-34" data-line-number="34">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
-<a class="sourceLine" id="cb274-35" data-line-number="35">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>))</a>
-<a class="sourceLine" id="cb274-36" data-line-number="36"></a>
-<a class="sourceLine" id="cb274-37" data-line-number="37">length_weight_condition &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb274-38" data-line-number="38"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-39" data-line-number="39">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-40" data-line-number="40">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-41" data-line-number="41">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-42" data-line-number="42">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
-<a class="sourceLine" id="cb274-43" data-line-number="43">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
-<a class="sourceLine" id="cb274-44" data-line-number="44">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>),</a>
-<a class="sourceLine" id="cb274-45" data-line-number="45">         <span class="dt">Sex =</span> <span class="kw">case_when</span>(Sex <span class="op">==</span><span class="st"> &quot;M&quot;</span> <span class="op">~</span><span class="st"> &quot;Male&quot;</span>,</a>
-<a class="sourceLine" id="cb274-46" data-line-number="46">                         Sex <span class="op">==</span><span class="st"> &quot;F&quot;</span> <span class="op">~</span><span class="st"> &quot;Female&quot;</span>))</a>
-<a class="sourceLine" id="cb274-47" data-line-number="47"></a>
-<a class="sourceLine" id="cb274-48" data-line-number="48">mortality &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb274-49" data-line-number="49"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-50" data-line-number="50">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-51" data-line-number="51">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-52" data-line-number="52">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb274-53" data-line-number="53">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
-<a class="sourceLine" id="cb274-54" data-line-number="54">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
-<a class="sourceLine" id="cb274-55" data-line-number="55">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>),</a>
-<a class="sourceLine" id="cb274-56" data-line-number="56">         <span class="dt">Sex =</span> <span class="kw">case_when</span>(Sex <span class="op">==</span><span class="st"> &quot;M&quot;</span> <span class="op">~</span><span class="st"> &quot;Male&quot;</span>,</a>
-<a class="sourceLine" id="cb274-57" data-line-number="57">                         Sex <span class="op">==</span><span class="st"> &quot;F&quot;</span> <span class="op">~</span><span class="st"> &quot;Female&quot;</span>),</a>
-<a class="sourceLine" id="cb274-58" data-line-number="58">         <span class="dt">Status =</span> <span class="kw">case_when</span>(Status <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;alive&quot;</span>,</a>
-<a class="sourceLine" id="cb274-59" data-line-number="59">                            Status <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;dead&quot;</span>))</a>
-<a class="sourceLine" id="cb274-60" data-line-number="60"></a>
-<a class="sourceLine" id="cb274-61" data-line-number="61"><span class="co">## Check for the odd duplicate</span></a>
-<a class="sourceLine" id="cb274-62" data-line-number="62">check &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb274-63" data-line-number="63"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb274-64" data-line-number="64"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">check =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Week))<span class="op">==</span><span class="kw">max</span>(Week))</a>
-<a class="sourceLine" id="cb274-65" data-line-number="65">check <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb274-66" data-line-number="66"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>check)</a></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb268-1" data-line-number="1"><span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>())</a>
+<a class="sourceLine" id="cb268-2" data-line-number="2">mortality &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S1_updated.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb268-3" data-line-number="3">courtship &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S5_updated.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb268-4" data-line-number="4">eggs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S6_updated.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb268-5" data-line-number="5">length_weight_condition &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/Moatt_et_al_Data_S15_updated.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb268-6" data-line-number="6">courtship &lt;-<span class="st"> </span>courtship <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb268-7" data-line-number="7"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, Family, Shelf_stack, <span class="dt">Diet_comp=</span>Diet,</a>
+<a class="sourceLine" id="cb268-8" data-line-number="8">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, Trial, Total_court)</a>
+<a class="sourceLine" id="cb268-9" data-line-number="9">eggs &lt;-<span class="st"> </span>eggs <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb268-10" data-line-number="10"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, Family, <span class="dt">Shelf_stack=</span>Stack_shelf, <span class="dt">Diet_comp=</span>Diet,</a>
+<a class="sourceLine" id="cb268-11" data-line-number="11">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, Total_egg)</a>
+<a class="sourceLine" id="cb268-12" data-line-number="12">length_weight_condition &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb268-13" data-line-number="13"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, Shelf_stack, <span class="dt">Diet_comp=</span>Diet, <span class="dt">Sex=</span>Sex,</a>
+<a class="sourceLine" id="cb268-14" data-line-number="14">         Batch,</a>
+<a class="sourceLine" id="cb268-15" data-line-number="15">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, <span class="dt">Length=</span>Ln, <span class="dt">Weigth=</span>Wt, <span class="dt">Cond_index=</span>CI)</a>
+<a class="sourceLine" id="cb268-16" data-line-number="16">mortality &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb268-17" data-line-number="17"><span class="st">  </span><span class="kw">select</span>(<span class="dt">Fish_ID=</span>FID, <span class="dt">Diet_comp=</span>Diet, Sex,</a>
+<a class="sourceLine" id="cb268-18" data-line-number="18">         <span class="dt">Prov_level=</span>Level, <span class="dt">Fish_size=</span>Size, <span class="dt">Week=</span>Week_F, Status)</a>
+<a class="sourceLine" id="cb268-19" data-line-number="19">courtship &lt;-<span class="st"> </span>courtship <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb268-20" data-line-number="20"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-21" data-line-number="21">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-22" data-line-number="22">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-23" data-line-number="23">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-24" data-line-number="24">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
+<a class="sourceLine" id="cb268-25" data-line-number="25">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
+<a class="sourceLine" id="cb268-26" data-line-number="26">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>))</a>
+<a class="sourceLine" id="cb268-27" data-line-number="27"></a>
+<a class="sourceLine" id="cb268-28" data-line-number="28">eggs &lt;-<span class="st"> </span>eggs <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb268-29" data-line-number="29"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-30" data-line-number="30">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-31" data-line-number="31">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-32" data-line-number="32">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-33" data-line-number="33">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
+<a class="sourceLine" id="cb268-34" data-line-number="34">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
+<a class="sourceLine" id="cb268-35" data-line-number="35">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>))</a>
+<a class="sourceLine" id="cb268-36" data-line-number="36"></a>
+<a class="sourceLine" id="cb268-37" data-line-number="37">length_weight_condition &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb268-38" data-line-number="38"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-39" data-line-number="39">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-40" data-line-number="40">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-41" data-line-number="41">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-42" data-line-number="42">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
+<a class="sourceLine" id="cb268-43" data-line-number="43">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
+<a class="sourceLine" id="cb268-44" data-line-number="44">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>),</a>
+<a class="sourceLine" id="cb268-45" data-line-number="45">         <span class="dt">Sex =</span> <span class="kw">case_when</span>(Sex <span class="op">==</span><span class="st"> &quot;M&quot;</span> <span class="op">~</span><span class="st"> &quot;Male&quot;</span>,</a>
+<a class="sourceLine" id="cb268-46" data-line-number="46">                         Sex <span class="op">==</span><span class="st"> &quot;F&quot;</span> <span class="op">~</span><span class="st"> &quot;Female&quot;</span>))</a>
+<a class="sourceLine" id="cb268-47" data-line-number="47"></a>
+<a class="sourceLine" id="cb268-48" data-line-number="48">mortality &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb268-49" data-line-number="49"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Diet_comp =</span> <span class="kw">case_when</span>(Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;10.2:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-50" data-line-number="50">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">~</span><span class="st"> &quot;4.6:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-51" data-line-number="51">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">~</span><span class="st"> &quot;2.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-52" data-line-number="52">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">4</span> <span class="op">~</span><span class="st"> &quot;8.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb268-53" data-line-number="53">                               Diet_comp <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;1.6:1&quot;</span>),</a>
+<a class="sourceLine" id="cb268-54" data-line-number="54">         <span class="dt">Fish_size =</span> <span class="kw">case_when</span>(Fish_size <span class="op">==</span><span class="st"> &quot;S&quot;</span> <span class="op">~</span><span class="st"> &quot;Small&quot;</span>,</a>
+<a class="sourceLine" id="cb268-55" data-line-number="55">                               Fish_size <span class="op">==</span><span class="st"> &quot;L&quot;</span> <span class="op">~</span><span class="st"> &quot;Large&quot;</span>),</a>
+<a class="sourceLine" id="cb268-56" data-line-number="56">         <span class="dt">Sex =</span> <span class="kw">case_when</span>(Sex <span class="op">==</span><span class="st"> &quot;M&quot;</span> <span class="op">~</span><span class="st"> &quot;Male&quot;</span>,</a>
+<a class="sourceLine" id="cb268-57" data-line-number="57">                         Sex <span class="op">==</span><span class="st"> &quot;F&quot;</span> <span class="op">~</span><span class="st"> &quot;Female&quot;</span>),</a>
+<a class="sourceLine" id="cb268-58" data-line-number="58">         <span class="dt">Status =</span> <span class="kw">case_when</span>(Status <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;alive&quot;</span>,</a>
+<a class="sourceLine" id="cb268-59" data-line-number="59">                            Status <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> &quot;dead&quot;</span>))</a>
+<a class="sourceLine" id="cb268-60" data-line-number="60"></a>
+<a class="sourceLine" id="cb268-61" data-line-number="61"><span class="co">## Check for the odd duplicate</span></a>
+<a class="sourceLine" id="cb268-62" data-line-number="62">check &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb268-63" data-line-number="63"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb268-64" data-line-number="64"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">check =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Week))<span class="op">==</span><span class="kw">max</span>(Week))</a>
+<a class="sourceLine" id="cb268-65" data-line-number="65">check <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb268-66" data-line-number="66"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>check)</a></code></pre></div>
 <pre><code>## # A tibble: 0 x 2
 ## # … with 2 variables: Fish_ID &lt;chr&gt;, check &lt;lgl&gt;</code></pre>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb276-1" data-line-number="1"><span class="co">## no rows... excellent</span></a>
-<a class="sourceLine" id="cb276-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb276-3" data-line-number="3"><span class="co">### Time of death</span></a>
-<a class="sourceLine" id="cb276-4" data-line-number="4">temp_mortality2 &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-5" data-line-number="5"><span class="st">  </span><span class="kw">filter</span>(Status<span class="op">==</span><span class="st">&quot;alive&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-6" data-line-number="6"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level, Sex) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-7" data-line-number="7"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Lifespan=</span><span class="kw">max</span>(Week))</a>
-<a class="sourceLine" id="cb276-8" data-line-number="8">last_obs &lt;-<span class="st"> </span>mortality  <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-9" data-line-number="9"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-10" data-line-number="10"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Last_sample=</span><span class="kw">max</span>(Week))</a>
-<a class="sourceLine" id="cb276-11" data-line-number="11">mortality2 &lt;-<span class="st"> </span><span class="kw">full_join</span>(temp_mortality2, last_obs) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-12" data-line-number="12"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Censored=</span><span class="kw">ifelse</span>(Lifespan<span class="op">==</span>Last_sample, T, F),</a>
-<a class="sourceLine" id="cb276-13" data-line-number="13">         <span class="dt">Lifespan=</span><span class="kw">ifelse</span>(<span class="kw">is.na</span>(Lifespan), <span class="dv">0</span>, Lifespan),</a>
-<a class="sourceLine" id="cb276-14" data-line-number="14">         <span class="dt">Censored=</span><span class="kw">ifelse</span>(Lifespan<span class="op">==</span><span class="dv">0</span>, <span class="ot">FALSE</span>, Censored)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-15" data-line-number="15"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-16" data-line-number="16"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>Last_sample)</a>
-<a class="sourceLine" id="cb276-17" data-line-number="17"></a>
-<a class="sourceLine" id="cb276-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb276-19" data-line-number="19"><span class="co">### Change in length</span></a>
-<a class="sourceLine" id="cb276-20" data-line-number="20">change1 &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-21" data-line-number="21"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-22" data-line-number="22"><span class="st">  </span><span class="kw">do</span>(<span class="dt">m1 =</span> <span class="kw">lm</span>(Length <span class="op">~</span><span class="st"> </span>Batch, <span class="dt">data=</span>.)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-23" data-line-number="23"><span class="st">  </span><span class="kw">tidy</span>(m1) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-24" data-line-number="24"><span class="st">  </span><span class="kw">filter</span>(term<span class="op">==</span><span class="st">&quot;Batch&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-25" data-line-number="25"><span class="st">  </span><span class="kw">select</span>(Fish_ID, Diet_comp, Prov_level, <span class="dt">Length_change=</span>estimate)</a>
-<a class="sourceLine" id="cb276-26" data-line-number="26"></a>
-<a class="sourceLine" id="cb276-27" data-line-number="27"></a>
-<a class="sourceLine" id="cb276-28" data-line-number="28"><span class="co">### Change in condition</span></a>
-<a class="sourceLine" id="cb276-29" data-line-number="29">change2 &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-30" data-line-number="30"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-31" data-line-number="31"><span class="st">  </span><span class="kw">do</span>(<span class="dt">m1 =</span> <span class="kw">lm</span>(Cond_index <span class="op">~</span><span class="st"> </span>Batch, <span class="dt">data=</span>.)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-32" data-line-number="32"><span class="st">  </span><span class="kw">tidy</span>(m1) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-33" data-line-number="33"><span class="st">  </span><span class="kw">filter</span>(term<span class="op">==</span><span class="st">&quot;Batch&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-34" data-line-number="34"><span class="st">  </span><span class="kw">select</span>(Fish_ID, Diet_comp, Prov_level, <span class="dt">CI_change=</span>estimate)</a>
-<a class="sourceLine" id="cb276-35" data-line-number="35"></a>
-<a class="sourceLine" id="cb276-36" data-line-number="36">dd &lt;-<span class="st"> </span><span class="kw">full_join</span>(courtship, eggs) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-37" data-line-number="37"><span class="st">  </span><span class="kw">full_join</span>(mortality2) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-38" data-line-number="38"><span class="st">  </span><span class="kw">full_join</span>(change1) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-39" data-line-number="39"><span class="st">  </span><span class="kw">full_join</span>(change2)</a>
-<a class="sourceLine" id="cb276-40" data-line-number="40"></a>
-<a class="sourceLine" id="cb276-41" data-line-number="41">diet_comp &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/diet_comp_treatments.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb276-42" data-line-number="42">dd &lt;-<span class="st"> </span><span class="kw">full_join</span>(dd, diet_comp)</a>
-<a class="sourceLine" id="cb276-43" data-line-number="43"></a>
-<a class="sourceLine" id="cb276-44" data-line-number="44">dd &lt;-<span class="st"> </span><span class="kw">mutate</span>(dd,</a>
-<a class="sourceLine" id="cb276-45" data-line-number="45">             <span class="dt">Diet_comp =</span> <span class="kw">fct_relevel</span>(Diet_comp,</a>
-<a class="sourceLine" id="cb276-46" data-line-number="46">                                     <span class="st">&quot;1.6:1&quot;</span>,</a>
-<a class="sourceLine" id="cb276-47" data-line-number="47">                                     <span class="st">&quot;2.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb276-48" data-line-number="48">                                     <span class="st">&quot;4.6:1&quot;</span>,</a>
-<a class="sourceLine" id="cb276-49" data-line-number="49">                                     <span class="st">&quot;8.5:1&quot;</span>,</a>
-<a class="sourceLine" id="cb276-50" data-line-number="50">                                     <span class="st">&quot;10.2:1&quot;</span>),</a>
-<a class="sourceLine" id="cb276-51" data-line-number="51">             <span class="dt">Prov_level =</span> <span class="kw">fct_relevel</span>(<span class="kw">as.character</span>(Prov_level),</a>
-<a class="sourceLine" id="cb276-52" data-line-number="52">                                      <span class="st">&quot;50&quot;</span>,</a>
-<a class="sourceLine" id="cb276-53" data-line-number="53">                                      <span class="st">&quot;75&quot;</span>,</a>
-<a class="sourceLine" id="cb276-54" data-line-number="54">                                      <span class="st">&quot;100&quot;</span>))</a>
-<a class="sourceLine" id="cb276-55" data-line-number="55"></a>
-<a class="sourceLine" id="cb276-56" data-line-number="56"><span class="co">## Check for fish doing what they shouldn&#39;t be..</span></a>
-<a class="sourceLine" id="cb276-57" data-line-number="57">dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb276-58" data-line-number="58"><span class="st">  </span><span class="kw">filter</span>(Sex <span class="op">==</span><span class="st"> &quot;Female&quot;</span>, <span class="op">!</span><span class="kw">is.na</span>(Total_court))</a></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb270-1" data-line-number="1"><span class="co">## no rows... excellent</span></a>
+<a class="sourceLine" id="cb270-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb270-3" data-line-number="3"><span class="co">### Time of death</span></a>
+<a class="sourceLine" id="cb270-4" data-line-number="4">temp_mortality2 &lt;-<span class="st"> </span>mortality <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-5" data-line-number="5"><span class="st">  </span><span class="kw">filter</span>(Status<span class="op">==</span><span class="st">&quot;alive&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-6" data-line-number="6"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level, Sex) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-7" data-line-number="7"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Lifespan=</span><span class="kw">max</span>(Week))</a>
+<a class="sourceLine" id="cb270-8" data-line-number="8">last_obs &lt;-<span class="st"> </span>mortality  <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-9" data-line-number="9"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-10" data-line-number="10"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Last_sample=</span><span class="kw">max</span>(Week))</a>
+<a class="sourceLine" id="cb270-11" data-line-number="11">mortality2 &lt;-<span class="st"> </span><span class="kw">full_join</span>(temp_mortality2, last_obs) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-12" data-line-number="12"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Censored=</span><span class="kw">ifelse</span>(Lifespan<span class="op">==</span>Last_sample, T, F),</a>
+<a class="sourceLine" id="cb270-13" data-line-number="13">         <span class="dt">Lifespan=</span><span class="kw">ifelse</span>(<span class="kw">is.na</span>(Lifespan), <span class="dv">0</span>, Lifespan),</a>
+<a class="sourceLine" id="cb270-14" data-line-number="14">         <span class="dt">Censored=</span><span class="kw">ifelse</span>(Lifespan<span class="op">==</span><span class="dv">0</span>, <span class="ot">FALSE</span>, Censored)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-15" data-line-number="15"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-16" data-line-number="16"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>Last_sample)</a>
+<a class="sourceLine" id="cb270-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb270-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb270-19" data-line-number="19"><span class="co">### Change in length</span></a>
+<a class="sourceLine" id="cb270-20" data-line-number="20">change1 &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-21" data-line-number="21"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-22" data-line-number="22"><span class="st">  </span><span class="kw">do</span>(<span class="dt">m1 =</span> <span class="kw">lm</span>(Length <span class="op">~</span><span class="st"> </span>Batch, <span class="dt">data=</span>.)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-23" data-line-number="23"><span class="st">  </span><span class="kw">tidy</span>(m1) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-24" data-line-number="24"><span class="st">  </span><span class="kw">filter</span>(term<span class="op">==</span><span class="st">&quot;Batch&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-25" data-line-number="25"><span class="st">  </span><span class="kw">select</span>(Fish_ID, Diet_comp, Prov_level, <span class="dt">Length_change=</span>estimate)</a>
+<a class="sourceLine" id="cb270-26" data-line-number="26"></a>
+<a class="sourceLine" id="cb270-27" data-line-number="27"></a>
+<a class="sourceLine" id="cb270-28" data-line-number="28"><span class="co">### Change in condition</span></a>
+<a class="sourceLine" id="cb270-29" data-line-number="29">change2 &lt;-<span class="st"> </span>length_weight_condition <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-30" data-line-number="30"><span class="st">  </span><span class="kw">group_by</span>(Fish_ID, Diet_comp, Prov_level) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-31" data-line-number="31"><span class="st">  </span><span class="kw">do</span>(<span class="dt">m1 =</span> <span class="kw">lm</span>(Cond_index <span class="op">~</span><span class="st"> </span>Batch, <span class="dt">data=</span>.)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-32" data-line-number="32"><span class="st">  </span><span class="kw">tidy</span>(m1) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-33" data-line-number="33"><span class="st">  </span><span class="kw">filter</span>(term<span class="op">==</span><span class="st">&quot;Batch&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-34" data-line-number="34"><span class="st">  </span><span class="kw">select</span>(Fish_ID, Diet_comp, Prov_level, <span class="dt">CI_change=</span>estimate)</a>
+<a class="sourceLine" id="cb270-35" data-line-number="35"></a>
+<a class="sourceLine" id="cb270-36" data-line-number="36">dd &lt;-<span class="st"> </span><span class="kw">full_join</span>(courtship, eggs) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-37" data-line-number="37"><span class="st">  </span><span class="kw">full_join</span>(mortality2) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-38" data-line-number="38"><span class="st">  </span><span class="kw">full_join</span>(change1) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-39" data-line-number="39"><span class="st">  </span><span class="kw">full_join</span>(change2)</a>
+<a class="sourceLine" id="cb270-40" data-line-number="40"></a>
+<a class="sourceLine" id="cb270-41" data-line-number="41">diet_comp &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/diet_comp_treatments.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb270-42" data-line-number="42">dd &lt;-<span class="st"> </span><span class="kw">full_join</span>(dd, diet_comp)</a>
+<a class="sourceLine" id="cb270-43" data-line-number="43"></a>
+<a class="sourceLine" id="cb270-44" data-line-number="44">dd &lt;-<span class="st"> </span><span class="kw">mutate</span>(dd,</a>
+<a class="sourceLine" id="cb270-45" data-line-number="45">             <span class="dt">Diet_comp =</span> <span class="kw">fct_relevel</span>(Diet_comp,</a>
+<a class="sourceLine" id="cb270-46" data-line-number="46">                                     <span class="st">&quot;1.6:1&quot;</span>,</a>
+<a class="sourceLine" id="cb270-47" data-line-number="47">                                     <span class="st">&quot;2.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb270-48" data-line-number="48">                                     <span class="st">&quot;4.6:1&quot;</span>,</a>
+<a class="sourceLine" id="cb270-49" data-line-number="49">                                     <span class="st">&quot;8.5:1&quot;</span>,</a>
+<a class="sourceLine" id="cb270-50" data-line-number="50">                                     <span class="st">&quot;10.2:1&quot;</span>),</a>
+<a class="sourceLine" id="cb270-51" data-line-number="51">             <span class="dt">Prov_level =</span> <span class="kw">fct_relevel</span>(<span class="kw">as.character</span>(Prov_level),</a>
+<a class="sourceLine" id="cb270-52" data-line-number="52">                                      <span class="st">&quot;50&quot;</span>,</a>
+<a class="sourceLine" id="cb270-53" data-line-number="53">                                      <span class="st">&quot;75&quot;</span>,</a>
+<a class="sourceLine" id="cb270-54" data-line-number="54">                                      <span class="st">&quot;100&quot;</span>))</a>
+<a class="sourceLine" id="cb270-55" data-line-number="55"></a>
+<a class="sourceLine" id="cb270-56" data-line-number="56"><span class="co">## Check for fish doing what they shouldn&#39;t be..</span></a>
+<a class="sourceLine" id="cb270-57" data-line-number="57">dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb270-58" data-line-number="58"><span class="st">  </span><span class="kw">filter</span>(Sex <span class="op">==</span><span class="st"> &quot;Female&quot;</span>, <span class="op">!</span><span class="kw">is.na</span>(Total_court))</a></code></pre></div>
 <pre><code>## # A tibble: 0 x 16
 ## # … with 16 variables: Fish_ID &lt;chr&gt;, Family &lt;chr&gt;, Shelf_stack &lt;chr&gt;,
 ## #   Diet_comp &lt;fct&gt;, Prov_level &lt;fct&gt;, Fish_size &lt;chr&gt;, Trial &lt;dbl&gt;,
 ## #   Total_court &lt;dbl&gt;, Total_egg &lt;dbl&gt;, Sex &lt;chr&gt;, Lifespan &lt;dbl&gt;,
 ## #   Censored &lt;lgl&gt;, Length_change &lt;dbl&gt;, CI_change &lt;dbl&gt;, Protein &lt;dbl&gt;,
 ## #   Lipid &lt;dbl&gt;</code></pre>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb278-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb278-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Sex <span class="op">==</span><span class="st"> &quot;Male&quot;</span>, <span class="op">!</span><span class="kw">is.na</span>(Total_egg))</a></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb272-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb272-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Sex <span class="op">==</span><span class="st"> &quot;Male&quot;</span>, <span class="op">!</span><span class="kw">is.na</span>(Total_egg))</a></code></pre></div>
 <pre><code>## # A tibble: 0 x 16
 ## # … with 16 variables: Fish_ID &lt;chr&gt;, Family &lt;chr&gt;, Shelf_stack &lt;chr&gt;,
 ## #   Diet_comp &lt;fct&gt;, Prov_level &lt;fct&gt;, Fish_size &lt;chr&gt;, Trial &lt;dbl&gt;,
@@ -1100,76 +1100,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   Lipid &lt;dbl&gt;</code></pre>
 <p>Excellent… there are no odd duplicates, no male fish laying eggs, and no female fish engaging in courtship.</p>
 <p>Q28. Write a few sentences about the distribution of each of the five response variables.</p>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb280-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb280-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb280-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Total_court))</a></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb274-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb274-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb274-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Total_court))</a></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 369 rows containing non-finite values (stat_bin).</code></pre>
-<p><img src="insights_website_files/figure-html/unnamed-chunk-183-1.svg" width="336" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb283-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb283-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb283-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Total_egg))</a></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-176-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb277-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb277-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb277-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Total_egg))</a></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 328 rows containing non-finite values (stat_bin).</code></pre>
-<p><img src="insights_website_files/figure-html/unnamed-chunk-183-2.svg" width="336" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb286-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb286-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb286-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Lifespan))</a></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-176-2.svg" width="336" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb280-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb280-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb280-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Lifespan))</a></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="insights_website_files/figure-html/unnamed-chunk-183-3.svg" width="336" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb288-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb288-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb288-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Length_change))</a></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## Warning: Removed 26 rows containing non-finite values (stat_bin).</code></pre>
-<p><img src="insights_website_files/figure-html/unnamed-chunk-183-4.svg" width="336" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb291-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb291-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb291-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x=</span>CI_change))</a></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-176-3.svg" width="336" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb282-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb282-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb282-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Length_change))</a></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 26 rows containing non-finite values (stat_bin).</code></pre>
-<p><img src="insights_website_files/figure-html/unnamed-chunk-183-5.svg" width="336" style="display: block; margin: auto;" /></p>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-176-4.svg" width="336" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb285-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb285-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb285-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x=</span>CI_change))</a></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 26 rows containing non-finite values (stat_bin).</code></pre>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-176-5.svg" width="336" style="display: block; margin: auto;" /></p>
 </div>
 <div id="inspect-relationships-1" class="section level2">
 <h2><span class="header-section-number">9.4</span> Inspect relationships</h2>
 <p><strong>Q29. Confirm in a graph the stated result: “Male mortality risk was lowest on intermediate lipid intakes”.</strong></p>
-<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb294-1" data-line-number="1">dd &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb294-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">period=</span><span class="kw">cut</span>(Lifespan, <span class="dt">breaks=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">20</span>, <span class="dv">60</span>, <span class="dv">106</span>, <span class="dv">120</span>)))</a>
-<a class="sourceLine" id="cb294-3" data-line-number="3">dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb294-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(Sex<span class="op">==</span><span class="st">&quot;Male&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb294-5" data-line-number="5"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb294-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Lipid, <span class="dt">y=</span>Lifespan, <span class="dt">col=</span>Prov_level),</a>
-<a class="sourceLine" id="cb294-7" data-line-number="7">             <span class="dt">position =</span> <span class="kw">position_jitterdodge</span>(<span class="dt">jitter.width=</span><span class="fl">0.05</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb294-8" data-line-number="8"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>period, <span class="dt">nrow=</span><span class="dv">3</span>)</a></code></pre></div>
-<p><img src="insights_website_files/figure-html/unnamed-chunk-184-1.svg" width="336" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb295-1" data-line-number="1">dd <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Sex<span class="op">==</span><span class="st">&quot;Male&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb295-2" data-line-number="2"><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Lipid, <span class="dt">y=</span>Lifespan, <span class="dt">col=</span>Prov_level)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb295-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">position =</span> <span class="kw">position_jitterdodge</span>(<span class="dt">jitter.width=</span><span class="fl">0.05</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb295-4" data-line-number="4"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>period, <span class="dt">nrow=</span><span class="dv">3</span>)</a></code></pre></div>
-<p><img src="insights_website_files/figure-html/unnamed-chunk-185-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb288-1" data-line-number="1">dd &lt;-<span class="st"> </span>dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb288-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">period=</span><span class="kw">cut</span>(Lifespan, <span class="dt">breaks=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">20</span>, <span class="dv">60</span>, <span class="dv">106</span>, <span class="dv">120</span>)))</a>
+<a class="sourceLine" id="cb288-3" data-line-number="3">dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb288-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(Sex<span class="op">==</span><span class="st">&quot;Male&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb288-5" data-line-number="5"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb288-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Lipid, <span class="dt">y=</span>Lifespan, <span class="dt">col=</span>Prov_level),</a>
+<a class="sourceLine" id="cb288-7" data-line-number="7">             <span class="dt">position =</span> <span class="kw">position_jitterdodge</span>(<span class="dt">jitter.width=</span><span class="fl">0.05</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb288-8" data-line-number="8"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>period, <span class="dt">nrow=</span><span class="dv">3</span>)</a></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-177-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb289-1" data-line-number="1">dd <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Sex<span class="op">==</span><span class="st">&quot;Male&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb289-2" data-line-number="2"><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Lipid, <span class="dt">y=</span>Lifespan, <span class="dt">col=</span>Prov_level)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb289-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">position =</span> <span class="kw">position_jitterdodge</span>(<span class="dt">jitter.width=</span><span class="fl">0.05</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb289-4" data-line-number="4"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>period, <span class="dt">nrow=</span><span class="dv">3</span>)</a></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-178-1.svg" width="336" style="display: block; margin: auto;" /></p>
 <p>Q30. Confirm in a graph the stated result: “Female risk was generally reduced by low protein intakes.”</p>
-<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb296-1" data-line-number="1">dd <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb296-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Sex<span class="op">==</span><span class="st">&quot;Female&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb296-3" data-line-number="3"><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb296-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Protein, <span class="dt">y=</span>Lifespan, <span class="dt">col=</span>Prov_level),</a>
-<a class="sourceLine" id="cb296-5" data-line-number="5">             <span class="dt">position =</span> <span class="kw">position_jitterdodge</span>(<span class="dt">jitter.width=</span><span class="fl">0.05</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb296-6" data-line-number="6"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>period, <span class="dt">nrow=</span><span class="dv">3</span>)</a></code></pre></div>
-<p><img src="insights_website_files/figure-html/unnamed-chunk-186-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb290-1" data-line-number="1">dd <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb290-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Sex<span class="op">==</span><span class="st">&quot;Female&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb290-3" data-line-number="3"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb290-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Protein, <span class="dt">y=</span>Lifespan, <span class="dt">col=</span>Prov_level),</a>
+<a class="sourceLine" id="cb290-5" data-line-number="5">             <span class="dt">position =</span> <span class="kw">position_jitterdodge</span>(<span class="dt">jitter.width=</span><span class="fl">0.05</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb290-6" data-line-number="6"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>period, <span class="dt">nrow=</span><span class="dv">3</span>)</a></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-179-1.svg" width="336" style="display: block; margin: auto;" /></p>
 <p>Q31. Confirm in a graph the stated result: “The effect of macronutrient intake on reproduction was similar between the sexes, with high protein intakes maximizing reproduction.”</p>
-<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb297-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb297-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Sex<span class="op">==</span><span class="st">&quot;Male&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb297-3" data-line-number="3"><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb297-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Protein, <span class="dt">y=</span>Total_court, <span class="dt">col=</span>Prov_level),</a>
-<a class="sourceLine" id="cb297-5" data-line-number="5">             <span class="dt">position =</span> <span class="kw">position_jitterdodge</span>(<span class="dt">jitter.width=</span><span class="fl">0.05</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb291-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb291-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Sex<span class="op">==</span><span class="st">&quot;Male&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb291-3" data-line-number="3"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb291-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Protein, <span class="dt">y=</span>Total_court, <span class="dt">col=</span>Prov_level),</a>
+<a class="sourceLine" id="cb291-5" data-line-number="5">             <span class="dt">position =</span> <span class="kw">position_jitterdodge</span>(<span class="dt">jitter.width=</span><span class="fl">0.05</span>))</a></code></pre></div>
 <pre><code>## Warning: Removed 65 rows containing missing values (geom_point).</code></pre>
-<p><img src="insights_website_files/figure-html/unnamed-chunk-187-1.svg" width="336" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb299-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb299-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Sex<span class="op">==</span><span class="st">&quot;Female&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb299-3" data-line-number="3"><span class="kw">ggplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb299-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Protein, <span class="dt">y=</span>Total_egg, <span class="dt">col=</span>Prov_level), <span class="dt">position =</span> <span class="kw">position_jitterdodge</span>(<span class="dt">jitter.width=</span><span class="fl">0.2</span>, <span class="dt">dodge.width =</span> <span class="dv">5</span>))</a></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-180-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb293-1" data-line-number="1">dd <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb293-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(Sex<span class="op">==</span><span class="st">&quot;Female&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb293-3" data-line-number="3"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb293-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Protein, <span class="dt">y=</span>Total_egg, <span class="dt">col=</span>Prov_level), <span class="dt">position =</span> <span class="kw">position_jitterdodge</span>(<span class="dt">jitter.width=</span><span class="fl">0.2</span>, <span class="dt">dodge.width =</span> <span class="dv">5</span>))</a></code></pre></div>
 <pre><code>## Warning: position_jitterdodge requires non-overlapping x intervals</code></pre>
 <pre><code>## Warning: Removed 30 rows containing missing values (geom_point).</code></pre>
-<p><img src="insights_website_files/figure-html/unnamed-chunk-188-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-181-1.svg" width="336" style="display: block; margin: auto;" /></p>
 </div>
 <div id="below-are-lists-of-variables-in-each-of-the-four-used-datasets." class="section level2">
 <h2><span class="header-section-number">9.5</span> Below are lists of variables in each of the four used datasets.</h2>

@@ -24,7 +24,7 @@
 <meta name="author" content="Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs" />
 
 
-<meta name="date" content="2020-03-26" />
+<meta name="date" content="2020-03-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -146,7 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a><ul>
 <li class="chapter" data-level="3.1" data-path="questions-exercises.html"><a href="questions-exercises.html#preface"><i class="fa fa-check"></i><b>3.1</b> Preface</a></li>
-<li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1"><i class="fa fa-check"></i><b>3.2</b> Chapter 1</a></li>
+<li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1-introduction"><i class="fa fa-check"></i><b>3.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="3.3" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-2-getting-acquainted"><i class="fa fa-check"></i><b>3.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="3.4" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-3-workflow-demonstrationpart-1"><i class="fa fa-check"></i><b>3.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="3.5" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-4-workflow-demonstrationpart-2"><i class="fa fa-check"></i><b>3.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
@@ -330,7 +330,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a><ul>
 <li class="chapter" data-level="14.1" data-path="answers.html"><a href="answers.html#preface-1"><i class="fa fa-check"></i><b>14.1</b> Preface</a></li>
-<li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
+<li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction-1"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="14.3" data-path="answers.html"><a href="answers.html#chapter-2-getting-acquainted-1"><i class="fa fa-check"></i><b>14.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="14.4" data-path="answers.html"><a href="answers.html#chapter-3-workflow-demonstrationpart-1-1"><i class="fa fa-check"></i><b>14.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="14.5" data-path="answers.html"><a href="answers.html#chapter-4-workflow-demonstrationpart-2-1"><i class="fa fa-check"></i><b>14.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
@@ -382,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Q0.8</strong> Andrew.</p>
 <p><strong>Q0.9</strong> Dylan.</p>
 </div>
-<div id="chapter-1-introduction" class="section level2">
+<div id="chapter-1-introduction-1" class="section level2">
 <h2><span class="header-section-number">14.2</span> Chapter 1 (Introduction)</h2>
 <p><strong>Q1.1</strong> Yes, it is possible to get insights from data without all these things. And we think doing so is a great starting point to learn fundamental skills for getting insights from data. Getting insights from more complex and larger datasets than used in the book can, however, be greatly assisted by statistical models, machine learning, and many other more advanced methods.</p>
 <p><strong>Q1.2</strong> We will focus on important characteristics of the data and the patterns in it. We are more likely to think about the strength of and practical importance of patterns in the data. We are less likely to focus on statistical significance at the expense of everything else.</p>
@@ -420,6 +420,108 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="chapter-3-workflow-demonstrationpart-1-1" class="section level2">
 <h2><span class="header-section-number">14.4</span> Chapter 3 (Workflow Demonstration–Part 1)</h2>
+<p><strong>Q3.1</strong>. <code>Bat_ID</code> is numeric, but these are identities (i.e. names). They could just as well be words. Leaving them as numbers could allow us to do something stupid, like involving them in a calculation. Using numbers in such situation can also result in <code>ggplot</code> not doing what we’d like, for example would lead to a colour gradient rather than discrete colours if we mapped the numerical variable to the colour aesthetic.</p>
+<p><strong>Q3.2</strong> Get the number of bats caught on each date with a <code>group_by</code> <code>Bat_ID</code> and <code>Date_proper</code> piped into a <code>summarise</code> to get the unique <code>Bat_ID</code>s, then make another <code>group_by</code> but this time on the <code>Date_proper</code> variable and use the <code>n()</code> function to count the number of bats per date:</p>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb317-1" data-line-number="1">bats_per_date &lt;-<span class="st"> </span>bats <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb317-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Bat_ID, Date_proper) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb317-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Unique_Bat_ID =</span> <span class="kw">unique</span>(Bat_ID)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb317-4" data-line-number="4"><span class="st">  </span><span class="kw">group_by</span>(Date_proper) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb317-5" data-line-number="5"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Number =</span> <span class="kw">n</span>())</a></code></pre></div>
+<p>Here is a group of number of bats caught on each date:</p>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb318-1" data-line-number="1">bats_per_date <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb318-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb318-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Date_proper, <span class="dt">y =</span> Number)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb318-4" data-line-number="4"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Number of bats caught on each date.&quot;</span>)</a></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-203-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<p><strong>Q3.3</strong> Calculate the total number of prey species by counting the number of unique prey species:</p>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb319-1" data-line-number="1">bats <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb319-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total_num_prey_species =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Species)))</a></code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##   total_num_prey_species
+##                    &lt;int&gt;
+## 1                    115</code></pre>
+<p><strong>Q3.4</strong> Calculate number of migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.</p>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb321-1" data-line-number="1">bats <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb321-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Migratory) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb321-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total_num_prey_species =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Species)))</a></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##   Migratory total_num_prey_species
+##   &lt;chr&gt;                      &lt;int&gt;
+## 1 no                            94
+## 2 yes                           21</code></pre>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb323-1" data-line-number="1">bats <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb323-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Pest) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb323-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total_num_prey_species =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Species)))</a></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##   Pest  total_num_prey_species
+##   &lt;chr&gt;                  &lt;int&gt;
+## 1 no                        86
+## 2 yes                       29</code></pre>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb325-1" data-line-number="1">bats <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb325-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Migratory, Pest) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb325-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total_num_prey_species =</span> <span class="kw">length</span>(<span class="kw">unique</span>(Species)))</a></code></pre></div>
+<pre><code>## # A tibble: 4 x 3
+##   Migratory Pest  total_num_prey_species
+##   &lt;chr&gt;     &lt;chr&gt;                  &lt;int&gt;
+## 1 no        no                        78
+## 2 no        yes                       16
+## 3 yes       no                         8
+## 4 yes       yes                       13</code></pre>
+<p><strong>Q3.5</strong> Plot at the shape of the distribution of dates on which poop samples were collected.</p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb327-1" data-line-number="1">bats <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb327-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Date_proper) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb327-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Unique_Date =</span> <span class="kw">unique</span>(Date_proper)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb327-4" data-line-number="4"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb327-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Unique_Date), <span class="dt">bins =</span> <span class="dv">10</span>)</a></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-208-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<p><strong>Q3.6</strong> Plot the distribution of number of reads.</p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb328-1" data-line-number="1">bats <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb328-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb328-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> No._Reads))</a></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-209-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<p>From the shape, we expect the mean to be greater than the median.</p>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb330-1" data-line-number="1">bats <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb330-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_num_reads =</span> <span class="kw">mean</span>(No._Reads),</a>
+<a class="sourceLine" id="cb330-3" data-line-number="3">            <span class="dt">median_num_reads =</span> <span class="kw">median</span>(No._Reads))</a></code></pre></div>
+<pre><code>## # A tibble: 1 x 2
+##   mean_num_reads median_num_reads
+##            &lt;dbl&gt;            &lt;dbl&gt;
+## 1          7700.             2741</code></pre>
+<p><strong>Q3.7</strong> Get the number of species of Noctuidae and Geometridae in the dataset.</p>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb332-1" data-line-number="1"><span class="co">## Solution</span></a>
+<a class="sourceLine" id="cb332-2" data-line-number="2">families &lt;-<span class="st"> </span>bats <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb332-3" data-line-number="3"><span class="st">  </span><span class="kw">select</span>(Species, Order, Family) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb332-4" data-line-number="4"><span class="st">  </span><span class="kw">distinct</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb332-5" data-line-number="5"><span class="st">  </span><span class="kw">group_by</span>(Order, Family) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb332-6" data-line-number="6"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">num_spp=</span><span class="kw">n</span>())</a>
+<a class="sourceLine" id="cb332-7" data-line-number="7">families <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb332-8" data-line-number="8"><span class="st">  </span><span class="kw">filter</span>(Family <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Noctuidae&quot;</span>, <span class="st">&quot;Geometridae&quot;</span>))</a></code></pre></div>
+<p><strong>Q3.8</strong> The paper states that <em>56.9±36.7% were migratory moth species</em>. Calculate this yourself.</p>
+<p>In this solution we calculate the proportion migratory in the diet of each bat, then calculate the mean and standard deviation of these proportions. The answer we find is not the same as in the paper, though we are not sure why.</p>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb333-1" data-line-number="1">bats <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb333-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Bat_ID, Migratory) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb333-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_prey=</span><span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb333-4" data-line-number="4"><span class="st">  </span><span class="kw">spread</span>(<span class="dt">key=</span>Migratory, <span class="dt">value=</span>num_prey) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb333-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">no=</span><span class="kw">ifelse</span>(<span class="kw">is.na</span>(no), <span class="dv">0</span>, no),</a>
+<a class="sourceLine" id="cb333-6" data-line-number="6">         <span class="dt">yes=</span><span class="kw">ifelse</span>(<span class="kw">is.na</span>(yes), <span class="dv">0</span>, yes),</a>
+<a class="sourceLine" id="cb333-7" data-line-number="7">         <span class="dt">perc_migratory=</span>yes<span class="op">/</span>(yes<span class="op">+</span>no)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb333-8" data-line-number="8"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb333-9" data-line-number="9"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">mean</span>(perc_migratory),</a>
+<a class="sourceLine" id="cb333-10" data-line-number="10">            <span class="kw">sd</span>(perc_migratory))</a></code></pre></div>
+<p><strong>Q3.9</strong> Confirm the results from the paper: <em>Moths (Lepidoptera; mainly Noctuidae and Geometridae) were by far the most frequently recorded prey, occurring in nearly all samples and accounting for 96 out of 115 prey taxa.</em></p>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb334-1" data-line-number="1">bats <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb334-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(Species, Order) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb334-3" data-line-number="3"><span class="st">  </span><span class="kw">distinct</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb334-4" data-line-number="4"><span class="st">  </span><span class="kw">group_by</span>(Order) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb334-5" data-line-number="5"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">num_spp=</span><span class="kw">n</span>())</a></code></pre></div>
+<p><strong>Q3.10</strong> Confirm the results from the paper: <em>Each pellet [poo] contained on average 4.1 ± 2.2 prey items</em></p>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb335-1" data-line-number="1">bats <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb335-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Bat_ID) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb335-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_prey=</span><span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb335-4" data-line-number="4"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">mean</span>(num_prey),</a>
+<a class="sourceLine" id="cb335-5" data-line-number="5">            <span class="kw">sd</span>(num_prey))</a></code></pre></div>
+<p>A slightly different answer to that in the paper. We are not sure why.</p>
 </div>
 <div id="chapter-4-workflow-demonstrationpart-2-1" class="section level2">
 <h2><span class="header-section-number">14.5</span> Chapter 4 (Workflow Demonstration–Part 2)</h2>

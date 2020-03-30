@@ -24,7 +24,7 @@
 <meta name="author" content="Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs" />
 
 
-<meta name="date" content="2020-03-26" />
+<meta name="date" content="2020-03-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -146,7 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a><ul>
 <li class="chapter" data-level="3.1" data-path="questions-exercises.html"><a href="questions-exercises.html#preface"><i class="fa fa-check"></i><b>3.1</b> Preface</a></li>
-<li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1"><i class="fa fa-check"></i><b>3.2</b> Chapter 1</a></li>
+<li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1-introduction"><i class="fa fa-check"></i><b>3.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="3.3" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-2-getting-acquainted"><i class="fa fa-check"></i><b>3.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="3.4" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-3-workflow-demonstrationpart-1"><i class="fa fa-check"></i><b>3.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="3.5" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-4-workflow-demonstrationpart-2"><i class="fa fa-check"></i><b>3.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
@@ -330,7 +330,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a><ul>
 <li class="chapter" data-level="14.1" data-path="answers.html"><a href="answers.html#preface-1"><i class="fa fa-check"></i><b>14.1</b> Preface</a></li>
-<li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
+<li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction-1"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="14.3" data-path="answers.html"><a href="answers.html#chapter-2-getting-acquainted-1"><i class="fa fa-check"></i><b>14.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="14.4" data-path="answers.html"><a href="answers.html#chapter-3-workflow-demonstrationpart-1-1"><i class="fa fa-check"></i><b>14.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="14.5" data-path="answers.html"><a href="answers.html#chapter-4-workflow-demonstrationpart-2-1"><i class="fa fa-check"></i><b>14.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
@@ -363,18 +363,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="WFD-diet-restrict" class="section level1">
 <h1><span class="header-section-number">Chapter 8</span> What are the effects of dietary restriction?</h1>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" data-line-number="1"><span class="co">## Load the libraries we use</span></a>
-<a class="sourceLine" id="cb197-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb197-3" data-line-number="3"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb197-4" data-line-number="4"><span class="kw">library</span>(readr)</a>
-<a class="sourceLine" id="cb197-5" data-line-number="5"><span class="kw">library</span>(stringr)</a>
-<a class="sourceLine" id="cb197-6" data-line-number="6"><span class="kw">library</span>(lubridate)</a>
-<a class="sourceLine" id="cb197-7" data-line-number="7"><span class="kw">library</span>(skimr)</a>
-<a class="sourceLine" id="cb197-8" data-line-number="8"><span class="kw">library</span>(tidyr)</a>
-<a class="sourceLine" id="cb197-9" data-line-number="9"><span class="kw">library</span>(ggbeeswarm)</a>
-<a class="sourceLine" id="cb197-10" data-line-number="10"><span class="kw">library</span>(taxize)</a>
-<a class="sourceLine" id="cb197-11" data-line-number="11"><span class="kw">library</span>(broom)</a>
-<a class="sourceLine" id="cb197-12" data-line-number="12"><span class="kw">library</span>(forcats)</a></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb191-1" data-line-number="1"><span class="co">## Load the libraries we use</span></a>
+<a class="sourceLine" id="cb191-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb191-3" data-line-number="3"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb191-4" data-line-number="4"><span class="kw">library</span>(readr)</a>
+<a class="sourceLine" id="cb191-5" data-line-number="5"><span class="kw">library</span>(stringr)</a>
+<a class="sourceLine" id="cb191-6" data-line-number="6"><span class="kw">library</span>(lubridate)</a>
+<a class="sourceLine" id="cb191-7" data-line-number="7"><span class="kw">library</span>(skimr)</a>
+<a class="sourceLine" id="cb191-8" data-line-number="8"><span class="kw">library</span>(tidyr)</a>
+<a class="sourceLine" id="cb191-9" data-line-number="9"><span class="kw">library</span>(ggbeeswarm)</a>
+<a class="sourceLine" id="cb191-10" data-line-number="10"><span class="kw">library</span>(taxize)</a>
+<a class="sourceLine" id="cb191-11" data-line-number="11"><span class="kw">library</span>(broom)</a>
+<a class="sourceLine" id="cb191-12" data-line-number="12"><span class="kw">library</span>(forcats)</a></code></pre></div>
 <p><img src="images/WF4_icon.jpg" width="60"/></p>
 <div id="introduction-1" class="section level2">
 <h2><span class="header-section-number">8.1</span> Introduction</h2>
@@ -513,18 +513,18 @@ Check for dates and fix as appropriate.</p>
 <p>Q30. Confirm in a graph the stated result: “Female risk was generally reduced by low protein intakes.”</p>
 <p>Q31. Confirm in a graph the stated result: “The effect of macronutrient intake on reproduction was similar between the sexes, with high protein intakes maximizing reproduction.”</p>
 
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb198-1" data-line-number="1"><span class="co">## Load the libraries we use</span></a>
-<a class="sourceLine" id="cb198-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb198-3" data-line-number="3"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb198-4" data-line-number="4"><span class="kw">library</span>(readr)</a>
-<a class="sourceLine" id="cb198-5" data-line-number="5"><span class="kw">library</span>(stringr)</a>
-<a class="sourceLine" id="cb198-6" data-line-number="6"><span class="kw">library</span>(lubridate)</a>
-<a class="sourceLine" id="cb198-7" data-line-number="7"><span class="kw">library</span>(skimr)</a>
-<a class="sourceLine" id="cb198-8" data-line-number="8"><span class="kw">library</span>(tidyr)</a>
-<a class="sourceLine" id="cb198-9" data-line-number="9"><span class="kw">library</span>(ggbeeswarm)</a>
-<a class="sourceLine" id="cb198-10" data-line-number="10"><span class="kw">library</span>(taxize)</a>
-<a class="sourceLine" id="cb198-11" data-line-number="11"><span class="kw">library</span>(broom)</a>
-<a class="sourceLine" id="cb198-12" data-line-number="12"><span class="kw">library</span>(forcats)</a></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" data-line-number="1"><span class="co">## Load the libraries we use</span></a>
+<a class="sourceLine" id="cb192-2" data-line-number="2"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb192-3" data-line-number="3"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb192-4" data-line-number="4"><span class="kw">library</span>(readr)</a>
+<a class="sourceLine" id="cb192-5" data-line-number="5"><span class="kw">library</span>(stringr)</a>
+<a class="sourceLine" id="cb192-6" data-line-number="6"><span class="kw">library</span>(lubridate)</a>
+<a class="sourceLine" id="cb192-7" data-line-number="7"><span class="kw">library</span>(skimr)</a>
+<a class="sourceLine" id="cb192-8" data-line-number="8"><span class="kw">library</span>(tidyr)</a>
+<a class="sourceLine" id="cb192-9" data-line-number="9"><span class="kw">library</span>(ggbeeswarm)</a>
+<a class="sourceLine" id="cb192-10" data-line-number="10"><span class="kw">library</span>(taxize)</a>
+<a class="sourceLine" id="cb192-11" data-line-number="11"><span class="kw">library</span>(broom)</a>
+<a class="sourceLine" id="cb192-12" data-line-number="12"><span class="kw">library</span>(forcats)</a></code></pre></div>
 </div>
 </div>
             </section>

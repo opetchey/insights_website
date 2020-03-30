@@ -50,7 +50,7 @@
 
 
 
-## Chapter 1
+## Chapter 1 (Introduction)
 
 **Q1.1** Can we get insights from data without using complex statistical models and analyses, without machine learning, without being a master data scientist?
 
@@ -106,88 +106,32 @@ my_y_variable <- sin(my_x_varible)
 **Q2.10** If RStudio freezes, are we going to lose all our amazing work?
 
 
+
+
 ## Chapter 3 (Workflow Demonstration--Part 1)
 
-* Find out how many bats were caught on each of the dates
-* Find out how many prey species were detected in total.
-* Find out how many prey species were migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
-* 
+**Q3.1** A tricky question first... which variable in the bat diet dataset is numeric but should, arguably, not be?
 
-* Look at the shape of the distribution of dates on which poop samples were collected. I.e. were there relatively similar number of poop samples on each date, or quite different?
-* Look at the distribution of number of reads. What shape is this? From looking at the distribution, predict whether the mean or median is larger. Then check your prediction by calculating the median and mean.
+**Q3.2** How many bats were caught on each of the dates
 
+**Q3.3** How many prey species were detected in total.
 
+**Q3.4** How many prey species were migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
 
-**Question 3.1** The Abstract states that Lepidoptera were mostly from the Noctuidae and Geometridae familes. How many species of Noctuidae and Geometridae are there in the dataset?
+**Q3.5** Plot at the shape of the distribution of dates on which poop samples were collected.
 
-```{r eval = FALSE}
-## Solution
-fams <- dd %>%
-  select(Species, Order_1, Family) %>%
-  distinct() %>%
-  group_by(Order_1, Family) %>%
-  summarize(num_spp=n())
-```
+**Q3.6** Plot the distribution of number of reads. What shape is it? From looking at the distribution, predict whether the mean or median is larger. Then check your prediction by calculating the median and mean.
 
-**Question 3.1** How to get *56.9±36.7% were migratory moth species*.
+**Q3.7** The Abstract of the paper states that Lepidoptera were mostly from the Noctuidae and Geometridae familes. How many species of Noctuidae and Geometridae are there in the dataset?
 
-```{r eval = FALSE}
-dd %>%
-  group_by(Bat_ID, Migratory) %>%
-  summarise(num_prey=n()) %>%
-  spread(key=Migratory, value=num_prey) %>%
-  mutate(no=ifelse(is.na(no), 0, no),
-         yes=ifelse(is.na(yes), 0, yes),
-         perc_migratory=yes/(yes+no)) %>%
-  ungroup() %>%
-  summarise(mean(perc_migratory),
-            sd(perc_migratory))
+**Q3.8** The paper states that *56.9±36.7% were migratory moth species*. Calculate this yourself.
 
-```
+**Q3.9** Confirm the results from the paper: *Moths (Lepidoptera; mainly Noctuidae and Geometridae) were by far the most frequently recorded prey, occurring in nearly all samples and accounting for 96 out of 115 prey taxa.*
 
-**Question 3.1** How many of the prey species are classed as pests, and does it look like the proportion of pest species in diets differs by sex and age of the bat?
-
-```{r}
-## Solution
-```
+**Q3.10** Confirm the results from the paper: *Each pellet [poo] contained on average 4.1 ± 2.2 prey items*
 
 
-**Question 3.1** Confirm the results from the paper: *Moths (Lepidoptera; mainly Noctuidae and Geometridae) were by far the most frequently recorded prey, occurring in nearly all samples and accounting for 96 out of 115 prey taxa.*
 
-```{r eval = FALSE}
-dd %>%
-  select(Species, Order_1) %>%
-  distinct() %>%
-  group_by(Order_1) %>%
-  summarize(num_spp=n())
-```
-
-**Question 3.1** Confirm the results from the paper: *Each pellet contained on average 4.1 ± 2.2 prey items*
-
-```{r eval = FALSE}
-dd %>%
-  group_by(Bat_ID) %>%
-  summarise(num_prey=n()) %>%
-  summarise(mean(num_prey),
-            sd(num_prey))
-
-
-```
-
-Not sure why the value is a bit different! 
-
-
-**Question 3.1** select helper function question
-
-```{r}
-## Solution
-```
-
-**Question 3.1** Which variable in the bat diet dataset is numeric but should not be?
-
-A. `Bat_ID` is numeric, but these are identities (i.e. names). They could just as well be words. Leaving them as numbers could allow us to do something stupid, like involving them in a calculation. Using numbers in such situation can also result in `ggplot` not doing what we'd like, for example would lead to a colour gradient rather than discrete colours if we mapped the numerical variable to the colour aesthetic.
-```{r}
-```
 
 
 

@@ -104,8 +104,159 @@ Probably not. RStudio has very likely autosaved the very latest version of our s
 
 ## Chapter 3 (Workflow Demonstration--Part 1)
 
+```{r message=FALSE, echo=FALSE, warning=FALSE}
+# Load the libraries we use
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(stringr)
+library(lubridate)
+library(tidyr)
+# Import and clean the data
+bats <- read_csv("data/bat_sex_diet_Mata_etal_2016.csv", na = "na")
+names(bats) <- str_replace_all(names(bats), c(" " = "_"))
+names(bats) <- str_replace_all(names(bats), c("\\(" = "", "\\)" = ""))
+bats <- mutate(bats,
+             Date_proper = dmy(Date),
+             Sex = case_when(Sex == "M" ~ "Male",
+                             Sex == "F" ~ "Female"),
+             Age = case_when(Age == "Ad" ~ "Adult",
+                             Age == "Juv" ~ "Juvenile")) %>%
+#  select(-Date) %>% # commented out so we can demo a non-date variable
+  rename("Bat_ID" = "Sample",
+         "Row_order" = "Order",
+         "Order" = "Order_1")
+```
+
+**Q3.1**. `Bat_ID` is numeric, but these are identities (i.e. names). They could just as well be words. Leaving them as numbers could allow us to do something stupid, like involving them in a calculation. Using numbers in such situation can also result in `ggplot` not doing what we'd like, for example would lead to a colour gradient rather than discrete colours if we mapped the numerical variable to the colour aesthetic.
+
+**Q3.2** Get the number of bats caught on each date with a `group_by` `Bat_ID` and `Date_proper` piped into a `summarise` to get the unique `Bat_ID`s, then make another `group_by` but this time on the `Date_proper` variable and use the `n()` function to count the number of bats per date:
+
+```{r}
+bats_per_date <- bats %>%
+  group_by(Bat_ID, Date_proper) %>%
+  summarise(Unique_Bat_ID = unique(Bat_ID)) %>%
+  group_by(Date_proper) %>%
+  summarise(Number = n())
+```
+
+Here is a group of number of bats caught on each date:
+
+```{r}
+bats_per_date %>%
+  ggplot() +
+  geom_point(aes(x = Date_proper, y = Number)) +
+  ggtitle("Number of bats caught on each date.")
+```
+
+**Q3.3** Calculate the total number of prey species by counting the number of unique prey species:
+
+```{r}
+bats %>%
+  summarise(total_num_prey_species = length(unique(Species)))
+```
+
+**Q3.4** Calculate number of migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
+
+```{r}
+bats %>%
+  group_by(Migratory) %>%
+  summarise(total_num_prey_species = length(unique(Species)))
+```
+
+```{r}
+bats %>%
+  group_by(Pest) %>%
+  summarise(total_num_prey_species = length(unique(Species)))
+```
+
+```{r}
+bats %>%
+  group_by(Migratory, Pest) %>%
+  summarise(total_num_prey_species = length(unique(Species)))
+```
+
+**Q3.5** Plot at the shape of the distribution of dates on which poop samples were collected.
+
+```{r}
+bats %>%
+  group_by(Date_proper) %>%
+  summarise(Unique_Date = unique(Date_proper)) %>%
+  ggplot() +
+  geom_histogram(aes(x = Unique_Date), bins = 10)
+
+```
+
+**Q3.6** Plot the distribution of number of reads.
+
+```{r}
+bats %>%
+  ggplot() +
+  geom_histogram(aes(x = No._Reads))
+```
+
+From the shape, we expect the mean to be greater than the median.
+
+```{r}
+bats %>%
+  summarise(mean_num_reads = mean(No._Reads),
+            median_num_reads = median(No._Reads))
+```
+
+**Q3.7** Get the number of species of Noctuidae and Geometridae in the dataset.
+
+```{r eval = FALSE}
+## Solution
+families <- bats %>%
+  select(Species, Order, Family) %>%
+  distinct() %>%
+  group_by(Order, Family) %>%
+  summarize(num_spp=n())
+families %>%
+  filter(Family %in% c("Noctuidae", "Geometridae"))
+```
+
+**Q3.8** The paper states that *56.9±36.7% were migratory moth species*. Calculate this yourself.
+
+In this solution we calculate the proportion migratory in the diet of each bat, then calculate the mean and standard deviation of these proportions. The answer we find is not the same as in the paper, though we are not sure why.
+
+```{r eval = FALSE}
+bats %>%
+  group_by(Bat_ID, Migratory) %>%
+  summarise(num_prey=n()) %>%
+  spread(key=Migratory, value=num_prey) %>%
+  mutate(no=ifelse(is.na(no), 0, no),
+         yes=ifelse(is.na(yes), 0, yes),
+         perc_migratory=yes/(yes+no)) %>%
+  ungroup() %>%
+  summarise(mean(perc_migratory),
+            sd(perc_migratory))
+
+```
+
+**Q3.9** Confirm the results from the paper: *Moths (Lepidoptera; mainly Noctuidae and Geometridae) were by far the most frequently recorded prey, occurring in nearly all samples and accounting for 96 out of 115 prey taxa.*
+
+```{r eval = FALSE}
+bats %>%
+  select(Species, Order) %>%
+  distinct() %>%
+  group_by(Order) %>%
+  summarize(num_spp=n())
+```
+
+**Q3.10** Confirm the results from the paper: *Each pellet [poo] contained on average 4.1 ± 2.2 prey items*
+
+```{r eval = FALSE}
+bats %>%
+  group_by(Bat_ID) %>%
+  summarise(num_prey=n()) %>%
+  summarise(mean(num_prey),
+            sd(num_prey))
 
 
+```
+
+A slightly different answer to that in the paper. We are not sure why.
 
 ## Chapter 4 (Workflow Demonstration--Part 2)
 
