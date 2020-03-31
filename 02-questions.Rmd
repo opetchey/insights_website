@@ -110,17 +110,22 @@ my_y_variable <- sin(my_x_varible)
 
 ## Chapter 3 (Workflow Demonstration--Part 1)
 
+**Do this after the manuscript is finalised. Give an R script of analysis with errors for correction.**
+
+
 **Q3.1** A tricky question first... which variable in the bat diet dataset is numeric but should, arguably, not be?
 
-**Q3.2** How many bats were caught on each of the dates
 
-**Q3.3** How many prey species were detected in total.
+**Q3.2** How many prey species were detected in total.
 
-**Q3.4** How many prey species were migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
+**Q3.3** How many prey species were migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
 
-**Q3.5** Plot at the shape of the distribution of dates on which poop samples were collected.
+**Q3.4** Plot at the shape of the distribution of dates on which poop samples were collected.
 
-**Q3.6** Plot the distribution of number of reads. What shape is it? From looking at the distribution, predict whether the mean or median is larger. Then check your prediction by calculating the median and mean.
+
+**Q3.5** Plot the distribution of number of reads. What shape is it? From looking at the distribution, predict whether the mean or median is larger. Then check your prediction by calculating the median and mean.
+
+**Q3.6** How many bats were caught on each of the dates
 
 **Q3.7** The Abstract of the paper states that Lepidoptera were mostly from the Noctuidae and Geometridae familes. How many species of Noctuidae and Geometridae are there in the dataset?
 
@@ -138,44 +143,49 @@ my_y_variable <- sin(my_x_varible)
 
 ## Chapter 4 (Workflow Demonstration--Part 2)
 
-Give an R script of analysis with errors for correction.
-
-* Do second part, the prey-centric view, for sex age combination.
-* Make a histogram of all the calculated odds ratios. What do you conclude?
-
-
-**Question 6.1** The Abstract states that Lepidoptera were mostly from the Noctuidae and Geometridae familes. How many species of Noctuidae and Geometridae are there in the dataset?
+**Q4.1** The following code is intended to calculate the number of prey items found in each poop. Find and correct the three intentional errors it contains:
 
 ```{r eval = FALSE}
-## Solution
-fams <- dd %>%
-  select(Species, Order_1, Family) %>%
-  distinct() %>%
-  group_by(Order_1, Family) %>%
-  summarize(num_spp=n())
+ prey_stats < bats %>%
+  group_by(Bat_Id) %>%
+  summarise(num_prey = n()
 ```
 
-**Question 6.1** How to get *56.9±36.7% were migratory moth species*.
+**Q4.2** Imagine we calculate the mean of a variable and the answer, to our surprise, is `NA`. This is a surprise because we know the variable is numeric and we were therefor expecting a number. What is a likely reason for us getting NA, and what is one way of dealing with this?
+
+**Q4.3** How many times will you accidentally type in your code `=` when you meant to type `==`, and what is the difference?
+
+
+
+**Q4.4** The following code is intended to create a plot of the wingspan of prey found in male and female bat poops. Find and correct the three intentional errors it contains:
 
 ```{r eval = FALSE}
-dd %>%
-  group_by(Bat_ID, Migratory) %>%
-  summarise(num_prey=n()) %>%
-  spread(key=Migratory, value=num_prey) %>%
-  mutate(no=ifelse(is.na(no), 0, no),
-         yes=ifelse(is.na(yes), 0, yes),
-         perc_migratory=yes/(yes+no)) %>%
-  ungroup() %>%
-  summarise(mean(perc_migratory),
-            sd(perc_migratory))
-
+ prey_stats %>%
+  ggplot() %>%
+  geom_beewarm(mapping = aes(x = Sex y = mean_wingspan))
 ```
 
-**Question 6.1** How many of the prey species are classed as pests, and does it look like the proportion of pest species in diets differs by sex and age of the bat?
 
-```{r}
-## Solution
-```
+**Q4.5** Imagine that we observe that the association between two variables seems to depend on a third variable. E.g. the effects of herbivory on plant biomass is negative in the absence of a predator, but is positive in the presence of a predator. Which of these terms might be appropriate to describe this kind of pattern:
+
+* An interaction.
+* Context dependence.
+* An association.
+* Independence.
+
+
+**Q4.6** What was the maximum number of times a prey species could have been observed?
+
+**Q4.7** Calcuate the number of times each prey item was observed.
+
+**Q4.8** What proportion of the prey species were only observed in one poo?
+
+**Q4.9** Calculate and plot a histogram of the probability of observing each of the prey species across the whole study.
+
+
+**Q4.10** Ensure that you have the odds ratio for appearing a male or female poo for each of the prey species (the òdds_ratio` object in the book). Plot a histogram of all the calculated odds ratios. Guess how many prey species with odds less than twice and less than half to appear in female compared to male poos. Calcuate how many, and see how close is your guess.
+
+
 
 
 ## Chapter 5 (Deeper R--Wrangling Data--Part 1)

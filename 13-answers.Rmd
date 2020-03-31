@@ -130,33 +130,15 @@ bats <- mutate(bats,
 
 **Q3.1**. `Bat_ID` is numeric, but these are identities (i.e. names). They could just as well be words. Leaving them as numbers could allow us to do something stupid, like involving them in a calculation. Using numbers in such situation can also result in `ggplot` not doing what we'd like, for example would lead to a colour gradient rather than discrete colours if we mapped the numerical variable to the colour aesthetic.
 
-**Q3.2** Get the number of bats caught on each date with a `group_by` `Bat_ID` and `Date_proper` piped into a `summarise` to get the unique `Bat_ID`s, then make another `group_by` but this time on the `Date_proper` variable and use the `n()` function to count the number of bats per date:
 
-```{r}
-bats_per_date <- bats %>%
-  group_by(Bat_ID, Date_proper) %>%
-  summarise(Unique_Bat_ID = unique(Bat_ID)) %>%
-  group_by(Date_proper) %>%
-  summarise(Number = n())
-```
-
-Here is a group of number of bats caught on each date:
-
-```{r}
-bats_per_date %>%
-  ggplot() +
-  geom_point(aes(x = Date_proper, y = Number)) +
-  ggtitle("Number of bats caught on each date.")
-```
-
-**Q3.3** Calculate the total number of prey species by counting the number of unique prey species:
+**Q3.2** Calculate the total number of prey species by counting the number of unique prey species:
 
 ```{r}
 bats %>%
   summarise(total_num_prey_species = length(unique(Species)))
 ```
 
-**Q3.4** Calculate number of migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
+**Q3.3** Calculate number of migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
 
 ```{r}
 bats %>%
@@ -176,7 +158,7 @@ bats %>%
   summarise(total_num_prey_species = length(unique(Species)))
 ```
 
-**Q3.5** Plot at the shape of the distribution of dates on which poop samples were collected.
+**Q3.4** Plot at the shape of the distribution of dates on which poop samples were collected.
 
 ```{r}
 bats %>%
@@ -187,7 +169,7 @@ bats %>%
 
 ```
 
-**Q3.6** Plot the distribution of number of reads.
+**Q3.5** Plot the distribution of number of reads.
 
 ```{r}
 bats %>%
@@ -201,6 +183,25 @@ From the shape, we expect the mean to be greater than the median.
 bats %>%
   summarise(mean_num_reads = mean(No._Reads),
             median_num_reads = median(No._Reads))
+```
+
+**Q3.6** Get the number of bats caught on each date with a `group_by` `Bat_ID` and `Date_proper` piped into a `summarise` to get the unique `Bat_ID`s, then make another `group_by` but this time on the `Date_proper` variable and use the `n()` function to count the number of bats per date:
+
+```{r}
+bats_per_date <- bats %>%
+  group_by(Bat_ID, Date_proper) %>%
+  summarise(Unique_Bat_ID = unique(Bat_ID)) %>%
+  group_by(Date_proper) %>%
+  summarise(Number = n())
+```
+
+Here is a grapp of number of bats caught on each date:
+
+```{r}
+bats_per_date %>%
+  ggplot() +
+  geom_point(aes(x = Date_proper, y = Number)) +
+  ggtitle("Number of bats caught on each date.")
 ```
 
 **Q3.7** Get the number of species of Noctuidae and Geometridae in the dataset.
@@ -260,6 +261,144 @@ A slightly different answer to that in the paper. We are not sure why.
 
 ## Chapter 4 (Workflow Demonstration--Part 2)
 
+**Q4.1** The assignment arrow was missing its `-`, the `d` of `Bat_Id` should be capital `D`, and an additional closing bracket was needed at the end of the third line:
+
+```{r eval = FALSE}
+ prey_stats <- bats %>%
+  group_by(Bat_ID) %>%
+  summarise(num_prey = n())
+```
+
+**Q4.2** It is likely that the variable contains at least one `NA`, causing the calculation of the mean to fail (in the sense that the answer is NA). We can ask for the NA values to be ignored when calculating the mean with the arguement `na.rm = TRUE`
+
+**Q4.3** If you're anything like us (Owen at least) you will do this for as long as you're coding, meaning that it happens a lot. The double equals sign is a logical operator, and asks if the things on either of it are equal or not. A single equals is a name-value pair, used to associate a value with a name.
+
+**Q4.4** The second pipe should be a plus sign `+`: we are *adding* a layer to the `ggplot`; we are not piping. This is a common error we make. There is an `s` missing in the `geom_beeswarm`. Finally, the comma that must separate the two arguments in the `aes` function is missing. Here is the corrected code (though it will not work if you have not already made the `prey_stats` object):
+
+```{r eval = FALSE}
+ prey_stats %>%
+  ggplot() +
+  geom_beeswarm(mapping = aes(x = Sex, y = mean_wingspan))
+```
+
+
+**Q4.5** When we observe that the association between two variables seems to depend on the value of a third variable, we essentially observing *context dependence* in the association. The association between the two variables depends on the context, which here is the value of the third variable. This kind of pattern is also termed an *interaction* between two variables. They are not acting additively/independently. And obviously the term *associated* is not sufficient to describe a context dependent association.
+
+
+**Q4.6** This is the number of bat poops observed (143):
+
+```{r}
+bats %>%
+  pull(Bat_ID) %>%
+  unique() %>%
+  length()
+```
+
+**Q4.7** Calcuate the number of times each prey item was observed.
+
+```{r}
+num_times <- bats %>%
+  group_by(Species) %>%
+  summarise(num_times_obs = n())
+```
+
+**Q4.8** What proportion of prey species were observed in only on poo?
+
+```{r}
+num_times %>%
+  summarise(prop_singletons = sum(num_times_obs == 1) / n())
+```
+
+
+**Q4.9** The probability is the number of times observed divided by the number of times a species could have been observed:
+
+```{r}
+max_poss_obs <- bats %>%
+  pull(Bat_ID) %>%
+  unique() %>%
+  length()
+prob_obs <- bats %>%
+  group_by(Species) %>%
+  summarise(prob = n() / max_poss_obs)
+```
+
+And the histogram:
+
+```{r}
+prob_obs %>%
+  ggplot() +
+  geom_histogram(aes(x = prob))
+```
+
+**Q4.10** Plot a histogram of all the calculated odds ratios. What do you conclude?
+
+```{r echo = FALSE, message = FALSE}
+num_poops <- bats %>%
+  group_by(Sex, Species) %>%
+  summarise(num_poops = n())
+# Get list of all prey
+all_prey <- num_poops %>%
+  pull(Species) # 165 values ( = prey species)
+# Get the prey species found in male poops:
+prey_in_male_poops <- num_poops %>%
+  filter(Sex == "Male") %>%
+  pull(Species) # 93 values ( = prey species)
+# and in female poops
+prey_in_female_poops <- num_poops %>%
+  filter(Sex == "Female") %>%
+  pull(Species) # 72 values ( = prey species)
+# Get the numer of prey species found
+# in either or both males and females...
+# should be same as number of unique (i.e. 115 values)
+prey_in_either_or_both <- union(prey_in_male_poops,
+                                prey_in_female_poops) # 115 values
+# Get the prey found in both males and females
+prey_in_both <- intersect(prey_in_male_poops,
+                          prey_in_female_poops) # 50 values
+# Get the prey not found in male poops
+prey_not_in_male <- setdiff(all_prey, prey_in_male_poops) # 22 values
+# and not found in female poops.
+prey_not_in_female <- setdiff(all_prey, prey_in_female_poops) # 43 values
+num_poops <- bind_rows(num_poops,
+                       tibble(Sex = "Female",
+                              Species = prey_not_in_female,
+                              num_poops = 0),
+                       tibble(Sex = "Male",
+                              Species = prey_not_in_male,
+                              num_poops = 0)
+)
+total_num_poops <- bats %>%
+  select(Sex, Bat_ID) %>%
+  distinct() %>%
+  group_by(Sex) %>%
+  summarise(num_bats = n())
+bat_props <- full_join(num_poops, total_num_poops)
+bat_props <- mutate(bat_props, props = num_poops / num_bats)
+odds_ratios <- bat_props %>%
+  mutate(not = num_bats - num_poops,
+         odds = num_poops / not) %>%
+  select(Sex, Species, odds) %>%
+  spread(Sex, odds) %>%
+  mutate(Odds_ratio = Female / Male,
+         log2_Odds_ratio = log2(Odds_ratio)) 
+```
+
+```{r}
+odds_ratios %>%
+  ggplot() +
+  geom_histogram(mapping = aes(x = Odds_ratio))
+```
+
+```{r}
+odds_ratios %>%
+  ggplot() +
+  geom_histogram(mapping = aes(x = log2(Odds_ratio)))
+```
+
+```{r}
+odds_ratios %>%
+  summarise(ans = sum(less_than_half_or_twice = abs(log2(Odds_ratio)) < 1))
+```
 
 
 ## Chapter 5 (Deeper R--Wrangling Data--Part 1)
