@@ -247,7 +247,7 @@ Let's look at the frequency distributions of the two numeric variables. We will 
 
 ```{r pol1, fig.cap='Frequency distributions of the polity score and of the year in which observations were made.', out.width='100%', fig.asp=.75, fig.align='center'}
 pol %>%
-  gather(key = Variable, value = Value, 2:3) %>%
+  pivot_longer(names_to = "Variable", values_to = "Value", cols = 2:3) %>%
   ggplot() +
   geom_histogram(aes(x = Value), bins = 21) +
   facet_wrap( ~ Variable, scales = "free", nrow = 2)
@@ -437,7 +437,9 @@ Let's now make the data tidy, and clean up the year variable. We first gather al
 
 ```{r eval=TRUE}
 fbs_long <- fbs %>%
-  gather(key = Year, value = Food_Supply_Quantity, 3:57) %>%
+  pivot_longer(names_to = "Year",
+               values_to = "Food_Supply_Quantity",
+               cols = 3:57) %>%
   mutate(Year = as.numeric(substr(Year, 2, 5)))
 glimpse(fbs_long)
 ```
@@ -517,8 +519,7 @@ In the same year, for the same country, for the same item, there are two values 
 ```{r failing, cache = FALSE}
 fbs_long <- fbs_long %>%
   group_by(Country, Year, Item) %>%
-  summarise(Food_Supply_Quantity = mean(Food_Supply_Quantity)) %>%
-  ungroup(fbs_long)
+  summarise(Food_Supply_Quantity = mean(Food_Supply_Quantity))
 ```
 
 ```{block, type="info"}
@@ -597,7 +598,8 @@ And take a look at the data using `View(obs_per_year)`. We can also see quite a 
 
 ```{r fao-pol1, fig.cap='The number of observations, the number of missing values and the proportion of missing values in each year of the data.', out.width='100%', fig.asp=.75, fig.align='center', echo=FALSE}
 obs_per_year %>%
-  gather(key = "Variable", value = "Value", num, num_na, prop_na) %>%
+  pivot_longer(names_to = "Variable", values_to = "Value",
+               cols = c(num, num_na, prop_na)) %>%
   ggplot() +
   geom_point(aes(x = Year, y = Value)) +
   facet_wrap(~ Variable, scales = "free", ncol = 1)
@@ -992,7 +994,8 @@ We can also make the three histograms more efficiently by first gathering all th
 ```{r fbs-pol3x1, fig.cap='Frequency distribution of Polity2 all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
 fbs_pol %>%
   select(Richness, Diversity, Polity2) %>%
-  gather(key = "Variable", value = "Value") %>%
+  pivot_longer(names_to = "Variable", values_to = "Value",
+               col = 1:3) %>%
   ggplot() +
   geom_histogram(mapping = aes(x = Value), bins = 10) +
   facet_wrap( ~ Variable, nrow = 3, scales = "free", )
@@ -1158,7 +1161,7 @@ gdp <-   filter(gdp, Item_Code==22014 & Element_Code==6119)
 gdp <- select(gdp, -Item_Code, -Area_Code,
              -Element_Code, -Element, -Unit, -Item,
              -ends_with("F")) %>%
-  gather(key=Year, value=GDP, 2:48) %>%
+  pivot_longer(names_to = "Year", values_to = "GDP", cols = 2:48) %>%
   mutate(Year=as.numeric(substr(Year, 2, 5))) %>%
   rename(Country=Area)
 dd_all <- full_join(dd, gdp)

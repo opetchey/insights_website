@@ -471,7 +471,7 @@ Let's put all three response variables into the same tibble, since it will make 
 The first step is to merge all three tibbles:
 
 ```{r}
-spread_rv <- pred_max_dens %>%
+wider_rv <- pred_max_dens %>%
   full_join(pred_CV) %>%
   full_join(pred_persistence_time)
 ```
@@ -481,11 +481,13 @@ We get told both joins are being done by `prey_richness`, `prey_composition`, an
 Next step is to gather the three response variables into one variable:
 
 ```{r}
-rv <- spread_rv %>%
-  gather(key = "Response_type", value = Value, max_dens, CV, last_day_observed)
+rv <- wider_rv %>%
+  pivot_longer(names_to = "Response_type",
+               values_to = "Value",
+               cols = c(max_dens, CV, last_day_observed))
 ```
 
-We tell `gather` that we'd like the values in the variables `max_dens`, `CV`, and `last_day_observed` gathered together an put into one variable called `Values` and that we'd like the `key` variable, i.e. the one that says which response variable each observation is about, to be named `Response_type`. If how `gather` works is unclear then please wait until Case Study 3, where the explanation goes into more depth, including a figure showing tidy/long data and the corresponding untidy/wide data (Figure \@ref(fig:long-wide)).
+We tell `pivot_longer` that we'd like the values in the variables `max_dens`, `CV`, and `last_day_observed` gathered together an put into one variable called `Values` and that we'd like the `key` variable, i.e. the one that says which response variable each observation is about, to be named `Response_type`. If how `pivot_longer` works is unclear then please refer to the section of the book that covers this.
 
 Excellent. We now have a tibble `rv` with 105 observations (as expected), a variable named `Response_type` with entries `max_dens`, `CV`, and `last_day_observed`, and the values of each of these in the `Value` variable. We have the other variables `all_zero`, `last_sample`, and `censored` also (which is just fine).
 
