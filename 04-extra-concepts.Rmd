@@ -1,5 +1,206 @@
 # Additional concepts
 
+## Next steps...
+
+* **Distributions** We mentioned what is a sample distribution, we emphasised how important it is to visualise sample distributions, and we make many such visualisations as histograms. What we talked about much less, though is very important, are some of the types of theoretical distributions that one can use in analyses, particularly in statistical analyses. We mentioned the normal, Poisson, and binomial distribution during the Bat Workflow Demonstration. Going further we could have checked with a QQ-plot if these distributions were appropriate for characterising the data. Learning more about these distributions, and about what QQ-plots are would be a good next step.
+
+* **Interactions and complexity** We mentioned interactions at multiple times. They are important because we live in a world where many things are contigent on others. Such that the effect of a intervention depends on some other variable. Hence, the effects of a dietary intervention may depend on the disease status of an individual. Achieving an intuitive understanding of a system with many more than three or four interactions can be elusive, so researchers often do not attempt to explore or explain such complex situations. One solution/alterate approach, is to use analysis methods that characterise a system of causal relationships... i.e. a network of causes and effects. The methods and tools are not often taught in introductory statistics courses, but it is worth being aware of them at least (they are sometimes callled path analysis and structural equation models).
+
+* **Lurking variables** We can easily think of situations that are not so amenable to the approaches you learned in this book. This does not mean that the approaches are not useful or important. They are foundational. And therefore to be built on. One example of such a situation is if we have two continuous explanatory variables that are relatively strongly correlated with each other. And we are looking at how they are related to a response variable.  It is quite possible that we see a positive relationship between one explanatory variable and the response variable, when the relationship is in fact negative. We can see the negative relationship only once we have accounted for the other explanatory variable. If this sounds a bit concerning then good... it is. It illustrates how very important is checking for, and understanding implications of, correlations among explanatory variables. And how important it is to take time to think during the planning phase of the workflow about what are the likely important explanatory variables. How can one "account for" the other explanatory variable? The answer is to hold the second explanatory variable constant, or at least relatively constant. This can be done by plotting only data for a small range of the second explanatory variable (`cut` and `facet_wrap` can be used).
+
+* **Power of data to give insights** When planning a study it is worthwhile to calculate the *statistical power* that can be expected. One methods for doing so is to create fake data by simulation, and then analysing it. One can then assess how likely the statistical method is to detect any real effect that was included in the fake data, and how likely it is to detect an effect when no real effect was included in the fake data. Making useful fake data requires an estimate of effect sizes (i.e. the strength of an effect or of a relationship), about variability, and amount of data. It is well worth spending time looking into power analyses, and how to simulate fake data. 
+
+* **Effect sizes** We found that a difference in mean prey size of about 5 mm between female and male bats. Therefore we would say that the effect sizes of gender is 5 mm. It is  important to maintain a clear focus on effect sizes (and once you move onto statistics, a measure of certainty in the effect size, e.g. a confidence interval). You will almost certainly be exposed to p-values, but please retain attention and focus on effect sizes. That said, also be always aware that use of the term "effect size" is in no way used to indicate a *causal* effect has been demonstrated (and is therefore in some senses an innapropriate term to use).
+
+* **Ordination** Our analyses have had relatively few explanatory variables, and one response variable. Relatively common, however, is to have several, even several tens of explanatory and/or response variables. Questions about gene expression and community composition, for example, can lead to data with many response variables. Such data is sometimes termed *multivariate* data, and working with such data is a whole other world of data and statistical analyses methods. Ordination is a common foundation and good starting point for such analyses, and so would be a good place for you to start looking. Principle component analysis is a good starting place therein. By the way, the functions for working with multivariate data usually require wide-format datasets and are more informative if datasets have named rows. If you need to get into this world, please look at the further information on the Insights companion website (http://insightsfromdata.io).
+
+* **Influence and outliers** We sometimes observe one or a few data point that are quite different from all others. How can we tell if they are so different that we should treat them differently? How can we know if they are different and likely to have high influence on our conclusions? What influence on our insights does an individual data point have? This will depend on various things, including: 1) number of other data points, with more other data points resulting in any individual one having less influence; 2) the value of the data point (y-value)... large ones (either in the positive or negative direction) tend to have larger influence; 2) the x value of the data point... where larger ones (in positive or negative direction) have more influence. Knowing how to identify and deal with unusual data points is very important, as is using only transparent methods for doing so.
+
+* **Transformations** Transforming variables, e.g. by taking the logarithm of the values and working with that, is quite common place. It can, for example, changing the shapes of the distribution of the data to make it more ameneable to analyses, or do the same for the relationship between two numeric variables. Why one might want to do this, when one should, and when one perhaps should not is very important to learn. We feel it could be the case that transformations are often applied without sufficient appreciation of their consequences.
+
+
+* **Factors** Now for some R specific things to learn more about. Variables that contain categories can, if one likes, be made factor type variables in R. This is useful when visualizing data and making statistical models. Factors are, however, a bit tricky. We explained them a little during the Workflow Demonstration (Section \@ref(wf-refine-import)), and go into further detail in the Workflow Demonstrations in the *Insights* companion website (http://insightsfromdata.io). One specific task we there cover is how to change to order of levels in a factor variable so that the order of categories in a graph is exactly as we'd like it.
+
+
+* **Multiple graphs** We showed how to make multiple facets in one graph, but what about if we'd like to arrange multiple different `ggplot` graphs in one figure. There are a number of approaches to doing this. A recent one, which aims to make it "ridiculously simple to combine separate ggplots into the same graphic" is the [`patchwork` add-on package](https://patchwork.data-imaginist.com/index.html). Using it involves something we did not cover in this book: assigning a ggplot to an object. It is worth you soon learning about this.
+
+
+
+## Non-independence {#non-independence}
+
+```{r results='hide', message=FALSE, warning=FALSE, echo=FALSE}
+## Load the libraries we use
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(stringr)
+library(lubridate)
+library(tidyr)
+library(ggbeeswarm)
+
+## Import and clean the data
+bats <- read_csv("data/bat_sex_diet_Mata_etal_2016.csv", na = "na")
+
+# variable names fixing
+names(bats) <- str_replace_all(names(bats), c(" " = "_"))
+names(bats) <- str_replace_all(names(bats), c("\\(" = "", "\\)" = ""))
+
+# variable value fixing and variable re-naming
+bats <- mutate(bats,
+             Date_proper = dmy(Date),
+             Sex = case_when(Sex == "M" ~ "Male",
+                             Sex == "F" ~ "Female"),
+             Age = case_when(Age == "Ad" ~ "Adult",
+                             Age == "Juv" ~ "Juvenile")) %>%
+#  select(-Date) %>% # commented out so we can demo a non-date variable
+  rename("Bat_ID" = "Sample",
+         "Row_order" = "Order",
+         "Order" = "Order_1")
+
+# calcuate a data frame of summary statistics
+prey_stats <- bats %>%
+  group_by(Bat_ID, Sex, Age) %>%
+  summarise(num_prey = n_distinct(Sp._Nr.),
+            mean_wingspan = mean(Wingspan_mm, na.rm = TRUE),
+            prop_migratory = sum(Migratory == "yes")/n()) %>%
+  #gather(key = "Response_variable", value = "Value", 4:6) %>%
+  na.omit()
+
+# calcuate the mean values of these statistics
+mean_prey_stats <- prey_stats %>%
+  na.omit() %>%
+  group_by(Sex, Age) %>%
+  summarise(sex_mean_wingspan = mean(mean_wingspan, na.rm = TRUE))
+
+```
+
+Think about the bat diet dataset. Each of the bats can have multiple observations (rows) in the dataset, one for each prey item detected in its poop. Hence the dataset has 633 rows/observations describing the 143 bats.
+
+Here's a puzzle for you. There are two ways to calculate the mean, minimum, and maximum wingspan of prey consumed by bats. Here is the first: we just calculate these things without doing anything else (i.e. we calculate directly on the raw data):
+
+```{r}
+bats %>% 
+  summarise(mean_wingspan = mean(Wingspan_mm, na.rm = TRUE),
+            min_wingspan = min(Wingspan_mm, na.rm = TRUE),
+            max_wingspan = max(Wingspan_mm, na.rm = TRUE),
+            n_wingspan = n())
+```
+
+We also asked for the number of data points, which here is 633. Seems fine.
+
+Here is the other way. We first calculate the mean wingspan of prey consumed by each bat, thus reducing the dataset to one number for each bat. Then we calculate the mean of these means, the minimum of these means, and the maximum of these means. Take a moment to think about if you think the answers will be the same or different to the answer above, and why you think this. Also, try to answer this for each of the mean, minimum, and maximum.
+
+Here comes the answer done the second way:
+
+```{r}
+bats %>% 
+  group_by(Bat_ID) %>%
+  summarise(mean_wingspan = mean(Wingspan_mm, na.rm = TRUE)) %>%
+  summarise(mean_mean_wingspan = mean(mean_wingspan, na.rm = TRUE),
+            min_mean_wingspan = min(mean_wingspan, na.rm = TRUE),            
+            max_mean_wingspan = max(mean_wingspan, na.rm = TRUE),
+            n_mean_wingspan = sum(!is.na(mean_wingspan)))
+```
+
+Some results are different in the two methods. The mean wingspan across all bats is 33.6 in the first case and 33.7 in the second. The minimum is 6.5 in the first case, but is 14 in the second case. The maximum is 52.5 for both, however. So the answers can be different, but don't have to be.
+
+Thinking about the minimum and maximums may help you understand this. Let's look at the bat individuals that included in their poop the smallest prey item. The code is below; don't worry about understanding it now if you don't (perhaps make a note to come back to it):
+
+```{r}
+bats %>% 
+  filter(Wingspan_mm == min(Wingspan_mm, na.rm = TRUE)) %>%
+  select(Bat_ID) %>%
+  distinct() %>%
+  inner_join(bats) %>%
+  arrange(Bat_ID) %>%
+  select(Bat_ID, Species, Wingspan_mm) %>%
+  glimpse()
+```
+
+We can see that Bat_ID 606 had six prey detected in its poop and their sizes were 29.5, NA, NA, 20, 6.5, and NA. The mean of these is obviously bigger than 6.5mm. In fact, we can know that if all the bats that ate a prey item of wingspan 6.5mm also ate something else (which can only be bigger than 6.5mm) then the mean prey size eaten must be greater than 6.5mm. And in this particular dataset all of the bats that ate something of wingspan 6.5mm also ate something else. I.e. there are no bats that only ate something of wingspan 6.5mm.
+
+In contrast, two bats ate only the largest (52.5mm wingspan) type of prey. So the mean prey size eaten is also 52.5mm.
+
+Why is the mean different (33.65 in one case and 33.67 in the other)? (This is not a rounding issues, the numbers really are different.) To understand how this can arise, consider this simplified example in which bat 1 was observed to eat two prey items, both of size 1, and bat 2 ate only one prey item of size 10
+
+```{r}
+bat1 <- c(1, 1)
+bat2 <- c(10)
+```
+
+Let's get the mean of all prey items:
+
+```{r}
+mean(c(bat1, bat2))
+```
+
+This seems correct: we add up the values to get 12 and divide by how many there are (3) to get 4. Excellent!
+
+Now the second way:
+
+```{r}
+mean(c(mean(bat1), mean(bat2)))
+```
+
+Here we calculate mean for each bat (1, and 10), then add these to get 11 and divide by 2 to get 5.5. It's key to realise that the two methods give different results because there were different numbers of observations (prey items) among the bats. If both bats had eaten the same number of prey items then the two methods would have given the same results.
+
+Now, imagine that bigger bats have more prey in their poop, perhaps because they do bigger poops. If we calculate the mean (or minimum or maximum) by the first method (i.e. without first calculating the mean for each bat) then these big bats would have more influence on the overall mean than the small bats, just because they did bigger poops. On the other hand, when we first calculate the mean of each bat we remove this effect---we give each bat equal influence/weight in the calculation of the overall mean.
+
+We hope you see why the two approaches give different result. But what has this got to do with independence/nonindependence? First, recognise that prey detected in the poop of the same bat are related in the sense that they came from the same bat poop... they share something in common compared to two prey that were detected in two different bat poops. So one can say that two observations from the same bat poop are less independent than two observations from different poops. Second, realise that if we do calculations without first taking the mean for each bat, we are not taking this non-independence into account: we give each of the 633 poops equal influence, even though some come from the same bat. If in contrast, we first take the mean for each bat, we are reducing the influence of related observations by the number of observations for each bat. I.e. each bat contributes only one observation to the overall mean, i.e. the number of observations used to calculate the overall mean is 142.
+
+You're probably now wondering which is the correct way to calculate the overall mean (and other overall statistics). Unfortunately there is not one answer to this. The answer certainly depends on your question (and maybe on other things too). If we're interested in questions about variation among bats, we're probably best off removing the influence of number of prey eaten by particular bats, i.e. we are better off working with 142 data points, one for each bat. This is what we did in the Workflow Demonstration to answer such questions. If, on the other hand, we are just using the bats to sample prey in their environment, and we want the mean size of the prey in the environment then it seems fair to calculate the mean of all 633 data points, and thank the bats that happened to give us lots of samples from the environment.
+
+
+
+## Missing values (NAs) {#extra-NAs}
+
+It is very important to be intimately aware of the number of data points we're working with, and where there are NAs in our data. If we didn't notice that we have only 142 (and not 143) mean wingspan measures, we might report that we had 143, have someone else find out that we missed this detail, and then lose a bit of credibility.
+
+We saw that the bat diet dataset contains 78 missing values of the `Wingspan_mm` variable, and no missing values in any other variables. We then calculated three response variables for each bat:
+
+```{r}
+prey_stats <- bats %>%
+  group_by(Bat_ID, Sex, Age) %>%
+  summarise(num_prey = n(),
+            num_prey1 = n_distinct(Sp._Nr.),
+            mean_wingspan = mean(Wingspan_mm, na.rm = TRUE),
+            prop_migratory = sum(Migratory == "yes") / n())
+```
+
+A few things here are worth noting:
+
+* We might have decided to remove all the rows containing NAs in the `Wingspan_mm` variable before doing anything else. But then we would have lost some information from the dataset---potentially useful and important information. Also, we might have created some bias if there was something special about the NAs.
+
+* The NAs are all for non-Lepidoptera prey, so any analysis of wingspan will only be for Lepidoptera. We needed to know this. (Check this by viewing the data.)
+
+* One bat (Bat_ID 1320) ate only one prey item and this was non-Lepidopera (check this again by viewing the data, or using the `filter` function). Hence this bat has a NA entry when we calculate the mean wingspan of prey it ate. The other 142 bats all have a non-NA mean wingspan entry. This means that when we answer questions about mean wingspan we will be working with only 142 data points, and for other response variables we'll have 143.
+
+
+```{block, type="beaware"}
+__R functions will usually take care of NAs__ . They will then often give a warning like "5 rows with missing values removed". If you see such a warning, absolutely, without a doubt, 100% make sure you know why these are being removed, and put a note in your code. To be clear, if you let functions take care of NAs then make sure you know what they're doing. And its probably better to take care of them yourself, explicitly.
+```
+
+
+### Skewness
+
+A well-defined hierarchy has been defined to describe and quantify the shape of distributions. It's essential to know about the first two: central tendency and dispersion, because these are the basis of many standard analyses. The next most important aspect of a distribution is its __skewness__ (or just 'skew'). Skewness describes the asymmetry of a distribution. Just as with central tendency and dispersion, there are many different ways to quantify the skewness of a sample distribution. These are quite difficult to interpret because their interpretation depends on other features of a distribution. We'll just explore skewness in the simplest case: the skewness of a __unimodal__ distribution.
+
+A unimodal distribution is one that has a single peak. We can never say for certain that a sample distribution is unimodal or not---unimodality is really a property of theoretical distributions---but with enough data and a sensible histogram we can at least say that a distribution is 'probably' unimodal. The histograms we produced to describe the sample distributions of `Wingspan_mm` and `No._Reads` appear to be unimodal. Each has a single, distinct peak. 
+
+These two unimodal distributions are also asymmetric---they exhibit skewness. The `Wingspan_mm` distribution is said to be skewed to the left because it has a long 'tail' that spreads out in this direction. In contrast, we say that the `No._Reads` distribution is skewed to the right, because it has a (very) long 'tail' that spreads out to right. Left skewness and right skewness are also called negative and positive skew, respectively. A sample distribution that looks symmetric is said to have (approximately) zero skew^[Strictly speaking the terms "negative" and "positive" are reserved for situations where we have calculated a quantitative measure of skew. However, they are often used informally in verbal descriptions of skewness.].
+
+The reason we care about skewness is that many common statistical models assume that the distributions we're sampling from, after controlling for other variables, are **not** skewed. This is an issue for a statistics course. For now we just need to understand what skewness means and be able to describe distributions in terms of left (negative) and right (positive) skew.
+
+```{block, type="info"}
+How are mean, median, and skew related? Left (negative) skew means that the mean will be smaller than the median, right skew that the mean is greater than the median. Check this for the `Wingspan_mm` variable and also the `No._Reads` one. Consider using the `skewness` function in the **e1071** package.
+```
+
+```{r eval=FALSE, echo=FALSE}
+bats %>%
+  summarise(mean_wingspan = mean(Wingspan_mm, na.rm = TRUE),
+            median_wingspan = median(Wingspan_mm, na.rm = TRUE),
+            skewness_wingspan = e1071::skewness(Wingspan_mm, na.rm = TRUE))
+```
 
 ## Modes of data analysis
 
@@ -64,4 +265,53 @@ https://github.com/opetchey/insights1_edition1/issues/4
 ## Distributions
 
 https://blog.cloudera.com/blog/2015/12/common-probability-distributions-the-data-scientists-crib-sheet/
+
+
+### Comparing descriptive statistics {#summaries}
+
+Until now we have been focusing on plots that display either the raw data (e.g. scatter plots), or a summary of the raw data that captures as much detail as possible (e.g. histograms and box plots). We've tended to treat descriptive statistics like the sample mean as 'a number' to be examined in isolation. These are often placed in the text of a report or in a table.
+
+There is, however, nothing to stop us visualising a set of means (or any other descriptive statistics) and a figure is much more informative than than a table. Moreover, many common statistical tools focus on a few aspects of sample distributions (e.g. means and variances) so it's a good idea to plot these.
+
+We need to know how to construct graphs that display such summaries. Let's start with a simple question: how does the (arithmetic) mean wingspan vary between males and females? One strategy is to produce a bar plot in which the lengths of the bars represent the mean wingspan in each sex. There are two different ways to produce this with **ggplot2**.
+
+The first is simplest, but requires a new **ggplot2** trick. When we add a layer using `geom_bar` we have to set two new arguments. The first is `stat = "summary"`. This tells **ggplot2** not to plot the raw values of the y aesthetic mapping, but instead, to construct a summary of the 'y' variable. The second argument is `fun.y = mean`. This tells **ggplot2** how to summarise this variable. The part on the right hand side can be any R function that takes a vector of values and returns a single number. Obviously we want the `mean` function. See how this works in practice (with the resulting graph in Figure \@ref(fig:key-concepts-17))
+
+```{r key-concepts-17, fig.cap='A barplot showing the mean prey wingspan consumed by male and female bats.', out.width='50%', fig.asp=.75, fig.align='center', fig.height=2.5, warning=FALSE}
+ggplot() +
+  geom_bar(data = prey_stats,
+           mapping = aes(x = Sex, y = mean_wingspan),
+           stat = "summary",
+           fun.y = mean) +
+  coord_flip() + 
+  xlab("Sex") +
+  ylab("Mean wingspan (mm)")
+```
+
+We also flipped the coordinates here with `coord_flip` to make this a horizontal bar plot (for no particular reason!). The only new idea is our use of the `stat` and `fun.y` arguments.
+
+The second way to build a bar plot showing some kind of summary statistic breaks the problem into two steps. In the first step we have to calculate whatever it is we want to display, i.e. the category-specific mean in this case. This information needs to be stored in a dataframe or tibble so **dplyr** is the best tool to use for this:
+
+```{r}
+wingspan_by_sex <- prey_stats %>% 
+  group_by(Sex) %>% 
+  summarise(mean_mean_wingspan = mean(mean_wingspan, na.rm = TRUE))
+wingspan_by_sex
+```
+
+We used `group_by` and `summarise` to calculate the set of means, which we called `mean_mean_wingspan`. The second step uses the new dataframe (called `wingspan_by_sex`) as the default data in a new graphical object, sets x and y aesthetic mappings from `Sex` and `mean_mean_wingspan`, and adds a layer with `geom_bar` (with the resulting graph in Figure \@ref(fig:key-concepts-18))
+
+```{r key-concepts-18, fig.cap='The same as the previous figure, but with the means calculated first.', out.width='50%', fig.asp=.75, fig.align='center', fig.height=2.5, warning=FALSE}
+ggplot() +
+  geom_bar(data = wingspan_by_sex,
+           mapping = aes(x = Sex, y = mean_mean_wingspan),
+           stat = "identity") + 
+  coord_flip() +
+  xlab("Sex") +
+  ylab("Mean of mean wingspan (mm)")
+```
+
+The result is the same as the last plot. Notice that we had to set `stat` to `"identity"`. This is important. The default behaviour of `geom_bar` is to count the observations in each category. The `stat = "identity"` argument tells it that the information in `mean_wind` must be plotted 'as is'.
+
+Which approach is better? Although the first approach is more compact, we recommend the second long-winded approach for new users because it separates the summary calculations from the plotting. This way, as long as we're comfortable with **dplyr**, we can get away with remembering less about how **ggplot2** works. It also makes it a bit easier to fix mistakes, as we can first check whether the right information is in the summary dataframe, before we worry about plotting it. The two-step method is easy to extend to different kinds of plots as well.
 
