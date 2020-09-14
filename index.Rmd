@@ -1,5 +1,5 @@
 ---
-title: "Insights from Data with R --- Online Companion"
+title: "Companion Website --- Insights from Data with R"
 subtitle: "An Introduction for the Life and Environmental Sciences"
 author: "Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs"
 date: "`r Sys.Date()`"
@@ -22,7 +22,8 @@ site: bookdown::bookdown_site
 ```{r setup, include=FALSE}
 options(
   htmltools.dir.version = FALSE, formatR.indent = 2,
-  width = 55, digits = 4, warnPartialMatchAttr = FALSE, warnPartialMatchDollar = FALSE
+  width = 55, digits = 4,
+  warnPartialMatchAttr = FALSE, warnPartialMatchDollar = FALSE
 )
 
 local({
@@ -46,7 +47,7 @@ lapply(c('DT', 'citr', 'formatR', 'svglite'), function(pkg) {
 
 # Introduction
 
-```{r}
+```{r echo=FALSE}
 knitr::opts_chunk$set(cache = FALSE)
 ```
 
@@ -54,34 +55,22 @@ knitr::opts_chunk$set(cache = FALSE)
 
 {{< youtube EHLLmEcqRlk >}}
 
-The [preface](hyperlink to pdf of Preface?) of *Insights* informs about features of the book, such as its aims, content, structure, intended readership, and content that it does not include. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in *Insights* and why. Read the preface and answer [questions here (directs to a different website)](insightsfromdata.org), directly concerning the content of the Preface, might also help that understanding.
+The Preface Chapter [PDF of the Preface Chapter](Preface?) of *Insights* describes features of the book, such as its aims, content, structure, intended readership, and relationship to our other book *Getting Started with R*. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in *Insights* and why. 
 
-Here you will find information additional to that in the book:
+On this Companion Website you will find information additional to that in the book:
 
 1. An overview of the [Insights Workflow](#insights-workflow).
 2. [More topics in R](#more-r).
 3. [Additional data analysis concepts](#more-concepts).
-4. (5,6) Three additional Workflow Demonstrations: [polity and food diversity](#WFD-food-pol), [effects of dietary diversity on populations](#WFD-dietdiv-effect), and [effects of dietary restriction on individuals](#WFD-diet-restrict).
+4. An additional Workflow Demonstration: [polity and food diversity](#WFD-food-pol)
+5. An additional Workflow Demonstration: [effects of dietary diversity on populations](#WFD-dietdiv-effect)
+6. A relatively unguided workflow demonstration [effects of dietary restriction on individuals](#WFD-diet-restrict).
 7. Model scripts for each workflow demonstration.
-8. Details of a [live data analysis demonstration](#live-data-demo) we often use in our introductory undergraduate classes.
+8. Details of a [live data analysis demonstration](#live-data-demo) that can be used in the very first class of an Introduction to Data Analysis undergraduate classes. It is designed to capture the students' interest.
 9. [More questions and datasets](#more-questions-data) that could be developed into new Workflow Demonstrations (perhaps for students to practice with and/or instructors to use.).
 10. Some [Related reading](#related-reading).
 
 
-
-## For instructors
-
-Perhaps add the "Notes/ideas for instructors section from the book Preface."
-
-## Workflow demonstration
-
-<img src="images/WF1_icon.jpg" width="60"/>
-
-<img src="images/WF3_icon.jpg" width="60"/>
-
-<img src="images/WF2_icon.jpg" width="60"/>
-
-<img src="images/WF4_icon.png" width="70"/>
 
 
 

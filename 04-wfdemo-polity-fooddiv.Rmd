@@ -3,7 +3,7 @@
 **At least say how we could improve country name matching. And that this is an interoperability issue...**
 
 ```{r message=FALSE, echo=FALSE, warning=FALSE}
-## Load the libraries we use
+# Load the libraries we use
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -353,23 +353,23 @@ First, we give the `read_csv` an argument you didn't previously see: `encoding`.
 Second, the penultimate line saves the produced tibble `ff` to a `Rdata` type of data file; though even that new type of instruction should be quite transparent to you by now.
 
 ```{r eval=FALSE}
-## Get the full food balance sheet dataset *All data* from the FAO website:
-## http://www.fao.org/faostat/en/#data/FBS/metadata.
-## Reduce the size of the FAO data, so easier to deal with
-## import FAO data
+# Get the full food balance sheet dataset *All data* from the FAO website:
+# http://www.fao.org/faostat/en/#data/FBS/metadata.
+# Reduce the size of the FAO data, so easier to deal with
+# import FAO data
 fbs <- read_csv("data/FoodBalanceSheets_E_All_Data.csv",
                locale = locale(encoding = 'ISO-8859-1'))
-## First fix some variable names:
+# First fix some variable names:
 names(fbs) <- str_replace_all(names(fbs), c(" " = "_"))
-## Remove all non-countries
+# Remove all non-countries
 fbs <- filter(fbs, Country_Code < 5000)
-## keep only some of the elements
+# keep only some of the elements
 fbs <- filter(fbs, Element %in% c("Food supply quantity (kg/capita/yr)"))
-## remove some other variables that won't be used
+# remove some other variables that won't be used
 fbs <- select(fbs, -Country_Code, -Item_Code,
              -Element_Code, -Element, -Unit,
              -ends_with("F"))
-## save the reduced file
+# save the reduced file
 saveRDS(fbs, "data/FoodBalanceSheets_E_All_Data_reduced.Rdata")
 rm(fbs)
 ```
@@ -713,7 +713,7 @@ write_rds(fbs_div, "data/fbs_div.RDS")
 First let's first clear R and reload the two datasets:
 
 ```{r message=FALSE, echo=FALSE, warning=FALSE}
-## Load the libraries we use
+# Load the libraries we use
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -835,7 +835,7 @@ setdiff(pull(pol_iso_mapping, Country),
         pull(pol, Country))
 setdiff(pull(pol, Country),
         pull(pol_iso_mapping, Country))
-## all match
+# all match
 ```
 
 Merge the ISO codes into the polity data:
