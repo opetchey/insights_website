@@ -1,5 +1,5 @@
 ```{r message=FALSE, echo=TRUE, warning=FALSE}
-## Load the libraries we use
+# Load the libraries we use
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -170,7 +170,7 @@ filter(mortality, Fish_ID=="LR504")
 In the mortality dataset fish LR504 has two records for week 2.
 
 ```{r}
-## here we check if this is the only fish with fewer records than weeks it was observed in
+# here we check if this is the only fish with fewer records than weeks it was observed in
 check <- mortality %>%
   group_by(Fish_ID) %>%
   summarise(check = length(unique(Week))==max(Week))
@@ -329,7 +329,7 @@ The courtship and eggs datasets already contain the response variable.
 **Q22. Calculate the response variable for the change in fish length and change in body condition from the `length_weight_condition` dataset, and the time of death (or no death [censored]) from the `mortality` dataset.**
 
 ```{r}
-### Time of death
+# Time of death
 temp_mortality2 <- mortality %>%
   filter(Status=="alive") %>%
   group_by(Fish_ID, Diet_comp, Prov_level, Sex) %>%
@@ -349,7 +349,7 @@ Above, we set the eight fish that were already dead at week 1 as having a lifesp
 
 
 ```{r}
-### Change in length
+# Change in length
 change1 <- length_weight_condition %>%
   group_by(Fish_ID, Diet_comp, Prov_level) %>%
   do(m1 = lm(Length ~ Batch, data=.)) %>%
@@ -361,7 +361,7 @@ change1 <- length_weight_condition %>%
 Note that `tidy` silently drops NA coefficients.
 
 ```{r}
-### Change in condition
+# Change in condition
 change2 <- length_weight_condition %>%
   group_by(Fish_ID, Diet_comp, Prov_level) %>%
   do(m1 = lm(Cond_index ~ Batch, data=.)) %>%
@@ -480,15 +480,15 @@ mortality <- mortality %>%
          Status = case_when(Status == 0 ~ "alive",
                             Status == 1 ~ "dead"))
 
-## Check for the odd duplicate
+# Check for the odd duplicate
 check <- mortality %>%
   group_by(Fish_ID) %>%
   summarise(check = length(unique(Week))==max(Week))
 check %>%
   filter(!check)
-## no rows... excellent
+# no rows... excellent
 
-### Time of death
+# Time of death
 temp_mortality2 <- mortality %>%
   filter(Status=="alive") %>%
   group_by(Fish_ID, Diet_comp, Prov_level, Sex) %>%
@@ -504,7 +504,7 @@ mortality2 <- full_join(temp_mortality2, last_obs) %>%
   select(-Last_sample)
 
 
-### Change in length
+# Change in length
 change1 <- length_weight_condition %>%
   group_by(Fish_ID, Diet_comp, Prov_level) %>%
   do(m1 = lm(Length ~ Batch, data=.)) %>%
@@ -513,7 +513,7 @@ change1 <- length_weight_condition %>%
   select(Fish_ID, Diet_comp, Prov_level, Length_change=estimate)
 
 
-### Change in condition
+# Change in condition
 change2 <- length_weight_condition %>%
   group_by(Fish_ID, Diet_comp, Prov_level) %>%
   do(m1 = lm(Cond_index ~ Batch, data=.)) %>%
@@ -541,7 +541,7 @@ dd <- mutate(dd,
                                       "75",
                                       "100"))
 
-## Check for fish doing what they shouldn't be..
+# Check for fish doing what they shouldn't be..
 dd %>%
   filter(Sex == "Female", !is.na(Total_court))
 dd %>%

@@ -29,7 +29,7 @@
 ## Non-independence {#non-independence}
 
 ```{r results='hide', message=FALSE, warning=FALSE, echo=FALSE}
-## Load the libraries we use
+# Load the libraries we use
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -38,7 +38,7 @@ library(lubridate)
 library(tidyr)
 library(ggbeeswarm)
 
-## Import and clean the data
+# Import and clean the data
 bats <- read_csv("data/bat_sex_diet_Mata_etal_2016.csv", na = "na")
 
 # variable names fixing
@@ -223,13 +223,13 @@ https://www.r-bloggers.com/taxadb-a-high-performance-local-taxonomic-database-in
 It's certainly nice to know that we accurately entered the prey species names, in the sense that they match the names of known prey species. Doing so will also ensure that our results could be compared with and combined with other studies of moth species (put another way, we would have assured our data are *interoperable* with other studies involving these moth species). To do this, we can use a very nice set of packages that make the whole process a total breeze. Let's try this for the first ten species in the dataset. Note that the first line below installs the __taxize__ add-on package, and is commented out as we only need to run it once).
 
 ```{r eval = FALSE}
-## install.packages("taxize")
-## the previous line was commented out. Uncomment it by removing
-## the two pounds (##) if you want to run it.
-library(taxize) ## load the package
+# install.packages("taxize")
+# the previous line was commented out. Uncomment it by removing
+# the # if you want to run it.
+library(taxize) # load the package
 some_species_names <- slice(dd, 1:10) %>%
-  pull(Species) ## get first ten species
-## query the online database of species names
+  pull(Species) # get first ten species
+# query the online database of species names
 species_names_reports <- gnr_resolve(some_species_names,
                                      best_match_only = TRUE)
 species_names_reports
@@ -240,6 +240,62 @@ In this report, the final column gives a quick indication of how well the moth s
 
 
 ## Lurking variables
+
+
+
+State that we simulated this data. Make the code available on r4all.
+
+```{r echo=FALSE}
+# Code from here: https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/multivariate-linear-models.html#masked-relationship
+N   <- 400   # number of cases
+rho <- .8      # correlation between x_pos and x_neg
+set.seed(141)  # setting the seed makes the results reproducible
+dd <- 
+  tibble(x1 = rnorm(N),                            
+         x2 = rnorm(N, rho*x1, sqrt(1 - rho^2)),  
+         y     = rnorm(N, x1 - x2))               
+```
+
+```{r}
+dd
+```
+
+```{r masked-rels-1, fig.cap='(a and b) Little evidence of a relationship between the response variable *y* and either of the two explanatory variables *x1*, or *x2*. (c) Strong correlation between the two explanatory variables *x1* and *x2*', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
+library(patchwork)
+p1 <- ggplot(dd, aes(x=x1, y=y)) +
+  geom_point()
+p2 <- ggplot(dd, aes(x=x2, y=y)) +
+  geom_point()
+p3 <- ggplot(dd, aes(x=x1, y=x2)) +
+  geom_point()
+p1 + p2 + p3
+```
+
+
+```{r}
+dd <- mutate(dd,
+            x1_cut = cut(x1, 10),
+            x2_cut = cut(x2, 10))
+```
+
+```{r masked-rels-2, fig.cap='The positive relationship between the response variable (*y*) and one of the explanatory variables (*x1*) is visible because each facet shows a relatively small range of variation in the other explanatory variable (*x2*).', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
+ggplot(dd, aes(x=x1, y=y)) +
+  geom_point() +
+  facet_wrap(~x2_cut, scales = "free", nrow = 2)
+
+```
+
+```{r masked-rels-3, fig.cap='The same as the previous figure, but with the explanatory variables switched, so that we see the negative relationship between *y* and *x2*.', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
+ggplot(dd, aes(x=x2, y=y)) +
+  geom_point() +
+  facet_wrap(~x1_cut, scales = "free", nrow = 2)
+```
+
+Conditional plots. How can one "account for" the other explanatory variable? Hold the second explanatory variable constant, or at least relatively constant.
+
+Correlated explanatory variables.
+
+
 
 We can easily think of situations that are not so amenable to the approaches you learned in this book. This does not mean that the approaches are not useful or important. They are foundational. And therefore to be built on.
 

@@ -51,24 +51,25 @@ lapply(c('DT', 'citr', 'formatR', 'svglite'), function(pkg) {
 knitr::opts_chunk$set(cache = FALSE)
 ```
 
-*Welcome!*
+*Welcome!* to the Companion Website for the book *Insights from Data with R -- An Introduction for the Life and Environmental Sciences*
 
-{{< youtube EHLLmEcqRlk >}}
-
-The Preface Chapter [PDF of the Preface Chapter](Preface?) of *Insights* describes features of the book, such as its aims, content, structure, intended readership, and relationship to our other book *Getting Started with R*. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in *Insights* and why. 
+The Preface Chapter [here is a PDF of the Preface Chapter](Preface?) of *Insights* describes features of the book, such as its aims, content, structure, intended readership, and relationship to our other book *Getting Started with R*. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in *Insights* and why. 
 
 On this Companion Website you will find information additional to that in the book:
 
-1. An overview of the [Insights Workflow](#insights-workflow).
-2. [More topics in R](#more-r).
-3. [Additional data analysis concepts](#more-concepts).
-4. An additional Workflow Demonstration: [polity and food diversity](#WFD-food-pol)
-5. An additional Workflow Demonstration: [effects of dietary diversity on populations](#WFD-dietdiv-effect)
-6. A relatively unguided workflow demonstration [effects of dietary restriction on individuals](#WFD-diet-restrict).
-7. Model scripts for each workflow demonstration.
-8. Details of a [live data analysis demonstration](#live-data-demo) that can be used in the very first class of an Introduction to Data Analysis undergraduate classes. It is designed to capture the students' interest.
-9. [More questions and datasets](#more-questions-data) that could be developed into new Workflow Demonstrations (perhaps for students to practice with and/or instructors to use.).
-10. Some [Related reading](#related-reading).
+(@) An overview of the [Insights Workflow](#insights-workflow).
+(@) Questions to work through with each chapter of the book.
+(@) [More topics in R](#more-r).
+(@) [Additional data analysis concepts](#more-concepts).
+(@) An additional Workflow Demonstration: [polity and food diversity](#WFD-food-pol)
+(@) An additional Workflow Demonstration: [effects of dietary diversity on populations](#WFD-dietdiv-effect)
+(@) A relatively unguided workflow demonstration [effects of dietary restriction on individuals](#WFD-diet-restrict).
+(@) An example of how one might complete the previous Workflow Demonstration.
+(@) Model scripts for each Workflow Demonstration.
+(@) Details of a [live data analysis demonstration](#live-data-demo) that can be used in the very first class of an Introduction to Data Analysis undergraduate classes. It is designed to capture the students' interest.
+(@) [More datasets](#more-datasets) that could be developed into new Workflow Demonstrations (perhaps for students to practice with and/or instructors to use).
+(@) Some [Related reading](#related-reading).
+(@) Answers to the questions that accompany each Chapter.
 
 
 

@@ -58,7 +58,7 @@ This question is worth asking at the beginning of a study. There were, in fact, 
 Make a new folder for this case study, and in it a folder called `data` (this will contain any datasets for this case study/project). In RStudio create an RStudio project and save it in the project folder (not the `data` folder). Close RStudio and double click on the project file to re-open RStudio. Create a new R script file and load the libraries we will use:
 
 ```{r message=FALSE, echo=TRUE, warning=FALSE}
-## Load the libraries we use
+# Load the libraries we use
 library(dplyr)
 library(ggplot2)
 library(readr)

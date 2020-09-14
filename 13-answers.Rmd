@@ -207,7 +207,7 @@ bats_per_date %>%
 **Q3.7** Get the number of species of Noctuidae and Geometridae in the dataset.
 
 ```{r eval = FALSE}
-## Solution
+# Solution
 families <- bats %>%
   select(Species, Order, Family) %>%
   distinct() %>%

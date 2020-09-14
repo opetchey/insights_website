@@ -97,20 +97,20 @@ First note that Owen has gone to the responses googlesheet, and in the "File" me
 Now we can read that web page of comma separated values into R:
 
 ```{r, message=FALSE}
-## First we load a required package (we need to install this if we haven't already)
+# First we load a required package (we need to install this if we haven't already)
 library(readr)
-## also we will use some other packages
+# also we will use some other packages
 library(dplyr)
 library(ggplot2)
 
-## Now read in the data, using the read_csv() function. We give it the URL of the published version of the google sheet data.
-## Instructors: update the url to be for your googlesheet
+# Now read in the data, using the read_csv() function. We give it the URL of the published version of the google sheet data.
+# Instructors: update the url to be for your googlesheet
 the_URL <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vT-Uvx2LYX3APsXgjKw1XnIi-jKOi-QNAINmMu234JLvyDZezABPfO-_QnJ5ZtC3wed9pYdxs8-pyK7/pub?output=csv"
 class_RTs <- read_csv(the_URL)
 
-## Have a look at the data in R
+# Have a look at the data in R
 #View(class_RTs)
-## or just do
+# or just do
 class_RTs
 ```
 
@@ -119,7 +119,7 @@ class_RTs
 ### Clean up the column / variable names:
 
 ```{r}
-## Must be very careful to get the next line right!!! Really important!!!
+# Must be very careful to get the next line right!!! Really important!!!
 names(class_RTs) <- c("Timestamp", "ID", "Gender", "Pref_Reaction_time_1",
                       "Verbal_memory_score", "Number_memory_score",
                       "Visual_memory_score",
@@ -147,14 +147,14 @@ This section should not be necessary, as the google form allows only numeric ent
 If we have problems here, with variables of the wrong type, it probably means some of the data entry is a bit messed up.
 
 ```{r}
-## Have to do this live!!!
-## e.g. to exclude observations with character entries in Reaction_time variable
+# Have to do this live!!!
+# e.g. to exclude observations with character entries in Reaction_time variable
 class_RTs <- filter(class_RTs, !is.na(as.numeric(Pref_Reaction_time)))
 ```
 
 Once fixed, we need to make the variable have the correct type
 ```{r, message=FALSE}
-## try using type_convert() from readr package.
+# try using type_convert() from readr package.
 class_RTs <- type_convert(class_RTs)
 ```
 

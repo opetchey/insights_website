@@ -61,7 +61,7 @@ Make a new folder for this Workflow Demonstration (WD), and in it a folder calle
 
 
 ```{r message=FALSE, warning=FALSE}
-## Load the libraries we use
+# Load the libraries we use
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -353,6 +353,8 @@ The full dataset has 238,560 rows and 113 variables. The first nine variables ar
 * **Y1961F** - A character variable giving information about the data (F is for Flag), such as "Official data", "FAO data", etc.
 
 The *Definitions and standard button* on this web page http://www.fao.org/faostat/en/#data/FBS/metadata leads to much much more information about the variables and entries.
+
+** Seems that the data have been updated online!!! and don't include many years.**
 
 You could get the FAO food balance data from the [FAO website](http://www.fao.org/faostat/en/#data/FBS/metadata). The datafile you would get is called `FoodBalanceSheets_E_All_Data.csv` and is 206 MB, i.e. it is quite big. We need, however, only a small amount of the information in this dataset. So to make things easier for ourselves and for you, we created a smaller dataset containing only the data we need, and saved it as an *RDS* type of file. This file type fits more data into a smaller space---the resulting file `FoodBalanceSheets_E_All_Data_reduced.Rdata` is 1.9MB. You can download that data here: [direct download small FAO balance sheet data](data/FoodBalanceSheets_E_All_Data_reduced.Rdata).
 
@@ -764,7 +766,7 @@ library(ggbeeswarm)
 ```
 
 ```{r}
-rm(list=ls()) ## clear R
+rm(list=ls()) # clear R
 pol <- read_rds("data/pol.rds")
 fbs_div <- read_rds("data/fbs_div.RDS")
 ```
@@ -946,7 +948,7 @@ rm(list=ls())
 ```
 
 ```{r message=FALSE, echo=TRUE, warning=FALSE}
-## Load libraries
+# Load libraries
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -956,7 +958,7 @@ library(tidyr)
 library(vegan)
 library(ggbeeswarm)
 
-## load dataset
+# load dataset
 fbs_pol <- readRDS("data/fbs_pol.Rdata")
 ```
 
@@ -1153,10 +1155,10 @@ Get the GDP data from here: http://www.fao.org/faostat/en/#data/MK
 ```{r eval = FALSE}
 gdp <- read_csv("~/Desktop/Macro-Statistics_Key_Indicators_E_All_Data.csv",
                locale = locale(encoding = 'ISO-8859-1'))
-## First fix some variable names:
+# First fix some variable names:
 names(gdp) <- str_replace_all(names(gdp), c(" " = "_"))
-## Remove all non-countries
-## keep only some of the elements
+# Remove all non-countries
+# keep only some of the elements
 #gdp <-   filter(gdp, Item_Code==22008 & Element_Code==6110)
 gdp <-   filter(gdp, Item_Code==22014 & Element_Code==6119)
 gdp <- select(gdp, -Item_Code, -Area_Code,

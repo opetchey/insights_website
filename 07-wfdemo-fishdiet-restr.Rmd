@@ -3,7 +3,7 @@
 
 
 ```{r message=FALSE, echo=TRUE, warning=FALSE}
-## Load the libraries we use
+# Load the libraries we use
 library(dplyr)
 library(ggplot2)
 library(readr)
