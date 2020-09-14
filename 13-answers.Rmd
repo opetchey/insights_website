@@ -1,0 +1,428 @@
+# Answers and solutions {#answers}
+
+## Preface
+
+**Q0.1** Who is the intended audience/users/readers of *Insights*?
+
+**A**, **C**, and **D** are correct. *Insights* is intended for beginner scientists in the life and environmental scientist that will be working with quantitative data. Our other book, *Getting Started with R* is for folk that what an introduction to R and who already know a bit about data analysis (just not in R).
+
+**B**: If you already have good knowledge of data analysis and statistics and need an introduction to R, you might like to look at our other book, *Getting Started with R, 2nd Edition*.
+
+**Q0.2** *Insights* teaches a newer (i.e. tidyverse) approach to using R, and not what might be called the “classic” or “traditional” approach. What does this mean?
+
+**A**, **C**, **D**, and **E** are correct. We teach the newer (tidyverse) approach in our own Undergraduate-Level Introduction to Data Analysis courses. It works really well. The newer (tidyverse) approach is not advanced R, it is simple, intuitive, and powerful R.
+
+*Insights* contains not a single square bracket or dollar sign.
+
+**Q0.3** *Insights* is a book about the process of getting insights from data, and yet it contains no statistical analyses (e.g. no regression, ANOVA, linear models, or generalised linear models. Why are such things not included?
+
+Every answers is a good reason for starting learning about data analysis without considering statistics.
+
+**Q0.4** What proportion of a data analyists time and effort is spent on tasks such as preparation, import, cleaning, tidying, checking, double-checking, manipulating, summarising and visualizating data?
+
+We write "about 80%". Though really we just mean *a lot*. Care and attention to this work is essential to provide a found foundation dataset from which to derive insights.
+
+**Q0.5** From where do you get the datasets that you need to work along with the demonstrations in the book?
+
+Only **D** is correct. You get the data from the online data repositories where the authors of the original studies deposited their data. Unlike the majority of Introduction to Data Analysis books, *Insights* starts from the usual dirty and messy state data usual begins in. Its lot of work, but absolutely essential work to do safely and reliably, to get the data tidy, clean, and arranged so that visualisation and summarisation (and in the end, statistics) are straightforward and efficient, and that the insights derived from them are accurate, reliable, and robust.
+
+**Q0.6** Natalie.
+
+**Q0.7** Owen.
+
+**Q0.8** Andrew.
+
+**Q0.9** Dylan.
+
+
+
+
+## Chapter 1 (Introduction)
+
+**Q1.1** Yes, it is possible to get insights from data without all these things. And we think doing so is a great starting point to learn fundamental skills for getting insights from data. Getting insights from more complex and larger datasets than used in the book can, however, be greatly assisted by statistical models, machine learning, and many other more advanced methods.
+
+**Q1.2** We will focus on important characteristics of the data and the patterns in it. We are more likely to think about the strength of and practical importance of patterns in the data. We are less likely to focus on statistical significance at the expense of everything else.
+
+**Q1.3** Out of the four options given, a question is the first we should think about. The clearer and more specific the better. Making a clear and specific question can be assisted by sketching a graph. We must be careful to minimise the possibility for our insights to be affected by what we would like to find.
+
+**Q1.4** With a randomised manipulative experiment we have a chance of inferring causation... that changing somethings caused a change in something else. On the down side, logistical constraints of make such experiments occur in rather controlled and less realistic settings than other types of studies.
+
+**Q1.5** We focus on rectangular data, i.e. a table of data with rows and columns. A spreadsheet is an example of such rectangular data. We focus on this as it is a simple, useful, and flexible way of arranging data. Furhtermore, there are many convenient and powerful approaches for working with data thus arranged.
+
+**Q1.6** A *response variable* contains the data (measurements/observations) that we are interested in understand the variation in. This is the variable that is "responding" to other variables. It is also know as the *dependent* variable. Typically we put the response variable on the y-axis of a graph (i.e. we *map* variation in the response variable to variation along the y-axis).
+
+**Q1.7** An explanatory variable is a variable that contains measurements that can *explain* variation in a response variable. They are also termed the "independent" variable and the "predictor" variable. The rationale for these names is that an explanatory variable is not dependent on other variables, and can be used to predict variation in the response variable.
+
+**Q1.8** The five given in *Insights* are 1) the number of observations, 2) the number of variables, 3) if variables describe the manipulations of a randomised experiment, 4) correlation among the variatbles, and 5) how independent are the observations. See the text of the book for why we think these are important. Great if you have thought of other important features... drop us a line to let us know.
+
+**Q1.9** The all concern food!
+
+**Q1.10* Perhaps lots were missing, and some of the presented steps could be broken up into multiple steps. Its always risky to present a general recipe for something as ultimately diverse as getting insights from data. Still, its a good idea to start somewhere. The missing step mentioned was communication, by the way.
+
+## Chapter 2 (Getting Acquainted)
+
+**Q2.1** True or false: R and RStudio are the same software program?
+
+This is false. They are two separate programs. RStudio is like a helper program that surrounds R. We only use R via RStudio. Because they're separate programs we must update each. I.e. updating one will not update the other.
+
+**Q2.2** What will R tell us if we type into the Console `1 + 3 * 3`?
+
+The answer is 10. R does the multiplication first, as it should.
+
+**Q2.3** What will R tell us if we type into the Console `log(100)`?
+
+The answer is 4.60517. This is because the `log` function is the natural log, often written as "ln". If you answered 2 you were thinking of `log10(100)`
+
+**Q2.5** How would we assign to the name "my_constant" the value of "log(100)"?
+
+`my_constant <- log(100)`
+
+**Q2.5** What commands should we be typing directly into the Console?
+
+Any that we know that we don't want to remember and don't want to use again. I.e. very very few. The vast majority we type in our script, and then "send" to the Console. This practice will result in our script containing a complete record of everything we did.
+
+**Q2.6** What is the error in the code?
+
+In the second line of code the name `my_x_variable` was mispelled (the second "a" was missing). Hence we get the error: `object 'my_x_variable' not found`.
+
+**Q2.7** When we give a function some arguments, when should we name the arguments?
+
+Name them whenever you are not sure about what order the function expects the arguments in. When staring with R, it can be comforting to always name the arguments, and then to relax this when one becomes more used to what individual functions expect.
+
+**Q2.8** True or false: it is a good time to have a the top of our script a command to *install* each of the packages we would like to use.
+
+False. Do not do this. We only need to load the add-on package with, for example, `library(dplyr)`. Installing packages every time you run your code is a waste of time.
+
+**Q2.9** True or false: When asking help from others it is sufficient to email them a verbal description of the problem, and a copy of the error message R gave.
+
+False. This will rarely be enough for someone to help find the problem. Even sending the line of code that produces the error is often not sufficient. Better to send more code than less, and if possible code that works, at least up until if fails. And send sample data if the code reads in and uses data.
+
+**Q2.10** If RStudio freezes, are we going to lose all our work?
+
+Probably not. RStudio has very likely autosaved the very latest version of our script. Just in case, attempt to copy the script from RStudio and paste it somewhere safe, before then restarting RStudio.
+
+
+## Chapter 3 (Workflow Demonstration--Part 1)
+
+```{r message=FALSE, echo=FALSE, warning=FALSE}
+# Load the libraries we use
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(stringr)
+library(lubridate)
+library(tidyr)
+# Import and clean the data
+bats <- read_csv("data/bat_sex_diet_Mata_etal_2016.csv", na = "na")
+names(bats) <- str_replace_all(names(bats), c(" " = "_"))
+names(bats) <- str_replace_all(names(bats), c("\\(" = "", "\\)" = ""))
+bats <- mutate(bats,
+             Date_proper = dmy(Date),
+             Sex = case_when(Sex == "M" ~ "Male",
+                             Sex == "F" ~ "Female"),
+             Age = case_when(Age == "Ad" ~ "Adult",
+                             Age == "Juv" ~ "Juvenile")) %>%
+#  select(-Date) %>% # commented out so we can demo a non-date variable
+  rename("Bat_ID" = "Sample",
+         "Row_order" = "Order",
+         "Order" = "Order_1")
+```
+
+**Q3.1**. `Bat_ID` is numeric, but these are identities (i.e. names). They could just as well be words. Leaving them as numbers could allow us to do something stupid, like involving them in a calculation. Using numbers in such situation can also result in `ggplot` not doing what we'd like, for example would lead to a colour gradient rather than discrete colours if we mapped the numerical variable to the colour aesthetic.
+
+
+**Q3.2** Calculate the total number of prey species by counting the number of unique prey species:
+
+```{r}
+bats %>%
+  summarise(total_num_prey_species = length(unique(Species)))
+```
+
+**Q3.3** Calculate number of migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
+
+```{r}
+bats %>%
+  group_by(Migratory) %>%
+  summarise(total_num_prey_species = length(unique(Species)))
+```
+
+```{r}
+bats %>%
+  group_by(Pest) %>%
+  summarise(total_num_prey_species = length(unique(Species)))
+```
+
+```{r}
+bats %>%
+  group_by(Migratory, Pest) %>%
+  summarise(total_num_prey_species = length(unique(Species)))
+```
+
+**Q3.4** Plot at the shape of the distribution of dates on which poop samples were collected.
+
+```{r}
+bats %>%
+  group_by(Date_proper) %>%
+  summarise(Unique_Date = unique(Date_proper)) %>%
+  ggplot() +
+  geom_histogram(aes(x = Unique_Date), bins = 10)
+
+```
+
+**Q3.5** Plot the distribution of number of reads.
+
+```{r}
+bats %>%
+  ggplot() +
+  geom_histogram(aes(x = No._Reads))
+```
+
+From the shape, we expect the mean to be greater than the median.
+
+```{r}
+bats %>%
+  summarise(mean_num_reads = mean(No._Reads),
+            median_num_reads = median(No._Reads))
+```
+
+**Q3.6** Get the number of bats caught on each date with a `group_by` `Bat_ID` and `Date_proper` piped into a `summarise` to get the unique `Bat_ID`s, then make another `group_by` but this time on the `Date_proper` variable and use the `n()` function to count the number of bats per date:
+
+```{r}
+bats_per_date <- bats %>%
+  group_by(Bat_ID, Date_proper) %>%
+  summarise(Unique_Bat_ID = unique(Bat_ID)) %>%
+  group_by(Date_proper) %>%
+  summarise(Number = n())
+```
+
+Here is a grapp of number of bats caught on each date:
+
+```{r}
+bats_per_date %>%
+  ggplot() +
+  geom_point(aes(x = Date_proper, y = Number)) +
+  ggtitle("Number of bats caught on each date.")
+```
+
+**Q3.7** Get the number of species of Noctuidae and Geometridae in the dataset.
+
+```{r eval = FALSE}
+## Solution
+families <- bats %>%
+  select(Species, Order, Family) %>%
+  distinct() %>%
+  group_by(Order, Family) %>%
+  summarize(num_spp=n())
+families %>%
+  filter(Family %in% c("Noctuidae", "Geometridae"))
+```
+
+**Q3.8** The paper states that *56.9±36.7% were migratory moth species*. Calculate this yourself.
+
+In this solution we calculate the proportion migratory in the diet of each bat, then calculate the mean and standard deviation of these proportions. The answer we find is not the same as in the paper, though we are not sure why.
+
+```{r eval = FALSE}
+bats %>%
+  group_by(Bat_ID, Migratory) %>%
+  summarise(num_prey=n()) %>%
+  spread(key=Migratory, value=num_prey) %>%
+  mutate(no=ifelse(is.na(no), 0, no),
+         yes=ifelse(is.na(yes), 0, yes),
+         perc_migratory=yes/(yes+no)) %>%
+  ungroup() %>%
+  summarise(mean(perc_migratory),
+            sd(perc_migratory))
+
+```
+
+**Q3.9** Confirm the results from the paper: *Moths (Lepidoptera; mainly Noctuidae and Geometridae) were by far the most frequently recorded prey, occurring in nearly all samples and accounting for 96 out of 115 prey taxa.*
+
+```{r eval = FALSE}
+bats %>%
+  select(Species, Order) %>%
+  distinct() %>%
+  group_by(Order) %>%
+  summarize(num_spp=n())
+```
+
+**Q3.10** Confirm the results from the paper: *Each pellet [poo] contained on average 4.1 ± 2.2 prey items*
+
+```{r eval = FALSE}
+bats %>%
+  group_by(Bat_ID) %>%
+  summarise(num_prey=n()) %>%
+  summarise(mean(num_prey),
+            sd(num_prey))
+
+
+```
+
+A slightly different answer to that in the paper. We are not sure why.
+
+## Chapter 4 (Workflow Demonstration--Part 2)
+
+**Q4.1** The assignment arrow was missing its `-`, the `d` of `Bat_Id` should be capital `D`, and an additional closing bracket was needed at the end of the third line:
+
+```{r eval = FALSE}
+ prey_stats <- bats %>%
+  group_by(Bat_ID) %>%
+  summarise(num_prey = n())
+```
+
+**Q4.2** It is likely that the variable contains at least one `NA`, causing the calculation of the mean to fail (in the sense that the answer is NA). We can ask for the NA values to be ignored when calculating the mean with the arguement `na.rm = TRUE`
+
+**Q4.3** If you're anything like us (Owen at least) you will do this for as long as you're coding, meaning that it happens a lot. The double equals sign is a logical operator, and asks if the things on either of it are equal or not. A single equals is a name-value pair, used to associate a value with a name.
+
+**Q4.4** The second pipe should be a plus sign `+`: we are *adding* a layer to the `ggplot`; we are not piping. This is a common error we make. There is an `s` missing in the `geom_beeswarm`. Finally, the comma that must separate the two arguments in the `aes` function is missing. Here is the corrected code (though it will not work if you have not already made the `prey_stats` object):
+
+```{r eval = FALSE}
+ prey_stats %>%
+  ggplot() +
+  geom_beeswarm(mapping = aes(x = Sex, y = mean_wingspan))
+```
+
+
+**Q4.5** When we observe that the association between two variables seems to depend on the value of a third variable, we essentially observing *context dependence* in the association. The association between the two variables depends on the context, which here is the value of the third variable. This kind of pattern is also termed an *interaction* between two variables. They are not acting additively/independently. And obviously the term *associated* is not sufficient to describe a context dependent association.
+
+
+**Q4.6** This is the number of bat poops observed (143):
+
+```{r}
+bats %>%
+  pull(Bat_ID) %>%
+  unique() %>%
+  length()
+```
+
+**Q4.7** Calcuate the number of times each prey item was observed.
+
+```{r}
+num_times <- bats %>%
+  group_by(Species) %>%
+  summarise(num_times_obs = n())
+```
+
+**Q4.8** What proportion of prey species were observed in only on poo?
+
+```{r}
+num_times %>%
+  summarise(prop_singletons = sum(num_times_obs == 1) / n())
+```
+
+
+**Q4.9** The probability is the number of times observed divided by the number of times a species could have been observed:
+
+```{r}
+max_poss_obs <- bats %>%
+  pull(Bat_ID) %>%
+  unique() %>%
+  length()
+prob_obs <- bats %>%
+  group_by(Species) %>%
+  summarise(prob = n() / max_poss_obs)
+```
+
+And the histogram:
+
+```{r}
+prob_obs %>%
+  ggplot() +
+  geom_histogram(aes(x = prob))
+```
+
+**Q4.10** Plot a histogram of all the calculated odds ratios. What do you conclude?
+
+```{r echo = FALSE, message = FALSE}
+num_poops <- bats %>%
+  group_by(Sex, Species) %>%
+  summarise(num_poops = n())
+# Get list of all prey
+all_prey <- num_poops %>%
+  pull(Species) # 165 values ( = prey species)
+# Get the prey species found in male poops:
+prey_in_male_poops <- num_poops %>%
+  filter(Sex == "Male") %>%
+  pull(Species) # 93 values ( = prey species)
+# and in female poops
+prey_in_female_poops <- num_poops %>%
+  filter(Sex == "Female") %>%
+  pull(Species) # 72 values ( = prey species)
+# Get the numer of prey species found
+# in either or both males and females...
+# should be same as number of unique (i.e. 115 values)
+prey_in_either_or_both <- union(prey_in_male_poops,
+                                prey_in_female_poops) # 115 values
+# Get the prey found in both males and females
+prey_in_both <- intersect(prey_in_male_poops,
+                          prey_in_female_poops) # 50 values
+# Get the prey not found in male poops
+prey_not_in_male <- setdiff(all_prey, prey_in_male_poops) # 22 values
+# and not found in female poops.
+prey_not_in_female <- setdiff(all_prey, prey_in_female_poops) # 43 values
+num_poops <- bind_rows(num_poops,
+                       tibble(Sex = "Female",
+                              Species = prey_not_in_female,
+                              num_poops = 0),
+                       tibble(Sex = "Male",
+                              Species = prey_not_in_male,
+                              num_poops = 0)
+)
+total_num_poops <- bats %>%
+  select(Sex, Bat_ID) %>%
+  distinct() %>%
+  group_by(Sex) %>%
+  summarise(num_bats = n())
+bat_props <- full_join(num_poops, total_num_poops)
+bat_props <- mutate(bat_props, props = num_poops / num_bats)
+odds_ratios <- bat_props %>%
+  mutate(not = num_bats - num_poops,
+         odds = num_poops / not) %>%
+  select(Sex, Species, odds) %>%
+  spread(Sex, odds) %>%
+  mutate(Odds_ratio = Female / Male,
+         log2_Odds_ratio = log2(Odds_ratio)) 
+```
+
+```{r}
+odds_ratios %>%
+  ggplot() +
+  geom_histogram(mapping = aes(x = Odds_ratio))
+```
+
+```{r}
+odds_ratios %>%
+  ggplot() +
+  geom_histogram(mapping = aes(x = log2(Odds_ratio)))
+```
+
+```{r}
+odds_ratios %>%
+  summarise(ans = sum(less_than_half_or_twice = abs(log2(Odds_ratio)) < 1))
+```
+
+
+## Chapter 5 (Deeper R--Wrangling Data--Part 1)
+
+
+
+## Chapter 6 (Deeper R--Wrangling Data--Part 2)
+
+
+
+## Chapter 7 (Deeper R--Graphing)
+
+
+
+## Chapter 8 (Deeper Concepts--Part 1)
+
+
+
+## Chapter 9 (Deeper Concepts--Part 1)
+
+
+
+## Chapter 10 (Looking backwards and forwards)
+
+
+
+

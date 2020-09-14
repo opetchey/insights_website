@@ -1,0 +1,230 @@
+
+# Questions and exercises {#questions-exercises}
+
+## Preface
+
+**Q0.1** Who is the intended audience/users/readers of *Insights*?
+
+* **A** People who have a need to efficiently, safely, and reliably derive robust insights from quantitative data.
+* **B** People with a good knowledge of working with data and data analysis, but not in R.
+* **C** Instructors/teachers of undergraduate's first courses in data analysis, in particular in Life and Environmental Sciences.
+* **D** People who will benefit from a learning approach that gives confidence in their ability to succeed.
+
+**Q0.2** *Insights* teaches a newer (i.e. tidyverse) approach to using R, and not what might be called the “classic” or “traditional” approach. What does this mean?
+
+* **A** Learning based on the “tidyverse” packages that have revolutionised data exploration and analysis in R.
+* **B** A consistent and therefore easily taught and learned approach.
+* **C** A lot of use of square brackets and dollar signs in the R code.
+* **D** It allows us to very easily construct powerful, efficient, easy to troubleshoot, and just plain lovely *pipelines* that work on our data.
+* **E** Simple, powerful, flexible, and beautiful data visualisations.
+
+**Q0.3** *Insights* is a book about the process of getting insights from data, and yet it contains no statistical analyses (e.g. no regression, ANOVA, linear models, or generalised linear models. Why are such things not included?
+
+* **A** There is enough to be learned about data analysis and to be gained from data analysis without such tests. The skills covered in *Insights* are essential. Statistical tests should only be used to confirm what we see with our own eyes.
+* **B** Statistical tests can be quite daunting and difficult, so we leave them until we have a solid hold on more foundational skills in data analysis.
+* **C** Not including statistical tests eliminates the risk that early learning of statistical tests encourages a rather one dimensional view of data analysis focused on statistical significance and p-values.
+* **D** Avoiding statistics encourages us to pay more attention to the practical significance (as opposed to statistical significance.
+
+**Q0.4** What proportion of a data analyists time and effort is spent on tasks such as preparation, import, cleaning, tidying, checking, double-checking, manipulating, summarising and visualizating data?
+
+**Q0.5** From where do you get the datasets that you need to work along with the demonstrations in the book?
+
+* **A** E-mail one of us.
+* **B** From this website.
+* **C** From the authors of the original sudies.
+* **D** From online data repositories where the authors of the original studies deposited their data for it to be shared and used.
+
+  correct = "Yes. Unlike the majority of Introduction to Data Analysis books, *Insights* starts from the usual dirty and messy state data usual begins in. Its lot of work, but absolutely essential work to do safely and reliably, to get the data tidy, clean, and arranged so that visualisation and summarisation (and in the end, statistics) are straightforward and efficient, and that the insights derived from them are accurate, reliable, and robust.",
+  allow_retry = TRUE,
+  random_answer_order = TRUE
+)
+
+
+**Q0.6** Which one of the book's authors works at the Natural History Museum in London?
+
+**Q0.7** Which one used to brew beer (from grain)?
+
+**Q0.8** Which one has has strangely hairy ears?
+
+**Q0.9** Which one has cuddled sheep on a remote Scottish Island?
+
+
+
+## Chapter 1 (Introduction)
+
+**Q1.1** Can we get insights from data without using complex statistical models and analyses, without machine learning, without being a master data scientist?
+
+**Q1.2** What is an advantage of focusing on the data without any statistical models/tests to think about?
+
+**Q1.3** With what should we start our journey from data to insights?
+
+* A dataset.
+* A graph showing the result we would like to find.
+* A clear and specific question.
+* Expectation about what we might find and why we might find it.
+
+**Q1.4** Why is it important to know if a study resulting in a dataset was a randomised manipulative experiment?
+
+**Q1.5** Datasets, i.e. convenient arrangements of data, come in many forms. Which arrangement is used throughout this book?
+
+**Q1.6** What is a "response variable" and what are other names for one?
+
+**Q1.7** What is an "explanatory variable" and what are other names for one?
+
+**Q1.8** Give five important features of datasets, and explain in your own words why they are important.
+
+**Q1.9** What do each of the four demonstration datasets used in the Workflow Demonstrations share in common?
+
+**Q1.10* Which step in getting insights from data was missing from the presented workflow?
+
+
+## Chapter 2 (Getting Acquainted)
+
+**Q2.1** True or false: R and RStudio are the same software program?
+
+**Q2.2** What will R tell us if we type into the Console `1 + 3 * 3`?
+
+**Q2.3** What will R tell us if we type into the Console `log(100)`?
+
+**Q2.4** How would we assign to the name "my_constant" the value of "log(100)"?
+
+**Q2.5** What commands should we be typing directly into the Console?
+
+**Q2.6** What is the error in this code (hint: you do not need to know what the `seq` function is doing):
+
+```{r eval = FALSE}
+my_x_variable <- seq(0, 4*pi, length = 100)
+my_y_variable <- sin(my_x_varible)
+```
+
+**Q2.7** When we give a function some arguments, when should we name the arguments? E.g. when should we use  `round(x = 2.4326782647, digits = 2)` rather than  `round(2.4326782647, 2)`?
+
+**Q2.8** True or false: it is a good time to have a the top of our script a command to *install* each of the packages we would like to use. E.g. `install.packages("dplyr")`.
+
+**Q2.9** True or false: When asking help from others it is sufficient to email them a verbal description of the problem, and a copy of the error message R gave.
+
+**Q2.10** If RStudio freezes, are we going to lose all our amazing work?
+
+
+
+
+## Chapter 3 (Workflow Demonstration--Part 1)
+
+**Do this after the manuscript is finalised. Give an R script of analysis with errors for correction.**
+
+
+**Q3.1** A tricky question first... which variable in the bat diet dataset is numeric but should, arguably, not be?
+
+
+**Q3.2** How many prey species were detected in total.
+
+**Q3.3** How many prey species were migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
+
+**Q3.4** Plot at the shape of the distribution of dates on which poop samples were collected.
+
+
+**Q3.5** Plot the distribution of number of reads. What shape is it? From looking at the distribution, predict whether the mean or median is larger. Then check your prediction by calculating the median and mean.
+
+**Q3.6** How many bats were caught on each of the dates
+
+**Q3.7** The Abstract of the paper states that Lepidoptera were mostly from the Noctuidae and Geometridae familes. How many species of Noctuidae and Geometridae are there in the dataset?
+
+**Q3.8** The paper states that *56.9±36.7% were migratory moth species*. Calculate this yourself.
+
+**Q3.9** Confirm the results from the paper: *Moths (Lepidoptera; mainly Noctuidae and Geometridae) were by far the most frequently recorded prey, occurring in nearly all samples and accounting for 96 out of 115 prey taxa.*
+
+**Q3.10** Confirm the results from the paper: *Each pellet [poo] contained on average 4.1 ± 2.2 prey items*
+
+
+
+
+
+
+
+## Chapter 4 (Workflow Demonstration--Part 2)
+
+**Q4.1** The following code is intended to calculate the number of prey items found in each poop. Find and correct the three intentional errors it contains:
+
+```{r eval = FALSE}
+ prey_stats < bats %>%
+  group_by(Bat_Id) %>%
+  summarise(num_prey = n()
+```
+
+**Q4.2** Imagine we calculate the mean of a variable and the answer, to our surprise, is `NA`. This is a surprise because we know the variable is numeric and we were therefor expecting a number. What is a likely reason for us getting NA, and what is one way of dealing with this?
+
+**Q4.3** How many times will you accidentally type in your code `=` when you meant to type `==`, and what is the difference?
+
+
+
+**Q4.4** The following code is intended to create a plot of the wingspan of prey found in male and female bat poops. Find and correct the three intentional errors it contains:
+
+```{r eval = FALSE}
+ prey_stats %>%
+  ggplot() %>%
+  geom_beewarm(mapping = aes(x = Sex y = mean_wingspan))
+```
+
+
+**Q4.5** Imagine that we observe that the association between two variables seems to depend on a third variable. E.g. the effects of herbivory on plant biomass is negative in the absence of a predator, but is positive in the presence of a predator. Which of these terms might be appropriate to describe this kind of pattern:
+
+* An interaction.
+* Context dependence.
+* An association.
+* Independence.
+
+
+**Q4.6** What was the maximum number of times a prey species could have been observed?
+
+**Q4.7** Calcuate the number of times each prey item was observed.
+
+**Q4.8** What proportion of the prey species were only observed in one poo?
+
+**Q4.9** Calculate and plot a histogram of the probability of observing each of the prey species across the whole study.
+
+
+**Q4.10** Ensure that you have the odds ratio for appearing a male or female poo for each of the prey species (the òdds_ratio` object in the book). Plot a histogram of all the calculated odds ratios. Guess how many prey species with odds less than twice and less than half to appear in female compared to male poos. Calcuate how many, and see how close is your guess.
+
+
+
+
+## Chapter 5 (Deeper R--Wrangling Data--Part 1)
+
+* Find the identity (`Bat_ID`) of the two bats that ate only the largest (52.5mm wingspan) type of prey.
+
+## Chapter 6 (Deeper R--Wrangling Data--Part 2)
+
+* We do not have to make an object containing the gathered version of the data. Instead we can pipe from the `gather` into the `ggplot`. Try this.
+* Look at the online Workflow Demonstration "Food-diversity Polity" and work through tidying the FAO Food Balance Sheet data.
+* Efficiently calculate the mean and standard deviation of each of the three response variables, for each Sex by Age combination.
+* Combine the script that display a photo of a cute dog with the script that gives some praise to create a motivational poster of a dog giving praise.
+
+
+
+## Chapter 7 (Deeper R--Graphing)
+
+None from elsewhere to bring in.
+
+## Chapter 8 (Deeper Concepts--Part 1)
+
+1. Are there any other sources of non-independence in the bat diet dataset? Think about if which of the variables describe groupings/clustering among the bats that we did not so far consider.
+2. ... 
+
+* Are there different proportions of NAs in male, female, adult and juvenile bats?
+* If there are, what does this say about diet composition variation among these groups of bats.
+
+## Chapter 9 (Deeper Concepts--Part 1)
+
+* In Section \@ref(numerical-explore-twocats) we used the `xtabs` function to get the number of migratory and non-migratory prey for each species of bat. Make the same dataset with tidyverse functions (e.g. `group_by`, `summarise`, `spread`).
+
+* What "stat" is `geom_bar` using to make Figure \@ref(fig:key-concepts-11)?
+
+* Add error bars to Figure \@ref(fig:key-concepts-17) or Figure \@ref(fig:key-concepts-18)
+
+
+## Chapter 10 (Looking backwards and forwards)
+
+
+
+
+

@@ -1,0 +1,10 @@
+# Workflow demonstration naked R scripts {#modelwf-scripts}
+
+<img src="images/WF1_icon.jpg" width="60"/>
+
+<img src="images/WF3_icon.jpg" width="60"/>
+
+<img src="images/WF2_icon.jpg" width="60"/>
+
+<img src="images/WF4_icon.png" width="70"/>
+
