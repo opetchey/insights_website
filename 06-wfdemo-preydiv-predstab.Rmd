@@ -572,7 +572,7 @@ rv_oi <- "max_dens"
 
 Then we use the same `ggplot` code as before, but with `rv_oi` in place of `"max_dens"` (the resulting graph is in Figure \@ref(fig:microbe4-1)):
 
-```{r microbe4-1, echo=FALSE, fig.cap='A reasonably nice graph of maximum predator density in a community against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=3}
+```{r microbe4-1, echo=FALSE, fig.cap='A reasonably nice graph of maximum predator density in a community against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=8}
 rv %>% filter(Response_type == rv_oi) %>%
   ggplot() +
   geom_jitter(aes(x = prey_richness, y = Value, col = prey_composition),
@@ -588,7 +588,7 @@ Super. We have a safe approach and a useful graph. Do you think there is strong 
 
 If we feel that we can't so easily see the differences among prey compositions within the prey richness levels, we can make Figure \@ref(fig:microbe4-2), and flip the x and y-axis since the prey composition names then fit better:
 
-```{r microbe4-2, echo=FALSE, fig.cap='This time maximum predator density plotted against prey composition, with prey composition on the y-axis as an easy method for having the tick-labels (prey composition) not overlap.', out.width='100%', fig.align='center', fig.width=3}
+```{r microbe4-2, echo=FALSE, fig.cap='This time maximum predator density plotted against prey composition, with prey composition on the y-axis as an easy method for having the tick-labels (prey composition) not overlap.', out.width='100%', fig.align='center', fig.width=8}
 rv %>% filter(Response_type == rv_oi) %>%
   ggplot() +
   geom_jitter(aes(x = prey_composition, y = Value),
@@ -603,7 +603,7 @@ Some things are a bit clearer. 1) The predator seems to like the prey *Colpidium
 
 Making the graphs for CV is now a doddle. We just set `rv_oi = "CV` and then run exactly the same code as before, resulting in Figure \@ref(fig:microbe5-1):
 
-```{r microbe5-1, echo=FALSE, fig.cap='A quite informative graph of predator population variability (measured as the coefficient of variation--CV) in a community against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=3}
+```{r microbe5-1, echo=FALSE, fig.cap='A quite informative graph of predator population variability (measured as the coefficient of variation--CV) in a community against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=8}
 rv_oi <- "CV"
 rv %>% filter(Response_type == rv_oi) %>%
   ggplot() +
@@ -615,7 +615,7 @@ rv %>% filter(Response_type == rv_oi) %>%
 
 And Figure \@ref(fig:microbe5-2):
 
-```{r microbe5-2, echo=FALSE, fig.cap='Predator population variability (CV) for each of the prey compositions. It would be nice to know from which jar the very low value for one of the *Collodictyon* replicate comes. We show how to do that next.', out.width='100%', fig.align='center', fig.width=3}
+```{r microbe5-2, echo=FALSE, fig.cap='Predator population variability (CV) for each of the prey compositions. It would be nice to know from which jar the very low value for one of the *Collodictyon* replicate comes. We show how to do that next.', out.width='100%', fig.align='center', fig.width=8}
 rv %>%
   filter(Response_type == rv_oi) %>%
   ggplot() +
@@ -643,7 +643,7 @@ jar_text <- stab %>%
 
 The resulting tibble has 35 rows, one for each jar (microcosm). Then we use the same code as before but with an extra `geom_text` in which we give the data to use `jar_text`, tell it the x and y positions for the label, and then give the aesthetic mappings `label = jar` (i.e. make the `label` aesthetic correspond to `jar`) and the aesthetic mapping `col = NULL` (so that the previously defined `col = species` mapping is not used). Here's the code, and the resulting graph is in Figure \@ref(fig:microbe1-1):
 
-```{r microbe1-1, fig.cap='Jar numbers added to the plot of population dynamics observed during the experiment.', out.width='100%', fig.align='center', fig.width=7, fig.height=11}
+```{r microbe1-1, fig.cap='Jar numbers added to the plot of population dynamics observed during the experiment.', out.width='100%', fig.align='center', fig.width=8, fig.height=11}
 stab %>%
   ggplot(aes(x = day, y = log10(dens_per_ml), col = species)) +
   geom_point() + 
@@ -669,7 +669,7 @@ Install the **ggrepel** add-on package. It moves labels on graphs so they don't 
 
 Now we remake the CV figure with the jar numbers labeling the data points. We simply add a `geom_text_repel` with the `jar` numbers mapped onto the `label` aesthetic. Here's the code, and the resulting graph is in Figure \@ref(fig:microbe5-3). 
 
-```{r microbe5-3, fig.cap='Again the predator population variability data, but this time with jar numbers added as label by the data points.', out.width='100%', fig.align='center', fig.width=3}
+```{r microbe5-3, fig.cap='Again the predator population variability data, but this time with jar numbers added as label by the data points.', out.width='100%', fig.align='center', fig.width=8}
 library(ggrepel)
 pred_CV %>%
 ggplot(aes(x = prey_composition, y = CV)) +
@@ -690,7 +690,7 @@ Super. It's extremely useful to be able to add labels to data point in graphs, s
 
 While we're on the subject of subjectivity and perception, we should think about whether flipping the axis does more than just make room for the prey composition labels. Does having the graph flipped change our perception of pattern (or lack thereof) in the data? Figure \@ref(fig:microbe5-4)A and B. We (personally) tend to see more evidence of a negative relationship in panel B (with prey richness on the x-axis) but you might be different. We need to be careful to not exploit, or fall prey to, any such effects in the presentation of data. The data should, as far as possible, do all the talking.
 
-```{r microbe5-4, echo=FALSE, fig.cap='The same graph twice, but with the axis flipped between them. Do you think pattern is more apparent in one versus the other?', out.width='100%', fig.align='center', fig.width=3}
+```{r microbe5-4, echo=FALSE, fig.cap='The same graph twice, but with the axis flipped between them. Do you think pattern is more apparent in one versus the other?', out.width='100%', fig.align='center', fig.width=8}
 p1 <- rv %>%
   filter(Response_type == rv_oi) %>%
   ggplot() +
@@ -717,7 +717,7 @@ cowplot::plot_grid(p1, p2, labels = c("A", "B"), rel_widths = c(1, 2))
 
 Visualising predator persistence time (the last day on which a predator was observed) uses the same code as the previous two response variables, but with one tweek. We should differentiate in the visualisation data points that are and are not censored. One method is to make their data points have different shapes. That is, we map the shape aesthetic to the `censored` variable (the resulting graph is in Figure \@ref(fig:microbe7-1)):
 
-```{r microbe7-1, echo=FALSE, fig.cap='A reasonably nice graph of predator population persistence time against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=3}
+```{r microbe7-1, echo=FALSE, fig.cap='A reasonably nice graph of predator population persistence time against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=8}
 rv_oi <- "last_day_observed"
 rv %>%
   filter(Response_type == rv_oi) %>%
@@ -734,7 +734,7 @@ There is pretty strong evidence that more prey species available to a predator i
 
 We also show, as before, the same data for each prey composition, again showing which observations of persistence time are censored (the resulting graph is in Figure \@ref(fig:microbe7-2)):
 
-```{r microbe7-2, echo=FALSE, warning=FALSE, fig.cap='Predator population persistence time for each of the prey compositions.', out.width='100%', fig.align='center', fig.width=3}
+```{r microbe7-2, echo=FALSE, warning=FALSE, fig.cap='Predator population persistence time for each of the prey compositions.', out.width='100%', fig.align='center', fig.width=8}
 rv_oi <- "last_day_observed"
 rv %>%
   filter(Response_type == rv_oi) %>%
@@ -755,7 +755,7 @@ Here we can see that one of the two prey species compositions (*Collodictyon* an
 Look at Figure \@ref(fig:microbe6-3) showing what happens if `prey_composition` is just a character variable and not an ordered factor. The ordering of the prey compositions is not quite as desirable.
 ```
 
-```{r microbe6-3, echo=FALSE, warning=FALSE, fig.cap='Notice how the prey compositions are ordered when we let R choose the order. This happens when we fail to specify ourselves what the order should be, by making the prey composition variable an ordered factor type variable.', out.width='100%', fig.align='center', fig.width=3}
+```{r microbe6-3, echo=FALSE, warning=FALSE, fig.cap='Notice how the prey compositions are ordered when we let R choose the order. This happens when we fail to specify ourselves what the order should be, by making the prey composition variable an ordered factor type variable.', out.width='100%', fig.align='center', fig.width=8}
 rv %>%
   filter(Response_type == rv_oi) %>%
   ggplot() +
@@ -771,7 +771,7 @@ rv %>%
 
 You might be wondering why we went to the lengths of putting all three response variables into one tibble and the having to filter in order to plot each of the three graphs. This was a bit of a faff. We could have just continued using the three separate tibbles we made. Here comes the answer, or at least here comes one answer. If we put all three response variables into the same tibble the we can plot all three graphs at the same time, in one ggplot with three facets (Figure \@ref(fig:microbe8-1)):
 
-```{r microbe8-1, fig.cap='All three reponse variables efficiently made in one call to ggplot with a facet for each variable, and some fiddling with the legend to get it at the top and not too wide.', out.width='100%', fig.align='center', fig.width=4}
+```{r microbe8-1, fig.cap='All three reponse variables efficiently made in one call to ggplot with a facet for each variable, and some fiddling with the legend to get it at the top and not too wide.', out.width='100%', fig.align='center', fig.width=8}
 rv %>%
   ggplot() +
   geom_jitter(aes(x = prey_richness,

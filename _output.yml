@@ -9,8 +9,8 @@ bookdown::gitbook:
         <li><a href="./">Insights from Data Website</a></li>
       after: |
         <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
-    download: [pdf, epub, mobi]
-    edit: https://github.com/rstudio/bookdown/edit/master/inst/examples/%s
+    download: []
+    edit: https://github.com/opetchey/insights_website/blob/development/%s
     sharing:
       github: yes
       facebook: no

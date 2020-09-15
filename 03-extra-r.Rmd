@@ -3,22 +3,39 @@
 
 ## RStudio Project setup
 
-Here are the ready made empty folders and Project files (compressed in a zip file you need to unzip -- {{% staticref "files/Insights_projects.zip" "newtab" %}}Insights_projects.zip{{% /staticref %}}) mentioned in *Insights* (the book) section *Projects in RStudio*
+In the *Insights* book we strongly recommend using the Projects that are built into RStudio, and organising the folders and files on your computer into projects. Here are the ready made empty folders and Project files  mentioned in *Insights* (the book) section *Projects in RStudio*.
 
-## Base and tidyverse comparison
+* [Zip file of project folders.](assets/insights_projects.zip)
+
+## Base/classic and tidyverse comparison
+
+*Insights* teaches you to use R with the tidyverse functions. Not everyone uses R with these functions, however, so it can be useful to know a little about the classic (older but still often used) ways to use R. One instance in which you might benefit from this is if you have access to scripts written in your lab long ago, or are working with seasoned R veterans who do not use the tidyverse.
+
+A summary comparison of some ‘classic’ methods and **dplyr** methods is given in the table below. A brief description of this comparison follows.
+
+The table below compares common data manipulation methods using the classic way (base R) and the modern way, with functions in the dplyr package. The placement of the comma, when using `[ ]`, is quite important and subtle. The help files for `subset()`, `order()`, `aggregate()`, and `tapply()` are worth consulting should you run into these functions.
+
+
+![classic_dplyr_comparison](images/classic_dplyr_comparison.png)
+
+Using **dplyr**, we use the functions `select()`, `slice()`, and `filter()` to get subsets of data frames. The classic method for doing this often involves something called indexing, and this is accomplished with square brackets and a comma, with the rows we want before the comma and the columns/variables we want after the comma: something like `my_data[rows,columns]`. There are lots of ways of specifying the rows and columns, including by number, name, or logical operator. It’s very flexible, quick, and convenient in many cases. Selecting rows can also be done with the `subset()` base R function, which actually possesses the combined functionality of `filter()` and `select()` from **dplyr**. Ordering rows or columns can be achieved by a combination of indexing and the base R `order()` function.
+Adding a new variable, which might be some transformation of existing ones, is also very similar between base R, using the `transform()` function, and **dplyr**, using the `mutate()` function. People often add columns by using a dollar sign followed by the new variable, for example `my_data$new_variable <- my_data$old_variable`.
+
+The classic and still useful methods for getting information about groups of data use functions like `aggregate()` and `tapply()` -- both of these were covered in detail in the previous edition of this book. These functions have separate arguments that specify the groups and the summary statistics. In **dplyr** the groups are specified by the `group_by()` function and the summary statistics by `summarise()`.
+
 
 A section on translation between base and modern R (Use table 3.2 from GSwR
 Add pull)
 
 ## Multiple graphs in one figure
 
-We showed how to make multiple facets in one graph, but what about if we'd like to arrange multiple different `ggplot` graphs in one figure. There are a number of approaches to doing this 
+We showed how to make multiple facets in one graph, but what about if we'd like to arrange multiple different `ggplot` graphs in one figure. There are a number of approaches to doing this. Our favourite at the moment is with the **patchwork** add-on package. Here is what the authors write: "*The goal of patchwork is to make it ridiculously simple to combine separate ggplots into the same graphic.*" Read and learn here more:
 
 https://patchwork.data-imaginist.com/index.html
 
 ## Other pipes
 
-https://www.r-bloggers.com/upping-your-pipe-game/
+https://thewoodpeckr.wordpress.com/2020/02/10/upping-your-pipe-game/
 
 ## Simulating data
 
