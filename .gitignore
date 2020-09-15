@@ -3,3 +3,7 @@
 .RData
 .Ruserdata
 data/FoodBalanceSheets_E_All_Data.csv
+_book
+_bookdown_files
+_book/additional-concepts.html
+.DS_Store
