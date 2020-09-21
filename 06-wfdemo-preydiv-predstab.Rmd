@@ -342,8 +342,8 @@ We so far have not looked at the species abundances and have not yet calculated 
 
 ```{r microbe1, fig.cap='Population dynamics observed during the experiment.', out.width='100%', fig.align='center', fig.width=8, fig.height=12}
 stab %>%
-  ggplot(aes(x = day, y = log10(dens_per_ml), col = species)) +
-  geom_point() + 
+  ggplot() +
+  geom_point(aes(x = day, y = log10(dens_per_ml), col = species)) + 
   geom_line() +
   facet_grid(prey_composition ~ replicate)
 ```
@@ -645,8 +645,8 @@ The resulting tibble has 35 rows, one for each jar (microcosm). Then we use the 
 
 ```{r microbe1-1, fig.cap='Jar numbers added to the plot of population dynamics observed during the experiment.', out.width='100%', fig.align='center', fig.width=8, fig.height=11}
 stab %>%
-  ggplot(aes(x = day, y = log10(dens_per_ml), col = species)) +
-  geom_point() + 
+  ggplot() +
+  geom_point(aes(x = day, y = log10(dens_per_ml), col = species)) + 
   geom_line() +
   facet_grid(prey_composition ~ replicate) +
   geom_text(data = jar_text, x = 18, y = 3.5, aes(label = jar, col = NULL))
@@ -672,8 +672,9 @@ Now we remake the CV figure with the jar numbers labeling the data points. We si
 ```{r microbe5-3, fig.cap='Again the predator population variability data, but this time with jar numbers added as label by the data points.', out.width='100%', fig.align='center', fig.width=8}
 library(ggrepel)
 pred_CV %>%
-ggplot(aes(x = prey_composition, y = CV)) +
-  geom_jitter(width = 0.1, height = 0) +
+  ggplot() +
+  geom_jitter(aes(x = prey_composition, y = CV),
+              width = 0.1, height = 0) +
   coord_flip() +
   geom_text_repel(aes(label = jar))
 ```

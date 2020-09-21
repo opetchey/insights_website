@@ -157,11 +157,27 @@ mortality <- mortality %>%
 **Q12. which of the four datasets contains an odd duplicate entry? And which fish is involved? What should we do next?**
 
 ```{r}
-sum(duplicated(select(courtship, Fish_ID)))
-sum(duplicated(select(eggs, Fish_ID)))
-sum(duplicated(select(length_weight_condition, Fish_ID, Batch)))
-sum(duplicated(select(mortality, Fish_ID, Week)))
-dupl <- duplicated(select(mortality, Fish_ID, Week))
+courtship %>% select(Fish_ID) %>%
+  duplicated() %>%
+  sum()
+
+eggs %>% select(Fish_ID) %>%
+  duplicated() %>%
+  sum()
+
+length_weight_condition %>% select(Fish_ID, Batch) %>%
+  duplicated() %>%
+  sum()
+
+mortality %>% select(Fish_ID, Week) %>%
+  duplicated() %>%
+  sum()
+
+
+
+dupl <- mortality %>% select(Fish_ID, Week) %>%
+  duplicated()
+
 filter(mortality, dupl)
 filter(mortality, Fish_ID=="LR504", Week==2)
 filter(mortality, Fish_ID=="LR504")
@@ -592,9 +608,11 @@ dd %>%
 
 
 ```{r}
-dd %>% filter(Sex=="Male") %>%
-ggplot(aes(x=Lipid, y=Lifespan, col=Prov_level)) +
-  geom_point(position = position_jitterdodge(jitter.width=0.05)) +
+dd %>%
+  filter(Sex=="Male") %>%
+  ggplot() +
+  geom_point(aes(x=Lipid, y=Lifespan, col=Prov_level),
+             position = position_jitterdodge(jitter.width=0.05)) +
   facet_wrap(~period, nrow=3)
 ```
 
@@ -603,7 +621,7 @@ Q30. Confirm in a graph the stated result: "Female risk was generally reduced by
 ```{r}
 dd %>% 
   filter(Sex=="Female") %>%
-ggplot() +
+  ggplot() +
   geom_point(aes(x=Protein, y=Lifespan, col=Prov_level),
              position = position_jitterdodge(jitter.width=0.05)) +
   facet_wrap(~period, nrow=3)
@@ -614,7 +632,7 @@ Q31. Confirm in a graph the stated result: "The effect of macronutrient intake o
 ```{r}
 dd %>%
   filter(Sex=="Male") %>%
-ggplot() +
+  ggplot() +
   geom_point(aes(x=Protein, y=Total_court, col=Prov_level),
              position = position_jitterdodge(jitter.width=0.05))
 ```
@@ -624,7 +642,7 @@ ggplot() +
 ```{r}
 dd %>%
   filter(Sex=="Female") %>%
-ggplot() +
+  ggplot() +
   geom_point(aes(x=Protein, y=Total_egg, col=Prov_level), position = position_jitterdodge(jitter.width=0.2, dodge.width = 5))
 
 ```

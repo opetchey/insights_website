@@ -187,27 +187,29 @@ We are trying to 1) do further checks for possible errors in the data, 2) making
 
 A histogram of all the data:
 ```{r, message=FALSE}
-ggplot(class_RTs, aes(x=Pref_Reaction_time)) +
-  geom_histogram()
+ggplot() +
+  geom_histogram(data = class_RTs, aes(x=Pref_Reaction_time))
 ```
 
 Separate histograms for each gender:
 ```{r, message=FALSE}
-ggplot(class_RTs, aes(x=Pref_Reaction_time)) +
-  geom_histogram() +
+ggplot() +
+  geom_histogram(data = class_RTs, aes(x=Pref_Reaction_time)) +
   facet_wrap(~ Gender)
 ```
 
 A box and whisker plot:
 ```{r, message=FALSE}
-ggplot(class_RTs, aes(x=Gender, y=Pref_Reaction_time)) +
-  geom_boxplot() 
+ggplot() +
+  geom_boxplot(data = class_RTs, aes(x=Gender, y=Pref_Reaction_time)) 
 ```
 
 Or just the data points (with some jitter, to separate overlapping points):
 ```{r, message=FALSE}
-ggplot(class_RTs, aes(x=Gender, y=Pref_Reaction_time)) +
-  geom_jitter(width=0.05)
+ggplot() +
+  geom_jitter(data = class_RTs,
+              aes(x=Gender, y=Pref_Reaction_time),
+              width=0.05)
 ```
 
 What do we think about the three things? Any likely errors? How is the data distributed (within and between groups)? Does it look like there is a difference in reaction times (if so, by how much on average, and which group is faster)?
@@ -300,8 +302,9 @@ We should write a sentence that gives the direction and extent of difference, an
 The aim here is to make a beautiful graph that very clearly communicates the findings! This doesn't mean "fancy" and or "complex". Often simpler is better. Getting the basic right is essential, of course.
 
 ```{r}
-ggplot(class_RTs, aes(x=Gender, y=Pref_Reaction_time)) +
-  geom_boxplot() +
+ggplot() +
+  geom_boxplot(data = class_RTs,
+               aes(x=Gender, y=Pref_Reaction_time)) +
   ylab("Reaction time (seconds)")
 ```
 

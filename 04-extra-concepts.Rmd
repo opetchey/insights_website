@@ -262,12 +262,12 @@ dd
 
 ```{r masked-rels-1, fig.cap='(a and b) Little evidence of a relationship between the response variable *y* and either of the two explanatory variables *x1*, or *x2*. (c) Strong correlation between the two explanatory variables *x1* and *x2*', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
 library(patchwork)
-p1 <- ggplot(dd, aes(x=x1, y=y)) +
-  geom_point()
-p2 <- ggplot(dd, aes(x=x2, y=y)) +
-  geom_point()
-p3 <- ggplot(dd, aes(x=x1, y=x2)) +
-  geom_point()
+p1 <- ggplot() +
+  geom_point(data = dd, aes(x = x1, y = y))
+p2 <- ggplot() +
+  geom_point(data = dd, aes(x = x2, y = y))
+p3 <- ggplot() +
+  geom_point(data = dd, aes(x = x1, y = x2))
 p1 + p2 + p3
 ```
 
@@ -279,15 +279,15 @@ dd <- mutate(dd,
 ```
 
 ```{r masked-rels-2, fig.cap='The positive relationship between the response variable (*y*) and one of the explanatory variables (*x1*) is visible because each facet shows a relatively small range of variation in the other explanatory variable (*x2*).', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
-ggplot(dd, aes(x=x1, y=y)) +
-  geom_point() +
+ggplot() +
+  geom_point(data = dd, aes(x = x1, y = y)) +
   facet_wrap(~x2_cut, scales = "free", nrow = 2)
 
 ```
 
 ```{r masked-rels-3, fig.cap='The same as the previous figure, but with the explanatory variables switched, so that we see the negative relationship between *y* and *x2*.', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
-ggplot(dd, aes(x=x2, y=y)) +
-  geom_point() +
+ggplot() +
+  geom_point(data = dd, aes(x = x2, y = y)) +
   facet_wrap(~x1_cut, scales = "free", nrow = 2)
 ```
 
