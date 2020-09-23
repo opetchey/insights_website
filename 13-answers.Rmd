@@ -10,7 +10,7 @@
 
 **Q0.2** *Insights* teaches a newer (i.e. tidyverse) approach to using R, and not what might be called the “classic” or “traditional” approach. What does this mean?
 
-**A**, **C**, **D**, and **E** are correct. We teach the newer (tidyverse) approach in our own Undergraduate-Level Introduction to Data Analysis courses. It works really well. The newer (tidyverse) approach is not advanced R, it is simple, intuitive, and powerful R.
+**A**, **B**, **D**, and **E** are correct. We teach the newer (tidyverse) approach in our own Undergraduate-Level Introduction to Data Analysis courses. It works really well. The newer (tidyverse) approach is not advanced R, it is simple, intuitive, and powerful R.
 
 *Insights* contains not a single square bracket or dollar sign.
 
@@ -20,11 +20,11 @@ Every answers is a good reason for starting learning about data analysis without
 
 **Q0.4** What proportion of a data analyists time and effort is spent on tasks such as preparation, import, cleaning, tidying, checking, double-checking, manipulating, summarising and visualizating data?
 
-We write "about 80%". Though really we just mean *a lot*. Care and attention to this work is essential to provide a found foundation dataset from which to derive insights.
+We write "about 80%". Though really we just mean *a lot*. Care and attention to this work is essential to provide a foundation dataset from which to derive insights.
 
 **Q0.5** From where do you get the datasets that you need to work along with the demonstrations in the book?
 
-Only **D** is correct. You get the data from the online data repositories where the authors of the original studies deposited their data. Unlike the majority of Introduction to Data Analysis books, *Insights* starts from the usual dirty and messy state data usual begins in. Its lot of work, but absolutely essential work to do safely and reliably, to get the data tidy, clean, and arranged so that visualisation and summarisation (and in the end, statistics) are straightforward and efficient, and that the insights derived from them are accurate, reliable, and robust.
+Only **D** is correct. You get the data from the online data repositories where the authors of the original studies deposited their data. Unlike the majority of "Introduction to Data Analysis" books, *Insights* starts from the often dirty and messy state data usual begins in (though the datasets in the Workflow Demonstrations are mostly quite clean!). Its lot of work, but absolutely essential work to do safely and reliably, to get the data tidy, clean, and arranged so that visualisation and summarisation (and in the end, statistical tests) are straightforward and efficient, and that the insights derived from them are accurate, reliable, and robust.
 
 **Q0.6** Natalie.
 
@@ -47,17 +47,17 @@ Only **D** is correct. You get the data from the online data repositories where 
 
 **Q1.4** With a randomised manipulative experiment we have a chance of inferring causation... that changing somethings caused a change in something else. On the down side, logistical constraints of make such experiments occur in rather controlled and less realistic settings than other types of studies.
 
-**Q1.5** We focus on rectangular data, i.e. a table of data with rows and columns. A spreadsheet is an example of such rectangular data. We focus on this as it is a simple, useful, and flexible way of arranging data. Furhtermore, there are many convenient and powerful approaches for working with data thus arranged.
+**Q1.5** We focus on rectangular data, i.e. a table of data with rows and columns. A spreadsheet is an example of such rectangular data. We focus on this as it is a simple, useful, and flexible way of arranging data. Furthermore, there are many convenient and powerful approaches for working with data thus arranged.
 
 **Q1.6** A *response variable* contains the data (measurements/observations) that we are interested in understand the variation in. This is the variable that is "responding" to other variables. It is also know as the *dependent* variable. Typically we put the response variable on the y-axis of a graph (i.e. we *map* variation in the response variable to variation along the y-axis).
 
-**Q1.7** An explanatory variable is a variable that contains measurements that can *explain* variation in a response variable. They are also termed the "independent" variable and the "predictor" variable. The rationale for these names is that an explanatory variable is not dependent on other variables, and can be used to predict variation in the response variable.
+**Q1.7** An explanatory variable is a variable that contains measurements that can *explain* variation in a response variable. They are also termed the *independent* variable and the *predictor* variable. The rationale for these names is that an explanatory variable is not dependent on other variables, and can be used to predict variation in the response variable.
 
 **Q1.8** The five given in *Insights* are 1) the number of observations, 2) the number of variables, 3) if variables describe the manipulations of a randomised experiment, 4) correlation among the variatbles, and 5) how independent are the observations. See the text of the book for why we think these are important. Great if you have thought of other important features... drop us a line to let us know.
 
 **Q1.9** The all concern food!
 
-**Q1.10* Perhaps lots were missing, and some of the presented steps could be broken up into multiple steps. Its always risky to present a general recipe for something as ultimately diverse as getting insights from data. Still, its a good idea to start somewhere. The missing step mentioned was communication, by the way.
+**Q1.10* Perhaps lots were missing, and some of the presented steps could be broken up into multiple steps. Its always risky to present a general recipe for something as ultimately diverse as getting insights from data. Still, its a good idea to start somewhere. The missing step mentioned was communication, by the way. Or at least that is one that we thought of as rather important.
 
 ## Chapter 2 (Getting Acquainted)
 
@@ -79,7 +79,7 @@ The answer is 4.60517. This is because the `log` function is the natural log, of
 
 **Q2.5** What commands should we be typing directly into the Console?
 
-Any that we know that we don't want to remember and don't want to use again. I.e. very very few. The vast majority we type in our script, and then "send" to the Console. This practice will result in our script containing a complete record of everything we did.
+Any that we know that we don't want to remember and don't want to use again. I.e. very few. The vast majority we type in our script, and then "send" to the Console. This practice will result in our script containing a complete record of everything we did.
 
 **Q2.6** What is the error in the code?
 
@@ -89,7 +89,7 @@ In the second line of code the name `my_x_variable` was mispelled (the second "a
 
 Name them whenever you are not sure about what order the function expects the arguments in. When staring with R, it can be comforting to always name the arguments, and then to relax this when one becomes more used to what individual functions expect.
 
-**Q2.8** True or false: it is a good time to have a the top of our script a command to *install* each of the packages we would like to use.
+**Q2.8** True or false: it is good practice to have at the top of our script a command to *install* each of the packages we would like to use.
 
 False. Do not do this. We only need to load the add-on package with, for example, `library(dplyr)`. Installing packages every time you run your code is a waste of time.
 
@@ -99,7 +99,7 @@ False. This will rarely be enough for someone to help find the problem. Even sen
 
 **Q2.10** If RStudio freezes, are we going to lose all our work?
 
-Probably not. RStudio has very likely autosaved the very latest version of our script. Just in case, attempt to copy the script from RStudio and paste it somewhere safe, before then restarting RStudio.
+Probably not. RStudio has very likely autosaved the very latest version of our script. Just in case, attempt to copy the script from RStudio and paste it somewhere safe, before quitting and restarting RStudio.
 
 
 ## Chapter 3 (Workflow Demonstration--Part 1)
@@ -401,27 +401,27 @@ odds_ratios %>%
 ```
 
 
-## Chapter 5 (Deeper R--Wrangling Data--Part 1)
+## Chapter 5 (Dealing with data 1—Digging into dplyr)
 
 
 
-## Chapter 6 (Deeper R--Wrangling Data--Part 2)
+## Chapter 6 (Dealing with data 2—Expanding your toolkit)
 
 
 
-## Chapter 7 (Deeper R--Graphing)
+## Chapter 7 (Getting to grips with ggplot2)
 
 
 
-## Chapter 8 (Deeper Concepts--Part 1)
+## Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)
 
 
 
-## Chapter 9 (Deeper Concepts--Part 1)
+## Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)
 
 
 
-## Chapter 10 (Looking backwards and forwards)
+## Chapter 10 (Looking back and looking forward)
 
 
 

@@ -3,6 +3,8 @@
 
 ## Preface
 
+The following are multiple choice questions, in which each of the given options can be true or false.
+
 **Q0.1** Who is the intended audience/users/readers of *Insights*?
 
 * **A** People who have a need to efficiently, safely, and reliably derive robust insights from quantitative data.
@@ -18,7 +20,7 @@
 * **D** It allows us to very easily construct powerful, efficient, easy to troubleshoot, and just plain lovely *pipelines* that work on our data.
 * **E** Simple, powerful, flexible, and beautiful data visualisations.
 
-**Q0.3** *Insights* is a book about the process of getting insights from data, and yet it contains no statistical analyses (e.g. no regression, ANOVA, linear models, or generalised linear models. Why are such things not included?
+**Q0.3** *Insights* is a book about the process of getting insights from data, and yet it contains no statistical models (e.g. no regression, ANOVA, linear models, or generalised linear models. Why are such things not included?
 
 * **A** There is enough to be learned about data analysis and to be gained from data analysis without such tests. The skills covered in *Insights* are essential. Statistical tests should only be used to confirm what we see with our own eyes.
 * **B** Statistical tests can be quite daunting and difficult, so we leave them until we have a solid hold on more foundational skills in data analysis.
@@ -31,7 +33,7 @@
 
 * **A** E-mail one of us.
 * **B** From this website.
-* **C** From the authors of the original sudies.
+* **C** Direclty from the authors of the original studies.
 * **D** From online data repositories where the authors of the original studies deposited their data for it to be shared and used.
 
   correct = "Yes. Unlike the majority of Introduction to Data Analysis books, *Insights* starts from the usual dirty and messy state data usual begins in. Its lot of work, but absolutely essential work to do safely and reliably, to get the data tidy, clean, and arranged so that visualisation and summarisation (and in the end, statistics) are straightforward and efficient, and that the insights derived from them are accurate, reliable, and robust.",
@@ -99,9 +101,9 @@ my_y_variable <- sin(my_x_varible)
 
 **Q2.7** When we give a function some arguments, when should we name the arguments? E.g. when should we use  `round(x = 2.4326782647, digits = 2)` rather than  `round(2.4326782647, 2)`?
 
-**Q2.8** True or false: it is a good time to have a the top of our script a command to *install* each of the packages we would like to use. E.g. `install.packages("dplyr")`.
+**Q2.8** True or false: it is good practice to have at the top of our script a command to *install* each of the packages we would like to use. E.g. `install.packages("dplyr")`.
 
-**Q2.9** True or false: When asking help from others it is sufficient to email them a verbal description of the problem, and a copy of the error message R gave.
+**Q2.9** True or false: When asking help from others it is sufficient to email them a verbal description of the problem, and a copy of the error message R.
 
 **Q2.10** If RStudio freezes, are we going to lose all our amazing work?
 
@@ -188,11 +190,11 @@ my_y_variable <- sin(my_x_varible)
 
 
 
-## Chapter 5 (Deeper R--Wrangling Data--Part 1)
+## Chapter 5 (Dealing with data 1—Digging into dplyr)
 
 * Find the identity (`Bat_ID`) of the two bats that ate only the largest (52.5mm wingspan) type of prey.
 
-## Chapter 6 (Deeper R--Wrangling Data--Part 2)
+## Chapter 6 (Dealing with data 2—Expanding your toolkit)
 
 * We do not have to make an object containing the gathered version of the data. Instead we can pipe from the `gather` into the `ggplot`. Try this.
 * Look at the online Workflow Demonstration "Food-diversity Polity" and work through tidying the FAO Food Balance Sheet data.
@@ -201,11 +203,11 @@ my_y_variable <- sin(my_x_varible)
 
 
 
-## Chapter 7 (Deeper R--Graphing)
+## Chapter 7 (Getting to grips with ggplot2)
 
 None from elsewhere to bring in.
 
-## Chapter 8 (Deeper Concepts--Part 1)
+## Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)
 
 1. Are there any other sources of non-independence in the bat diet dataset? Think about if which of the variables describe groupings/clustering among the bats that we did not so far consider.
 2. ... 
@@ -213,7 +215,7 @@ None from elsewhere to bring in.
 * Are there different proportions of NAs in male, female, adult and juvenile bats?
 * If there are, what does this say about diet composition variation among these groups of bats.
 
-## Chapter 9 (Deeper Concepts--Part 1)
+## Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)
 
 * In Section \@ref(numerical-explore-twocats) we used the `xtabs` function to get the number of migratory and non-migratory prey for each species of bat. Make the same dataset with tidyverse functions (e.g. `group_by`, `summarise`, `spread`).
 
@@ -222,7 +224,7 @@ None from elsewhere to bring in.
 * Add error bars to Figure \@ref(fig:key-concepts-17) or Figure \@ref(fig:key-concepts-18)
 
 
-## Chapter 10 (Looking backwards and forwards)
+## Chapter 10 (Looking back and looking forward)
 
 
 
