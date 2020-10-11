@@ -201,7 +201,7 @@ my_y_variable <- sin(my_x_varible)
 * Efficiently calculate the mean and standard deviation of each of the three response variables, for each Sex by Age combination.
 * Combine the script that display a photo of a cute dog with the script that gives some praise to create a motivational poster of a dog giving praise.
 
-
+If you run `dmonths(1)` we see that the duration is `2629800s (~4.35 weeks)`. Have a think about how **lubridate** calculates this duration of a month.
 
 ## Chapter 7 (Getting to grips with ggplot2)
 
