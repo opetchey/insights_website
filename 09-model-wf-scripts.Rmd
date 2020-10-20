@@ -1,10 +1,11 @@
-# Workflow demonstration naked R scripts {#modelwf-scripts}
+# Workflow demonstration R scripts {#modelwf-scripts}
 
-<img src="images/WF1_icon.jpg" width="60"/>
+Here we provide the R scripts for each of the workflow demonstrations. 
 
-<img src="images/WF3_icon.jpg" width="60"/>
+* [Bat diets - Part 1](assets/bat_diets_part1_insights_workflowdemo.R)
+* [Bat diets - Part 2](assets/bat_diets_part2_insights_workflowdemo.R)
+* [Polity - Food diversity](assets/polity_fooddiv_insights_workflowdemo.R)
+* [Prey diversity - predator stability](assets/predydiv_predstab_insights_workflowdemo.R)
+* [Fish dietary restriction](assets/fishdiet_restr_insights_workflowdemo.R)
 
-<img src="images/WF2_icon.jpg" width="60"/>
-
-<img src="images/WF4_icon.png" width="70"/>
 
