@@ -112,13 +112,23 @@ my_y_variable <- sin(my_x_varible)
 
 ## Chapter 3 (Workflow Demonstration--Part 1)
 
-**Do this after the manuscript is finalised. Give an R script of analysis with errors for correction.**
+**Q3.1** Take a look at [this version of the script of this part of the Bat Diet workflow demonstration](assets/witherrors_bat_diets_part1_insights_workflowdemo.R). We have added a variety of errors into the script, and your task is to find the errors and correct them.
 
+**Q3.2** What are characteristic features of tidy data?
 
-**Q3.1** A tricky question first... which variable in the bat diet dataset is numeric but should, arguably, not be?
+**Q3.3** Write down two reasons why its a good idea to use the Projects that are available in RStudio.
 
+**Q3.4** What is the name given to this term `%>%` and what does it do?
 
-**Q3.2** How many prey species were detected in total.
+**Q3.5** A little trickier perhaps... which variable in the bat diet dataset is numeric but should, arguably, not be?
+
+**Q3.6** In what type of object do we often (and in this workflow) store data in R, and what are some features of this object.
+
+**Q3.7** We cleaned up the variable names using a string replacement functions (`str_replace_all`). Find the name of the add-on package that contains the rather nice function `clean_names()`, which can quickly and easily result in us having nice clean variable names. 
+
+==== TO HERE =====
+
+**Q3.2** How many different prey *species* were detected in total.
 
 **Q3.3** How many prey species were migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
 

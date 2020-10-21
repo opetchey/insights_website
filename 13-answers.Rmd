@@ -104,6 +104,18 @@ Probably not. RStudio has very likely autosaved the very latest version of our s
 
 ## Chapter 3 (Workflow Demonstration--Part 1)
 
+You should be able to answer Question 3.1 after reading and working through Chapters 1 to 3. The other questions (3) 
+
+**Q3.1** [The script without errors is here](assets/bat_diets_part1_insights_workflowdemo.R). Many of the errors were typos, and would have caused an error in R.
+
+**Q3.2** In a tidy dataset, the same type of data is not spread across multiple columns, i.e. one variable (one type of information) only occurs in one column. A corollary is that each row contains only one observation. More information, about tidy data, and converting between tidy and not-so-tidy data is given in chapter 7 of the Insights book.
+
+**Q3.3** Using projects makes our code more sharable, i.e. will work on someone elses computer without changing anything in the code. Switching between projects is simple.
+
+**Q.3.4**  The term `%>%` is known as the pipe. It is used to "send" the outcome of one function into another. You will get to know it well, as we use it *a lot*; it is described in chapter 6 of the Insights book. 
+
+
+
 ```{r message=FALSE, echo=FALSE, warning=FALSE}
 # Load the libraries we use
 library(dplyr)
@@ -128,10 +140,15 @@ bats <- mutate(bats,
          "Order" = "Order_1")
 ```
 
-**Q3.1**. `Bat_ID` is numeric, but these are identities (i.e. names). They could just as well be words. Leaving them as numbers could allow us to do something stupid, like involving them in a calculation. Using numbers in such situation can also result in `ggplot` not doing what we'd like, for example would lead to a colour gradient rather than discrete colours if we mapped the numerical variable to the colour aesthetic.
+**Q3.5** `Bat_ID` is numeric, but these are identities (i.e. names). They could just as well be words. Leaving them as numbers could allow us to do something stupid, like involving them in a calculation. Using numbers in such situation can also result in `ggplot` not doing what we'd like, for example would lead to a colour gradient rather than discrete colours if we mapped the numerical variable to the colour aesthetic.
 
+**Q3.6** We store data in R in a *tibble*, whcih is a special type of data frame. It has rows each containing an observation, and columns containing variables.
 
-**Q3.2** Calculate the total number of prey species by counting the number of unique prey species:
+**Q3.7** The [**janitor** add-on package](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html) contains the `clean_names()` function.
+
+==== TO HERE =====
+
+**Q3.2** Calculate the total number of prey species by counting the number of unique values in the prey `Species` variable:
 
 ```{r}
 bats %>%
@@ -195,7 +212,7 @@ bats_per_date <- bats %>%
   summarise(Number = n())
 ```
 
-Here is a grapp of number of bats caught on each date:
+Here is a graph of number of bats caught on each date:
 
 ```{r}
 bats_per_date %>%
