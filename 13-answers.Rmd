@@ -57,7 +57,7 @@ Only **D** is correct. You get the data from the online data repositories where 
 
 **Q1.9** The all concern food!
 
-**Q1.10* Perhaps lots were missing, and some of the presented steps could be broken up into multiple steps. Its always risky to present a general recipe for something as ultimately diverse as getting insights from data. Still, its a good idea to start somewhere. The missing step mentioned was communication, by the way. Or at least that is one that we thought of as rather important.
+**Q1.10** Perhaps lots were missing, and some of the presented steps could be broken up into multiple steps. Its always risky to present a general recipe for something as ultimately diverse as getting insights from data. Still, its a good idea to start somewhere. The missing step mentioned was communication, by the way. Or at least that is one that we thought of as rather important.
 
 ## Chapter 2 (Getting Acquainted)
 
@@ -104,15 +104,13 @@ Probably not. RStudio has very likely autosaved the very latest version of our s
 
 ## Chapter 3 (Workflow Demonstration--Part 1)
 
-You should be able to answer Question 3.1 after reading and working through Chapters 1 to 3. The other questions (3) 
 
-**Q3.1** [The script without errors is here](assets/bat_diets_part1_insights_workflowdemo.R). Many of the errors were typos, and would have caused an error in R.
 
 **Q3.2** In a tidy dataset, the same type of data is not spread across multiple columns, i.e. one variable (one type of information) only occurs in one column. A corollary is that each row contains only one observation. More information, about tidy data, and converting between tidy and not-so-tidy data is given in chapter 7 of the Insights book.
 
-**Q3.3** Using projects makes our code more sharable, i.e. will work on someone elses computer without changing anything in the code. Switching between projects is simple.
+**Q3.3** Using projects makes our code more shareable, i.e. will work on someone else's computer without changing anything in the code. Switching between projects is simple.
 
-**Q.3.4**  The term `%>%` is known as the pipe. It is used to "send" the outcome of one function into another. You will get to know it well, as we use it *a lot*; it is described in chapter 6 of the Insights book. 
+**Q.3.4**  The term `%>%` is known as the *pipe*. It is used to "send" the outcome of one function into another. You will get to know it well, as we use it *a lot*; it is described in chapter 6 of the Insights book. 
 
 
 
@@ -142,20 +140,46 @@ bats <- mutate(bats,
 
 **Q3.5** `Bat_ID` is numeric, but these are identities (i.e. names). They could just as well be words. Leaving them as numbers could allow us to do something stupid, like involving them in a calculation. Using numbers in such situation can also result in `ggplot` not doing what we'd like, for example would lead to a colour gradient rather than discrete colours if we mapped the numerical variable to the colour aesthetic.
 
-**Q3.6** We store data in R in a *tibble*, whcih is a special type of data frame. It has rows each containing an observation, and columns containing variables.
+**Q3.6** We store data in R in a *tibble*, which is a special type of data frame. It has rows each containing an observation, and columns containing variables.
 
 **Q3.7** The [**janitor** add-on package](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html) contains the `clean_names()` function.
 
-==== TO HERE =====
+**Q3.8** [The script without errors is here](assets/bat_diets_part1_insights_workflowdemo.R). Many of the errors were typos, and would have caused an error in R. Remember that some errors (e.g. doing multiplication rather than addition) will cause R to show an error. Avoiding making these (e.g. by writing readable code), and having checks to spot them when they occur is very important
 
-**Q3.2** Calculate the total number of prey species by counting the number of unique values in the prey `Species` variable:
+
+
+
+## Chapter 4 (Workflow Demonstration--Part 2)
+
+**Q4.1** If you're anything like us (Owen at least) you will do this for as long as you're coding, meaning that it happens a lot. The double equals sign is a logical operator, and asks if the things on either of it are equal or not. A single equals is a name-value pair, used to associate a value with a name.
+
+**Q4.2** It is likely that the variable contains at least one `NA`, causing the calculation of the mean to fail (in the sense that the answer is NA). We can ask for the NA values to be ignored when calculating the mean with the arguement `na.rm = TRUE`
+
+**Q4.3** When we observe that the association between two variables seems to depend on the value of a third variable, we essentially observing *context dependence* in the association. The association between the two variables depends on the context, which here is the value of the third variable. This kind of pattern is also termed an *interaction* between two variables. They are not acting additively/independently. And obviously the term *associated* is not sufficient to describe a context dependent association.
+
+
+
+==== TO HERE ====
+
+
+
+
+
+## Chapter 5 (Dealing with data 1—Digging into dplyr)
+
+### General questions and exercises
+
+
+### Bat diet workflow questions and exercises
+
+**Q5.1** Calculate the total number of prey species by counting the number of unique values in the prey `Species` variable:
 
 ```{r}
 bats %>%
   summarise(total_num_prey_species = length(unique(Species)))
 ```
 
-**Q3.3** Calculate number of migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
+**Q5.2** Calculate number of migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
 
 ```{r}
 bats %>%
@@ -174,6 +198,152 @@ bats %>%
   group_by(Migratory, Pest) %>%
   summarise(total_num_prey_species = length(unique(Species)))
 ```
+
+
+
+**Q5.4** Get the number of bats caught on each date with a `group_by` `Bat_ID` and `Date_proper` piped into a `summarise` to get the unique `Bat_ID`s, then make another `group_by` but this time on the `Date_proper` variable and use the `n()` function to count the number of bats per date:
+
+```{r}
+bats_per_date <- bats %>%
+  group_by(Bat_ID, Date_proper) %>%
+  summarise(Unique_Bat_ID = unique(Bat_ID)) %>%
+  group_by(Date_proper) %>%
+  summarise(Number = n())
+```
+
+Here is a graph of number of bats caught on each date:
+
+```{r}
+bats_per_date %>%
+  ggplot() +
+  geom_point(aes(x = Date_proper, y = Number)) +
+  ggtitle("Number of bats caught on each date.")
+```
+
+**Q5.5** Get the number of species of Noctuidae and Geometridae in the dataset.
+
+```{r eval = FALSE}
+# Solution
+families <- bats %>%
+  select(Species, Order, Family) %>%
+  distinct() %>%
+  group_by(Order, Family) %>%
+  summarize(num_spp=n())
+families %>%
+  filter(Family %in% c("Noctuidae", "Geometridae"))
+```
+
+**Q5.6** The paper states that *56.9±36.7% were migratory moth species*. Calculate this yourself.
+
+In this solution we calculate the proportion migratory in the diet of each bat, then calculate the mean and standard deviation of these proportions. The answer we find is not the same as in the paper, though we are not sure why.
+
+```{r eval = FALSE}
+bats %>%
+  group_by(Bat_ID, Migratory) %>%
+  summarise(num_prey=n()) %>%
+  spread(key=Migratory, value=num_prey) %>%
+  mutate(no=ifelse(is.na(no), 0, no),
+         yes=ifelse(is.na(yes), 0, yes),
+         perc_migratory=yes/(yes+no)) %>%
+  ungroup() %>%
+  summarise(mean(perc_migratory),
+            sd(perc_migratory))
+
+```
+
+**Q5.7** Confirm the results from the paper: *Moths (Lepidoptera; mainly Noctuidae and Geometridae) were by far the most frequently recorded prey, occurring in nearly all samples and accounting for 96 out of 115 prey taxa.*
+
+```{r eval = FALSE}
+bats %>%
+  select(Species, Order) %>%
+  distinct() %>%
+  group_by(Order) %>%
+  summarize(num_spp=n())
+```
+
+**Q5.8** Confirm the results from the paper: *Each pellet [poo] contained on average 4.1 ± 2.2 prey items*
+
+```{r eval = FALSE}
+bats %>%
+  group_by(Bat_ID) %>%
+  summarise(num_prey=n()) %>%
+  summarise(mean(num_prey),
+            sd(num_prey))
+
+
+```
+
+A slightly different answer to that in the paper. We are not sure why.
+
+
+
+**Q4.1** The assignment arrow was missing its `-`, the `d` of `Bat_Id` should be capital `D`, and an additional closing bracket was needed at the end of the third line:
+
+```{r eval = FALSE}
+ prey_stats <- bats %>%
+  group_by(Bat_ID) %>%
+  summarise(num_prey = n())
+```
+
+**Q4.6** This is the number of bat poops observed (143):
+
+```{r}
+bats %>%
+  pull(Bat_ID) %>%
+  unique() %>%
+  length()
+```
+
+**Q4.7** Calcuate the number of times each prey item was observed.
+
+```{r}
+num_times <- bats %>%
+  group_by(Species) %>%
+  summarise(num_times_obs = n())
+```
+
+**Q4.8** What proportion of prey species were observed in only on poo?
+
+```{r}
+num_times %>%
+  summarise(prop_singletons = sum(num_times_obs == 1) / n())
+```
+
+
+
+
+## Chapter 6 (Dealing with data 2—Expanding your toolkit)
+
+### General questions and exercises
+
+
+### Bat diet workflow questions and exercises
+
+
+
+
+
+
+
+
+## Chapter 7 (Getting to grips with ggplot2)
+
+### General questions and exercises
+
+
+### Bat diet workflow questions and exercises
+
+
+
+**Q4.4** The second pipe should be a plus sign `+`: we are *adding* a layer to the `ggplot`; we are not piping. This is a common error we make. There is an `s` missing in the `geom_beeswarm`. Finally, the comma that must separate the two arguments in the `aes` function is missing. Here is the corrected code (though it will not work if you have not already made the `prey_stats` object):
+
+```{r eval = FALSE}
+ prey_stats %>%
+  ggplot() +
+  geom_beeswarm(mapping = aes(x = Sex, y = mean_wingspan))
+```
+
+
 
 **Q3.4** Plot at the shape of the distribution of dates on which poop samples were collected.
 
@@ -202,130 +372,6 @@ bats %>%
             median_num_reads = median(No._Reads))
 ```
 
-**Q3.6** Get the number of bats caught on each date with a `group_by` `Bat_ID` and `Date_proper` piped into a `summarise` to get the unique `Bat_ID`s, then make another `group_by` but this time on the `Date_proper` variable and use the `n()` function to count the number of bats per date:
-
-```{r}
-bats_per_date <- bats %>%
-  group_by(Bat_ID, Date_proper) %>%
-  summarise(Unique_Bat_ID = unique(Bat_ID)) %>%
-  group_by(Date_proper) %>%
-  summarise(Number = n())
-```
-
-Here is a graph of number of bats caught on each date:
-
-```{r}
-bats_per_date %>%
-  ggplot() +
-  geom_point(aes(x = Date_proper, y = Number)) +
-  ggtitle("Number of bats caught on each date.")
-```
-
-**Q3.7** Get the number of species of Noctuidae and Geometridae in the dataset.
-
-```{r eval = FALSE}
-# Solution
-families <- bats %>%
-  select(Species, Order, Family) %>%
-  distinct() %>%
-  group_by(Order, Family) %>%
-  summarize(num_spp=n())
-families %>%
-  filter(Family %in% c("Noctuidae", "Geometridae"))
-```
-
-**Q3.8** The paper states that *56.9±36.7% were migratory moth species*. Calculate this yourself.
-
-In this solution we calculate the proportion migratory in the diet of each bat, then calculate the mean and standard deviation of these proportions. The answer we find is not the same as in the paper, though we are not sure why.
-
-```{r eval = FALSE}
-bats %>%
-  group_by(Bat_ID, Migratory) %>%
-  summarise(num_prey=n()) %>%
-  spread(key=Migratory, value=num_prey) %>%
-  mutate(no=ifelse(is.na(no), 0, no),
-         yes=ifelse(is.na(yes), 0, yes),
-         perc_migratory=yes/(yes+no)) %>%
-  ungroup() %>%
-  summarise(mean(perc_migratory),
-            sd(perc_migratory))
-
-```
-
-**Q3.9** Confirm the results from the paper: *Moths (Lepidoptera; mainly Noctuidae and Geometridae) were by far the most frequently recorded prey, occurring in nearly all samples and accounting for 96 out of 115 prey taxa.*
-
-```{r eval = FALSE}
-bats %>%
-  select(Species, Order) %>%
-  distinct() %>%
-  group_by(Order) %>%
-  summarize(num_spp=n())
-```
-
-**Q3.10** Confirm the results from the paper: *Each pellet [poo] contained on average 4.1 ± 2.2 prey items*
-
-```{r eval = FALSE}
-bats %>%
-  group_by(Bat_ID) %>%
-  summarise(num_prey=n()) %>%
-  summarise(mean(num_prey),
-            sd(num_prey))
-
-
-```
-
-A slightly different answer to that in the paper. We are not sure why.
-
-## Chapter 4 (Workflow Demonstration--Part 2)
-
-**Q4.1** The assignment arrow was missing its `-`, the `d` of `Bat_Id` should be capital `D`, and an additional closing bracket was needed at the end of the third line:
-
-```{r eval = FALSE}
- prey_stats <- bats %>%
-  group_by(Bat_ID) %>%
-  summarise(num_prey = n())
-```
-
-**Q4.2** It is likely that the variable contains at least one `NA`, causing the calculation of the mean to fail (in the sense that the answer is NA). We can ask for the NA values to be ignored when calculating the mean with the arguement `na.rm = TRUE`
-
-**Q4.3** If you're anything like us (Owen at least) you will do this for as long as you're coding, meaning that it happens a lot. The double equals sign is a logical operator, and asks if the things on either of it are equal or not. A single equals is a name-value pair, used to associate a value with a name.
-
-**Q4.4** The second pipe should be a plus sign `+`: we are *adding* a layer to the `ggplot`; we are not piping. This is a common error we make. There is an `s` missing in the `geom_beeswarm`. Finally, the comma that must separate the two arguments in the `aes` function is missing. Here is the corrected code (though it will not work if you have not already made the `prey_stats` object):
-
-```{r eval = FALSE}
- prey_stats %>%
-  ggplot() +
-  geom_beeswarm(mapping = aes(x = Sex, y = mean_wingspan))
-```
-
-
-**Q4.5** When we observe that the association between two variables seems to depend on the value of a third variable, we essentially observing *context dependence* in the association. The association between the two variables depends on the context, which here is the value of the third variable. This kind of pattern is also termed an *interaction* between two variables. They are not acting additively/independently. And obviously the term *associated* is not sufficient to describe a context dependent association.
-
-
-**Q4.6** This is the number of bat poops observed (143):
-
-```{r}
-bats %>%
-  pull(Bat_ID) %>%
-  unique() %>%
-  length()
-```
-
-**Q4.7** Calcuate the number of times each prey item was observed.
-
-```{r}
-num_times <- bats %>%
-  group_by(Species) %>%
-  summarise(num_times_obs = n())
-```
-
-**Q4.8** What proportion of prey species were observed in only on poo?
-
-```{r}
-num_times %>%
-  summarise(prop_singletons = sum(num_times_obs == 1) / n())
-```
-
 
 **Q4.9** The probability is the number of times observed divided by the number of times a species could have been observed:
 
@@ -346,6 +392,8 @@ prob_obs %>%
   ggplot() +
   geom_histogram(aes(x = prob))
 ```
+
+
 
 **Q4.10** Plot a histogram of all the calculated odds ratios. What do you conclude?
 
@@ -418,27 +466,46 @@ odds_ratios %>%
 ```
 
 
-## Chapter 5 (Dealing with data 1—Digging into dplyr)
-
-
-
-## Chapter 6 (Dealing with data 2—Expanding your toolkit)
-
-
-
-## Chapter 7 (Getting to grips with ggplot2)
-
-
 
 ## Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)
+
+### General questions and exercises
+
+
+### Bat diet workflow questions and exercises
+
+
+
+
+
 
 
 
 ## Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)
 
+### General questions and exercises
+
+
+### Bat diet workflow questions and exercises
+
+
+
+
+
+
 
 
 ## Chapter 10 (Looking back and looking forward)
+
+### General questions and exercises
+
+
+### Bat diet workflow questions and exercises
+
+
+
+
+
 
 
 
