@@ -134,27 +134,31 @@ my_y_variable <- sin(my_x_varible)
 
 ## Chapter 4 (Workflow Demonstration--Part 2)
 
-**Q4.1** How many times will you accidentally type in your code `=` when you meant to type `==`, and what is the difference?
+**Q4.1** Chapter 3 mostly concerned getting the data ready. Chapter 4 is mostly about getting information from the data, including answering our questions. What two add-on package are used to do this, and what is each of them useful for? 
+
+**Q4.2** What do we mean by "sanity-checking insights"?
+
+**Q4.3** How many times will you accidentally type in your code `=` when you meant to type `==`, and what is the difference?
 
 
-**Q4.2** Imagine we calculate the mean of a variable and the answer, to our surprise, is `NA`. This is a surprise because we know the variable is numeric and we were therefor expecting a number. What is a likely reason for us getting NA, and what is one way of dealing with this?
+**Q4.4** Imagine we calculate the mean of a variable and the answer, to our surprise, is `NA`. This is a surprise because we know the variable is numeric and we were therefore expecting a number. What is a likely reason for us getting NA, and what is one way of dealing with this?
 
-
-
-**Q4.3** Imagine that we observe that the association between two variables seems to depend on a third variable. E.g. the effects of herbivory on plant biomass is negative in the absence of a predator, but is positive in the presence of a predator. Which of these terms might be appropriate to describe this kind of pattern:
+**Q4.5** Imagine that we observe that the association between two variables seems to depend on a third variable. E.g. the effects of herbivory on plant biomass is negative in the absence of a predator, but is positive in the presence of a predator. Which of these terms might be appropriate to describe this kind of pattern?:
 
 * An interaction.
 * Context dependence.
 * An association.
 * Independence.
 
+**Q4.6** We made a type of graph that allowed us to see the number of observations of a variable that had particular values (i.e. the number of values that fell in a particular *bin*)? What is a name of this type of graph, and why is it import to look at this?
 
+**Q4.7** We counted (calculated) the number of different prey species detected in the poop of each bat. What is the smallest value this number could take, and why is this important to realise?
 
+**Q4.8** In chapter 4 (and at many other places in *Insights*) we leave the axes labels of the displayed graphs with relatively ugly labels. E.g. in Figure 4.9 the y-axis label is `num_prey`. Why don't we make these and other labels nicer?
 
+**4.9** Did you follow and understand the second part of this chapter "A prey-centric view" of the data and questions? (Quick answer: we (the authors) would be happy if you did decide to skip this section until you worked through the following chapters!)
 
-
-
-
+**Q4.10** The workflow demonstration presented in chapter 3 and 4 were quite linear... we did one thing, then built on it, then another building on that. What did we do in reality, while developing the workflow demonstration?
 
 
 ## Chapter 5 (Dealing with data 1—Digging into dplyr)

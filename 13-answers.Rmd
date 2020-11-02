@@ -4,113 +4,143 @@
 
 **Q0.1** Who is the intended audience/users/readers of *Insights*?
 
-**A**, **C**, and **D** are correct. *Insights* is intended for beginner scientists in the life and environmental scientist that will be working with quantitative data. Our other book, *Getting Started with R* is for folk that what an introduction to R and who already know a bit about data analysis (just not in R).
-
-**B**: If you already have good knowledge of data analysis and statistics and need an introduction to R, you might like to look at our other book, *Getting Started with R, 2nd Edition*.
+Answer: **A**, **C**, and **D** are correct. *Insights* is intended for beginner scientists in the life and environmental scientist that will be working with quantitative data. Our other book, *Getting Started with R* is for folk that what an introduction to R and who already know a bit about data analysis (just not in R). **B**: If you already have good knowledge of data analysis and statistics and need an introduction to R, you might like to look at our other book, *Getting Started with R, 2nd Edition*.
 
 **Q0.2** *Insights* teaches a newer (i.e. tidyverse) approach to using R, and not what might be called the “classic” or “traditional” approach. What does this mean?
 
-**A**, **B**, **D**, and **E** are correct. We teach the newer (tidyverse) approach in our own Undergraduate-Level Introduction to Data Analysis courses. It works really well. The newer (tidyverse) approach is not advanced R, it is simple, intuitive, and powerful R.
-
-*Insights* contains not a single square bracket or dollar sign.
+Answer: **A**, **B**, **D**, and **E** are correct. We teach the newer (tidyverse) approach in our own Undergraduate-Level Introduction to Data Analysis courses. It works really well. The newer (tidyverse) approach is not advanced R, it is simple, intuitive, and powerful R. (*Insights* contains not a single square bracket or dollar sign.)
 
 **Q0.3** *Insights* is a book about the process of getting insights from data, and yet it contains no statistical analyses (e.g. no regression, ANOVA, linear models, or generalised linear models. Why are such things not included?
 
-Every answers is a good reason for starting learning about data analysis without considering statistics.
+Answer: Every answers is a good reason for starting learning about data analysis without considering statistics.
 
 **Q0.4** What proportion of a data analyists time and effort is spent on tasks such as preparation, import, cleaning, tidying, checking, double-checking, manipulating, summarising and visualizating data?
 
-We write "about 80%". Though really we just mean *a lot*. Care and attention to this work is essential to provide a foundation dataset from which to derive insights.
+Answer: We write "about 80%". Though really we just mean *a lot*. Care and attention to this work is essential to provide a foundation dataset from which to derive insights.
 
 **Q0.5** From where do you get the datasets that you need to work along with the demonstrations in the book?
 
-Only **D** is correct. You get the data from the online data repositories where the authors of the original studies deposited their data. Unlike the majority of "Introduction to Data Analysis" books, *Insights* starts from the often dirty and messy state data usual begins in (though the datasets in the Workflow Demonstrations are mostly quite clean!). Its lot of work, but absolutely essential work to do safely and reliably, to get the data tidy, clean, and arranged so that visualisation and summarisation (and in the end, statistical tests) are straightforward and efficient, and that the insights derived from them are accurate, reliable, and robust.
+Answer: Only **D** is correct. You get the data from the online data repositories where the authors of the original studies deposited their data. Unlike the majority of "Introduction to Data Analysis" books, *Insights* starts from the often dirty and messy state data usual begins in (though the datasets in the Workflow Demonstrations are mostly quite clean!). Its lot of work, but absolutely essential work to do safely and reliably, to get the data tidy, clean, and arranged so that visualisation and summarisation (and in the end, statistical tests) are straightforward and efficient, and that the insights derived from them are accurate, reliable, and robust.
 
-**Q0.6** Natalie.
+**Q0.6** Which one of the book's authors works at the Natural History Museum in London?
 
-**Q0.7** Owen.
+Answer: Natalie.
 
-**Q0.8** Andrew.
+**Q0.7** Which one used to brew beer (from grain)?
 
-**Q0.9** Dylan.
+Answer: Owen.
+
+**Q0.8** Which one has has strangely hairy ears?
+
+Answer: Andrew.
+
+**Q0.9** Which one has cuddled sheep on a remote Scottish Island?
+
+Answer: Dylan.
 
 
 
 
 ## Chapter 1 (Introduction)
 
-**Q1.1** Yes, it is possible to get insights from data without all these things. And we think doing so is a great starting point to learn fundamental skills for getting insights from data. Getting insights from more complex and larger datasets than used in the book can, however, be greatly assisted by statistical models, machine learning, and many other more advanced methods.
+**Q1.1** Can we get insights from data without using complex statistical models and analyses, without machine learning, without being a master data scientist?
 
-**Q1.2** We will focus on important characteristics of the data and the patterns in it. We are more likely to think about the strength of and practical importance of patterns in the data. We are less likely to focus on statistical significance at the expense of everything else.
+Answer: Yes, it is possible to get insights from data without all these things. And we think doing so is a great starting point to learn fundamental skills for getting insights from data. Getting insights from more complex and larger datasets than used in the book can, however, be greatly assisted by statistical models, machine learning, and many other more advanced methods.
 
-**Q1.3** Out of the four options given, a question is the first we should think about. The clearer and more specific the better. Making a clear and specific question can be assisted by sketching a graph. We must be careful to minimise the possibility for our insights to be affected by what we would like to find.
+**Q1.2** What is an advantage of focusing on the data without any statistical models/tests to think about?
 
-**Q1.4** With a randomised manipulative experiment we have a chance of inferring causation... that changing somethings caused a change in something else. On the down side, logistical constraints of make such experiments occur in rather controlled and less realistic settings than other types of studies.
+Answer: We will focus on important characteristics of the data and the patterns in it. We are more likely to think about the strength of and practical importance of patterns in the data. We are less likely to focus on statistical significance at the expense of everything else.
 
-**Q1.5** We focus on rectangular data, i.e. a table of data with rows and columns. A spreadsheet is an example of such rectangular data. We focus on this as it is a simple, useful, and flexible way of arranging data. Furthermore, there are many convenient and powerful approaches for working with data thus arranged.
+**Q1.3** With what should we start our journey from data to insights?
 
-**Q1.6** A *response variable* contains the data (measurements/observations) that we are interested in understand the variation in. This is the variable that is "responding" to other variables. It is also know as the *dependent* variable. Typically we put the response variable on the y-axis of a graph (i.e. we *map* variation in the response variable to variation along the y-axis).
+Answer: Out of the four options given, a question is the first we should think about. The clearer and more specific the better. Making a clear and specific question can be assisted by sketching a graph. We must be careful to minimise the possibility for our insights to be affected by what we would like to find.
 
-**Q1.7** An explanatory variable is a variable that contains measurements that can *explain* variation in a response variable. They are also termed the *independent* variable and the *predictor* variable. The rationale for these names is that an explanatory variable is not dependent on other variables, and can be used to predict variation in the response variable.
+**Q1.4** Why is it important to know if a study resulting in a dataset was a randomised manipulative experiment?
 
-**Q1.8** The five given in *Insights* are 1) the number of observations, 2) the number of variables, 3) if variables describe the manipulations of a randomised experiment, 4) correlation among the variatbles, and 5) how independent are the observations. See the text of the book for why we think these are important. Great if you have thought of other important features... drop us a line to let us know.
+Answer: With a randomised manipulative experiment we have a chance of inferring causation... that changing somethings caused a change in something else. On the down side, logistical constraints of make such experiments occur in rather controlled and less realistic settings than other types of studies.
 
-**Q1.9** The all concern food!
+**Q1.5** Datasets, i.e. convenient arrangements of data, come in many forms. Which arrangement is used throughout this book?
 
-**Q1.10** Perhaps lots were missing, and some of the presented steps could be broken up into multiple steps. Its always risky to present a general recipe for something as ultimately diverse as getting insights from data. Still, its a good idea to start somewhere. The missing step mentioned was communication, by the way. Or at least that is one that we thought of as rather important.
+Answer: We focus on rectangular data, i.e. a table of data with rows and columns. A spreadsheet is an example of such rectangular data. We focus on this as it is a simple, useful, and flexible way of arranging data. Furthermore, there are many convenient and powerful approaches for working with data thus arranged.
+
+**Q1.6** What is a "response variable" and what are other names for one?
+
+Answer: A *response variable* contains the data (measurements/observations) that we are interested in understand the variation in. This is the variable that is "responding" to other variables. It is also know as the *dependent* variable. Typically we put the response variable on the y-axis of a graph (i.e. we *map* variation in the response variable to variation along the y-axis).
+
+**Q1.7** What is an "explanatory variable" and what are other names for one?
+
+Answer: An explanatory variable is a variable that contains measurements that can *explain* variation in a response variable. They are also termed the *independent* variable and the *predictor* variable. The rationale for these names is that an explanatory variable is not dependent on other variables, and can be used to predict variation in the response variable.
+
+**Q1.8** Give five important features of datasets, and explain in your own words why they are important.
+
+Answer: The five given in *Insights* are 1) the number of observations, 2) the number of variables, 3) if variables describe the manipulations of a randomised experiment, 4) correlation among the variatbles, and 5) how independent are the observations. See the text of the book for why we think these are important. Great if you have thought of other important features... drop us a line to let us know.
+
+**Q1.9** What do each of the four demonstration datasets used in the Workflow Demonstrations share in common?
+
+Answer: They all concern food!
+
+**Q1.10** Which step in getting insights from data was missing from the presented workflow? (This is a bit of a trick question.)
+
+Answer: Perhaps lots were missing, and some of the presented steps could be broken up into multiple steps. Its always risky to present a general recipe for something as ultimately diverse as getting insights from data. Still, its a good idea to start somewhere. The missing step mentioned was communication, by the way. Or at least that is one that we thought of as rather important.
 
 ## Chapter 2 (Getting Acquainted)
 
 **Q2.1** True or false: R and RStudio are the same software program?
 
-This is false. They are two separate programs. RStudio is like a helper program that surrounds R. We only use R via RStudio. Because they're separate programs we must update each. I.e. updating one will not update the other.
+Answer: This is false. They are two separate programs. RStudio is like a helper program that surrounds R. We only use R via RStudio. Because they're separate programs we must update each. I.e. updating one will not update the other.
 
 **Q2.2** What will R tell us if we type into the Console `1 + 3 * 3`?
 
-The answer is 10. R does the multiplication first, as it should.
+Answer: The answer is 10. R does the multiplication first, as it should.
 
 **Q2.3** What will R tell us if we type into the Console `log(100)`?
 
-The answer is 4.60517. This is because the `log` function is the natural log, often written as "ln". If you answered 2 you were thinking of `log10(100)`
+Answer: The answer is 4.60517. This is because the `log` function is the natural log, often written as "ln". If you answered 2 you were thinking of `log10(100)`
 
 **Q2.5** How would we assign to the name "my_constant" the value of "log(100)"?
 
-`my_constant <- log(100)`
+Answer: `my_constant <- log(100)`
 
 **Q2.5** What commands should we be typing directly into the Console?
 
-Any that we know that we don't want to remember and don't want to use again. I.e. very few. The vast majority we type in our script, and then "send" to the Console. This practice will result in our script containing a complete record of everything we did.
+Answer: Any that we know that we don't want to remember and don't want to use again. I.e. very few. The vast majority we type in our script, and then "send" to the Console. This practice will result in our script containing a complete record of everything we did.
 
 **Q2.6** What is the error in the code?
 
-In the second line of code the name `my_x_variable` was mispelled (the second "a" was missing). Hence we get the error: `object 'my_x_variable' not found`.
+Answer: In the second line of code the name `my_x_variable` was mispelled (the second "a" was missing). Hence we get the error: `object 'my_x_variable' not found`.
 
 **Q2.7** When we give a function some arguments, when should we name the arguments?
 
-Name them whenever you are not sure about what order the function expects the arguments in. When staring with R, it can be comforting to always name the arguments, and then to relax this when one becomes more used to what individual functions expect.
+Answer: Name them whenever you are not sure about what order the function expects the arguments in. When staring with R, it can be comforting to always name the arguments, and then to relax this when one becomes more used to what individual functions expect.
 
 **Q2.8** True or false: it is good practice to have at the top of our script a command to *install* each of the packages we would like to use.
 
-False. Do not do this. We only need to load the add-on package with, for example, `library(dplyr)`. Installing packages every time you run your code is a waste of time.
+Answer: False. Do not do this. We only need to load the add-on package with, for example, `library(dplyr)`. Installing packages every time you run your code is a waste of time.
 
 **Q2.9** True or false: When asking help from others it is sufficient to email them a verbal description of the problem, and a copy of the error message R gave.
 
-False. This will rarely be enough for someone to help find the problem. Even sending the line of code that produces the error is often not sufficient. Better to send more code than less, and if possible code that works, at least up until if fails. And send sample data if the code reads in and uses data.
+Answer: False. This will rarely be enough for someone to help find the problem. Even sending the line of code that produces the error is often not sufficient. Better to send more code than less, and if possible code that works, at least up until if fails. And send sample data if the code reads in and uses data.
 
 **Q2.10** If RStudio freezes, are we going to lose all our work?
 
-Probably not. RStudio has very likely autosaved the very latest version of our script. Just in case, attempt to copy the script from RStudio and paste it somewhere safe, before quitting and restarting RStudio.
+Answer: Probably not. RStudio has very likely autosaved the very latest version of our script. Just in case, attempt to copy the script from RStudio and paste it somewhere safe, before quitting and restarting RStudio.
 
 
 ## Chapter 3 (Workflow Demonstration--Part 1)
 
 
 
-**Q3.2** In a tidy dataset, the same type of data is not spread across multiple columns, i.e. one variable (one type of information) only occurs in one column. A corollary is that each row contains only one observation. More information, about tidy data, and converting between tidy and not-so-tidy data is given in chapter 7 of the Insights book.
+**Q3.2** What are characteristic features of tidy data?
 
-**Q3.3** Using projects makes our code more shareable, i.e. will work on someone else's computer without changing anything in the code. Switching between projects is simple.
+Answer: In a tidy dataset, the same type of data is not spread across multiple columns, i.e. one variable (one type of information) only occurs in one column. A corollary is that each row contains only one observation. More information, about tidy data, and converting between tidy and not-so-tidy data is given in chapter 7 of the Insights book.
 
-**Q.3.4**  The term `%>%` is known as the *pipe*. It is used to "send" the outcome of one function into another. You will get to know it well, as we use it *a lot*; it is described in chapter 6 of the Insights book. 
+**Q3.3** Write down two reasons why its a good idea to use the Projects that are available in RStudio.
+
+Answer: Using projects makes our code more sharable, i.e. will work on someone else's computer without changing anything in the code. Switching between projects is simple.
+
+**Q.3.4**  What is the name given to this term `%>%` and what does it do?
+
+Answer: The term `%>%` is known as the *pipe*. It is used to "send" the outcome of one function into another. You will get to know it well, as we use it *a lot*; it is described in chapter 6 of the Insights book. 
 
 
 
@@ -138,24 +168,66 @@ bats <- mutate(bats,
          "Order" = "Order_1")
 ```
 
-**Q3.5** `Bat_ID` is numeric, but these are identities (i.e. names). They could just as well be words. Leaving them as numbers could allow us to do something stupid, like involving them in a calculation. Using numbers in such situation can also result in `ggplot` not doing what we'd like, for example would lead to a colour gradient rather than discrete colours if we mapped the numerical variable to the colour aesthetic.
+**Q3.5** A little trickier perhaps... which variable in the bat diet dataset is numeric but should, arguably, not be?
 
-**Q3.6** We store data in R in a *tibble*, which is a special type of data frame. It has rows each containing an observation, and columns containing variables.
+Answer: `Bat_ID` is numeric, but these are identities (i.e. names). They could just as well be words. Leaving them as numbers could allow us to do something stupid, like involving them in a calculation. Using numbers in such situation can also result in `ggplot` not doing what we'd like, for example would lead to a colour gradient rather than discrete colours if we mapped the numerical variable to the colour aesthetic.
 
-**Q3.7** The [**janitor** add-on package](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html) contains the `clean_names()` function.
+**Q3.6** In what type of object do we often (and in this workflow) store data in R, and what are some features of this object.
 
-**Q3.8** [The script without errors is here](assets/bat_diets_part1_insights_workflowdemo.R). Many of the errors were typos, and would have caused an error in R. Remember that some errors (e.g. doing multiplication rather than addition) will cause R to show an error. Avoiding making these (e.g. by writing readable code), and having checks to spot them when they occur is very important
+Answer: We store data in R in a *tibble*, which is a special type of data frame. It has rows each containing an observation, and columns containing variables.
+
+**Q3.7** We cleaned up the variable names using a string replacement functions (`str_replace_all`). Find the name of the add-on package that contains the rather nice function `clean_names()`, which can quickly and easily result in us having nice clean variable names. 
+
+Answer: The [**janitor** add-on package](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html) contains the `clean_names()` function.
+
+**Q3.8** Take a look at [this version of the script of this part of the Bat Diet workflow demonstration](assets/witherrors_bat_diets_part1_insights_workflowdemo.R). We have added a variety of errors into the script, and your task is to find the errors and correct them.
+
+Answer: [The script without errors is here](assets/bat_diets_part1_insights_workflowdemo.R). Many of the errors were typos, and would have caused an error in R. Remember that some errors (e.g. doing multiplication rather than addition) will cause R to show an error. Avoiding making these (e.g. by writing readable code), and having checks to spot them when they occur is very important
 
 
 
 
 ## Chapter 4 (Workflow Demonstration--Part 2)
 
-**Q4.1** If you're anything like us (Owen at least) you will do this for as long as you're coding, meaning that it happens a lot. The double equals sign is a logical operator, and asks if the things on either of it are equal or not. A single equals is a name-value pair, used to associate a value with a name.
+**Q4.1** Chapter 3 mostly concerned getting the data ready. Chapter 4 is mostly about getting information from the data, including answering our questions. What two add-on package are used to do this, and what is each of them useful for?
 
-**Q4.2** It is likely that the variable contains at least one `NA`, causing the calculation of the mean to fail (in the sense that the answer is NA). We can ask for the NA values to be ignored when calculating the mean with the arguement `na.rm = TRUE`
+Answer: We use the **dplyr** package for manipulating data and making calculations based on the data (e.g. to calculate numbers observations, and mean observations), and we use the **gplot2** package for visualising the data.
 
-**Q4.3** When we observe that the association between two variables seems to depend on the value of a third variable, we essentially observing *context dependence* in the association. The association between the two variables depends on the context, which here is the value of the third variable. This kind of pattern is also termed an *interaction* between two variables. They are not acting additively/independently. And obviously the term *associated* is not sufficient to describe a context dependent association.
+**Q4.2** What do we mean by "sanity-checking insights"?
+
+Answer: "Sanity-checking insights" are insights that confirm basic information about the data is as we expect it to be. The insight is that we are seeing what we expect to see. These are just as important as insights about our questions, as they give us confidence that our work with the data is reliable and accurate.
+
+**Q4.3** How many times will you accidentally type in your code `=` when you meant to type `==`, and what is the difference?
+
+Answer: If you're anything like us (Owen at least) you will do this for as long as you're coding, meaning that it happens a lot. The double equals sign is a logical operator, and asks if the things on either of it are equal or not. A single equals is a name-value pair, used to associate a value with a name.
+
+**Q4.4** Imagine we calculate the mean of a variable and the answer, to our surprise, is `NA`. This is a surprise because we know the variable is numeric and we were therefore expecting a number. What is a likely reason for us getting NA, and what is one way of dealing with this?
+
+Answer: It is likely that the variable contains at least one `NA`, causing the calculation of the mean to fail (in the sense that the answer is NA). We can ask for the NA values to be ignored when calculating the mean with the arguement `na.rm = TRUE`
+
+**Q4.5** Imagine that we observe that the association between two variables seems to depend on a third variable. E.g. the effects of herbivory on plant biomass is negative in the absence of a predator, but is positive in the presence of a predator. Which of the terms might be appropriate to describe this kind of pattern?
+
+Answer: When we observe that the association between two variables seems to depend on the value of a third variable, we essentially observing *context dependence* in the association. The association between the two variables depends on the context, which here is the value of the third variable. This kind of pattern is also termed an *interaction* between two variables. They are not acting additively/independently. And obviously the term *associated* is not sufficient to describe a context dependent association.
+
+**Q4.6** We made a type of graph that allowed us to see the number of observations of a variable that had particular values (i.e. the number of values that fell in a particular *bin*)? What is a name of this type of graph, and why is it import to look at this?
+
+Answer: This type of graph is called a *histogram* or a *frequency distribution*. The are very useful for viewing the range of values of a variable, and which values are most common. These information are essential for drawing conclusions from the data; for example they can determine whether the mean or median is a more appropriate measure of central tendency (i.e. where the centre of the distribution lies). 
+
+**Q4.7** We counted (calculated) the number of different prey species detected in the poop of each bat. What is the smallest value this number could take, and why is this important to realise?
+
+Answer: The lowest number of different prey species detected is zero. Hence this distribution cannot include values of less than zero... it is impossible. This is important to realise because it gives us clues about what types of statistical tests we would do (though we do not do any in *Insights*). For example, the Poisson distribution is often used in statistical tests performed on count data.** 
+
+**Q4.8** In chapter 4 (and at many other places in *Insights*) we leave the axes labels of the displayed graphs with relatively ugly labels. E.g. in Figure 4.9 the y-axis label is `num_prey`. Why don't we make these and other labels nicer?
+
+Answer: These are graphs meant for us to explore the data, and to assess the weight of evidence for patterns in it. So long as the axes (and other) labels are good enough for us to understand, great. There is no need, at this point, to make the graphs nicer. That can wait until we are more certain about what we will use to communicate our findings.
+
+**4.9** Did you follow and understand the second part of this chapter "A prey-centric view" of the data and questions?
+
+Answer: If you answered no, then no problem! It is pretty complex, with some quite involved series of R operations, and also some new concepts. So keep the task of looking through this section for a later date, when you feel like a bit of a challenge. The most important take-home message from this section is that often there are alternate ways of looking at the same data, each of which can provide additional insight. 
+
+**Q4.10** The workflow demonstration presented in chapter 3 and 4 were quite linear... we did one thing, then built on it, then another building on that. What did we do in reality, while developing the workflow demonstration?
+
+Answer: We worked with the data a bit, and then found something that didn't work so well, and so then went back and made a change to code so that it worked better. There was quite a lot of this optimisation. Though we were always aware of and focused on where we wanted to get to (i.e. the graphs we were aiming for that would answer our question) we did not from the start see the linear path to that goal. We went down some dead-ends, or at least some rather messy paths, and once we recognised that we had, we went back and changed direction to be more direct, elegant, robust, and reliable. Many of these changes were to prevent problems from ever occuring, as this is preferable to fixing a problem once it has occured.
 
 
 
