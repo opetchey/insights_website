@@ -161,22 +161,30 @@ my_y_variable <- sin(my_x_varible)
 **Q4.10** The workflow demonstration presented in chapter 3 and 4 were quite linear... we did one thing, then built on it, then another building on that. What did we do in reality, while developing the workflow demonstration?
 
 
+
+
+
 ## Chapter 5 (Dealing with data 1—Digging into dplyr)
 
 ### General questions and exercises
 
+**Q5.1** What **dplyr** function (i.e. function from the **dplyr** add-on package) do we use to calculate summary information about data?
+
+**Q5.2** What **dplyr** function do we use to keep a collection of rows/observations in a dataset, according to the values in one of the variables?
+
+**Q5.3** What is `%in%` used for? (We ask because it is frequently very useful.)
+
+**Q5.4** What What **dplyr** function do we use to add a new variable to a dataset that is a transformation/modification of an existing variable?
+
+**Q5.5** List four other **dplyr** functions and write about what they're used for.
 
 ### Bat diet workflow questions and exercises
 
-* Find the identity (`Bat_ID`) of the two bats that ate only the largest (52.5mm wingspan) type of prey.
+**Q5.6** Find the identity (`Bat_ID`) of the two bats that ate only the largest (52.5mm wingspan) type of prey.
 
-**Q5.1** How many different prey *species* were detected in total.
+**Q5.7** How many different prey *species* were detected in total?
 
-**Q5.2** How many prey species were migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
-
-* Efficiently calculate the mean and standard deviation of each of the three response variables, for each Sex by Age combination.
-
-**Q4.1** The following code is intended to calculate the number of prey items found in each poop. Find and correct the three intentional errors it contains:
+**Q5.8** The following code is intended to calculate the number of prey items found in each poop. Find and correct the three intentional errors it contains:
 
 ```{r eval = FALSE}
  prey_stats < bats %>%
@@ -184,25 +192,29 @@ my_y_variable <- sin(my_x_varible)
   summarise(num_prey = n()
 ```
 
+**Q5.9** Calculate the number of times each prey item was observed.
+
+**Q5.10** Calculate number of migratory and non-migratory prey species, and pest or non-pest, and each combination of migratory and pest.
+
+**Q5.11** What was the maximum number of times a prey species could have been observed?
+
+**Q5.12** What proportion of prey species were observed in only one poo?
+
+**Q5.13** How many bats were caught on each of the dates?
+
+**Q5.14** The Abstract of the paper states that Lepidoptera were mostly from the Noctuidae and Geometridae familes. How many species of Noctuidae and Geometridae are there in the dataset?
+
+**Q5.15** The paper states that *56.9±36.7% were migratory moth species*. Calculate this yourself.
+
+**Q5.16** Confirm the results from the paper: *Moths (Lepidoptera; mainly Noctuidae and Geometridae) were by far the most frequently recorded prey, occurring in nearly all samples and accounting for 96 out of 115 prey taxa.*
+
+**Q5.17** Confirm the results from the paper: *Each pellet [poo] contained on average 4.1 ± 2.2 prey items*
 
 
 
-**Q4.6** What was the maximum number of times a prey species could have been observed?
-
-**Q4.7** Calcuate the number of times each prey item was observed.
-
-**Q4.8** What proportion of the prey species were only observed in one poo?
 
 
-**Q5.4** How many bats were caught on each of the dates
 
-**Q5.5** The Abstract of the paper states that Lepidoptera were mostly from the Noctuidae and Geometridae familes. How many species of Noctuidae and Geometridae are there in the dataset?
-
-**Q5.6** The paper states that *56.9±36.7% were migratory moth species*. Calculate this yourself.
-
-**Q5.7** Confirm the results from the paper: *Moths (Lepidoptera; mainly Noctuidae and Geometridae) were by far the most frequently recorded prey, occurring in nearly all samples and accounting for 96 out of 115 prey taxa.*
-
-**Q5.8** Confirm the results from the paper: *Each pellet [poo] contained on average 4.1 ± 2.2 prey items*
 
 
 ## Chapter 6 (Dealing with data 2—Expanding your toolkit)

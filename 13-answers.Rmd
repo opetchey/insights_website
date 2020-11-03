@@ -231,9 +231,6 @@ Answer: We worked with the data a bit, and then found something that didn't work
 
 
 
-==== TO HERE ====
-
-
 
 
 
@@ -241,18 +238,89 @@ Answer: We worked with the data a bit, and then found something that didn't work
 
 ### General questions and exercises
 
+**Q5.1** What **dplyr** function (i.e. function from the **dplyr** add-on package) do we use to calculate summary information about data?
+
+Answer: `summarise`
+
+**Q5.2** What **dplyr** function do we use to keep a collection of rows/observations in a dataset, according to the values in one of the variables?
+
+Answer: The `filter` function is used to keep a set of rows, according to values in a variable. E.g. keep the rows/observations for male bats:
+
+```{r eval = FALSE}
+bats %>%
+  filter(Sex == "Male")
+```
+
+**Q5.3** What is `%in%` used for?
+
+Answer: It is used to ask if a value (e.g., `Owen`) appears in a list of other values. E.g. try guessing what these will do, and then run them to check your guess:
+
+```{r eval = FALSE}
+"Owen" %in% c("Owen", "Natalie", "Dylan", "Andrew")
+c("Owen", "Heath") %in% c("Owen", "Natalie", "Dylan", "Andrew")
+```
+
+**Q5.4** What What **dplyr** function do we use to add a new variable to a dataset that is a transformation of an existing variable?
+
+Answer: `mutate` -- for example, it the book we used `mutate` to replace the "M" with "Male", and "F" with "Female".
+
+**Q5.5** List four other **dplyr** functions and write about what they're used for.
+
+Answer: `arrange`, `select`, `rename`, `group_by`, and `summarise`. Please see the book for descriptions of what these do (or search online).
 
 ### Bat diet workflow questions and exercises
 
-**Q5.1** Calculate the total number of prey species by counting the number of unique values in the prey `Species` variable:
+**Q5.6** Find the identity (`Bat_ID`) of the two bats that ate only the largest (52.5mm wingspan) type of prey.
 
+Answer:
+```{r}
+bats %>%
+  filter(Wingspan_mm == 52.5) %>%
+  select(Bat_ID)
+```
+
+
+**Q5.7** How many different prey *species* were detected in total?
+
+Calculate the total number of prey species by counting the number of unique values in the prey `Species` variable:
+
+Answer:
 ```{r}
 bats %>%
   summarise(total_num_prey_species = length(unique(Species)))
 ```
 
-**Q5.2** Calculate number of migratory and non-migratory, and pest or non-pest, and each combination of migratory and pest.
 
+**Q5.8** The following code is intended to calculate the number of prey items found in each poop. Find and correct the three intentional errors it contains:
+
+```{r eval = FALSE}
+ prey_stats < bats %>%
+  group_by(Bat_Id) %>%
+  summarise(num_prey = n()
+```
+
+Answer: The assignment arrow was missing its `-`, the `d` of `Bat_Id` should be capital `D`, and an additional closing bracket was needed at the end of the third line:
+
+```{r eval = FALSE}
+ prey_stats <- bats %>%
+  group_by(Bat_ID) %>%
+  summarise(num_prey = n())
+```
+
+
+**Q5.9** Calculate the number of times each prey item was observed.
+
+Answer:
+```{r}
+num_times <- bats %>%
+  group_by(Species) %>%
+  summarise(num_times_obs = n())
+```
+
+
+**Q5.10** Calculate number of migratory and non-migratory prey species, and pest or non-pest, and each combination of migratory and pest.
+
+Answers:
 ```{r}
 bats %>%
   group_by(Migratory) %>%
@@ -272,8 +340,30 @@ bats %>%
 ```
 
 
+**Q5.11** What was the maximum number of times a prey species could have been observed?
 
-**Q5.4** Get the number of bats caught on each date with a `group_by` `Bat_ID` and `Date_proper` piped into a `summarise` to get the unique `Bat_ID`s, then make another `group_by` but this time on the `Date_proper` variable and use the `n()` function to count the number of bats per date:
+Answer: This is the number of bat poops observed (143):
+
+```{r}
+bats %>%
+  pull(Bat_ID) %>%
+  unique() %>%
+  length()
+```
+
+
+**Q5.12** What proportion of prey species were observed in only one poo?
+
+Answer:
+```{r}
+num_times %>%
+  summarise(prop_singletons = sum(num_times_obs == 1) / n())
+```
+
+
+**Q5.13** How many bats were caught on each of the dates?
+
+Answer: Get the number of bats caught on each date with a `group_by` with `Bat_ID` and `Date_proper` as the grouping variables. Pipe the result into a `summarise` to get the unique `Bat_ID`s, then make another `group_by` but this time on the `Date_proper` variable only and use the `n()` function to count the number of bats per date:
 
 ```{r}
 bats_per_date <- bats %>%
@@ -292,7 +382,7 @@ bats_per_date %>%
   ggtitle("Number of bats caught on each date.")
 ```
 
-**Q5.5** Get the number of species of Noctuidae and Geometridae in the dataset.
+**Q5.14** The Abstract of the paper states that Lepidoptera were mostly from the Noctuidae and Geometridae familes. How many species of Noctuidae and Geometridae are there in the dataset? Get the number of species of Noctuidae and Geometridae in the dataset.
 
 ```{r eval = FALSE}
 # Solution
@@ -305,9 +395,9 @@ families %>%
   filter(Family %in% c("Noctuidae", "Geometridae"))
 ```
 
-**Q5.6** The paper states that *56.9±36.7% were migratory moth species*. Calculate this yourself.
+**Q5.15** The paper states that *56.9±36.7% were migratory moth species*. Calculate this yourself.
 
-In this solution we calculate the proportion migratory in the diet of each bat, then calculate the mean and standard deviation of these proportions. The answer we find is not the same as in the paper, though we are not sure why.
+Answer: In this solution we calculate the proportion migratory in the diet of each bat, then calculate the mean and standard deviation of these proportions. The answer we find is not the same as in the paper, though we are not sure why.
 
 ```{r eval = FALSE}
 bats %>%
@@ -323,7 +413,7 @@ bats %>%
 
 ```
 
-**Q5.7** Confirm the results from the paper: *Moths (Lepidoptera; mainly Noctuidae and Geometridae) were by far the most frequently recorded prey, occurring in nearly all samples and accounting for 96 out of 115 prey taxa.*
+**Q5.16** Confirm the results from the paper: *Moths (Lepidoptera; mainly Noctuidae and Geometridae) were by far the most frequently recorded prey, occurring in nearly all samples and accounting for 96 out of 115 prey taxa.*
 
 ```{r eval = FALSE}
 bats %>%
@@ -333,7 +423,7 @@ bats %>%
   summarize(num_spp=n())
 ```
 
-**Q5.8** Confirm the results from the paper: *Each pellet [poo] contained on average 4.1 ± 2.2 prey items*
+**Q5.17** Confirm the results from the paper: *Each pellet [poo] contained on average 4.1 ± 2.2 prey items*
 
 ```{r eval = FALSE}
 bats %>%
@@ -348,39 +438,7 @@ bats %>%
 A slightly different answer to that in the paper. We are not sure why.
 
 
-
-**Q4.1** The assignment arrow was missing its `-`, the `d` of `Bat_Id` should be capital `D`, and an additional closing bracket was needed at the end of the third line:
-
-```{r eval = FALSE}
- prey_stats <- bats %>%
-  group_by(Bat_ID) %>%
-  summarise(num_prey = n())
-```
-
-**Q4.6** This is the number of bat poops observed (143):
-
-```{r}
-bats %>%
-  pull(Bat_ID) %>%
-  unique() %>%
-  length()
-```
-
-**Q4.7** Calcuate the number of times each prey item was observed.
-
-```{r}
-num_times <- bats %>%
-  group_by(Species) %>%
-  summarise(num_times_obs = n())
-```
-
-**Q4.8** What proportion of prey species were observed in only on poo?
-
-```{r}
-num_times %>%
-  summarise(prop_singletons = sum(num_times_obs == 1) / n())
-```
-
+## ==== TO HERE
 
 
 
