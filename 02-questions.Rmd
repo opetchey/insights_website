@@ -221,13 +221,36 @@ my_y_variable <- sin(my_x_varible)
 
 ### General questions and exercises
 
-* We do not have to make an object containing the gathered version of the data. Instead we can pipe from the `gather` into the `ggplot`. Try this.
-
-* Look at the online Workflow Demonstration "Food-diversity Polity" and work through tidying the FAO Food Balance Sheet data.
+**Q6.1** Describe in your own words a couple of reasons why piping (using `%>%`) is useful.
 
 
 
-If you run `dmonths(1)` we see that the duration is `2629800s (~4.35 weeks)`. Have a think about how **lubridate** calculates this duration of a month.
+**Q6.2** Manipulating strings is a very important skill. In your own words, describe what the following functions do: `str_replace_all`, `case_when`, `separate`, and `grepl` (all of which are mentioned in the book).
+
+
+**Q6.3** In your own words describe three other string manipulation functions.
+
+
+**Q6.4** We can use the function `dmonths(1)` to get the duration of one month, according to R. In which case we see that the duration is `2629800s (~4.35 weeks)`. What does this mean about how **lubridate** calculates this duration of a month?
+
+
+**Q6.5** Working with dates and times can be rather tricky and painful. What add-on package do we recommend for working with dates and times, because it contains many very useful and simple-to-use functions?
+
+
+
+**Q6.6** What would the function `ymd` be useful for?
+
+
+
+**Q6.7** Why is it useful to convert strings containing dates and times into date and time formatted variables?
+
+
+**Q6.8** In your own words write down what the `pivot_longer` function is used for, and also the three arguments (and their meanings) that we usually give it.
+
+
+**Q6.9** Look at the online Workflow Demonstration "Food-diversity Polity" and work through tidying (particularly the use of `pivot_longer`) the FAO Food Balance Sheet data.
+
+
 
 ### Bat diet workflow questions and exercises
 
@@ -263,10 +286,7 @@ If you run `dmonths(1)` we see that the duration is `2629800s (~4.35 weeks)`. Ha
 **Q4.9** Calculate and plot a histogram of the probability of observing each of the prey species across the whole study.
 
 
-**Q4.10** Ensure that you have the odds ratio for appearing a male or female poo for each of the prey species (the òdds_ratio` object in the book). Plot a histogram of all the calculated odds ratios. Guess how many prey species with odds less than twice and less than half to appear in female compared to male poos. Calcuate how many, and see how close is your guess.
-
-
-==== TO HERE ====
+**Q4.10** Ensure that you have the odds ratio for appearing a male or female poo for each of the prey species (the òdds_ratio` object in the book). Plot a histogram of all the calculated odds ratios. Guess how many prey species with odds less than twice and less than half to appear in female compared to male poos. Calculate how many, and see how close is your guess.
 
 
 ## Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)

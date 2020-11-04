@@ -438,13 +438,59 @@ bats %>%
 A slightly different answer to that in the paper. We are not sure why.
 
 
-## ==== TO HERE
-
 
 
 ## Chapter 6 (Dealing with data 2—Expanding your toolkit)
 
 ### General questions and exercises
+
+**Q6.1** Describe in your own words a couple of reasons why piping (using `%>%`) is useful.
+
+Answer: Here are a couple. You may have others too. Pipes allow us to avoid making intermediate datasets that we have no direct use for. These create clutter, which isn't a big deal sometimes, but can get a bit distracting. Another reason is that we avoid the option of nesting functions inside functions.
+
+**Q6.2** Manipulating strings is a very important skill. In your own words, describe what the following functions do: `str_replace_all`, `case_when`, `separate`, and `grepl` (all of which are mentioned in the book).
+
+Answer: Here in our words:
+
+* `str_replace_all` -- replaces all occurences of one pattern in a string with another pattern.
+* `case_when` -- do a case by case replacement of string with other strings.
+* `grepl` -- report if a string does or does not contain another string.
+
+**Q6.3** In your own words describe three other string manipulation functions.
+
+Answer: Our choice: `str_sub` -- used to extract parts of a string, e.g. the 3rd to 6th character; `str_detect` -- report if a pattern occurs in a string; `str_length` report the number of characters in a string.
+
+**Q6.4** We can use the function `dmonths(1)` to get the duration of one month, according to R. In which case we see that the duration is `2629800s (~4.35 weeks)`. What does this mean about how **lubridate** calculates this duration of a month?
+
+Answer: 365.25 days / 12 months * 24 hours * 60 minutes * 60 seconds = 2629800 seconds. So `dmonths(1)` calculates the duration of a month as the average duration of a month in an average duration year (365.25 days, due to leaps years every four years). The implication is that we must be very careful if we want to use the duration of a specific month in our calculations.
+
+**Q6.5** Working with dates and times can be rather tricky and painful. What add-on package do we recommend for working with dates and times, because it contains many very useful and simple-to-use functions?
+
+Answer: We recommend the add-on package `lubridate` for working with dates and times.
+
+**Q6.6** What would the function `ymd` be useful for?
+
+Answer: The function `ymd` is used to convert strings that contain year, then month, then day (e.g. 2020-11-03) into date format.
+
+**Q6.7** Why is it useful to convert strings containing dates and times into date and time formatted variables?
+
+Answer: Once converted, we can do maths with these (e.g. calculate the amount of time between two date/times). Also, when we use `ggplot` to visualise data with a date-formatted variable, we will get dates displayed properly and nicely in the graph.
+
+**Q6.8** In your own words write down what the `pivot_longer` function is used for, and also the three arguments (and their meanings) that we usually give it.
+
+Answer: `pivot_longer` is used to take information that is spread across multiple columns and put it into one (long) column. I.e. it is used to convert data from wide to long format. Long format is often quite a tidy format, and is therefore efficient for processing with functions in the **dplyr** and **ggplot2** add-on packages. The three arguments we usually give it are:
+
+* `names_to` -- the name of the new column in the new dataset that will contain the names of the variables in the old dataset. 
+* `values_to`-- the name of the new column in the new dataset that will contain the values in the variables in the old dataset.
+* `cols`: the columns in the old dataset that contain the data that should be gathered into one column.
+
+**Q6.9** Look at the online Workflow Demonstration "Food-diversity Polity" and work through tidying (particularly the use of `pivot_longer`) the FAO Food Balance Sheet data.
+
+Answer: no answer, just work through it.
+
+
+
+## ==== TO HERE
 
 
 ### Bat diet workflow questions and exercises
