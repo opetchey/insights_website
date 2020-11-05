@@ -489,19 +489,94 @@ Answer: `pivot_longer` is used to take information that is spread across multipl
 Answer: no answer, just work through it.
 
 
-
-## ==== TO HERE
-
-
 ### Bat diet workflow questions and exercises
 
+**Q6.10** Make a pipeline of operations, just like the one in the Insights book, that will calculate the number of prey species in the poop of each bat, and the average number of prey per bat for each taxonomic Order.
 
 
+Answer:
+```{r}
+bats %>%
+  group_by(Bat_ID, Order) %>%
+  summarise(Num_prey = n()) %>%
+  group_by(Order) %>%
+  summarise(Mean_num_prey = mean(Num_prey))
+```
+
+**Q6.11** Make a variable containing both the age and sex of the bats. E.g. "Adult-Female", "Adult-Male", and so on.
+
+Answer: There are a number of ways to do this. A `mutate` and `paste` within that would work. In our answer we use the `unite` function from the `tidyr` add-on package...
+```{r}
+bats <- bats %>%
+  unite(col = Age_Sex,
+        c("Age", "Sex"),
+        sep = "-",
+        remove = FALSE)
+```
+
+**Q6.12** How long did the fieldwork take, from the first sample to the last?
+
+Answer: We used summarise to subtract the maximum value of the date variable from the minimum...
+```{r}
+bats %>%
+  summarise(duration = max(Date_proper) - min(Date_proper))
+```
+If you get an error, please ensure you used the proper date variable... it must be formatted as a date (e.g. using the `dmy` function from the **lubridate** package).
 
 
+**Q6.13** Change the arrangement of the bat diet data to be wide-format. That is, for each bat make there be only one row, and have a column for each of the possible prey species, with number of reads at the entry.
 
+Answer: Use the `pivot_wider` function. Be careful to give *all* the columns that identify the rows (`id_cols`), the just specify which column contains the names, and which column contains the values...
 
+```{r}
+bats_wide <- bats %>%
+  pivot_wider(id_cols = c("Bat_ID", "Age", "Sex", "Date_proper"),
+              names_from = "Species",
+              values_from = "No._Reads")
+```
 
+**Q6.14** If you have NA's in the wide dataset you made for the answer to the previous question, figure out how to replace these with zeros. Hint: you do not need to use another function or operation.
+
+Answer: Add the argument `values_fill = 0` to the use of the `pivot_longer` function:
+
+```{r}
+bats_wide <- bats %>%
+  pivot_wider(id_cols = c("Bat_ID", "Age", "Sex", "Date_proper"),
+              names_from = "Species",
+              values_from = "No._Reads",
+              values_fill = 0)
+```
+
+**Q6.15** How many rows will there be when we change this `bats_wide` dataset back to long format?
+
+Answer: It will be the number of rows in `bats_wide` (143) multiplied by the number of prey species (119 columns minus the 4 id columns = 115). So we should have 16'445 rows.
+
+**Q6.16** And now switch the `bats_wide` dataset back to long format, and the make a new column that is a binary prey presence/absence variable.
+
+Answer:
+```{r}
+bats_long <- bats_wide %>%
+  pivot_longer(names_to = "Prey_species",
+               values_to = "Num_reads",
+               cols = 5:119) %>%
+  mutate(Pres_abs = ifelse(Num_reads == 0, 0, 1))
+```
+
+**Q6.17** Confirm that the number of presences is the same as in the original dataset.
+
+Answer:
+```{r}
+bats_long %>%
+  summarise(total_prey = sum(Pres_abs))
+```
+
+Perfect... 633 is the number of rows in the original dataset (in which only presences were present).
+
+ 
+ 
+## ==== TO HERE
+
+ 
 ## Chapter 7 (Getting to grips with ggplot2)
 
 ### General questions and exercises

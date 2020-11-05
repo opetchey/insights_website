@@ -255,6 +255,37 @@ my_y_variable <- sin(my_x_varible)
 ### Bat diet workflow questions and exercises
 
 
+**Q6.10** Make a pipeline of operations, just like the one in the Insights book, that will calculate the number of prey species in the poop of each bat, and the average number of prey per bat for each taxonomic Order.
+
+
+**Q6.11** Make a variable containing both the age and sex of the bats. E.g. "Adult-Female", "Adult-Male", and so on.
+
+
+
+**Q6.12** How long did the fieldwork take, from the first sample to the last?
+
+
+
+
+**Q6.13** Change the arrangement of the bat diet data to be wide-format. That is, for each bat make there be only one row, and have a column for each of the possible prey species, with number of reads at the entry.
+
+
+
+**Q6.14** If you have NA's in the wide dataset you made for the answer to the previous question, figure out how to replace these with zeros. Hint: you do not need to use another function or operation.
+
+
+
+**Q6.15** How many rows will there be when we change this `bats_wide` dataset back to long format?
+
+
+
+**Q6.16** And now switch the `bats_wide` dataset back to long format, and the make a new column that is a binary prey presence/absence variable.
+
+
+
+**Q6.17** Confirm that the number of presences is the same as in the original dataset.
+
+
 
 
 ## Chapter 7 (Getting to grips with ggplot2)
