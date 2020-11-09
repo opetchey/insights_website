@@ -572,50 +572,59 @@ bats_long %>%
 
 Perfect... 633 is the number of rows in the original dataset (in which only presences were present).
 
- 
- 
-## ==== TO HERE
 
  
 ## Chapter 7 (Getting to grips with ggplot2)
 
 ### General questions and exercises
 
+**Q7.1** What is the difference between **ggplot** and `ggplot`?
+
+Answer:
+**ggplot2** is the add-on package. `ggplot` is one of the functions in that package. Hence we would run `library(ggplot2)`, and then use the function `ggplot` to make a particular graph.
+
+**Q7.2** In the context of a graph being made with `ggplot`, give two examples of aesthetic mappings, and give the function we use to specify them.
+
+Answer:
+Example aesthetic mappings are 1) mapping of the colour of a point to a variable that contains levels low, medium, and high; 2) mapping of a numeric variable to the x-axis position of a point. We use the `aes` function to specify the aesthetic mappings.
+
+**Q7.3** In the context of **ggplot2**, what is a "scale"?
+
+Answer:
+The scale of a **ggplot2** graph controls how the data are mapped to the aesthetic attributes, such as an x/y location, or the colour and size of points in a plot. I.e. with the aesthetic mapping we specify *what* is mapped to what, and with a scale we specify *how* it is mapped.
+
+**Q7.4** In the context of **ggplot2**, what is a "layer"?
+
+Answer:
+A layer is a set of information that we add to the graph. E.g. some points corresponding to some data. Or some lines joining data points. Or some text. Or an image. Think of layers as transparent sheets of plastic that we draw something on, and then lay onto the graph to add information.
+
+**Q7.5** In the context of **ggplot2**, what is a "facet"?
+
+Answer:
+A facet is a panel for subsets of data, such as a separate panel for each sex or age. We can use the `facet_grid` or `facet_wrap` function to make a graph with multiple panels (facets), each showing a subset of the data.  
 
 ### Bat diet workflow questions and exercises
 
+**Q7.6** Plot at the shape of the distribution of number of poops collected on each sampling date.
 
-
-**Q4.4** The second pipe should be a plus sign `+`: we are *adding* a layer to the `ggplot`; we are not piping. This is a common error we make. There is an `s` missing in the `geom_beeswarm`. Finally, the comma that must separate the two arguments in the `aes` function is missing. Here is the corrected code (though it will not work if you have not already made the `prey_stats` object):
-
-```{r eval = FALSE}
- prey_stats %>%
-  ggplot() +
-  geom_beeswarm(mapping = aes(x = Sex, y = mean_wingspan))
-```
-
-
-
-**Q3.4** Plot at the shape of the distribution of dates on which poop samples were collected.
-
+Answer:
 ```{r}
 bats %>%
-  group_by(Date_proper) %>%
-  summarise(Unique_Date = unique(Date_proper)) %>%
   ggplot() +
-  geom_histogram(aes(x = Unique_Date), bins = 10)
-
+  geom_histogram(aes(x = Date_proper))
 ```
 
-**Q3.5** Plot the distribution of number of reads.
 
+**Q7.7** Plot the distribution of number of reads. What shape is it? From looking at the distribution, predict whether the mean or median is larger. Then check your prediction by calculating the median and mean. For extra credit, add two vertical lines to the graph, one where the mean is, and one where the median is (hint, use the `geom_vline` function).
+
+Answer:
 ```{r}
 bats %>%
   ggplot() +
   geom_histogram(aes(x = No._Reads))
 ```
 
-From the shape, we expect the mean to be greater than the median.
+Because the distribution has a few very large values, the mean will be pulled to the right (be larger), relative to the median. Lets check if we're correct:
 
 ```{r}
 bats %>%
@@ -623,8 +632,51 @@ bats %>%
             median_num_reads = median(No._Reads))
 ```
 
+Yes, the mean is much much larger than the median.
 
-**Q4.9** The probability is the number of times observed divided by the number of times a species could have been observed:
+```{r}
+bats %>%
+  ggplot() +
+  geom_histogram(aes(x = No._Reads)) +
+  geom_vline(xintercept = 7700) +
+  geom_vline(xintercept = 2741)
+```
+
+
+
+```{r echo = FALSE}
+prey_stats <- bats %>%
+  group_by(Bat_ID, Sex, Age) %>%
+  summarise(num_prey = n(),
+            num_prey1 = n_distinct(Sp._Nr.),
+            mean_wingspan = mean(Wingspan_mm, na.rm = TRUE),
+            prop_migratory = sum(Migratory == "yes") / n())
+```
+
+
+
+**Q7.8** The following code is intended to create a plot of the wingspan of prey found in male and female bat poops. Find and correct the three intentional errors it contains:
+
+```{r eval = FALSE}
+ prey_stats %>%
+  ggplot() %>%
+  geom_beewarm(mapping = aes(x = Sex y = mean_wingspan))
+```
+
+
+Answer:
+The second pipe should be a plus sign `+`: we are *adding* a layer to the `ggplot`; we are not piping. This is a common error we make. There is an `s` missing in the `geom_beeswarm`. Finally, the comma that must separate the two arguments in the `aes` function is missing. Here is the corrected code (though it will not work if you have not already made the `prey_stats` object):
+
+```{r eval = FALSE}
+ prey_stats %>%
+  ggplot() +
+  geom_beeswarm(mapping = aes(x = Sex, y = mean_wingspan))
+```
+
+**Q7.9** Calculate and plot a histogram of the probability of observing each of the prey species across the whole study.
+
+Answer:
+The probability is the number of times observed divided by the number of times a species could have been observed:
 
 ```{r}
 max_poss_obs <- bats %>%
@@ -644,9 +696,9 @@ prob_obs %>%
   geom_histogram(aes(x = prob))
 ```
 
+**Q7.10** Ensure that you have the odds ratio for appearing a male or female poo for each of the prey species (the `odds_ratio` object in the book). Plot a histogram of all the calculated odds ratios. Guess how many prey species with odds less than twice and less than half to appear in female compared to male poos. Calculate how many, and see how close is your guess. (Hint: it may be worthwhile to plot log2 of the odds ratio.)
 
 
-**Q4.10** Plot a histogram of all the calculated odds ratios. What do you conclude?
 
 ```{r echo = FALSE, message = FALSE}
 num_poops <- bats %>%
@@ -699,6 +751,8 @@ odds_ratios <- bat_props %>%
          log2_Odds_ratio = log2(Odds_ratio)) 
 ```
 
+Answer:
+
 ```{r}
 odds_ratios %>%
   ggplot() +
@@ -716,6 +770,15 @@ odds_ratios %>%
   summarise(ans = sum(less_than_half_or_twice = abs(log2(Odds_ratio)) < 1))
 ```
 
+**Q7.11** And now for a little bit of fun: Combine the script that displays a photo of a cute dog with the script that gives some praise to create a motivational poster of a dog giving praise.
+
+Answer:
+Please let us know if you do this. We want to see your solutions, and will post them on Twitter (if you like)!
+
+
+## ==== TO HERE
+
+ 
 
 
 ## Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)

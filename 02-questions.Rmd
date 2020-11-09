@@ -290,23 +290,52 @@ my_y_variable <- sin(my_x_varible)
 
 ## Chapter 7 (Getting to grips with ggplot2)
 
+
 ### General questions and exercises
 
-* Combine the script that display a photo of a cute dog with the script that gives some praise to create a motivational poster of a dog giving praise.
+**Q7.1** What is the difference between **ggplot** and `ggplot`?
+
+
+
+**Q7.2** In the context of a graph being made with `ggplot`, give two examples of aesthetic mappings, and give the function we use to specify them.
+
+
+**Q7.3** In the context of **ggplot2**, what is a "scale"?
+
+
+
+**Q7.4** In the context of **ggplot2**, what is a "layer"?
+
+
+**Q7.5** In the context of **ggplot2**, what is a "facet"?
 
 
 
 ### Bat diet workflow questions and exercises
 
-
-**Q5.3** Plot at the shape of the distribution of dates on which poop samples were collected.
-
-
-**Q3.5** Plot the distribution of number of reads. What shape is it? From looking at the distribution, predict whether the mean or median is larger. Then check your prediction by calculating the median and mean.
+**Q7.6** Plot at the shape of the distribution of number of poops collected on each sampling date.
 
 
 
-**Q4.4** The following code is intended to create a plot of the wingspan of prey found in male and female bat poops. Find and correct the three intentional errors it contains:
+
+**Q7.7** Plot the distribution of number of reads. What shape is it? From looking at the distribution, predict whether the mean or median is larger. Then check your prediction by calculating the median and mean. For extra credit, add two vertical lines to the graph, one where the mean is, and one where the median is (hint, use the `geom_vline` function).
+
+
+
+
+
+```{r echo = FALSE}
+prey_stats <- bats %>%
+  group_by(Bat_ID, Sex, Age) %>%
+  summarise(num_prey = n(),
+            num_prey1 = n_distinct(Sp._Nr.),
+            mean_wingspan = mean(Wingspan_mm, na.rm = TRUE),
+            prop_migratory = sum(Migratory == "yes") / n())
+```
+
+
+
+**Q7.8** The following code is intended to create a plot of the wingspan of prey found in male and female bat poops. Find and correct the three intentional errors it contains:
 
 ```{r eval = FALSE}
  prey_stats %>%
@@ -314,10 +343,72 @@ my_y_variable <- sin(my_x_varible)
   geom_beewarm(mapping = aes(x = Sex y = mean_wingspan))
 ```
 
-**Q4.9** Calculate and plot a histogram of the probability of observing each of the prey species across the whole study.
+
+**Q7.9** Calculate and plot a histogram of the probability of observing each of the prey species across the whole study.
 
 
-**Q4.10** Ensure that you have the odds ratio for appearing a male or female poo for each of the prey species (the òdds_ratio` object in the book). Plot a histogram of all the calculated odds ratios. Guess how many prey species with odds less than twice and less than half to appear in female compared to male poos. Calculate how many, and see how close is your guess.
+**Q7.10** Ensure that you have the odds ratio for appearing a male or female poo for each of the prey species (the `odds_ratio` object in the book). Plot a histogram of all the calculated odds ratios. Guess how many prey species with odds less than twice and less than half to appear in female compared to male poos. Calculate how many, and see how close is your guess. (Hint: it may be worthwhile to plot log2 of the odds ratio.)
+
+
+
+```{r echo = FALSE, message = FALSE}
+num_poops <- bats %>%
+  group_by(Sex, Species) %>%
+  summarise(num_poops = n())
+# Get list of all prey
+all_prey <- num_poops %>%
+  pull(Species) # 165 values ( = prey species)
+# Get the prey species found in male poops:
+prey_in_male_poops <- num_poops %>%
+  filter(Sex == "Male") %>%
+  pull(Species) # 93 values ( = prey species)
+# and in female poops
+prey_in_female_poops <- num_poops %>%
+  filter(Sex == "Female") %>%
+  pull(Species) # 72 values ( = prey species)
+# Get the numer of prey species found
+# in either or both males and females...
+# should be same as number of unique (i.e. 115 values)
+prey_in_either_or_both <- union(prey_in_male_poops,
+                                prey_in_female_poops) # 115 values
+# Get the prey found in both males and females
+prey_in_both <- intersect(prey_in_male_poops,
+                          prey_in_female_poops) # 50 values
+# Get the prey not found in male poops
+prey_not_in_male <- setdiff(all_prey, prey_in_male_poops) # 22 values
+# and not found in female poops.
+prey_not_in_female <- setdiff(all_prey, prey_in_female_poops) # 43 values
+num_poops <- bind_rows(num_poops,
+                       tibble(Sex = "Female",
+                              Species = prey_not_in_female,
+                              num_poops = 0),
+                       tibble(Sex = "Male",
+                              Species = prey_not_in_male,
+                              num_poops = 0)
+)
+total_num_poops <- bats %>%
+  select(Sex, Bat_ID) %>%
+  distinct() %>%
+  group_by(Sex) %>%
+  summarise(num_bats = n())
+bat_props <- full_join(num_poops, total_num_poops)
+bat_props <- mutate(bat_props, props = num_poops / num_bats)
+odds_ratios <- bat_props %>%
+  mutate(not = num_bats - num_poops,
+         odds = num_poops / not) %>%
+  select(Sex, Species, odds) %>%
+  spread(Sex, odds) %>%
+  mutate(Odds_ratio = Female / Male,
+         log2_Odds_ratio = log2(Odds_ratio)) 
+```
+
+
+**Q7.11** And now for a little bit of fun: Combine the script that displays a photo of a cute dog with the script that gives some praise to create a motivational poster of a dog giving praise.
+
+
+
+
+
 
 
 ## Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)
