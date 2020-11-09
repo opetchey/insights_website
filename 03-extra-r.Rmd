@@ -56,9 +56,6 @@ Throughout this book you will see that different parts of our R commands have di
 ```
 
 
-## Ordination and clustering
-
-including how to implement in the tidyverse
 
 
 ## summarise
