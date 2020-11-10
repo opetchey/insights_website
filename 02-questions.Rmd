@@ -413,6 +413,60 @@ odds_ratios <- bat_props %>%
 
 ## Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)
 
+
+### General questions and exercises
+
+**Q8.1** Give an example of a *continuous numeric variable* and explain why it is so.
+
+
+**Q8.2** Give an example of a *discrete numeric variable* and explain why it is so.
+
+
+**Q8.3** Give an example of a *categorical variable*, and state if it is *ordinal* or *nominal*.
+
+
+**Q8.4** Numeric variables can also be said to be measure on an *interval* or a *ratio* scale. Explain the difference and give examples of each.
+
+
+**Q8.5** Explain in your own words what is meant by a "sample distribution".
+
+
+**Q8.6** What type of graph is a very good one for getting a summarising a numeric variable?
+
+
+**Q8.7** When we make a histogram we much choose the number of bins. What is good practice when doing so?
+
+
+**Q8.8** If we have rather few data points (e.g. less than 30 or so), what type of graph might we make instead of a traditional histogram?
+
+
+**Q8.9** If we have very many of data points (e.g. many thousands) what type of graph might we make instead of a traditional histogram?
+
+
+**Q8.10** Compare and contrast two measures of central tendency.
+
+
+**Q8.11** Why do we advise use of the interquartile range to summarise the dispersion of a sample distribution?
+
+
+**Q8.12** Moving on now to summarising categorical variables, we are more interested in how common in a sample are occurrences of each of the categories. Why does it not make much sense to calculate a median, even though R may let us do so?
+
+
+
+### Workflow demonstration questions and exercises
+
+*Perhaps go to a WFD other than the bats? The next question is a bit lame, and the answer is not fully present.*
+
+**Q8.13** Work through the "What are the effects of dietary restriction?" workflow exercise up to and including question *Question 28: Write a few sentences about the distribution of each of the five response variables.*
+
+
+
+
+
+
+
+
+
 ### General questions and exercises
 
 

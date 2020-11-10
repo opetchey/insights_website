@@ -785,13 +785,76 @@ Please let us know if you do this. We want to see your solutions, and will post 
 
 ### General questions and exercises
 
+**Q8.1** Give an example of a *continuous numeric variable* and explain why it is so.
 
-### Bat diet workflow questions and exercises
+Answer:
+Examples of continuous variables include body mass, age, time, and temperature. They can, in principle, take any positive real value. You may also have given *change* in mass, which can take any (positive or negative) real value.
+
+**Q8.2** Give an example of a *discrete numeric variable* and explain why it is so.
+
+Answer:
+Examples of discrete variables include the number of individuals in a population, number of off- spring produced , and number of individuals infected in an experiment. The can only be integers.
+
+**Q8.3** Give an example of a *categorical variable*, and state if it is *ordinal* or *nominal*.
+
+Answer:
+Examples of *ordinal categorical variables* include academic grades (i.e. A, B, C), size class of a plant (i.e. small, medium, large) and measures of aggressive behaviour. Examples of nominal categorical variables include sex, business type, eye colour, habitat, religion and brand. There is no intrinsic order to the ‘levels’ of these categories.
+
+**Q8.4** Numeric variables can also be said to be measure on an *interval* or a *ratio* scale. Explain the difference and give examples of each.
+
+Answer:
+We can say that one tree is twice as tall as another, or that one elephant has twice the mass of another, because length and mass are always measured on *ratio* scales. I.e. the ratio of two values is meaningful. Interval data still allow for the degree of difference between values, just not the ratio between them. A good example of an interval scale is date, which we measure relative to an arbitrary epoch (e.g. AD). Hence, we cannot say that 2000 AD is twice as long as 1000 AD. However, we can compare the amount of time that has passed between pairs of dates, i.e. their interval. For example, it’s perfectly reasonable to say that twice as much time has passed since the epoch in 2000 AD versus 1000 AD.
+
+**Q8.5** Explain in your own words what is meant by a "sample distribution".
+
+Answer:
+The sample distribution is a statement about the frequency with which different values occur in a particular sample. If we were to repeat the same data collection protocol more than once we should expect to end up with a different sample each time. This results purely from chance variation and the fact that we can almost never sample everything we care about. 
+
+**Q8.6** What type of graph is a very good one for getting a summarising a numeric variable?
+
+Answer:
+A histogram / frequency distribution. It illustrates central tendency (mean, median, mode) and spread.
+
+**Q8.7** When we make a histogram we much choose the number of bins. What is good practice when doing so?
+
+Answer:
+To make a few histograms, each with different numbers of bins, and examine if this changes our conclusions about the distribution of the variable.
+
+**Q8.8** If we have rather few data points (e.g. less than 30 or so), what type of graph might we make instead of a traditional histogram?
+
+Answer:
+A dot plot, in which each value is represented by a dot, and similar ones are stacked on top of each other.
+
+**Q8.9** If we have very many of data points (e.g. many thousands) what type of graph might we make instead of a traditional histogram?
+
+Answer:
+A density plot, which shows the shape of the distribution as a continuous line. Here we must be careful to choose appropriately the "smoothness" of the line (and this choice is quite subjective, just as is the choice of number of bins).
+
+**Q8.10** Compare and contrast two measures of central tendency.
+
+Answer:
+The mean and the median are two measures of central tendency. The sample mean is sensitive to the shape of a distribution and the presence of outliers. The sample median is less so. The median of a sample is the value separating the upper half from the lower half of the distribution.
+
+**Q8.11** Why do we advise use of the interquartile range to summarise the dispersion of a sample distribution?
+
+Answer:
+It is simple to understand: it is the range that contains “the middle 50%” of a sample, which is given by the difference between the third and first quartiles. And it is not as affected by outliers as other measures of dispersion. And it is what is commonly displayed in box-and-whisker plots.
+
+**Q8.12** Moving on now to summarising categorical variables, we are more interested in how common in a sample are occurrences of each of the categories. Why does it not make much sense to calculate a median, even though R may let us do so?
+
+Answer:
+There is no order for the categories, so we can't say which is larger than another. If we can, then we can't say which are more different than others.
 
 
 
+### Workflow demonstration questions and exercises
 
+*Perhaps go to a WFD other than the bats? The next question is a bit lame, and the answer is not fully present.*
 
+**Q8.13** Work through the "What are the effects of dietary restriction?" workflow exercise up to and including question *Question 28: Write a few sentences about the distribution of each of the five response variables.*
+
+Answer:
+See the answer in the workflow exercise [solution web page](08-wfdemo-fishdiet-restr-solution.Rmd).
 
 
 
