@@ -455,48 +455,57 @@ odds_ratios <- bat_props %>%
 
 ### Workflow demonstration questions and exercises
 
-*Perhaps go to a WFD other than the bats? The next question is a bit lame, and the answer is not fully present.*
+(Only one exercise in this section, since this chapter is mostly conceptual. If you feel you need more practical experience, and have worked through the bat diet workflow demonstration in the *Insights* book, then consider working through one or more of the online workflow demonstrations. Stop when you have explored the distribution, central tendency, and dispersion/spread of some of the numeric and categorical variables.)
 
-**Q8.13** Work through the "What are the effects of dietary restriction?" workflow exercise up to and including question *Question 28: Write a few sentences about the distribution of each of the five response variables.*
-
-
+**Q8.13** Try to yourself, without using a to do so directly, calculate the median and interquartile range of the wingspan variable. Hint: it might be useful to sort/arrange the dataset by ascending values of the wingspan variable; and you will need to know the number of observations. Then use the `quantile` function to check your answer.
 
 
 
-
-
-
-
-### General questions and exercises
-
-
-### Bat diet workflow questions and exercises
-
-1. Are there any other sources of non-independence in the bat diet dataset? Think about if which of the variables describe groupings/clustering among the bats that we did not so far consider.
-2. ... 
-
-* Are there different proportions of NAs in male, female, adult and juvenile bats?
-* If there are, what does this say about diet composition variation among these groups of bats.
 
 ## Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)
 
-### General questions and exercises
+**Q9.1** When examining data for an association between two numeric variables, what type of graph will likely be quite informative? And what summary statistic might we use?
+
+**Q9.2** What is a limitation of the Pearson's correlation coefficient?
 
 
-### Bat diet workflow questions and exercises
+**Q9.3** What two correlation coefficients can be used when the association is relatively non-linear?
 
-* In Section \@ref(numerical-explore-twocats) we used the `xtabs` function to get the number of migratory and non-migratory prey for each species of bat. Make the same dataset with tidyverse functions (e.g. `group_by`, `summarise`, `spread`).
 
-* What "stat" is `geom_bar` using to make Figure \@ref(fig:key-concepts-11)?
+**Q9.4** What about those two correlation coefficients makes them appropriate for non-linear associations?
 
-* Add error bars to Figure \@ref(fig:key-concepts-17) or Figure \@ref(fig:key-concepts-18)
+
+**Q9.5** What does a correlation coefficient of 1 mean?
+
+**Q9.6** When making a scatterplot with many data points, what do we need to be careful of, in order to not mislead about the amount of data points? And how could this be achieved?
+
+**Q9.7** What type of graph might we make in order to examine if there is evidence of an association between two categorical variables?
+
+**Q9.8** What kind of table (i.e. what name does the table have that) shows the number of cases for each combination, and therefore tells us if the number of counts is dependent on the value of both categorical variables?
+
+**Q9.9** What types of graphs could we use to assess the evidence for an association between a categorical and numeric variable?
+
+**Q9.10** What can we do if we would like to check for associations among three or more variables?
+
+
+### Workflow questions and exercises
+
+(Only one exercise in this section, since this chapter is mostly conceptual. If you feel you need more practical experience, and have worked through the bat diet workflow demonstration in the *Insights* book, then consider working through one or more of the online workflow demonstrations. Stop when you have explored the relationships among some of the variables (which, in any case, will likely be the end of the workflow demonstration).)
+
+**Q9.11** Explore if there is any evidence of an associate between the total number of reads in a poop and the number of prey observed in a poop. Hint: you will first need to calculate the number of prey, if you have not already. Make sure to take care that all data points are very likely visible.
 
 
 ## Chapter 10 (Looking back and looking forward)
 
-### General questions and exercises
+You made it to the last chapter -- congratulations. In the last chapter, as well a congratulating you, we mention four next steps: code style, visual communication, statistical analysis, and reproducibility. We go into some detail about the what, why, and how of reproducibility. Even as we finish this web page and the book is in production, there are new requirements to publish our code and data alongside the insights. And, perhaps even more importantly, that the code (analysis script) is reproducible. So training about how to make reproducible analyses will become more and more important, and be part of the Open Science movement. And so, only one question for this chapter, and it is about reproducibility...
 
+**Q10.1** Which of these are good practices and bad practices for reproducible methods for getting insights from data?
 
-### Bat diet workflow questions and exercises
+* Using absolute paths to data files.
+* Never editing our raw data files "by-hand".
+* Putting all our files in one folder.
+* Making our code easy for others to understand, including making many useful comments.
+* Use RMarkdown to make reports.
+* Future-proofing your code.
 
 

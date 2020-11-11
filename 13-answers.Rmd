@@ -776,8 +776,6 @@ Answer:
 Please let us know if you do this. We want to see your solutions, and will post them on Twitter (if you like)!
 
 
-## ==== TO HERE
-
  
 
 
@@ -849,12 +847,31 @@ There is no order for the categories, so we can't say which is larger than anoth
 
 ### Workflow demonstration questions and exercises
 
-*Perhaps go to a WFD other than the bats? The next question is a bit lame, and the answer is not fully present.*
+(Only one exercise in this section, since this chapter is mostly conceptual. If you feel you need more practical experience, and have worked through the bat diet workflow demonstration in the *Insights* book, then consider working through one or more of the online workflow demonstrations. Stop when you have explored the distribution, central tendency, and dispersion/spread of some of the numeric and categorical variables.)
 
-**Q8.13** Work through the "What are the effects of dietary restriction?" workflow exercise up to and including question *Question 28: Write a few sentences about the distribution of each of the five response variables.*
+**Q8.13** Try to yourself, without using a to do so directly, calculate the median and interquartile range of the wingspan variable. Hint: it might be useful to sort/arrange the dataset by ascending values of the wingspan variable; and you will need to know the number of observations. Then use the `quantile` function to check your answer.
 
 Answer:
-See the answer in the workflow exercise [solution web page](08-wfdemo-fishdiet-restr-solution.Rmd).
+```{r}
+bats %>%
+  summarise(num_obs = sum(!is.na(Wingspan_mm)))
+# 555 observations
+# 25% of 555 is 139
+# 50% of 555 is 278 (for the median)
+# 75% of 555 is 416
+bats %>%
+  filter(!is.na(Wingspan_mm)) %>%
+  arrange(Wingspan_mm) %>%
+  slice(c(139, 278, 416)) %>%
+  pull(Wingspan_mm)
+```
+
+And check using a function:
+
+```{r}
+bats %>% summarise(quantile = scales::percent(c(0.25, 0.5, 0.75)),
+                   q_wing = quantile(Wingspan_mm, c(0.25, 0.5, 0.75), na.rm = TRUE))
+```
 
 
 
@@ -862,24 +879,119 @@ See the answer in the workflow exercise [solution web page](08-wfdemo-fishdiet-r
 
 ### General questions and exercises
 
+**Q9.1** When examining data for an association between two numeric variables, what type of graph will likely be quite informative? And what summary statistic might we use?
 
-### Bat diet workflow questions and exercises
+Answer:
+We will likely learn a lot from looking at a bivariate scatterplot of the observations, with one numeric variable mapped to the x-axis and the other mapped to the y-axis. We could then calculate the correlation coefficient of the association.
+
+**Q9.2** What is a limitation of the Pearson's correlation coefficient?
+
+Answer:
+It should only be used when the associate between the two variables is relatively linear.
+
+**Q9.3** What two correlation coefficients can be used when the association is relatively non-linear?
+
+Answer:
+Spearman’s and Kendall’s correlation coefficients.
+
+**Q9.4** What about those two correlation coefficients makes them appropriate for non-linear associations?
+
+Answer:
+They are based on the match (or mismatch) in the ranking of the observations, rather than their values. E.g. does the smallest value in one variable associate with the smallest value in the other variable?
+
+**Q9.5** What does a correlation coefficient of 1 mean?
+
+Answer:
+There is a perfect linear association between the values in the two variables (Pearson's correlation coefficient), or perfect match in their rankings (Spearman’s and Kendall’s correlation coefficient).
+
+**Q9.6** When making a scatterplot with many data points, what do we need to be careful of, in order to not mislead about the amount of data points? And how could this be achieved?
+
+Answer:
+We need to make sure that data points that could lie on top of each other are clearly shown as multiple data points. We could, for example, make data point in the figure larger if they represent more than one observation. The `geom_count` function can do this. With a lot of data, we may decide to make a 2-dimensional histogram (e.g. with the `geom_hex` function in the **hexbin** package).
+
+**Q9.7** What type of graph might we make in order to examine if there is evidence of an association between two categorical variables?
+
+Answer:
+A paired bar chart, showing the number of observations in each combination of the two categorical variables would work. Here is the graph we can use for the `Migratory` variable and the `Family` variable in the bat diet dataset:
+
+```{r}
+ggplot() +
+  geom_bar(data = bats,
+           mapping = aes(x = Family, fill = Migratory),
+           position = "dodge") + coord_flip() +
+  labs(x = "Family", y = "Number of Observations")
+```
+
+We could make the counts proportions and plot these:
+
+```{r}
+ggplot(bats, aes(x = Family, fill = Migratory)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  coord_flip()
+```
+
+We can then clearly see that the proportion of migratory differs among the Families. I.e. the proportion migratory is *contingent* on the Family. 
+
+**Q9.8** What kind of table (i.e. what name does the table have that) shows the number of cases for each combination, and therefore tells us if the number of counts is dependent on the value of both categorical variables?
+
+Answer:
+A *contingency* table. I.e. is the number of migratory relative to non-migratory prey *contingent* upon the Family?
 
 
+**Q9.9** What types of graphs could we use to assess the evidence for an association between a categorical and numeric variable?
+
+Answer:
+A box-and-whisker plot is a good choice. Or just plotting all the data points if there are not so many. We could also make multiple histograms, one for each category of the categorical variable.
+
+**Q9.10** What can we do if we would like to check for associations among three or more variables?
+
+Answer:
+Graphically we can do this for three, perhaps just about four variables, by colouring points, and using facets. But it gets tricky and complex. We can make all pairwise bivariate graphs, but this does not tell us about come complexities, such as two or three way dependencies among numeric variables. The general point is that with more variables it quickly gets much harder to check for the complex associations that can occur. If you're interested in learning some useful methods, take a look at the *Lurking variables* and *Ordination* section on this web site.
+
+### Workflow questions and exercises
+
+(Only one exercise in this section, since this chapter is mostly conceptual. If you feel you need more practical experience, and have worked through the bat diet workflow demonstration in the *Insights* book, then consider working through one or more of the online workflow demonstrations. Stop when you have explored the relationships among some of the variables (which, in any case, will likely be the end of the workflow demonstration).)
 
 
+**Q9.11** Explore if there is any evidence of an associate between the total number of reads in a poop and the number of prey observed in a poop. Hint: you will first need to calculate the number of prey, if you have not already. Make sure to take care that all data points are very likely visible.
+
+
+Answer:
+```{r}
+bats %>%
+  group_by(Bat_ID) %>%
+  summarise(num_prey = length(Species),
+            num_reads = sum(No._Reads)) %>%
+  ggplot() +
+  geom_jitter(aes(x = num_reads, y = num_prey),
+              width = 0, height = 0.2)
+```
 
 
 
 
 ## Chapter 10 (Looking back and looking forward)
 
-### General questions and exercises
+You made it to the last chapter -- congratulations. In the last chapter, as well a congratulating you, we mention four next steps: code style, visual communication, statistical analysis, and reproducibility. We go into some detail about the what, why, and how of reproducibility. Even as we finish this web page and the book is in production, there are new requirements to publish our code and data alongside the insights. And, perhaps even more importantly, that the code (analysis script) is reproducible. So training about how to make reproducible analyses will become more and more important, and be part of the Open Science movement. And so, only one question for this chapter, and it is about reproducibility...
 
+**Q10.1** Which of these are good practices and bad practices for reproducible methods for getting insights from data?
 
-### Bat diet workflow questions and exercises
+* Using absolute paths to data files.
+* Never editing our raw data files "by-hand".
+* Putting all our files in one folder.
+* Making our code easy for others to understand, including making many useful comments.
+* Use RMarkdown to make reports.
+* Future-proofing your code.
 
+Answers:
 
+* No, use relative paths.
+* Yes, if you need to alter some datapoint, do so in a transparent and recorded method, such as in code.
+* No, organising files of different types (e.g. data, code, figures) in different folders will usually help others understand what we've been up to.
+* Yes, of course make it easy for others to understand!
+* Yes, use RMarkdown, as this means we don't need to copy and paste output/graphs into a word processor document, and in doing so potentially copy the wrong thing, or forget to update the inserted graph when we should.
+* Yes, we should future-proof our code. Best to use as few add-on packages as possible, and then use ones that have been around a while and are still actively maintained. If you want to really protect against changes in R and packages, look into [Docker](https://www.docker.com/), but beware that its pretty complicated looking. It allows all software and code and data to be "containerised". We then share the container, and not just our code and data. Probably it, or similar, will become very widespread, and hopefully much easier to use. 
 
 
 
