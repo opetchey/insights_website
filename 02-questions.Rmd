@@ -1,5 +1,34 @@
 
+```{r message=FALSE, echo=FALSE, warning=FALSE}
+# Load the libraries we use
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(stringr)
+library(lubridate)
+library(tidyr)
+# Import and clean the data
+bats <- read_csv("data/bat_sex_diet_Mata_etal_2016.csv", na = "na")
+names(bats) <- str_replace_all(names(bats), c(" " = "_"))
+names(bats) <- str_replace_all(names(bats), c("\\(" = "", "\\)" = ""))
+bats <- mutate(bats,
+             Date_proper = dmy(Date),
+             Sex = case_when(Sex == "M" ~ "Male",
+                             Sex == "F" ~ "Female"),
+             Age = case_when(Age == "Ad" ~ "Adult",
+                             Age == "Juv" ~ "Juvenile")) %>%
+#  select(-Date) %>% # commented out so we can demo a non-date variable
+  rename("Bat_ID" = "Sample",
+         "Row_order" = "Order",
+         "Order" = "Order_1")
+```
+
+
+
+
 # Questions and exercises {#questions-exercises}
+
+Below are questions and exercises related to each of the chapters of *Insights* book. In addition to the questions and exercises here, the *fish dietary restriction* Workflow Demonstration is presented here as a web page of question, and a web page of solutions.
 
 ## Preface
 

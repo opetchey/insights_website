@@ -370,8 +370,8 @@ Above, we set the eight fish that were already dead at week 1 as having a lifesp
 # Change in length
 change1 <- length_weight_condition %>%
   group_by(Fish_ID, Diet_comp, Prov_level) %>%
-  do(m1 = lm(Length ~ Batch, data=.)) %>%
-  tidy(m1) %>%
+  do(m1 = tidy(lm(Length ~ Batch, data=.))) %>%
+  unnest() %>%
   filter(term=="Batch") %>%
   select(Fish_ID, Diet_comp, Prov_level, Length_change=estimate)
 ```
@@ -382,8 +382,8 @@ Note that `tidy` silently drops NA coefficients.
 # Change in condition
 change2 <- length_weight_condition %>%
   group_by(Fish_ID, Diet_comp, Prov_level) %>%
-  do(m1 = lm(Cond_index ~ Batch, data=.)) %>%
-  tidy(m1) %>%
+  do(m1 = tidy(lm(Cond_index ~ Batch, data=.))) %>%
+  unnest() %>%
   filter(term=="Batch") %>%
   select(Fish_ID, Diet_comp, Prov_level, CI_change=estimate)
 ```
@@ -525,8 +525,8 @@ mortality2 <- full_join(temp_mortality2, last_obs) %>%
 # Change in length
 change1 <- length_weight_condition %>%
   group_by(Fish_ID, Diet_comp, Prov_level) %>%
-  do(m1 = lm(Length ~ Batch, data=.)) %>%
-  tidy(m1) %>%
+  do(m1 = tidy(lm(Length ~ Batch, data=.))) %>%
+  unnest() %>%
   filter(term=="Batch") %>%
   select(Fish_ID, Diet_comp, Prov_level, Length_change=estimate)
 
@@ -534,8 +534,8 @@ change1 <- length_weight_condition %>%
 # Change in condition
 change2 <- length_weight_condition %>%
   group_by(Fish_ID, Diet_comp, Prov_level) %>%
-  do(m1 = lm(Cond_index ~ Batch, data=.)) %>%
-  tidy(m1) %>%
+  do(m1 = tidy(lm(Cond_index ~ Batch, data=.))) %>%
+  unnest() %>%
   filter(term=="Batch") %>%
   select(Fish_ID, Diet_comp, Prov_level, CI_change=estimate)
 
