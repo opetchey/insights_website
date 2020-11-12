@@ -6,10 +6,12 @@ In the first class of the first week of an *Introduction to Data Analysis* cours
 
 All following sections are in the form of what one says to the students. The demo involves students entering data into a google form and then the instructor getting data from the googlesheet containing the responses. You should make a copy of the google form to use for yourself; this will mean that you also create a new google sheet of responses. You'll need to update the relevant links below.
 
+From here on is the rough script of what we tell the students...
+
 ## Introduction {-}
 
-I thought it would be good to get hands on as early as possible, and to do so for something directly relevant to yourselves.
-So, we're going to attempt something quite ambitious -- in the next two hours or so, we'll go through a whole data analysis from start to end.
+I thought it would be good to get hands on as early as possible, and to do so for something directly relevant to yourselves. So, we're going to attempt something quite ambitious -- in the next two hours or so, we'll go through a whole data analysis from start to end.
+
 Lets get started.
 
 ## Meta-task
@@ -18,8 +20,7 @@ Write things that you don't understand, and need to know about in subsequent cla
 
 ## The question
 
-What should be our question?
-As always, there are some influences and some constraints.
+What should be our question? As always, there are some influences and some constraints.
 We should ask a question of interest to us, and of some importance.
 And we should be able to collect the data, within our current constraints, necessary to answer the question.
 
@@ -29,7 +30,9 @@ Why this question? Reaction times are important, safety, sport...
 
 ## Expectation
 
-We can have a look on the internet, and pretty easily find lots of studies of reaction times and gender (e.g., [A comparative study of visual and auditory reaction times on the basis of gender and physical activity levels of medical first year students](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4456887/) (by the way, we will later in the course critique this paper -- it has some pretty poor features).
+What do you expect? Hands up if you think there will be no difference between men and women. Hands up if you think men will be slower. Hands up if you think women will be slower.
+
+We can have a look on the internet, and pretty easily find lots of studies of reaction times and gender (e.g., [A comparative study of visual and auditory reaction times on the basis of gender and physical activity levels of medical first year students](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4456887/) (by the way, we may later in the course critique this paper).
 
 Generally, we see that males tend to have faster reaction times than females. So we expect that to be the same for students at the University of Zurich.
 
@@ -39,7 +42,7 @@ Given that you know this pattern, and you are the subjects, its interesting to s
 
 Thinking backwards from how we present the final results, can often be quite useful.
 
-I think a nice box and whisker plot will work here (Owen will sketch this). We will have two groups of reaction times. Put another way, we will have one explanatory variable (gender) and one response variable (reaction time). The explanatory variable gender is a categorical / discrete variable. The response variable is continuous.
+I think a nice box and whisker plot will work here [sketch on a black/whiteboard)]. We will have two groups of reaction times. Put another way, we will have one explanatory variable (gender) and one response variable (reaction time). The explanatory variable gender is a categorical / discrete variable. The response variable is continuous.
 
 We expect the distribution of male reaction times to be have a lower mean than the distribution of female reaction times.
 
@@ -47,7 +50,7 @@ We will look at this graph, and answer our question (wow, without any statistica
 
 ## What statistical test will we use?
 
-Reaction times (the response variable) we expect to be quite normally distributed, though cannot be negative. Gender will be categorical with two levels (male and female). We don't expect greater or less variation in reaction times among males compared to among females.
+Reaction times (the response variable) we expect to be quite normally distributed [briefly explain what this means], though cannot be negative. Gender will be categorical with two levels (male and female). We don't expect greater or less variation in reaction times among males compared to among females.
 
 Based on these expectations, we will use a linear model, which assumes normally distributed residuals and equal variances among groups. The traditional name for the test is the T-test.
 
@@ -58,7 +61,7 @@ Based on convention, and little else, we will say there is a significant differe
 
 We usually need to very carefully select the subjects of our study. Ideally, as we're interested in students at the University of Zurich (see the question), we would select a cross section of such students. Instead, you are going to be the subjects, and you are not representative of all students. You're relatively young, on average, you're studying natural sciences, etc. So we will have to be very cautious if we make statements about students at the University in general, and perhaps one might even now conclude that we can't really answer the question.
 
-Perhaps we need the question "do male and female reaction times of biology and biomedicine students, in their first year, at the University of Zurich differ?"
+Perhaps we need the question "do male and female reaction times of biology and biomedicine students, and some others, in their second year, at the University of Zurich differ?"
 
 
 ## Ethical clearance and considerations
@@ -78,7 +81,7 @@ Do the reaction time test with your preferred hand and write down your reaction 
 
 While you're there, also please do the other three tests, and write down your score. We don't need these for our current question about reaction times, but we might look at this data later in the course.
 
-Now go to this web page: https://goo.gl/forms/dUe9jIUEDkFqClaG2 (*Instructors: make a copy of this and replace the link here with one to your copy*) and enter your ID, gender, and scores. Please be careful!
+Now go to this web page: https://goo.gl/forms/dUe9jIUEDkFqClaG2 [*Instructors: make a copy of this and replace the link here with one to your copy*] and enter your ID, gender, and scores. Please be careful!
 
 Go ahead and do all that.
 

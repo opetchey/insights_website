@@ -33,6 +33,14 @@ We showed how to make multiple facets in one graph, but what about if we'd like 
 
 https://patchwork.data-imaginist.com/index.html
 
+* **Multiple graphs** We showed how to make multiple facets in one graph, but what about if we'd like to arrange multiple different `ggplot` graphs in one figure. There are a number of approaches to doing this. A recent one, which aims to make it "ridiculously simple to combine separate ggplots into the same graphic" is the [`patchwork` add-on package](https://patchwork.data-imaginist.com/index.html). Using it involves something we did not cover in this book: assigning a ggplot to an object. It is worth you soon learning about this.
+
+
+
+
+* **Factors** Now for some R specific things to learn more about. Variables that contain categories can, if one likes, be made factor type variables in R. This is useful when visualizing data and making statistical models. Factors are, however, a bit tricky. We explained them a little during the Workflow Demonstration (Section \@ref(wf-refine-import)), and go into further detail in the Workflow Demonstrations in the *Insights* companion website (http://insightsfromdata.io). One specific task we there cover is how to change to order of levels in a factor variable so that the order of categories in a graph is exactly as we'd like it.
+
+
 ## Other pipes
 
 https://thewoodpeckr.wordpress.com/2020/02/10/upping-your-pipe-game/

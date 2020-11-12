@@ -1,46 +1,76 @@
 # Related reading {#related-reading}
 
-Refer to this article: 2019-03-14-some-useful-r-help-tutorial-reference-websites
+Please let us know if you can recommend related reading that is not already mentioned below.
 
-* Grafen & Hails (2002) Modern Statistics for the Life Sciences. 368 pages. Focuses on and thoroughly covers statistics, using general linear models. Works with Minitab, SAS, SPSS.
-* Crawley (2005) Statistics - An Introduction Using R. 327 pages. A concise introduction focused on statistical analyses using R.
-Crawley (2012) The R Book. 1076 pages. A comparatively encyclopedic account of R; “extensive and comprehensive”.
-Hothorn & Everitt (2014) A Handbook of Statistical Analysis Using R. 456 pages. Focuses on statistical analyses; probably more graduate level.
-* Whitlock & Schluter (2015) The Analysis of Biological Data. 818 pages. Contains practice & assignment problems. Focused on statistics, covers data management/visualization in passing.
-* Maindonald & Braun (2010) Data Analysis and Graphics Using R. 549 pages. Assumes some existing knowledge of statistics and data analysis. For final year undergraduate / graduate level. Reaches to Bayesian methods, GLMMs, and random forests.
-* Hector (2015) The New Statistics with R. 199 pages. Focused on statistics, specifically linear models. “New” refers to new methods that are included, and focusing on effect sizes rather than p-values.
-* Field, Miles, & Field (2012) Discovering Statistics using R. 957 pages. Focused on statistics, though covers data management and visualization. Goes up to multilevel linear models. Classic R and R Commander (no RStudio). Written with humour, has “characters”, associated website with datasets, scripts, webcasts, self-assessment question, additional material, answers, powerpoint slides, links, and cyberworms of knowledge.
-* Field (2016) An Adventure in Statistics. 768 pages. At first (and perhaps later) sight quite inspirational. Starts with a chapter on why we need science (maybe to get insights?) followed by one on reporting findings. As such, has similar approach to Insights, to start with motivation and with the end in mind. Continues with a thorough account of data analysis and statistics suitable for undergraduates.
-* Bolker (2008) Ecological Models and Data in R. 396 pages. Page 3 states “I assume that you’ve had the equivalent of a one-semester undergraduate statistics course…” and on page 4 “If you have used R already, you’ll have a big head start.”
-Venables, Smith, et al (2009) An Introduction to R. Reference book for the R Language (classic R). Very concise. Contains a 15-page chapter on statistics, including linear and non-linear models.
-* Grolemund & Wickham (2017) R for Data Science. 492 pages. Focus on “Data Science”, “an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.” Book organized broadly by the workflow: Explore, Wrangle, Program, Model, Communicate. Quite comprehensive in coverage of the “tidyverse” approach to using R.
-* McKillup (2012) Statistics Explained. An Introductory Guide for Life Scientists. 400 pages. Quite well rounded, including experimental design, collecting and displaying data, doing science, ethics. Majority walks through statistical tests… linear models, non-parametric tests, multivariate.
-* Dytham (2010) Choosing and Using Statistics: A Biologist's Guide. 320 pages. Focused on statistics, as the title suggests.
-* Adler (2012) R in a Nutshell. A Desktop Quick Reference. 611 pages. A great reference book.
-* Dalgaard (2008) Introductory Statistics with R. 364 pages. A concise introduction focused on statistical analyses using R.
-S* pector (2008) Data Manipulation with R. 154 pages. Covers importing data, working with databases, character manipulation, dealing with dates, using loops, conversion to data frames.
-* Ellis (2010) The Essential Guide to Effect Sizes. 188 pages. Focuses on interpreting the practical everyday importance of research results, power, and synthesizing disparate results. Does this via effect sizes. Based on a course for honed on “smart graduate students”.
-* Gotelli & Ellison (2012) A Primer of Ecological Statistics. 614 pages. Upper-undergraduate to graduate level. Probability and statistical thinking, distributions, central tendency and spread, p-values, etc. Then experimental design; then specific analyses. Finishes by covering estimates of diversity and occurrence.
-* Gonick & Smith (1993) The Cartoon Guide to Statistics. 230 pages. Covers summary and display of data, probability, central limit theorem, confidence interval estimation, etc.
-* McKillup (2011) Statistics Explained. An Introductory Guide for Life Scientists. 416 pages. Begins by explaining about doing science, collecting and displaying data, experimental design, and responsibility and ethics. Then works through a good list of statistical methods for beginning to upper-level undergraduates.
-* Sokal & Rohlf (1995) Biometry. The Principles and Practices of Statistics in Biological Research. 880 pages. Thorough, comprehensive, and often quite technical title focused on statistics.
-* Zar (2010) Biostatistical Analysis. 960 pages. Thorough and comprehensive coverage of “statistics analysis methods used by researchers to collect, summarise, analyse and draw conclusions from biological research. Suitable for beginners to advanced users.
-* McElreath (2016) Statistical Rethinking. 469 pages. Brilliant. What should be taught to undergraduates, if only the world would then be ready for them.
-* Healy (2017) Data Visualisation for Social Science. A practical introduction with R and ggplot2. Focuses on appropriate visualization for getting knowledge from data. Covers principles and practices of looking and presenting data.
+* Grafen & Hails (2002) Modern Statistics for the Life Sciences. 368 pages. *Focuses on and thoroughly covers statistics, using general linear models. Works with Minitab, SAS, SPSS.*
+* Crawley (2005) Statistics - An Introduction Using R. 327 pages. *A concise introduction focused on statistical analyses using R.*
+Crawley (2012) The R Book. 1076 pages. *A comparatively encyclopedic account of R; “extensive and comprehensive”.*
+Hothorn & Everitt (2014) A Handbook of Statistical Analysis Using R. 456 pages. *Focuses on statistical analyses; probably more graduate level.*
+* Whitlock & Schluter (2015) The Analysis of Biological Data. 818 pages. *Contains practice & assignment problems. Focused on statistics, covers data management/visualization in passing.*
+* Maindonald & Braun (2010) Data Analysis and Graphics Using R. 549 pages. *Assumes some existing knowledge of statistics and data analysis. For final year undergraduate / graduate level. Reaches to Bayesian methods, GLMMs, and random forests.*
+* Hector (2015) The New Statistics with R. 199 pages. *Focused on statistics, specifically linear models. “New” refers to new methods that are included, and focusing on effect sizes rather than p-values.*
+* Field, Miles, & Field (2012) Discovering Statistics using R. 957 pages. *Focused on statistics, though covers data management and visualization. Goes up to multilevel linear models. Classic R and R Commander (no RStudio). Written with humour, has “characters”, associated website with datasets, scripts, webcasts, self-assessment question, additional material, answers, powerpoint slides, links, and cyberworms of knowledge.*
+* Field (2016) An Adventure in Statistics. 768 pages. *At first (and perhaps later) sight quite inspirational. Starts with a chapter on why we need science (maybe to get insights?) followed by one on reporting findings. As such, has similar approach to Insights, to start with motivation and with the end in mind. Continues with a thorough account of data analysis and statistics suitable for undergraduates.*
+* Bolker (2008) Ecological Models and Data in R. 396 pages. *Page 3 states “I assume that you’ve had the equivalent of a one-semester undergraduate statistics course…” and on page 4 “If you have used R already, you’ll have a big head start.”*
+Venables, Smith, et al (2009) An Introduction to R. Reference book for the R Language (classic R). *Very concise. Contains a 15-page chapter on statistics, including linear and non-linear models.*
+* Grolemund & Wickham (2017) R for Data Science. 492 pages. *Focus on “Data Science”, “an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.” Book organized broadly by the workflow: Explore, Wrangle, Program, Model, Communicate. Quite comprehensive in coverage of the “tidyverse” approach to using R.*
+* McKillup (2012) Statistics Explained. An Introductory Guide for Life Scientists. 400 pages. *Quite well rounded, including experimental design, collecting and displaying data, doing science, ethics. Majority walks through statistical tests… linear models, non-parametric tests, multivariate.*
+* Dytham (2010) Choosing and Using Statistics: A Biologist's Guide. 320 pages. *Focused on statistics, as the title suggests.*
+* Adler (2012) R in a Nutshell. A Desktop Quick Reference. 611 pages. *A great reference book.*
+* Dalgaard (2008) Introductory Statistics with R. 364 pages. *A concise introduction focused on statistical analyses using R.*
+* Spector (2008) Data Manipulation with R. 154 pages. *Covers importing data, working with databases, character manipulation, dealing with dates, using loops, conversion to data frames.*
+* Ellis (2010) The Essential Guide to Effect Sizes. 188 pages. *Focuses on interpreting the practical everyday importance of research results, power, and synthesizing disparate results. Does this via effect sizes. Based on a course for honed on “smart graduate students”.*
+* Gotelli & Ellison (2012) A Primer of Ecological Statistics. 614 pages. *Upper-undergraduate to graduate level. Probability and statistical thinking, distributions, central tendency and spread, p-values, etc. Then experimental design; then specific analyses. Finishes by covering estimates of diversity and occurrence.*
+* Gonick & Smith (1993) The Cartoon Guide to Statistics. 230 pages. *Covers summary and display of data, probability, central limit theorem, confidence interval estimation, etc.*
+* McKillup (2011) Statistics Explained. An Introductory Guide for Life Scientists. 416 pages. *Begins by explaining about doing science, collecting and displaying data, experimental design, and responsibility and ethics. Then works through a good list of statistical methods for beginning to upper-level undergraduates.*
+* Sokal & Rohlf (1995) Biometry. The Principles and Practices of Statistics in Biological Research. 880 pages. *Thorough, comprehensive, and often quite technical title focused on statistics.*
+* Zar (2010) Biostatistical Analysis. 960 pages. *Thorough and comprehensive coverage of “statistics analysis methods used by researchers to collect, summarise, analyse and draw conclusions from biological research. Suitable for beginners to advanced users.*
+* McElreath (2016) Statistical Rethinking. 469 pages. Brilliant. *What should be taught to undergraduates, if only the world would then be ready for them.*
+* Healy (2017) Data Visualisation for Social Science. *A practical introduction with R and ggplot2. Focuses on appropriate visualization for getting knowledge from data. Covers principles and practices of looking and presenting data.*
 * Zumel & Mount (2019) Practical Data Science with R.
 
 ## Data science related reading
 
-[*Data Science for Undergraduates: Opportunities and Options. (2018) National Academies Press, Washington, D.C.*](https://www.nap.edu/catalog/25104/data-science-for-undergraduates-opportunities-and-options)
+* [*Data Science for Undergraduates: Opportunities and Options. (2018) National Academies Press, Washington, D.C.*](https://www.nap.edu/catalog/25104/data-science-for-undergraduates-opportunities-and-options)
 
 * https://teachdatascience.com/peerj/
 
 ## Study design related reading
 
-https://www.amazon.com/Asking-Questions-Biology-Experimental-Presentation/dp/1292085991
+* https://www.amazon.com/Asking-Questions-Biology-Experimental-Presentation/dp/1292085991
 
+## Web sites / pages
 
+While writing Insights1 we came across and benefitted from from looking at lots of lovely web sites and ideas. Here are a few that we particularly liked.
 
-## Beautifying graphs (ggplot2)
+* [Fundaments of data visualisation by Claus O. Wilke](https://serialmentor.com/dataviz/index.html). An online preview of the book “Fundamentals of Data Visualization” to be published with O’Reilly Media, Inc. (Maybe published by now.) Beautiful `ggplot` focused compiliation of visualisation guidelines and examples. R code available here: https://github.com/clauswilke/dataviz.
 
-GSwR chapter.
+* [The Financial Times Visual Vocabulary website](http://ft-interactive.github.io/visual-vocabulary/), made "to assist designers and journalists to select the optimal symbology for data visualisations". Great for scientists too!
+
+* [What they forgot to teach you about R](https://whattheyforgot.org/), by Jennifer Bryan, Jim Hester. "We focus on building holistic and project-oriented workflows that address the most common sources of friction in data analysis, outside of doing the statistical analysis itself."
+
+* In some situation we did not discuss in the book, such as with RMarkdown, one can experience a bit of trouble wit RProjects and paths. This is solved by this lovely function `here`, by Kirill Müller. [Here is an amusing page about `here`](https://github.com/jennybc/here_here#readme)
+
+* [Animations of joining/merging two datasets](https://github.com/gadenbuie/tidyexplain).
+
+* [Some advice on good practice (and bad) for naming files](https://speakerdeck.com/jennybc/how-to-name-files) by Jennifer Bryan.
+
+* What promises to be a nice add-on to pipes, by Benjamin Elbers, giving brief reports in the Console about what happened at each step of the pipe: [tidylog](https://github.com/elbersb/tidylog). Not so clear this would be stable/persistent at time of writing Insights1, so we include it here rather than in the text.
+
+* [Simply Statistics](https://simplystatistics.org/). A nice website of articles about data analyses.
+
+* [A tweet and replies about p-values](https://twitter.com/KevinDKohl/status/1090294240385683465) including an excerpt from an article discussing [The American Statistical Association statement about p-values](https://amstat.tandfonline.com/doi/abs/10.1080/00031305.2016.1154108#.XI3Yo1NKjOQ): *Practices that reduce data analysis or scientific infer- ence to mechanical “bright-line” rules (such as “p < 0.05”) for justifying scientific claims or conclusions can lead to erroneous beliefs and poor decision making.*
+
+* Tweets about how beautifying graphs can be very effective procrastination [procrastination by beautification](https://twitter.com/amy_nusbaum/status/1092294218330996736), somewhat humorous, but also with an element of truth.
+
+* Tweets about [the weird things we sometimes find in datasets](https://twitter.com/ericJpedersen/status/1091361839903096833).
+
+* A nice way to get into regular expressions: [RVerbalExpressions](https://rverbalexpressions.netlify.com). "The goal of RVerbalExpressions is to make it easier to construct regular expressions using grammar and functionality inspired by VerbalExpressions. Usage of %>% is encouraged to build expressions in a chain like fashion."
+
+* [7 Reasons for policy professionals to get into R programming in 2019](http://gilesd-j.com/2019/01/07/7-reasons-for-policy-professionals-to-get-pumped-about-r-programming-in-2019)
+
+* [Excel is obsolete](https://appsilon.com/excel-is-obsolete-here-are-the-top-2-alternatives-from-r-and-python/). Use R (and Python) instead.
+
+* We haven't got or read this, but will let you know if we do! [Principles of Strategic Data Science](https://leanpub.com/strategic_data_science)
+
+* Warning: a hideously intrusive website... [Forbes, You Can Reduce Business Risk By Phasing Out Spreadsheets For Business.](https://www.forbes.com/sites/metabrown/2017/10/30/you-can-reduce-business-risk-by-phasing-out-spreadsheets-for-business/#6d944dc847a0)

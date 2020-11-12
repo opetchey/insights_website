@@ -1,28 +1,112 @@
 # Additional concepts
 
-## Next steps...
-
-* **Distributions** We mentioned what is a sample distribution, we emphasised how important it is to visualise sample distributions, and we make many such visualisations as histograms. What we talked about much less, though is very important, are some of the types of theoretical distributions that one can use in analyses, particularly in statistical analyses. We mentioned the normal, Poisson, and binomial distribution during the Bat Workflow Demonstration. Going further we could have checked with a QQ-plot if these distributions were appropriate for characterising the data. Learning more about these distributions, and about what QQ-plots are would be a good next step.
-
-* **Interactions and complexity** We mentioned interactions at multiple times. They are important because we live in a world where many things are contigent on others. Such that the effect of a intervention depends on some other variable. Hence, the effects of a dietary intervention may depend on the disease status of an individual. Achieving an intuitive understanding of a system with many more than three or four interactions can be elusive, so researchers often do not attempt to explore or explain such complex situations. One solution/alterate approach, is to use analysis methods that characterise a system of causal relationships... i.e. a network of causes and effects. The methods and tools are not often taught in introductory statistics courses, but it is worth being aware of them at least (they are sometimes callled path analysis and structural equation models).
-
-* **Lurking variables** We can easily think of situations that are not so amenable to the approaches you learned in this book. This does not mean that the approaches are not useful or important. They are foundational. And therefore to be built on. One example of such a situation is if we have two continuous explanatory variables that are relatively strongly correlated with each other. And we are looking at how they are related to a response variable.  It is quite possible that we see a positive relationship between one explanatory variable and the response variable, when the relationship is in fact negative. We can see the negative relationship only once we have accounted for the other explanatory variable. If this sounds a bit concerning then good... it is. It illustrates how very important is checking for, and understanding implications of, correlations among explanatory variables. And how important it is to take time to think during the planning phase of the workflow about what are the likely important explanatory variables. How can one "account for" the other explanatory variable? The answer is to hold the second explanatory variable constant, or at least relatively constant. This can be done by plotting only data for a small range of the second explanatory variable (`cut` and `facet_wrap` can be used).
-
-* **Power of data to give insights** When planning a study it is worthwhile to calculate the *statistical power* that can be expected. One methods for doing so is to create fake data by simulation, and then analysing it. One can then assess how likely the statistical method is to detect any real effect that was included in the fake data, and how likely it is to detect an effect when no real effect was included in the fake data. Making useful fake data requires an estimate of effect sizes (i.e. the strength of an effect or of a relationship), about variability, and amount of data. It is well worth spending time looking into power analyses, and how to simulate fake data. 
-
-* **Effect sizes** We found that a difference in mean prey size of about 5 mm between female and male bats. Therefore we would say that the effect sizes of gender is 5 mm. It is  important to maintain a clear focus on effect sizes (and once you move onto statistics, a measure of certainty in the effect size, e.g. a confidence interval). You will almost certainly be exposed to p-values, but please retain attention and focus on effect sizes. That said, also be always aware that use of the term "effect size" is in no way used to indicate a *causal* effect has been demonstrated (and is therefore in some senses an innapropriate term to use).
-
-* **Ordination** Our analyses have had relatively few explanatory variables, and one response variable. Relatively common, however, is to have several, even several tens of explanatory and/or response variables. Questions about gene expression and community composition, for example, can lead to data with many response variables. Such data is sometimes termed *multivariate* data, and working with such data is a whole other world of data and statistical analyses methods. Ordination is a common foundation and good starting point for such analyses, and so would be a good place for you to start looking. Principle component analysis is a good starting place therein. By the way, the functions for working with multivariate data usually require wide-format datasets and are more informative if datasets have named rows. If you need to get into this world, please look at the further information on the Insights companion website (http://insightsfromdata.io).
-
-* **Influence and outliers** We sometimes observe one or a few data point that are quite different from all others. How can we tell if they are so different that we should treat them differently? How can we know if they are different and likely to have high influence on our conclusions? What influence on our insights does an individual data point have? This will depend on various things, including: 1) number of other data points, with more other data points resulting in any individual one having less influence; 2) the value of the data point (y-value)... large ones (either in the positive or negative direction) tend to have larger influence; 2) the x value of the data point... where larger ones (in positive or negative direction) have more influence. Knowing how to identify and deal with unusual data points is very important, as is using only transparent methods for doing so.
-
-* **Transformations** Transforming variables, e.g. by taking the logarithm of the values and working with that, is quite common place. It can, for example, changing the shapes of the distribution of the data to make it more ameneable to analyses, or do the same for the relationship between two numeric variables. Why one might want to do this, when one should, and when one perhaps should not is very important to learn. We feel it could be the case that transformations are often applied without sufficient appreciation of their consequences.
 
 
-* **Factors** Now for some R specific things to learn more about. Variables that contain categories can, if one likes, be made factor type variables in R. This is useful when visualizing data and making statistical models. Factors are, however, a bit tricky. We explained them a little during the Workflow Demonstration (Section \@ref(wf-refine-import)), and go into further detail in the Workflow Demonstrations in the *Insights* companion website (http://insightsfromdata.io). One specific task we there cover is how to change to order of levels in a factor variable so that the order of categories in a graph is exactly as we'd like it.
+## Distributions
+
+We mentioned what is a sample distribution, we emphasised how important it is to visualise sample distributions, and we make many such visualisations as histograms. What we talked about much less, though is very important, are some of the types of theoretical distributions that one can use in analyses, particularly in statistical analyses. We mentioned the normal, Poisson, and binomial distribution during the Bat Workflow Demonstration. Going further we could have checked with a QQ-plot if these distributions were appropriate for characterising the data. Learning more about these distributions, and about what QQ-plots are would be a good next step.
+
+https://blog.cloudera.com/blog/2015/12/common-probability-distributions-the-data-scientists-crib-sheet/
 
 
-* **Multiple graphs** We showed how to make multiple facets in one graph, but what about if we'd like to arrange multiple different `ggplot` graphs in one figure. There are a number of approaches to doing this. A recent one, which aims to make it "ridiculously simple to combine separate ggplots into the same graphic" is the [`patchwork` add-on package](https://patchwork.data-imaginist.com/index.html). Using it involves something we did not cover in this book: assigning a ggplot to an object. It is worth you soon learning about this.
+## Interactions and complexity
+
+We mentioned interactions at multiple times. They are important because we live in a world where many things are contigent on others. Such that the effect of a intervention depends on some other variable. Hence, the effects of a dietary intervention may depend on the disease status of an individual. Achieving an intuitive understanding of a system with many more than three or four interactions can be elusive, so researchers often do not attempt to explore or explain such complex situations. One solution/alterate approach, is to use analysis methods that characterise a system of causal relationships... i.e. a network of causes and effects. The methods and tools are not often taught in introductory statistics courses, but it is worth being aware of them at least (they are sometimes callled path analysis and structural equation models).
+
+
+https://github.com/opetchey/insights1_edition1/issues/4
+
+
+## Lurking variables
+
+We can easily think of situations that are not so amenable to the approaches you learned in this book. This does not mean that the approaches are not useful or important. They are foundational. And therefore to be built on. One example of such a situation is if we have two continuous explanatory variables that are relatively strongly correlated with each other. And we are looking at how they are related to a response variable.  It is quite possible that we see a positive relationship between one explanatory variable and the response variable, when the relationship is in fact negative. We can see the negative relationship only once we have accounted for the other explanatory variable. If this sounds a bit concerning then good... it is. It illustrates how very important is checking for, and understanding implications of, correlations among explanatory variables. And how important it is to take time to think during the planning phase of the workflow about what are the likely important explanatory variables. How can one "account for" the other explanatory variable? The answer is to hold the second explanatory variable constant, or at least relatively constant. This can be done by plotting only data for a small range of the second explanatory variable (`cut` and `facet_wrap` can be used).
+
+
+Link to post on the R4All web site: http://r4all.org/posts/lurking-variables-and-hidden-relationships/
+
+
+State that we simulated this data. Make the code available on r4all.
+
+```{r echo=FALSE}
+# Code from here: https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/multivariate-linear-models.html#masked-relationship
+N   <- 400   # number of cases
+rho <- .8      # correlation between x_pos and x_neg
+set.seed(141)  # setting the seed makes the results reproducible
+dd <- 
+  tibble(x1 = rnorm(N),                            
+         x2 = rnorm(N, rho*x1, sqrt(1 - rho^2)),  
+         y     = rnorm(N, x1 - x2))               
+```
+
+```{r}
+dd
+```
+
+```{r masked-rels-1, fig.cap='(a and b) Little evidence of a relationship between the response variable *y* and either of the two explanatory variables *x1*, or *x2*. (c) Strong correlation between the two explanatory variables *x1* and *x2*', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
+library(patchwork)
+p1 <- ggplot() +
+  geom_point(data = dd, aes(x = x1, y = y))
+p2 <- ggplot() +
+  geom_point(data = dd, aes(x = x2, y = y))
+p3 <- ggplot() +
+  geom_point(data = dd, aes(x = x1, y = x2))
+p1 + p2 + p3
+```
+
+
+```{r}
+dd <- mutate(dd,
+            x1_cut = cut(x1, 10),
+            x2_cut = cut(x2, 10))
+```
+
+```{r masked-rels-2, fig.cap='The positive relationship between the response variable (*y*) and one of the explanatory variables (*x1*) is visible because each facet shows a relatively small range of variation in the other explanatory variable (*x2*).', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
+ggplot() +
+  geom_point(data = dd, aes(x = x1, y = y)) +
+  facet_wrap(~x2_cut, scales = "free", nrow = 2)
+
+```
+
+```{r masked-rels-3, fig.cap='The same as the previous figure, but with the explanatory variables switched, so that we see the negative relationship between *y* and *x2*.', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
+ggplot() +
+  geom_point(data = dd, aes(x = x2, y = y)) +
+  facet_wrap(~x1_cut, scales = "free", nrow = 2)
+```
+
+Conditional plots. How can one "account for" the other explanatory variable? Hold the second explanatory variable constant, or at least relatively constant.
+
+Correlated explanatory variables.
+
+
+
+We can easily think of situations that are not so amenable to the approaches you learned in this book. This does not mean that the approaches are not useful or important. They are foundational. And therefore to be built on.
+
+One example of such a situation is if we have two continuous explanatory variables that are relatively strongly correlated with each other. And we are looking at how they are related to a response variable.  It is quite possible that we see a positive relationship between one explanatory variable and the response variable, when the relationship is in fact negative. We can see the negative relationship only once we have accounted for the other explanatory variable. If this sounds a bit concerning then good... it is. It illustrates how very important is checking for, and understanding implications of, correlations among explanatory variables.
+
+
+
+## Power of data to give insights
+
+When planning a study it is worthwhile to calculate the *statistical power* that can be expected. One methods for doing so is to create fake data by simulation, and then analysing it. One can then assess how likely the statistical method is to detect any real effect that was included in the fake data, and how likely it is to detect an effect when no real effect was included in the fake data. Making useful fake data requires an estimate of effect sizes (i.e. the strength of an effect or of a relationship), about variability, and amount of data. It is well worth spending time looking into power analyses, and how to simulate fake data. 
+
+## Effect sizes
+
+We found that a difference in mean prey size of about 5 mm between female and male bats. Therefore we would say that the effect sizes of gender is 5 mm. It is  important to maintain a clear focus on effect sizes (and once you move onto statistics, a measure of certainty in the effect size, e.g. a confidence interval). You will almost certainly be exposed to p-values, but please retain attention and focus on effect sizes. That said, also be always aware that use of the term "effect size" is in no way used to indicate a *causal* effect has been demonstrated (and is therefore in some senses an innapropriate term to use).
+
+## Ordination
+
+Our analyses have had relatively few explanatory variables, and one response variable. Relatively common, however, is to have several, even several tens of explanatory and/or response variables. Questions about gene expression and community composition, for example, can lead to data with many response variables. Such data is sometimes termed *multivariate* data, and working with such data is a whole other world of data and statistical analyses methods. Ordination is a common foundation and good starting point for such analyses, and so would be a good place for you to start looking. Principle component analysis is a good starting place therein. By the way, the functions for working with multivariate data usually require wide-format datasets and are more informative if datasets have named rows. If you need to get into this world, please look at the further information on the Insights companion website (http://insightsfromdata.io).
+
+## Influence and outliers
+
+We sometimes observe one or a few data point that are quite different from all others. How can we tell if they are so different that we should treat them differently? How can we know if they are different and likely to have high influence on our conclusions? What influence on our insights does an individual data point have? This will depend on various things, including: 1) number of other data points, with more other data points resulting in any individual one having less influence; 2) the value of the data point (y-value)... large ones (either in the positive or negative direction) tend to have larger influence; 2) the x value of the data point... where larger ones (in positive or negative direction) have more influence. Knowing how to identify and deal with unusual data points is very important, as is using only transparent methods for doing so.
+
+We can think of this by anology with a children's playground toy... the seesaw. Can you put together what I write above, and this toy? How would the analogy work?
+
+
+## Transformations
+
+Transforming variables, e.g. by taking the logarithm of the values and working with that, is quite common place. It can, for example, changing the shapes of the distribution of the data to make it more ameneable to analyses, or do the same for the relationship between two numeric variables. Why one might want to do this, when one should, and when one perhaps should not is very important to learn. We feel it could be the case that transformations are often applied without sufficient appreciation of their consequences.
 
 
 
@@ -152,7 +236,7 @@ You're probably now wondering which is the correct way to calculate the overall 
 
 
 
-## Missing values (NAs) {#extra-NAs}
+## Missing values (NAs)
 
 It is very important to be intimately aware of the number of data points we're working with, and where there are NAs in our data. If we didn't notice that we have only 142 (and not 143) mean wingspan measures, we might report that we had 143, have someone else find out that we missed this detail, and then lose a bit of credibility.
 
@@ -181,7 +265,7 @@ __R functions will usually take care of NAs__ . They will then often give a warn
 ```
 
 
-### Skewness
+## Skewness
 
 A well-defined hierarchy has been defined to describe and quantify the shape of distributions. It's essential to know about the first two: central tendency and dispersion, because these are the basis of many standard analyses. The next most important aspect of a distribution is its __skewness__ (or just 'skew'). Skewness describes the asymmetry of a distribution. Just as with central tendency and dispersion, there are many different ways to quantify the skewness of a sample distribution. These are quite difficult to interpret because their interpretation depends on other features of a distribution. We'll just explore skewness in the simplest case: the skewness of a __unimodal__ distribution.
 
@@ -212,13 +296,13 @@ Look here for inspiration, of some kind.
 https://dynamicecology.wordpress.com/2013/10/16/in-praise-of-exploratory-statistics/
 
 
-## Interoperability
+## Interoperability / standardising terms
 
 Countries in the fao polity study
 
 https://www.r-bloggers.com/taxadb-a-high-performance-local-taxonomic-database-interface/
 
-### Standardising terms
+### 
 
 It's certainly nice to know that we accurately entered the prey species names, in the sense that they match the names of known prey species. Doing so will also ensure that our results could be compared with and combined with other studies of moth species (put another way, we would have assured our data are *interoperable* with other studies involving these moth species). To do this, we can use a very nice set of packages that make the whole process a total breeze. Let's try this for the first ten species in the dataset. Note that the first line below installs the __taxize__ add-on package, and is commented out as we only need to run it once).
 
@@ -239,91 +323,10 @@ In this report, the final column gives a quick indication of how well the moth s
 
 
 
-## Lurking variables
 
 
 
-State that we simulated this data. Make the code available on r4all.
-
-```{r echo=FALSE}
-# Code from here: https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/multivariate-linear-models.html#masked-relationship
-N   <- 400   # number of cases
-rho <- .8      # correlation between x_pos and x_neg
-set.seed(141)  # setting the seed makes the results reproducible
-dd <- 
-  tibble(x1 = rnorm(N),                            
-         x2 = rnorm(N, rho*x1, sqrt(1 - rho^2)),  
-         y     = rnorm(N, x1 - x2))               
-```
-
-```{r}
-dd
-```
-
-```{r masked-rels-1, fig.cap='(a and b) Little evidence of a relationship between the response variable *y* and either of the two explanatory variables *x1*, or *x2*. (c) Strong correlation between the two explanatory variables *x1* and *x2*', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
-library(patchwork)
-p1 <- ggplot() +
-  geom_point(data = dd, aes(x = x1, y = y))
-p2 <- ggplot() +
-  geom_point(data = dd, aes(x = x2, y = y))
-p3 <- ggplot() +
-  geom_point(data = dd, aes(x = x1, y = x2))
-p1 + p2 + p3
-```
-
-
-```{r}
-dd <- mutate(dd,
-            x1_cut = cut(x1, 10),
-            x2_cut = cut(x2, 10))
-```
-
-```{r masked-rels-2, fig.cap='The positive relationship between the response variable (*y*) and one of the explanatory variables (*x1*) is visible because each facet shows a relatively small range of variation in the other explanatory variable (*x2*).', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
-ggplot() +
-  geom_point(data = dd, aes(x = x1, y = y)) +
-  facet_wrap(~x2_cut, scales = "free", nrow = 2)
-
-```
-
-```{r masked-rels-3, fig.cap='The same as the previous figure, but with the explanatory variables switched, so that we see the negative relationship between *y* and *x2*.', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
-ggplot() +
-  geom_point(data = dd, aes(x = x2, y = y)) +
-  facet_wrap(~x1_cut, scales = "free", nrow = 2)
-```
-
-Conditional plots. How can one "account for" the other explanatory variable? Hold the second explanatory variable constant, or at least relatively constant.
-
-Correlated explanatory variables.
-
-
-
-We can easily think of situations that are not so amenable to the approaches you learned in this book. This does not mean that the approaches are not useful or important. They are foundational. And therefore to be built on.
-
-One example of such a situation is if we have two continuous explanatory variables that are relatively strongly correlated with each other. And we are looking at how they are related to a response variable.  It is quite possible that we see a positive relationship between one explanatory variable and the response variable, when the relationship is in fact negative. We can see the negative relationship only once we have accounted for the other explanatory variable. If this sounds a bit concerning then good... it is. It illustrates how very important is checking for, and understanding implications of, correlations among explanatory variables.
-
-
-Link to post on the R4All web site: http://r4all.org/posts/lurking-variables-and-hidden-relationships/
-
-## Influence and outliers
-
-We sometimes observe one or a few data point that are quite different from all others. How can we tell if they are so different that we should treat them differently? How can we know if they are different and likely to have high influence on our conclusions? What influence on our conclusions (analysis) does an individual data point have? This will depend on various things, including: 1) number of other data points, with more other data points resulting in any individual one having less influence; 2)
-the value of the data point (y-value)... large ones (either in the positive or negative direction) tend to have larger influence; 2) the x value of the data point... where larger ones (in positive or negative direction) have more influence.
-We can think of this by anology with a children's playground toy... the seesaw. Can you put together what I write above, and this toy? How would the analogy work?
-
-## Transformations
-
-
-
-## Interactions
-
-https://github.com/opetchey/insights1_edition1/issues/4
-
-## Distributions
-
-https://blog.cloudera.com/blog/2015/12/common-probability-distributions-the-data-scientists-crib-sheet/
-
-
-### Comparing descriptive statistics {#summaries}
+## Comparing descriptive statistics
 
 Until now we have been focusing on plots that display either the raw data (e.g. scatter plots), or a summary of the raw data that captures as much detail as possible (e.g. histograms and box plots). We've tended to treat descriptive statistics like the sample mean as 'a number' to be examined in isolation. These are often placed in the text of a report or in a table.
 
@@ -371,8 +374,4 @@ The result is the same as the last plot. Notice that we had to set `stat` to `"i
 
 Which approach is better? Although the first approach is more compact, we recommend the second long-winded approach for new users because it separates the summary calculations from the plotting. This way, as long as we're comfortable with **dplyr**, we can get away with remembering less about how **ggplot2** works. It also makes it a bit easier to fix mistakes, as we can first check whether the right information is in the summary dataframe, before we worry about plotting it. The two-step method is easy to extend to different kinds of plots as well.
 
-## Ordination and clustering
 
-including how to implement in the tidyverse
-
-Check the MV chapter.
