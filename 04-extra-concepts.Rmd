@@ -17,7 +17,7 @@ We mentioned interactions at multiple times. They are important because we live 
 https://github.com/opetchey/insights1_edition1/issues/4
 
 
-## Lurking variables
+## Lurking variables {#lurking-variables}
 
 We can easily think of situations that are not so amenable to the approaches you learned in this book. This does not mean that the approaches are not useful or important. They are foundational. And therefore to be built on. One example of such a situation is if we have two continuous explanatory variables that are relatively strongly correlated with each other. And we are looking at how they are related to a response variable.  It is quite possible that we see a positive relationship between one explanatory variable and the response variable, when the relationship is in fact negative. We can see the negative relationship only once we have accounted for the other explanatory variable. If this sounds a bit concerning then good... it is. It illustrates how very important is checking for, and understanding implications of, correlations among explanatory variables. And how important it is to take time to think during the planning phase of the workflow about what are the likely important explanatory variables. How can one "account for" the other explanatory variable? The answer is to hold the second explanatory variable constant, or at least relatively constant. This can be done by plotting only data for a small range of the second explanatory variable (`cut` and `facet_wrap` can be used).
 
@@ -97,7 +97,7 @@ We found that a difference in mean prey size of about 5 mm between female and ma
 
 Our analyses have had relatively few explanatory variables, and one response variable. Relatively common, however, is to have several, even several tens of explanatory and/or response variables. Questions about gene expression and community composition, for example, can lead to data with many response variables. Such data is sometimes termed *multivariate* data, and working with such data is a whole other world of data and statistical analyses methods. Ordination is a common foundation and good starting point for such analyses, and so would be a good place for you to start looking. Principle component analysis is a good starting place therein. By the way, the functions for working with multivariate data usually require wide-format datasets and are more informative if datasets have named rows. If you need to get into this world, please look at the further information on the Insights companion website (http://insightsfromdata.io).
 
-## Influence and outliers
+## Influence and outliers {#influence-outliers}
 
 We sometimes observe one or a few data point that are quite different from all others. How can we tell if they are so different that we should treat them differently? How can we know if they are different and likely to have high influence on our conclusions? What influence on our insights does an individual data point have? This will depend on various things, including: 1) number of other data points, with more other data points resulting in any individual one having less influence; 2) the value of the data point (y-value)... large ones (either in the positive or negative direction) tend to have larger influence; 2) the x value of the data point... where larger ones (in positive or negative direction) have more influence. Knowing how to identify and deal with unusual data points is very important, as is using only transparent methods for doing so.
 

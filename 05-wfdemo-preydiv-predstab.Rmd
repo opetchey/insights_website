@@ -10,28 +10,24 @@ At the time of publication (early 2021) there are likely some improvements that 
 
 ## Going to the next level
 
-This case study includes a bit more complexity than the first one and covers a few new topics in R and in general. The complexity mainly occurs in the calculations we do to obtain the response variables (i.e. the variables we examine to answer our biological question). The calculations involve some conceptually challenging manipulations, and the corresponding pipelines of **dplyr** functions will at first seem complex and daunting.
+This case study includes a little bit more complexity than the first one (bat diets) and covers a few new topics in R and in general. The complexity mainly occurs in the calculations we do to obtain the response variables (i.e. the variables we examine to answer our biological question). The calculations involve some conceptually challenging manipulations, and the corresponding pipelines of **dplyr** functions will at first seem complex and daunting.
 
 It's fine to be concerned, even a bit stressed, by this complexity. If you feel so, just take a break, have a chat with friends, and while doing that think about how we only travel great distances and climb high peaks by taking one small step at a time. The same applies to what seem like complex and daunting tasks in getting insights from data. It's amazing how far we get taking one step at a time. When we show you what seems like a complex task, like a complex pipeline of functions, break it down into its component steps. Let's take a first step by introducing the case study and data that was collected.
 
-Again: as you work through this chapter, try following along with the [workflow/checklist on this web page](http://r4all.org/posts/workflow-checklist-for-data-analysis/). 
-
-
-A discussion of these features of the case study data (put info in a box? A new type of box?):
-
-The number of variables (columns) they contain.
-The number of observations (rows).
-If and how many of the variables describe experimental manipulations.
-The amount of correlation among the variables.
-How independent are the observations.
+Again: as you work through this chapter, try following along with the [workflow/checklist here](#insights-workflow). 
 
 ## Introduction to the study and data
 
 The data comes from [a study of how the number of available prey species for a predator consume affects the stability of the predator population dynamics](https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2656.2000.00446.x). The study was designed to address the hypotheses that more pathways of energy flow to a predator (i.e. more prey species) would stabilise the predator population dynamics, 1) by increasing the abundance of the predator, 2) by reducing how much it varies, and 3) by delaying extinction.
 
+```{r insight-sketch-4, fig.cap='A hypothetical outcome of the demonstration study of how a manipulation of diet composition and amount affect the lifespan of fish.', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("images/insights_sketches_004.jpeg")
+```
+
+
 The experiment involved three prey species and one predator. One, two or three prey species were present, with every combination of each. The experimental units were small jars of nutrient containing liquid and the predator and prey species were aquatic microbes feeding on bacteria also present in the liquid. The small size of the prey and predators (about 20 to 400 microns) means that in just a few weeks individuals can reproduce many times, and also die. There were five replicates of each of the seven prey species compositions (so 35 experimental units).
 
-During the experiment the data was written onto paper, then at a later date the data was entered into a spreadsheet. The data in the spreadsheet was checked for errors, by comparing it with the original paper copy of the data. The data recording and entry was done with tidiness and cleanliness in mind, so tidying and cleaning will be minimal. The data file contains the data exactly as it was recorded on the paper data sheet, and after data entry was double checked to correct any errors.
+During the experiment the data was written onto paper, then at a later date the data was entered into a spreadsheet. The data in the spreadsheet was checked for errors, by comparing it with the original paper copy of the data. The data recording and entry was done with tidiness and cleanliness in mind, so tidying and cleaning will be minimal. The data file contains the data exactly as it was recorded on the paper data sheet.
 
 Looking at the dataset in Excel or something similar, you will see the following variables:
 
@@ -56,7 +52,7 @@ How does the data measure up to the features of data we mentioned in the first c
 
 ##   What type of response variable?
 
-This question is worth asking at the beginning of a study. There were, in fact, three main response variables used in this study and these correspond to the three hypotheses mentioned above. I.e. there is one response variable for each of the three hypotheses/questions. These response variables were: 1) the population size of the predator population, 2) the temporal variability of the predator population size, and 3) the amount of time for which the predator population persisted. Each of these is an component/influence on the stability of the predator population. Each will have to be calculated from the time series of predator population density (number of individuals predators per ml) in each replicate. First though we will have to calculate population density from `count`, `w1`, `w2`, and `w3`, because during the experiment the volume of liquid in which the number of individuals of each species was counted varied (i.e. `w1`, `w2`, and `w3` are not constant). The reason for this variation is that dilution is required when populations are very dense, otherwise the dense swarm of individuals would be near impossible to count.
+This question is worth asking at the beginning of a study. There were, in fact, three main response variables used in this study and these correspond to the three hypotheses mentioned above. I.e. there is one response variable for each of the three hypotheses/questions. These response variables were: 1) the population size of the predator population, 2) the temporal variability of the predator population size, and 3) the amount of time for which the predator population persisted. Each of these is an component/influence on the stability of the predator population. Each will have to be calculated from the time series of predator population density (number of individuals predators per ml) in each replicate. First though we will have to calculate population density from `count`, `w1`, `w2`, and `w3`, because during the experiment the volume of liquid in which the number of individuals of each species was counted varied (i.e. `w1`, `w2`, and `w3` are not constant). The reason for this variation is that dilution is required when populations are very dense, otherwise the dense swarm of individuals would be near impossible to count. But first...
 
 ## A little preparation
 
@@ -115,7 +111,7 @@ Not all is well, however, as some of the variables that should be numeric are ch
 stab <- read_csv("data/dileptus_predator_prey_data.csv", na = ".")
 ```
 
-Good, now `count` is an integer type variable.
+Good, now `count` is a numeric type variable.
 
 
 
@@ -123,7 +119,7 @@ Good, now `count` is an integer type variable.
 
 ### Recode some names
 
-We expect the `species` and the `prey.composition` variables should probably be character variables. Indeed, they really should be characters, but they appear to be integers. Always use the proper word when you have one ---don't ever use codes like this (the person who entered this data was probably not thinking about this carefully enough! Or was constrained by time. Or both.). Let's fix this by replacing the species code numbers with their names (we found the correct names for each code in the lab book for this experiment, it is not in the dataset):
+We expect the `species` and the `prey.composition` variables should probably be character variables. Indeed, they really should be characters, but they appear to be integers. Always use the proper word when you have one ---don't ever use codes like this (the person who entered this data was probably not thinking about this carefully enough! Or was constrained by time. Or both.). Let's fix this by replacing the species code numbers with their names (we found the correct names for each code in the lab book for this experiment; they are not in the dataset):
 
 ```{r}
 stab <- stab %>%
@@ -175,13 +171,13 @@ stab <- full_join(stab, comm_comp) %>%
 rm(comm_comp, prey_comp)
 ```
 
-```{block, type="safety"}
+```{block, type="info"}
 It's not necessary to remove variables and datasets that we're not interested in using anymore, but is often a good idea to do so. It can prevent us accidentally using them, or just from getting confused about what they are and if they are in fact important when we come back to our work after a gap of a few months, as often happens. If we have a rather large dataset, keeping only the essential variables can usefully reduce the size of the dataset.
 ```
 
 ### Make the `prey_composition` variable a factor with specific order
 
-What on earth did that mean? So far we have not mentioned *factors*. These are a type of variable that contains words (a bit like character variables) but in which the different words/categories are referred to as *levels* and have an explicit order. This order affects how some things are done in R, and this is why we want to determine the specific order of the levels of the `prey_composition` variable. For example, when we make a graph with `prey_composition` on the x axis we would like the three single-species prey compositions first on the left, then the three two-species prey compositions, then the three-species prey composition on the right.
+What on earth did that section title mean? So far we have not mentioned *factors*. These are a type of variable that contains words (a bit like character variables) but in which the different words/categories are referred to as *levels* and have an explicit order. This order affects how some things are done in R, and this is why we want to determine the specific order of the levels of the `prey_composition` variable. For example, when we make a graph with `prey_composition` on the x axis we would like the three single-species prey compositions first on the left, then the three two-species prey compositions, then the three-species prey composition on the right.
 
 Before we do this, look at the `prey_composition` variable in its current state:
 
@@ -225,7 +221,7 @@ stab %>%
 Excellent. The variable is now a factor (`<fct>`) and we can see its levels.
 
 ```{block, type="info"}
-Do not worry if it's not immediately apparent why we made this variable an ordered factor---we emphasise the point a couple of times below where the benefits of this are very clear and obviously desirable.
+Do not worry if it's not immediately apparent why we made this variable an ordered factor---we emphasise the point a couple of times below where the benefits of this are very clear.
 ```
 
 
@@ -249,13 +245,13 @@ Putting these parts together we see that we multiply by the dilution factor `w2/
 
 ```{r}
 stab <- stab %>%
-  mutate(dens_per_ml=count*w2/w1/w3)
+  mutate(dens_per_ml = count * w2 / w1 / w3)
 ```
 
 Super-simple! Now we have a standardised, comparable, and interoperable measurement of population size of each species.
 
-```{block, type="efficiency"}
-Actually, the dataset as it was entered was done so to make this calculation work very easily. In particular, `w2` is very purposefully the sum of the sampled volume and the diluent, and is *not* just the volume of the diluent. Furthermore, if there was no dilution, and the count was made of `w1` we might have entered `NA` for `w2` and `w3` since they did not exist. Instead, the both `w2` and `w3` are set to 1 in this case, which means they have no effect in the calculation (multiplication and division by 1 has no effect). This is an example of designing and planning before and during data entry with downstream calculations in mind.
+```{block, type="info"}
+Actually, the data entry was done so to make this calculation work very easily. In particular, `w2` is very purposefully the sum of the sampled volume and the diluent, and is *not* just the volume of the diluent. Furthermore, if there was no dilution, and the count was made of `w1` we might have entered `NA` for `w2` and `w3` since they did not exist. Instead, the both `w2` and `w3` are set to 1 in this case, which means they have no effect in the calculation (multiplication and division by 1 has no effect). This is an example of designing and planning before and during data entry with downstream calculations in mind.
 ```
 
 
@@ -299,7 +295,7 @@ stab %>%
   unique()
 ```
 
-Samples were taken every two days from day to until a maximum of day 20. So we expect a maximum number of counts of species abundances in a particular replicate to be 10 multiplied by the number of species in a replicate community. I.e. the maximum number of counts in a community with two prey species and the predator (recall that all communities contained the predator) will be 30. Maximum number of counts will be 20 for communities with only one prey species. Note that this is the maximum because we know some values of count were `NA`.
+Samples were taken every two days from day two until a maximum of day 20. So we expect a maximum number of counts of species abundances in a particular replicate to be 10 multiplied by the number of species in a replicate community. I.e. the maximum number of counts in a community with two prey species and the predator (recall that all communities contained the predator) will be 30. Maximum number of counts will be 20 for communities with only one prey species. Note that this is the maximum because we know some values of count were `NA`.
 
 Let's now get the number of counts for each replicate community, and while we're at it, the last day sampled for each replicate. We do this with a `group_by %>% summarise` pipeline, grouping by the `jar` and `prey_composition` variables. We include the `prey_composition` variable in the grouping so that we have it to refer to in the resulting summary dataset, and place it first in the `group_by` function so that the summary dataset is arranged by this variable.
 
@@ -337,7 +333,7 @@ temp2
 
 Here we see that two of the microcosms had only two samples taken. These are the ones in which the last day sampled was day four (confirm this for yourself if you wish; `View(temp2)` is useful for this).
 
-```{block, type="safety"}
+```{block, type="effrel"}
 All this might seem like overkill, particularly if we imagine that we had collected and entered the data into the spreadsheet. Surely then we would know all this, and therefore not have to check it? It's not overkill, however. It's about making efforts to ensure that we and R are in perfect agreement about the nature and contents of the data. Reaching such agreement is absolutely essential, and often involves resolving differences of opinion by highlighting hidden (and potentially dangerous) assumptions made by us and/or by R about the nature and contents of the data. By taking such efforts we are investing in the foundations of our insights. We need solid foundations for reliable, robust, and accurate insights.
 ```
 
@@ -358,10 +354,10 @@ Notice that we gave the aesthetic mappings as an argument to the `ggplot` functi
 ```
 
 ```{block, type="info"}
-Notice the order of the rows of facets in the graph (Figure \@ref(fig:microbe1))---it is from top to bottom the order we specified when we made the `prey_composition` variable an ordered factor. So `ggplot` is using this order. If you like to see what the order would have been if we hadn't specified it, replace `prey_composition` with `as.character(prey_composition)`.
+Notice the order of the rows of facets in the graph---it is from top to bottom the order we specified when we made the `prey_composition` variable an ordered factor. So `ggplot` is using this order. If you like to see what the order would have been if we hadn't specified it, replace `prey_composition` with `as.character(prey_composition)`.
 ```
 
-The dynamics in Figure \@ref(fig:microbe1) are those shown in figure 1 of the original publication. Everything seems reasonable, though I (Owen) wish I'd recorded more information about why I stopped sampling the microcosms when I did. I think I still have my lab books from this experiment somewhere inaccessible like my parents loft but haven't had the chance to get them.
+The dynamics in Figure \@ref(fig:microbe1) are those shown in figure 1 of the original publication. Everything seems reasonable, though I (Owen) wish I'd recorded more information about why I stopped sampling the microcosms when I did.
 
 The predator (*Dileptus*) does not seem to grow well when *Collodictyon* is the only available prey species, but grows very well on and decimates *Colpidium*, after which the predator appears to go extinct and then the *Colpidium* population recovers. We can also notice that the predator population persists to the end of the experiment on day 20 only when all three prey species are present. It is probably worth emphasising that 20 days corresponds to around 20 generations of these organisms; this is a lot of time for birth and death to affect population abundances (if each individual divided into two daughters each day, the population would increase in size by a factor of 2^20, i.e. grow to be 1 million times larger).
 
@@ -401,7 +397,7 @@ In the `group_by` we included a redundant grouping variable `prey_richness`. It 
 We calculated the maximum of the predator abundance, but could have chosen the mean, median, or the geometric mean, or harmonic mean. It is really important to recognise that the choice of mean here is quite arbitrary, and so introduces an element of subjectivity into our journey from data to insights. Such subjectivity is a rather common feature of this journey.
 ```
 
-```{block, type="reliability"}
+```{block, type="effrel"}
 We must make sure our insights are robust to subjective decisions about how to reach them. We can do this by looking at whether the insights are sensitive to changes in these decisions. This is quite different, however, from selecting the decision that gives a result we might desire, which would clearly be a totally inappropriate practice.
 ```
 
@@ -422,8 +418,8 @@ pred_CV <- stab %>%
 
 Looking at the data (e.g. with `View(pred_CV`) shows us that indeed there are six `NaN` values of CV. We will look at the other CV values after we calculate the third response variable.
 
-```{block, type="efficiency"}
-**Congratulations** if you noticed that we could have calculated maximum abundance and CV of abundance in the same summarise. This would have been more efficient, in the sense that we would have had less code. It would also have been safer since then we could not have accidentally done something different (e.g. a different grouping) for the two.
+```{block, type="effrel"}
+*Congratulations* if you noticed that we could have calculated maximum abundance and CV of abundance in the same summarise. This would have been more efficient, in the sense that we would have had less code. It would also have been safer since then we could not have accidentally done something different (e.g. a different grouping) for the two.
 ```
 
 
@@ -560,7 +556,8 @@ rv %>% filter(Response_type == "max_dens") %>%
 There is a big problem with this. Our figure does not tell us what is on the y-axis ("Value" is not particularly informative!) We could fix this by changing the y-axis like this (no figure is presented for this code):
 
 ```{r eval=FALSE}
-rv %>% filter(Response_type == "max_dens") %>%
+rv %>%
+  filter(Response_type == "max_dens") %>%
   ggplot() +
   geom_jitter(aes(x = prey_richness, y = Value, col = prey_composition),
               width = 0.1, height = 0) +
@@ -577,8 +574,9 @@ rv_oi <- "max_dens"
 
 Then we use the same `ggplot` code as before, but with `rv_oi` in place of `"max_dens"` (the resulting graph is in Figure \@ref(fig:microbe4-1)):
 
-```{r microbe4-1, echo=FALSE, fig.cap='A reasonably nice graph of maximum predator density in a community against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=8}
-rv %>% filter(Response_type == rv_oi) %>%
+```{r microbe4-1, echo=TRUE, fig.cap='A reasonably nice graph of maximum predator density in a community against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=8}
+rv %>%
+  filter(Response_type == rv_oi) %>%
   ggplot() +
   geom_jitter(aes(x = prey_richness, y = Value, col = prey_composition),
               width = 0.1, height = 0) +
@@ -587,7 +585,7 @@ rv %>% filter(Response_type == rv_oi) %>%
 
 Super. We have a safe approach and a useful graph. Do you think there is strong evidence of higher maximum predator abundance at higher prey richness? Neither do we. Strike one.
 
-```{block, type="reliability"}
+```{block, type="effrel"}
 **Plot the data points** Note that we are plotting the data points, and not bars with error bars, or even box-and-whisker plots. There are few enough data points in this study that we experience no problems when we plot the data itself, rather than some summary of the data (e.g. the mean plus and minus the standard deviation). As a rule, always plot the data.
 ```
 
@@ -608,7 +606,7 @@ Some things are a bit clearer. 1) The predator seems to like the prey *Colpidium
 
 Making the graphs for CV is now a doddle. We just set `rv_oi = "CV` and then run exactly the same code as before, resulting in Figure \@ref(fig:microbe5-1):
 
-```{r microbe5-1, echo=FALSE, fig.cap='A quite informative graph of predator population variability (measured as the coefficient of variation--CV) in a community against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=8}
+```{r microbe5-1, echo=TRUE, fig.cap='A quite informative graph of predator population variability (measured as the coefficient of variation--CV) in a community against the number of prey available to the predator.', out.width='100%', fig.align='center', fig.width=8}
 rv_oi <- "CV"
 rv %>% filter(Response_type == rv_oi) %>%
   ggplot() +
@@ -685,13 +683,13 @@ pred_CV %>%
 
 Super. It's extremely useful to be able to add labels to data point in graphs, so we can see which replicate, individual, site, etc., the data point corresponds to. This is especially useful when we see what appear to be rather extreme values, which bring us to the next general point---what can and should we do when we see what might be extreme values? Here is a checklist:
 
-1. Use your best judgment about if a value seems extreme. If you're in doubt, consider it extreme. Nothing we subsequently do will with these apparently extreme values will cause problems if we include some values as being extreme that other people might not.
+1. Use your best judgment about if a value seems extreme. If you're in doubt, consider it extreme. Nothing we subsequently do with these apparently extreme values will cause problems if we consider some values as being extreme that other people might not.
 
-2. Check that each extreme value is not the result of an error. E.g. in data entry, or subsequent assumptions in calculations. If you ever meet us in person, ask us to tell you the badger testicle size story. It involves using -9999 as the missing value indicator, calculation of testicle volume that involved squaring the measured testicle width, and some apparently very well endowed badgers.
+2. Check that each extreme value is not the result of an error. E.g. in data entry, or subsequent assumptions in calculations. If you ever meet us in person, ask us to tell you the badger outlier story.
 
 3. Plot your graphs with and without the extreme values and see if this leads to you changing your opinion about the presence, absence, or nature of any patterns. If it seems that including or excluding them is important, well, that's your answer. Your conclusions are not so robust.
 
-4. It's beyond the scope of this book, but still worth mentioning that there are quantitative ways to assess if data points are extreme (also known as *outliers*) and if they affect quantitative conclusions (i.e. result of statistical analyses), but ultimately all include some element of subjectivity in their use and interpretation.
+4. Have a look at the [influence and outliers section](#influence-outliers) of this web site.
 
 While we're on the subject of subjectivity and perception, we should think about whether flipping the axis does more than just make room for the prey composition labels. Does having the graph flipped change our perception of pattern (or lack thereof) in the data? Figure \@ref(fig:microbe5-4)A and B. We (personally) tend to see more evidence of a negative relationship in panel B (with prey richness on the x-axis) but you might be different. We need to be careful to not exploit, or fall prey to, any such effects in the presentation of data. The data should, as far as possible, do all the talking.
 
@@ -757,7 +755,7 @@ Here we can see that one of the two prey species compositions (*Collodictyon* an
 
 
 ```{block, type="efficiency"}
-Look at Figure \@ref(fig:microbe6-3) showing what happens if `prey_composition` is just a character variable and not an ordered factor. The ordering of the prey compositions is not quite as desirable.
+Look at the figure below, showing what happens if `prey_composition` is just a character variable and not an ordered factor. The ordering of the prey compositions is not quite as desirable.
 ```
 
 ```{r microbe6-3, echo=FALSE, warning=FALSE, fig.cap='Notice how the prey compositions are ordered when we let R choose the order. This happens when we fail to specify ourselves what the order should be, by making the prey composition variable an ordered factor type variable.', out.width='100%', fig.align='center', fig.width=8}
@@ -804,9 +802,9 @@ rv %>%
 
 ## Wrapping up
 
-The published paper on this dataset had a few other analyses, but not too many. So what you learned above is very much a replica of a real and quite complete representation of the results and insights in the that study. Yes, we didn't do the statistics, but our conclusions are pretty much the same (though this could easily be in part influenced by Owen knowing in the conclusions before he wrote this chapter).
+The published paper on this dataset had a few other analyses, but not too many. So what you learned above is very much a replica of a real and quite complete representation of the results and insights in the that study. Yes, we didn't do the statistics here, but our conclusions are pretty much the same (though this could easily be in part influenced by Owen knowing the conclusions before he wrote this demonstration).
 
-One important thing. It would be very very wrong for you to get the impression that one can think through all the likely issues with the data and in a lovely linear process work from the data to the Insights. Probably this impression comes from this chapter and those of the first case study. For example, we do things early on in the data manipulation in order to make things easier later on. It looks like we anticipate a problem that will arise and prevent it ever occurring.
+One important thing. It would be very very wrong for you to get the impression that one can think through all the likely issues with the data and in a lovely linear process work from the data to the Insights. Probably this impression comes from this chapter and those of the first case study (though we made the same point there). For example, we do things early on in the data manipulation in order to make things easier later on. It looks like we anticipate a problem that will arise and prevent it ever occurring.
 
 The truth is, however, that we often found problems once we had got quite far into the data processing, and then realised we should go back and fix their cause. E.g. we found a problem while plotting the data, realised this was caused by an issue that could be sorted out much earlier on, and therefore have positive effects on all subsequent analyses. We did not just do a quick fix on the problematic graph... we fixed the source of the problem. This is a very very good habit to get into. Fix the cause, don't just treat the symptom. Fixing the cause will increase efficiency, reliability, and all round happiness.
 
