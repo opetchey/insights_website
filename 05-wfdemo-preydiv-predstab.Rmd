@@ -175,7 +175,7 @@ rm(comm_comp, prey_comp)
 It's not necessary to remove variables and datasets that we're not interested in using anymore, but is often a good idea to do so. It can prevent us accidentally using them, or just from getting confused about what they are and if they are in fact important when we come back to our work after a gap of a few months, as often happens. If we have a rather large dataset, keeping only the essential variables can usefully reduce the size of the dataset.
 ```
 
-### Make the `prey_composition` variable a factor with specific order
+### Make the `prey_composition` variable a factor with specific order {#factors-predstab}
 
 What on earth did that section title mean? So far we have not mentioned *factors*. These are a type of variable that contains words (a bit like character variables) but in which the different words/categories are referred to as *levels* and have an explicit order. This order affects how some things are done in R, and this is why we want to determine the specific order of the levels of the `prey_composition` variable. For example, when we make a graph with `prey_composition` on the x axis we would like the three single-species prey compositions first on the left, then the three two-species prey compositions, then the three-species prey composition on the right.
 

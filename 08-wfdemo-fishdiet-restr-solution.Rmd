@@ -340,7 +340,7 @@ mortality %>%
             n_unique=length(unique(Fish_ID)))
 ```
 
-## Calculate response variable(s) (if required)
+## Calculate response variable(s) (if required) {#do-regression}
 
 The courtship and eggs datasets already contain the response variable.
 
