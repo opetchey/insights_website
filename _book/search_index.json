@@ -1,12 +1,1 @@
-[
-["index.html", "Test Test Chapter 1 Introduction", " Test Test Test 2020-01-11 Chapter 1 Introduction knitr::opts_chunk$set(cache = FALSE) "],
-["test.html", "Chapter 2 Test", " Chapter 2 Test Test "],
-["test-1.html", "Chapter 3 Test", " Chapter 3 Test Test "],
-["test-2.html", "Chapter 4 Test", " Chapter 4 Test Test "],
-["test-3.html", "Chapter 5 Test", " Chapter 5 Test Test "],
-["test-4.html", "Chapter 6 Test", " Chapter 6 Test Test "],
-["test-5.html", "Chapter 7 Test", " Chapter 7 Test Test "],
-["test-6.html", "Chapter 8 Test", " Chapter 8 Test Test "],
-["test-7.html", "Chapter 9 Test", " Chapter 9 Test Test "],
-["test-8.html", "Chapter 10 Test", " Chapter 10 Test Test "]
-]
+[["index.html", "Insights from Data with R – Companion Website An Introduction for the Life and Environmental Sciences Chapter 1 Pre-release information about the book", " Insights from Data with R – Companion Website An Introduction for the Life and Environmental Sciences Petchey, Beckerman, Cooper, Childs 2020-11-15 Chapter 1 Pre-release information about the book This website will contain supplementary information, such as questions and exercises, additional work flow demonstrations, and additional R-related and conceptual information. The book should be available in early 2021. About the book: Insights from Data with R is for life and environmental science undergraduates (though may also help anyone beginning in their learning about data analysis), and for their instructors to teach alongside. It is not about statistics per se, but about that initial transition from having collected data as part of a project to that first, and so satisfying, realisation that there is a pattern in your data. It combines the elements of successful undergraduate data analysis courses of Petchey at University of Zurich, and Childs at University of Sheffield, the “Introduction to R” courses taught internationally for 15 years by all four authors, and the book Getting Started with R - An Introduction for Biologists, Second Edition, by Beckerman, Childs, and Petchey (2017) all using R with the RStudio platform. "]]

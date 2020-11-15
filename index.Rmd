@@ -1,7 +1,7 @@
 ---
-title: "Test"
-subtitle: "Test"
-author: "Test"
+title: "Insights from Data with R -- Companion Website"
+subtitle: "An Introduction for the Life and Environmental Sciences"
+author: "Petchey, Beckerman, Cooper, Childs"
 date: "`r Sys.Date()`"
 knit: "bookdown::render_book"
 documentclass: krantz
@@ -37,22 +37,15 @@ lapply(c('DT', 'citr', 'formatR', 'svglite'), function(pkg) {
 })
 ```
 
+# Pre-release information about the book
 
+This website will contain supplementary information, such as questions and exercises, additional work flow demonstrations, and additional R-related and conceptual information. The book should be available in early 2021.
 
-# Introduction
-
-```{r}
-knitr::opts_chunk$set(cache = FALSE)
+```{r echo = FALSE, out.width=200}
+knitr::include_graphics("images/Petchey_visual.jpg")
 ```
 
-<img src="images/WF1_icon.jpg" width="60"/>
 
-<img src="images/WF2_icon.jpg" width="60"/>
-
-<img src="images/WF3_icon.jpg" width="60"/>
-
-<img src="images/WF4_icon.jpg" width="60"/>
-
-
+About the book: *Insights from Data with R* is for life and environmental science undergraduates (though may also help anyone beginning in their learning about data analysis), and for their instructors to teach alongside. It is not about statistics *per se*, but about that initial transition from having collected data as part of a project to that first, and so satisfying, realisation that there is a pattern in your data. It combines the elements of successful undergraduate data analysis courses of Petchey at University of Zurich, and Childs at University of Sheffield, the "Introduction to R" courses taught internationally for 15 years by all four authors, and the book [*Getting Started with R - An Introduction for Biologists*](http://r4all.org/books/gswr2/), Second Edition, by Beckerman, Childs, and Petchey (2017) all using R with the RStudio platform.
 
 
