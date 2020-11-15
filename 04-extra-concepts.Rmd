@@ -1,88 +1,25 @@
-# Additional concepts
+# Additional & next step concepts
 
+In this chapter of this companion website to the Insights book we outline some of the conceptual issues we mentioned in the book, but did not then feel the need to cover. Some of these we only highlight below as next steps for you to take, rather than attempt to teach them here. If you would like more details below, some examples, or other topics covered, please let us know.
 
 
 ## Distributions
 
-We mentioned what is a sample distribution, we emphasised how important it is to visualise sample distributions, and we make many such visualisations as histograms. What we talked about much less, though is very important, are some of the types of theoretical distributions that one can use in analyses, particularly in statistical analyses. We mentioned the normal, Poisson, and binomial distribution during the Bat Workflow Demonstration. Going further we could have checked with a QQ-plot if these distributions were appropriate for characterising the data. Learning more about these distributions, and about what QQ-plots are would be a good next step.
-
-https://blog.cloudera.com/blog/2015/12/common-probability-distributions-the-data-scientists-crib-sheet/
+In the Insights book we describe what is a sample distribution, we emphasise how important it is to visualise sample distributions, and we make many such visualisations, such as histograms. What we talked about much less, though is very important, are some of the types of theoretical distributions that one can use in analyses, particularly in statistical analyses. We mentioned the normal, Poisson, and binomial distribution during the Bat Workflow Demonstration. Going further we could have checked with a QQ-plot if these distributions were appropriate for characterising the data. Learning more about these distributions, and about what QQ-plots are would be a good next step. It is a step that is really quite important before attempting to tackle statistical models, such as linear regression.
 
 
 ## Interactions and complexity
 
-We mentioned interactions at multiple times. They are important because we live in a world where many things are contigent on others. Such that the effect of a intervention depends on some other variable. Hence, the effects of a dietary intervention may depend on the disease status of an individual. Achieving an intuitive understanding of a system with many more than three or four interactions can be elusive, so researchers often do not attempt to explore or explain such complex situations. One solution/alterate approach, is to use analysis methods that characterise a system of causal relationships... i.e. a network of causes and effects. The methods and tools are not often taught in introductory statistics courses, but it is worth being aware of them at least (they are sometimes callled path analysis and structural equation models).
-
-
-https://github.com/opetchey/insights1_edition1/issues/4
+In the Insights book we mention interactions (e.g. does the difference in diet between male and female bats depend on their age). They are important because we live in a world where many things are contigent on others, such that the effect of a intervention depends on some other variable. Hence, the effects of a dietary intervention may depend on the disease status of an individual. Achieving an intuitive understanding of a system with many more than three or four interactions can be elusive, so researchers often do not attempt to explore or explain such complex situations. One solution/alterate approach, is to use analysis methods that characterise a system of causal relationships... i.e. a network of causes and effects. The methods and tools are not often taught in introductory statistics courses, but it is worth being aware of them at least (they are sometimes called path analysis and structural equation models).
 
 
 ## Lurking variables {#lurking-variables}
 
-We can easily think of situations that are not so amenable to the approaches you learned in this book. This does not mean that the approaches are not useful or important. They are foundational. And therefore to be built on. One example of such a situation is if we have two continuous explanatory variables that are relatively strongly correlated with each other. And we are looking at how they are related to a response variable.  It is quite possible that we see a positive relationship between one explanatory variable and the response variable, when the relationship is in fact negative. We can see the negative relationship only once we have accounted for the other explanatory variable. If this sounds a bit concerning then good... it is. It illustrates how very important is checking for, and understanding implications of, correlations among explanatory variables. And how important it is to take time to think during the planning phase of the workflow about what are the likely important explanatory variables. How can one "account for" the other explanatory variable? The answer is to hold the second explanatory variable constant, or at least relatively constant. This can be done by plotting only data for a small range of the second explanatory variable (`cut` and `facet_wrap` can be used).
+We can think of situations that are not so amenable to the approaches you learned in the Insights book. This does not mean that the approaches are not useful or important. They are foundational. And therefore to be built on.
 
+One example of such a situation is if we have two continuous explanatory variables that are relatively strongly correlated with each other. And we are looking at how they are related to a response variable.  It is quite possible that we see a positive relationship between one explanatory variable and the response variable, when the relationship is in fact negative. We can see the negative relationship only once we have accounted for the other explanatory variable. If this sounds a bit concerning then good... it is. It illustrates how very important is checking for, and understanding implications of, correlations among explanatory variables. And how important it is to take time to think during the planning phase of the workflow about what are the likely important explanatory variables. How can one "account for" the other explanatory variable? The answer is to hold the second explanatory variable constant, or at least relatively constant. This can be done by plotting only data for a small range of the second explanatory variable (`cut` and `facet_wrap` can be used).
 
-Link to post on the R4All web site: http://r4all.org/posts/lurking-variables-and-hidden-relationships/
-
-
-State that we simulated this data. Make the code available on r4all.
-
-```{r echo=FALSE}
-# Code from here: https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/multivariate-linear-models.html#masked-relationship
-N   <- 400   # number of cases
-rho <- .8      # correlation between x_pos and x_neg
-set.seed(141)  # setting the seed makes the results reproducible
-dd <- 
-  tibble(x1 = rnorm(N),                            
-         x2 = rnorm(N, rho*x1, sqrt(1 - rho^2)),  
-         y     = rnorm(N, x1 - x2))               
-```
-
-```{r}
-dd
-```
-
-```{r masked-rels-1, fig.cap='(a and b) Little evidence of a relationship between the response variable *y* and either of the two explanatory variables *x1*, or *x2*. (c) Strong correlation between the two explanatory variables *x1* and *x2*', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
-library(patchwork)
-p1 <- ggplot() +
-  geom_point(data = dd, aes(x = x1, y = y))
-p2 <- ggplot() +
-  geom_point(data = dd, aes(x = x2, y = y))
-p3 <- ggplot() +
-  geom_point(data = dd, aes(x = x1, y = x2))
-p1 + p2 + p3
-```
-
-
-```{r}
-dd <- mutate(dd,
-            x1_cut = cut(x1, 10),
-            x2_cut = cut(x2, 10))
-```
-
-```{r masked-rels-2, fig.cap='The positive relationship between the response variable (*y*) and one of the explanatory variables (*x1*) is visible because each facet shows a relatively small range of variation in the other explanatory variable (*x2*).', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
-ggplot() +
-  geom_point(data = dd, aes(x = x1, y = y)) +
-  facet_wrap(~x2_cut, scales = "free", nrow = 2)
-
-```
-
-```{r masked-rels-3, fig.cap='The same as the previous figure, but with the explanatory variables switched, so that we see the negative relationship between *y* and *x2*.', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
-ggplot() +
-  geom_point(data = dd, aes(x = x2, y = y)) +
-  facet_wrap(~x1_cut, scales = "free", nrow = 2)
-```
-
-Conditional plots. How can one "account for" the other explanatory variable? Hold the second explanatory variable constant, or at least relatively constant.
-
-Correlated explanatory variables.
-
-
-
-We can easily think of situations that are not so amenable to the approaches you learned in this book. This does not mean that the approaches are not useful or important. They are foundational. And therefore to be built on.
-
-One example of such a situation is if we have two continuous explanatory variables that are relatively strongly correlated with each other. And we are looking at how they are related to a response variable.  It is quite possible that we see a positive relationship between one explanatory variable and the response variable, when the relationship is in fact negative. We can see the negative relationship only once we have accounted for the other explanatory variable. If this sounds a bit concerning then good... it is. It illustrates how very important is checking for, and understanding implications of, correlations among explanatory variables.
-
+For more on this, including some simulated data to illustrate the issue, please see this [lurking variables post on the R4All web site](http://r4all.org/posts/lurking-variables-and-hidden-relationships).
 
 
 ## Power of data to give insights
@@ -95,7 +32,7 @@ We found that a difference in mean prey size of about 5 mm between female and ma
 
 ## Ordination
 
-Our analyses have had relatively few explanatory variables, and one response variable. Relatively common, however, is to have several, even several tens of explanatory and/or response variables. Questions about gene expression and community composition, for example, can lead to data with many response variables. Such data is sometimes termed *multivariate* data, and working with such data is a whole other world of data and statistical analyses methods. Ordination is a common foundation and good starting point for such analyses, and so would be a good place for you to start looking. Principle component analysis is a good starting place therein. By the way, the functions for working with multivariate data usually require wide-format datasets and are more informative if datasets have named rows. If you need to get into this world, please look at the further information on the Insights companion website (http://insightsfromdata.io).
+Our analyses have had relatively few explanatory variables, and one response variable. Relatively common, however, is to have several, even several tens of explanatory and/or response variables. Questions about gene expression and community composition, for example, can lead to data with many response variables. Such data is sometimes termed *multivariate* data, and working with such data is a whole other world of data and statistical analyses methods. Ordination is a common foundation and good starting point for such analyses, and so would be a good place for you to start looking. *Principle component analysis* is a good starting place therein. By the way, the functions for working with multivariate data often require wide-format datasets and are more informative if datasets have named rows. (Please let us know if you would like a worked example of PCA and we will endeavour to get one here as soon as possible.)
 
 ## Influence and outliers {#influence-outliers}
 
@@ -111,6 +48,8 @@ Transforming variables, e.g. by taking the logarithm of the values and working w
 
 
 ## Non-independence {#non-independence}
+
+Here we take a bit of a deeper dive into non-independence than is presented in the book.
 
 ```{r results='hide', message=FALSE, warning=FALSE, echo=FALSE}
 # Load the libraries we use
@@ -286,34 +225,21 @@ bats %>%
             skewness_wingspan = e1071::skewness(Wingspan_mm, na.rm = TRUE))
 ```
 
-## Modes of data analysis
-
-Talk about these three:
-* Exploration of patterns
-* Prediction of patterns
-* Confirmation of causes
-Look here for inspiration, of some kind.
-https://dynamicecology.wordpress.com/2013/10/16/in-praise-of-exploratory-statistics/
-
-
 ## Interoperability / standardising terms {#interoperability}
 
-Countries in the fao polity study
+When we have two or more datasets, and if we wish to combine them and make reliable insights from the combination, we will need one or more variables that are common to both datasets. Such common variables allow us to merge/join the datasets together, i.e. to relate them to each other. When we have such common variables, we can say that the datasets are *interoperable*.
 
-https://www.r-bloggers.com/taxadb-a-high-performance-local-taxonomic-database-interface/
+However, we might see that we have a variable in each dataset called "Country", but that different country naming schemes are used in each dataset. This is what experience in the "Food diversity - Polity Workflow demonstration". It was then a rather painful process to make the two datasets interoperable. So, if you can, it is really really good to use a standard scheme for naming things. That might be a ISO, or a published meta-data scheme.
 
-### 
-
-Explain "semantic standards"
-
-It's certainly nice to know that we accurately entered the prey species names, in the sense that they match the names of known prey species. Doing so will also ensure that our results could be compared with and combined with other studies of moth species (put another way, we would have assured our data are *interoperable* with other studies involving these moth species). To do this, we can use a very nice set of packages that make the whole process a total breeze. Let's try this for the first ten species in the dataset. Note that the first line below installs the __taxize__ add-on package, and is commented out as we only need to run it once).
+Another example of standard names is in the bats dataset... the latin species names. When we prepare a dataset such as this for research purposes, it would be a very good idea to check the entered species names against a standard database of know species names. I.e. it's good to know that we accurately entered the prey species names, in the sense that they match the names of known prey species. Doing so will also ensure that our results could be compared with and combined with other studies of moth species (put another way, we would have assured our data are *interoperable* with other studies involving these moth species). To do this, we can use a set of packages that make the whole process a breeze. Let's try this for the first ten species in the dataset. Note that the first line below installs the __taxize__ add-on package, and is commented out as we only need to run it once).
 
 ```{r eval = FALSE}
 # install.packages("taxize")
 # the previous line was commented out. Uncomment it by removing
 # the # if you want to run it.
 library(taxize) # load the package
-some_species_names <- slice(dd, 1:10) %>%
+some_species_names <- bats %>%
+  slice(1:10) %>%
   pull(Species) # get first ten species
 # query the online database of species names
 species_names_reports <- gnr_resolve(some_species_names,
@@ -321,7 +247,9 @@ species_names_reports <- gnr_resolve(some_species_names,
 species_names_reports
 ```
 
-In this report, the final column gives a quick indication of how well the moth species name in the dataset matched a known species name. A score of 1 is the highest match, 0 is the lowest. This tells us that *Ethmia bipunctella* and *Bradycellus verbasci* in the dataset correspond to known species---their matching score in the final column is 0.988. The third species in the dataset, however is *Hoplodrina ambigua/ superstes* and cannot be well matched to an individual known species---it has a score of 0.75. Likely this entry in the dataset corresponds with the text in the paper "When the same haplotype matched more than one species, we ... classified them into a species group". I.e. *H. ambigua* and *H. superstes* could not be distinguished and so were treated as a species group. (It takes a while to make these queries, so we don't run one for every moth species name in the dataset.) There is lots more one can do with species names, but it's a bit beyond the scope of this book, so we now move on.
+In this report, the final column gives a quick indication of how well the moth species names in the dataset matched a known species name. A score of 1 is the highest match, 0 is the lowest. This tells us that *Ethmia bipunctella* and *Bradycellus verbasci* (among others) in the dataset correspond to known species---their matching score in the final column is 0.988. The third species in the dataset, however is *Hoplodrina ambigua/ superstes* and cannot be well matched to an individual known species---it has a score of 0.75. Likely this entry in the dataset corresponds with the text in the paper "When the same haplotype matched more than one species, we ... classified them into a species group". I.e. *H. ambigua* and *H. superstes* could not be distinguished and so were treated as a species group. (It takes a while to make these queries, so we don't run one for every moth species name in the dataset.)
+
+To sum up and put this interoperability issue in context... we mentioned the FAIR Principles. The I stands for Interoperable. Without it we will not be able to relate dataset to each other, and get all the amazing and important insights that can come from doing so.
 
 
 
@@ -330,7 +258,9 @@ In this report, the final column gives a quick indication of how well the moth s
 
 ## Comparing descriptive statistics
 
-Until now we have been focusing on plots that display either the raw data (e.g. scatter plots), or a summary of the raw data that captures as much detail as possible (e.g. histograms and box plots). We've tended to treat descriptive statistics like the sample mean as 'a number' to be examined in isolation. These are often placed in the text of a report or in a table.
+*This section shows how to make a bar graph showing two means. We strongly recommend to instead show the data, or summaris that include more information about the distritbuion of the data, such as box and whisker plots. Bar graphs are, however, so common, that we thought to show how they can be made, if one really wants to.*
+
+In the Insights book we focus on graphs that display either the raw data (e.g. scatter plots), or a summary of the raw data that captures as much detail as possible (e.g. histograms and box and whisker plots). We've tended to treat descriptive statistics like the sample mean as 'a number' to be examined in isolation. These are often placed in the text of a report or in a table.
 
 There is, however, nothing to stop us visualising a set of means (or any other descriptive statistics) and a figure is much more informative than than a table. Moreover, many common statistical tools focus on a few aspects of sample distributions (e.g. means and variances) so it's a good idea to plot these.
 
