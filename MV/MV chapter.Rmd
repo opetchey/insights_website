@@ -1,32 +1,77 @@
-## Using multivariate data to answer biological questions
+---
+title: "MV chapter"
+author: "Owen Petchey"
+date: "11/17/2020"
+output: html_document
+---
 
-### Introduction
+# Using multivariate data to answer biological questions
 
-All of the biological questions we so far addressed were univariate, in the sense that analysis of only one response variable was enough. Many kinds of biological question involve multiple response variables, however, and these are multivariate problems. They require multivariate data, methods for visualizing multivariate data, and methods for analyzing it. This chapter covers the three issues.
+## Introduction
 
-Consider the question of how human skull shape has changed during the last few millennia. If we measured any single dimension of a skull, for example, maximum breadth, this question about shape would be beyond us. We might find that maximum breadth had increased, but this could be associated with increases in every measurement. Such a finding would indicate that skulls had increased in size, but not changed in shape. But with only one measurement, we could not know.
+The questions addressed in Insights and on the companion website could all be answered by looking at one response variable at a time. Another way of saying this is that they were *univariate*: exploration of only one response variable at a time was enough. We did not look at relationships among response variables.
+
+Many kinds of biological question involve simultaneous consideration of multiple response variables, however. These are *multivariate* problems. They require multivariate data, methods for visualizing multivariate data, and methods for analyzing it. This chapter covers the three issues.
+
+Consider the question of how human skull shape has changed during the last few millennia. If we measured any single dimension of a skull, for example, maximum breadth, this question about shape would be beyond us. We might find that maximum breadth had increased, but this could be associated with increases in every skull dimension. Such a finding would indicate that skulls had increased in size, but not changed in shape.  With only one measurement, we could not know.
 
 The same applies for the question of how environmental temperature relates to community composition, though we have to be careful about what we mean by community composition. If we define community composition as the abundances of each of the species in a community, then clearly this is a multivariate question. We cannot address such a question if we measure the abundance of only one species. We need to measure the abundances of all the species in the community that interest us, and then explore and analyse this multivariate dataset.
 
-What other types of question are intrinsically multivariate? Questions about environmental effects on life history evolution are multivariate if we choose to interest ourselves simultaneously in multiple life history traits (e.g., behavioural, morphological, and phenological traits). Question about variation in genetic composition among individuals, and variation in variation in gene expression can be multivariate questions, since organisms have many genes. Make a list of other biological questions that require measurement and analysis of multiple response variables.
+What other types of question are intrinsically multivariate?
 
-Consider the example questions above, and note that all questions are about if variability in response variables is associated with variability in explanatory variables. Make sure the questions in your list are of the same nature. Then note that your explanatory and response variables could come from an observational or experimental study. Hence, there seems no need for us to think that univariate methods are better for analyzing experiments, and multivariate for analyzing observational studies. What is important, as always, is careful formulation of specific hypotheses and predictions, such that one does not become involved in a fishing expedition (looking for patterns, with few or no expectations).
-Safe in the knowledge that questions exist that require multivariate data and associated methods, let us proceed practically, with the question of whether and how human skull shape has changed over the last few millennia. The dataset we will analyse contains measurements of four skull dimensions (figure 1). We also have, in a separate dataset an estimate of era from when the skulls came.
+* Questions about environmental effects on life history evolution are multivariate if we choose to interest ourselves simultaneously in multiple life history traits (e.g., behavioural, morphological, and phenological traits).
+* Question about variation in genetic composition among individuals, and variation in variation in gene expression can be multivariate questions, since organisms have many genes.
 
+Make a list of other biological questions that require measurement and analysis of multiple response variables.
 
+Consider the example questions above, and note that all questions are about if variability in response variables is associated with variability in explanatory variables. Make sure the questions in your list are of the same nature. Then note that your explanatory and response variables could come from an observational or experimental study. Hence, there seems no need for us to think that univariate methods are better for analyzing experiments, and multivariate for analyzing observational studies. What is important, as always, is careful formulation of specific hypotheses and predictions, such that one does not become unintentionally involved in a fishing expedition (looking for patterns, with few or no expectations).
 
+Safe in the knowledge that questions exist, which require multivariate data and associated methods, let us proceed practically, with the question of whether and how human skull shape has changed over the last few millennia. The dataset we will analyse contains measurements of 150 skulls. Four morphological measurements were made of each skull  (\@ref(fig:skull-dimensions) and the millenium in which the person/skull lived is also in the dataset.
+
+```{r skull-dimensions, fig.cap='Skull dimensions measured', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("images/skull_dims.png")
+```
+
+We will use this dataset to illustrate and discuss the following:
+
+*	Importing multivariate data.
+*	Manipulating multivariate data in R (e.g., switching between “wide” and “long” format).
+*	Multivariate data exploration / visualization.
+*	Visualisation.
+*	Rotating data clouds (i.e., ordination).
+*	Hypothesis testing multivariate data.
+
+This material covers only a fraction of all the available and possible types of multivariate analysis. Furthermore, with one simple question and example datasets, we give only one illustration of the methods we do cover. This is because our intention is to give you enough information to feel confident that you have the basics in hand, and to then leap into the world of multivariate methods, learning what you need as you need it.
+
+## Lets get started
+
+Please prepare an RStudio Project and folder for this project, and create within this folder a folder named *data* into which you will put the datafile.
+
+And now set up R:
+
+```{r}
 rm(list=ls())
 
 library(tidyverse)
+library(vegan)
+```
 
-## Import the dimensions data and make the
-## rownames come from the first column, which is
-## in the dataset is the skull id (unique skull id)
+Now get [the skulls dataset](https://raw.githubusercontent.com/R4All/datasets/master/skulls.csv). Put it in your data folder, and import the data, and have a look at it in R:
+
+```{r}
 skulls <- read_csv("data/skulls.csv")
-
-## look at the structure of the data
+skulls
 glimpse(skulls)
+```
 
+
+```{r}
+has_rownames(skulls)
+skulls <- column_to_rownames(skulls, var = "skull.ID")
+```
+
+
+```{r}
 ## look at the rownames of the data
 rownames(skulls)
 
@@ -589,7 +634,3 @@ panel.cor <- function(x, y, digits=2, prefix="", cex.cor, ...)
     text(0.5, 0.5, txt, cex = cex.cor * r)
 }
 pairs(skulls[,c(-1)], lower.panel=panel.smooth, upper.panel=panel.cor)
-
-
-
-
