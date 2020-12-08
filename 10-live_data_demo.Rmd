@@ -32,7 +32,7 @@ Why this question? Reaction times are important, safety, sport...
 
 What do you expect? Hands up if you think there will be no difference between men and women. Hands up if you think men will be slower. Hands up if you think women will be slower.
 
-We can have a look on the internet, and pretty easily find lots of studies of reaction times and gender (e.g., [A comparative study of visual and auditory reaction times on the basis of gender and physical activity levels of medical first year students](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4456887/) (by the way, we may later in the course critique this paper).
+We can have a look on the internet, and pretty easily find lots of studies of reaction times and sex (e.g., [A comparative study of visual and auditory reaction times on the basis of sex and physical activity levels of medical first year students](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4456887/) (by the way, we may later in the course critique this paper).
 
 Generally, we see that males tend to have faster reaction times than females. So we expect that to be the same for students at the University of Zurich.
 
@@ -42,7 +42,7 @@ Given that you know this pattern, and you are the subjects, its interesting to s
 
 Thinking backwards from how we present the final results, can often be quite useful.
 
-I think a nice box and whisker plot will work here [sketch on a black/whiteboard)]. We will have two groups of reaction times. Put another way, we will have one explanatory variable (gender) and one response variable (reaction time). The explanatory variable gender is a categorical / discrete variable. The response variable is continuous.
+I think a nice box and whisker plot will work here [sketch on a black/whiteboard)]. We will have two groups of reaction times. Put another way, we will have one explanatory variable (Sex) and one response variable (reaction time). The explanatory variable Sex is a categorical / discrete variable. The response variable is continuous.
 
 We expect the distribution of male reaction times to be have a lower mean than the distribution of female reaction times.
 
@@ -50,7 +50,7 @@ We will look at this graph, and answer our question (wow, without any statistica
 
 ## What statistical test will we use?
 
-Reaction times (the response variable) we expect to be quite normally distributed [briefly explain what this means], though cannot be negative. Gender will be categorical with two levels (male and female). We don't expect greater or less variation in reaction times among males compared to among females.
+Reaction times (the response variable) we expect to be quite normally distributed [briefly explain what this means], though cannot be negative. Sex will be categorical with two levels (male and female). We don't expect greater or less variation in reaction times among males compared to among females.
 
 Based on these expectations, we will use a linear model, which assumes normally distributed residuals and equal variances among groups. The traditional name for the test is the T-test.
 
@@ -81,7 +81,7 @@ Do the reaction time test with your preferred hand and write down your reaction 
 
 While you're there, also please do the other three tests, and write down your score. We don't need these for our current question about reaction times, but we might look at this data later in the course.
 
-Now go to this web page: https://goo.gl/forms/dUe9jIUEDkFqClaG2 [*Instructors: make a copy of this and replace the link here with one to your copy*] and enter your ID, gender, and scores. Please be careful!
+Now go to this web page: https://goo.gl/forms/dUe9jIUEDkFqClaG2 [*Instructors: make a copy of this and replace the link here with one to your copy*] and enter your ID, sex, and scores. Please be careful!
 
 Go ahead and do all that.
 
@@ -123,7 +123,7 @@ class_RTs
 
 ```{r}
 # Must be very careful to get the next line right!!! Really important!!!
-names(class_RTs) <- c("Timestamp", "ID", "Gender", "Pref_Reaction_time_1",
+names(class_RTs) <- c("Timestamp", "ID", "Sex", "Pref_Reaction_time_1",
                       "Verbal_memory_score", "Number_memory_score",
                       "Visual_memory_score",
                       "Weight_kgs", "Handed", "Nonpref_Reaction_time_ave",  "Pref_Reaction_time_2",
@@ -136,7 +136,7 @@ class_RTs
 
 * Timestamp should be a character
 * ID should be a character
-* Gender should be a character
+* Sex should be a character
 * The remaining four variables should be numeric (<dbl> if fractional, <int> if whole numbers).
 
 ```{r}
@@ -162,9 +162,9 @@ class_RTs <- type_convert(class_RTs)
 ```
 
 
-### Check numbers of data points in each gender
+### Check numbers of data points in each sex
 ```{r}
-table(class_RTs$Gender)
+table(class_RTs$Sex)
 ```
 
 
@@ -194,24 +194,24 @@ ggplot() +
   geom_histogram(data = class_RTs, aes(x=Pref_Reaction_time))
 ```
 
-Separate histograms for each gender:
+Separate histograms for each sex:
 ```{r, message=FALSE}
 ggplot() +
   geom_histogram(data = class_RTs, aes(x=Pref_Reaction_time)) +
-  facet_wrap(~ Gender)
+  facet_wrap(~ Sex)
 ```
 
 A box and whisker plot:
 ```{r, message=FALSE}
 ggplot() +
-  geom_boxplot(data = class_RTs, aes(x=Gender, y=Pref_Reaction_time)) 
+  geom_boxplot(data = class_RTs, aes(x=Sex, y=Pref_Reaction_time)) 
 ```
 
 Or just the data points (with some jitter, to separate overlapping points):
 ```{r, message=FALSE}
 ggplot() +
   geom_jitter(data = class_RTs,
-              aes(x=Gender, y=Pref_Reaction_time),
+              aes(x=Sex, y=Pref_Reaction_time),
               width=0.05)
 ```
 
@@ -219,7 +219,7 @@ What do we think about the three things? Any likely errors? How is the data dist
 
 ## Get the means
 ```{r}
-class_RTs %>% group_by(Gender) %>%
+class_RTs %>% group_by(Sex) %>%
   summarise(mean_RT=mean(Pref_Reaction_time),
             sd_RT=sd(Pref_Reaction_time))
 ```
@@ -239,7 +239,7 @@ Before we even start to think about running a statistical test, we must check if
 
 The t-test assumes that observations are independent.
 
-How was the data collected (hopefully not one gender on one day, and the other on another day, or something similarly confounding)?
+How was the data collected (hopefully not one sex on one day, and the other on another day, or something similarly confounding)?
 
 Do we have more than one observation per subject? Not in this case, because you typed in the average. But we could have. Then the observations from the same individual would not be independent of each other. They would share in common the person they originated from. This would make the statistical test unreliable. Its something we'll look more closely at later in the course.
 
@@ -267,7 +267,7 @@ Before we go on, there is something very important we should figure out, and we 
 There will be learning about this later in the course. For now, know that for a t-test the degrees of freedom are the number of observations minus two. Here that is [r nrow(class_RTs)] - 2 (= [r nrow(class_RTs)-2]). This is really important to figure out in advance, as its a great way to check that R is doing the test we think we're telling it to do.
 
 ```{r}
-my_ttest <- t.test(Pref_Reaction_time ~ Gender, data=class_RTs, var.equal=TRUE)
+my_ttest <- t.test(Pref_Reaction_time ~ Sex, data=class_RTs, var.equal=TRUE)
 my_ttest
 ```
 
@@ -307,7 +307,7 @@ The aim here is to make a beautiful graph that very clearly communicates the fin
 ```{r}
 ggplot() +
   geom_boxplot(data = class_RTs,
-               aes(x=Gender, y=Pref_Reaction_time)) +
+               aes(x=Sex, y=Pref_Reaction_time)) +
   ylab("Reaction time (seconds)")
 ```
 

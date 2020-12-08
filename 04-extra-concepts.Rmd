@@ -28,7 +28,7 @@ When planning a study it is worthwhile to calculate the *statistical power* that
 
 ## Effect sizes
 
-We found that a difference in mean prey size of about 5 mm between female and male bats. Therefore we would say that the effect sizes of gender is 5 mm. It is  important to maintain a clear focus on effect sizes (and once you move onto statistics, a measure of certainty in the effect size, e.g. a confidence interval). You will almost certainly be exposed to p-values, but please retain attention and focus on effect sizes. That said, also be always aware that use of the term "effect size" is in no way used to indicate a *causal* effect has been demonstrated (and is therefore in some senses an innapropriate term to use).
+We found that a difference in mean prey size of about 5 mm between female and male bats. Therefore we would say that the effect sizes of sex is 5 mm. It is  important to maintain a clear focus on effect sizes (and once you move onto statistics, a measure of certainty in the effect size, e.g. a confidence interval). You will almost certainly be exposed to p-values, but please retain attention and focus on effect sizes. That said, also be always aware that use of the term "effect size" is in no way used to indicate a *causal* effect has been demonstrated (and is therefore in some senses an innapropriate term to use).
 
 ## Ordination
 
