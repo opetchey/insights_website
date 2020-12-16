@@ -1,8 +1,3 @@
-
-
-**At least say how we could improve country name matching. And that this is an interoperability issue...**
-
-
 #  Are diets more diverse in more democratic countries? {#WFD-food-pol}
 
 <img src="images/WF3_icon.jpg" width="60"/>

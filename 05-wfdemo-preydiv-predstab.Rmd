@@ -1,6 +1,6 @@
 # How does dietary diversity affect populations?  {#WFD-dietdiv-effect}
 
-<img src="images/CS2_icon.jpg" width="60"/>
+<img src="images/WF2_icon.jpg" width="60"/>
 
 ## About this Workflow Demonstration
 

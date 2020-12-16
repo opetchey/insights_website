@@ -1,6 +1,8 @@
 
 #  What are the effects of dietary restriction? {#WFD-diet-restrict}
 
+<img src="images/WF4_icon.jpg" width="60"/>
+
 
 ```{r message=FALSE, echo=TRUE, warning=FALSE}
 # Load the libraries we use
