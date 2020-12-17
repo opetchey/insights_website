@@ -264,7 +264,7 @@ Another way to quantify uncertainty, is to give the difference in the means of t
 We'll do this with a T-test, as we already planned.
 Before we go on, there is something very important we should figure out, and we should do this every time before we run a statistical test. Figure out the degrees of freedom.
 
-There will be learning about this later in the course. For now, know that for a t-test the degrees of freedom are the number of observations minus two. Here that is [r nrow(class_RTs)] - 2 (= [r nrow(class_RTs)-2]). This is really important to figure out in advance, as its a great way to check that R is doing the test we think we're telling it to do.
+There will be learning about this later in the course. For now, know that for a t-test the degrees of freedom are the number of observations minus two. Here that is `r nrow(class_RTs) - 2`. This is really important to figure out in advance, as its a great way to check that R is doing the test we think we're telling it to do.
 
 ```{r}
 my_ttest <- t.test(Pref_Reaction_time ~ Sex, data=class_RTs, var.equal=TRUE)
@@ -304,7 +304,7 @@ We should write a sentence that gives the direction and extent of difference, an
 
 The aim here is to make a beautiful graph that very clearly communicates the findings! This doesn't mean "fancy" and or "complex". Often simpler is better. Getting the basic right is essential, of course.
 
-```{r}
+```{r eval = FALSE}
 ggplot() +
   geom_boxplot(data = class_RTs,
                aes(x=Sex, y=Pref_Reaction_time)) +

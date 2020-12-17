@@ -45,11 +45,13 @@ lapply(c('DT', 'citr', 'formatR', 'svglite'), function(pkg) {
 knitr::opts_chunk$set(cache = FALSE)
 ```
 
-<img src="images/InsightsCoverSmall" width="60"/>
+<img src="images/InsightsCoverSmall.png" width="60"/>
 
 *Welcome!* to the Companion Website for the book *Insights from Data with R -- An Introduction for the Life and Environmental Sciences*
 
-The Preface Chapter [here is a PDF of the Preface Chapter](Preface?) of *Insights* describes features of the book, such as its aims, content, structure, intended readership, and relationship to our other book *Getting Started with R*. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in *Insights* and why. 
+*Insights* was authored by the members of [R4ALL](http://r4all.org/), an organisation specialising in teaching R to those who’ve never used it. And to folk using R already but want to improve their foundation and workflow.
+
+The Preface Chapter of *Insights* [here is a PDF of the Preface Chapter](Preface?) of *Insights* describes features of the book, such as its aims, content, structure, intended readership, and relationship to our other book *Getting Started with R*. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in *Insights* and why. 
 
 On this Companion Website you will find information additional to that in the book:
 
@@ -66,7 +68,7 @@ On this Companion Website you will find information additional to that in the bo
 (@) [More datasets](#more-datasets) that could be developed into new Workflow Demonstrations (perhaps for students to practice with and/or instructors to use).
 (@) Some [Related reading](#related-reading).
 (@) Answers to the questions that accompany each Chapter.
-
+(@) Any corrections to the published edition of the book.
 
 
 
