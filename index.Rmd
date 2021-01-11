@@ -51,7 +51,9 @@ knitr::opts_chunk$set(cache = FALSE)
 
 *Insights* was authored by the members of [R4ALL](http://r4all.org/), an organisation specialising in teaching R to those who’ve never used it. And to folk using R already but want to improve their foundation and workflow.
 
-The Preface Chapter of *Insights* [here is a PDF of the Preface Chapter](Preface?) of *Insights* describes features of the book, such as its aims, content, structure, intended readership, and relationship to our other book *Getting Started with R*. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in *Insights* and why. 
+The Preface Chapter of *Insights* [here is a PDF of the Preface Chapter](assets/Insights_Preface.pdf) describes features of the book, such as its aims, content, structure, intended readership, and relationship to our other book *Getting Started with R*. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in *Insights* and why.
+
+[The table of contents of *Insights* as a pdf.](assets/Insights_ToC.pdf).
 
 On this Companion Website you will find information additional to that in the book:
 
