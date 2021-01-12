@@ -12,3 +12,5 @@ data/Macro-Statistics_Key_Indicators_E_All_Data.csv
 .DS_Store
 insights_website_cache
 insights_website_files
+*.rdx
+_book/additional-next-step-concepts.html

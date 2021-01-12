@@ -38,8 +38,6 @@ lapply(c('DT', 'citr', 'formatR', 'svglite'), function(pkg) {
 })
 ```
 
-# Pre-release information about the book
-
 # Introduction
 
 ```{r echo=FALSE}
