@@ -1,7 +1,7 @@
 ---
 title: "Companion Website --- Insights from Data with R"
 subtitle: "An Introduction for the Life and Environmental Sciences"
-author: "Owen Petchey, Andrew Beckerman, Natalie Cooper, Dylan Childs"
+author: "Petchey, Beckerman, Cooper, Childs"
 date: "`r Sys.Date()`"
 knit: "bookdown::render_book"
 documentclass: krantz
@@ -29,7 +29,7 @@ options(
 local({
   r = getOption('repos')
   if (!length(r) || identical(unname(r['CRAN']), '@CRAN@'))
-    r['CRAN'] = 'https://cran.rstudio.com' 
+    r['CRAN'] = 'https://cran.rstudio.com'
   options(repos = r)
 })
 
@@ -38,6 +38,7 @@ lapply(c('DT', 'citr', 'formatR', 'svglite'), function(pkg) {
 })
 ```
 
+# Pre-release information about the book
 
 # Introduction
 
@@ -73,8 +74,3 @@ On this Companion Website you will find information additional to that in the bo
 (@) Some [Related reading](#related-reading).
 (@) Answers to the questions that accompany each Chapter.
 (@) Any corrections to the published edition of the book.
-
-
-
-
-
