@@ -1,0 +1,208 @@
+
+#  What are the effects of dietary restriction? {#WFD-diet-restrict}
+
+<img src="images/WF4_icon.jpg" width="60"/>
+
+
+```{r message=FALSE, echo=TRUE, warning=FALSE}
+# Load the libraries we use
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(stringr)
+library(lubridate)
+library(skimr)
+library(tidyr)
+library(ggbeeswarm)
+library(taxize)
+library(broom)
+library(forcats)
+```
+
+## About this Workflow Demonstration
+
+This Workflow Demonstation (WD) is primarily a supplement to the material in the book *Insights from Data with R* by Petchey, Beckerman, Childs, and Cooper. If you don't understand something here, have a look at that book (perhaps again), or search for help, or get in touch with us.
+
+At the time of publication (early 2021) there are likely some improvements that could be made to this demonstration, in terms of the description of what we do in it, why we do it, and how we do it. If anything seems odd, unclear, or sub-optimal, please don't hesitate to get in touch, and we will quickly make improvements.
+
+<img src="images/WF4_icon.jpg" width="60"/>
+
+## Introduction
+
+In this final Workflow Demonstration we, your instructors take a step back, and invite you to be more independent. In fact, we ask you, perhaps even demand more independence. In a sense then, this is less of a Workflow Demonstration, and more of a Workflow Challenge. We will outline the overall task, and then give a list of things for you to do, with some hints. (And we give the solutions, though in concise fashion.)
+
+## The question
+
+For this Workflow Challenge we turn to published data from a study of the effects of dietary restriction (DR). For some general background on dietary restriction, please look here https://www.nia.nih.gov/health/calorie-restriction-and-fasting-diets-what-do-we-know
+
+The particular study we work with is described in the article *Reconciling nutritional geometry with classical dietary restriction: effects of nutrient intake, not calories, on survival and reproduction.* Moatt JP, Fyfe MA, Heap E, Mitchell LJM, Moon F, Walling CA (2018) Aging Cell, Volume 18, e12868. The article is here https://doi.org/10.1111/acel.12868. And the data is here: https://doi.org/10.5061/dryad.g12p0j2
+
+The Abstract of the article reads: "Here, using a novel nonmodel vertebrate system (the stickleback fish, *Gasterosteus aculeatus*), we test the effect of macronutrient versus calorie intake on key fitness‐related traits, both using the GF and avoiding dietary dilution. We find that the intake of macronutrients rather than calories determines both mortality risk and reproduction. Male mortality risk was lowest on intermediate lipid intakes, and female risk was generally reduced by low protein intakes. The effect of macronutrient intake on reproduction was similar between the sexes, with high protein intakes maximizing reproduction."
+
+**Important**: There are two available versions of some of the datasets for this study. Some of the original (non-updated) versions contained some very minor errors that the researchers then corrected. In this Workflow Challenge we first ask you to find the errors in the original datasets, and then to check the updated datasets do not contain them errors, and to then continue with those updated datasets.
+
+**Important**: The findings presented in the original paper are robust to the small differences between original and updated versions of the datasets.
+
+## Before working in R
+
+**Be clear about the general question:** How does diet composition and amount of food individually and in combination affect individual characteristics related to health and fitness?
+
+There is an awful lot we could look at in this study, so lets narrow down a bit further by telling you to focus on the following response variables individual characteristics:
+
+* Fitness: "mortality"
+* Fitness: "reproductive behaviour (time spent courting)"
+* Fitness: "Female reproduction (total egg production)"
+* Health: "We use change in fish length as our measure of growth."
+* Health: "As a proxy for overall health, we use body condition index, which is a measure of the weight of an individual relative to its length"
+
+Q1. What type of variables (e.g. binary, discrete, numeric, continuous) would you expect these to be?
+
+## What was the experimental design?
+
+Read the paper and answer the following questions:
+
+Q2. How many fish were experimented on, and how many of each sex?
+Q3. What exactly was manipulated? I.e. how many treatments were there, and how many treatment combinations.
+
+## What are the features of the data?
+
+Write something about each of the important features of a dataset (i.e. number of variabels, number of observations, variables describing manipulations, correlations among variables, independence of observations). You may wish to come back to this question after having a look at the data, but you already know a fair amount about them.
+
+## Acquire and import the necessary datafiles.
+
+**Important**: do not use the versions of the datafiles that have the word "udpated" in their name. We will look at those later.
+
+Q5. Have a look at the data files on the dryad repository. Which data files are required for which response variables you are focusing on?
+
+
+
+
+##  Explore and understand the datafiles
+
+Q6. Look at the `data file key` word document in the dryad repository. Which variables tell us about the experimental design (including the explantory variables) and when observations were made?
+
+Q7. Which variables in which dataset can be used to calculate each of the five response variables?
+
+* Mortality: `status`, 0 = alive, 1 = Dead, in `Moatt_et_al_Data_S1.csv`
+* Time spent courting: `Total_court` – Total time courting across all trials, in `Moatt_et_al_Data_S5.csv`.
+* Female reproduction egg production: `Total_egg` – Total number of eggs produced, in `Moatt_et_al_Data_S6.csv`.
+* Change in fish length: Ln – Length of individual in mm, in `Moatt_et_al_Data_S15.csv`. 
+* Body condition index: CI – Condition Index for each individual, `Moatt_et_al_Data_S15.csv`. 
+
+
+Q8. How many rows are in each dataset?
+
+* `Moatt_et_al_Data_S1.csv`:  33'049 rows, 24 variables
+* `Moatt_et_al_Data_S5.csv`: 228, 16
+* `Moatt_et_al_Data_S6.csv`: 269, 14
+* `Moatt_et_al_Data_S15.csv`:6000, 18
+
+## Check the data import
+
+Check that the number of rows and columns are as expected.
+Check variable types are as expected.
+Check for dates and fix as appropriate.
+
+Q9. Which of the datasets are tidy and which are not?
+
+## Make more informative variable names (and discard variables not obviously of use):
+
+Q10. Rename the following variables to be more intepretable:
+
+* FID
+* Diet
+* Level
+* Size
+* Ln
+* Wt
+* CI
+* Week_F
+
+(Make sure you use consistent naming across the four datasets.)
+
+
+
+## Replace codes with informative words
+
+Q11. Replace codes with informative words, for at least the `Diet` variable (or what you renamed it to), the `Fish_size` variable, the `Sex` variable, and the `Status` variable. Do this identically across all the datasets.
+
+
+## Checking for duplicates
+
+Q12. which of the four datasets contains an odd duplicate entry? And which fish is involved? What should we do next?
+
+
+
+
+
+## NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of "things"
+
+Q13. How many missing values in the courtship dataset (remember to reduce the variables to those mentioned above)?
+
+Q14. Which variable(s) contain missing values in the courtship dataset?
+
+Q15. Which fish have missing values in the courtship dataset?
+
+Q16. How many different entries are there in the `Shelf_stack` variable in the courtship dataset?
+
+Q17. What are the mean and median of the `Total_court` variable?
+
+Q18. What are the units of the `Total_court` variable? (This is a trick/sneaky question.)
+
+Q19. How many fish are in each of the datasets?
+
+
+## Independence
+
+Q20. Which of the datasets contains only one observation per fish, and which contain repeated (i.e. multiple) observations of each fish?
+
+
+
+## Balance in experimental design
+
+Q21: From the description of the experiment in the paper, how many fish are there per treatment combination?
+
+
+## Calculate response variable(s) (if required)
+
+The courtship and eggs datasets already contain the response variable.
+
+Q22. Calculate the response variable for the change in fish length and change in body condition from the `length_weight_condition` dataset, and the time of death (or no death [censored]) from the `mortality` dataset.
+
+
+
+## Merge all datasets together and check for correct number of rows
+
+Q23. Merge all the datasets.
+
+Q24. Bring in and merge the diet composition dataset (`diet_comp_treatments.csv`).
+
+Q25. Reorder the `Diet_comp` variable, and make the `Prov_level` a factor with appropriate order.
+
+## Something a bit weird...
+
+Q26. There are some irregularities in this merged dataset. Can you spot them? (A hint is immediately below.)
+
+Hint: What would we expect males to not be doing, and females to not be doing?
+
+## Import the updated versions of the datasets.
+
+Q27. Now use the versions of the datafiles that have the word "udpated" in their name. And repeat below that code the necessary steps that you already performed on the non-updated data. And check there are no fish doing what they shouldn't be!
+
+## Inspect shapes (distributions)
+
+Q28. Write a few sentences about the distribution of each of the five response variables.
+
+
+## Inspect relationships
+
+
+Q29. Confirm in a graph the stated result: "Male mortality risk was lowest on intermediate lipid intakes".
+
+
+Q30. Confirm in a graph the stated result: "Female risk was generally reduced by low protein intakes."
+
+
+Q31. Confirm in a graph the stated result: "The effect of macronutrient intake on reproduction was similar between the sexes, with high protein intakes maximizing reproduction."
+
+

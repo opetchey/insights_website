@@ -1,5 +1,5 @@
 book_filename: "insights_website"
-repo: https://github.com/rstudio/bookdown/
+repo: https://github.com/opetchey/insights_website
 output_dir: _book
 before_chapter_script: "preamble.R"
 clean: [packages.bib, bookdown.bbl]

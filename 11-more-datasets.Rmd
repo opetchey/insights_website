@@ -1,0 +1,72 @@
+
+
+# More datasets {#more-questions-data}
+
+Here are several more datasets, again all about food, and due to the bias of the authors of the book, mostly analyses of diet composition of various organisms. As the book goes to press, and unless we have since added additional information below, we only give the link to the original publication and to the dataset, and we have not ourselves worked through these data. Its all up to you! But don't hesitate to get in touch if you do work through them, and if you find something odd, difficult, or even impossible.
+
+## Hungry ladybirds
+
+An analysis of what determines how fast ladybirds eat.
+
+* Original publications: https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2664.13159
+* Data: https://datadryad.org/resource/doi:10.5061/dryad.gq224h3
+
+
+## Seal suppers
+
+An analysis of what seals eat.
+
+* Original publication: https://onlinelibrary.wiley.com/doi/abs/10.1002/ece3.4474?af=R
+* Data: https://doi.org/10.5061/dryad.g23j32s
+
+## More bat poop
+
+Another analysis of bat diets. This one of data from 1'252 faecal pellets of five species of bat.
+
+* Original publication: https://onlinelibrary.wiley.com/doi/abs/10.1002/ece3.4559
+* Data:    https://doi.org/10.5061/dryad.6880rf1.
+
+## Marten isotopes
+
+Analysis of marten diets by stable isotope analysis
+
+* Original publication: https://onlinelibrary.wiley.com/doi/abs/10.1002/ece3.4559
+* Data:    https://doi.org/10.5061/dryad.6880rf1.
+
+## Snake diets
+
+* Original publication: https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/1365-2656.12972
+* Data:    https://datadryad.org/resource/doi:10.5061/dryad.8kt4675
+
+## Desert bat diets
+
+* Original publication: https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.4896
+* Data:    https://datadryad.org/resource/doi:10.5061/dryad.7j0c8dm
+
+
+## Birds eating insects
+
+* Original publication: https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.4787
+* Data:    https://datadryad.org/resource/doi:10.5061/dryad.4f1n785
+
+## Diets of predatory fish
+
+* Original publication: https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.4857
+* Data:    https://datadryad.org/resource/doi:10.5061/dryad.0jm1dt2
+
+
+
+## Cervical spine compression and MRI (not food related)
+
+* Original publication: https://doi.org/10.5061/dryad.kk653rs
+* Data: https://datadryad.org/resource/doi:10.5061/dryad.kk653rs
+
+## Lots of other datasets here:
+
+https://www.nature.com/articles/s41559-017-0458-2/tables/1
+
+and here:
+
+https://cran.r-project.org/web/packages/TH.data
+
+
