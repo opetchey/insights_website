@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Companion Website — Insights from Data with R</title>
+  <title>Chapter 11 Live data analysis demonstration | Companion Website — Insights from Data with R</title>
   <meta name="description" content="To be completed" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Companion Website — Insights from Data with R" />
+  <meta property="og:title" content="Chapter 11 Live data analysis demonstration | Companion Website — Insights from Data with R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Companion Website — Insights from Data with R" />
+  <meta name="twitter:title" content="Chapter 11 Live data analysis demonstration | Companion Website — Insights from Data with R" />
   
   <meta name="twitter:description" content="To be completed" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="insights-workflow.html"/>
+<link rel="prev" href="modelwf-scripts.html"/>
+<link rel="next" href="more-questions-data.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -401,46 +401,363 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Companion Website — Insights from Data with R</h1>
-<h2 class="subtitle"><em>An Introduction for the Life and Environmental Sciences</em></h2>
-<p class="author"><em>Petchey, Beckerman, Cooper, Childs</em></p>
-<p class="date"><em>2021-01-12</em></p>
+<div id="live-data-demo" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Live data analysis demonstration</h1>
+<p>In the first class of the first week of an <em>Introduction to Data Analysis</em> course, we lead a <em>live data analysis demonstration</em>. Within one hour we go from question to answer, including collection of some data about each of the students. We believe this demonstration helps students connect with the importance and fun of the content of the course.</p>
+<div id="introduction-for-intructors" class="section level2">
+<h2><span class="header-section-number">11.1</span> Introduction for intructors</h2>
+<p>All following sections are in the form of what one says to the students. The demo involves students entering data into a google form and then the instructor getting data from the googlesheet containing the responses. You should make a copy of the google form to use for yourself; this will mean that you also create a new google sheet of responses. You’ll need to update the relevant links below.</p>
+<p>From here on is the rough script of what we tell the students…</p>
 </div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p><img src="images/InsightsCoverSmall.png" width="60"/></p>
-<p><em>Welcome!</em> to the Companion Website for the book <em>Insights from Data with R – An Introduction for the Life and Environmental Sciences</em></p>
-<p>The book is due to be released in late February 2021. Latest information here on the related <a href="https://global.oup.com/academic/product/insights-from-data-with-r-9780198849827">Oxford University Press web page</a>.</p>
-<p><em>Insights</em> was authored by the members of <a href="http://r4all.org/">R4ALL</a>, an organisation specialising in teaching R to those who’ve never used it. And to folk using R already but want to improve their foundation and workflow.</p>
-<p>The Preface Chapter of <em>Insights</em> <a href="assets/Insights_Preface.pdf">here is a PDF of the Preface Chapter</a> describes features of the book, such as its aims, content, structure, intended readership, and relationship to our other book <em>Getting Started with R</em>. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in <em>Insights</em> and why.</p>
-<p><a href="assets/Insights_ToC.pdf">The table of contents of <em>Insights</em> as a pdf.</a>.</p>
-<p>On this Companion Website you will find information additional to that in the book:</p>
-<ol class="example" style="list-style-type: decimal">
-<li>An overview of the <a href="insights-workflow.html#insights-workflow">Insights Workflow</a>.</li>
-<li><a href="questions-exercises.html#questions-exercises">Questions and exercises</a> to work through with each chapter of the book.</li>
-<li><a href="#more-r">More topics in R</a>.</li>
-<li><a href="#more-concepts">Additional data analysis concepts</a>.</li>
-<li>An additional Workflow Demonstration: <a href="WFD-food-pol.html#WFD-food-pol">polity and food diversity</a></li>
-<li>An additional Workflow Demonstration: <a href="WFD-dietdiv-effect.html#WFD-dietdiv-effect">effects of dietary diversity on populations</a></li>
-<li>A relatively unguided workflow demonstration <a href="WFD-diet-restrict.html#WFD-diet-restrict">effects of dietary restriction on individuals</a>.</li>
-<li>An example of how one might complete the previous Workflow Demonstration.</li>
-<li><a href="modelwf-scripts.html#modelwf-scripts">Model scripts</a> for each Workflow Demonstration.</li>
-<li>Details of a <a href="live-data-demo.html#live-data-demo">live data analysis demonstration</a> that can be used in the very first class of an Introduction to Data Analysis undergraduate classes. It is designed to capture the students’ interest.</li>
-<li><a href="#more-datasets">More datasets</a> that could be developed into new Workflow Demonstrations (perhaps for students to practice with and/or instructors to use).</li>
-<li>Some <a href="related-reading.html#related-reading">Related reading</a>.</li>
-<li>Answers to the questions that accompany each Chapter.</li>
-<li>Any corrections to the published edition of the book.</li>
-</ol>
+<div id="introduction-2" class="section level2 unnumbered">
+<h2>Introduction</h2>
+<p>I thought it would be good to get hands on as early as possible, and to do so for something directly relevant to yourselves. So, we’re going to attempt something quite ambitious – in the next two hours or so, we’ll go through a whole data analysis from start to end.</p>
+<p>Lets get started.</p>
+</div>
+<div id="meta-task" class="section level2">
+<h2><span class="header-section-number">11.2</span> Meta-task</h2>
+<p>Write things that you don’t understand, and need to know about in subsequent classes. We will cover these things.</p>
+</div>
+<div id="the-question-1" class="section level2">
+<h2><span class="header-section-number">11.3</span> The question</h2>
+<p>What should be our question? As always, there are some influences and some constraints.
+We should ask a question of interest to us, and of some importance.
+And we should be able to collect the data, within our current constraints, necessary to answer the question.</p>
+<p>The question we will address is “do male and female reaction times of students at the University of Zurich differ?”.</p>
+<p>Why this question? Reaction times are important, safety, sport…</p>
+</div>
+<div id="expectation" class="section level2">
+<h2><span class="header-section-number">11.4</span> Expectation</h2>
+<p>What do you expect? Hands up if you think there will be no difference between men and women. Hands up if you think men will be slower. Hands up if you think women will be slower.</p>
+<p>We can have a look on the internet, and pretty easily find lots of studies of reaction times and sex (e.g., <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4456887/">A comparative study of visual and auditory reaction times on the basis of sex and physical activity levels of medical first year students</a> (by the way, we may later in the course critique this paper).</p>
+<p>Generally, we see that males tend to have faster reaction times than females. So we expect that to be the same for students at the University of Zurich.</p>
+<p>Given that you know this pattern, and you are the subjects, its interesting to see if you women can buck the trend, perhaps by trying especially hard. Though know the men know you might do this, it probably won’t work!</p>
+</div>
+<div id="how-are-we-going-to-present-the-results" class="section level2">
+<h2><span class="header-section-number">11.5</span> How are we going to present the results?</h2>
+<p>Thinking backwards from how we present the final results, can often be quite useful.</p>
+<p>I think a nice box and whisker plot will work here [sketch on a black/whiteboard)]. We will have two groups of reaction times. Put another way, we will have one explanatory variable (Sex) and one response variable (reaction time). The explanatory variable Sex is a categorical / discrete variable. The response variable is continuous.</p>
+<p>We expect the distribution of male reaction times to be have a lower mean than the distribution of female reaction times.</p>
+<p>We will look at this graph, and answer our question (wow, without any statistical test – YES!).</p>
+</div>
+<div id="what-statistical-test-will-we-use" class="section level2">
+<h2><span class="header-section-number">11.6</span> What statistical test will we use?</h2>
+<p>Reaction times (the response variable) we expect to be quite normally distributed [briefly explain what this means], though cannot be negative. Sex will be categorical with two levels (male and female). We don’t expect greater or less variation in reaction times among males compared to among females.</p>
+<p>Based on these expectations, we will use a linear model, which assumes normally distributed residuals and equal variances among groups. The traditional name for the test is the T-test.</p>
+<p>Based on convention, and little else, we will say there is a significant difference between male and female reaction times if the observed difference has a p-value of less than 0.05.</p>
+</div>
+<div id="selection-of-subjects" class="section level2">
+<h2><span class="header-section-number">11.7</span> Selection of subjects</h2>
+<p>We usually need to very carefully select the subjects of our study. Ideally, as we’re interested in students at the University of Zurich (see the question), we would select a cross section of such students. Instead, you are going to be the subjects, and you are not representative of all students. You’re relatively young, on average, you’re studying natural sciences, etc. So we will have to be very cautious if we make statements about students at the University in general, and perhaps one might even now conclude that we can’t really answer the question.</p>
+<p>Perhaps we need the question “do male and female reaction times of biology and biomedicine students, and some others, in their second year, at the University of Zurich differ?”</p>
+</div>
+<div id="ethical-clearance-and-considerations" class="section level2">
+<h2><span class="header-section-number">11.8</span> Ethical clearance and considerations</h2>
+<p>If we aimed to publish these results, or in some other way disseminate them, we would need ethical clearance for research involving humans. We’re not, so we don’t have ethical clearance.</p>
+<p>However, please do not include any personal information in any of the data you contribute to the exercise.</p>
+</div>
+<div id="data-collection" class="section level2">
+<h2><span class="header-section-number">11.9</span> Data collection</h2>
+<p>Create for yourself a unique ID code, so that if we want to collect more data about you, we could related the reaction time data to that. Write this code down somewhere safe, keep it.</p>
+<p>Go to the <a href="http://www.humanbenchmark.com/tests/reactiontime">Human Benchmark website</a>.</p>
+<p>Do the reaction time test with your preferred hand and write down your reaction time in fractions of a second. Do the same with your non-preferred hand.</p>
+<p>While you’re there, also please do the other three tests, and write down your score. We don’t need these for our current question about reaction times, but we might look at this data later in the course.</p>
+<p>Now go to this web page: <a href="https://goo.gl/forms/dUe9jIUEDkFqClaG2" class="uri">https://goo.gl/forms/dUe9jIUEDkFqClaG2</a> [<em>Instructors: make a copy of this and replace the link here with one to your copy</em>] and enter your ID, sex, and scores. Please be careful!</p>
+<p>Go ahead and do all that.</p>
+</div>
+<div id="look-at-the-data" class="section level2">
+<h2><span class="header-section-number">11.10</span> Look at the data!</h2>
+<p>Here is the link to the datasheet containing all the data you just recorded:
+<a href="https://docs.google.com/spreadsheets/d/1utldu37ngM_9sdLxJFOxmq5MKcwLV4VS0yAT0TvWuI8/edit?usp=sharing" class="uri">https://docs.google.com/spreadsheets/d/1utldu37ngM_9sdLxJFOxmq5MKcwLV4VS0yAT0TvWuI8/edit?usp=sharing</a>
+(<em>Instructors: update this link to be for your googlesheet</em>)</p>
+<p>Lets have a look at it, see what you’ve done. (I’m scared! I know how difficult it is to enter data without making mistakes! And I have some experience of how different people are!)</p>
+</div>
+<div id="lets-get-the-data-into-our-data-analysis-software-of-choice-r-via-rstudio" class="section level2">
+<h2><span class="header-section-number">11.11</span> Lets get the data into our data analysis software of choice (R, via RStudio)</h2>
+<p>First note that Owen has gone to the responses googlesheet, and in the “File” menu, clicked on “Publish to web…” and chosen to publish as “Comma separate values”.</p>
+<p>Now we can read that web page of comma separated values into R:</p>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="live-data-demo.html#cb358-1"></a><span class="co"># First we load a required package (we need to install this if we haven&#39;t already)</span></span>
+<span id="cb358-2"><a href="live-data-demo.html#cb358-2"></a><span class="kw">library</span>(readr)</span>
+<span id="cb358-3"><a href="live-data-demo.html#cb358-3"></a><span class="co"># also we will use some other packages</span></span>
+<span id="cb358-4"><a href="live-data-demo.html#cb358-4"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb358-5"><a href="live-data-demo.html#cb358-5"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb358-6"><a href="live-data-demo.html#cb358-6"></a></span>
+<span id="cb358-7"><a href="live-data-demo.html#cb358-7"></a><span class="co"># Now read in the data, using the read_csv() function. We give it the URL of the published version of the google sheet data.</span></span>
+<span id="cb358-8"><a href="live-data-demo.html#cb358-8"></a><span class="co"># Instructors: update the url to be for your googlesheet</span></span>
+<span id="cb358-9"><a href="live-data-demo.html#cb358-9"></a>the_URL &lt;-<span class="st"> &quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vT-Uvx2LYX3APsXgjKw1XnIi-jKOi-QNAINmMu234JLvyDZezABPfO-_QnJ5ZtC3wed9pYdxs8-pyK7/pub?output=csv&quot;</span></span>
+<span id="cb358-10"><a href="live-data-demo.html#cb358-10"></a>class_RTs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(the_URL)</span>
+<span id="cb358-11"><a href="live-data-demo.html#cb358-11"></a></span>
+<span id="cb358-12"><a href="live-data-demo.html#cb358-12"></a><span class="co"># Have a look at the data in R</span></span>
+<span id="cb358-13"><a href="live-data-demo.html#cb358-13"></a><span class="co">#View(class_RTs)</span></span>
+<span id="cb358-14"><a href="live-data-demo.html#cb358-14"></a><span class="co"># or just do</span></span>
+<span id="cb358-15"><a href="live-data-demo.html#cb358-15"></a>class_RTs</span></code></pre></div>
+<pre><code>## # A tibble: 14 x 16
+##   Timestamp `Please enter t… `What was your …
+##   &lt;chr&gt;     &lt;chr&gt;            &lt;chr&gt;           
+## 1 2/12/201… owen             Male            
+## 2 2/22/201… STATGF           Female          
+## 3 2/22/201… 1616             Female          
+## 4 2/22/201… hgztgeru         Female          
+## 5 2/22/201… dfgadf           Male            
+## # … with 9 more rows, and 13 more variables: `Please
+## #   enter your weight, in kilograms.` &lt;dbl&gt;, `Are you
+## #   right handed, left handed, or
+## #   ambidextrous?` &lt;chr&gt;, `Using your PREFERRED hand
+## #   to take the test: Please enter your FIRST reaction
+## #   time in milliseconds (e.g., 326).` &lt;dbl&gt;, `Using
+## #   your PREFERRED hand to take the test: Please enter
+## #   your SECOND reaction time in milliseconds (e.g.,
+## #   326).` &lt;dbl&gt;, `Using your PREFERRED hand to take
+## #   the test: Please enter your THIRD reaction time in
+## #   milliseconds (e.g., 326).` &lt;dbl&gt;, `Using your
+## #   PREFERRED hand to take the test: Please enter your
+## #   FOURTH reaction time in milliseconds (e.g.,
+## #   326).` &lt;chr&gt;, `Using your PREFERRED hand to take
+## #   the test: Please enter your FIFTH reaction time in
+## #   milliseconds (e.g., 326).` &lt;dbl&gt;, `Using your
+## #   PREFERRED hand to take the test: Please enter your
+## #   AVERAGE reaction time in milliseconds (e.g.,
+## #   326).` &lt;dbl&gt;, `Using your NON-PREFERRED hand to
+## #   take the test: Please enter your average reaction
+## #   time in milliseconds (e.g., 326).` &lt;dbl&gt;, `Please
+## #   enter your score on the Verbal Memory test. (Use
+## #   your preferred hand to take the test.)` &lt;dbl&gt;,
+## #   `Please enter your score on the Number Memory
+## #   test. (Use your preferred hand to take the
+## #   test.)` &lt;dbl&gt;, `Please enter your score on the
+## #   Visual Memory test. (Use your preferred hand to
+## #   take the test.)` &lt;dbl&gt;, `Pick a random number from
+## #   1 to 10, and enter it.` &lt;dbl&gt;</code></pre>
+</div>
+<div id="now-we-need-to-do-some-data-wrangling-cleaning-and-tidying" class="section level2">
+<h2><span class="header-section-number">11.12</span> Now we need to do some data wrangling (cleaning and tidying)</h2>
+<div id="clean-up-the-column-variable-names" class="section level3">
+<h3><span class="header-section-number">11.12.1</span> Clean up the column / variable names:</h3>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="live-data-demo.html#cb360-1"></a><span class="co"># Must be very careful to get the next line right!!! Really important!!!</span></span>
+<span id="cb360-2"><a href="live-data-demo.html#cb360-2"></a><span class="kw">names</span>(class_RTs) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Timestamp&quot;</span>, <span class="st">&quot;ID&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Pref_Reaction_time_1&quot;</span>,</span>
+<span id="cb360-3"><a href="live-data-demo.html#cb360-3"></a>                      <span class="st">&quot;Verbal_memory_score&quot;</span>, <span class="st">&quot;Number_memory_score&quot;</span>,</span>
+<span id="cb360-4"><a href="live-data-demo.html#cb360-4"></a>                      <span class="st">&quot;Visual_memory_score&quot;</span>,</span>
+<span id="cb360-5"><a href="live-data-demo.html#cb360-5"></a>                      <span class="st">&quot;Weight_kgs&quot;</span>, <span class="st">&quot;Handed&quot;</span>, <span class="st">&quot;Nonpref_Reaction_time_ave&quot;</span>,  <span class="st">&quot;Pref_Reaction_time_2&quot;</span>,</span>
+<span id="cb360-6"><a href="live-data-demo.html#cb360-6"></a>                      <span class="st">&quot;Pref_Reaction_time_3&quot;</span>,  <span class="st">&quot;Pref_Reaction_time_4&quot;</span>, <span class="st">&quot;Pref_Reaction_time_5&quot;</span>,</span>
+<span id="cb360-7"><a href="live-data-demo.html#cb360-7"></a>                      <span class="st">&quot;Pref_Reaction_time&quot;</span>, <span class="st">&quot;Random_number&quot;</span>)</span>
+<span id="cb360-8"><a href="live-data-demo.html#cb360-8"></a>class_RTs</span></code></pre></div>
+<pre><code>## # A tibble: 14 x 16
+##   Timestamp ID    Sex   Pref_Reaction_t…
+##   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
+## 1 2/12/201… owen  Male                80
+## 2 2/22/201… STAT… Fema…              365
+## 3 2/22/201… 1616  Fema…              250
+## 4 2/22/201… hgzt… Fema…              366
+## 5 2/22/201… dfga… Male               287
+## # … with 9 more rows, and 12 more variables:
+## #   Verbal_memory_score &lt;chr&gt;,
+## #   Number_memory_score &lt;dbl&gt;,
+## #   Visual_memory_score &lt;dbl&gt;, Weight_kgs &lt;dbl&gt;,
+## #   Handed &lt;chr&gt;, Nonpref_Reaction_time_ave &lt;dbl&gt;,
+## #   Pref_Reaction_time_2 &lt;dbl&gt;,
+## #   Pref_Reaction_time_3 &lt;dbl&gt;,
+## #   Pref_Reaction_time_4 &lt;dbl&gt;,
+## #   Pref_Reaction_time_5 &lt;dbl&gt;,
+## #   Pref_Reaction_time &lt;dbl&gt;, Random_number &lt;dbl&gt;</code></pre>
+</div>
+<div id="check-the-variable-types-are-correct." class="section level3">
+<h3><span class="header-section-number">11.12.2</span> Check the variable types are correct.</h3>
+<ul>
+<li>Timestamp should be a character</li>
+<li>ID should be a character</li>
+<li>Sex should be a character</li>
+<li>The remaining four variables should be numeric (<dbl> if fractional, <int> if whole numbers).</li>
+</ul>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="live-data-demo.html#cb362-1"></a>class_RTs</span></code></pre></div>
+<pre><code>## # A tibble: 14 x 16
+##   Timestamp ID    Sex   Pref_Reaction_t…
+##   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
+## 1 2/12/201… owen  Male                80
+## 2 2/22/201… STAT… Fema…              365
+## 3 2/22/201… 1616  Fema…              250
+## 4 2/22/201… hgzt… Fema…              366
+## 5 2/22/201… dfga… Male               287
+## # … with 9 more rows, and 12 more variables:
+## #   Verbal_memory_score &lt;chr&gt;,
+## #   Number_memory_score &lt;dbl&gt;,
+## #   Visual_memory_score &lt;dbl&gt;, Weight_kgs &lt;dbl&gt;,
+## #   Handed &lt;chr&gt;, Nonpref_Reaction_time_ave &lt;dbl&gt;,
+## #   Pref_Reaction_time_2 &lt;dbl&gt;,
+## #   Pref_Reaction_time_3 &lt;dbl&gt;,
+## #   Pref_Reaction_time_4 &lt;dbl&gt;,
+## #   Pref_Reaction_time_5 &lt;dbl&gt;,
+## #   Pref_Reaction_time &lt;dbl&gt;, Random_number &lt;dbl&gt;</code></pre>
+</div>
+<div id="correct-or-exclude-problematic-data" class="section level3">
+<h3><span class="header-section-number">11.12.3</span> Correct or exclude problematic data</h3>
+<p>This section should not be necessary, as the google form allows only numeric entries in fields that should have numbers.</p>
+<p>If we have problems here, with variables of the wrong type, it probably means some of the data entry is a bit messed up.</p>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="live-data-demo.html#cb364-1"></a><span class="co"># Have to do this live!!!</span></span>
+<span id="cb364-2"><a href="live-data-demo.html#cb364-2"></a><span class="co"># e.g. to exclude observations with character entries in Reaction_time variable</span></span>
+<span id="cb364-3"><a href="live-data-demo.html#cb364-3"></a>class_RTs &lt;-<span class="st"> </span><span class="kw">filter</span>(class_RTs, <span class="op">!</span><span class="kw">is.na</span>(<span class="kw">as.numeric</span>(Pref_Reaction_time)))</span></code></pre></div>
+<p>Once fixed, we need to make the variable have the correct type</p>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="live-data-demo.html#cb365-1"></a><span class="co"># try using type_convert() from readr package.</span></span>
+<span id="cb365-2"><a href="live-data-demo.html#cb365-2"></a>class_RTs &lt;-<span class="st"> </span><span class="kw">type_convert</span>(class_RTs)</span></code></pre></div>
+</div>
+<div id="check-numbers-of-data-points-in-each-sex" class="section level3">
+<h3><span class="header-section-number">11.12.4</span> Check numbers of data points in each sex</h3>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="live-data-demo.html#cb366-1"></a><span class="kw">table</span>(class_RTs<span class="op">$</span>Sex)</span></code></pre></div>
+<pre><code>## 
+## Female   Male 
+##     10      4</code></pre>
+</div>
+<div id="check-the-number-of-observations" class="section level3">
+<h3><span class="header-section-number">11.12.5</span> Check the number of observations</h3>
+<p>Should be the same as we saw in the datasheet, which should be number of you in this classroom.</p>
+<p>The number of observations and variables is given by R in the first line of output when we type the name of the data object:</p>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="live-data-demo.html#cb368-1"></a>class_RTs</span></code></pre></div>
+<pre><code>## # A tibble: 14 x 16
+##   Timestamp ID    Sex   Pref_Reaction_t…
+##   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
+## 1 2/12/201… owen  Male                80
+## 2 2/22/201… STAT… Fema…              365
+## 3 2/22/201… 1616  Fema…              250
+## 4 2/22/201… hgzt… Fema…              366
+## 5 2/22/201… dfga… Male               287
+## # … with 9 more rows, and 12 more variables:
+## #   Verbal_memory_score &lt;chr&gt;,
+## #   Number_memory_score &lt;dbl&gt;,
+## #   Visual_memory_score &lt;dbl&gt;, Weight_kgs &lt;dbl&gt;,
+## #   Handed &lt;chr&gt;, Nonpref_Reaction_time_ave &lt;dbl&gt;,
+## #   Pref_Reaction_time_2 &lt;dbl&gt;,
+## #   Pref_Reaction_time_3 &lt;dbl&gt;,
+## #   Pref_Reaction_time_4 &lt;dbl&gt;,
+## #   Pref_Reaction_time_5 &lt;dbl&gt;,
+## #   Pref_Reaction_time &lt;dbl&gt;, Random_number &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<div id="visualise-the-data" class="section level2">
+<h2><span class="header-section-number">11.13</span> Visualise the data</h2>
+<p>When we visualise the data, we’re trying to do at least three things, and are not trying to do at least one.</p>
+<p>We’re not trying to make the most beautiful graph in the world, so we can put it in our report / presentation etc. We just want to clearly see the data.</p>
+<p>We are trying to 1) do further checks for possible errors in the data, 2) making some initial assessments of how the data is distributed, 3) see what we think is the answer to our question.</p>
+<p>A histogram of all the data:</p>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="live-data-demo.html#cb370-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb370-2"><a href="live-data-demo.html#cb370-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">data =</span> class_RTs, <span class="kw">aes</span>(<span class="dt">x=</span>Pref_Reaction_time))</span></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-203-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<p>Separate histograms for each sex:</p>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="live-data-demo.html#cb371-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb371-2"><a href="live-data-demo.html#cb371-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">data =</span> class_RTs, <span class="kw">aes</span>(<span class="dt">x=</span>Pref_Reaction_time)) <span class="op">+</span></span>
+<span id="cb371-3"><a href="live-data-demo.html#cb371-3"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>Sex)</span></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-204-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<p>A box and whisker plot:</p>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="live-data-demo.html#cb372-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb372-2"><a href="live-data-demo.html#cb372-2"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">data =</span> class_RTs, <span class="kw">aes</span>(<span class="dt">x=</span>Sex, <span class="dt">y=</span>Pref_Reaction_time)) </span></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-205-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<p>Or just the data points (with some jitter, to separate overlapping points):</p>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="live-data-demo.html#cb373-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb373-2"><a href="live-data-demo.html#cb373-2"></a><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">data =</span> class_RTs,</span>
+<span id="cb373-3"><a href="live-data-demo.html#cb373-3"></a>              <span class="kw">aes</span>(<span class="dt">x=</span>Sex, <span class="dt">y=</span>Pref_Reaction_time),</span>
+<span id="cb373-4"><a href="live-data-demo.html#cb373-4"></a>              <span class="dt">width=</span><span class="fl">0.05</span>)</span></code></pre></div>
+<p><img src="insights_website_files/figure-html/unnamed-chunk-206-1.svg" width="336" style="display: block; margin: auto;" /></p>
+<p>What do we think about the three things? Any likely errors? How is the data distributed (within and between groups)? Does it look like there is a difference in reaction times (if so, by how much on average, and which group is faster)?</p>
+</div>
+<div id="get-the-means" class="section level2">
+<h2><span class="header-section-number">11.14</span> Get the means</h2>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="live-data-demo.html#cb374-1"></a>class_RTs <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(Sex) <span class="op">%&gt;%</span></span>
+<span id="cb374-2"><a href="live-data-demo.html#cb374-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_RT=</span><span class="kw">mean</span>(Pref_Reaction_time),</span>
+<span id="cb374-3"><a href="live-data-demo.html#cb374-3"></a>            <span class="dt">sd_RT=</span><span class="kw">sd</span>(Pref_Reaction_time))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##   Sex    mean_RT sd_RT
+##   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;
+## 1 Female    322.  51.8
+## 2 Male      240.  81.7</code></pre>
+</div>
+<div id="effect-size-and-practical-importance" class="section level2">
+<h2><span class="header-section-number">11.15</span> Effect size and practical importance?</h2>
+<p>Does the difference between the means (i.e. the effect size) seem of practical importance? How does that size of difference correspond to the difference, for example, between the reaction time of an elite athlete, and a random person? How does it correspond to the difference between the reaction time of a human and a fly?</p>
+</div>
+<div id="assess-assumptions" class="section level2">
+<h2><span class="header-section-number">11.16</span> Assess assumptions</h2>
+<p>Before we even start to think about running a statistical test, we must check if the specific test we intend to run is justified. That is, we must check if the assumptions of the test are likely to be met.</p>
+<div id="independence-2" class="section level3">
+<h3><span class="header-section-number">11.16.1</span> Independence</h3>
+<p>The t-test assumes that observations are independent.</p>
+<p>How was the data collected (hopefully not one sex on one day, and the other on another day, or something similarly confounding)?</p>
+<p>Do we have more than one observation per subject? Not in this case, because you typed in the average. But we could have. Then the observations from the same individual would not be independent of each other. They would share in common the person they originated from. This would make the statistical test unreliable. Its something we’ll look more closely at later in the course.</p>
+</div>
+<div id="normally-distributed-residuals" class="section level3">
+<h3><span class="header-section-number">11.16.2</span> Normally distributed residuals</h3>
+<p>We can get a good idea about this, in this case, by looking at the distribution of the two groups of reaction times (see above). Obviously we need to have in mind some idea of what the normal distribution looks like, and how close the data have to look like one. There are quantitative tests for normality, we may look at them later.</p>
+</div>
+<div id="equal-variance" class="section level3">
+<h3><span class="header-section-number">11.16.3</span> Equal variance</h3>
+<p>The spread of the reaction times for men, and the spread for women, should be about the same.</p>
+<p>We can get a good idea about this, in this case, by looking at the distribution of the two groups of reaction times (see above). Again, we need to have in mind how similar the variance can be, without invalidating this assumption the data. There are quantitative tests for equal variance, we may look at them later.</p>
+</div>
+</div>
+<div id="do-the-statistical-test" class="section level2">
+<h2><span class="header-section-number">11.17</span> Do the statistical test</h2>
+<p>We have to do a test, or more generally, some statistics, to give some kind of assessment of certainty / uncertainty in our answer. Traditionally, this is done with a p-value, and if its lower than 0.05 we say the result is significant (i.e. the results are very consistent with no difference). If its higher than 0.05 we accept the null hypothesis that there is no difference.</p>
+<p>Another way to quantify uncertainty, is to give the difference in the means of the two groups, and a measure of certainty in this difference. If the difference between the means close to zero, and the uncertainty overlaps zero, then we conclude there is no strong difference.</p>
+<p>We’ll do this with a T-test, as we already planned.
+Before we go on, there is something very important we should figure out, and we should do this every time before we run a statistical test. Figure out the degrees of freedom.</p>
+<p>There will be learning about this later in the course. For now, know that for a t-test the degrees of freedom are the number of observations minus two. Here that is 12. This is really important to figure out in advance, as its a great way to check that R is doing the test we think we’re telling it to do.</p>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="live-data-demo.html#cb377-1"></a>my_ttest &lt;-<span class="st"> </span><span class="kw">t.test</span>(Pref_Reaction_time <span class="op">~</span><span class="st"> </span>Sex, <span class="dt">data=</span>class_RTs, <span class="dt">var.equal=</span><span class="ot">TRUE</span>)</span>
+<span id="cb377-2"><a href="live-data-demo.html#cb377-2"></a>my_ttest</span></code></pre></div>
+<pre><code>## 
+##  Two Sample t-test
+## 
+## data:  Pref_Reaction_time by Sex
+## t = 2.3, df = 12, p-value = 0.04
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##    4.488 160.812
+## sample estimates:
+## mean in group Female   mean in group Male 
+##                322.4                239.8</code></pre>
+<p>Lots of information there. We will teach you how to read this in later lectures.</p>
+<p>For now, we can find the p-value: 0.0399.
+And the difference between the means: -82.65 and the lower (4.488) and upper (160.812) 95% confidence limits on that difference.</p>
+</div>
+<div id="critical-thinking" class="section level2">
+<h2><span class="header-section-number">11.18</span> Critical thinking</h2>
+<ul>
+<li>How might the work be flawed?</li>
+<li>How might the analysis be flawed (assumptions violated)?</li>
+<li>Is the difference (i.e. effect size) small, medium, large, relative to differences caused by other factors?</li>
+<li>How general might be the finding?</li>
+<li>How do the qualitative and quantitative findings compare to those in previous studies?</li>
+<li>What could have been done better?</li>
+<li>What are the implications of the findings?</li>
+</ul>
+</div>
+<div id="report-and-communicate-the-results" class="section level2">
+<h2><span class="header-section-number">11.19</span> Report and communicate the results</h2>
+<div id="the-results-as-a-sentence" class="section level3">
+<h3><span class="header-section-number">11.19.1</span> The results as a sentence</h3>
+<p>We should write a sentence that gives the direction and extent of difference, and a measure of certainty / uncertainty in that finding. It is totally unnaceptable, though common, to just write “there was a significant difference”. If we want to give a p-value (and most people tend to expect to see one), we should remind about the statistical test used (remind because we may have already mentioned it) and give the degrees of freedom, the value of the test statistic, and the p-value.</p>
+<p><em>Insert sentence here, once we have the results.</em></p>
+</div>
+<div id="the-results-graphically" class="section level3">
+<h3><span class="header-section-number">11.19.2</span> The results graphically</h3>
+<p>The aim here is to make a beautiful graph that very clearly communicates the findings! This doesn’t mean “fancy” and or “complex”. Often simpler is better. Getting the basic right is essential, of course.</p>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="live-data-demo.html#cb379-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb379-2"><a href="live-data-demo.html#cb379-2"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">data =</span> class_RTs,</span>
+<span id="cb379-3"><a href="live-data-demo.html#cb379-3"></a>               <span class="kw">aes</span>(<span class="dt">x=</span>Sex, <span class="dt">y=</span>Pref_Reaction_time)) <span class="op">+</span></span>
+<span id="cb379-4"><a href="live-data-demo.html#cb379-4"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Reaction time (seconds)&quot;</span>)</span></code></pre></div>
+<p>Wow! That was easy.</p>
+</div>
+<div id="do-not-use-a-table" class="section level3">
+<h3><span class="header-section-number">11.19.3</span> Do not use a table</h3>
+<p>Here, a table is not necessary. The results are in the sentence and in the graph.</p>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="insights-workflow.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="modelwf-scripts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="more-questions-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
@@ -471,7 +788,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/opetchey/insights_website/blob/development/index.Rmd",
+"link": "https://github.com/opetchey/insights_website/blob/development/10-live_data_demo.Rmd",
 "text": "Edit"
 },
 "history": {

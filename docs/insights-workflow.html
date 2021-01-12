@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Companion Website — Insights from Data with R</title>
+  <title>Chapter 2 Insights Workflow | Companion Website — Insights from Data with R</title>
   <meta name="description" content="To be completed" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Companion Website — Insights from Data with R" />
+  <meta property="og:title" content="Chapter 2 Insights Workflow | Companion Website — Insights from Data with R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Companion Website — Insights from Data with R" />
+  <meta name="twitter:title" content="Chapter 2 Insights Workflow | Companion Website — Insights from Data with R" />
   
   <meta name="twitter:description" content="To be completed" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="insights-workflow.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="questions-exercises.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -401,46 +401,116 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Companion Website — Insights from Data with R</h1>
-<h2 class="subtitle"><em>An Introduction for the Life and Environmental Sciences</em></h2>
-<p class="author"><em>Petchey, Beckerman, Cooper, Childs</em></p>
-<p class="date"><em>2021-01-12</em></p>
+<div id="insights-workflow" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Insights Workflow</h1>
+<p>Here are the steps of our general workflow. It is quite common and uncontroversial. In Chapter 1 of the <em>Insights</em> book we describe the workflow and then demonstrate in detail in Chapters 3 and 4.</p>
+<p><strong>Planning and preparation steps:</strong></p>
+<ul>
+<li>Decide upon a question.</li>
+<li>Sketch a graph of a likely or possible answer. This can and should be the graph that we will use to answer the question and to communicate the answer.</li>
+<li>Do some research about what one might expect the answer to be, and why.</li>
+<li>Get feedback from experts, peers, mentors, and revise the question appropriately.</li>
+<li>Specify hypotheses.</li>
+<li>Get feedback and revise.</li>
+<li>Specify response variables, though this may have already been done in early steps.</li>
+<li>Make predictions.</li>
+<li>Design your study, including planning analyses.</li>
+<li>Get feedback and revise.</li>
+<li>Write a formal proposal in which all of the above are described. It is good practice to <a href="https://www.cos.io/initiatives/prereg">pre-register your proposal</a>.</li>
+</ul>
+<p><strong>Performing the study and getting insights steps:</strong></p>
+<ul>
+<li>Perform your study, including data collection.</li>
+<li>Backup raw data.</li>
+<li>Prepare the data (make it “research and re-use ready”).</li>
+<li>Prepare computer, R, and RStudio.</li>
+<li>Read the data into R, and refine the import as required.</li>
+<li>Tidy the data.</li>
+<li>Clean the data.</li>
+<li>Create the initial insights.</li>
+<li>Create insights about your question (i.e. answer the question).</li>
+</ul>
+<p><strong>Communicate your answer and its implications.</strong></p>
+<ul>
+<li>This step is of great importance and a whole field of its own. For example, how to give great oral presentations, and how to write great reports, are subjects about which many courses, videos, books, and blogs have been made.</li>
+</ul>
+<p>Below we go into a little more detail about some of the second set of steps (<em>Performing the study and getting insights steps</em>). These are covered in even more detail the book.</p>
+<div id="preparing-the-data" class="section level2">
+<h2><span class="header-section-number">2.1</span> Preparing the data</h2>
+<p>If you don’t know, e.g. because you did not conduct the study, then <em>before</em> importing the data files into R, be sure to inspect them in a spreadsheet program (so long as they’re not too big) and note the following:</p>
+<ul>
+<li>if multiple data files are used, which contains what.</li>
+<li>what variable names are used in the data files, and what these mean (e.g. which are response variables, which are explanatory, and what are others).</li>
+<li>the number of rows and columns in the data files.</li>
+<li>the arrangement of the data in the data file, e.g. tidy or not tidy.</li>
+<li>any obvious things to deal with (e.g. how missing values are coded, date/time information, codes that need expanding, variable/column names that will need changing).</li>
+</ul>
 </div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p><img src="images/InsightsCoverSmall.png" width="60"/></p>
-<p><em>Welcome!</em> to the Companion Website for the book <em>Insights from Data with R – An Introduction for the Life and Environmental Sciences</em></p>
-<p>The book is due to be released in late February 2021. Latest information here on the related <a href="https://global.oup.com/academic/product/insights-from-data-with-r-9780198849827">Oxford University Press web page</a>.</p>
-<p><em>Insights</em> was authored by the members of <a href="http://r4all.org/">R4ALL</a>, an organisation specialising in teaching R to those who’ve never used it. And to folk using R already but want to improve their foundation and workflow.</p>
-<p>The Preface Chapter of <em>Insights</em> <a href="assets/Insights_Preface.pdf">here is a PDF of the Preface Chapter</a> describes features of the book, such as its aims, content, structure, intended readership, and relationship to our other book <em>Getting Started with R</em>. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in <em>Insights</em> and why.</p>
-<p><a href="assets/Insights_ToC.pdf">The table of contents of <em>Insights</em> as a pdf.</a>.</p>
-<p>On this Companion Website you will find information additional to that in the book:</p>
-<ol class="example" style="list-style-type: decimal">
-<li>An overview of the <a href="insights-workflow.html#insights-workflow">Insights Workflow</a>.</li>
-<li><a href="questions-exercises.html#questions-exercises">Questions and exercises</a> to work through with each chapter of the book.</li>
-<li><a href="#more-r">More topics in R</a>.</li>
-<li><a href="#more-concepts">Additional data analysis concepts</a>.</li>
-<li>An additional Workflow Demonstration: <a href="WFD-food-pol.html#WFD-food-pol">polity and food diversity</a></li>
-<li>An additional Workflow Demonstration: <a href="WFD-dietdiv-effect.html#WFD-dietdiv-effect">effects of dietary diversity on populations</a></li>
-<li>A relatively unguided workflow demonstration <a href="WFD-diet-restrict.html#WFD-diet-restrict">effects of dietary restriction on individuals</a>.</li>
-<li>An example of how one might complete the previous Workflow Demonstration.</li>
-<li><a href="modelwf-scripts.html#modelwf-scripts">Model scripts</a> for each Workflow Demonstration.</li>
-<li>Details of a <a href="live-data-demo.html#live-data-demo">live data analysis demonstration</a> that can be used in the very first class of an Introduction to Data Analysis undergraduate classes. It is designed to capture the students’ interest.</li>
-<li><a href="#more-datasets">More datasets</a> that could be developed into new Workflow Demonstrations (perhaps for students to practice with and/or instructors to use).</li>
-<li>Some <a href="related-reading.html#related-reading">Related reading</a>.</li>
-<li>Answers to the questions that accompany each Chapter.</li>
-<li>Any corrections to the published edition of the book.</li>
-</ol>
+<div id="prepare-your-computer-r-and-rstudio" class="section level2">
+<h2><span class="header-section-number">2.2</span> Prepare your computer, R, and RStudio</h2>
+<p>We strongly advise you to use projects in RStudio. More details about this in Chapter 3 of the <em>Insights</em> book.</p>
+<ul>
+<li>Make a project folder, and data sub-folder.</li>
+<li>Make other sub-folders, as you like.</li>
+<li>Create the Project in RStudio.</li>
+<li>Create a new script file.</li>
+<li>Describe the project in the new script, include date, authors, project title.</li>
+<li>Add to the script any required add-on libraries.</li>
+</ul>
+</div>
+<div id="read-the-data-into-r" class="section level2">
+<h2><span class="header-section-number">2.3</span> Read the data into R</h2>
+<p>Read in the data and then check the following at least:</p>
+<ul>
+<li>Check number of variables/columns.</li>
+<li>Check number of rows.</li>
+<li>Check variable types.</li>
+<li>Check appropriate representation of missing values.</li>
+</ul>
+<p>Note that if you are attempting to import a <em>comma separate values</em> (CSV) formatted data file, and strangely find that it is imported into R with only one column, it may be that you instead have a semi-colon (;) as the separator. This can happen if we open a CSV file in Excel and then allow Excel to save it (even though we changed nothing). One solution is to use <code>read_csv2()</code> to read the data file, as this uses a semi-colon as the separator.</p>
+</div>
+<div id="tidy-the-data" class="section level2">
+<h2><span class="header-section-number">2.4</span> Tidy the data</h2>
+<ul>
+<li>Ensure there is one observation per row.</li>
+<li>Ensure one type of information is not spread across multiple columns.</li>
+<li>If there is more than one observation of the same type of information spread across columns, then gather observations into a single column (i.e. tidy the data).</li>
+</ul>
+</div>
+<div id="clean-the-data." class="section level2">
+<h2><span class="header-section-number">2.5</span> Clean the data.</h2>
+<ul>
+<li>Check for and resolve any inappropriate duplicates.</li>
+<li>Make any date and time type data be stored in R in date/time format.</li>
+<li>Replace any codes with informative words.</li>
+<li>Check for appropriate/plausible variable entries, e.g. levels of characters, ranges of numerics.</li>
+</ul>
+</div>
+<div id="initial-insights" class="section level2">
+<h2><span class="header-section-number">2.6</span> Initial insights</h2>
+<ul>
+<li>Check numbers of “things”, number of experimental units, treatments, treatment combinations, temporal samples.</li>
+<li>Calculate response and/or explanatory variable(s) (if required).</li>
+<li>Examine the shapes of the distributions of variables (i.e. inspect the histograms of explanatory and response variables).</li>
+<li>Examine relationships among explanatory variables. Are they correlated, and if so what effect might this have on our ability to answer our question(s).</li>
+</ul>
+</div>
+<div id="insights-about-question-posed" class="section level2">
+<h2><span class="header-section-number">2.7</span> Insights about question posed</h2>
+<ul>
+<li>Reveal and examine relationships relevant to hypotheses/predictions.</li>
+<li>Assess confidence in revealed patterns.</li>
+</ul>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="insights-workflow.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="questions-exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
@@ -471,7 +541,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/opetchey/insights_website/blob/development/index.Rmd",
+"link": "https://github.com/opetchey/insights_website/blob/development/01-insights-workflow.Rmd",
 "text": "Edit"
 },
 "history": {

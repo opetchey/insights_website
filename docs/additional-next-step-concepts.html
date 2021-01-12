@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Companion Website — Insights from Data with R</title>
+  <title>Chapter 5 Additional &amp; next step concepts | Companion Website — Insights from Data with R</title>
   <meta name="description" content="To be completed" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Companion Website — Insights from Data with R" />
+  <meta property="og:title" content="Chapter 5 Additional &amp; next step concepts | Companion Website — Insights from Data with R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Companion Website — Insights from Data with R" />
+  <meta name="twitter:title" content="Chapter 5 Additional &amp; next step concepts | Companion Website — Insights from Data with R" />
   
   <meta name="twitter:description" content="To be completed" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="insights-workflow.html"/>
+<link rel="prev" href="more-R.html"/>
+<link rel="next" href="WFD-dietdiv-effect.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -401,46 +401,227 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Companion Website — Insights from Data with R</h1>
-<h2 class="subtitle"><em>An Introduction for the Life and Environmental Sciences</em></h2>
-<p class="author"><em>Petchey, Beckerman, Cooper, Childs</em></p>
-<p class="date"><em>2021-01-12</em></p>
+<div id="additional-next-step-concepts" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Additional &amp; next step concepts</h1>
+<p>In this chapter of this companion website to the Insights book we outline some of the conceptual issues we mentioned in the book, but did not then feel the need to cover. Some of these we only highlight below as next steps for you to take, rather than attempt to teach them here. If you would like more details below, some examples, or other topics covered, please let us know.</p>
+<div id="distributions" class="section level2">
+<h2><span class="header-section-number">5.1</span> Distributions</h2>
+<p>In the Insights book we describe what is a sample distribution, we emphasise how important it is to visualise sample distributions, and we make many such visualisations, such as histograms. What we talked about much less, though is very important, are some of the types of theoretical distributions that one can use in analyses, particularly in statistical analyses. We mentioned the normal, Poisson, and binomial distribution during the Bat Workflow Demonstration. Going further we could have checked with a QQ-plot if these distributions were appropriate for characterising the data. Learning more about these distributions, and about what QQ-plots are would be a good next step. It is a step that is really quite important before attempting to tackle statistical models, such as linear regression.</p>
 </div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p><img src="images/InsightsCoverSmall.png" width="60"/></p>
-<p><em>Welcome!</em> to the Companion Website for the book <em>Insights from Data with R – An Introduction for the Life and Environmental Sciences</em></p>
-<p>The book is due to be released in late February 2021. Latest information here on the related <a href="https://global.oup.com/academic/product/insights-from-data-with-r-9780198849827">Oxford University Press web page</a>.</p>
-<p><em>Insights</em> was authored by the members of <a href="http://r4all.org/">R4ALL</a>, an organisation specialising in teaching R to those who’ve never used it. And to folk using R already but want to improve their foundation and workflow.</p>
-<p>The Preface Chapter of <em>Insights</em> <a href="assets/Insights_Preface.pdf">here is a PDF of the Preface Chapter</a> describes features of the book, such as its aims, content, structure, intended readership, and relationship to our other book <em>Getting Started with R</em>. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in <em>Insights</em> and why.</p>
-<p><a href="assets/Insights_ToC.pdf">The table of contents of <em>Insights</em> as a pdf.</a>.</p>
-<p>On this Companion Website you will find information additional to that in the book:</p>
-<ol class="example" style="list-style-type: decimal">
-<li>An overview of the <a href="insights-workflow.html#insights-workflow">Insights Workflow</a>.</li>
-<li><a href="questions-exercises.html#questions-exercises">Questions and exercises</a> to work through with each chapter of the book.</li>
-<li><a href="#more-r">More topics in R</a>.</li>
-<li><a href="#more-concepts">Additional data analysis concepts</a>.</li>
-<li>An additional Workflow Demonstration: <a href="WFD-food-pol.html#WFD-food-pol">polity and food diversity</a></li>
-<li>An additional Workflow Demonstration: <a href="WFD-dietdiv-effect.html#WFD-dietdiv-effect">effects of dietary diversity on populations</a></li>
-<li>A relatively unguided workflow demonstration <a href="WFD-diet-restrict.html#WFD-diet-restrict">effects of dietary restriction on individuals</a>.</li>
-<li>An example of how one might complete the previous Workflow Demonstration.</li>
-<li><a href="modelwf-scripts.html#modelwf-scripts">Model scripts</a> for each Workflow Demonstration.</li>
-<li>Details of a <a href="live-data-demo.html#live-data-demo">live data analysis demonstration</a> that can be used in the very first class of an Introduction to Data Analysis undergraduate classes. It is designed to capture the students’ interest.</li>
-<li><a href="#more-datasets">More datasets</a> that could be developed into new Workflow Demonstrations (perhaps for students to practice with and/or instructors to use).</li>
-<li>Some <a href="related-reading.html#related-reading">Related reading</a>.</li>
-<li>Answers to the questions that accompany each Chapter.</li>
-<li>Any corrections to the published edition of the book.</li>
-</ol>
+<div id="interactions-and-complexity" class="section level2">
+<h2><span class="header-section-number">5.2</span> Interactions and complexity</h2>
+<p>In the Insights book we mention interactions (e.g. does the difference in diet between male and female bats depend on their age). They are important because we live in a world where many things are contigent on others, such that the effect of a intervention depends on some other variable. Hence, the effects of a dietary intervention may depend on the disease status of an individual. Achieving an intuitive understanding of a system with many more than three or four interactions can be elusive, so researchers often do not attempt to explore or explain such complex situations. One solution/alterate approach, is to use analysis methods that characterise a system of causal relationships… i.e. a network of causes and effects. The methods and tools are not often taught in introductory statistics courses, but it is worth being aware of them at least (they are sometimes called path analysis and structural equation models).</p>
+</div>
+<div id="lurking-variables" class="section level2">
+<h2><span class="header-section-number">5.3</span> Lurking variables</h2>
+<p>We can think of situations that are not so amenable to the approaches you learned in the Insights book. This does not mean that the approaches are not useful or important. They are foundational. And therefore to be built on.</p>
+<p>One example of such a situation is if we have two continuous explanatory variables that are relatively strongly correlated with each other. And we are looking at how they are related to a response variable. It is quite possible that we see a positive relationship between one explanatory variable and the response variable, when the relationship is in fact negative. We can see the negative relationship only once we have accounted for the other explanatory variable. If this sounds a bit concerning then good… it is. It illustrates how very important is checking for, and understanding implications of, correlations among explanatory variables. And how important it is to take time to think during the planning phase of the workflow about what are the likely important explanatory variables. How can one “account for” the other explanatory variable? The answer is to hold the second explanatory variable constant, or at least relatively constant. This can be done by plotting only data for a small range of the second explanatory variable (<code>cut</code> and <code>facet_wrap</code> can be used).</p>
+<p>For more on this, including some simulated data to illustrate the issue, please see this <a href="http://r4all.org/posts/lurking-variables-and-hidden-relationships">lurking variables post on the R4All web site</a>.</p>
+</div>
+<div id="power-of-data-to-give-insights" class="section level2">
+<h2><span class="header-section-number">5.4</span> Power of data to give insights</h2>
+<p>When planning a study it is worthwhile to calculate the <em>statistical power</em> that can be expected. One methods for doing so is to create fake data by simulation, and then analysing it. One can then assess how likely the statistical method is to detect any real effect that was included in the fake data, and how likely it is to detect an effect when no real effect was included in the fake data. Making useful fake data requires an estimate of effect sizes (i.e. the strength of an effect or of a relationship), about variability, and amount of data. It is well worth spending time looking into power analyses, and how to simulate fake data.</p>
+</div>
+<div id="effect-sizes" class="section level2">
+<h2><span class="header-section-number">5.5</span> Effect sizes</h2>
+<p>We found that a difference in mean prey size of about 5 mm between female and male bats. Therefore we would say that the effect sizes of sex is 5 mm. It is important to maintain a clear focus on effect sizes (and once you move onto statistics, a measure of certainty in the effect size, e.g. a confidence interval). You will almost certainly be exposed to p-values, but please retain attention and focus on effect sizes. That said, also be always aware that use of the term “effect size” is in no way used to indicate a <em>causal</em> effect has been demonstrated (and is therefore in some senses an innapropriate term to use).</p>
+</div>
+<div id="ordination" class="section level2">
+<h2><span class="header-section-number">5.6</span> Ordination</h2>
+<p>Our analyses have had relatively few explanatory variables, and one response variable. Relatively common, however, is to have several, even several tens of explanatory and/or response variables. Questions about gene expression and community composition, for example, can lead to data with many response variables. Such data is sometimes termed <em>multivariate</em> data, and working with such data is a whole other world of data and statistical analyses methods. Ordination is a common foundation and good starting point for such analyses, and so would be a good place for you to start looking. <em>Principle component analysis</em> is a good starting place therein. By the way, the functions for working with multivariate data often require wide-format datasets and are more informative if datasets have named rows. (Please let us know if you would like a worked example of PCA and we will endeavour to get one here as soon as possible.)</p>
+</div>
+<div id="influence-outliers" class="section level2">
+<h2><span class="header-section-number">5.7</span> Influence and outliers</h2>
+<p>We sometimes observe one or a few data point that are quite different from all others. How can we tell if they are so different that we should treat them differently? How can we know if they are different and likely to have high influence on our conclusions? What influence on our insights does an individual data point have? This will depend on various things, including: 1) number of other data points, with more other data points resulting in any individual one having less influence; 2) the value of the data point (y-value)… large ones (either in the positive or negative direction) tend to have larger influence; 2) the x value of the data point… where larger ones (in positive or negative direction) have more influence. Knowing how to identify and deal with unusual data points is very important, as is using only transparent methods for doing so.</p>
+<p>We can think of this by anology with a children’s playground toy… the seesaw. Can you put together what I write above, and this toy? How would the analogy work?</p>
+</div>
+<div id="transformations" class="section level2">
+<h2><span class="header-section-number">5.8</span> Transformations</h2>
+<p>Transforming variables, e.g. by taking the logarithm of the values and working with that, is quite common place. It can, for example, changing the shapes of the distribution of the data to make it more ameneable to analyses, or do the same for the relationship between two numeric variables. Why one might want to do this, when one should, and when one perhaps should not is very important to learn. We feel it could be the case that transformations are often applied without sufficient appreciation of their consequences.</p>
+</div>
+<div id="non-independence" class="section level2">
+<h2><span class="header-section-number">5.9</span> Non-independence</h2>
+<p>Here we take a bit of a deeper dive into non-independence than is presented in the book.</p>
+<p>Think about the bat diet dataset. Each of the bats can have multiple observations (rows) in the dataset, one for each prey item detected in its poop. Hence the dataset has 633 rows/observations describing the 143 bats.</p>
+<p>Here’s a puzzle for you. There are two ways to calculate the mean, minimum, and maximum wingspan of prey consumed by bats. Here is the first: we just calculate these things without doing anything else (i.e. we calculate directly on the raw data):</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="additional-next-step-concepts.html#cb5-1"></a>bats <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb5-2"><a href="additional-next-step-concepts.html#cb5-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_wingspan =</span> <span class="kw">mean</span>(Wingspan_mm, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb5-3"><a href="additional-next-step-concepts.html#cb5-3"></a>            <span class="dt">min_wingspan =</span> <span class="kw">min</span>(Wingspan_mm, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb5-4"><a href="additional-next-step-concepts.html#cb5-4"></a>            <span class="dt">max_wingspan =</span> <span class="kw">max</span>(Wingspan_mm, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb5-5"><a href="additional-next-step-concepts.html#cb5-5"></a>            <span class="dt">n_wingspan =</span> <span class="kw">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 4
+##   mean_wingspan min_wingspan max_wingspan n_wingspan
+##           &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;      &lt;int&gt;
+## 1          33.6          6.5         52.5        633</code></pre>
+<p>We also asked for the number of data points, which here is 633. Seems fine.</p>
+<p>Here is the other way. We first calculate the mean wingspan of prey consumed by each bat, thus reducing the dataset to one number for each bat. Then we calculate the mean of these means, the minimum of these means, and the maximum of these means. Take a moment to think about if you think the answers will be the same or different to the answer above, and why you think this. Also, try to answer this for each of the mean, minimum, and maximum.</p>
+<p>Here comes the answer done the second way:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="additional-next-step-concepts.html#cb7-1"></a>bats <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-2"><a href="additional-next-step-concepts.html#cb7-2"></a><span class="st">  </span><span class="kw">group_by</span>(Bat_ID) <span class="op">%&gt;%</span></span>
+<span id="cb7-3"><a href="additional-next-step-concepts.html#cb7-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_wingspan =</span> <span class="kw">mean</span>(Wingspan_mm, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb7-4"><a href="additional-next-step-concepts.html#cb7-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_mean_wingspan =</span> <span class="kw">mean</span>(mean_wingspan, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb7-5"><a href="additional-next-step-concepts.html#cb7-5"></a>            <span class="dt">min_mean_wingspan =</span> <span class="kw">min</span>(mean_wingspan, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),            </span>
+<span id="cb7-6"><a href="additional-next-step-concepts.html#cb7-6"></a>            <span class="dt">max_mean_wingspan =</span> <span class="kw">max</span>(mean_wingspan, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb7-7"><a href="additional-next-step-concepts.html#cb7-7"></a>            <span class="dt">n_mean_wingspan =</span> <span class="kw">sum</span>(<span class="op">!</span><span class="kw">is.na</span>(mean_wingspan)))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 1 x 4
+##   mean_mean_wings… min_mean_wingsp… max_mean_wingsp…
+##              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1             33.7               14             52.5
+## # … with 1 more variable: n_mean_wingspan &lt;int&gt;</code></pre>
+<p>Some results are different in the two methods. The mean wingspan across all bats is 33.6 in the first case and 33.7 in the second. The minimum is 6.5 in the first case, but is 14 in the second case. The maximum is 52.5 for both, however. So the answers can be different, but don’t have to be.</p>
+<p>Thinking about the minimum and maximums may help you understand this. Let’s look at the bat individuals that included in their poop the smallest prey item. The code is below; don’t worry about understanding it now if you don’t (perhaps make a note to come back to it):</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="additional-next-step-concepts.html#cb10-1"></a>bats <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb10-2"><a href="additional-next-step-concepts.html#cb10-2"></a><span class="st">  </span><span class="kw">filter</span>(Wingspan_mm <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(Wingspan_mm, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb10-3"><a href="additional-next-step-concepts.html#cb10-3"></a><span class="st">  </span><span class="kw">select</span>(Bat_ID) <span class="op">%&gt;%</span></span>
+<span id="cb10-4"><a href="additional-next-step-concepts.html#cb10-4"></a><span class="st">  </span><span class="kw">distinct</span>() <span class="op">%&gt;%</span></span>
+<span id="cb10-5"><a href="additional-next-step-concepts.html#cb10-5"></a><span class="st">  </span><span class="kw">inner_join</span>(bats) <span class="op">%&gt;%</span></span>
+<span id="cb10-6"><a href="additional-next-step-concepts.html#cb10-6"></a><span class="st">  </span><span class="kw">arrange</span>(Bat_ID) <span class="op">%&gt;%</span></span>
+<span id="cb10-7"><a href="additional-next-step-concepts.html#cb10-7"></a><span class="st">  </span><span class="kw">select</span>(Bat_ID, Species, Wingspan_mm) <span class="op">%&gt;%</span></span>
+<span id="cb10-8"><a href="additional-next-step-concepts.html#cb10-8"></a><span class="st">  </span><span class="kw">glimpse</span>()</span></code></pre></div>
+<pre><code>## Joining, by = &quot;Bat_ID&quot;</code></pre>
+<pre><code>## Rows: 86
+## Columns: 3
+## $ Bat_ID      &lt;dbl&gt; 606, 606, 606, 606, 606, 606, 71…
+## $ Species     &lt;chr&gt; &quot;Aspitates ochrearia&quot;, &quot;Nysius g…
+## $ Wingspan_mm &lt;dbl&gt; 29.5, NA, NA, 20.0, 6.5, NA, 25.…</code></pre>
+<p>We can see that Bat_ID 606 had six prey detected in its poop and their sizes were 29.5, NA, NA, 20, 6.5, and NA. The mean of these is obviously bigger than 6.5mm. In fact, we can know that if all the bats that ate a prey item of wingspan 6.5mm also ate something else (which can only be bigger than 6.5mm) then the mean prey size eaten must be greater than 6.5mm. And in this particular dataset all of the bats that ate something of wingspan 6.5mm also ate something else. I.e. there are no bats that only ate something of wingspan 6.5mm.</p>
+<p>In contrast, two bats ate only the largest (52.5mm wingspan) type of prey. So the mean prey size eaten is also 52.5mm.</p>
+<p>Why is the mean different (33.65 in one case and 33.67 in the other)? (This is not a rounding issues, the numbers really are different.) To understand how this can arise, consider this simplified example in which bat 1 was observed to eat two prey items, both of size 1, and bat 2 ate only one prey item of size 10</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="additional-next-step-concepts.html#cb13-1"></a>bat1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb13-2"><a href="additional-next-step-concepts.html#cb13-2"></a>bat2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>)</span></code></pre></div>
+<p>Let’s get the mean of all prey items:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="additional-next-step-concepts.html#cb14-1"></a><span class="kw">mean</span>(<span class="kw">c</span>(bat1, bat2))</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<p>This seems correct: we add up the values to get 12 and divide by how many there are (3) to get 4. Excellent!</p>
+<p>Now the second way:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="additional-next-step-concepts.html#cb16-1"></a><span class="kw">mean</span>(<span class="kw">c</span>(<span class="kw">mean</span>(bat1), <span class="kw">mean</span>(bat2)))</span></code></pre></div>
+<pre><code>## [1] 5.5</code></pre>
+<p>Here we calculate mean for each bat (1, and 10), then add these to get 11 and divide by 2 to get 5.5. It’s key to realise that the two methods give different results because there were different numbers of observations (prey items) among the bats. If both bats had eaten the same number of prey items then the two methods would have given the same results.</p>
+<p>Now, imagine that bigger bats have more prey in their poop, perhaps because they do bigger poops. If we calculate the mean (or minimum or maximum) by the first method (i.e. without first calculating the mean for each bat) then these big bats would have more influence on the overall mean than the small bats, just because they did bigger poops. On the other hand, when we first calculate the mean of each bat we remove this effect—we give each bat equal influence/weight in the calculation of the overall mean.</p>
+<p>We hope you see why the two approaches give different result. But what has this got to do with independence/nonindependence? First, recognise that prey detected in the poop of the same bat are related in the sense that they came from the same bat poop… they share something in common compared to two prey that were detected in two different bat poops. So one can say that two observations from the same bat poop are less independent than two observations from different poops. Second, realise that if we do calculations without first taking the mean for each bat, we are not taking this non-independence into account: we give each of the 633 poops equal influence, even though some come from the same bat. If in contrast, we first take the mean for each bat, we are reducing the influence of related observations by the number of observations for each bat. I.e. each bat contributes only one observation to the overall mean, i.e. the number of observations used to calculate the overall mean is 142.</p>
+<p>You’re probably now wondering which is the correct way to calculate the overall mean (and other overall statistics). Unfortunately there is not one answer to this. The answer certainly depends on your question (and maybe on other things too). If we’re interested in questions about variation among bats, we’re probably best off removing the influence of number of prey eaten by particular bats, i.e. we are better off working with 142 data points, one for each bat. This is what we did in the Workflow Demonstration to answer such questions. If, on the other hand, we are just using the bats to sample prey in their environment, and we want the mean size of the prey in the environment then it seems fair to calculate the mean of all 633 data points, and thank the bats that happened to give us lots of samples from the environment.</p>
+</div>
+<div id="missing-values-nas" class="section level2">
+<h2><span class="header-section-number">5.10</span> Missing values (NAs)</h2>
+<p>It is very important to be intimately aware of the number of data points we’re working with, and where there are NAs in our data. If we didn’t notice that we have only 142 (and not 143) mean wingspan measures, we might report that we had 143, have someone else find out that we missed this detail, and then lose a bit of credibility.</p>
+<p>We saw that the bat diet dataset contains 78 missing values of the <code>Wingspan_mm</code> variable, and no missing values in any other variables. We then calculated three response variables for each bat:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="additional-next-step-concepts.html#cb18-1"></a>prey_stats &lt;-<span class="st"> </span>bats <span class="op">%&gt;%</span></span>
+<span id="cb18-2"><a href="additional-next-step-concepts.html#cb18-2"></a><span class="st">  </span><span class="kw">group_by</span>(Bat_ID, Sex, Age) <span class="op">%&gt;%</span></span>
+<span id="cb18-3"><a href="additional-next-step-concepts.html#cb18-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_prey =</span> <span class="kw">n</span>(),</span>
+<span id="cb18-4"><a href="additional-next-step-concepts.html#cb18-4"></a>            <span class="dt">num_prey1 =</span> <span class="kw">n_distinct</span>(Sp._Nr.),</span>
+<span id="cb18-5"><a href="additional-next-step-concepts.html#cb18-5"></a>            <span class="dt">mean_wingspan =</span> <span class="kw">mean</span>(Wingspan_mm, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb18-6"><a href="additional-next-step-concepts.html#cb18-6"></a>            <span class="dt">prop_migratory =</span> <span class="kw">sum</span>(Migratory <span class="op">==</span><span class="st"> &quot;yes&quot;</span>) <span class="op">/</span><span class="st"> </span><span class="kw">n</span>())</span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;Bat_ID&#39;, &#39;Sex&#39; (override with `.groups` argument)</code></pre>
+<p>A few things here are worth noting:</p>
+<ul>
+<li><p>We might have decided to remove all the rows containing NAs in the <code>Wingspan_mm</code> variable before doing anything else. But then we would have lost some information from the dataset—potentially useful and important information. Also, we might have created some bias if there was something special about the NAs.</p></li>
+<li><p>The NAs are all for non-Lepidoptera prey, so any analysis of wingspan will only be for Lepidoptera. We needed to know this. (Check this by viewing the data.)</p></li>
+<li><p>One bat (Bat_ID 1320) ate only one prey item and this was non-Lepidopera (check this again by viewing the data, or using the <code>filter</code> function). Hence this bat has a NA entry when we calculate the mean wingspan of prey it ate. The other 142 bats all have a non-NA mean wingspan entry. This means that when we answer questions about mean wingspan we will be working with only 142 data points, and for other response variables we’ll have 143.</p></li>
+</ul>
+<div class="beaware">
+<p>
+<strong>R functions will usually take care of NAs</strong> . They will then often give a warning like “5 rows with missing values removed”. If you see such a warning, absolutely, without a doubt, 100% make sure you know why these are being removed, and put a note in your code. To be clear, if you let functions take care of NAs then make sure you know what they’re doing. And its probably better to take care of them yourself, explicitly.
+</p>
+</div>
+</div>
+<div id="skewness" class="section level2">
+<h2><span class="header-section-number">5.11</span> Skewness</h2>
+<p>A well-defined hierarchy has been defined to describe and quantify the shape of distributions. It’s essential to know about the first two: central tendency and dispersion, because these are the basis of many standard analyses. The next most important aspect of a distribution is its <strong>skewness</strong> (or just ‘skew’). Skewness describes the asymmetry of a distribution. Just as with central tendency and dispersion, there are many different ways to quantify the skewness of a sample distribution. These are quite difficult to interpret because their interpretation depends on other features of a distribution. We’ll just explore skewness in the simplest case: the skewness of a <strong>unimodal</strong> distribution.</p>
+<p>A unimodal distribution is one that has a single peak. We can never say for certain that a sample distribution is unimodal or not—unimodality is really a property of theoretical distributions—but with enough data and a sensible histogram we can at least say that a distribution is ‘probably’ unimodal. The histograms we produced to describe the sample distributions of <code>Wingspan_mm</code> and <code>No._Reads</code> appear to be unimodal. Each has a single, distinct peak.</p>
+<p>These two unimodal distributions are also asymmetric—they exhibit skewness. The <code>Wingspan_mm</code> distribution is said to be skewed to the left because it has a long ‘tail’ that spreads out in this direction. In contrast, we say that the <code>No._Reads</code> distribution is skewed to the right, because it has a (very) long ‘tail’ that spreads out to right. Left skewness and right skewness are also called negative and positive skew, respectively. A sample distribution that looks symmetric is said to have (approximately) zero skew<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>The reason we care about skewness is that many common statistical models assume that the distributions we’re sampling from, after controlling for other variables, are <strong>not</strong> skewed. This is an issue for a statistics course. For now we just need to understand what skewness means and be able to describe distributions in terms of left (negative) and right (positive) skew.</p>
+<div class="info">
+<p>
+How are mean, median, and skew related? Left (negative) skew means that the mean will be smaller than the median, right skew that the mean is greater than the median. Check this for the <code>Wingspan_mm</code> variable and also the <code>No._Reads</code> one. Consider using the <code>skewness</code> function in the <strong>e1071</strong> package.
+</p>
+</div>
+</div>
+<div id="interoperability" class="section level2">
+<h2><span class="header-section-number">5.12</span> Interoperability / standardising terms</h2>
+<p>When we have two or more datasets, and if we wish to combine them and make reliable insights from the combination, we will need one or more variables that are common to both datasets. Such common variables allow us to merge/join the datasets together, i.e. to relate them to each other. When we have such common variables, we can say that the datasets are <em>interoperable</em>.</p>
+<p>However, we might see that we have a variable in each dataset called “Country”, but that different country naming schemes are used in each dataset. This is what experience in the “Food diversity - Polity Workflow demonstration”. It was then a rather painful process to make the two datasets interoperable. So, if you can, it is really really good to use a standard scheme for naming things. That might be a ISO, or a published meta-data scheme.</p>
+<p>Another example of standard names is in the bats dataset… the latin species names. When we prepare a dataset such as this for research purposes, it would be a very good idea to check the entered species names against a standard database of know species names. I.e. it’s good to know that we accurately entered the prey species names, in the sense that they match the names of known prey species. Doing so will also ensure that our results could be compared with and combined with other studies of moth species (put another way, we would have assured our data are <em>interoperable</em> with other studies involving these moth species). To do this, we can use a set of packages that make the whole process a breeze. Let’s try this for the first ten species in the dataset. Note that the first line below installs the <strong>taxize</strong> add-on package, and is commented out as we only need to run it once).</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="additional-next-step-concepts.html#cb20-1"></a><span class="co"># install.packages(&quot;taxize&quot;)</span></span>
+<span id="cb20-2"><a href="additional-next-step-concepts.html#cb20-2"></a><span class="co"># the previous line was commented out. Uncomment it by removing</span></span>
+<span id="cb20-3"><a href="additional-next-step-concepts.html#cb20-3"></a><span class="co"># the # if you want to run it.</span></span>
+<span id="cb20-4"><a href="additional-next-step-concepts.html#cb20-4"></a><span class="kw">library</span>(taxize) <span class="co"># load the package</span></span>
+<span id="cb20-5"><a href="additional-next-step-concepts.html#cb20-5"></a>some_species_names &lt;-<span class="st"> </span>bats <span class="op">%&gt;%</span></span>
+<span id="cb20-6"><a href="additional-next-step-concepts.html#cb20-6"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) <span class="op">%&gt;%</span></span>
+<span id="cb20-7"><a href="additional-next-step-concepts.html#cb20-7"></a><span class="st">  </span><span class="kw">pull</span>(Species) <span class="co"># get first ten species</span></span>
+<span id="cb20-8"><a href="additional-next-step-concepts.html#cb20-8"></a><span class="co"># query the online database of species names</span></span>
+<span id="cb20-9"><a href="additional-next-step-concepts.html#cb20-9"></a>species_names_reports &lt;-<span class="st"> </span><span class="kw">gnr_resolve</span>(some_species_names,</span>
+<span id="cb20-10"><a href="additional-next-step-concepts.html#cb20-10"></a>                                     <span class="dt">best_match_only =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb20-11"><a href="additional-next-step-concepts.html#cb20-11"></a>species_names_reports</span></code></pre></div>
+<p>In this report, the final column gives a quick indication of how well the moth species names in the dataset matched a known species name. A score of 1 is the highest match, 0 is the lowest. This tells us that <em>Ethmia bipunctella</em> and <em>Bradycellus verbasci</em> (among others) in the dataset correspond to known species—their matching score in the final column is 0.988. The third species in the dataset, however is <em>Hoplodrina ambigua/ superstes</em> and cannot be well matched to an individual known species—it has a score of 0.75. Likely this entry in the dataset corresponds with the text in the paper “When the same haplotype matched more than one species, we … classified them into a species group”. I.e. <em>H. ambigua</em> and <em>H. superstes</em> could not be distinguished and so were treated as a species group. (It takes a while to make these queries, so we don’t run one for every moth species name in the dataset.)</p>
+<p>To sum up and put this interoperability issue in context… we mentioned the FAIR Principles. The I stands for Interoperable. Without it we will not be able to relate dataset to each other, and get all the amazing and important insights that can come from doing so.</p>
+</div>
+<div id="comparing-descriptive-statistics" class="section level2">
+<h2><span class="header-section-number">5.13</span> Comparing descriptive statistics</h2>
+<p><em>This section shows how to make a bar graph showing two means. We strongly recommend to instead show the data, or summaris that include more information about the distritbuion of the data, such as box and whisker plots. Bar graphs are, however, so common, that we thought to show how they can be made, if one really wants to.</em></p>
+<p>In the Insights book we focus on graphs that display either the raw data (e.g. scatter plots), or a summary of the raw data that captures as much detail as possible (e.g. histograms and box and whisker plots). We’ve tended to treat descriptive statistics like the sample mean as ‘a number’ to be examined in isolation. These are often placed in the text of a report or in a table.</p>
+<p>There is, however, nothing to stop us visualising a set of means (or any other descriptive statistics) and a figure is much more informative than than a table. Moreover, many common statistical tools focus on a few aspects of sample distributions (e.g. means and variances) so it’s a good idea to plot these.</p>
+<p>We need to know how to construct graphs that display such summaries. Let’s start with a simple question: how does the (arithmetic) mean wingspan vary between males and females? One strategy is to produce a bar plot in which the lengths of the bars represent the mean wingspan in each sex. There are two different ways to produce this with <strong>ggplot2</strong>.</p>
+<p>The first is simplest, but requires a new <strong>ggplot2</strong> trick. When we add a layer using <code>geom_bar</code> we have to set two new arguments. The first is <code>stat = "summary"</code>. This tells <strong>ggplot2</strong> not to plot the raw values of the y aesthetic mapping, but instead, to construct a summary of the ‘y’ variable. The second argument is <code>fun.y = mean</code>. This tells <strong>ggplot2</strong> how to summarise this variable. The part on the right hand side can be any R function that takes a vector of values and returns a single number. Obviously we want the <code>mean</code> function. See how this works in practice (with the resulting graph in Figure <a href="additional-next-step-concepts.html#fig:key-concepts-17">5.1</a>)</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="additional-next-step-concepts.html#cb21-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb21-2"><a href="additional-next-step-concepts.html#cb21-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">data =</span> prey_stats,</span>
+<span id="cb21-3"><a href="additional-next-step-concepts.html#cb21-3"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Sex, <span class="dt">y =</span> mean_wingspan),</span>
+<span id="cb21-4"><a href="additional-next-step-concepts.html#cb21-4"></a>           <span class="dt">stat =</span> <span class="st">&quot;summary&quot;</span>,</span>
+<span id="cb21-5"><a href="additional-next-step-concepts.html#cb21-5"></a>           <span class="dt">fun.y =</span> mean) <span class="op">+</span></span>
+<span id="cb21-6"><a href="additional-next-step-concepts.html#cb21-6"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb21-7"><a href="additional-next-step-concepts.html#cb21-7"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Sex&quot;</span>) <span class="op">+</span></span>
+<span id="cb21-8"><a href="additional-next-step-concepts.html#cb21-8"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Mean wingspan (mm)&quot;</span>)</span></code></pre></div>
+<pre><code>## No summary function supplied, defaulting to `mean_se()`</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:key-concepts-17"></span>
+<img src="insights_website_files/figure-html/key-concepts-17-1.svg" alt="A barplot showing the mean prey wingspan consumed by male and female bats." width="50%" />
+<p class="caption">
+FIGURE 5.1: A barplot showing the mean prey wingspan consumed by male and female bats.
+</p>
+</div>
+<p>We also flipped the coordinates here with <code>coord_flip</code> to make this a horizontal bar plot (for no particular reason!). The only new idea is our use of the <code>stat</code> and <code>fun.y</code> arguments.</p>
+<p>The second way to build a bar plot showing some kind of summary statistic breaks the problem into two steps. In the first step we have to calculate whatever it is we want to display, i.e. the category-specific mean in this case. This information needs to be stored in a dataframe or tibble so <strong>dplyr</strong> is the best tool to use for this:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="additional-next-step-concepts.html#cb23-1"></a>wingspan_by_sex &lt;-<span class="st"> </span>prey_stats <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb23-2"><a href="additional-next-step-concepts.html#cb23-2"></a><span class="st">  </span><span class="kw">group_by</span>(Sex) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb23-3"><a href="additional-next-step-concepts.html#cb23-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_mean_wingspan =</span> <span class="kw">mean</span>(mean_wingspan, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="additional-next-step-concepts.html#cb25-1"></a>wingspan_by_sex</span></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##   Sex    mean_mean_wingspan
+##   &lt;chr&gt;               &lt;dbl&gt;
+## 1 Female               35.6
+## 2 Male                 31.9</code></pre>
+<p>We used <code>group_by</code> and <code>summarise</code> to calculate the set of means, which we called <code>mean_mean_wingspan</code>. The second step uses the new dataframe (called <code>wingspan_by_sex</code>) as the default data in a new graphical object, sets x and y aesthetic mappings from <code>Sex</code> and <code>mean_mean_wingspan</code>, and adds a layer with <code>geom_bar</code> (with the resulting graph in Figure <a href="additional-next-step-concepts.html#fig:key-concepts-18">5.2</a>)</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="additional-next-step-concepts.html#cb27-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb27-2"><a href="additional-next-step-concepts.html#cb27-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">data =</span> wingspan_by_sex,</span>
+<span id="cb27-3"><a href="additional-next-step-concepts.html#cb27-3"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Sex, <span class="dt">y =</span> mean_mean_wingspan),</span>
+<span id="cb27-4"><a href="additional-next-step-concepts.html#cb27-4"></a>           <span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb27-5"><a href="additional-next-step-concepts.html#cb27-5"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
+<span id="cb27-6"><a href="additional-next-step-concepts.html#cb27-6"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Sex&quot;</span>) <span class="op">+</span></span>
+<span id="cb27-7"><a href="additional-next-step-concepts.html#cb27-7"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Mean of mean wingspan (mm)&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:key-concepts-18"></span>
+<img src="insights_website_files/figure-html/key-concepts-18-1.svg" alt="The same as the previous figure, but with the means calculated first." width="50%" />
+<p class="caption">
+FIGURE 5.2: The same as the previous figure, but with the means calculated first.
+</p>
+</div>
+<p>The result is the same as the last plot. Notice that we had to set <code>stat</code> to <code>"identity"</code>. This is important. The default behaviour of <code>geom_bar</code> is to count the observations in each category. The <code>stat = "identity"</code> argument tells it that the information in <code>mean_wind</code> must be plotted ‘as is’.</p>
+<p>Which approach is better? Although the first approach is more compact, we recommend the second long-winded approach for new users because it separates the summary calculations from the plotting. This way, as long as we’re comfortable with <strong>dplyr</strong>, we can get away with remembering less about how <strong>ggplot2</strong> works. It also makes it a bit easier to fix mistakes, as we can first check whether the right information is in the summary dataframe, before we worry about plotting it. The two-step method is easy to extend to different kinds of plots as well.</p>
 
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Strictly speaking the terms “negative” and “positive” are reserved for situations where we have calculated a quantitative measure of skew. However, they are often used informally in verbal descriptions of skewness.<a href="additional-next-step-concepts.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="insights-workflow.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="more-R.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="WFD-dietdiv-effect.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
@@ -471,7 +652,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/opetchey/insights_website/blob/development/index.Rmd",
+"link": "https://github.com/opetchey/insights_website/blob/development/04-extra-concepts.Rmd",
 "text": "Edit"
 },
 "history": {
