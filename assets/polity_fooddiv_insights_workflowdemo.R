@@ -1,8 +1,6 @@
-## ----insight-sketch-2, fig.cap='A hypothetical outcome of the demonstration study of relationship between the political system of a country and the diversity of food available.', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE----
-knitr::include_graphics("images/insights_sketches_002.jpeg")
 
 
-## ----message=FALSE, warning=FALSE--------------------------------------------------------------------------
+## ----message=FALSE, warning=FALSE-----------------------------------------------------------------
 # Load the libraries we use
 library(dplyr)
 library(ggplot2)
@@ -14,20 +12,20 @@ library(vegan)
 library(ggbeeswarm)
 
 
-## Install the `vegan` and `ggbeeswarm` library if you have not already done so, otherwise `library(vegan)` and `library(ggbeeswarm)` will not work. Look at the **Packages** section of the Getting Acquainted chapter of the book if you need help with installation.
+## Install the `vegan` and `ggbeeswarm` library if you have not already done so, otherwise `library(vegan)` and `library(ggbeeswarm)` will not work. Look at the **Packages** section of the *Getting Acquainted* chapter of the book if you need help with installation.
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 rm(list = ls())
 pol <- read_csv("data/p4v2015.csv")
 
 
-## ----eval=FALSE--------------------------------------------------------------------------------------------
+## ----eval=FALSE-----------------------------------------------------------------------------------
 ## library(readxl)
 ## pol <- read_excel("data/p4v2015.xls")
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol <- pol %>%
   select(Country = country,
          Year = year,
@@ -37,47 +35,47 @@ pol <- pol %>%
 ## Please note that here and below we do not describe at all or in much detail the R code used. This is because it is described in detail in the book.
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol_nas <- pol %>%
   filter_all(any_vars(is.na(.))) 
 pol_nas
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol <- pol %>%
   na.omit()
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 rm(pol_nas)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol %>%
   select(Country, Year) %>%
   duplicated() %>%
   sum()
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol %>%
   select(Country, Year) %>%
   filter(duplicated(.))
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol %>%
   filter(Country == "Yugoslavia",
          Year == 1991)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol %>%
   filter(Country == "Ethiopia",
          Year == 1993)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol <- pol %>%
   group_by(Country, Year) %>%
   summarise(Polity2 = mean(Polity2))
@@ -86,14 +84,14 @@ pol <- pol %>%
 ## We just made a decision about how to deal with the duplicated scores. We took the mean. There are other things we could have done (e.g. use a different measure of central tendency, such as the median). So we have made an arbitrary choice in our analysis pathway. We went down one path when we could have chosen another. We need to 1) recognise and record when we make decisions like this, and 2) check to see if our conclusions are robust to variation in what we choose to do. (Here, conclusions would not be affected by using the median, as there are only two values being averaged.)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol %>%
   select(Country, Year) %>%
   duplicated() %>%
   sum()
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol_summ <- pol %>%
   summarise(min_year = min(Year),
             max_year = max(Year),
@@ -101,7 +99,7 @@ pol_summ <- pol %>%
             max_pol = max(Polity2))
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 write_rds(pol, "data/pol.RDS")
 
 
@@ -113,7 +111,7 @@ pol %>%
   facet_wrap( ~ Variable, scales = "free", nrow = 2)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol %>%
   summarise(num_countries = length(unique(Country)),
             num_years = length(unique(Year)),
@@ -121,7 +119,7 @@ pol %>%
             last_year = max(Year))
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 per_country_pol <- pol %>%
   group_by(Country) %>%
   summarise(num_years = length(unique(Year)),
@@ -131,12 +129,12 @@ per_country_pol <- pol %>%
             gaps = num_years != years_interval)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 per_country_pol %>%
   summarise(sum(gaps))
 
 
-## ----eval=FALSE--------------------------------------------------------------------------------------------
+## ----eval=FALSE-----------------------------------------------------------------------------------
 ## pol %>%
 ##   group_by(Year) %>%
 ##   summarise(num_countries = length(unique(Country))) %>%
@@ -155,7 +153,7 @@ pol %>%
   geom_line(aes(x=Year, y=Polity2, col=Country))
 
 
-## ----eval=FALSE--------------------------------------------------------------------------------------------
+## ----eval=FALSE-----------------------------------------------------------------------------------
 ## # Get the full food balance sheet dataset *All data* from the FAO website:
 ## # http://www.fao.org/faostat/en/#data/FBS/metadata.
 ## # Reduce the size of the FAO data, so easier to deal with
@@ -177,18 +175,18 @@ pol %>%
 ## rm(fbs)
 
 
-## ----eval=TRUE---------------------------------------------------------------------------------------------
+## ----eval=TRUE------------------------------------------------------------------------------------
 #rm(list = ls())
 fbs <- readRDS("data/FoodBalanceSheets_E_All_Data_reduced.Rdata")
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs %>%
   select(Country, Item, Y1961, Y1971, Y1981, Y1991, Y2001, Y2011) %>%
   glimpse()
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs %>%
   summarise(num_countries = length(unique(Country)),
             num_food_items = length(unique(Item)))
@@ -198,7 +196,7 @@ fbs %>%
 knitr::include_graphics("images/long_wide.jpg")
 
 
-## ----eval=TRUE---------------------------------------------------------------------------------------------
+## ----eval=TRUE------------------------------------------------------------------------------------
 fbs_long <- fbs %>%
   pivot_longer(names_to = "Year",
                values_to = "Food_Supply_Quantity",
@@ -207,43 +205,43 @@ fbs_long <- fbs %>%
 glimpse(fbs_long)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_long %>%
   pull(Year) %>%
   unique()
 
 
-## ----dupe-1, cache = FALSE---------------------------------------------------------------------------------
+## ----dupe-1, cache = FALSE------------------------------------------------------------------------
 duplicated_records <- fbs_long %>%
   filter(duplicated(.))
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_long %>%
   filter(Country == "Afghanistan",
          Item == "Eggs",
          Year == 1961)
 
 
-## ----dupe-2, cache = FALSE---------------------------------------------------------------------------------
+## ----dupe-2, cache = FALSE------------------------------------------------------------------------
 fbs_long <- unique(fbs_long)
 
 
-## ----dupe-3, cache = FALSE---------------------------------------------------------------------------------
+## ----dupe-3, cache = FALSE------------------------------------------------------------------------
 part_duplicated_records <- fbs_long %>%
   select(Country, Item, Year) %>%
   duplicated() %>%
   filter(fbs_long, .)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 filter(fbs_long,
        Country == "Albania",
        Item == "Eggs",
        Year == 1961)
 
 
-## ----failing, cache = FALSE--------------------------------------------------------------------------------
+## ----failing, cache = FALSE-----------------------------------------------------------------------
 fbs_long <- fbs_long %>%
   group_by(Country, Year, Item) %>%
   summarise(Food_Supply_Quantity = mean(Food_Supply_Quantity))
@@ -252,25 +250,25 @@ fbs_long <- fbs_long %>%
 ## Time to tell the truth. It took us a some considerable time to realise there were duplicated records in the FAO dataset. We only realised there must be duplicates when we tried to get the numbers to add up below. They did not before we removed the duplicates, and this led us to find the duplicates. Once we found them, we removed them above. In the text above, it may look like we were really smart to think they might occur, check for them, find them, and remove them. In reality we were not so smart. We were, however, absolutely determined to understand why the numbers did not add up. You must also be as strict in your work. After we found the duplicates in this dataset, we also looked in the Polity data, found some, and then decided to add a check for duplicates to all our Workflow Demostrations, and to advise you to make this a standard sanity check when you start looking at a dataset.
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 obs_per_year <- fbs_long %>%
   group_by(Year) %>%
   summarise(num = n())
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 countries_per_year <- fbs_long %>%
   group_by(Year) %>%
   summarise(num = length(unique(Country)))
 
 
-## ----here_xxx----------------------------------------------------------------------------------------------
+## ----here_xxx-------------------------------------------------------------------------------------
 items_per_country <- fbs_long %>%
   group_by(Country) %>%
   summarise(num = length(unique(Item)))
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 items_per_country %>%
   summarise(total = sum(num))
 
@@ -278,13 +276,13 @@ items_per_country %>%
 ## We didn't just now find out anything new about the data, but we did confirm that we understand it properly. Checks and balances increase confidence.
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_long %>%
   summarise_all(list( ~ sum(is.na(.)))) %>%
   glimpse()
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 obs_per_year <- fbs_long %>%
   group_by(Year) %>%
   summarise(num = n(),
@@ -301,7 +299,7 @@ obs_per_year %>%
   facet_wrap(~ Variable, scales = "free", ncol = 1)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 Belarus_obs_per_year <- fbs_long %>%
   filter(Country == "Belarus") %>%
   group_by(Year) %>%
@@ -310,11 +308,11 @@ Belarus_obs_per_year <- fbs_long %>%
             prop_na = num_na / num)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_long <- filter(fbs_long, Year < 2012)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 country_year_not_all_missing <- fbs_long %>%
   group_by(Country, Year) %>%
   summarise(keep = n() != sum(is.na(Food_Supply_Quantity))) %>%
@@ -323,17 +321,17 @@ country_year_not_all_missing <- fbs_long %>%
   ungroup()
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 all_cases <- expand.grid(Country = unique(pull(fbs_long, Country)),
                          Year = unique(pull(fbs_long, Year)),
                          Item = unique(pull(fbs_long, Item))) 
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 temp2 <- left_join(country_year_not_all_missing, all_cases)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 all_cases <- expand.grid(Country = unique(pull(fbs_long, Country)),
                          Year = unique(pull(fbs_long, Year)),
                          Item = unique(pull(fbs_long, Item)),
@@ -341,35 +339,35 @@ all_cases <- expand.grid(Country = unique(pull(fbs_long, Country)),
 temp2 <- left_join(country_year_not_all_missing, all_cases)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 temp3 <- left_join(temp2, fbs_long)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_final <- temp3 %>%
   mutate(Food_Supply_Quantity = ifelse(!is.na(Food_Supply_Quantity),
                                        Food_Supply_Quantity,
                                        0))
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 items_per_country_per_year <- fbs_final %>%
   group_by(Country, Year) %>%
   summarise(num = length(unique(Item)))
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 countries_per_year <- fbs_final %>%
   group_by(Year) %>%
   summarise(num = length(unique(Country)))
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 countries_per_year %>%
   summarise(total = sum(num) * 114)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_div <- fbs_final %>%
   group_by(Country, Year) %>%
   summarise(richness = sum(Food_Supply_Quantity>0),
@@ -377,11 +375,11 @@ fbs_div <- fbs_final %>%
                                         index = "shannon"))
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 write_rds(fbs_div, "data/fbs_div.RDS")
 
 
-## ----message=FALSE, echo=FALSE, warning=FALSE--------------------------------------------------------------
+## ----message=FALSE, echo=FALSE, warning=FALSE-----------------------------------------------------
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -394,36 +392,36 @@ library(ggbeeswarm)
 #library(ggridges)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 rm(list=ls()) # clear R
 pol <- read_rds("data/pol.rds")
 fbs_div <- read_rds("data/fbs_div.RDS")
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_div %>% filter(str_detect(Country, "United")) %>%
   pull(Country) %>%
   unique()
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol %>% filter(str_detect(Country, "United")) %>%
   pull(Country) %>%
   unique()
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol %>% filter(str_detect(Country, "Tanz")) %>%
   pull(Country) %>%
   unique()
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_div %>% filter(str_detect(Country, "Tanz")) %>%
   pull(Country) %>%
   unique()
 
 
-## ----message = FALSE---------------------------------------------------------------------------------------
+## ----message = FALSE------------------------------------------------------------------------------
 fbs_temp <- read_csv("data/FoodBalanceSheets_E_All_Data.csv",
                locale = locale(encoding = 'ISO-8859-1'))
 fbs_country <- fbs_temp %>%
@@ -432,11 +430,11 @@ fbs_country <- fbs_temp %>%
   filter(Country_Code < 5000)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_div <- left_join(fbs_div, fbs_country)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 FAO_country_standards <- read_csv("data/FAOSTAT_data_country_name_standards.csv", na = "")
 names(FAO_country_standards) <- str_replace_all(names(FAO_country_standards), c(" " = "_"))
 FAO_country_standards <- FAO_country_standards %>%
@@ -444,33 +442,33 @@ FAO_country_standards <- FAO_country_standards %>%
   filter(Country_Code < 5000)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 FAO_country_standards %>% filter(str_detect(Country_name_FAO, "Swaz"))
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_div %>% filter(str_detect(Country, "Swaz")) %>%
   pull(Country) %>%
   unique()
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 FAO_country_standards %>% filter(str_detect(Country_name_FAO, "Esw"))
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_div_stand <- left_join(fbs_div, FAO_country_standards) %>%
   select(-Start_Year, -End_Year)
 
 
-## ----eval = FALSE, echo = FALSE----------------------------------------------------------------------------
+## ----eval = FALSE, echo = FALSE-------------------------------------------------------------------
 ## pol_countries <- pol %>%
 ##   select(Country) %>%
 ##   unique()
 ## write_csv(pol_countries ,"data/pol_countries.csv")
 
 
-## ----message = FALSE---------------------------------------------------------------------------------------
+## ----message = FALSE------------------------------------------------------------------------------
 pol_iso_mapping <- read_csv("data/pol_iso_mapping.csv",
                             na = ".") %>%
   rename(Country = Country_pol)
@@ -479,7 +477,7 @@ pol_iso_mapping <- read_csv("data/pol_iso_mapping.csv",
 ## **Be aware** You may have noticed that in the `read_csv` just above we wrote `na = "."`. This is because when we created the spreadsheet of mapping between Polity and ISO country names we used "." and not "NA" as the missing value indicator. Can you guess why we did not use "NA"? The reason is that "NA" is the ISO2 code for Namibia. If we had used NA for missing value then Namibia would have been given a missing value for the ISO2 code. The general message here is to be careful when a variable contains entries that might include "NA" as a real value.
 
 
-## ----eval = FALSE, echo = FALSE----------------------------------------------------------------------------
+## ----eval = FALSE, echo = FALSE-------------------------------------------------------------------
 ## setdiff(pull(pol_iso_mapping, Country),
 ##         pull(pol, Country))
 ## setdiff(pull(pol, Country),
@@ -487,12 +485,12 @@ pol_iso_mapping <- read_csv("data/pol_iso_mapping.csv",
 ## # all match
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 pol_stand <- left_join(pol, pol_iso_mapping)
 
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_pol <- inner_join(fbs_div_stand,
                      pol_stand,
                      by = c("ISO2_Code" = "ISO2_Code",
@@ -509,15 +507,15 @@ fbs_pol <- inner_join(fbs_div_stand,
   ungroup()
 
 
-## ----eval=FALSE--------------------------------------------------------------------------------------------
+## ----eval=FALSE-----------------------------------------------------------------------------------
 ## saveRDS(fbs_pol, "data/fbs_pol.Rdata")
 
 
-## ----echo = FALSE------------------------------------------------------------------------------------------
+## ----echo = FALSE---------------------------------------------------------------------------------
 rm(list=ls())
 
 
-## ----message=FALSE, echo=TRUE, warning=FALSE---------------------------------------------------------------
+## ----message=FALSE, echo=TRUE, warning=FALSE------------------------------------------------------
 # Load libraries
 library(dplyr)
 library(ggplot2)
@@ -588,7 +586,7 @@ ggplot() +
              alpha = 0.05)
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_pol_year <- fbs_pol %>%
   group_by(Country) %>%
   summarise(Ave_Polity2 = mean(Polity2),
@@ -608,7 +606,7 @@ fbs_pol_year %>%
   geom_point(aes(x = Ave_Polity2, y = Ave_Diversity))
 
 
-## ----------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------
 fbs_pol_year <- fbs_pol_year %>%
   mutate(Ave_Polity2_cat = cut(Ave_Polity2,
                            breaks = seq(-11, 11, length = 6),
@@ -639,44 +637,7 @@ fbs_pol_year %>%
   coord_flip()
 
 
-## ----eval=FALSE, echo=FALSE--------------------------------------------------------------------------------
+## ----eval=FALSE, echo=FALSE-----------------------------------------------------------------------
 ## fbs_pol_year %>% group_by(Ave_Polity2_cat) %>%
 ##   summarise(num_countries = n())
-
-
-## ----eval = FALSE------------------------------------------------------------------------------------------
-## gdp <- read_csv("data/Macro-Statistics_Key_Indicators_E_All_Data.csv",
-##                locale = locale(encoding = 'ISO-8859-1'))
-## # First fix some variable names:
-## names(gdp) <- str_replace_all(names(gdp), c(" " = "_"))
-## # Remove all non-countries
-## # keep only some of the elements
-## #gdp <-   filter(gdp, Item_Code==22008 & Element_Code==6110)
-## gdp <-   filter(gdp, Item_Code==22014 & Element_Code==6119)
-## gdp <- select(gdp, -Item_Code, -Area_Code,
-##              -Element_Code, -Element, -Unit, -Item,
-##              -ends_with("F"), -ends_with("N")) %>%
-##   pivot_longer(names_to = "Year", values_to = "GDP", cols = 2:49) %>%
-##   mutate(Year=as.numeric(substr(Year, 2, 5))) %>%
-##   rename(Country=Area)
-## fbs_pol_all <- full_join(fbs_pol, gdp)
-## 
-## fbs_pol_sum <- group_by(fbs_pol_all, Country) %>%
-##   summarise(mean_div=mean(Diversity, na.rm=TRUE),
-##             mean_pol=mean(Polity2, na.rm=TRUE),
-##             mean_GDP=mean(GDP, na.rm=TRUE))
-## 
-## ggplot() +
-##   geom_point(data = fbs_pol_sum,
-##              aes(x=log10(mean_GDP), y=mean_div, col=mean_pol), size=3)
-## 
-## ggplot() +
-##   geom_point(data = fbs_pol_sum,
-##        aes(x=mean_pol, y=mean_div, col=log10(mean_GDP)), size=3)
-## 
-## ggplot() +
-##   geom_point(data = fbs_pol_sum,
-##              aes(x=mean_pol, y=log10(mean_GDP), col=mean_div), size=3)
-## 
-## 
 

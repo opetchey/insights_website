@@ -1,3 +1,6 @@
+## IMPORTANT: You must run part 1 first.
+
+
 ## ----------------------------------------------------------------------------------------------------------
 # how many distinct Bats are there...
 # there are multiple observations of each bat
