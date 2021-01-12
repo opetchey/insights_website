@@ -3,8 +3,8 @@
 .RData
 .Ruserdata
 data/FoodBalanceSheets_E_All_Data.csv
-_book
-_bookdown_files
+_book/
+_bookdown_files/
 _book/additional-concepts.html
 .DS_Store
 images/.DS_Store
@@ -13,4 +13,4 @@ data/Macro-Statistics_Key_Indicators_E_All_Data.csv
 insights_website_cache
 insights_website_files
 *.rdx
-_book/additional-next-step-concepts.html
+images/.DS_Store
