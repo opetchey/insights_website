@@ -49,6 +49,8 @@ knitr::opts_chunk$set(cache = FALSE)
 
 *Welcome!* to the Companion Website for the book *Insights from Data with R -- An Introduction for the Life and Environmental Sciences*
 
+The book is due to be released in late February 2021. Latest information here on the related [Oxford University Press web page](https://global.oup.com/academic/product/insights-from-data-with-r-9780198849827).
+
 *Insights* was authored by the members of [R4ALL](http://r4all.org/), an organisation specialising in teaching R to those who’ve never used it. And to folk using R already but want to improve their foundation and workflow.
 
 The Preface Chapter of *Insights* [here is a PDF of the Preface Chapter](assets/Insights_Preface.pdf) describes features of the book, such as its aims, content, structure, intended readership, and relationship to our other book *Getting Started with R*. Some of the text in the Preface may come across as a sales pitch (it probably is), but it also aims to make prospective readers clear about what they will find in *Insights* and why.
