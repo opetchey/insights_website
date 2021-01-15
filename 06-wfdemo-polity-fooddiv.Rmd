@@ -331,7 +331,7 @@ pol %>%
 
 ## Acquire, import, check the FAO Food balance sheet data
 
-**Important note: the food balance sheet data available on the FAO website was updated since the writing of this section. The currently (November 2020) is not the same as that used below. Please be sure to get and use the data here: [direct download small FAO balance sheet data](data/FoodBalanceSheets_E_All_Data_reduced.Rdata). Do not use the data from the FAO website.**
+**Important note: the food balance sheet data available on the FAO website was updated since the writing of this section. The currently (November 2020) available dataset is not the same as that used below. Please be sure to get and use the data here: [direct download small FAO balance sheet data](data/FoodBalanceSheets_E_All_Data_reduced.Rdata). Do not use the data from the FAO website.**
 
 Let us now move on to the dataset we use to get the food diversity measure for each country. The dataset gives, for various *Areas* in the world, such as countries and continents, the annual supply and use of various food *Items* such as "Wheat and products", "Honey", and "Crustaceans". Supply and use includes what are called *Elements* of the food supply equation; elements such as "Production", Import Quantity", and "Food supply quantity (kg/capita/yr)". The words *Area*, *Item*, and *Element* are emphasised because they are variables in the dataset, as described further below. There is a lot of important information about this data available on the [FAO Food Balance Sheet Metadata]( http://www.fao.org/faostat/en/#data/FBS/metadata) web page web page. And even more in the [Food Balance Sheet Methodology Handbook](http://www.fao.org/economic/ess/fbs/ess-fbs02/en/).
 

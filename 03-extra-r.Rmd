@@ -12,10 +12,12 @@ In the *Insights* book we strongly recommend using the Projects that are built i
 
 *Insights* teaches you to use R with the *tidyverse* add-on packages and  functions. Not everyone uses R with these functions, however, so it can be useful to know a little about the classic (older but still often used) ways to use R. One instance in which you might benefit from this is if you have access to scripts written some times ago, or are working with seasoned R veterans who do not use the tidyverse.
 
-The table below compares common data manipulation methods using the classic way (base R) and the modern way, with functions in the dplyr package. The placement of the comma, when using `[ ]`, is quite important and subtle. The help files for `subset()`, `order()`, `aggregate()`, and `tapply()` are worth consulting should you run into these functions.
+The table in Figure \@ref(fig:classic-dplyr-comparison) below compares common data manipulation methods using the classic way (base R) and the modern way, with functions in the dplyr package. The placement of the comma, when using `[ ]`, is quite important and subtle. The help files for `subset()`, `order()`, `aggregate()`, and `tapply()` are worth consulting should you run into these functions.
 
 
-![classic_dplyr_comparison](images/classic_dplyr_comparison.png)
+```{r classic-dplyr-comparison, fig.cap='Comparison of classic/base R methods and dplyr methods for common operations.', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
+knitr::include_graphics("images/classic_dplyr_comparison.png")
+```
 
 Using **dplyr**, we use the functions `select()`, `slice()`, and `filter()` to get subsets of data frames. The classic method for doing this often involves something called indexing, and this is accomplished with square brackets and a comma, with the rows we want before the comma and the columns/variables we want after the comma: something like `my_data[rows, columns]`. There are lots of ways of specifying the rows and columns, including by number, name, or logical operator. It’s very flexible, quick, and convenient in many cases. Selecting rows can also be done with the `subset()` base R function, which actually possesses the combined functionality of `filter()` and `select()` from **dplyr**. Ordering rows or columns can be achieved by a combination of indexing and the base R `order()` function.
 
@@ -23,9 +25,6 @@ Adding a new variable, which might be some transformation of existing ones, is a
 
 The classic and still useful methods for getting information about groups of data use functions like `aggregate()` and `tapply()` -- both of these were covered in detail in the previous edition of this book. These functions have separate arguments that specify the groups and the summary statistics. In **dplyr** the groups are specified by the `group_by()` function and the summary statistics by `summarise()`.
 
-
-A section on translation between base and modern R (Use table 3.2 from GSwR
-Add pull)
 
 ## Multiple graphs in one figure
 
