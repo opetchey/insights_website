@@ -2,7 +2,7 @@
 
 ![](images/WF4_icon.png){width="100" height="63"}
 
-```{r message=FALSE, echo=TRUE, warning=FALSE}
+```{r message=FALSE, echo=FALSE, warning=FALSE}
 # Load the libraries we use
 library(dplyr)
 library(ggplot2)
@@ -19,7 +19,7 @@ library(forcats)
 
 ## About this Workflow Demonstration
 
-This Workflow Demonstation (WD) is primarily a supplement to the material in the book *Insights from Data with R* by Petchey, Beckerman, Childs, and Cooper. If you don't understand something here, have a look at that book (perhaps again), or search for help, or get in touch with us.
+This Workflow Demonstation (WD) is primarily a supplement to the material in the book *Insights from Data with R* by Petchey, Beckerman, Cooper, and Childs. If you don't understand something here, have a look at that book (perhaps again), or search for help, or get in touch with us.
 
 At the time of publication (early 2021) there are likely some improvements that could be made to this demonstration, in terms of the description of what we do in it, why we do it, and how we do it. If anything seems odd, unclear, or sub-optimal, please don't hesitate to get in touch, and we will quickly make improvements.
 
