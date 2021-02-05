@@ -24,7 +24,7 @@
 <meta name="author" content="Petchey, Beckerman, Cooper, Childs" />
 
 
-<meta name="date" content="2021-01-13" />
+<meta name="date" content="2021-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,14 +33,15 @@
   
 <link rel="prev" href="insights-workflow.html"/>
 <link rel="next" href="more-R.html"/>
-<script src="libs/jquery/jquery.min.js"></script>
-<link href="libs/gitbook/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -50,24 +51,22 @@
 
 
 
-<script src="libs/accessible-code-block/empty-anchor.js"></script>
-<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,7 +136,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="insights-workflow.html"><a href="insights-workflow.html"><i class="fa fa-check"></i><b>2</b> Insights Workflow</a><ul>
+<li class="chapter" data-level="2" data-path="insights-workflow.html"><a href="insights-workflow.html"><i class="fa fa-check"></i><b>2</b> Insights Workflow</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="insights-workflow.html"><a href="insights-workflow.html#preparing-the-data"><i class="fa fa-check"></i><b>2.1</b> Preparing the data</a></li>
 <li class="chapter" data-level="2.2" data-path="insights-workflow.html"><a href="insights-workflow.html#prepare-your-computer-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Prepare your computer, R, and RStudio</a></li>
 <li class="chapter" data-level="2.3" data-path="insights-workflow.html"><a href="insights-workflow.html#read-the-data-into-r"><i class="fa fa-check"></i><b>2.3</b> Read the data into R</a></li>
@@ -146,34 +146,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="insights-workflow.html"><a href="insights-workflow.html#initial-insights"><i class="fa fa-check"></i><b>2.6</b> Initial insights</a></li>
 <li class="chapter" data-level="2.7" data-path="insights-workflow.html"><a href="insights-workflow.html#insights-about-question-posed"><i class="fa fa-check"></i><b>2.7</b> Insights about question posed</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a><ul>
+<li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="questions-exercises.html"><a href="questions-exercises.html#preface"><i class="fa fa-check"></i><b>3.1</b> Preface</a></li>
 <li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1-introduction"><i class="fa fa-check"></i><b>3.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="3.3" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-2-getting-acquainted"><i class="fa fa-check"></i><b>3.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="3.4" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-3-workflow-demonstrationpart-1"><i class="fa fa-check"></i><b>3.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="3.5" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-4-workflow-demonstrationpart-2"><i class="fa fa-check"></i><b>3.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
-<li class="chapter" data-level="3.6" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-5-dealing-with-data-1digging-into-dplyr"><i class="fa fa-check"></i><b>3.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a><ul>
+<li class="chapter" data-level="3.6" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-5-dealing-with-data-1digging-into-dplyr"><i class="fa fa-check"></i><b>3.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a>
+<ul>
 <li class="chapter" data-level="3.6.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises"><i class="fa fa-check"></i><b>3.6.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.6.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises"><i class="fa fa-check"></i><b>3.6.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-6-dealing-with-data-2expanding-your-toolkit"><i class="fa fa-check"></i><b>3.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a><ul>
+<li class="chapter" data-level="3.7" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-6-dealing-with-data-2expanding-your-toolkit"><i class="fa fa-check"></i><b>3.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a>
+<ul>
 <li class="chapter" data-level="3.7.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-1"><i class="fa fa-check"></i><b>3.7.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.7.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises-1"><i class="fa fa-check"></i><b>3.7.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-7-getting-to-grips-with-ggplot2"><i class="fa fa-check"></i><b>3.8</b> Chapter 7 (Getting to grips with ggplot2)</a><ul>
+<li class="chapter" data-level="3.8" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-7-getting-to-grips-with-ggplot2"><i class="fa fa-check"></i><b>3.8</b> Chapter 7 (Getting to grips with ggplot2)</a>
+<ul>
 <li class="chapter" data-level="3.8.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-2"><i class="fa fa-check"></i><b>3.8.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.8.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises-2"><i class="fa fa-check"></i><b>3.8.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.9" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables"><i class="fa fa-check"></i><b>3.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a><ul>
+<li class="chapter" data-level="3.9" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables"><i class="fa fa-check"></i><b>3.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a>
+<ul>
 <li class="chapter" data-level="3.9.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-3"><i class="fa fa-check"></i><b>3.9.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.9.2" data-path="questions-exercises.html"><a href="questions-exercises.html#workflow-demonstration-questions-and-exercises"><i class="fa fa-check"></i><b>3.9.2</b> Workflow demonstration questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.10" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables"><i class="fa fa-check"></i><b>3.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a><ul>
+<li class="chapter" data-level="3.10" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables"><i class="fa fa-check"></i><b>3.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a>
+<ul>
 <li class="chapter" data-level="3.10.1" data-path="questions-exercises.html"><a href="questions-exercises.html#workflow-questions-and-exercises"><i class="fa fa-check"></i><b>3.10.1</b> Workflow questions and exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="3.11" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-10-looking-back-and-looking-forward"><i class="fa fa-check"></i><b>3.11</b> Chapter 10 (Looking back and looking forward)</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="more-R.html"><a href="more-R.html"><i class="fa fa-check"></i><b>4</b> More R</a><ul>
+<li class="chapter" data-level="4" data-path="more-R.html"><a href="more-R.html"><i class="fa fa-check"></i><b>4</b> More R</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="more-R.html"><a href="more-R.html#rstudio-project-setup"><i class="fa fa-check"></i><b>4.1</b> RStudio Project setup</a></li>
 <li class="chapter" data-level="4.2" data-path="more-R.html"><a href="more-R.html#baseclassic-and-tidyverse-comparison"><i class="fa fa-check"></i><b>4.2</b> Base/classic and tidyverse comparison</a></li>
 <li class="chapter" data-level="4.3" data-path="more-R.html"><a href="more-R.html#multiple-graphs-in-one-figure"><i class="fa fa-check"></i><b>4.3</b> Multiple graphs in one figure</a></li>
@@ -184,7 +191,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8" data-path="more-R.html"><a href="more-R.html#syntax-highlighting"><i class="fa fa-check"></i><b>4.8</b> Syntax highlighting</a></li>
 <li class="chapter" data-level="4.9" data-path="more-R.html"><a href="more-R.html#summarise-more-than-one-variable"><i class="fa fa-check"></i><b>4.9</b> Summarise more than one variable</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html"><i class="fa fa-check"></i><b>5</b> Additional &amp; next step concepts</a><ul>
+<li class="chapter" data-level="5" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html"><i class="fa fa-check"></i><b>5</b> Additional &amp; next step concepts</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#distributions"><i class="fa fa-check"></i><b>5.1</b> Distributions</a></li>
 <li class="chapter" data-level="5.2" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#interactions-and-complexity"><i class="fa fa-check"></i><b>5.2</b> Interactions and complexity</a></li>
 <li class="chapter" data-level="5.3" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#lurking-variables"><i class="fa fa-check"></i><b>5.3</b> Lurking variables</a></li>
@@ -199,7 +207,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.12" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#interoperability"><i class="fa fa-check"></i><b>5.12</b> Interoperability / standardising terms</a></li>
 <li class="chapter" data-level="5.13" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#comparing-descriptive-statistics"><i class="fa fa-check"></i><b>5.13</b> Comparing descriptive statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html"><i class="fa fa-check"></i><b>6</b> How does dietary diversity affect populations?</a><ul>
+<li class="chapter" data-level="6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html"><i class="fa fa-check"></i><b>6</b> How does dietary diversity affect populations?</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#about-this-workflow-demonstration"><i class="fa fa-check"></i><b>6.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="6.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#going-to-the-next-level"><i class="fa fa-check"></i><b>6.2</b> Going to the next level</a></li>
 <li class="chapter" data-level="6.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#introduction-to-the-study-and-data"><i class="fa fa-check"></i><b>6.3</b> Introduction to the study and data</a></li>
@@ -208,7 +217,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#acquire-the-dataset"><i class="fa fa-check"></i><b>6.6</b> Acquire the dataset</a></li>
 <li class="chapter" data-level="6.7" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#import-the-dataset"><i class="fa fa-check"></i><b>6.7</b> Import the dataset</a></li>
 <li class="chapter" data-level="6.8" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#checking-the-import-worked-correctly"><i class="fa fa-check"></i><b>6.8</b> Checking the import worked correctly</a></li>
-<li class="chapter" data-level="6.9" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>6.9</b> Cleaning and tidying</a><ul>
+<li class="chapter" data-level="6.9" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>6.9</b> Cleaning and tidying</a>
+<ul>
 <li class="chapter" data-level="6.9.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#recode-some-names"><i class="fa fa-check"></i><b>6.9.1</b> Recode some names</a></li>
 <li class="chapter" data-level="6.9.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#factors-predstab"><i class="fa fa-check"></i><b>6.9.2</b> Make the <code>prey_composition</code> variable a factor with specific order</a></li>
 <li class="chapter" data-level="6.9.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#fix-those-variable-names"><i class="fa fa-check"></i><b>6.9.3</b> Fix those variable names</a></li>
@@ -219,7 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.9.8" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#calculate-the-three-response-variables"><i class="fa fa-check"></i><b>6.9.8</b> Calculate the three response variables</a></li>
 </ul></li>
 <li class="chapter" data-level="6.10" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#shapes"><i class="fa fa-check"></i><b>6.10</b> Shapes</a></li>
-<li class="chapter" data-level="6.11" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#relationships"><i class="fa fa-check"></i><b>6.11</b> Relationships</a><ul>
+<li class="chapter" data-level="6.11" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#relationships"><i class="fa fa-check"></i><b>6.11</b> Relationships</a>
+<ul>
 <li class="chapter" data-level="6.11.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#maximum-predator-density"><i class="fa fa-check"></i><b>6.11.1</b> Maximum predator density</a></li>
 <li class="chapter" data-level="6.11.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#predator-population-variability-cv"><i class="fa fa-check"></i><b>6.11.2</b> Predator population variability (CV)</a></li>
 <li class="chapter" data-level="6.11.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#predator-persistence-time"><i class="fa fa-check"></i><b>6.11.3</b> Predator persistence time</a></li>
@@ -227,12 +238,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.12" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#wrapping-up"><i class="fa fa-check"></i><b>6.12</b> Wrapping up</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html"><i class="fa fa-check"></i><b>7</b> Are diets more diverse in more democratic countries?</a><ul>
+<li class="chapter" data-level="7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html"><i class="fa fa-check"></i><b>7</b> Are diets more diverse in more democratic countries?</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#about-this-workflow-demonstration-1"><i class="fa fa-check"></i><b>7.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="7.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#introduction-to-the-study-and-data-1"><i class="fa fa-check"></i><b>7.2</b> Introduction to the study and data</a></li>
 <li class="chapter" data-level="7.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#understanding-the-data"><i class="fa fa-check"></i><b>7.3</b> Understanding the data</a></li>
 <li class="chapter" data-level="7.4" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#a-little-preparation-1"><i class="fa fa-check"></i><b>7.4</b> A little preparation</a></li>
-<li class="chapter" data-level="7.5" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><i class="fa fa-check"></i><b>7.5</b> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a><ul>
+<li class="chapter" data-level="7.5" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><i class="fa fa-check"></i><b>7.5</b> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a>
+<ul>
 <li class="chapter" data-level="7.5.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#data-origins-and-acquisition"><i class="fa fa-check"></i><b>7.5.1</b> Data origins and acquisition</a></li>
 <li class="chapter" data-level="7.5.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#data-import"><i class="fa fa-check"></i><b>7.5.2</b> Data import</a></li>
 <li class="chapter" data-level="7.5.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#tidy-and-clean"><i class="fa fa-check"></i><b>7.5.3</b> Tidy and clean</a></li>
@@ -241,7 +254,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#check-ranges-of-numeric-variables"><i class="fa fa-check"></i><b>7.5.6</b> Check ranges of numeric variables</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#first-insights-from-the-polity-data"><i class="fa fa-check"></i><b>7.6</b> First insights from the polity data</a></li>
-<li class="chapter" data-level="7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#acquire-import-check-the-fao-food-balance-sheet-data"><i class="fa fa-check"></i><b>7.7</b> Acquire, import, check the FAO Food balance sheet data</a><ul>
+<li class="chapter" data-level="7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#acquire-import-check-the-fao-food-balance-sheet-data"><i class="fa fa-check"></i><b>7.7</b> Acquire, import, check the FAO Food balance sheet data</a>
+<ul>
 <li class="chapter" data-level="7.7.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#tidying-FAO"><i class="fa fa-check"></i><b>7.7.1</b> Tidy the FAO data</a></li>
 <li class="chapter" data-level="7.7.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#clean-the-fao-data"><i class="fa fa-check"></i><b>7.7.2</b> Clean the FAO data</a></li>
 <li class="chapter" data-level="7.7.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#check-for-innapropriate-duplicate-observations-1"><i class="fa fa-check"></i><b>7.7.3</b> Check for innapropriate duplicate observations</a></li>
@@ -250,7 +264,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.7.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#more-cleaning"><i class="fa fa-check"></i><b>7.7.6</b> More cleaning</a></li>
 <li class="chapter" data-level="7.7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#calculating-our-response-variables"><i class="fa fa-check"></i><b>7.7.7</b> Calculating our response variables</a></li>
 </ul></li>
-<li class="chapter" data-level="7.8" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#merge-the-two-datasets-aaaaaargh"><i class="fa fa-check"></i><b>7.8</b> Merge the two datasets (aaaaaargh!!)</a><ul>
+<li class="chapter" data-level="7.8" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#merge-the-two-datasets-aaaaaargh"><i class="fa fa-check"></i><b>7.8</b> Merge the two datasets (aaaaaargh!!)</a>
+<ul>
 <li class="chapter" data-level="7.8.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-standardisation"><i class="fa fa-check"></i><b>7.8.1</b> Polity standardisation</a></li>
 <li class="chapter" data-level="7.8.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#the-final-merge"><i class="fa fa-check"></i><b>7.8.2</b> The final merge</a></li>
 </ul></li>
@@ -260,7 +275,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.12" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#wrapping-up-1"><i class="fa fa-check"></i><b>7.12</b> Wrapping up</a></li>
 <li class="chapter" data-level="7.13" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#and-a-challenge-for-you"><i class="fa fa-check"></i><b>7.13</b> And a challenge for you…</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html"><i class="fa fa-check"></i><b>8</b> What are the effects of dietary restriction?</a><ul>
+<li class="chapter" data-level="8" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html"><i class="fa fa-check"></i><b>8</b> What are the effects of dietary restriction?</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#about-this-workflow-demonstration-2"><i class="fa fa-check"></i><b>8.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="8.2" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#introduction-1"><i class="fa fa-check"></i><b>8.2</b> Introduction</a></li>
 <li class="chapter" data-level="8.3" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#the-question"><i class="fa fa-check"></i><b>8.3</b> The question</a></li>
@@ -283,8 +299,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.20" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#inspect-shapes-distributions"><i class="fa fa-check"></i><b>8.20</b> Inspect shapes (distributions)</a></li>
 <li class="chapter" data-level="8.21" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#inspect-relationships"><i class="fa fa-check"></i><b>8.21</b> Inspect relationships</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html"><i class="fa fa-check"></i><b>9</b> Solutions: What are the effects of dietary restriction?</a><ul>
-<li class="chapter" data-level="9.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#about-these-solutions"><i class="fa fa-check"></i><b>9.1</b> About these solutions</a><ul>
+<li class="chapter" data-level="9" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html"><i class="fa fa-check"></i><b>9</b> Solutions: What are the effects of dietary restriction?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#about-these-solutions"><i class="fa fa-check"></i><b>9.1</b> About these solutions</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#nas-variable-entries-e.g.-levels-of-characters-ranges-of-numerics-numbers-of-things-1"><i class="fa fa-check"></i><b>9.1.1</b> NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of “things”*</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#independence-1"><i class="fa fa-check"></i><b>9.2</b> Independence</a></li>
@@ -298,7 +316,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.10" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#moatt-et-al-data-s15-length-weight-and-condition-index-data"><i class="fa fa-check"></i><b>9.10</b> Moatt et al Data S15 – Length, Weight and Condition Index Data</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="modelwf-scripts.html"><a href="modelwf-scripts.html"><i class="fa fa-check"></i><b>10</b> Workflow demonstration R scripts</a></li>
-<li class="chapter" data-level="11" data-path="live-data-demo.html"><a href="live-data-demo.html"><i class="fa fa-check"></i><b>11</b> Live data analysis demonstration</a><ul>
+<li class="chapter" data-level="11" data-path="live-data-demo.html"><a href="live-data-demo.html"><i class="fa fa-check"></i><b>11</b> Live data analysis demonstration</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="live-data-demo.html"><a href="live-data-demo.html#introduction-for-intructors"><i class="fa fa-check"></i><b>11.1</b> Introduction for intructors</a></li>
 <li class="chapter" data-level="" data-path="live-data-demo.html"><a href="live-data-demo.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="11.2" data-path="live-data-demo.html"><a href="live-data-demo.html#meta-task"><i class="fa fa-check"></i><b>11.2</b> Meta-task</a></li>
@@ -311,7 +330,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.9" data-path="live-data-demo.html"><a href="live-data-demo.html#data-collection"><i class="fa fa-check"></i><b>11.9</b> Data collection</a></li>
 <li class="chapter" data-level="11.10" data-path="live-data-demo.html"><a href="live-data-demo.html#look-at-the-data"><i class="fa fa-check"></i><b>11.10</b> Look at the data!</a></li>
 <li class="chapter" data-level="11.11" data-path="live-data-demo.html"><a href="live-data-demo.html#lets-get-the-data-into-our-data-analysis-software-of-choice-r-via-rstudio"><i class="fa fa-check"></i><b>11.11</b> Lets get the data into our data analysis software of choice (R, via RStudio)</a></li>
-<li class="chapter" data-level="11.12" data-path="live-data-demo.html"><a href="live-data-demo.html#now-we-need-to-do-some-data-wrangling-cleaning-and-tidying"><i class="fa fa-check"></i><b>11.12</b> Now we need to do some data wrangling (cleaning and tidying)</a><ul>
+<li class="chapter" data-level="11.12" data-path="live-data-demo.html"><a href="live-data-demo.html#now-we-need-to-do-some-data-wrangling-cleaning-and-tidying"><i class="fa fa-check"></i><b>11.12</b> Now we need to do some data wrangling (cleaning and tidying)</a>
+<ul>
 <li class="chapter" data-level="11.12.1" data-path="live-data-demo.html"><a href="live-data-demo.html#clean-up-the-column-variable-names"><i class="fa fa-check"></i><b>11.12.1</b> Clean up the column / variable names:</a></li>
 <li class="chapter" data-level="11.12.2" data-path="live-data-demo.html"><a href="live-data-demo.html#check-the-variable-types-are-correct."><i class="fa fa-check"></i><b>11.12.2</b> Check the variable types are correct.</a></li>
 <li class="chapter" data-level="11.12.3" data-path="live-data-demo.html"><a href="live-data-demo.html#correct-or-exclude-problematic-data"><i class="fa fa-check"></i><b>11.12.3</b> Correct or exclude problematic data</a></li>
@@ -321,20 +341,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.13" data-path="live-data-demo.html"><a href="live-data-demo.html#visualise-the-data"><i class="fa fa-check"></i><b>11.13</b> Visualise the data</a></li>
 <li class="chapter" data-level="11.14" data-path="live-data-demo.html"><a href="live-data-demo.html#get-the-means"><i class="fa fa-check"></i><b>11.14</b> Get the means</a></li>
 <li class="chapter" data-level="11.15" data-path="live-data-demo.html"><a href="live-data-demo.html#effect-size-and-practical-importance"><i class="fa fa-check"></i><b>11.15</b> Effect size and practical importance?</a></li>
-<li class="chapter" data-level="11.16" data-path="live-data-demo.html"><a href="live-data-demo.html#assess-assumptions"><i class="fa fa-check"></i><b>11.16</b> Assess assumptions</a><ul>
+<li class="chapter" data-level="11.16" data-path="live-data-demo.html"><a href="live-data-demo.html#assess-assumptions"><i class="fa fa-check"></i><b>11.16</b> Assess assumptions</a>
+<ul>
 <li class="chapter" data-level="11.16.1" data-path="live-data-demo.html"><a href="live-data-demo.html#independence-2"><i class="fa fa-check"></i><b>11.16.1</b> Independence</a></li>
 <li class="chapter" data-level="11.16.2" data-path="live-data-demo.html"><a href="live-data-demo.html#normally-distributed-residuals"><i class="fa fa-check"></i><b>11.16.2</b> Normally distributed residuals</a></li>
 <li class="chapter" data-level="11.16.3" data-path="live-data-demo.html"><a href="live-data-demo.html#equal-variance"><i class="fa fa-check"></i><b>11.16.3</b> Equal variance</a></li>
 </ul></li>
 <li class="chapter" data-level="11.17" data-path="live-data-demo.html"><a href="live-data-demo.html#do-the-statistical-test"><i class="fa fa-check"></i><b>11.17</b> Do the statistical test</a></li>
 <li class="chapter" data-level="11.18" data-path="live-data-demo.html"><a href="live-data-demo.html#critical-thinking"><i class="fa fa-check"></i><b>11.18</b> Critical thinking</a></li>
-<li class="chapter" data-level="11.19" data-path="live-data-demo.html"><a href="live-data-demo.html#report-and-communicate-the-results"><i class="fa fa-check"></i><b>11.19</b> Report and communicate the results</a><ul>
+<li class="chapter" data-level="11.19" data-path="live-data-demo.html"><a href="live-data-demo.html#report-and-communicate-the-results"><i class="fa fa-check"></i><b>11.19</b> Report and communicate the results</a>
+<ul>
 <li class="chapter" data-level="11.19.1" data-path="live-data-demo.html"><a href="live-data-demo.html#the-results-as-a-sentence"><i class="fa fa-check"></i><b>11.19.1</b> The results as a sentence</a></li>
 <li class="chapter" data-level="11.19.2" data-path="live-data-demo.html"><a href="live-data-demo.html#the-results-graphically"><i class="fa fa-check"></i><b>11.19.2</b> The results graphically</a></li>
 <li class="chapter" data-level="11.19.3" data-path="live-data-demo.html"><a href="live-data-demo.html#do-not-use-a-table"><i class="fa fa-check"></i><b>11.19.3</b> Do not use a table</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="more-questions-data.html"><a href="more-questions-data.html"><i class="fa fa-check"></i><b>12</b> More datasets</a><ul>
+<li class="chapter" data-level="12" data-path="more-questions-data.html"><a href="more-questions-data.html"><i class="fa fa-check"></i><b>12</b> More datasets</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="more-questions-data.html"><a href="more-questions-data.html#hungry-ladybirds"><i class="fa fa-check"></i><b>12.1</b> Hungry ladybirds</a></li>
 <li class="chapter" data-level="12.2" data-path="more-questions-data.html"><a href="more-questions-data.html#seal-suppers"><i class="fa fa-check"></i><b>12.2</b> Seal suppers</a></li>
 <li class="chapter" data-level="12.3" data-path="more-questions-data.html"><a href="more-questions-data.html#more-bat-poop"><i class="fa fa-check"></i><b>12.3</b> More bat poop</a></li>
@@ -346,34 +369,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.9" data-path="more-questions-data.html"><a href="more-questions-data.html#cervical-spine-compression-and-mri-not-food-related"><i class="fa fa-check"></i><b>12.9</b> Cervical spine compression and MRI (not food related)</a></li>
 <li class="chapter" data-level="12.10" data-path="more-questions-data.html"><a href="more-questions-data.html#lots-of-other-datasets-here"><i class="fa fa-check"></i><b>12.10</b> Lots of other datasets here:</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a><ul>
+<li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a>
+<ul>
 <li class="chapter" data-level="13.1" data-path="related-reading.html"><a href="related-reading.html#data-science-related-reading"><i class="fa fa-check"></i><b>13.1</b> Data science related reading</a></li>
 <li class="chapter" data-level="13.2" data-path="related-reading.html"><a href="related-reading.html#study-design-related-reading"><i class="fa fa-check"></i><b>13.2</b> Study design related reading</a></li>
 <li class="chapter" data-level="13.3" data-path="related-reading.html"><a href="related-reading.html#web-sites-pages"><i class="fa fa-check"></i><b>13.3</b> Web sites / pages</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a><ul>
+<li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="answers.html"><a href="answers.html#preface-1"><i class="fa fa-check"></i><b>14.1</b> Preface</a></li>
 <li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction-1"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="14.3" data-path="answers.html"><a href="answers.html#chapter-2-getting-acquainted-1"><i class="fa fa-check"></i><b>14.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="14.4" data-path="answers.html"><a href="answers.html#chapter-3-workflow-demonstrationpart-1-1"><i class="fa fa-check"></i><b>14.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="14.5" data-path="answers.html"><a href="answers.html#chapter-4-workflow-demonstrationpart-2-1"><i class="fa fa-check"></i><b>14.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
-<li class="chapter" data-level="14.6" data-path="answers.html"><a href="answers.html#chapter-5-dealing-with-data-1digging-into-dplyr-1"><i class="fa fa-check"></i><b>14.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a><ul>
+<li class="chapter" data-level="14.6" data-path="answers.html"><a href="answers.html#chapter-5-dealing-with-data-1digging-into-dplyr-1"><i class="fa fa-check"></i><b>14.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a>
+<ul>
 <li class="chapter" data-level="14.6.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-4"><i class="fa fa-check"></i><b>14.6.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.6.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-3"><i class="fa fa-check"></i><b>14.6.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.7" data-path="answers.html"><a href="answers.html#chapter-6-dealing-with-data-2expanding-your-toolkit-1"><i class="fa fa-check"></i><b>14.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a><ul>
+<li class="chapter" data-level="14.7" data-path="answers.html"><a href="answers.html#chapter-6-dealing-with-data-2expanding-your-toolkit-1"><i class="fa fa-check"></i><b>14.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a>
+<ul>
 <li class="chapter" data-level="14.7.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-5"><i class="fa fa-check"></i><b>14.7.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.7.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-4"><i class="fa fa-check"></i><b>14.7.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.8" data-path="answers.html"><a href="answers.html#chapter-7-getting-to-grips-with-ggplot2-1"><i class="fa fa-check"></i><b>14.8</b> Chapter 7 (Getting to grips with ggplot2)</a><ul>
+<li class="chapter" data-level="14.8" data-path="answers.html"><a href="answers.html#chapter-7-getting-to-grips-with-ggplot2-1"><i class="fa fa-check"></i><b>14.8</b> Chapter 7 (Getting to grips with ggplot2)</a>
+<ul>
 <li class="chapter" data-level="14.8.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-6"><i class="fa fa-check"></i><b>14.8.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.8.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-5"><i class="fa fa-check"></i><b>14.8.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.9" data-path="answers.html"><a href="answers.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables-1"><i class="fa fa-check"></i><b>14.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a><ul>
+<li class="chapter" data-level="14.9" data-path="answers.html"><a href="answers.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables-1"><i class="fa fa-check"></i><b>14.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a>
+<ul>
 <li class="chapter" data-level="14.9.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-7"><i class="fa fa-check"></i><b>14.9.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.9.2" data-path="answers.html"><a href="answers.html#workflow-demonstration-questions-and-exercises-1"><i class="fa fa-check"></i><b>14.9.2</b> Workflow demonstration questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.10" data-path="answers.html"><a href="answers.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables-1"><i class="fa fa-check"></i><b>14.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a><ul>
+<li class="chapter" data-level="14.10" data-path="answers.html"><a href="answers.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables-1"><i class="fa fa-check"></i><b>14.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a>
+<ul>
 <li class="chapter" data-level="14.10.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-8"><i class="fa fa-check"></i><b>14.10.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.10.2" data-path="answers.html"><a href="answers.html#workflow-questions-and-exercises-1"><i class="fa fa-check"></i><b>14.10.2</b> Workflow questions and exercises</a></li>
 </ul></li>
@@ -401,10 +431,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="questions-exercises" class="section level1">
+<div id="questions-exercises" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Questions and exercises</h1>
-<p>Below are questions and exercises related to each of the chapters of <em>Insights</em> book. In addition to the questions and exercises here, the <em>fish dietary restriction</em> Workflow Demonstration is presented here as a web page of question, and a web page of solutions.</p>
-<div id="preface" class="section level2">
+<p>Below are questions and exercises related to each of the chapters of <em>Insights</em> book. In addition to the questions and exercises here, the <em>fish dietary restriction</em> Workflow Demonstration is presented <a href="WFD-diet-restrict.html#WFD-diet-restrict">here as a web page of questions</a>, and with <a href="WFD-diet-restrict-solutions.html#WFD-diet-restrict-solutions">a web page of solutions here</a>.</p>
+<div id="preface" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Preface</h2>
 <p>The following are multiple choice questions, in which each of the given options can be true or false.</p>
 <p><strong>Q0.1</strong> Who is the intended audience/users/readers of <em>Insights</em>?</p>
@@ -442,7 +472,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Q0.8</strong> Which one has has strangely hairy ears?</p>
 <p><strong>Q0.9</strong> Which one has cuddled sheep on a remote Scottish Island?</p>
 </div>
-<div id="chapter-1-introduction" class="section level2">
+<div id="chapter-1-introduction" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Chapter 1 (Introduction)</h2>
 <p><strong>Q1.1</strong> Can we get insights from data without using complex statistical models and analyses, without machine learning, without being a master data scientist?</p>
 <p><strong>Q1.2</strong> What is an advantage of focusing on the data without any statistical models/tests to think about?</p>
@@ -461,22 +491,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Q1.9</strong> What do each of the four demonstration datasets used in the Workflow Demonstrations share in common?</p>
 <p>**Q1.10* Which step in getting insights from data was missing from the presented workflow? (This is a bit of a trick question.)</p>
 </div>
-<div id="chapter-2-getting-acquainted" class="section level2">
+<div id="chapter-2-getting-acquainted" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Chapter 2 (Getting Acquainted)</h2>
 <p><strong>Q2.1</strong> True or false: R and RStudio are the same software program?</p>
 <p><strong>Q2.2</strong> What will R tell us if we type into the Console <code>1 + 3 * 3</code>?</p>
 <p><strong>Q2.3</strong> What will R tell us if we type into the Console <code>log(100)</code>?</p>
-<p><strong>Q2.4</strong> How would we assign to the name “my_constant” the value of “log(100)”?</p>
+<p><strong>Q2.4</strong> How would we assign to the name “my_constant” the value of “log(100)?”</p>
 <p><strong>Q2.5</strong> What commands should we be typing directly into the Console?</p>
 <p><strong>Q2.6</strong> What is the error in this code (hint: you do not need to know what the <code>seq</code> function is doing):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="questions-exercises.html#cb1-1"></a>my_x_variable &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">4</span><span class="op">*</span>pi, <span class="dt">length =</span> <span class="dv">100</span>)</span>
-<span id="cb1-2"><a href="questions-exercises.html#cb1-2"></a>my_y_variable &lt;-<span class="st"> </span><span class="kw">sin</span>(my_x_varible)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="questions-exercises.html#cb1-1" aria-hidden="true" tabindex="-1"></a>my_x_variable <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">4</span><span class="sc">*</span>pi, <span class="at">length =</span> <span class="dv">100</span>)</span>
+<span id="cb1-2"><a href="questions-exercises.html#cb1-2" aria-hidden="true" tabindex="-1"></a>my_y_variable <span class="ot">&lt;-</span> <span class="fu">sin</span>(my_x_varible)</span></code></pre></div>
 <p><strong>Q2.7</strong> When we give a function some arguments, when should we name the arguments? E.g. when should we use <code>round(x = 2.4326782647, digits = 2)</code> rather than <code>round(2.4326782647, 2)</code>?</p>
 <p><strong>Q2.8</strong> True or false: it is good practice to have at the top of our script a command to <em>install</em> each of the packages we would like to use. E.g. <code>install.packages("dplyr")</code>.</p>
 <p><strong>Q2.9</strong> True or false: When asking help from others it is sufficient to email them a verbal description of the problem, and a copy of the error message R.</p>
 <p><strong>Q2.10</strong> If RStudio freezes, are we going to lose all our amazing work?</p>
 </div>
-<div id="chapter-3-workflow-demonstrationpart-1" class="section level2">
+<div id="chapter-3-workflow-demonstrationpart-1" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Chapter 3 (Workflow Demonstration–Part 1)</h2>
 <p><strong>Q3.2</strong> What are characteristic features of tidy data?</p>
 <p><strong>Q3.3</strong> Write down two reasons why its a good idea to use the Projects that are available in RStudio.</p>
@@ -486,10 +516,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Q3.7</strong> We cleaned up the variable names using a string replacement functions (<code>str_replace_all</code>). Find the name of the add-on package that contains the rather nice function <code>clean_names()</code>, which can quickly and easily result in us having nice clean variable names.</p>
 <p><strong>Q3.8</strong> Take a look at <a href="assets/witherrors_bat_diets_part1_insights_workflowdemo.R">this version of the script of this part of the Bat Diet workflow demonstration</a>. We have added a variety of errors into the script, and your task is to find the errors and correct them.</p>
 </div>
-<div id="chapter-4-workflow-demonstrationpart-2" class="section level2">
+<div id="chapter-4-workflow-demonstrationpart-2" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> Chapter 4 (Workflow Demonstration–Part 2)</h2>
 <p><strong>Q4.1</strong> Chapter 3 mostly concerned getting the data ready. Chapter 4 is mostly about getting information from the data, including answering our questions. What two add-on package are used to do this, and what is each of them useful for?</p>
-<p><strong>Q4.2</strong> What do we mean by “sanity-checking insights”?</p>
+<p><strong>Q4.2</strong> What do we mean by “sanity-checking insights?”</p>
 <p><strong>Q4.3</strong> How many times will you accidentally type in your code <code>=</code> when you meant to type <code>==</code>, and what is the difference?</p>
 <p><strong>Q4.4</strong> Imagine we calculate the mean of a variable and the answer, to our surprise, is <code>NA</code>. This is a surprise because we know the variable is numeric and we were therefore expecting a number. What is a likely reason for us getting NA, and what is one way of dealing with this?</p>
 <p><strong>Q4.5</strong> Imagine that we observe that the association between two variables seems to depend on a third variable. E.g. the effects of herbivory on plant biomass is negative in the absence of a predator, but is positive in the presence of a predator. Which of these terms might be appropriate to describe this kind of pattern?:</p>
@@ -505,9 +535,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>4.9</strong> Did you follow and understand the second part of this chapter “A prey-centric view” of the data and questions? (Quick answer: we (the authors) would be happy if you did decide to skip this section until you worked through the following chapters!)</p>
 <p><strong>Q4.10</strong> The workflow demonstration presented in chapter 3 and 4 were quite linear… we did one thing, then built on it, then another building on that. What did we do in reality, while developing the workflow demonstration?</p>
 </div>
-<div id="chapter-5-dealing-with-data-1digging-into-dplyr" class="section level2">
+<div id="chapter-5-dealing-with-data-1digging-into-dplyr" class="section level2" number="3.6">
 <h2><span class="header-section-number">3.6</span> Chapter 5 (Dealing with data 1—Digging into dplyr)</h2>
-<div id="general-questions-and-exercises" class="section level3">
+<div id="general-questions-and-exercises" class="section level3" number="3.6.1">
 <h3><span class="header-section-number">3.6.1</span> General questions and exercises</h3>
 <p><strong>Q5.1</strong> What <strong>dplyr</strong> function (i.e. function from the <strong>dplyr</strong> add-on package) do we use to calculate summary information about data?</p>
 <p><strong>Q5.2</strong> What <strong>dplyr</strong> function do we use to keep a collection of rows/observations in a dataset, according to the values in one of the variables?</p>
@@ -515,14 +545,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Q5.4</strong> What What <strong>dplyr</strong> function do we use to add a new variable to a dataset that is a transformation/modification of an existing variable?</p>
 <p><strong>Q5.5</strong> List four other <strong>dplyr</strong> functions and write about what they’re used for.</p>
 </div>
-<div id="bat-diet-workflow-questions-and-exercises" class="section level3">
+<div id="bat-diet-workflow-questions-and-exercises" class="section level3" number="3.6.2">
 <h3><span class="header-section-number">3.6.2</span> Bat diet workflow questions and exercises</h3>
 <p><strong>Q5.6</strong> Find the identity (<code>Bat_ID</code>) of the two bats that ate only the largest (52.5mm wingspan) type of prey.</p>
 <p><strong>Q5.7</strong> How many different prey <em>species</em> were detected in total?</p>
 <p><strong>Q5.8</strong> The following code is intended to calculate the number of prey items found in each poop. Find and correct the three intentional errors it contains:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="questions-exercises.html#cb2-1"></a> prey_stats <span class="op">&lt;</span><span class="st"> </span>bats <span class="op">%&gt;%</span></span>
-<span id="cb2-2"><a href="questions-exercises.html#cb2-2"></a><span class="st">  </span><span class="kw">group_by</span>(Bat_Id) <span class="op">%&gt;%</span></span>
-<span id="cb2-3"><a href="questions-exercises.html#cb2-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_prey =</span> <span class="kw">n</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="questions-exercises.html#cb2-1" aria-hidden="true" tabindex="-1"></a> prey_stats <span class="sc">&lt;</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="questions-exercises.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_Id) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="questions-exercises.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_prey =</span> <span class="fu">n</span>()</span></code></pre></div>
 <p><strong>Q5.9</strong> Calculate the number of times each prey item was observed.</p>
 <p><strong>Q5.10</strong> Calculate number of migratory and non-migratory prey species, and pest or non-pest, and each combination of migratory and pest.</p>
 <p><strong>Q5.11</strong> What was the maximum number of times a prey species could have been observed?</p>
@@ -534,9 +564,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Q5.17</strong> Confirm the results from the paper: <em>Each pellet [poo] contained on average 4.1 ± 2.2 prey items</em></p>
 </div>
 </div>
-<div id="chapter-6-dealing-with-data-2expanding-your-toolkit" class="section level2">
+<div id="chapter-6-dealing-with-data-2expanding-your-toolkit" class="section level2" number="3.7">
 <h2><span class="header-section-number">3.7</span> Chapter 6 (Dealing with data 2—Expanding your toolkit)</h2>
-<div id="general-questions-and-exercises-1" class="section level3">
+<div id="general-questions-and-exercises-1" class="section level3" number="3.7.1">
 <h3><span class="header-section-number">3.7.1</span> General questions and exercises</h3>
 <p><strong>Q6.1</strong> Describe in your own words a couple of reasons why piping (using <code>%&gt;%</code>) is useful.</p>
 <p><strong>Q6.2</strong> Manipulating strings is a very important skill. In your own words, describe what the following functions do: <code>str_replace_all</code>, <code>case_when</code>, <code>separate</code>, and <code>grepl</code> (all of which are mentioned in the book).</p>
@@ -548,10 +578,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Q6.8</strong> In your own words write down what the <code>pivot_longer</code> function is used for, and also the three arguments (and their meanings) that we usually give it.</p>
 <p><strong>Q6.9</strong> Look at the online Workflow Demonstration “Food-diversity Polity” and work through tidying (particularly the use of <code>pivot_longer</code>) the FAO Food Balance Sheet data.</p>
 </div>
-<div id="bat-diet-workflow-questions-and-exercises-1" class="section level3">
+<div id="bat-diet-workflow-questions-and-exercises-1" class="section level3" number="3.7.2">
 <h3><span class="header-section-number">3.7.2</span> Bat diet workflow questions and exercises</h3>
 <p><strong>Q6.10</strong> Make a pipeline of operations, just like the one in the Insights book, that will calculate the number of prey species in the poop of each bat, and the average number of prey per bat for each taxonomic Order.</p>
-<p><strong>Q6.11</strong> Make a variable containing both the age and sex of the bats. E.g. “Adult-Female”, “Adult-Male”, and so on.</p>
+<p><strong>Q6.11</strong> Make a variable containing both the age and sex of the bats. E.g. “Adult-Female,” “Adult-Male,” and so on.</p>
 <p><strong>Q6.12</strong> How long did the fieldwork take, from the first sample to the last?</p>
 <p><strong>Q6.13</strong> Change the arrangement of the bat diet data to be wide-format. That is, for each bat make there be only one row, and have a column for each of the possible prey species, with number of reads at the entry.</p>
 <p><strong>Q6.14</strong> If you have NA’s in the wide dataset you made for the answer to the previous question, figure out how to replace these with zeros. Hint: you do not need to use another function or operation.</p>
@@ -560,39 +590,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Q6.17</strong> Confirm that the number of presences is the same as in the original dataset.</p>
 </div>
 </div>
-<div id="chapter-7-getting-to-grips-with-ggplot2" class="section level2">
+<div id="chapter-7-getting-to-grips-with-ggplot2" class="section level2" number="3.8">
 <h2><span class="header-section-number">3.8</span> Chapter 7 (Getting to grips with ggplot2)</h2>
-<div id="general-questions-and-exercises-2" class="section level3">
+<div id="general-questions-and-exercises-2" class="section level3" number="3.8.1">
 <h3><span class="header-section-number">3.8.1</span> General questions and exercises</h3>
 <p><strong>Q7.1</strong> What is the difference between <strong>ggplot</strong> and <code>ggplot</code>?</p>
 <p><strong>Q7.2</strong> In the context of a graph being made with <code>ggplot</code>, give two examples of aesthetic mappings, and give the function we use to specify them.</p>
-<p><strong>Q7.3</strong> In the context of <strong>ggplot2</strong>, what is a “scale”?</p>
-<p><strong>Q7.4</strong> In the context of <strong>ggplot2</strong>, what is a “layer”?</p>
-<p><strong>Q7.5</strong> In the context of <strong>ggplot2</strong>, what is a “facet”?</p>
+<p><strong>Q7.3</strong> In the context of <strong>ggplot2</strong>, what is a “scale?”</p>
+<p><strong>Q7.4</strong> In the context of <strong>ggplot2</strong>, what is a “layer?”</p>
+<p><strong>Q7.5</strong> In the context of <strong>ggplot2</strong>, what is a “facet?”</p>
 </div>
-<div id="bat-diet-workflow-questions-and-exercises-2" class="section level3">
+<div id="bat-diet-workflow-questions-and-exercises-2" class="section level3" number="3.8.2">
 <h3><span class="header-section-number">3.8.2</span> Bat diet workflow questions and exercises</h3>
 <p><strong>Q7.6</strong> Plot at the shape of the distribution of number of poops collected on each sampling date.</p>
 <p><strong>Q7.7</strong> Plot the distribution of number of reads. What shape is it? From looking at the distribution, predict whether the mean or median is larger. Then check your prediction by calculating the median and mean. For extra credit, add two vertical lines to the graph, one where the mean is, and one where the median is (hint, use the <code>geom_vline</code> function).</p>
 <pre><code>## `summarise()` regrouping output by &#39;Bat_ID&#39;, &#39;Sex&#39; (override with `.groups` argument)</code></pre>
 <p><strong>Q7.8</strong> The following code is intended to create a plot of the wingspan of prey found in male and female bat poops. Find and correct the three intentional errors it contains:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="questions-exercises.html#cb4-1"></a> prey_stats <span class="op">%&gt;%</span></span>
-<span id="cb4-2"><a href="questions-exercises.html#cb4-2"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">%&gt;%</span></span>
-<span id="cb4-3"><a href="questions-exercises.html#cb4-3"></a><span class="st">  </span><span class="kw">geom_beewarm</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Sex <span class="dt">y =</span> mean_wingspan))</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="questions-exercises.html#cb4-1" aria-hidden="true" tabindex="-1"></a> prey_stats <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="questions-exercises.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="questions-exercises.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_beewarm</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sex <span class="at">y =</span> mean_wingspan))</span></code></pre></div>
 <p><strong>Q7.9</strong> Calculate and plot a histogram of the probability of observing each of the prey species across the whole study.</p>
 <p><strong>Q7.10</strong> Ensure that you have the odds ratio for appearing a male or female poo for each of the prey species (the <code>odds_ratio</code> object in the book). Plot a histogram of all the calculated odds ratios. Guess how many prey species with odds less than twice and less than half to appear in female compared to male poos. Calculate how many, and see how close is your guess. (Hint: it may be worthwhile to plot log2 of the odds ratio.)</p>
 <p><strong>Q7.11</strong> And now for a little bit of fun: Combine the script that displays a photo of a cute dog with the script that gives some praise to create a motivational poster of a dog giving praise.</p>
 </div>
 </div>
-<div id="chapter-8-making-deeper-insights-part-1---working-with-single-variables" class="section level2">
+<div id="chapter-8-making-deeper-insights-part-1---working-with-single-variables" class="section level2" number="3.9">
 <h2><span class="header-section-number">3.9</span> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</h2>
-<div id="general-questions-and-exercises-3" class="section level3">
+<div id="general-questions-and-exercises-3" class="section level3" number="3.9.1">
 <h3><span class="header-section-number">3.9.1</span> General questions and exercises</h3>
 <p><strong>Q8.1</strong> Give an example of a <em>continuous numeric variable</em> and explain why it is so.</p>
 <p><strong>Q8.2</strong> Give an example of a <em>discrete numeric variable</em> and explain why it is so.</p>
 <p><strong>Q8.3</strong> Give an example of a <em>categorical variable</em>, and state if it is <em>ordinal</em> or <em>nominal</em>.</p>
 <p><strong>Q8.4</strong> Numeric variables can also be said to be measure on an <em>interval</em> or a <em>ratio</em> scale. Explain the difference and give examples of each.</p>
-<p><strong>Q8.5</strong> Explain in your own words what is meant by a “sample distribution”.</p>
+<p><strong>Q8.5</strong> Explain in your own words what is meant by a “sample distribution.”</p>
 <p><strong>Q8.6</strong> What type of graph is a very good one for getting a summarising a numeric variable?</p>
 <p><strong>Q8.7</strong> When we make a histogram we much choose the number of bins. What is good practice when doing so?</p>
 <p><strong>Q8.8</strong> If we have rather few data points (e.g. less than 30 or so), what type of graph might we make instead of a traditional histogram?</p>
@@ -601,13 +631,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Q8.11</strong> Why do we advise use of the interquartile range to summarise the dispersion of a sample distribution?</p>
 <p><strong>Q8.12</strong> Moving on now to summarising categorical variables, we are more interested in how common in a sample are occurrences of each of the categories. Why does it not make much sense to calculate a median, even though R may let us do so?</p>
 </div>
-<div id="workflow-demonstration-questions-and-exercises" class="section level3">
+<div id="workflow-demonstration-questions-and-exercises" class="section level3" number="3.9.2">
 <h3><span class="header-section-number">3.9.2</span> Workflow demonstration questions and exercises</h3>
 <p>(Only one exercise in this section, since this chapter is mostly conceptual. If you feel you need more practical experience, and have worked through the bat diet workflow demonstration in the <em>Insights</em> book, then consider working through one or more of the online workflow demonstrations. Stop when you have explored the distribution, central tendency, and dispersion/spread of some of the numeric and categorical variables.)</p>
 <p><strong>Q8.13</strong> Try to yourself, without using a to do so directly, calculate the median and interquartile range of the wingspan variable. Hint: it might be useful to sort/arrange the dataset by ascending values of the wingspan variable; and you will need to know the number of observations. Then use the <code>quantile</code> function to check your answer.</p>
 </div>
 </div>
-<div id="chapter-9-making-deeper-insights-part-2-relationships-among-many-variables" class="section level2">
+<div id="chapter-9-making-deeper-insights-part-2-relationships-among-many-variables" class="section level2" number="3.10">
 <h2><span class="header-section-number">3.10</span> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</h2>
 <p><strong>Q9.1</strong> When examining data for an association between two numeric variables, what type of graph will likely be quite informative? And what summary statistic might we use?</p>
 <p><strong>Q9.2</strong> What is a limitation of the Pearson’s correlation coefficient?</p>
@@ -619,19 +649,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Q9.8</strong> What kind of table (i.e. what name does the table have that) shows the number of cases for each combination, and therefore tells us if the number of counts is dependent on the value of both categorical variables?</p>
 <p><strong>Q9.9</strong> What types of graphs could we use to assess the evidence for an association between a categorical and numeric variable?</p>
 <p><strong>Q9.10</strong> What can we do if we would like to check for associations among three or more variables?</p>
-<div id="workflow-questions-and-exercises" class="section level3">
+<div id="workflow-questions-and-exercises" class="section level3" number="3.10.1">
 <h3><span class="header-section-number">3.10.1</span> Workflow questions and exercises</h3>
 <p>(Only one exercise in this section, since this chapter is mostly conceptual. If you feel you need more practical experience, and have worked through the bat diet workflow demonstration in the <em>Insights</em> book, then consider working through one or more of the online workflow demonstrations. Stop when you have explored the relationships among some of the variables (which, in any case, will likely be the end of the workflow demonstration).)</p>
 <p><strong>Q9.11</strong> Explore if there is any evidence of an associate between the total number of reads in a poop and the number of prey observed in a poop. Hint: you will first need to calculate the number of prey, if you have not already. Make sure to take care that all data points are very likely visible.</p>
 </div>
 </div>
-<div id="chapter-10-looking-back-and-looking-forward" class="section level2">
+<div id="chapter-10-looking-back-and-looking-forward" class="section level2" number="3.11">
 <h2><span class="header-section-number">3.11</span> Chapter 10 (Looking back and looking forward)</h2>
 <p>You made it to the last chapter – congratulations. In the last chapter, as well a congratulating you, we mention four next steps: code style, visual communication, statistical analysis, and reproducibility. We go into some detail about the what, why, and how of reproducibility. Even as we finish this web page and the book is in production, there are new requirements to publish our code and data alongside the insights. And, perhaps even more importantly, that the code (analysis script) is reproducible. So training about how to make reproducible analyses will become more and more important, and be part of the Open Science movement. And so, only one question for this chapter, and it is about reproducibility…</p>
 <p><strong>Q10.1</strong> Which of these are good practices and bad practices for reproducible methods for getting insights from data?</p>
 <ul>
 <li>Using absolute paths to data files.</li>
-<li>Never editing our raw data files “by-hand”.</li>
+<li>Never editing our raw data files “by-hand.”</li>
 <li>Putting all our files in one folder.</li>
 <li>Making our code easy for others to understand, including making many useful comments.</li>
 <li>Use RMarkdown to make reports.</li>
@@ -649,15 +679,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a href="more-R.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook/js/app.min.js"></script>
-<script src="libs/gitbook/js/lunr.js"></script>
-<script src="libs/gitbook/js/clipboard.min.js"></script>
-<script src="libs/gitbook/js/plugin-search.js"></script>
-<script src="libs/gitbook/js/plugin-sharing.js"></script>
-<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook/js/jquery.highlight.js"></script>
-<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

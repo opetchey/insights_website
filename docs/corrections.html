@@ -24,7 +24,7 @@
 <meta name="author" content="Petchey, Beckerman, Cooper, Childs" />
 
 
-<meta name="date" content="2021-01-13" />
+<meta name="date" content="2021-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,14 +33,15 @@
   
 <link rel="prev" href="answers.html"/>
 
-<script src="libs/jquery/jquery.min.js"></script>
-<link href="libs/gitbook/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -50,24 +51,22 @@
 
 
 
-<script src="libs/accessible-code-block/empty-anchor.js"></script>
-<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,7 +136,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="insights-workflow.html"><a href="insights-workflow.html"><i class="fa fa-check"></i><b>2</b> Insights Workflow</a><ul>
+<li class="chapter" data-level="2" data-path="insights-workflow.html"><a href="insights-workflow.html"><i class="fa fa-check"></i><b>2</b> Insights Workflow</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="insights-workflow.html"><a href="insights-workflow.html#preparing-the-data"><i class="fa fa-check"></i><b>2.1</b> Preparing the data</a></li>
 <li class="chapter" data-level="2.2" data-path="insights-workflow.html"><a href="insights-workflow.html#prepare-your-computer-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Prepare your computer, R, and RStudio</a></li>
 <li class="chapter" data-level="2.3" data-path="insights-workflow.html"><a href="insights-workflow.html#read-the-data-into-r"><i class="fa fa-check"></i><b>2.3</b> Read the data into R</a></li>
@@ -146,34 +146,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="insights-workflow.html"><a href="insights-workflow.html#initial-insights"><i class="fa fa-check"></i><b>2.6</b> Initial insights</a></li>
 <li class="chapter" data-level="2.7" data-path="insights-workflow.html"><a href="insights-workflow.html#insights-about-question-posed"><i class="fa fa-check"></i><b>2.7</b> Insights about question posed</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a><ul>
+<li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="questions-exercises.html"><a href="questions-exercises.html#preface"><i class="fa fa-check"></i><b>3.1</b> Preface</a></li>
 <li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1-introduction"><i class="fa fa-check"></i><b>3.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="3.3" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-2-getting-acquainted"><i class="fa fa-check"></i><b>3.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="3.4" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-3-workflow-demonstrationpart-1"><i class="fa fa-check"></i><b>3.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="3.5" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-4-workflow-demonstrationpart-2"><i class="fa fa-check"></i><b>3.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
-<li class="chapter" data-level="3.6" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-5-dealing-with-data-1digging-into-dplyr"><i class="fa fa-check"></i><b>3.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a><ul>
+<li class="chapter" data-level="3.6" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-5-dealing-with-data-1digging-into-dplyr"><i class="fa fa-check"></i><b>3.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a>
+<ul>
 <li class="chapter" data-level="3.6.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises"><i class="fa fa-check"></i><b>3.6.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.6.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises"><i class="fa fa-check"></i><b>3.6.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-6-dealing-with-data-2expanding-your-toolkit"><i class="fa fa-check"></i><b>3.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a><ul>
+<li class="chapter" data-level="3.7" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-6-dealing-with-data-2expanding-your-toolkit"><i class="fa fa-check"></i><b>3.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a>
+<ul>
 <li class="chapter" data-level="3.7.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-1"><i class="fa fa-check"></i><b>3.7.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.7.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises-1"><i class="fa fa-check"></i><b>3.7.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-7-getting-to-grips-with-ggplot2"><i class="fa fa-check"></i><b>3.8</b> Chapter 7 (Getting to grips with ggplot2)</a><ul>
+<li class="chapter" data-level="3.8" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-7-getting-to-grips-with-ggplot2"><i class="fa fa-check"></i><b>3.8</b> Chapter 7 (Getting to grips with ggplot2)</a>
+<ul>
 <li class="chapter" data-level="3.8.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-2"><i class="fa fa-check"></i><b>3.8.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.8.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises-2"><i class="fa fa-check"></i><b>3.8.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.9" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables"><i class="fa fa-check"></i><b>3.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a><ul>
+<li class="chapter" data-level="3.9" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables"><i class="fa fa-check"></i><b>3.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a>
+<ul>
 <li class="chapter" data-level="3.9.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-3"><i class="fa fa-check"></i><b>3.9.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.9.2" data-path="questions-exercises.html"><a href="questions-exercises.html#workflow-demonstration-questions-and-exercises"><i class="fa fa-check"></i><b>3.9.2</b> Workflow demonstration questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.10" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables"><i class="fa fa-check"></i><b>3.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a><ul>
+<li class="chapter" data-level="3.10" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables"><i class="fa fa-check"></i><b>3.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a>
+<ul>
 <li class="chapter" data-level="3.10.1" data-path="questions-exercises.html"><a href="questions-exercises.html#workflow-questions-and-exercises"><i class="fa fa-check"></i><b>3.10.1</b> Workflow questions and exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="3.11" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-10-looking-back-and-looking-forward"><i class="fa fa-check"></i><b>3.11</b> Chapter 10 (Looking back and looking forward)</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="more-R.html"><a href="more-R.html"><i class="fa fa-check"></i><b>4</b> More R</a><ul>
+<li class="chapter" data-level="4" data-path="more-R.html"><a href="more-R.html"><i class="fa fa-check"></i><b>4</b> More R</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="more-R.html"><a href="more-R.html#rstudio-project-setup"><i class="fa fa-check"></i><b>4.1</b> RStudio Project setup</a></li>
 <li class="chapter" data-level="4.2" data-path="more-R.html"><a href="more-R.html#baseclassic-and-tidyverse-comparison"><i class="fa fa-check"></i><b>4.2</b> Base/classic and tidyverse comparison</a></li>
 <li class="chapter" data-level="4.3" data-path="more-R.html"><a href="more-R.html#multiple-graphs-in-one-figure"><i class="fa fa-check"></i><b>4.3</b> Multiple graphs in one figure</a></li>
@@ -184,7 +191,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8" data-path="more-R.html"><a href="more-R.html#syntax-highlighting"><i class="fa fa-check"></i><b>4.8</b> Syntax highlighting</a></li>
 <li class="chapter" data-level="4.9" data-path="more-R.html"><a href="more-R.html#summarise-more-than-one-variable"><i class="fa fa-check"></i><b>4.9</b> Summarise more than one variable</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html"><i class="fa fa-check"></i><b>5</b> Additional &amp; next step concepts</a><ul>
+<li class="chapter" data-level="5" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html"><i class="fa fa-check"></i><b>5</b> Additional &amp; next step concepts</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#distributions"><i class="fa fa-check"></i><b>5.1</b> Distributions</a></li>
 <li class="chapter" data-level="5.2" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#interactions-and-complexity"><i class="fa fa-check"></i><b>5.2</b> Interactions and complexity</a></li>
 <li class="chapter" data-level="5.3" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#lurking-variables"><i class="fa fa-check"></i><b>5.3</b> Lurking variables</a></li>
@@ -199,7 +207,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.12" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#interoperability"><i class="fa fa-check"></i><b>5.12</b> Interoperability / standardising terms</a></li>
 <li class="chapter" data-level="5.13" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#comparing-descriptive-statistics"><i class="fa fa-check"></i><b>5.13</b> Comparing descriptive statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html"><i class="fa fa-check"></i><b>6</b> How does dietary diversity affect populations?</a><ul>
+<li class="chapter" data-level="6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html"><i class="fa fa-check"></i><b>6</b> How does dietary diversity affect populations?</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#about-this-workflow-demonstration"><i class="fa fa-check"></i><b>6.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="6.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#going-to-the-next-level"><i class="fa fa-check"></i><b>6.2</b> Going to the next level</a></li>
 <li class="chapter" data-level="6.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#introduction-to-the-study-and-data"><i class="fa fa-check"></i><b>6.3</b> Introduction to the study and data</a></li>
@@ -208,7 +217,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#acquire-the-dataset"><i class="fa fa-check"></i><b>6.6</b> Acquire the dataset</a></li>
 <li class="chapter" data-level="6.7" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#import-the-dataset"><i class="fa fa-check"></i><b>6.7</b> Import the dataset</a></li>
 <li class="chapter" data-level="6.8" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#checking-the-import-worked-correctly"><i class="fa fa-check"></i><b>6.8</b> Checking the import worked correctly</a></li>
-<li class="chapter" data-level="6.9" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>6.9</b> Cleaning and tidying</a><ul>
+<li class="chapter" data-level="6.9" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>6.9</b> Cleaning and tidying</a>
+<ul>
 <li class="chapter" data-level="6.9.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#recode-some-names"><i class="fa fa-check"></i><b>6.9.1</b> Recode some names</a></li>
 <li class="chapter" data-level="6.9.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#factors-predstab"><i class="fa fa-check"></i><b>6.9.2</b> Make the <code>prey_composition</code> variable a factor with specific order</a></li>
 <li class="chapter" data-level="6.9.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#fix-those-variable-names"><i class="fa fa-check"></i><b>6.9.3</b> Fix those variable names</a></li>
@@ -219,7 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.9.8" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#calculate-the-three-response-variables"><i class="fa fa-check"></i><b>6.9.8</b> Calculate the three response variables</a></li>
 </ul></li>
 <li class="chapter" data-level="6.10" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#shapes"><i class="fa fa-check"></i><b>6.10</b> Shapes</a></li>
-<li class="chapter" data-level="6.11" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#relationships"><i class="fa fa-check"></i><b>6.11</b> Relationships</a><ul>
+<li class="chapter" data-level="6.11" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#relationships"><i class="fa fa-check"></i><b>6.11</b> Relationships</a>
+<ul>
 <li class="chapter" data-level="6.11.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#maximum-predator-density"><i class="fa fa-check"></i><b>6.11.1</b> Maximum predator density</a></li>
 <li class="chapter" data-level="6.11.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#predator-population-variability-cv"><i class="fa fa-check"></i><b>6.11.2</b> Predator population variability (CV)</a></li>
 <li class="chapter" data-level="6.11.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#predator-persistence-time"><i class="fa fa-check"></i><b>6.11.3</b> Predator persistence time</a></li>
@@ -227,12 +238,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.12" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#wrapping-up"><i class="fa fa-check"></i><b>6.12</b> Wrapping up</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html"><i class="fa fa-check"></i><b>7</b> Are diets more diverse in more democratic countries?</a><ul>
+<li class="chapter" data-level="7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html"><i class="fa fa-check"></i><b>7</b> Are diets more diverse in more democratic countries?</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#about-this-workflow-demonstration-1"><i class="fa fa-check"></i><b>7.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="7.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#introduction-to-the-study-and-data-1"><i class="fa fa-check"></i><b>7.2</b> Introduction to the study and data</a></li>
 <li class="chapter" data-level="7.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#understanding-the-data"><i class="fa fa-check"></i><b>7.3</b> Understanding the data</a></li>
 <li class="chapter" data-level="7.4" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#a-little-preparation-1"><i class="fa fa-check"></i><b>7.4</b> A little preparation</a></li>
-<li class="chapter" data-level="7.5" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><i class="fa fa-check"></i><b>7.5</b> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a><ul>
+<li class="chapter" data-level="7.5" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><i class="fa fa-check"></i><b>7.5</b> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a>
+<ul>
 <li class="chapter" data-level="7.5.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#data-origins-and-acquisition"><i class="fa fa-check"></i><b>7.5.1</b> Data origins and acquisition</a></li>
 <li class="chapter" data-level="7.5.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#data-import"><i class="fa fa-check"></i><b>7.5.2</b> Data import</a></li>
 <li class="chapter" data-level="7.5.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#tidy-and-clean"><i class="fa fa-check"></i><b>7.5.3</b> Tidy and clean</a></li>
@@ -241,7 +254,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#check-ranges-of-numeric-variables"><i class="fa fa-check"></i><b>7.5.6</b> Check ranges of numeric variables</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#first-insights-from-the-polity-data"><i class="fa fa-check"></i><b>7.6</b> First insights from the polity data</a></li>
-<li class="chapter" data-level="7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#acquire-import-check-the-fao-food-balance-sheet-data"><i class="fa fa-check"></i><b>7.7</b> Acquire, import, check the FAO Food balance sheet data</a><ul>
+<li class="chapter" data-level="7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#acquire-import-check-the-fao-food-balance-sheet-data"><i class="fa fa-check"></i><b>7.7</b> Acquire, import, check the FAO Food balance sheet data</a>
+<ul>
 <li class="chapter" data-level="7.7.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#tidying-FAO"><i class="fa fa-check"></i><b>7.7.1</b> Tidy the FAO data</a></li>
 <li class="chapter" data-level="7.7.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#clean-the-fao-data"><i class="fa fa-check"></i><b>7.7.2</b> Clean the FAO data</a></li>
 <li class="chapter" data-level="7.7.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#check-for-innapropriate-duplicate-observations-1"><i class="fa fa-check"></i><b>7.7.3</b> Check for innapropriate duplicate observations</a></li>
@@ -250,7 +264,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.7.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#more-cleaning"><i class="fa fa-check"></i><b>7.7.6</b> More cleaning</a></li>
 <li class="chapter" data-level="7.7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#calculating-our-response-variables"><i class="fa fa-check"></i><b>7.7.7</b> Calculating our response variables</a></li>
 </ul></li>
-<li class="chapter" data-level="7.8" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#merge-the-two-datasets-aaaaaargh"><i class="fa fa-check"></i><b>7.8</b> Merge the two datasets (aaaaaargh!!)</a><ul>
+<li class="chapter" data-level="7.8" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#merge-the-two-datasets-aaaaaargh"><i class="fa fa-check"></i><b>7.8</b> Merge the two datasets (aaaaaargh!!)</a>
+<ul>
 <li class="chapter" data-level="7.8.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-standardisation"><i class="fa fa-check"></i><b>7.8.1</b> Polity standardisation</a></li>
 <li class="chapter" data-level="7.8.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#the-final-merge"><i class="fa fa-check"></i><b>7.8.2</b> The final merge</a></li>
 </ul></li>
@@ -260,7 +275,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.12" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#wrapping-up-1"><i class="fa fa-check"></i><b>7.12</b> Wrapping up</a></li>
 <li class="chapter" data-level="7.13" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#and-a-challenge-for-you"><i class="fa fa-check"></i><b>7.13</b> And a challenge for you…</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html"><i class="fa fa-check"></i><b>8</b> What are the effects of dietary restriction?</a><ul>
+<li class="chapter" data-level="8" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html"><i class="fa fa-check"></i><b>8</b> What are the effects of dietary restriction?</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#about-this-workflow-demonstration-2"><i class="fa fa-check"></i><b>8.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="8.2" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#introduction-1"><i class="fa fa-check"></i><b>8.2</b> Introduction</a></li>
 <li class="chapter" data-level="8.3" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#the-question"><i class="fa fa-check"></i><b>8.3</b> The question</a></li>
@@ -283,8 +299,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.20" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#inspect-shapes-distributions"><i class="fa fa-check"></i><b>8.20</b> Inspect shapes (distributions)</a></li>
 <li class="chapter" data-level="8.21" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#inspect-relationships"><i class="fa fa-check"></i><b>8.21</b> Inspect relationships</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html"><i class="fa fa-check"></i><b>9</b> Solutions: What are the effects of dietary restriction?</a><ul>
-<li class="chapter" data-level="9.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#about-these-solutions"><i class="fa fa-check"></i><b>9.1</b> About these solutions</a><ul>
+<li class="chapter" data-level="9" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html"><i class="fa fa-check"></i><b>9</b> Solutions: What are the effects of dietary restriction?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#about-these-solutions"><i class="fa fa-check"></i><b>9.1</b> About these solutions</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#nas-variable-entries-e.g.-levels-of-characters-ranges-of-numerics-numbers-of-things-1"><i class="fa fa-check"></i><b>9.1.1</b> NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of “things”*</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#independence-1"><i class="fa fa-check"></i><b>9.2</b> Independence</a></li>
@@ -298,7 +316,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.10" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#moatt-et-al-data-s15-length-weight-and-condition-index-data"><i class="fa fa-check"></i><b>9.10</b> Moatt et al Data S15 – Length, Weight and Condition Index Data</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="modelwf-scripts.html"><a href="modelwf-scripts.html"><i class="fa fa-check"></i><b>10</b> Workflow demonstration R scripts</a></li>
-<li class="chapter" data-level="11" data-path="live-data-demo.html"><a href="live-data-demo.html"><i class="fa fa-check"></i><b>11</b> Live data analysis demonstration</a><ul>
+<li class="chapter" data-level="11" data-path="live-data-demo.html"><a href="live-data-demo.html"><i class="fa fa-check"></i><b>11</b> Live data analysis demonstration</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="live-data-demo.html"><a href="live-data-demo.html#introduction-for-intructors"><i class="fa fa-check"></i><b>11.1</b> Introduction for intructors</a></li>
 <li class="chapter" data-level="" data-path="live-data-demo.html"><a href="live-data-demo.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="11.2" data-path="live-data-demo.html"><a href="live-data-demo.html#meta-task"><i class="fa fa-check"></i><b>11.2</b> Meta-task</a></li>
@@ -311,7 +330,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.9" data-path="live-data-demo.html"><a href="live-data-demo.html#data-collection"><i class="fa fa-check"></i><b>11.9</b> Data collection</a></li>
 <li class="chapter" data-level="11.10" data-path="live-data-demo.html"><a href="live-data-demo.html#look-at-the-data"><i class="fa fa-check"></i><b>11.10</b> Look at the data!</a></li>
 <li class="chapter" data-level="11.11" data-path="live-data-demo.html"><a href="live-data-demo.html#lets-get-the-data-into-our-data-analysis-software-of-choice-r-via-rstudio"><i class="fa fa-check"></i><b>11.11</b> Lets get the data into our data analysis software of choice (R, via RStudio)</a></li>
-<li class="chapter" data-level="11.12" data-path="live-data-demo.html"><a href="live-data-demo.html#now-we-need-to-do-some-data-wrangling-cleaning-and-tidying"><i class="fa fa-check"></i><b>11.12</b> Now we need to do some data wrangling (cleaning and tidying)</a><ul>
+<li class="chapter" data-level="11.12" data-path="live-data-demo.html"><a href="live-data-demo.html#now-we-need-to-do-some-data-wrangling-cleaning-and-tidying"><i class="fa fa-check"></i><b>11.12</b> Now we need to do some data wrangling (cleaning and tidying)</a>
+<ul>
 <li class="chapter" data-level="11.12.1" data-path="live-data-demo.html"><a href="live-data-demo.html#clean-up-the-column-variable-names"><i class="fa fa-check"></i><b>11.12.1</b> Clean up the column / variable names:</a></li>
 <li class="chapter" data-level="11.12.2" data-path="live-data-demo.html"><a href="live-data-demo.html#check-the-variable-types-are-correct."><i class="fa fa-check"></i><b>11.12.2</b> Check the variable types are correct.</a></li>
 <li class="chapter" data-level="11.12.3" data-path="live-data-demo.html"><a href="live-data-demo.html#correct-or-exclude-problematic-data"><i class="fa fa-check"></i><b>11.12.3</b> Correct or exclude problematic data</a></li>
@@ -321,20 +341,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.13" data-path="live-data-demo.html"><a href="live-data-demo.html#visualise-the-data"><i class="fa fa-check"></i><b>11.13</b> Visualise the data</a></li>
 <li class="chapter" data-level="11.14" data-path="live-data-demo.html"><a href="live-data-demo.html#get-the-means"><i class="fa fa-check"></i><b>11.14</b> Get the means</a></li>
 <li class="chapter" data-level="11.15" data-path="live-data-demo.html"><a href="live-data-demo.html#effect-size-and-practical-importance"><i class="fa fa-check"></i><b>11.15</b> Effect size and practical importance?</a></li>
-<li class="chapter" data-level="11.16" data-path="live-data-demo.html"><a href="live-data-demo.html#assess-assumptions"><i class="fa fa-check"></i><b>11.16</b> Assess assumptions</a><ul>
+<li class="chapter" data-level="11.16" data-path="live-data-demo.html"><a href="live-data-demo.html#assess-assumptions"><i class="fa fa-check"></i><b>11.16</b> Assess assumptions</a>
+<ul>
 <li class="chapter" data-level="11.16.1" data-path="live-data-demo.html"><a href="live-data-demo.html#independence-2"><i class="fa fa-check"></i><b>11.16.1</b> Independence</a></li>
 <li class="chapter" data-level="11.16.2" data-path="live-data-demo.html"><a href="live-data-demo.html#normally-distributed-residuals"><i class="fa fa-check"></i><b>11.16.2</b> Normally distributed residuals</a></li>
 <li class="chapter" data-level="11.16.3" data-path="live-data-demo.html"><a href="live-data-demo.html#equal-variance"><i class="fa fa-check"></i><b>11.16.3</b> Equal variance</a></li>
 </ul></li>
 <li class="chapter" data-level="11.17" data-path="live-data-demo.html"><a href="live-data-demo.html#do-the-statistical-test"><i class="fa fa-check"></i><b>11.17</b> Do the statistical test</a></li>
 <li class="chapter" data-level="11.18" data-path="live-data-demo.html"><a href="live-data-demo.html#critical-thinking"><i class="fa fa-check"></i><b>11.18</b> Critical thinking</a></li>
-<li class="chapter" data-level="11.19" data-path="live-data-demo.html"><a href="live-data-demo.html#report-and-communicate-the-results"><i class="fa fa-check"></i><b>11.19</b> Report and communicate the results</a><ul>
+<li class="chapter" data-level="11.19" data-path="live-data-demo.html"><a href="live-data-demo.html#report-and-communicate-the-results"><i class="fa fa-check"></i><b>11.19</b> Report and communicate the results</a>
+<ul>
 <li class="chapter" data-level="11.19.1" data-path="live-data-demo.html"><a href="live-data-demo.html#the-results-as-a-sentence"><i class="fa fa-check"></i><b>11.19.1</b> The results as a sentence</a></li>
 <li class="chapter" data-level="11.19.2" data-path="live-data-demo.html"><a href="live-data-demo.html#the-results-graphically"><i class="fa fa-check"></i><b>11.19.2</b> The results graphically</a></li>
 <li class="chapter" data-level="11.19.3" data-path="live-data-demo.html"><a href="live-data-demo.html#do-not-use-a-table"><i class="fa fa-check"></i><b>11.19.3</b> Do not use a table</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="more-questions-data.html"><a href="more-questions-data.html"><i class="fa fa-check"></i><b>12</b> More datasets</a><ul>
+<li class="chapter" data-level="12" data-path="more-questions-data.html"><a href="more-questions-data.html"><i class="fa fa-check"></i><b>12</b> More datasets</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="more-questions-data.html"><a href="more-questions-data.html#hungry-ladybirds"><i class="fa fa-check"></i><b>12.1</b> Hungry ladybirds</a></li>
 <li class="chapter" data-level="12.2" data-path="more-questions-data.html"><a href="more-questions-data.html#seal-suppers"><i class="fa fa-check"></i><b>12.2</b> Seal suppers</a></li>
 <li class="chapter" data-level="12.3" data-path="more-questions-data.html"><a href="more-questions-data.html#more-bat-poop"><i class="fa fa-check"></i><b>12.3</b> More bat poop</a></li>
@@ -346,34 +369,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.9" data-path="more-questions-data.html"><a href="more-questions-data.html#cervical-spine-compression-and-mri-not-food-related"><i class="fa fa-check"></i><b>12.9</b> Cervical spine compression and MRI (not food related)</a></li>
 <li class="chapter" data-level="12.10" data-path="more-questions-data.html"><a href="more-questions-data.html#lots-of-other-datasets-here"><i class="fa fa-check"></i><b>12.10</b> Lots of other datasets here:</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a><ul>
+<li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a>
+<ul>
 <li class="chapter" data-level="13.1" data-path="related-reading.html"><a href="related-reading.html#data-science-related-reading"><i class="fa fa-check"></i><b>13.1</b> Data science related reading</a></li>
 <li class="chapter" data-level="13.2" data-path="related-reading.html"><a href="related-reading.html#study-design-related-reading"><i class="fa fa-check"></i><b>13.2</b> Study design related reading</a></li>
 <li class="chapter" data-level="13.3" data-path="related-reading.html"><a href="related-reading.html#web-sites-pages"><i class="fa fa-check"></i><b>13.3</b> Web sites / pages</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a><ul>
+<li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="answers.html"><a href="answers.html#preface-1"><i class="fa fa-check"></i><b>14.1</b> Preface</a></li>
 <li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction-1"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="14.3" data-path="answers.html"><a href="answers.html#chapter-2-getting-acquainted-1"><i class="fa fa-check"></i><b>14.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="14.4" data-path="answers.html"><a href="answers.html#chapter-3-workflow-demonstrationpart-1-1"><i class="fa fa-check"></i><b>14.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="14.5" data-path="answers.html"><a href="answers.html#chapter-4-workflow-demonstrationpart-2-1"><i class="fa fa-check"></i><b>14.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
-<li class="chapter" data-level="14.6" data-path="answers.html"><a href="answers.html#chapter-5-dealing-with-data-1digging-into-dplyr-1"><i class="fa fa-check"></i><b>14.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a><ul>
+<li class="chapter" data-level="14.6" data-path="answers.html"><a href="answers.html#chapter-5-dealing-with-data-1digging-into-dplyr-1"><i class="fa fa-check"></i><b>14.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a>
+<ul>
 <li class="chapter" data-level="14.6.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-4"><i class="fa fa-check"></i><b>14.6.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.6.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-3"><i class="fa fa-check"></i><b>14.6.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.7" data-path="answers.html"><a href="answers.html#chapter-6-dealing-with-data-2expanding-your-toolkit-1"><i class="fa fa-check"></i><b>14.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a><ul>
+<li class="chapter" data-level="14.7" data-path="answers.html"><a href="answers.html#chapter-6-dealing-with-data-2expanding-your-toolkit-1"><i class="fa fa-check"></i><b>14.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a>
+<ul>
 <li class="chapter" data-level="14.7.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-5"><i class="fa fa-check"></i><b>14.7.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.7.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-4"><i class="fa fa-check"></i><b>14.7.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.8" data-path="answers.html"><a href="answers.html#chapter-7-getting-to-grips-with-ggplot2-1"><i class="fa fa-check"></i><b>14.8</b> Chapter 7 (Getting to grips with ggplot2)</a><ul>
+<li class="chapter" data-level="14.8" data-path="answers.html"><a href="answers.html#chapter-7-getting-to-grips-with-ggplot2-1"><i class="fa fa-check"></i><b>14.8</b> Chapter 7 (Getting to grips with ggplot2)</a>
+<ul>
 <li class="chapter" data-level="14.8.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-6"><i class="fa fa-check"></i><b>14.8.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.8.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-5"><i class="fa fa-check"></i><b>14.8.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.9" data-path="answers.html"><a href="answers.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables-1"><i class="fa fa-check"></i><b>14.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a><ul>
+<li class="chapter" data-level="14.9" data-path="answers.html"><a href="answers.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables-1"><i class="fa fa-check"></i><b>14.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a>
+<ul>
 <li class="chapter" data-level="14.9.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-7"><i class="fa fa-check"></i><b>14.9.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.9.2" data-path="answers.html"><a href="answers.html#workflow-demonstration-questions-and-exercises-1"><i class="fa fa-check"></i><b>14.9.2</b> Workflow demonstration questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.10" data-path="answers.html"><a href="answers.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables-1"><i class="fa fa-check"></i><b>14.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a><ul>
+<li class="chapter" data-level="14.10" data-path="answers.html"><a href="answers.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables-1"><i class="fa fa-check"></i><b>14.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a>
+<ul>
 <li class="chapter" data-level="14.10.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-8"><i class="fa fa-check"></i><b>14.10.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.10.2" data-path="answers.html"><a href="answers.html#workflow-questions-and-exercises-1"><i class="fa fa-check"></i><b>14.10.2</b> Workflow questions and exercises</a></li>
 </ul></li>
@@ -401,7 +431,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="corrections" class="section level1">
+<div id="corrections" class="section level1" number="15">
 <h1><span class="header-section-number">Chapter 15</span> Corrections</h1>
 <p>Here we will publish any necessary corrections.</p>
 
@@ -421,15 +451,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
     </div>
   </div>
-<script src="libs/gitbook/js/app.min.js"></script>
-<script src="libs/gitbook/js/lunr.js"></script>
-<script src="libs/gitbook/js/clipboard.min.js"></script>
-<script src="libs/gitbook/js/plugin-search.js"></script>
-<script src="libs/gitbook/js/plugin-sharing.js"></script>
-<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook/js/jquery.highlight.js"></script>
-<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

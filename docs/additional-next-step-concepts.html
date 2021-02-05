@@ -24,7 +24,7 @@
 <meta name="author" content="Petchey, Beckerman, Cooper, Childs" />
 
 
-<meta name="date" content="2021-01-13" />
+<meta name="date" content="2021-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,14 +33,15 @@
   
 <link rel="prev" href="more-R.html"/>
 <link rel="next" href="WFD-dietdiv-effect.html"/>
-<script src="libs/jquery/jquery.min.js"></script>
-<link href="libs/gitbook/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -50,24 +51,22 @@
 
 
 
-<script src="libs/accessible-code-block/empty-anchor.js"></script>
-<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,7 +136,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="insights-workflow.html"><a href="insights-workflow.html"><i class="fa fa-check"></i><b>2</b> Insights Workflow</a><ul>
+<li class="chapter" data-level="2" data-path="insights-workflow.html"><a href="insights-workflow.html"><i class="fa fa-check"></i><b>2</b> Insights Workflow</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="insights-workflow.html"><a href="insights-workflow.html#preparing-the-data"><i class="fa fa-check"></i><b>2.1</b> Preparing the data</a></li>
 <li class="chapter" data-level="2.2" data-path="insights-workflow.html"><a href="insights-workflow.html#prepare-your-computer-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Prepare your computer, R, and RStudio</a></li>
 <li class="chapter" data-level="2.3" data-path="insights-workflow.html"><a href="insights-workflow.html#read-the-data-into-r"><i class="fa fa-check"></i><b>2.3</b> Read the data into R</a></li>
@@ -146,34 +146,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="insights-workflow.html"><a href="insights-workflow.html#initial-insights"><i class="fa fa-check"></i><b>2.6</b> Initial insights</a></li>
 <li class="chapter" data-level="2.7" data-path="insights-workflow.html"><a href="insights-workflow.html#insights-about-question-posed"><i class="fa fa-check"></i><b>2.7</b> Insights about question posed</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a><ul>
+<li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="questions-exercises.html"><a href="questions-exercises.html#preface"><i class="fa fa-check"></i><b>3.1</b> Preface</a></li>
 <li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1-introduction"><i class="fa fa-check"></i><b>3.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="3.3" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-2-getting-acquainted"><i class="fa fa-check"></i><b>3.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="3.4" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-3-workflow-demonstrationpart-1"><i class="fa fa-check"></i><b>3.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="3.5" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-4-workflow-demonstrationpart-2"><i class="fa fa-check"></i><b>3.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
-<li class="chapter" data-level="3.6" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-5-dealing-with-data-1digging-into-dplyr"><i class="fa fa-check"></i><b>3.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a><ul>
+<li class="chapter" data-level="3.6" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-5-dealing-with-data-1digging-into-dplyr"><i class="fa fa-check"></i><b>3.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a>
+<ul>
 <li class="chapter" data-level="3.6.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises"><i class="fa fa-check"></i><b>3.6.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.6.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises"><i class="fa fa-check"></i><b>3.6.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-6-dealing-with-data-2expanding-your-toolkit"><i class="fa fa-check"></i><b>3.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a><ul>
+<li class="chapter" data-level="3.7" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-6-dealing-with-data-2expanding-your-toolkit"><i class="fa fa-check"></i><b>3.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a>
+<ul>
 <li class="chapter" data-level="3.7.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-1"><i class="fa fa-check"></i><b>3.7.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.7.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises-1"><i class="fa fa-check"></i><b>3.7.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-7-getting-to-grips-with-ggplot2"><i class="fa fa-check"></i><b>3.8</b> Chapter 7 (Getting to grips with ggplot2)</a><ul>
+<li class="chapter" data-level="3.8" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-7-getting-to-grips-with-ggplot2"><i class="fa fa-check"></i><b>3.8</b> Chapter 7 (Getting to grips with ggplot2)</a>
+<ul>
 <li class="chapter" data-level="3.8.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-2"><i class="fa fa-check"></i><b>3.8.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.8.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises-2"><i class="fa fa-check"></i><b>3.8.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.9" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables"><i class="fa fa-check"></i><b>3.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a><ul>
+<li class="chapter" data-level="3.9" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables"><i class="fa fa-check"></i><b>3.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a>
+<ul>
 <li class="chapter" data-level="3.9.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-3"><i class="fa fa-check"></i><b>3.9.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.9.2" data-path="questions-exercises.html"><a href="questions-exercises.html#workflow-demonstration-questions-and-exercises"><i class="fa fa-check"></i><b>3.9.2</b> Workflow demonstration questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.10" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables"><i class="fa fa-check"></i><b>3.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a><ul>
+<li class="chapter" data-level="3.10" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables"><i class="fa fa-check"></i><b>3.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a>
+<ul>
 <li class="chapter" data-level="3.10.1" data-path="questions-exercises.html"><a href="questions-exercises.html#workflow-questions-and-exercises"><i class="fa fa-check"></i><b>3.10.1</b> Workflow questions and exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="3.11" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-10-looking-back-and-looking-forward"><i class="fa fa-check"></i><b>3.11</b> Chapter 10 (Looking back and looking forward)</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="more-R.html"><a href="more-R.html"><i class="fa fa-check"></i><b>4</b> More R</a><ul>
+<li class="chapter" data-level="4" data-path="more-R.html"><a href="more-R.html"><i class="fa fa-check"></i><b>4</b> More R</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="more-R.html"><a href="more-R.html#rstudio-project-setup"><i class="fa fa-check"></i><b>4.1</b> RStudio Project setup</a></li>
 <li class="chapter" data-level="4.2" data-path="more-R.html"><a href="more-R.html#baseclassic-and-tidyverse-comparison"><i class="fa fa-check"></i><b>4.2</b> Base/classic and tidyverse comparison</a></li>
 <li class="chapter" data-level="4.3" data-path="more-R.html"><a href="more-R.html#multiple-graphs-in-one-figure"><i class="fa fa-check"></i><b>4.3</b> Multiple graphs in one figure</a></li>
@@ -184,7 +191,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8" data-path="more-R.html"><a href="more-R.html#syntax-highlighting"><i class="fa fa-check"></i><b>4.8</b> Syntax highlighting</a></li>
 <li class="chapter" data-level="4.9" data-path="more-R.html"><a href="more-R.html#summarise-more-than-one-variable"><i class="fa fa-check"></i><b>4.9</b> Summarise more than one variable</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html"><i class="fa fa-check"></i><b>5</b> Additional &amp; next step concepts</a><ul>
+<li class="chapter" data-level="5" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html"><i class="fa fa-check"></i><b>5</b> Additional &amp; next step concepts</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#distributions"><i class="fa fa-check"></i><b>5.1</b> Distributions</a></li>
 <li class="chapter" data-level="5.2" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#interactions-and-complexity"><i class="fa fa-check"></i><b>5.2</b> Interactions and complexity</a></li>
 <li class="chapter" data-level="5.3" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#lurking-variables"><i class="fa fa-check"></i><b>5.3</b> Lurking variables</a></li>
@@ -199,7 +207,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.12" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#interoperability"><i class="fa fa-check"></i><b>5.12</b> Interoperability / standardising terms</a></li>
 <li class="chapter" data-level="5.13" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#comparing-descriptive-statistics"><i class="fa fa-check"></i><b>5.13</b> Comparing descriptive statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html"><i class="fa fa-check"></i><b>6</b> How does dietary diversity affect populations?</a><ul>
+<li class="chapter" data-level="6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html"><i class="fa fa-check"></i><b>6</b> How does dietary diversity affect populations?</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#about-this-workflow-demonstration"><i class="fa fa-check"></i><b>6.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="6.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#going-to-the-next-level"><i class="fa fa-check"></i><b>6.2</b> Going to the next level</a></li>
 <li class="chapter" data-level="6.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#introduction-to-the-study-and-data"><i class="fa fa-check"></i><b>6.3</b> Introduction to the study and data</a></li>
@@ -208,7 +217,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#acquire-the-dataset"><i class="fa fa-check"></i><b>6.6</b> Acquire the dataset</a></li>
 <li class="chapter" data-level="6.7" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#import-the-dataset"><i class="fa fa-check"></i><b>6.7</b> Import the dataset</a></li>
 <li class="chapter" data-level="6.8" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#checking-the-import-worked-correctly"><i class="fa fa-check"></i><b>6.8</b> Checking the import worked correctly</a></li>
-<li class="chapter" data-level="6.9" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>6.9</b> Cleaning and tidying</a><ul>
+<li class="chapter" data-level="6.9" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>6.9</b> Cleaning and tidying</a>
+<ul>
 <li class="chapter" data-level="6.9.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#recode-some-names"><i class="fa fa-check"></i><b>6.9.1</b> Recode some names</a></li>
 <li class="chapter" data-level="6.9.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#factors-predstab"><i class="fa fa-check"></i><b>6.9.2</b> Make the <code>prey_composition</code> variable a factor with specific order</a></li>
 <li class="chapter" data-level="6.9.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#fix-those-variable-names"><i class="fa fa-check"></i><b>6.9.3</b> Fix those variable names</a></li>
@@ -219,7 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.9.8" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#calculate-the-three-response-variables"><i class="fa fa-check"></i><b>6.9.8</b> Calculate the three response variables</a></li>
 </ul></li>
 <li class="chapter" data-level="6.10" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#shapes"><i class="fa fa-check"></i><b>6.10</b> Shapes</a></li>
-<li class="chapter" data-level="6.11" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#relationships"><i class="fa fa-check"></i><b>6.11</b> Relationships</a><ul>
+<li class="chapter" data-level="6.11" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#relationships"><i class="fa fa-check"></i><b>6.11</b> Relationships</a>
+<ul>
 <li class="chapter" data-level="6.11.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#maximum-predator-density"><i class="fa fa-check"></i><b>6.11.1</b> Maximum predator density</a></li>
 <li class="chapter" data-level="6.11.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#predator-population-variability-cv"><i class="fa fa-check"></i><b>6.11.2</b> Predator population variability (CV)</a></li>
 <li class="chapter" data-level="6.11.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#predator-persistence-time"><i class="fa fa-check"></i><b>6.11.3</b> Predator persistence time</a></li>
@@ -227,12 +238,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.12" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#wrapping-up"><i class="fa fa-check"></i><b>6.12</b> Wrapping up</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html"><i class="fa fa-check"></i><b>7</b> Are diets more diverse in more democratic countries?</a><ul>
+<li class="chapter" data-level="7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html"><i class="fa fa-check"></i><b>7</b> Are diets more diverse in more democratic countries?</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#about-this-workflow-demonstration-1"><i class="fa fa-check"></i><b>7.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="7.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#introduction-to-the-study-and-data-1"><i class="fa fa-check"></i><b>7.2</b> Introduction to the study and data</a></li>
 <li class="chapter" data-level="7.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#understanding-the-data"><i class="fa fa-check"></i><b>7.3</b> Understanding the data</a></li>
 <li class="chapter" data-level="7.4" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#a-little-preparation-1"><i class="fa fa-check"></i><b>7.4</b> A little preparation</a></li>
-<li class="chapter" data-level="7.5" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><i class="fa fa-check"></i><b>7.5</b> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a><ul>
+<li class="chapter" data-level="7.5" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><i class="fa fa-check"></i><b>7.5</b> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a>
+<ul>
 <li class="chapter" data-level="7.5.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#data-origins-and-acquisition"><i class="fa fa-check"></i><b>7.5.1</b> Data origins and acquisition</a></li>
 <li class="chapter" data-level="7.5.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#data-import"><i class="fa fa-check"></i><b>7.5.2</b> Data import</a></li>
 <li class="chapter" data-level="7.5.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#tidy-and-clean"><i class="fa fa-check"></i><b>7.5.3</b> Tidy and clean</a></li>
@@ -241,7 +254,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#check-ranges-of-numeric-variables"><i class="fa fa-check"></i><b>7.5.6</b> Check ranges of numeric variables</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#first-insights-from-the-polity-data"><i class="fa fa-check"></i><b>7.6</b> First insights from the polity data</a></li>
-<li class="chapter" data-level="7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#acquire-import-check-the-fao-food-balance-sheet-data"><i class="fa fa-check"></i><b>7.7</b> Acquire, import, check the FAO Food balance sheet data</a><ul>
+<li class="chapter" data-level="7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#acquire-import-check-the-fao-food-balance-sheet-data"><i class="fa fa-check"></i><b>7.7</b> Acquire, import, check the FAO Food balance sheet data</a>
+<ul>
 <li class="chapter" data-level="7.7.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#tidying-FAO"><i class="fa fa-check"></i><b>7.7.1</b> Tidy the FAO data</a></li>
 <li class="chapter" data-level="7.7.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#clean-the-fao-data"><i class="fa fa-check"></i><b>7.7.2</b> Clean the FAO data</a></li>
 <li class="chapter" data-level="7.7.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#check-for-innapropriate-duplicate-observations-1"><i class="fa fa-check"></i><b>7.7.3</b> Check for innapropriate duplicate observations</a></li>
@@ -250,7 +264,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.7.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#more-cleaning"><i class="fa fa-check"></i><b>7.7.6</b> More cleaning</a></li>
 <li class="chapter" data-level="7.7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#calculating-our-response-variables"><i class="fa fa-check"></i><b>7.7.7</b> Calculating our response variables</a></li>
 </ul></li>
-<li class="chapter" data-level="7.8" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#merge-the-two-datasets-aaaaaargh"><i class="fa fa-check"></i><b>7.8</b> Merge the two datasets (aaaaaargh!!)</a><ul>
+<li class="chapter" data-level="7.8" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#merge-the-two-datasets-aaaaaargh"><i class="fa fa-check"></i><b>7.8</b> Merge the two datasets (aaaaaargh!!)</a>
+<ul>
 <li class="chapter" data-level="7.8.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-standardisation"><i class="fa fa-check"></i><b>7.8.1</b> Polity standardisation</a></li>
 <li class="chapter" data-level="7.8.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#the-final-merge"><i class="fa fa-check"></i><b>7.8.2</b> The final merge</a></li>
 </ul></li>
@@ -260,7 +275,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.12" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#wrapping-up-1"><i class="fa fa-check"></i><b>7.12</b> Wrapping up</a></li>
 <li class="chapter" data-level="7.13" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#and-a-challenge-for-you"><i class="fa fa-check"></i><b>7.13</b> And a challenge for you…</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html"><i class="fa fa-check"></i><b>8</b> What are the effects of dietary restriction?</a><ul>
+<li class="chapter" data-level="8" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html"><i class="fa fa-check"></i><b>8</b> What are the effects of dietary restriction?</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#about-this-workflow-demonstration-2"><i class="fa fa-check"></i><b>8.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="8.2" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#introduction-1"><i class="fa fa-check"></i><b>8.2</b> Introduction</a></li>
 <li class="chapter" data-level="8.3" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#the-question"><i class="fa fa-check"></i><b>8.3</b> The question</a></li>
@@ -283,8 +299,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.20" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#inspect-shapes-distributions"><i class="fa fa-check"></i><b>8.20</b> Inspect shapes (distributions)</a></li>
 <li class="chapter" data-level="8.21" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#inspect-relationships"><i class="fa fa-check"></i><b>8.21</b> Inspect relationships</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html"><i class="fa fa-check"></i><b>9</b> Solutions: What are the effects of dietary restriction?</a><ul>
-<li class="chapter" data-level="9.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#about-these-solutions"><i class="fa fa-check"></i><b>9.1</b> About these solutions</a><ul>
+<li class="chapter" data-level="9" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html"><i class="fa fa-check"></i><b>9</b> Solutions: What are the effects of dietary restriction?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#about-these-solutions"><i class="fa fa-check"></i><b>9.1</b> About these solutions</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#nas-variable-entries-e.g.-levels-of-characters-ranges-of-numerics-numbers-of-things-1"><i class="fa fa-check"></i><b>9.1.1</b> NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of “things”*</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#independence-1"><i class="fa fa-check"></i><b>9.2</b> Independence</a></li>
@@ -298,7 +316,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.10" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#moatt-et-al-data-s15-length-weight-and-condition-index-data"><i class="fa fa-check"></i><b>9.10</b> Moatt et al Data S15 – Length, Weight and Condition Index Data</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="modelwf-scripts.html"><a href="modelwf-scripts.html"><i class="fa fa-check"></i><b>10</b> Workflow demonstration R scripts</a></li>
-<li class="chapter" data-level="11" data-path="live-data-demo.html"><a href="live-data-demo.html"><i class="fa fa-check"></i><b>11</b> Live data analysis demonstration</a><ul>
+<li class="chapter" data-level="11" data-path="live-data-demo.html"><a href="live-data-demo.html"><i class="fa fa-check"></i><b>11</b> Live data analysis demonstration</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="live-data-demo.html"><a href="live-data-demo.html#introduction-for-intructors"><i class="fa fa-check"></i><b>11.1</b> Introduction for intructors</a></li>
 <li class="chapter" data-level="" data-path="live-data-demo.html"><a href="live-data-demo.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="11.2" data-path="live-data-demo.html"><a href="live-data-demo.html#meta-task"><i class="fa fa-check"></i><b>11.2</b> Meta-task</a></li>
@@ -311,7 +330,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.9" data-path="live-data-demo.html"><a href="live-data-demo.html#data-collection"><i class="fa fa-check"></i><b>11.9</b> Data collection</a></li>
 <li class="chapter" data-level="11.10" data-path="live-data-demo.html"><a href="live-data-demo.html#look-at-the-data"><i class="fa fa-check"></i><b>11.10</b> Look at the data!</a></li>
 <li class="chapter" data-level="11.11" data-path="live-data-demo.html"><a href="live-data-demo.html#lets-get-the-data-into-our-data-analysis-software-of-choice-r-via-rstudio"><i class="fa fa-check"></i><b>11.11</b> Lets get the data into our data analysis software of choice (R, via RStudio)</a></li>
-<li class="chapter" data-level="11.12" data-path="live-data-demo.html"><a href="live-data-demo.html#now-we-need-to-do-some-data-wrangling-cleaning-and-tidying"><i class="fa fa-check"></i><b>11.12</b> Now we need to do some data wrangling (cleaning and tidying)</a><ul>
+<li class="chapter" data-level="11.12" data-path="live-data-demo.html"><a href="live-data-demo.html#now-we-need-to-do-some-data-wrangling-cleaning-and-tidying"><i class="fa fa-check"></i><b>11.12</b> Now we need to do some data wrangling (cleaning and tidying)</a>
+<ul>
 <li class="chapter" data-level="11.12.1" data-path="live-data-demo.html"><a href="live-data-demo.html#clean-up-the-column-variable-names"><i class="fa fa-check"></i><b>11.12.1</b> Clean up the column / variable names:</a></li>
 <li class="chapter" data-level="11.12.2" data-path="live-data-demo.html"><a href="live-data-demo.html#check-the-variable-types-are-correct."><i class="fa fa-check"></i><b>11.12.2</b> Check the variable types are correct.</a></li>
 <li class="chapter" data-level="11.12.3" data-path="live-data-demo.html"><a href="live-data-demo.html#correct-or-exclude-problematic-data"><i class="fa fa-check"></i><b>11.12.3</b> Correct or exclude problematic data</a></li>
@@ -321,20 +341,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.13" data-path="live-data-demo.html"><a href="live-data-demo.html#visualise-the-data"><i class="fa fa-check"></i><b>11.13</b> Visualise the data</a></li>
 <li class="chapter" data-level="11.14" data-path="live-data-demo.html"><a href="live-data-demo.html#get-the-means"><i class="fa fa-check"></i><b>11.14</b> Get the means</a></li>
 <li class="chapter" data-level="11.15" data-path="live-data-demo.html"><a href="live-data-demo.html#effect-size-and-practical-importance"><i class="fa fa-check"></i><b>11.15</b> Effect size and practical importance?</a></li>
-<li class="chapter" data-level="11.16" data-path="live-data-demo.html"><a href="live-data-demo.html#assess-assumptions"><i class="fa fa-check"></i><b>11.16</b> Assess assumptions</a><ul>
+<li class="chapter" data-level="11.16" data-path="live-data-demo.html"><a href="live-data-demo.html#assess-assumptions"><i class="fa fa-check"></i><b>11.16</b> Assess assumptions</a>
+<ul>
 <li class="chapter" data-level="11.16.1" data-path="live-data-demo.html"><a href="live-data-demo.html#independence-2"><i class="fa fa-check"></i><b>11.16.1</b> Independence</a></li>
 <li class="chapter" data-level="11.16.2" data-path="live-data-demo.html"><a href="live-data-demo.html#normally-distributed-residuals"><i class="fa fa-check"></i><b>11.16.2</b> Normally distributed residuals</a></li>
 <li class="chapter" data-level="11.16.3" data-path="live-data-demo.html"><a href="live-data-demo.html#equal-variance"><i class="fa fa-check"></i><b>11.16.3</b> Equal variance</a></li>
 </ul></li>
 <li class="chapter" data-level="11.17" data-path="live-data-demo.html"><a href="live-data-demo.html#do-the-statistical-test"><i class="fa fa-check"></i><b>11.17</b> Do the statistical test</a></li>
 <li class="chapter" data-level="11.18" data-path="live-data-demo.html"><a href="live-data-demo.html#critical-thinking"><i class="fa fa-check"></i><b>11.18</b> Critical thinking</a></li>
-<li class="chapter" data-level="11.19" data-path="live-data-demo.html"><a href="live-data-demo.html#report-and-communicate-the-results"><i class="fa fa-check"></i><b>11.19</b> Report and communicate the results</a><ul>
+<li class="chapter" data-level="11.19" data-path="live-data-demo.html"><a href="live-data-demo.html#report-and-communicate-the-results"><i class="fa fa-check"></i><b>11.19</b> Report and communicate the results</a>
+<ul>
 <li class="chapter" data-level="11.19.1" data-path="live-data-demo.html"><a href="live-data-demo.html#the-results-as-a-sentence"><i class="fa fa-check"></i><b>11.19.1</b> The results as a sentence</a></li>
 <li class="chapter" data-level="11.19.2" data-path="live-data-demo.html"><a href="live-data-demo.html#the-results-graphically"><i class="fa fa-check"></i><b>11.19.2</b> The results graphically</a></li>
 <li class="chapter" data-level="11.19.3" data-path="live-data-demo.html"><a href="live-data-demo.html#do-not-use-a-table"><i class="fa fa-check"></i><b>11.19.3</b> Do not use a table</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="more-questions-data.html"><a href="more-questions-data.html"><i class="fa fa-check"></i><b>12</b> More datasets</a><ul>
+<li class="chapter" data-level="12" data-path="more-questions-data.html"><a href="more-questions-data.html"><i class="fa fa-check"></i><b>12</b> More datasets</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="more-questions-data.html"><a href="more-questions-data.html#hungry-ladybirds"><i class="fa fa-check"></i><b>12.1</b> Hungry ladybirds</a></li>
 <li class="chapter" data-level="12.2" data-path="more-questions-data.html"><a href="more-questions-data.html#seal-suppers"><i class="fa fa-check"></i><b>12.2</b> Seal suppers</a></li>
 <li class="chapter" data-level="12.3" data-path="more-questions-data.html"><a href="more-questions-data.html#more-bat-poop"><i class="fa fa-check"></i><b>12.3</b> More bat poop</a></li>
@@ -346,34 +369,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.9" data-path="more-questions-data.html"><a href="more-questions-data.html#cervical-spine-compression-and-mri-not-food-related"><i class="fa fa-check"></i><b>12.9</b> Cervical spine compression and MRI (not food related)</a></li>
 <li class="chapter" data-level="12.10" data-path="more-questions-data.html"><a href="more-questions-data.html#lots-of-other-datasets-here"><i class="fa fa-check"></i><b>12.10</b> Lots of other datasets here:</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a><ul>
+<li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a>
+<ul>
 <li class="chapter" data-level="13.1" data-path="related-reading.html"><a href="related-reading.html#data-science-related-reading"><i class="fa fa-check"></i><b>13.1</b> Data science related reading</a></li>
 <li class="chapter" data-level="13.2" data-path="related-reading.html"><a href="related-reading.html#study-design-related-reading"><i class="fa fa-check"></i><b>13.2</b> Study design related reading</a></li>
 <li class="chapter" data-level="13.3" data-path="related-reading.html"><a href="related-reading.html#web-sites-pages"><i class="fa fa-check"></i><b>13.3</b> Web sites / pages</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a><ul>
+<li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="answers.html"><a href="answers.html#preface-1"><i class="fa fa-check"></i><b>14.1</b> Preface</a></li>
 <li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction-1"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="14.3" data-path="answers.html"><a href="answers.html#chapter-2-getting-acquainted-1"><i class="fa fa-check"></i><b>14.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="14.4" data-path="answers.html"><a href="answers.html#chapter-3-workflow-demonstrationpart-1-1"><i class="fa fa-check"></i><b>14.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="14.5" data-path="answers.html"><a href="answers.html#chapter-4-workflow-demonstrationpart-2-1"><i class="fa fa-check"></i><b>14.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
-<li class="chapter" data-level="14.6" data-path="answers.html"><a href="answers.html#chapter-5-dealing-with-data-1digging-into-dplyr-1"><i class="fa fa-check"></i><b>14.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a><ul>
+<li class="chapter" data-level="14.6" data-path="answers.html"><a href="answers.html#chapter-5-dealing-with-data-1digging-into-dplyr-1"><i class="fa fa-check"></i><b>14.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a>
+<ul>
 <li class="chapter" data-level="14.6.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-4"><i class="fa fa-check"></i><b>14.6.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.6.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-3"><i class="fa fa-check"></i><b>14.6.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.7" data-path="answers.html"><a href="answers.html#chapter-6-dealing-with-data-2expanding-your-toolkit-1"><i class="fa fa-check"></i><b>14.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a><ul>
+<li class="chapter" data-level="14.7" data-path="answers.html"><a href="answers.html#chapter-6-dealing-with-data-2expanding-your-toolkit-1"><i class="fa fa-check"></i><b>14.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a>
+<ul>
 <li class="chapter" data-level="14.7.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-5"><i class="fa fa-check"></i><b>14.7.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.7.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-4"><i class="fa fa-check"></i><b>14.7.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.8" data-path="answers.html"><a href="answers.html#chapter-7-getting-to-grips-with-ggplot2-1"><i class="fa fa-check"></i><b>14.8</b> Chapter 7 (Getting to grips with ggplot2)</a><ul>
+<li class="chapter" data-level="14.8" data-path="answers.html"><a href="answers.html#chapter-7-getting-to-grips-with-ggplot2-1"><i class="fa fa-check"></i><b>14.8</b> Chapter 7 (Getting to grips with ggplot2)</a>
+<ul>
 <li class="chapter" data-level="14.8.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-6"><i class="fa fa-check"></i><b>14.8.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.8.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-5"><i class="fa fa-check"></i><b>14.8.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.9" data-path="answers.html"><a href="answers.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables-1"><i class="fa fa-check"></i><b>14.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a><ul>
+<li class="chapter" data-level="14.9" data-path="answers.html"><a href="answers.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables-1"><i class="fa fa-check"></i><b>14.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a>
+<ul>
 <li class="chapter" data-level="14.9.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-7"><i class="fa fa-check"></i><b>14.9.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.9.2" data-path="answers.html"><a href="answers.html#workflow-demonstration-questions-and-exercises-1"><i class="fa fa-check"></i><b>14.9.2</b> Workflow demonstration questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.10" data-path="answers.html"><a href="answers.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables-1"><i class="fa fa-check"></i><b>14.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a><ul>
+<li class="chapter" data-level="14.10" data-path="answers.html"><a href="answers.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables-1"><i class="fa fa-check"></i><b>14.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a>
+<ul>
 <li class="chapter" data-level="14.10.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-8"><i class="fa fa-check"></i><b>14.10.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.10.2" data-path="answers.html"><a href="answers.html#workflow-questions-and-exercises-1"><i class="fa fa-check"></i><b>14.10.2</b> Workflow questions and exercises</a></li>
 </ul></li>
@@ -401,54 +431,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="additional-next-step-concepts" class="section level1">
+<div id="additional-next-step-concepts" class="section level1" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Additional &amp; next step concepts</h1>
 <p>In this chapter of this companion website to the Insights book we outline some of the conceptual issues we mentioned in the book, but did not then feel the need to cover. Some of these we only highlight below as next steps for you to take, rather than attempt to teach them here. If you would like more details below, some examples, or other topics covered, please let us know.</p>
-<div id="distributions" class="section level2">
+<div id="distributions" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Distributions</h2>
 <p>In the Insights book we describe what is a sample distribution, we emphasise how important it is to visualise sample distributions, and we make many such visualisations, such as histograms. What we talked about much less, though is very important, are some of the types of theoretical distributions that one can use in analyses, particularly in statistical analyses. We mentioned the normal, Poisson, and binomial distribution during the Bat Workflow Demonstration. Going further we could have checked with a QQ-plot if these distributions were appropriate for characterising the data. Learning more about these distributions, and about what QQ-plots are would be a good next step. It is a step that is really quite important before attempting to tackle statistical models, such as linear regression.</p>
 </div>
-<div id="interactions-and-complexity" class="section level2">
+<div id="interactions-and-complexity" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Interactions and complexity</h2>
 <p>In the Insights book we mention interactions (e.g. does the difference in diet between male and female bats depend on their age). They are important because we live in a world where many things are contigent on others, such that the effect of a intervention depends on some other variable. Hence, the effects of a dietary intervention may depend on the disease status of an individual. Achieving an intuitive understanding of a system with many more than three or four interactions can be elusive, so researchers often do not attempt to explore or explain such complex situations. One solution/alterate approach, is to use analysis methods that characterise a system of causal relationships… i.e. a network of causes and effects. The methods and tools are not often taught in introductory statistics courses, but it is worth being aware of them at least (they are sometimes called path analysis and structural equation models).</p>
 </div>
-<div id="lurking-variables" class="section level2">
+<div id="lurking-variables" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Lurking variables</h2>
 <p>We can think of situations that are not so amenable to the approaches you learned in the Insights book. This does not mean that the approaches are not useful or important. They are foundational. And therefore to be built on.</p>
 <p>One example of such a situation is if we have two continuous explanatory variables that are relatively strongly correlated with each other. And we are looking at how they are related to a response variable. It is quite possible that we see a positive relationship between one explanatory variable and the response variable, when the relationship is in fact negative. We can see the negative relationship only once we have accounted for the other explanatory variable. If this sounds a bit concerning then good… it is. It illustrates how very important is checking for, and understanding implications of, correlations among explanatory variables. And how important it is to take time to think during the planning phase of the workflow about what are the likely important explanatory variables. How can one “account for” the other explanatory variable? The answer is to hold the second explanatory variable constant, or at least relatively constant. This can be done by plotting only data for a small range of the second explanatory variable (<code>cut</code> and <code>facet_wrap</code> can be used).</p>
 <p>For more on this, including some simulated data to illustrate the issue, please see this <a href="http://r4all.org/posts/lurking-variables-and-hidden-relationships">lurking variables post on the R4All web site</a>.</p>
 </div>
-<div id="power-of-data-to-give-insights" class="section level2">
+<div id="power-of-data-to-give-insights" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Power of data to give insights</h2>
 <p>When planning a study it is worthwhile to calculate the <em>statistical power</em> that can be expected. One methods for doing so is to create fake data by simulation, and then analysing it. One can then assess how likely the statistical method is to detect any real effect that was included in the fake data, and how likely it is to detect an effect when no real effect was included in the fake data. Making useful fake data requires an estimate of effect sizes (i.e. the strength of an effect or of a relationship), about variability, and amount of data. It is well worth spending time looking into power analyses, and how to simulate fake data.</p>
 </div>
-<div id="effect-sizes" class="section level2">
+<div id="effect-sizes" class="section level2" number="5.5">
 <h2><span class="header-section-number">5.5</span> Effect sizes</h2>
 <p>We found that a difference in mean prey size of about 5 mm between female and male bats. Therefore we would say that the effect sizes of sex is 5 mm. It is important to maintain a clear focus on effect sizes (and once you move onto statistics, a measure of certainty in the effect size, e.g. a confidence interval). You will almost certainly be exposed to p-values, but please retain attention and focus on effect sizes. That said, also be always aware that use of the term “effect size” is in no way used to indicate a <em>causal</em> effect has been demonstrated (and is therefore in some senses an innapropriate term to use).</p>
 </div>
-<div id="ordination" class="section level2">
+<div id="ordination" class="section level2" number="5.6">
 <h2><span class="header-section-number">5.6</span> Ordination</h2>
 <p>Our analyses have had relatively few explanatory variables, and one response variable. Relatively common, however, is to have several, even several tens of explanatory and/or response variables. Questions about gene expression and community composition, for example, can lead to data with many response variables. Such data is sometimes termed <em>multivariate</em> data, and working with such data is a whole other world of data and statistical analyses methods. Ordination is a common foundation and good starting point for such analyses, and so would be a good place for you to start looking. <em>Principle component analysis</em> is a good starting place therein. By the way, the functions for working with multivariate data often require wide-format datasets and are more informative if datasets have named rows. (Please let us know if you would like a worked example of PCA and we will endeavour to get one here as soon as possible.)</p>
 </div>
-<div id="influence-outliers" class="section level2">
+<div id="influence-outliers" class="section level2" number="5.7">
 <h2><span class="header-section-number">5.7</span> Influence and outliers</h2>
 <p>We sometimes observe one or a few data point that are quite different from all others. How can we tell if they are so different that we should treat them differently? How can we know if they are different and likely to have high influence on our conclusions? What influence on our insights does an individual data point have? This will depend on various things, including: 1) number of other data points, with more other data points resulting in any individual one having less influence; 2) the value of the data point (y-value)… large ones (either in the positive or negative direction) tend to have larger influence; 2) the x value of the data point… where larger ones (in positive or negative direction) have more influence. Knowing how to identify and deal with unusual data points is very important, as is using only transparent methods for doing so.</p>
 <p>We can think of this by anology with a children’s playground toy… the seesaw. Can you put together what I write above, and this toy? How would the analogy work?</p>
 </div>
-<div id="transformations" class="section level2">
+<div id="transformations" class="section level2" number="5.8">
 <h2><span class="header-section-number">5.8</span> Transformations</h2>
 <p>Transforming variables, e.g. by taking the logarithm of the values and working with that, is quite common place. It can, for example, changing the shapes of the distribution of the data to make it more ameneable to analyses, or do the same for the relationship between two numeric variables. Why one might want to do this, when one should, and when one perhaps should not is very important to learn. We feel it could be the case that transformations are often applied without sufficient appreciation of their consequences.</p>
 </div>
-<div id="non-independence" class="section level2">
+<div id="non-independence" class="section level2" number="5.9">
 <h2><span class="header-section-number">5.9</span> Non-independence</h2>
 <p>Here we take a bit of a deeper dive into non-independence than is presented in the book.</p>
 <p>Think about the bat diet dataset. Each of the bats can have multiple observations (rows) in the dataset, one for each prey item detected in its poop. Hence the dataset has 633 rows/observations describing the 143 bats.</p>
 <p>Here’s a puzzle for you. There are two ways to calculate the mean, minimum, and maximum wingspan of prey consumed by bats. Here is the first: we just calculate these things without doing anything else (i.e. we calculate directly on the raw data):</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="additional-next-step-concepts.html#cb5-1"></a>bats <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb5-2"><a href="additional-next-step-concepts.html#cb5-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_wingspan =</span> <span class="kw">mean</span>(Wingspan_mm, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb5-3"><a href="additional-next-step-concepts.html#cb5-3"></a>            <span class="dt">min_wingspan =</span> <span class="kw">min</span>(Wingspan_mm, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb5-4"><a href="additional-next-step-concepts.html#cb5-4"></a>            <span class="dt">max_wingspan =</span> <span class="kw">max</span>(Wingspan_mm, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb5-5"><a href="additional-next-step-concepts.html#cb5-5"></a>            <span class="dt">n_wingspan =</span> <span class="kw">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="additional-next-step-concepts.html#cb5-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="additional-next-step-concepts.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_wingspan =</span> <span class="fu">mean</span>(Wingspan_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb5-3"><a href="additional-next-step-concepts.html#cb5-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_wingspan =</span> <span class="fu">min</span>(Wingspan_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb5-4"><a href="additional-next-step-concepts.html#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_wingspan =</span> <span class="fu">max</span>(Wingspan_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb5-5"><a href="additional-next-step-concepts.html#cb5-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">n_wingspan =</span> <span class="fu">n</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 4
 ##   mean_wingspan min_wingspan max_wingspan n_wingspan
 ##           &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;      &lt;int&gt;
@@ -456,13 +486,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We also asked for the number of data points, which here is 633. Seems fine.</p>
 <p>Here is the other way. We first calculate the mean wingspan of prey consumed by each bat, thus reducing the dataset to one number for each bat. Then we calculate the mean of these means, the minimum of these means, and the maximum of these means. Take a moment to think about if you think the answers will be the same or different to the answer above, and why you think this. Also, try to answer this for each of the mean, minimum, and maximum.</p>
 <p>Here comes the answer done the second way:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="additional-next-step-concepts.html#cb7-1"></a>bats <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb7-2"><a href="additional-next-step-concepts.html#cb7-2"></a><span class="st">  </span><span class="kw">group_by</span>(Bat_ID) <span class="op">%&gt;%</span></span>
-<span id="cb7-3"><a href="additional-next-step-concepts.html#cb7-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_wingspan =</span> <span class="kw">mean</span>(Wingspan_mm, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb7-4"><a href="additional-next-step-concepts.html#cb7-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_mean_wingspan =</span> <span class="kw">mean</span>(mean_wingspan, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb7-5"><a href="additional-next-step-concepts.html#cb7-5"></a>            <span class="dt">min_mean_wingspan =</span> <span class="kw">min</span>(mean_wingspan, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),            </span>
-<span id="cb7-6"><a href="additional-next-step-concepts.html#cb7-6"></a>            <span class="dt">max_mean_wingspan =</span> <span class="kw">max</span>(mean_wingspan, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb7-7"><a href="additional-next-step-concepts.html#cb7-7"></a>            <span class="dt">n_mean_wingspan =</span> <span class="kw">sum</span>(<span class="op">!</span><span class="kw">is.na</span>(mean_wingspan)))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="additional-next-step-concepts.html#cb7-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="additional-next-step-concepts.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="additional-next-step-concepts.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_wingspan =</span> <span class="fu">mean</span>(Wingspan_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="additional-next-step-concepts.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_mean_wingspan =</span> <span class="fu">mean</span>(mean_wingspan, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-5"><a href="additional-next-step-concepts.html#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_mean_wingspan =</span> <span class="fu">min</span>(mean_wingspan, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),            </span>
+<span id="cb7-6"><a href="additional-next-step-concepts.html#cb7-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_mean_wingspan =</span> <span class="fu">max</span>(mean_wingspan, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-7"><a href="additional-next-step-concepts.html#cb7-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">n_mean_wingspan =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(mean_wingspan)))</span></code></pre></div>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 1 x 4
 ##   mean_mean_wings… min_mean_wingsp… max_mean_wingsp…
@@ -471,14 +501,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 1 more variable: n_mean_wingspan &lt;int&gt;</code></pre>
 <p>Some results are different in the two methods. The mean wingspan across all bats is 33.6 in the first case and 33.7 in the second. The minimum is 6.5 in the first case, but is 14 in the second case. The maximum is 52.5 for both, however. So the answers can be different, but don’t have to be.</p>
 <p>Thinking about the minimum and maximums may help you understand this. Let’s look at the bat individuals that included in their poop the smallest prey item. The code is below; don’t worry about understanding it now if you don’t (perhaps make a note to come back to it):</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="additional-next-step-concepts.html#cb10-1"></a>bats <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb10-2"><a href="additional-next-step-concepts.html#cb10-2"></a><span class="st">  </span><span class="kw">filter</span>(Wingspan_mm <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(Wingspan_mm, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb10-3"><a href="additional-next-step-concepts.html#cb10-3"></a><span class="st">  </span><span class="kw">select</span>(Bat_ID) <span class="op">%&gt;%</span></span>
-<span id="cb10-4"><a href="additional-next-step-concepts.html#cb10-4"></a><span class="st">  </span><span class="kw">distinct</span>() <span class="op">%&gt;%</span></span>
-<span id="cb10-5"><a href="additional-next-step-concepts.html#cb10-5"></a><span class="st">  </span><span class="kw">inner_join</span>(bats) <span class="op">%&gt;%</span></span>
-<span id="cb10-6"><a href="additional-next-step-concepts.html#cb10-6"></a><span class="st">  </span><span class="kw">arrange</span>(Bat_ID) <span class="op">%&gt;%</span></span>
-<span id="cb10-7"><a href="additional-next-step-concepts.html#cb10-7"></a><span class="st">  </span><span class="kw">select</span>(Bat_ID, Species, Wingspan_mm) <span class="op">%&gt;%</span></span>
-<span id="cb10-8"><a href="additional-next-step-concepts.html#cb10-8"></a><span class="st">  </span><span class="kw">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="additional-next-step-concepts.html#cb10-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="additional-next-step-concepts.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Wingspan_mm <span class="sc">==</span> <span class="fu">min</span>(Wingspan_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="additional-next-step-concepts.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="additional-next-step-concepts.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="additional-next-step-concepts.html#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(bats) <span class="sc">%&gt;%</span></span>
+<span id="cb10-6"><a href="additional-next-step-concepts.html#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
+<span id="cb10-7"><a href="additional-next-step-concepts.html#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Bat_ID, Species, Wingspan_mm) <span class="sc">%&gt;%</span></span>
+<span id="cb10-8"><a href="additional-next-step-concepts.html#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Joining, by = &quot;Bat_ID&quot;</code></pre>
 <pre><code>## Rows: 86
 ## Columns: 3
@@ -488,30 +518,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We can see that Bat_ID 606 had six prey detected in its poop and their sizes were 29.5, NA, NA, 20, 6.5, and NA. The mean of these is obviously bigger than 6.5mm. In fact, we can know that if all the bats that ate a prey item of wingspan 6.5mm also ate something else (which can only be bigger than 6.5mm) then the mean prey size eaten must be greater than 6.5mm. And in this particular dataset all of the bats that ate something of wingspan 6.5mm also ate something else. I.e. there are no bats that only ate something of wingspan 6.5mm.</p>
 <p>In contrast, two bats ate only the largest (52.5mm wingspan) type of prey. So the mean prey size eaten is also 52.5mm.</p>
 <p>Why is the mean different (33.65 in one case and 33.67 in the other)? (This is not a rounding issues, the numbers really are different.) To understand how this can arise, consider this simplified example in which bat 1 was observed to eat two prey items, both of size 1, and bat 2 ate only one prey item of size 10</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="additional-next-step-concepts.html#cb13-1"></a>bat1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb13-2"><a href="additional-next-step-concepts.html#cb13-2"></a>bat2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="additional-next-step-concepts.html#cb13-1" aria-hidden="true" tabindex="-1"></a>bat1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb13-2"><a href="additional-next-step-concepts.html#cb13-2" aria-hidden="true" tabindex="-1"></a>bat2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>)</span></code></pre></div>
 <p>Let’s get the mean of all prey items:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="additional-next-step-concepts.html#cb14-1"></a><span class="kw">mean</span>(<span class="kw">c</span>(bat1, bat2))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="additional-next-step-concepts.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(bat1, bat2))</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <p>This seems correct: we add up the values to get 12 and divide by how many there are (3) to get 4. Excellent!</p>
 <p>Now the second way:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="additional-next-step-concepts.html#cb16-1"></a><span class="kw">mean</span>(<span class="kw">c</span>(<span class="kw">mean</span>(bat1), <span class="kw">mean</span>(bat2)))</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="additional-next-step-concepts.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="fu">mean</span>(bat1), <span class="fu">mean</span>(bat2)))</span></code></pre></div>
 <pre><code>## [1] 5.5</code></pre>
 <p>Here we calculate mean for each bat (1, and 10), then add these to get 11 and divide by 2 to get 5.5. It’s key to realise that the two methods give different results because there were different numbers of observations (prey items) among the bats. If both bats had eaten the same number of prey items then the two methods would have given the same results.</p>
 <p>Now, imagine that bigger bats have more prey in their poop, perhaps because they do bigger poops. If we calculate the mean (or minimum or maximum) by the first method (i.e. without first calculating the mean for each bat) then these big bats would have more influence on the overall mean than the small bats, just because they did bigger poops. On the other hand, when we first calculate the mean of each bat we remove this effect—we give each bat equal influence/weight in the calculation of the overall mean.</p>
 <p>We hope you see why the two approaches give different result. But what has this got to do with independence/nonindependence? First, recognise that prey detected in the poop of the same bat are related in the sense that they came from the same bat poop… they share something in common compared to two prey that were detected in two different bat poops. So one can say that two observations from the same bat poop are less independent than two observations from different poops. Second, realise that if we do calculations without first taking the mean for each bat, we are not taking this non-independence into account: we give each of the 633 poops equal influence, even though some come from the same bat. If in contrast, we first take the mean for each bat, we are reducing the influence of related observations by the number of observations for each bat. I.e. each bat contributes only one observation to the overall mean, i.e. the number of observations used to calculate the overall mean is 142.</p>
 <p>You’re probably now wondering which is the correct way to calculate the overall mean (and other overall statistics). Unfortunately there is not one answer to this. The answer certainly depends on your question (and maybe on other things too). If we’re interested in questions about variation among bats, we’re probably best off removing the influence of number of prey eaten by particular bats, i.e. we are better off working with 142 data points, one for each bat. This is what we did in the Workflow Demonstration to answer such questions. If, on the other hand, we are just using the bats to sample prey in their environment, and we want the mean size of the prey in the environment then it seems fair to calculate the mean of all 633 data points, and thank the bats that happened to give us lots of samples from the environment.</p>
 </div>
-<div id="missing-values-nas" class="section level2">
+<div id="missing-values-nas" class="section level2" number="5.10">
 <h2><span class="header-section-number">5.10</span> Missing values (NAs)</h2>
 <p>It is very important to be intimately aware of the number of data points we’re working with, and where there are NAs in our data. If we didn’t notice that we have only 142 (and not 143) mean wingspan measures, we might report that we had 143, have someone else find out that we missed this detail, and then lose a bit of credibility.</p>
 <p>We saw that the bat diet dataset contains 78 missing values of the <code>Wingspan_mm</code> variable, and no missing values in any other variables. We then calculated three response variables for each bat:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="additional-next-step-concepts.html#cb18-1"></a>prey_stats &lt;-<span class="st"> </span>bats <span class="op">%&gt;%</span></span>
-<span id="cb18-2"><a href="additional-next-step-concepts.html#cb18-2"></a><span class="st">  </span><span class="kw">group_by</span>(Bat_ID, Sex, Age) <span class="op">%&gt;%</span></span>
-<span id="cb18-3"><a href="additional-next-step-concepts.html#cb18-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_prey =</span> <span class="kw">n</span>(),</span>
-<span id="cb18-4"><a href="additional-next-step-concepts.html#cb18-4"></a>            <span class="dt">num_prey1 =</span> <span class="kw">n_distinct</span>(Sp._Nr.),</span>
-<span id="cb18-5"><a href="additional-next-step-concepts.html#cb18-5"></a>            <span class="dt">mean_wingspan =</span> <span class="kw">mean</span>(Wingspan_mm, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb18-6"><a href="additional-next-step-concepts.html#cb18-6"></a>            <span class="dt">prop_migratory =</span> <span class="kw">sum</span>(Migratory <span class="op">==</span><span class="st"> &quot;yes&quot;</span>) <span class="op">/</span><span class="st"> </span><span class="kw">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="additional-next-step-concepts.html#cb18-1" aria-hidden="true" tabindex="-1"></a>prey_stats <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="additional-next-step-concepts.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID, Sex, Age) <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="additional-next-step-concepts.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_prey =</span> <span class="fu">n</span>(),</span>
+<span id="cb18-4"><a href="additional-next-step-concepts.html#cb18-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">num_prey1 =</span> <span class="fu">n_distinct</span>(Sp._Nr.),</span>
+<span id="cb18-5"><a href="additional-next-step-concepts.html#cb18-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_wingspan =</span> <span class="fu">mean</span>(Wingspan_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb18-6"><a href="additional-next-step-concepts.html#cb18-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">prop_migratory =</span> <span class="fu">sum</span>(Migratory <span class="sc">==</span> <span class="st">&quot;yes&quot;</span>) <span class="sc">/</span> <span class="fu">n</span>())</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;Bat_ID&#39;, &#39;Sex&#39; (override with `.groups` argument)</code></pre>
 <p>A few things here are worth noting:</p>
 <ul>
@@ -521,11 +551,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="beaware">
 <p>
-<strong>R functions will usually take care of NAs</strong> . They will then often give a warning like “5 rows with missing values removed”. If you see such a warning, absolutely, without a doubt, 100% make sure you know why these are being removed, and put a note in your code. To be clear, if you let functions take care of NAs then make sure you know what they’re doing. And its probably better to take care of them yourself, explicitly.
+<strong>R functions will usually take care of NAs</strong> . They will then often give a warning like “5 rows with missing values removed.” If you see such a warning, absolutely, without a doubt, 100% make sure you know why these are being removed, and put a note in your code. To be clear, if you let functions take care of NAs then make sure you know what they’re doing. And its probably better to take care of them yourself, explicitly.
 </p>
 </div>
 </div>
-<div id="skewness" class="section level2">
+<div id="skewness" class="section level2" number="5.11">
 <h2><span class="header-section-number">5.11</span> Skewness</h2>
 <p>A well-defined hierarchy has been defined to describe and quantify the shape of distributions. It’s essential to know about the first two: central tendency and dispersion, because these are the basis of many standard analyses. The next most important aspect of a distribution is its <strong>skewness</strong> (or just ‘skew’). Skewness describes the asymmetry of a distribution. Just as with central tendency and dispersion, there are many different ways to quantify the skewness of a sample distribution. These are quite difficult to interpret because their interpretation depends on other features of a distribution. We’ll just explore skewness in the simplest case: the skewness of a <strong>unimodal</strong> distribution.</p>
 <p>A unimodal distribution is one that has a single peak. We can never say for certain that a sample distribution is unimodal or not—unimodality is really a property of theoretical distributions—but with enough data and a sensible histogram we can at least say that a distribution is ‘probably’ unimodal. The histograms we produced to describe the sample distributions of <code>Wingspan_mm</code> and <code>No._Reads</code> appear to be unimodal. Each has a single, distinct peak.</p>
@@ -537,40 +567,40 @@ How are mean, median, and skew related? Left (negative) skew means that the mean
 </p>
 </div>
 </div>
-<div id="interoperability" class="section level2">
+<div id="interoperability" class="section level2" number="5.12">
 <h2><span class="header-section-number">5.12</span> Interoperability / standardising terms</h2>
 <p>When we have two or more datasets, and if we wish to combine them and make reliable insights from the combination, we will need one or more variables that are common to both datasets. Such common variables allow us to merge/join the datasets together, i.e. to relate them to each other. When we have such common variables, we can say that the datasets are <em>interoperable</em>.</p>
-<p>However, we might see that we have a variable in each dataset called “Country”, but that different country naming schemes are used in each dataset. This is what experience in the “Food diversity - Polity Workflow demonstration”. It was then a rather painful process to make the two datasets interoperable. So, if you can, it is really really good to use a standard scheme for naming things. That might be a ISO, or a published meta-data scheme.</p>
+<p>However, we might see that we have a variable in each dataset called “Country,” but that different country naming schemes are used in each dataset. This is what experience in the “Food diversity - Polity Workflow demonstration.” It was then a rather painful process to make the two datasets interoperable. So, if you can, it is really really good to use a standard scheme for naming things. That might be a ISO, or a published meta-data scheme.</p>
 <p>Another example of standard names is in the bats dataset… the latin species names. When we prepare a dataset such as this for research purposes, it would be a very good idea to check the entered species names against a standard database of know species names. I.e. it’s good to know that we accurately entered the prey species names, in the sense that they match the names of known prey species. Doing so will also ensure that our results could be compared with and combined with other studies of moth species (put another way, we would have assured our data are <em>interoperable</em> with other studies involving these moth species). To do this, we can use a set of packages that make the whole process a breeze. Let’s try this for the first ten species in the dataset. Note that the first line below installs the <strong>taxize</strong> add-on package, and is commented out as we only need to run it once).</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="additional-next-step-concepts.html#cb20-1"></a><span class="co"># install.packages(&quot;taxize&quot;)</span></span>
-<span id="cb20-2"><a href="additional-next-step-concepts.html#cb20-2"></a><span class="co"># the previous line was commented out. Uncomment it by removing</span></span>
-<span id="cb20-3"><a href="additional-next-step-concepts.html#cb20-3"></a><span class="co"># the # if you want to run it.</span></span>
-<span id="cb20-4"><a href="additional-next-step-concepts.html#cb20-4"></a><span class="kw">library</span>(taxize) <span class="co"># load the package</span></span>
-<span id="cb20-5"><a href="additional-next-step-concepts.html#cb20-5"></a>some_species_names &lt;-<span class="st"> </span>bats <span class="op">%&gt;%</span></span>
-<span id="cb20-6"><a href="additional-next-step-concepts.html#cb20-6"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) <span class="op">%&gt;%</span></span>
-<span id="cb20-7"><a href="additional-next-step-concepts.html#cb20-7"></a><span class="st">  </span><span class="kw">pull</span>(Species) <span class="co"># get first ten species</span></span>
-<span id="cb20-8"><a href="additional-next-step-concepts.html#cb20-8"></a><span class="co"># query the online database of species names</span></span>
-<span id="cb20-9"><a href="additional-next-step-concepts.html#cb20-9"></a>species_names_reports &lt;-<span class="st"> </span><span class="kw">gnr_resolve</span>(some_species_names,</span>
-<span id="cb20-10"><a href="additional-next-step-concepts.html#cb20-10"></a>                                     <span class="dt">best_match_only =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb20-11"><a href="additional-next-step-concepts.html#cb20-11"></a>species_names_reports</span></code></pre></div>
-<p>In this report, the final column gives a quick indication of how well the moth species names in the dataset matched a known species name. A score of 1 is the highest match, 0 is the lowest. This tells us that <em>Ethmia bipunctella</em> and <em>Bradycellus verbasci</em> (among others) in the dataset correspond to known species—their matching score in the final column is 0.988. The third species in the dataset, however is <em>Hoplodrina ambigua/ superstes</em> and cannot be well matched to an individual known species—it has a score of 0.75. Likely this entry in the dataset corresponds with the text in the paper “When the same haplotype matched more than one species, we … classified them into a species group”. I.e. <em>H. ambigua</em> and <em>H. superstes</em> could not be distinguished and so were treated as a species group. (It takes a while to make these queries, so we don’t run one for every moth species name in the dataset.)</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="additional-next-step-concepts.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;taxize&quot;)</span></span>
+<span id="cb20-2"><a href="additional-next-step-concepts.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the previous line was commented out. Uncomment it by removing</span></span>
+<span id="cb20-3"><a href="additional-next-step-concepts.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># the # if you want to run it.</span></span>
+<span id="cb20-4"><a href="additional-next-step-concepts.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(taxize) <span class="co"># load the package</span></span>
+<span id="cb20-5"><a href="additional-next-step-concepts.html#cb20-5" aria-hidden="true" tabindex="-1"></a>some_species_names <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb20-6"><a href="additional-next-step-concepts.html#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-7"><a href="additional-next-step-concepts.html#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Species) <span class="co"># get first ten species</span></span>
+<span id="cb20-8"><a href="additional-next-step-concepts.html#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># query the online database of species names</span></span>
+<span id="cb20-9"><a href="additional-next-step-concepts.html#cb20-9" aria-hidden="true" tabindex="-1"></a>species_names_reports <span class="ot">&lt;-</span> <span class="fu">gnr_resolve</span>(some_species_names,</span>
+<span id="cb20-10"><a href="additional-next-step-concepts.html#cb20-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">best_match_only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb20-11"><a href="additional-next-step-concepts.html#cb20-11" aria-hidden="true" tabindex="-1"></a>species_names_reports</span></code></pre></div>
+<p>In this report, the final column gives a quick indication of how well the moth species names in the dataset matched a known species name. A score of 1 is the highest match, 0 is the lowest. This tells us that <em>Ethmia bipunctella</em> and <em>Bradycellus verbasci</em> (among others) in the dataset correspond to known species—their matching score in the final column is 0.988. The third species in the dataset, however is <em>Hoplodrina ambigua/ superstes</em> and cannot be well matched to an individual known species—it has a score of 0.75. Likely this entry in the dataset corresponds with the text in the paper “When the same haplotype matched more than one species, we … classified them into a species group.” I.e. <em>H. ambigua</em> and <em>H. superstes</em> could not be distinguished and so were treated as a species group. (It takes a while to make these queries, so we don’t run one for every moth species name in the dataset.)</p>
 <p>To sum up and put this interoperability issue in context… we mentioned the FAIR Principles. The I stands for Interoperable. Without it we will not be able to relate dataset to each other, and get all the amazing and important insights that can come from doing so.</p>
 </div>
-<div id="comparing-descriptive-statistics" class="section level2">
+<div id="comparing-descriptive-statistics" class="section level2" number="5.13">
 <h2><span class="header-section-number">5.13</span> Comparing descriptive statistics</h2>
 <p><em>This section shows how to make a bar graph showing two means. We strongly recommend to instead show the data, or summaris that include more information about the distritbuion of the data, such as box and whisker plots. Bar graphs are, however, so common, that we thought to show how they can be made, if one really wants to.</em></p>
 <p>In the Insights book we focus on graphs that display either the raw data (e.g. scatter plots), or a summary of the raw data that captures as much detail as possible (e.g. histograms and box and whisker plots). We’ve tended to treat descriptive statistics like the sample mean as ‘a number’ to be examined in isolation. These are often placed in the text of a report or in a table.</p>
 <p>There is, however, nothing to stop us visualising a set of means (or any other descriptive statistics) and a figure is much more informative than than a table. Moreover, many common statistical tools focus on a few aspects of sample distributions (e.g. means and variances) so it’s a good idea to plot these.</p>
 <p>We need to know how to construct graphs that display such summaries. Let’s start with a simple question: how does the (arithmetic) mean wingspan vary between males and females? One strategy is to produce a bar plot in which the lengths of the bars represent the mean wingspan in each sex. There are two different ways to produce this with <strong>ggplot2</strong>.</p>
 <p>The first is simplest, but requires a new <strong>ggplot2</strong> trick. When we add a layer using <code>geom_bar</code> we have to set two new arguments. The first is <code>stat = "summary"</code>. This tells <strong>ggplot2</strong> not to plot the raw values of the y aesthetic mapping, but instead, to construct a summary of the ‘y’ variable. The second argument is <code>fun.y = mean</code>. This tells <strong>ggplot2</strong> how to summarise this variable. The part on the right hand side can be any R function that takes a vector of values and returns a single number. Obviously we want the <code>mean</code> function. See how this works in practice (with the resulting graph in Figure <a href="additional-next-step-concepts.html#fig:key-concepts-17">5.1</a>)</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="additional-next-step-concepts.html#cb21-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb21-2"><a href="additional-next-step-concepts.html#cb21-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">data =</span> prey_stats,</span>
-<span id="cb21-3"><a href="additional-next-step-concepts.html#cb21-3"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Sex, <span class="dt">y =</span> mean_wingspan),</span>
-<span id="cb21-4"><a href="additional-next-step-concepts.html#cb21-4"></a>           <span class="dt">stat =</span> <span class="st">&quot;summary&quot;</span>,</span>
-<span id="cb21-5"><a href="additional-next-step-concepts.html#cb21-5"></a>           <span class="dt">fun.y =</span> mean) <span class="op">+</span></span>
-<span id="cb21-6"><a href="additional-next-step-concepts.html#cb21-6"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb21-7"><a href="additional-next-step-concepts.html#cb21-7"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Sex&quot;</span>) <span class="op">+</span></span>
-<span id="cb21-8"><a href="additional-next-step-concepts.html#cb21-8"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Mean wingspan (mm)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="additional-next-step-concepts.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb21-2"><a href="additional-next-step-concepts.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data =</span> prey_stats,</span>
+<span id="cb21-3"><a href="additional-next-step-concepts.html#cb21-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sex, <span class="at">y =</span> mean_wingspan),</span>
+<span id="cb21-4"><a href="additional-next-step-concepts.html#cb21-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>,</span>
+<span id="cb21-5"><a href="additional-next-step-concepts.html#cb21-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">fun.y =</span> mean) <span class="sc">+</span></span>
+<span id="cb21-6"><a href="additional-next-step-concepts.html#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> </span>
+<span id="cb21-7"><a href="additional-next-step-concepts.html#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Sex&quot;</span>) <span class="sc">+</span></span>
+<span id="cb21-8"><a href="additional-next-step-concepts.html#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Mean wingspan (mm)&quot;</span>)</span></code></pre></div>
 <pre><code>## No summary function supplied, defaulting to `mean_se()`</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:key-concepts-17"></span>
 <img src="insights_website_files/figure-html/key-concepts-17-1.svg" alt="A barplot showing the mean prey wingspan consumed by male and female bats." width="50%" />
@@ -580,31 +610,31 @@ FIGURE 5.1: A barplot showing the mean prey wingspan consumed by male and female
 </div>
 <p>We also flipped the coordinates here with <code>coord_flip</code> to make this a horizontal bar plot (for no particular reason!). The only new idea is our use of the <code>stat</code> and <code>fun.y</code> arguments.</p>
 <p>The second way to build a bar plot showing some kind of summary statistic breaks the problem into two steps. In the first step we have to calculate whatever it is we want to display, i.e. the category-specific mean in this case. This information needs to be stored in a dataframe or tibble so <strong>dplyr</strong> is the best tool to use for this:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="additional-next-step-concepts.html#cb23-1"></a>wingspan_by_sex &lt;-<span class="st"> </span>prey_stats <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb23-2"><a href="additional-next-step-concepts.html#cb23-2"></a><span class="st">  </span><span class="kw">group_by</span>(Sex) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb23-3"><a href="additional-next-step-concepts.html#cb23-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_mean_wingspan =</span> <span class="kw">mean</span>(mean_wingspan, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="additional-next-step-concepts.html#cb23-1" aria-hidden="true" tabindex="-1"></a>wingspan_by_sex <span class="ot">&lt;-</span> prey_stats <span class="sc">%&gt;%</span> </span>
+<span id="cb23-2"><a href="additional-next-step-concepts.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-3"><a href="additional-next-step-concepts.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_mean_wingspan =</span> <span class="fu">mean</span>(mean_wingspan, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="additional-next-step-concepts.html#cb25-1"></a>wingspan_by_sex</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="additional-next-step-concepts.html#cb25-1" aria-hidden="true" tabindex="-1"></a>wingspan_by_sex</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   Sex    mean_mean_wingspan
 ##   &lt;chr&gt;               &lt;dbl&gt;
 ## 1 Female               35.6
 ## 2 Male                 31.9</code></pre>
 <p>We used <code>group_by</code> and <code>summarise</code> to calculate the set of means, which we called <code>mean_mean_wingspan</code>. The second step uses the new dataframe (called <code>wingspan_by_sex</code>) as the default data in a new graphical object, sets x and y aesthetic mappings from <code>Sex</code> and <code>mean_mean_wingspan</code>, and adds a layer with <code>geom_bar</code> (with the resulting graph in Figure <a href="additional-next-step-concepts.html#fig:key-concepts-18">5.2</a>)</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="additional-next-step-concepts.html#cb27-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb27-2"><a href="additional-next-step-concepts.html#cb27-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">data =</span> wingspan_by_sex,</span>
-<span id="cb27-3"><a href="additional-next-step-concepts.html#cb27-3"></a>           <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Sex, <span class="dt">y =</span> mean_mean_wingspan),</span>
-<span id="cb27-4"><a href="additional-next-step-concepts.html#cb27-4"></a>           <span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb27-5"><a href="additional-next-step-concepts.html#cb27-5"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
-<span id="cb27-6"><a href="additional-next-step-concepts.html#cb27-6"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Sex&quot;</span>) <span class="op">+</span></span>
-<span id="cb27-7"><a href="additional-next-step-concepts.html#cb27-7"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Mean of mean wingspan (mm)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="additional-next-step-concepts.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb27-2"><a href="additional-next-step-concepts.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data =</span> wingspan_by_sex,</span>
+<span id="cb27-3"><a href="additional-next-step-concepts.html#cb27-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sex, <span class="at">y =</span> mean_mean_wingspan),</span>
+<span id="cb27-4"><a href="additional-next-step-concepts.html#cb27-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb27-5"><a href="additional-next-step-concepts.html#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb27-6"><a href="additional-next-step-concepts.html#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Sex&quot;</span>) <span class="sc">+</span></span>
+<span id="cb27-7"><a href="additional-next-step-concepts.html#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Mean of mean wingspan (mm)&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:key-concepts-18"></span>
 <img src="insights_website_files/figure-html/key-concepts-18-1.svg" alt="The same as the previous figure, but with the means calculated first." width="50%" />
 <p class="caption">
 FIGURE 5.2: The same as the previous figure, but with the means calculated first.
 </p>
 </div>
-<p>The result is the same as the last plot. Notice that we had to set <code>stat</code> to <code>"identity"</code>. This is important. The default behaviour of <code>geom_bar</code> is to count the observations in each category. The <code>stat = "identity"</code> argument tells it that the information in <code>mean_wind</code> must be plotted ‘as is’.</p>
+<p>The result is the same as the last plot. Notice that we had to set <code>stat</code> to <code>"identity"</code>. This is important. The default behaviour of <code>geom_bar</code> is to count the observations in each category. The <code>stat = "identity"</code> argument tells it that the information in <code>mean_wind</code> must be plotted ‘as is.’</p>
 <p>Which approach is better? Although the first approach is more compact, we recommend the second long-winded approach for new users because it separates the summary calculations from the plotting. This way, as long as we’re comfortable with <strong>dplyr</strong>, we can get away with remembering less about how <strong>ggplot2</strong> works. It also makes it a bit easier to fix mistakes, as we can first check whether the right information is in the summary dataframe, before we worry about plotting it. The two-step method is easy to extend to different kinds of plots as well.</p>
 
 </div>
@@ -624,15 +654,15 @@ FIGURE 5.2: The same as the previous figure, but with the means calculated first
 <a href="WFD-dietdiv-effect.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook/js/app.min.js"></script>
-<script src="libs/gitbook/js/lunr.js"></script>
-<script src="libs/gitbook/js/clipboard.min.js"></script>
-<script src="libs/gitbook/js/plugin-search.js"></script>
-<script src="libs/gitbook/js/plugin-sharing.js"></script>
-<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook/js/jquery.highlight.js"></script>
-<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

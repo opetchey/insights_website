@@ -24,7 +24,7 @@
 <meta name="author" content="Petchey, Beckerman, Cooper, Childs" />
 
 
-<meta name="date" content="2021-01-13" />
+<meta name="date" content="2021-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,14 +33,15 @@
   
 <link rel="prev" href="modelwf-scripts.html"/>
 <link rel="next" href="more-questions-data.html"/>
-<script src="libs/jquery/jquery.min.js"></script>
-<link href="libs/gitbook/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -50,24 +51,22 @@
 
 
 
-<script src="libs/accessible-code-block/empty-anchor.js"></script>
-<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,7 +136,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="insights-workflow.html"><a href="insights-workflow.html"><i class="fa fa-check"></i><b>2</b> Insights Workflow</a><ul>
+<li class="chapter" data-level="2" data-path="insights-workflow.html"><a href="insights-workflow.html"><i class="fa fa-check"></i><b>2</b> Insights Workflow</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="insights-workflow.html"><a href="insights-workflow.html#preparing-the-data"><i class="fa fa-check"></i><b>2.1</b> Preparing the data</a></li>
 <li class="chapter" data-level="2.2" data-path="insights-workflow.html"><a href="insights-workflow.html#prepare-your-computer-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Prepare your computer, R, and RStudio</a></li>
 <li class="chapter" data-level="2.3" data-path="insights-workflow.html"><a href="insights-workflow.html#read-the-data-into-r"><i class="fa fa-check"></i><b>2.3</b> Read the data into R</a></li>
@@ -146,34 +146,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="insights-workflow.html"><a href="insights-workflow.html#initial-insights"><i class="fa fa-check"></i><b>2.6</b> Initial insights</a></li>
 <li class="chapter" data-level="2.7" data-path="insights-workflow.html"><a href="insights-workflow.html#insights-about-question-posed"><i class="fa fa-check"></i><b>2.7</b> Insights about question posed</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a><ul>
+<li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="questions-exercises.html"><a href="questions-exercises.html#preface"><i class="fa fa-check"></i><b>3.1</b> Preface</a></li>
 <li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1-introduction"><i class="fa fa-check"></i><b>3.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="3.3" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-2-getting-acquainted"><i class="fa fa-check"></i><b>3.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="3.4" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-3-workflow-demonstrationpart-1"><i class="fa fa-check"></i><b>3.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="3.5" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-4-workflow-demonstrationpart-2"><i class="fa fa-check"></i><b>3.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
-<li class="chapter" data-level="3.6" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-5-dealing-with-data-1digging-into-dplyr"><i class="fa fa-check"></i><b>3.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a><ul>
+<li class="chapter" data-level="3.6" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-5-dealing-with-data-1digging-into-dplyr"><i class="fa fa-check"></i><b>3.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a>
+<ul>
 <li class="chapter" data-level="3.6.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises"><i class="fa fa-check"></i><b>3.6.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.6.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises"><i class="fa fa-check"></i><b>3.6.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-6-dealing-with-data-2expanding-your-toolkit"><i class="fa fa-check"></i><b>3.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a><ul>
+<li class="chapter" data-level="3.7" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-6-dealing-with-data-2expanding-your-toolkit"><i class="fa fa-check"></i><b>3.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a>
+<ul>
 <li class="chapter" data-level="3.7.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-1"><i class="fa fa-check"></i><b>3.7.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.7.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises-1"><i class="fa fa-check"></i><b>3.7.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-7-getting-to-grips-with-ggplot2"><i class="fa fa-check"></i><b>3.8</b> Chapter 7 (Getting to grips with ggplot2)</a><ul>
+<li class="chapter" data-level="3.8" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-7-getting-to-grips-with-ggplot2"><i class="fa fa-check"></i><b>3.8</b> Chapter 7 (Getting to grips with ggplot2)</a>
+<ul>
 <li class="chapter" data-level="3.8.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-2"><i class="fa fa-check"></i><b>3.8.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.8.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises-2"><i class="fa fa-check"></i><b>3.8.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.9" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables"><i class="fa fa-check"></i><b>3.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a><ul>
+<li class="chapter" data-level="3.9" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables"><i class="fa fa-check"></i><b>3.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a>
+<ul>
 <li class="chapter" data-level="3.9.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-3"><i class="fa fa-check"></i><b>3.9.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.9.2" data-path="questions-exercises.html"><a href="questions-exercises.html#workflow-demonstration-questions-and-exercises"><i class="fa fa-check"></i><b>3.9.2</b> Workflow demonstration questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.10" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables"><i class="fa fa-check"></i><b>3.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a><ul>
+<li class="chapter" data-level="3.10" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables"><i class="fa fa-check"></i><b>3.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a>
+<ul>
 <li class="chapter" data-level="3.10.1" data-path="questions-exercises.html"><a href="questions-exercises.html#workflow-questions-and-exercises"><i class="fa fa-check"></i><b>3.10.1</b> Workflow questions and exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="3.11" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-10-looking-back-and-looking-forward"><i class="fa fa-check"></i><b>3.11</b> Chapter 10 (Looking back and looking forward)</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="more-R.html"><a href="more-R.html"><i class="fa fa-check"></i><b>4</b> More R</a><ul>
+<li class="chapter" data-level="4" data-path="more-R.html"><a href="more-R.html"><i class="fa fa-check"></i><b>4</b> More R</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="more-R.html"><a href="more-R.html#rstudio-project-setup"><i class="fa fa-check"></i><b>4.1</b> RStudio Project setup</a></li>
 <li class="chapter" data-level="4.2" data-path="more-R.html"><a href="more-R.html#baseclassic-and-tidyverse-comparison"><i class="fa fa-check"></i><b>4.2</b> Base/classic and tidyverse comparison</a></li>
 <li class="chapter" data-level="4.3" data-path="more-R.html"><a href="more-R.html#multiple-graphs-in-one-figure"><i class="fa fa-check"></i><b>4.3</b> Multiple graphs in one figure</a></li>
@@ -184,7 +191,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8" data-path="more-R.html"><a href="more-R.html#syntax-highlighting"><i class="fa fa-check"></i><b>4.8</b> Syntax highlighting</a></li>
 <li class="chapter" data-level="4.9" data-path="more-R.html"><a href="more-R.html#summarise-more-than-one-variable"><i class="fa fa-check"></i><b>4.9</b> Summarise more than one variable</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html"><i class="fa fa-check"></i><b>5</b> Additional &amp; next step concepts</a><ul>
+<li class="chapter" data-level="5" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html"><i class="fa fa-check"></i><b>5</b> Additional &amp; next step concepts</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#distributions"><i class="fa fa-check"></i><b>5.1</b> Distributions</a></li>
 <li class="chapter" data-level="5.2" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#interactions-and-complexity"><i class="fa fa-check"></i><b>5.2</b> Interactions and complexity</a></li>
 <li class="chapter" data-level="5.3" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#lurking-variables"><i class="fa fa-check"></i><b>5.3</b> Lurking variables</a></li>
@@ -199,7 +207,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.12" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#interoperability"><i class="fa fa-check"></i><b>5.12</b> Interoperability / standardising terms</a></li>
 <li class="chapter" data-level="5.13" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#comparing-descriptive-statistics"><i class="fa fa-check"></i><b>5.13</b> Comparing descriptive statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html"><i class="fa fa-check"></i><b>6</b> How does dietary diversity affect populations?</a><ul>
+<li class="chapter" data-level="6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html"><i class="fa fa-check"></i><b>6</b> How does dietary diversity affect populations?</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#about-this-workflow-demonstration"><i class="fa fa-check"></i><b>6.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="6.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#going-to-the-next-level"><i class="fa fa-check"></i><b>6.2</b> Going to the next level</a></li>
 <li class="chapter" data-level="6.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#introduction-to-the-study-and-data"><i class="fa fa-check"></i><b>6.3</b> Introduction to the study and data</a></li>
@@ -208,7 +217,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#acquire-the-dataset"><i class="fa fa-check"></i><b>6.6</b> Acquire the dataset</a></li>
 <li class="chapter" data-level="6.7" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#import-the-dataset"><i class="fa fa-check"></i><b>6.7</b> Import the dataset</a></li>
 <li class="chapter" data-level="6.8" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#checking-the-import-worked-correctly"><i class="fa fa-check"></i><b>6.8</b> Checking the import worked correctly</a></li>
-<li class="chapter" data-level="6.9" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>6.9</b> Cleaning and tidying</a><ul>
+<li class="chapter" data-level="6.9" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>6.9</b> Cleaning and tidying</a>
+<ul>
 <li class="chapter" data-level="6.9.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#recode-some-names"><i class="fa fa-check"></i><b>6.9.1</b> Recode some names</a></li>
 <li class="chapter" data-level="6.9.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#factors-predstab"><i class="fa fa-check"></i><b>6.9.2</b> Make the <code>prey_composition</code> variable a factor with specific order</a></li>
 <li class="chapter" data-level="6.9.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#fix-those-variable-names"><i class="fa fa-check"></i><b>6.9.3</b> Fix those variable names</a></li>
@@ -219,7 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.9.8" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#calculate-the-three-response-variables"><i class="fa fa-check"></i><b>6.9.8</b> Calculate the three response variables</a></li>
 </ul></li>
 <li class="chapter" data-level="6.10" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#shapes"><i class="fa fa-check"></i><b>6.10</b> Shapes</a></li>
-<li class="chapter" data-level="6.11" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#relationships"><i class="fa fa-check"></i><b>6.11</b> Relationships</a><ul>
+<li class="chapter" data-level="6.11" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#relationships"><i class="fa fa-check"></i><b>6.11</b> Relationships</a>
+<ul>
 <li class="chapter" data-level="6.11.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#maximum-predator-density"><i class="fa fa-check"></i><b>6.11.1</b> Maximum predator density</a></li>
 <li class="chapter" data-level="6.11.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#predator-population-variability-cv"><i class="fa fa-check"></i><b>6.11.2</b> Predator population variability (CV)</a></li>
 <li class="chapter" data-level="6.11.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#predator-persistence-time"><i class="fa fa-check"></i><b>6.11.3</b> Predator persistence time</a></li>
@@ -227,12 +238,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.12" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#wrapping-up"><i class="fa fa-check"></i><b>6.12</b> Wrapping up</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html"><i class="fa fa-check"></i><b>7</b> Are diets more diverse in more democratic countries?</a><ul>
+<li class="chapter" data-level="7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html"><i class="fa fa-check"></i><b>7</b> Are diets more diverse in more democratic countries?</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#about-this-workflow-demonstration-1"><i class="fa fa-check"></i><b>7.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="7.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#introduction-to-the-study-and-data-1"><i class="fa fa-check"></i><b>7.2</b> Introduction to the study and data</a></li>
 <li class="chapter" data-level="7.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#understanding-the-data"><i class="fa fa-check"></i><b>7.3</b> Understanding the data</a></li>
 <li class="chapter" data-level="7.4" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#a-little-preparation-1"><i class="fa fa-check"></i><b>7.4</b> A little preparation</a></li>
-<li class="chapter" data-level="7.5" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><i class="fa fa-check"></i><b>7.5</b> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a><ul>
+<li class="chapter" data-level="7.5" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><i class="fa fa-check"></i><b>7.5</b> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a>
+<ul>
 <li class="chapter" data-level="7.5.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#data-origins-and-acquisition"><i class="fa fa-check"></i><b>7.5.1</b> Data origins and acquisition</a></li>
 <li class="chapter" data-level="7.5.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#data-import"><i class="fa fa-check"></i><b>7.5.2</b> Data import</a></li>
 <li class="chapter" data-level="7.5.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#tidy-and-clean"><i class="fa fa-check"></i><b>7.5.3</b> Tidy and clean</a></li>
@@ -241,7 +254,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#check-ranges-of-numeric-variables"><i class="fa fa-check"></i><b>7.5.6</b> Check ranges of numeric variables</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#first-insights-from-the-polity-data"><i class="fa fa-check"></i><b>7.6</b> First insights from the polity data</a></li>
-<li class="chapter" data-level="7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#acquire-import-check-the-fao-food-balance-sheet-data"><i class="fa fa-check"></i><b>7.7</b> Acquire, import, check the FAO Food balance sheet data</a><ul>
+<li class="chapter" data-level="7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#acquire-import-check-the-fao-food-balance-sheet-data"><i class="fa fa-check"></i><b>7.7</b> Acquire, import, check the FAO Food balance sheet data</a>
+<ul>
 <li class="chapter" data-level="7.7.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#tidying-FAO"><i class="fa fa-check"></i><b>7.7.1</b> Tidy the FAO data</a></li>
 <li class="chapter" data-level="7.7.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#clean-the-fao-data"><i class="fa fa-check"></i><b>7.7.2</b> Clean the FAO data</a></li>
 <li class="chapter" data-level="7.7.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#check-for-innapropriate-duplicate-observations-1"><i class="fa fa-check"></i><b>7.7.3</b> Check for innapropriate duplicate observations</a></li>
@@ -250,7 +264,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.7.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#more-cleaning"><i class="fa fa-check"></i><b>7.7.6</b> More cleaning</a></li>
 <li class="chapter" data-level="7.7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#calculating-our-response-variables"><i class="fa fa-check"></i><b>7.7.7</b> Calculating our response variables</a></li>
 </ul></li>
-<li class="chapter" data-level="7.8" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#merge-the-two-datasets-aaaaaargh"><i class="fa fa-check"></i><b>7.8</b> Merge the two datasets (aaaaaargh!!)</a><ul>
+<li class="chapter" data-level="7.8" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#merge-the-two-datasets-aaaaaargh"><i class="fa fa-check"></i><b>7.8</b> Merge the two datasets (aaaaaargh!!)</a>
+<ul>
 <li class="chapter" data-level="7.8.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-standardisation"><i class="fa fa-check"></i><b>7.8.1</b> Polity standardisation</a></li>
 <li class="chapter" data-level="7.8.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#the-final-merge"><i class="fa fa-check"></i><b>7.8.2</b> The final merge</a></li>
 </ul></li>
@@ -260,7 +275,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.12" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#wrapping-up-1"><i class="fa fa-check"></i><b>7.12</b> Wrapping up</a></li>
 <li class="chapter" data-level="7.13" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#and-a-challenge-for-you"><i class="fa fa-check"></i><b>7.13</b> And a challenge for you…</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html"><i class="fa fa-check"></i><b>8</b> What are the effects of dietary restriction?</a><ul>
+<li class="chapter" data-level="8" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html"><i class="fa fa-check"></i><b>8</b> What are the effects of dietary restriction?</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#about-this-workflow-demonstration-2"><i class="fa fa-check"></i><b>8.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="8.2" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#introduction-1"><i class="fa fa-check"></i><b>8.2</b> Introduction</a></li>
 <li class="chapter" data-level="8.3" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#the-question"><i class="fa fa-check"></i><b>8.3</b> The question</a></li>
@@ -283,8 +299,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.20" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#inspect-shapes-distributions"><i class="fa fa-check"></i><b>8.20</b> Inspect shapes (distributions)</a></li>
 <li class="chapter" data-level="8.21" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#inspect-relationships"><i class="fa fa-check"></i><b>8.21</b> Inspect relationships</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html"><i class="fa fa-check"></i><b>9</b> Solutions: What are the effects of dietary restriction?</a><ul>
-<li class="chapter" data-level="9.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#about-these-solutions"><i class="fa fa-check"></i><b>9.1</b> About these solutions</a><ul>
+<li class="chapter" data-level="9" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html"><i class="fa fa-check"></i><b>9</b> Solutions: What are the effects of dietary restriction?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#about-these-solutions"><i class="fa fa-check"></i><b>9.1</b> About these solutions</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#nas-variable-entries-e.g.-levels-of-characters-ranges-of-numerics-numbers-of-things-1"><i class="fa fa-check"></i><b>9.1.1</b> NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of “things”*</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#independence-1"><i class="fa fa-check"></i><b>9.2</b> Independence</a></li>
@@ -298,7 +316,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.10" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#moatt-et-al-data-s15-length-weight-and-condition-index-data"><i class="fa fa-check"></i><b>9.10</b> Moatt et al Data S15 – Length, Weight and Condition Index Data</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="modelwf-scripts.html"><a href="modelwf-scripts.html"><i class="fa fa-check"></i><b>10</b> Workflow demonstration R scripts</a></li>
-<li class="chapter" data-level="11" data-path="live-data-demo.html"><a href="live-data-demo.html"><i class="fa fa-check"></i><b>11</b> Live data analysis demonstration</a><ul>
+<li class="chapter" data-level="11" data-path="live-data-demo.html"><a href="live-data-demo.html"><i class="fa fa-check"></i><b>11</b> Live data analysis demonstration</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="live-data-demo.html"><a href="live-data-demo.html#introduction-for-intructors"><i class="fa fa-check"></i><b>11.1</b> Introduction for intructors</a></li>
 <li class="chapter" data-level="" data-path="live-data-demo.html"><a href="live-data-demo.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="11.2" data-path="live-data-demo.html"><a href="live-data-demo.html#meta-task"><i class="fa fa-check"></i><b>11.2</b> Meta-task</a></li>
@@ -311,7 +330,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.9" data-path="live-data-demo.html"><a href="live-data-demo.html#data-collection"><i class="fa fa-check"></i><b>11.9</b> Data collection</a></li>
 <li class="chapter" data-level="11.10" data-path="live-data-demo.html"><a href="live-data-demo.html#look-at-the-data"><i class="fa fa-check"></i><b>11.10</b> Look at the data!</a></li>
 <li class="chapter" data-level="11.11" data-path="live-data-demo.html"><a href="live-data-demo.html#lets-get-the-data-into-our-data-analysis-software-of-choice-r-via-rstudio"><i class="fa fa-check"></i><b>11.11</b> Lets get the data into our data analysis software of choice (R, via RStudio)</a></li>
-<li class="chapter" data-level="11.12" data-path="live-data-demo.html"><a href="live-data-demo.html#now-we-need-to-do-some-data-wrangling-cleaning-and-tidying"><i class="fa fa-check"></i><b>11.12</b> Now we need to do some data wrangling (cleaning and tidying)</a><ul>
+<li class="chapter" data-level="11.12" data-path="live-data-demo.html"><a href="live-data-demo.html#now-we-need-to-do-some-data-wrangling-cleaning-and-tidying"><i class="fa fa-check"></i><b>11.12</b> Now we need to do some data wrangling (cleaning and tidying)</a>
+<ul>
 <li class="chapter" data-level="11.12.1" data-path="live-data-demo.html"><a href="live-data-demo.html#clean-up-the-column-variable-names"><i class="fa fa-check"></i><b>11.12.1</b> Clean up the column / variable names:</a></li>
 <li class="chapter" data-level="11.12.2" data-path="live-data-demo.html"><a href="live-data-demo.html#check-the-variable-types-are-correct."><i class="fa fa-check"></i><b>11.12.2</b> Check the variable types are correct.</a></li>
 <li class="chapter" data-level="11.12.3" data-path="live-data-demo.html"><a href="live-data-demo.html#correct-or-exclude-problematic-data"><i class="fa fa-check"></i><b>11.12.3</b> Correct or exclude problematic data</a></li>
@@ -321,20 +341,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.13" data-path="live-data-demo.html"><a href="live-data-demo.html#visualise-the-data"><i class="fa fa-check"></i><b>11.13</b> Visualise the data</a></li>
 <li class="chapter" data-level="11.14" data-path="live-data-demo.html"><a href="live-data-demo.html#get-the-means"><i class="fa fa-check"></i><b>11.14</b> Get the means</a></li>
 <li class="chapter" data-level="11.15" data-path="live-data-demo.html"><a href="live-data-demo.html#effect-size-and-practical-importance"><i class="fa fa-check"></i><b>11.15</b> Effect size and practical importance?</a></li>
-<li class="chapter" data-level="11.16" data-path="live-data-demo.html"><a href="live-data-demo.html#assess-assumptions"><i class="fa fa-check"></i><b>11.16</b> Assess assumptions</a><ul>
+<li class="chapter" data-level="11.16" data-path="live-data-demo.html"><a href="live-data-demo.html#assess-assumptions"><i class="fa fa-check"></i><b>11.16</b> Assess assumptions</a>
+<ul>
 <li class="chapter" data-level="11.16.1" data-path="live-data-demo.html"><a href="live-data-demo.html#independence-2"><i class="fa fa-check"></i><b>11.16.1</b> Independence</a></li>
 <li class="chapter" data-level="11.16.2" data-path="live-data-demo.html"><a href="live-data-demo.html#normally-distributed-residuals"><i class="fa fa-check"></i><b>11.16.2</b> Normally distributed residuals</a></li>
 <li class="chapter" data-level="11.16.3" data-path="live-data-demo.html"><a href="live-data-demo.html#equal-variance"><i class="fa fa-check"></i><b>11.16.3</b> Equal variance</a></li>
 </ul></li>
 <li class="chapter" data-level="11.17" data-path="live-data-demo.html"><a href="live-data-demo.html#do-the-statistical-test"><i class="fa fa-check"></i><b>11.17</b> Do the statistical test</a></li>
 <li class="chapter" data-level="11.18" data-path="live-data-demo.html"><a href="live-data-demo.html#critical-thinking"><i class="fa fa-check"></i><b>11.18</b> Critical thinking</a></li>
-<li class="chapter" data-level="11.19" data-path="live-data-demo.html"><a href="live-data-demo.html#report-and-communicate-the-results"><i class="fa fa-check"></i><b>11.19</b> Report and communicate the results</a><ul>
+<li class="chapter" data-level="11.19" data-path="live-data-demo.html"><a href="live-data-demo.html#report-and-communicate-the-results"><i class="fa fa-check"></i><b>11.19</b> Report and communicate the results</a>
+<ul>
 <li class="chapter" data-level="11.19.1" data-path="live-data-demo.html"><a href="live-data-demo.html#the-results-as-a-sentence"><i class="fa fa-check"></i><b>11.19.1</b> The results as a sentence</a></li>
 <li class="chapter" data-level="11.19.2" data-path="live-data-demo.html"><a href="live-data-demo.html#the-results-graphically"><i class="fa fa-check"></i><b>11.19.2</b> The results graphically</a></li>
 <li class="chapter" data-level="11.19.3" data-path="live-data-demo.html"><a href="live-data-demo.html#do-not-use-a-table"><i class="fa fa-check"></i><b>11.19.3</b> Do not use a table</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="more-questions-data.html"><a href="more-questions-data.html"><i class="fa fa-check"></i><b>12</b> More datasets</a><ul>
+<li class="chapter" data-level="12" data-path="more-questions-data.html"><a href="more-questions-data.html"><i class="fa fa-check"></i><b>12</b> More datasets</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="more-questions-data.html"><a href="more-questions-data.html#hungry-ladybirds"><i class="fa fa-check"></i><b>12.1</b> Hungry ladybirds</a></li>
 <li class="chapter" data-level="12.2" data-path="more-questions-data.html"><a href="more-questions-data.html#seal-suppers"><i class="fa fa-check"></i><b>12.2</b> Seal suppers</a></li>
 <li class="chapter" data-level="12.3" data-path="more-questions-data.html"><a href="more-questions-data.html#more-bat-poop"><i class="fa fa-check"></i><b>12.3</b> More bat poop</a></li>
@@ -346,34 +369,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.9" data-path="more-questions-data.html"><a href="more-questions-data.html#cervical-spine-compression-and-mri-not-food-related"><i class="fa fa-check"></i><b>12.9</b> Cervical spine compression and MRI (not food related)</a></li>
 <li class="chapter" data-level="12.10" data-path="more-questions-data.html"><a href="more-questions-data.html#lots-of-other-datasets-here"><i class="fa fa-check"></i><b>12.10</b> Lots of other datasets here:</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a><ul>
+<li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a>
+<ul>
 <li class="chapter" data-level="13.1" data-path="related-reading.html"><a href="related-reading.html#data-science-related-reading"><i class="fa fa-check"></i><b>13.1</b> Data science related reading</a></li>
 <li class="chapter" data-level="13.2" data-path="related-reading.html"><a href="related-reading.html#study-design-related-reading"><i class="fa fa-check"></i><b>13.2</b> Study design related reading</a></li>
 <li class="chapter" data-level="13.3" data-path="related-reading.html"><a href="related-reading.html#web-sites-pages"><i class="fa fa-check"></i><b>13.3</b> Web sites / pages</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a><ul>
+<li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="answers.html"><a href="answers.html#preface-1"><i class="fa fa-check"></i><b>14.1</b> Preface</a></li>
 <li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction-1"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="14.3" data-path="answers.html"><a href="answers.html#chapter-2-getting-acquainted-1"><i class="fa fa-check"></i><b>14.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="14.4" data-path="answers.html"><a href="answers.html#chapter-3-workflow-demonstrationpart-1-1"><i class="fa fa-check"></i><b>14.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="14.5" data-path="answers.html"><a href="answers.html#chapter-4-workflow-demonstrationpart-2-1"><i class="fa fa-check"></i><b>14.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
-<li class="chapter" data-level="14.6" data-path="answers.html"><a href="answers.html#chapter-5-dealing-with-data-1digging-into-dplyr-1"><i class="fa fa-check"></i><b>14.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a><ul>
+<li class="chapter" data-level="14.6" data-path="answers.html"><a href="answers.html#chapter-5-dealing-with-data-1digging-into-dplyr-1"><i class="fa fa-check"></i><b>14.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a>
+<ul>
 <li class="chapter" data-level="14.6.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-4"><i class="fa fa-check"></i><b>14.6.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.6.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-3"><i class="fa fa-check"></i><b>14.6.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.7" data-path="answers.html"><a href="answers.html#chapter-6-dealing-with-data-2expanding-your-toolkit-1"><i class="fa fa-check"></i><b>14.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a><ul>
+<li class="chapter" data-level="14.7" data-path="answers.html"><a href="answers.html#chapter-6-dealing-with-data-2expanding-your-toolkit-1"><i class="fa fa-check"></i><b>14.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a>
+<ul>
 <li class="chapter" data-level="14.7.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-5"><i class="fa fa-check"></i><b>14.7.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.7.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-4"><i class="fa fa-check"></i><b>14.7.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.8" data-path="answers.html"><a href="answers.html#chapter-7-getting-to-grips-with-ggplot2-1"><i class="fa fa-check"></i><b>14.8</b> Chapter 7 (Getting to grips with ggplot2)</a><ul>
+<li class="chapter" data-level="14.8" data-path="answers.html"><a href="answers.html#chapter-7-getting-to-grips-with-ggplot2-1"><i class="fa fa-check"></i><b>14.8</b> Chapter 7 (Getting to grips with ggplot2)</a>
+<ul>
 <li class="chapter" data-level="14.8.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-6"><i class="fa fa-check"></i><b>14.8.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.8.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-5"><i class="fa fa-check"></i><b>14.8.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.9" data-path="answers.html"><a href="answers.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables-1"><i class="fa fa-check"></i><b>14.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a><ul>
+<li class="chapter" data-level="14.9" data-path="answers.html"><a href="answers.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables-1"><i class="fa fa-check"></i><b>14.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a>
+<ul>
 <li class="chapter" data-level="14.9.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-7"><i class="fa fa-check"></i><b>14.9.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.9.2" data-path="answers.html"><a href="answers.html#workflow-demonstration-questions-and-exercises-1"><i class="fa fa-check"></i><b>14.9.2</b> Workflow demonstration questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.10" data-path="answers.html"><a href="answers.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables-1"><i class="fa fa-check"></i><b>14.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a><ul>
+<li class="chapter" data-level="14.10" data-path="answers.html"><a href="answers.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables-1"><i class="fa fa-check"></i><b>14.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a>
+<ul>
 <li class="chapter" data-level="14.10.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-8"><i class="fa fa-check"></i><b>14.10.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.10.2" data-path="answers.html"><a href="answers.html#workflow-questions-and-exercises-1"><i class="fa fa-check"></i><b>14.10.2</b> Workflow questions and exercises</a></li>
 </ul></li>
@@ -401,10 +431,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="live-data-demo" class="section level1">
+<div id="live-data-demo" class="section level1" number="11">
 <h1><span class="header-section-number">Chapter 11</span> Live data analysis demonstration</h1>
 <p>In the first class of the first week of an <em>Introduction to Data Analysis</em> course, we lead a <em>live data analysis demonstration</em>. Within one hour we go from question to answer, including collection of some data about each of the students. We believe this demonstration helps students connect with the importance and fun of the content of the course.</p>
-<div id="introduction-for-intructors" class="section level2">
+<div id="introduction-for-intructors" class="section level2" number="11.1">
 <h2><span class="header-section-number">11.1</span> Introduction for intructors</h2>
 <p>All following sections are in the form of what one says to the students. The demo involves students entering data into a google form and then the instructor getting data from the googlesheet containing the responses. You should make a copy of the google form to use for yourself; this will mean that you also create a new google sheet of responses. You’ll need to update the relevant links below.</p>
 <p>From here on is the rough script of what we tell the students…</p>
@@ -414,49 +444,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>I thought it would be good to get hands on as early as possible, and to do so for something directly relevant to yourselves. So, we’re going to attempt something quite ambitious – in the next two hours or so, we’ll go through a whole data analysis from start to end.</p>
 <p>Lets get started.</p>
 </div>
-<div id="meta-task" class="section level2">
+<div id="meta-task" class="section level2" number="11.2">
 <h2><span class="header-section-number">11.2</span> Meta-task</h2>
 <p>Write things that you don’t understand, and need to know about in subsequent classes. We will cover these things.</p>
 </div>
-<div id="the-question-1" class="section level2">
+<div id="the-question-1" class="section level2" number="11.3">
 <h2><span class="header-section-number">11.3</span> The question</h2>
 <p>What should be our question? As always, there are some influences and some constraints.
 We should ask a question of interest to us, and of some importance.
 And we should be able to collect the data, within our current constraints, necessary to answer the question.</p>
-<p>The question we will address is “do male and female reaction times of students at the University of Zurich differ?”.</p>
+<p>The question we will address is “do male and female reaction times of students at the University of Zurich differ?”</p>
 <p>Why this question? Reaction times are important, safety, sport…</p>
 </div>
-<div id="expectation" class="section level2">
+<div id="expectation" class="section level2" number="11.4">
 <h2><span class="header-section-number">11.4</span> Expectation</h2>
 <p>What do you expect? Hands up if you think there will be no difference between men and women. Hands up if you think men will be slower. Hands up if you think women will be slower.</p>
 <p>We can have a look on the internet, and pretty easily find lots of studies of reaction times and sex (e.g., <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4456887/">A comparative study of visual and auditory reaction times on the basis of sex and physical activity levels of medical first year students</a> (by the way, we may later in the course critique this paper).</p>
 <p>Generally, we see that males tend to have faster reaction times than females. So we expect that to be the same for students at the University of Zurich.</p>
 <p>Given that you know this pattern, and you are the subjects, its interesting to see if you women can buck the trend, perhaps by trying especially hard. Though know the men know you might do this, it probably won’t work!</p>
 </div>
-<div id="how-are-we-going-to-present-the-results" class="section level2">
+<div id="how-are-we-going-to-present-the-results" class="section level2" number="11.5">
 <h2><span class="header-section-number">11.5</span> How are we going to present the results?</h2>
 <p>Thinking backwards from how we present the final results, can often be quite useful.</p>
 <p>I think a nice box and whisker plot will work here [sketch on a black/whiteboard)]. We will have two groups of reaction times. Put another way, we will have one explanatory variable (Sex) and one response variable (reaction time). The explanatory variable Sex is a categorical / discrete variable. The response variable is continuous.</p>
 <p>We expect the distribution of male reaction times to be have a lower mean than the distribution of female reaction times.</p>
 <p>We will look at this graph, and answer our question (wow, without any statistical test – YES!).</p>
 </div>
-<div id="what-statistical-test-will-we-use" class="section level2">
+<div id="what-statistical-test-will-we-use" class="section level2" number="11.6">
 <h2><span class="header-section-number">11.6</span> What statistical test will we use?</h2>
 <p>Reaction times (the response variable) we expect to be quite normally distributed [briefly explain what this means], though cannot be negative. Sex will be categorical with two levels (male and female). We don’t expect greater or less variation in reaction times among males compared to among females.</p>
 <p>Based on these expectations, we will use a linear model, which assumes normally distributed residuals and equal variances among groups. The traditional name for the test is the T-test.</p>
 <p>Based on convention, and little else, we will say there is a significant difference between male and female reaction times if the observed difference has a p-value of less than 0.05.</p>
 </div>
-<div id="selection-of-subjects" class="section level2">
+<div id="selection-of-subjects" class="section level2" number="11.7">
 <h2><span class="header-section-number">11.7</span> Selection of subjects</h2>
 <p>We usually need to very carefully select the subjects of our study. Ideally, as we’re interested in students at the University of Zurich (see the question), we would select a cross section of such students. Instead, you are going to be the subjects, and you are not representative of all students. You’re relatively young, on average, you’re studying natural sciences, etc. So we will have to be very cautious if we make statements about students at the University in general, and perhaps one might even now conclude that we can’t really answer the question.</p>
 <p>Perhaps we need the question “do male and female reaction times of biology and biomedicine students, and some others, in their second year, at the University of Zurich differ?”</p>
 </div>
-<div id="ethical-clearance-and-considerations" class="section level2">
+<div id="ethical-clearance-and-considerations" class="section level2" number="11.8">
 <h2><span class="header-section-number">11.8</span> Ethical clearance and considerations</h2>
 <p>If we aimed to publish these results, or in some other way disseminate them, we would need ethical clearance for research involving humans. We’re not, so we don’t have ethical clearance.</p>
 <p>However, please do not include any personal information in any of the data you contribute to the exercise.</p>
 </div>
-<div id="data-collection" class="section level2">
+<div id="data-collection" class="section level2" number="11.9">
 <h2><span class="header-section-number">11.9</span> Data collection</h2>
 <p>Create for yourself a unique ID code, so that if we want to collect more data about you, we could related the reaction time data to that. Write this code down somewhere safe, keep it.</p>
 <p>Go to the <a href="http://www.humanbenchmark.com/tests/reactiontime">Human Benchmark website</a>.</p>
@@ -465,32 +495,32 @@ And we should be able to collect the data, within our current constraints, neces
 <p>Now go to this web page: <a href="https://goo.gl/forms/dUe9jIUEDkFqClaG2" class="uri">https://goo.gl/forms/dUe9jIUEDkFqClaG2</a> [<em>Instructors: make a copy of this and replace the link here with one to your copy</em>] and enter your ID, sex, and scores. Please be careful!</p>
 <p>Go ahead and do all that.</p>
 </div>
-<div id="look-at-the-data" class="section level2">
+<div id="look-at-the-data" class="section level2" number="11.10">
 <h2><span class="header-section-number">11.10</span> Look at the data!</h2>
 <p>Here is the link to the datasheet containing all the data you just recorded:
 <a href="https://docs.google.com/spreadsheets/d/1utldu37ngM_9sdLxJFOxmq5MKcwLV4VS0yAT0TvWuI8/edit?usp=sharing" class="uri">https://docs.google.com/spreadsheets/d/1utldu37ngM_9sdLxJFOxmq5MKcwLV4VS0yAT0TvWuI8/edit?usp=sharing</a>
 (<em>Instructors: update this link to be for your googlesheet</em>)</p>
 <p>Lets have a look at it, see what you’ve done. (I’m scared! I know how difficult it is to enter data without making mistakes! And I have some experience of how different people are!)</p>
 </div>
-<div id="lets-get-the-data-into-our-data-analysis-software-of-choice-r-via-rstudio" class="section level2">
+<div id="lets-get-the-data-into-our-data-analysis-software-of-choice-r-via-rstudio" class="section level2" number="11.11">
 <h2><span class="header-section-number">11.11</span> Lets get the data into our data analysis software of choice (R, via RStudio)</h2>
-<p>First note that Owen has gone to the responses googlesheet, and in the “File” menu, clicked on “Publish to web…” and chosen to publish as “Comma separate values”.</p>
+<p>First note that Owen has gone to the responses googlesheet, and in the “File” menu, clicked on “Publish to web…” and chosen to publish as “Comma separate values.”</p>
 <p>Now we can read that web page of comma separated values into R:</p>
-<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="live-data-demo.html#cb358-1"></a><span class="co"># First we load a required package (we need to install this if we haven&#39;t already)</span></span>
-<span id="cb358-2"><a href="live-data-demo.html#cb358-2"></a><span class="kw">library</span>(readr)</span>
-<span id="cb358-3"><a href="live-data-demo.html#cb358-3"></a><span class="co"># also we will use some other packages</span></span>
-<span id="cb358-4"><a href="live-data-demo.html#cb358-4"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb358-5"><a href="live-data-demo.html#cb358-5"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb358-6"><a href="live-data-demo.html#cb358-6"></a></span>
-<span id="cb358-7"><a href="live-data-demo.html#cb358-7"></a><span class="co"># Now read in the data, using the read_csv() function. We give it the URL of the published version of the google sheet data.</span></span>
-<span id="cb358-8"><a href="live-data-demo.html#cb358-8"></a><span class="co"># Instructors: update the url to be for your googlesheet</span></span>
-<span id="cb358-9"><a href="live-data-demo.html#cb358-9"></a>the_URL &lt;-<span class="st"> &quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vT-Uvx2LYX3APsXgjKw1XnIi-jKOi-QNAINmMu234JLvyDZezABPfO-_QnJ5ZtC3wed9pYdxs8-pyK7/pub?output=csv&quot;</span></span>
-<span id="cb358-10"><a href="live-data-demo.html#cb358-10"></a>class_RTs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(the_URL)</span>
-<span id="cb358-11"><a href="live-data-demo.html#cb358-11"></a></span>
-<span id="cb358-12"><a href="live-data-demo.html#cb358-12"></a><span class="co"># Have a look at the data in R</span></span>
-<span id="cb358-13"><a href="live-data-demo.html#cb358-13"></a><span class="co">#View(class_RTs)</span></span>
-<span id="cb358-14"><a href="live-data-demo.html#cb358-14"></a><span class="co"># or just do</span></span>
-<span id="cb358-15"><a href="live-data-demo.html#cb358-15"></a>class_RTs</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="live-data-demo.html#cb358-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First we load a required package (we need to install this if we haven&#39;t already)</span></span>
+<span id="cb358-2"><a href="live-data-demo.html#cb358-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb358-3"><a href="live-data-demo.html#cb358-3" aria-hidden="true" tabindex="-1"></a><span class="co"># also we will use some other packages</span></span>
+<span id="cb358-4"><a href="live-data-demo.html#cb358-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb358-5"><a href="live-data-demo.html#cb358-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb358-6"><a href="live-data-demo.html#cb358-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb358-7"><a href="live-data-demo.html#cb358-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Now read in the data, using the read_csv() function. We give it the URL of the published version of the google sheet data.</span></span>
+<span id="cb358-8"><a href="live-data-demo.html#cb358-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructors: update the url to be for your googlesheet</span></span>
+<span id="cb358-9"><a href="live-data-demo.html#cb358-9" aria-hidden="true" tabindex="-1"></a>the_URL <span class="ot">&lt;-</span> <span class="st">&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vT-Uvx2LYX3APsXgjKw1XnIi-jKOi-QNAINmMu234JLvyDZezABPfO-_QnJ5ZtC3wed9pYdxs8-pyK7/pub?output=csv&quot;</span></span>
+<span id="cb358-10"><a href="live-data-demo.html#cb358-10" aria-hidden="true" tabindex="-1"></a>class_RTs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(the_URL)</span>
+<span id="cb358-11"><a href="live-data-demo.html#cb358-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb358-12"><a href="live-data-demo.html#cb358-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Have a look at the data in R</span></span>
+<span id="cb358-13"><a href="live-data-demo.html#cb358-13" aria-hidden="true" tabindex="-1"></a><span class="co">#View(class_RTs)</span></span>
+<span id="cb358-14"><a href="live-data-demo.html#cb358-14" aria-hidden="true" tabindex="-1"></a><span class="co"># or just do</span></span>
+<span id="cb358-15"><a href="live-data-demo.html#cb358-15" aria-hidden="true" tabindex="-1"></a>class_RTs</span></code></pre></div>
 <pre><code>## # A tibble: 14 x 16
 ##   Timestamp `Please enter t… `What was your …
 ##   &lt;chr&gt;     &lt;chr&gt;            &lt;chr&gt;           
@@ -529,18 +559,18 @@ And we should be able to collect the data, within our current constraints, neces
 ## #   take the test.)` &lt;dbl&gt;, `Pick a random number from
 ## #   1 to 10, and enter it.` &lt;dbl&gt;</code></pre>
 </div>
-<div id="now-we-need-to-do-some-data-wrangling-cleaning-and-tidying" class="section level2">
+<div id="now-we-need-to-do-some-data-wrangling-cleaning-and-tidying" class="section level2" number="11.12">
 <h2><span class="header-section-number">11.12</span> Now we need to do some data wrangling (cleaning and tidying)</h2>
-<div id="clean-up-the-column-variable-names" class="section level3">
+<div id="clean-up-the-column-variable-names" class="section level3" number="11.12.1">
 <h3><span class="header-section-number">11.12.1</span> Clean up the column / variable names:</h3>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="live-data-demo.html#cb360-1"></a><span class="co"># Must be very careful to get the next line right!!! Really important!!!</span></span>
-<span id="cb360-2"><a href="live-data-demo.html#cb360-2"></a><span class="kw">names</span>(class_RTs) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Timestamp&quot;</span>, <span class="st">&quot;ID&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Pref_Reaction_time_1&quot;</span>,</span>
-<span id="cb360-3"><a href="live-data-demo.html#cb360-3"></a>                      <span class="st">&quot;Verbal_memory_score&quot;</span>, <span class="st">&quot;Number_memory_score&quot;</span>,</span>
-<span id="cb360-4"><a href="live-data-demo.html#cb360-4"></a>                      <span class="st">&quot;Visual_memory_score&quot;</span>,</span>
-<span id="cb360-5"><a href="live-data-demo.html#cb360-5"></a>                      <span class="st">&quot;Weight_kgs&quot;</span>, <span class="st">&quot;Handed&quot;</span>, <span class="st">&quot;Nonpref_Reaction_time_ave&quot;</span>,  <span class="st">&quot;Pref_Reaction_time_2&quot;</span>,</span>
-<span id="cb360-6"><a href="live-data-demo.html#cb360-6"></a>                      <span class="st">&quot;Pref_Reaction_time_3&quot;</span>,  <span class="st">&quot;Pref_Reaction_time_4&quot;</span>, <span class="st">&quot;Pref_Reaction_time_5&quot;</span>,</span>
-<span id="cb360-7"><a href="live-data-demo.html#cb360-7"></a>                      <span class="st">&quot;Pref_Reaction_time&quot;</span>, <span class="st">&quot;Random_number&quot;</span>)</span>
-<span id="cb360-8"><a href="live-data-demo.html#cb360-8"></a>class_RTs</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="live-data-demo.html#cb360-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Must be very careful to get the next line right!!! Really important!!!</span></span>
+<span id="cb360-2"><a href="live-data-demo.html#cb360-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(class_RTs) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Timestamp&quot;</span>, <span class="st">&quot;ID&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Pref_Reaction_time_1&quot;</span>,</span>
+<span id="cb360-3"><a href="live-data-demo.html#cb360-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Verbal_memory_score&quot;</span>, <span class="st">&quot;Number_memory_score&quot;</span>,</span>
+<span id="cb360-4"><a href="live-data-demo.html#cb360-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Visual_memory_score&quot;</span>,</span>
+<span id="cb360-5"><a href="live-data-demo.html#cb360-5" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Weight_kgs&quot;</span>, <span class="st">&quot;Handed&quot;</span>, <span class="st">&quot;Nonpref_Reaction_time_ave&quot;</span>,  <span class="st">&quot;Pref_Reaction_time_2&quot;</span>,</span>
+<span id="cb360-6"><a href="live-data-demo.html#cb360-6" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Pref_Reaction_time_3&quot;</span>,  <span class="st">&quot;Pref_Reaction_time_4&quot;</span>, <span class="st">&quot;Pref_Reaction_time_5&quot;</span>,</span>
+<span id="cb360-7"><a href="live-data-demo.html#cb360-7" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Pref_Reaction_time&quot;</span>, <span class="st">&quot;Random_number&quot;</span>)</span>
+<span id="cb360-8"><a href="live-data-demo.html#cb360-8" aria-hidden="true" tabindex="-1"></a>class_RTs</span></code></pre></div>
 <pre><code>## # A tibble: 14 x 16
 ##   Timestamp ID    Sex   Pref_Reaction_t…
 ##   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
@@ -560,7 +590,7 @@ And we should be able to collect the data, within our current constraints, neces
 ## #   Pref_Reaction_time_5 &lt;dbl&gt;,
 ## #   Pref_Reaction_time &lt;dbl&gt;, Random_number &lt;dbl&gt;</code></pre>
 </div>
-<div id="check-the-variable-types-are-correct." class="section level3">
+<div id="check-the-variable-types-are-correct." class="section level3" number="11.12.2">
 <h3><span class="header-section-number">11.12.2</span> Check the variable types are correct.</h3>
 <ul>
 <li>Timestamp should be a character</li>
@@ -568,7 +598,7 @@ And we should be able to collect the data, within our current constraints, neces
 <li>Sex should be a character</li>
 <li>The remaining four variables should be numeric (<dbl> if fractional, <int> if whole numbers).</li>
 </ul>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="live-data-demo.html#cb362-1"></a>class_RTs</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="live-data-demo.html#cb362-1" aria-hidden="true" tabindex="-1"></a>class_RTs</span></code></pre></div>
 <pre><code>## # A tibble: 14 x 16
 ##   Timestamp ID    Sex   Pref_Reaction_t…
 ##   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
@@ -588,29 +618,29 @@ And we should be able to collect the data, within our current constraints, neces
 ## #   Pref_Reaction_time_5 &lt;dbl&gt;,
 ## #   Pref_Reaction_time &lt;dbl&gt;, Random_number &lt;dbl&gt;</code></pre>
 </div>
-<div id="correct-or-exclude-problematic-data" class="section level3">
+<div id="correct-or-exclude-problematic-data" class="section level3" number="11.12.3">
 <h3><span class="header-section-number">11.12.3</span> Correct or exclude problematic data</h3>
 <p>This section should not be necessary, as the google form allows only numeric entries in fields that should have numbers.</p>
 <p>If we have problems here, with variables of the wrong type, it probably means some of the data entry is a bit messed up.</p>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="live-data-demo.html#cb364-1"></a><span class="co"># Have to do this live!!!</span></span>
-<span id="cb364-2"><a href="live-data-demo.html#cb364-2"></a><span class="co"># e.g. to exclude observations with character entries in Reaction_time variable</span></span>
-<span id="cb364-3"><a href="live-data-demo.html#cb364-3"></a>class_RTs &lt;-<span class="st"> </span><span class="kw">filter</span>(class_RTs, <span class="op">!</span><span class="kw">is.na</span>(<span class="kw">as.numeric</span>(Pref_Reaction_time)))</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="live-data-demo.html#cb364-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Have to do this live!!!</span></span>
+<span id="cb364-2"><a href="live-data-demo.html#cb364-2" aria-hidden="true" tabindex="-1"></a><span class="co"># e.g. to exclude observations with character entries in Reaction_time variable</span></span>
+<span id="cb364-3"><a href="live-data-demo.html#cb364-3" aria-hidden="true" tabindex="-1"></a>class_RTs <span class="ot">&lt;-</span> <span class="fu">filter</span>(class_RTs, <span class="sc">!</span><span class="fu">is.na</span>(<span class="fu">as.numeric</span>(Pref_Reaction_time)))</span></code></pre></div>
 <p>Once fixed, we need to make the variable have the correct type</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="live-data-demo.html#cb365-1"></a><span class="co"># try using type_convert() from readr package.</span></span>
-<span id="cb365-2"><a href="live-data-demo.html#cb365-2"></a>class_RTs &lt;-<span class="st"> </span><span class="kw">type_convert</span>(class_RTs)</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="live-data-demo.html#cb365-1" aria-hidden="true" tabindex="-1"></a><span class="co"># try using type_convert() from readr package.</span></span>
+<span id="cb365-2"><a href="live-data-demo.html#cb365-2" aria-hidden="true" tabindex="-1"></a>class_RTs <span class="ot">&lt;-</span> <span class="fu">type_convert</span>(class_RTs)</span></code></pre></div>
 </div>
-<div id="check-numbers-of-data-points-in-each-sex" class="section level3">
+<div id="check-numbers-of-data-points-in-each-sex" class="section level3" number="11.12.4">
 <h3><span class="header-section-number">11.12.4</span> Check numbers of data points in each sex</h3>
-<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="live-data-demo.html#cb366-1"></a><span class="kw">table</span>(class_RTs<span class="op">$</span>Sex)</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="live-data-demo.html#cb366-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(class_RTs<span class="sc">$</span>Sex)</span></code></pre></div>
 <pre><code>## 
 ## Female   Male 
 ##     10      4</code></pre>
 </div>
-<div id="check-the-number-of-observations" class="section level3">
+<div id="check-the-number-of-observations" class="section level3" number="11.12.5">
 <h3><span class="header-section-number">11.12.5</span> Check the number of observations</h3>
 <p>Should be the same as we saw in the datasheet, which should be number of you in this classroom.</p>
 <p>The number of observations and variables is given by R in the first line of output when we type the name of the data object:</p>
-<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="live-data-demo.html#cb368-1"></a>class_RTs</span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="live-data-demo.html#cb368-1" aria-hidden="true" tabindex="-1"></a>class_RTs</span></code></pre></div>
 <pre><code>## # A tibble: 14 x 16
 ##   Timestamp ID    Sex   Pref_Reaction_t…
 ##   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
@@ -631,37 +661,37 @@ And we should be able to collect the data, within our current constraints, neces
 ## #   Pref_Reaction_time &lt;dbl&gt;, Random_number &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<div id="visualise-the-data" class="section level2">
+<div id="visualise-the-data" class="section level2" number="11.13">
 <h2><span class="header-section-number">11.13</span> Visualise the data</h2>
 <p>When we visualise the data, we’re trying to do at least three things, and are not trying to do at least one.</p>
 <p>We’re not trying to make the most beautiful graph in the world, so we can put it in our report / presentation etc. We just want to clearly see the data.</p>
 <p>We are trying to 1) do further checks for possible errors in the data, 2) making some initial assessments of how the data is distributed, 3) see what we think is the answer to our question.</p>
 <p>A histogram of all the data:</p>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="live-data-demo.html#cb370-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb370-2"><a href="live-data-demo.html#cb370-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">data =</span> class_RTs, <span class="kw">aes</span>(<span class="dt">x=</span>Pref_Reaction_time))</span></code></pre></div>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="live-data-demo.html#cb370-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb370-2"><a href="live-data-demo.html#cb370-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> class_RTs, <span class="fu">aes</span>(<span class="at">x=</span>Pref_Reaction_time))</span></code></pre></div>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-203-1.svg" width="336" style="display: block; margin: auto;" /></p>
 <p>Separate histograms for each sex:</p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="live-data-demo.html#cb371-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb371-2"><a href="live-data-demo.html#cb371-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">data =</span> class_RTs, <span class="kw">aes</span>(<span class="dt">x=</span>Pref_Reaction_time)) <span class="op">+</span></span>
-<span id="cb371-3"><a href="live-data-demo.html#cb371-3"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>Sex)</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="live-data-demo.html#cb371-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb371-2"><a href="live-data-demo.html#cb371-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> class_RTs, <span class="fu">aes</span>(<span class="at">x=</span>Pref_Reaction_time)) <span class="sc">+</span></span>
+<span id="cb371-3"><a href="live-data-demo.html#cb371-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Sex)</span></code></pre></div>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-204-1.svg" width="336" style="display: block; margin: auto;" /></p>
 <p>A box and whisker plot:</p>
-<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="live-data-demo.html#cb372-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb372-2"><a href="live-data-demo.html#cb372-2"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">data =</span> class_RTs, <span class="kw">aes</span>(<span class="dt">x=</span>Sex, <span class="dt">y=</span>Pref_Reaction_time)) </span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="live-data-demo.html#cb372-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb372-2"><a href="live-data-demo.html#cb372-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">data =</span> class_RTs, <span class="fu">aes</span>(<span class="at">x=</span>Sex, <span class="at">y=</span>Pref_Reaction_time)) </span></code></pre></div>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-205-1.svg" width="336" style="display: block; margin: auto;" /></p>
 <p>Or just the data points (with some jitter, to separate overlapping points):</p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="live-data-demo.html#cb373-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb373-2"><a href="live-data-demo.html#cb373-2"></a><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">data =</span> class_RTs,</span>
-<span id="cb373-3"><a href="live-data-demo.html#cb373-3"></a>              <span class="kw">aes</span>(<span class="dt">x=</span>Sex, <span class="dt">y=</span>Pref_Reaction_time),</span>
-<span id="cb373-4"><a href="live-data-demo.html#cb373-4"></a>              <span class="dt">width=</span><span class="fl">0.05</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="live-data-demo.html#cb373-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb373-2"><a href="live-data-demo.html#cb373-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> class_RTs,</span>
+<span id="cb373-3"><a href="live-data-demo.html#cb373-3" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x=</span>Sex, <span class="at">y=</span>Pref_Reaction_time),</span>
+<span id="cb373-4"><a href="live-data-demo.html#cb373-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">width=</span><span class="fl">0.05</span>)</span></code></pre></div>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-206-1.svg" width="336" style="display: block; margin: auto;" /></p>
 <p>What do we think about the three things? Any likely errors? How is the data distributed (within and between groups)? Does it look like there is a difference in reaction times (if so, by how much on average, and which group is faster)?</p>
 </div>
-<div id="get-the-means" class="section level2">
+<div id="get-the-means" class="section level2" number="11.14">
 <h2><span class="header-section-number">11.14</span> Get the means</h2>
-<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="live-data-demo.html#cb374-1"></a>class_RTs <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(Sex) <span class="op">%&gt;%</span></span>
-<span id="cb374-2"><a href="live-data-demo.html#cb374-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_RT=</span><span class="kw">mean</span>(Pref_Reaction_time),</span>
-<span id="cb374-3"><a href="live-data-demo.html#cb374-3"></a>            <span class="dt">sd_RT=</span><span class="kw">sd</span>(Pref_Reaction_time))</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="live-data-demo.html#cb374-1" aria-hidden="true" tabindex="-1"></a>class_RTs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Sex) <span class="sc">%&gt;%</span></span>
+<span id="cb374-2"><a href="live-data-demo.html#cb374-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_RT=</span><span class="fu">mean</span>(Pref_Reaction_time),</span>
+<span id="cb374-3"><a href="live-data-demo.html#cb374-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_RT=</span><span class="fu">sd</span>(Pref_Reaction_time))</span></code></pre></div>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 2 x 3
 ##   Sex    mean_RT sd_RT
@@ -669,38 +699,38 @@ And we should be able to collect the data, within our current constraints, neces
 ## 1 Female    322.  51.8
 ## 2 Male      240.  81.7</code></pre>
 </div>
-<div id="effect-size-and-practical-importance" class="section level2">
+<div id="effect-size-and-practical-importance" class="section level2" number="11.15">
 <h2><span class="header-section-number">11.15</span> Effect size and practical importance?</h2>
 <p>Does the difference between the means (i.e. the effect size) seem of practical importance? How does that size of difference correspond to the difference, for example, between the reaction time of an elite athlete, and a random person? How does it correspond to the difference between the reaction time of a human and a fly?</p>
 </div>
-<div id="assess-assumptions" class="section level2">
+<div id="assess-assumptions" class="section level2" number="11.16">
 <h2><span class="header-section-number">11.16</span> Assess assumptions</h2>
 <p>Before we even start to think about running a statistical test, we must check if the specific test we intend to run is justified. That is, we must check if the assumptions of the test are likely to be met.</p>
-<div id="independence-2" class="section level3">
+<div id="independence-2" class="section level3" number="11.16.1">
 <h3><span class="header-section-number">11.16.1</span> Independence</h3>
 <p>The t-test assumes that observations are independent.</p>
 <p>How was the data collected (hopefully not one sex on one day, and the other on another day, or something similarly confounding)?</p>
 <p>Do we have more than one observation per subject? Not in this case, because you typed in the average. But we could have. Then the observations from the same individual would not be independent of each other. They would share in common the person they originated from. This would make the statistical test unreliable. Its something we’ll look more closely at later in the course.</p>
 </div>
-<div id="normally-distributed-residuals" class="section level3">
+<div id="normally-distributed-residuals" class="section level3" number="11.16.2">
 <h3><span class="header-section-number">11.16.2</span> Normally distributed residuals</h3>
 <p>We can get a good idea about this, in this case, by looking at the distribution of the two groups of reaction times (see above). Obviously we need to have in mind some idea of what the normal distribution looks like, and how close the data have to look like one. There are quantitative tests for normality, we may look at them later.</p>
 </div>
-<div id="equal-variance" class="section level3">
+<div id="equal-variance" class="section level3" number="11.16.3">
 <h3><span class="header-section-number">11.16.3</span> Equal variance</h3>
 <p>The spread of the reaction times for men, and the spread for women, should be about the same.</p>
 <p>We can get a good idea about this, in this case, by looking at the distribution of the two groups of reaction times (see above). Again, we need to have in mind how similar the variance can be, without invalidating this assumption the data. There are quantitative tests for equal variance, we may look at them later.</p>
 </div>
 </div>
-<div id="do-the-statistical-test" class="section level2">
+<div id="do-the-statistical-test" class="section level2" number="11.17">
 <h2><span class="header-section-number">11.17</span> Do the statistical test</h2>
 <p>We have to do a test, or more generally, some statistics, to give some kind of assessment of certainty / uncertainty in our answer. Traditionally, this is done with a p-value, and if its lower than 0.05 we say the result is significant (i.e. the results are very consistent with no difference). If its higher than 0.05 we accept the null hypothesis that there is no difference.</p>
 <p>Another way to quantify uncertainty, is to give the difference in the means of the two groups, and a measure of certainty in this difference. If the difference between the means close to zero, and the uncertainty overlaps zero, then we conclude there is no strong difference.</p>
 <p>We’ll do this with a T-test, as we already planned.
 Before we go on, there is something very important we should figure out, and we should do this every time before we run a statistical test. Figure out the degrees of freedom.</p>
 <p>There will be learning about this later in the course. For now, know that for a t-test the degrees of freedom are the number of observations minus two. Here that is 12. This is really important to figure out in advance, as its a great way to check that R is doing the test we think we’re telling it to do.</p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="live-data-demo.html#cb377-1"></a>my_ttest &lt;-<span class="st"> </span><span class="kw">t.test</span>(Pref_Reaction_time <span class="op">~</span><span class="st"> </span>Sex, <span class="dt">data=</span>class_RTs, <span class="dt">var.equal=</span><span class="ot">TRUE</span>)</span>
-<span id="cb377-2"><a href="live-data-demo.html#cb377-2"></a>my_ttest</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="live-data-demo.html#cb377-1" aria-hidden="true" tabindex="-1"></a>my_ttest <span class="ot">&lt;-</span> <span class="fu">t.test</span>(Pref_Reaction_time <span class="sc">~</span> Sex, <span class="at">data=</span>class_RTs, <span class="at">var.equal=</span><span class="cn">TRUE</span>)</span>
+<span id="cb377-2"><a href="live-data-demo.html#cb377-2" aria-hidden="true" tabindex="-1"></a>my_ttest</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -713,10 +743,10 @@ Before we go on, there is something very important we should figure out, and we 
 ## mean in group Female   mean in group Male 
 ##                322.4                239.8</code></pre>
 <p>Lots of information there. We will teach you how to read this in later lectures.</p>
-<p>For now, we can find the p-value: 0.0399.
+<p>For now, we can find the p-value: 0.03991.
 And the difference between the means: -82.65 and the lower (4.488) and upper (160.812) 95% confidence limits on that difference.</p>
 </div>
-<div id="critical-thinking" class="section level2">
+<div id="critical-thinking" class="section level2" number="11.18">
 <h2><span class="header-section-number">11.18</span> Critical thinking</h2>
 <ul>
 <li>How might the work be flawed?</li>
@@ -728,23 +758,23 @@ And the difference between the means: -82.65 and the lower (4.488) and upper (16
 <li>What are the implications of the findings?</li>
 </ul>
 </div>
-<div id="report-and-communicate-the-results" class="section level2">
+<div id="report-and-communicate-the-results" class="section level2" number="11.19">
 <h2><span class="header-section-number">11.19</span> Report and communicate the results</h2>
-<div id="the-results-as-a-sentence" class="section level3">
+<div id="the-results-as-a-sentence" class="section level3" number="11.19.1">
 <h3><span class="header-section-number">11.19.1</span> The results as a sentence</h3>
-<p>We should write a sentence that gives the direction and extent of difference, and a measure of certainty / uncertainty in that finding. It is totally unnaceptable, though common, to just write “there was a significant difference”. If we want to give a p-value (and most people tend to expect to see one), we should remind about the statistical test used (remind because we may have already mentioned it) and give the degrees of freedom, the value of the test statistic, and the p-value.</p>
+<p>We should write a sentence that gives the direction and extent of difference, and a measure of certainty / uncertainty in that finding. It is totally unnaceptable, though common, to just write “there was a significant difference.” If we want to give a p-value (and most people tend to expect to see one), we should remind about the statistical test used (remind because we may have already mentioned it) and give the degrees of freedom, the value of the test statistic, and the p-value.</p>
 <p><em>Insert sentence here, once we have the results.</em></p>
 </div>
-<div id="the-results-graphically" class="section level3">
+<div id="the-results-graphically" class="section level3" number="11.19.2">
 <h3><span class="header-section-number">11.19.2</span> The results graphically</h3>
-<p>The aim here is to make a beautiful graph that very clearly communicates the findings! This doesn’t mean “fancy” and or “complex”. Often simpler is better. Getting the basic right is essential, of course.</p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="live-data-demo.html#cb379-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb379-2"><a href="live-data-demo.html#cb379-2"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">data =</span> class_RTs,</span>
-<span id="cb379-3"><a href="live-data-demo.html#cb379-3"></a>               <span class="kw">aes</span>(<span class="dt">x=</span>Sex, <span class="dt">y=</span>Pref_Reaction_time)) <span class="op">+</span></span>
-<span id="cb379-4"><a href="live-data-demo.html#cb379-4"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Reaction time (seconds)&quot;</span>)</span></code></pre></div>
+<p>The aim here is to make a beautiful graph that very clearly communicates the findings! This doesn’t mean “fancy” and or “complex.” Often simpler is better. Getting the basic right is essential, of course.</p>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="live-data-demo.html#cb379-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb379-2"><a href="live-data-demo.html#cb379-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">data =</span> class_RTs,</span>
+<span id="cb379-3"><a href="live-data-demo.html#cb379-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x=</span>Sex, <span class="at">y=</span>Pref_Reaction_time)) <span class="sc">+</span></span>
+<span id="cb379-4"><a href="live-data-demo.html#cb379-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Reaction time (seconds)&quot;</span>)</span></code></pre></div>
 <p>Wow! That was easy.</p>
 </div>
-<div id="do-not-use-a-table" class="section level3">
+<div id="do-not-use-a-table" class="section level3" number="11.19.3">
 <h3><span class="header-section-number">11.19.3</span> Do not use a table</h3>
 <p>Here, a table is not necessary. The results are in the sentence and in the graph.</p>
 
@@ -760,15 +790,15 @@ And the difference between the means: -82.65 and the lower (4.488) and upper (16
 <a href="more-questions-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook/js/app.min.js"></script>
-<script src="libs/gitbook/js/lunr.js"></script>
-<script src="libs/gitbook/js/clipboard.min.js"></script>
-<script src="libs/gitbook/js/plugin-search.js"></script>
-<script src="libs/gitbook/js/plugin-sharing.js"></script>
-<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook/js/jquery.highlight.js"></script>
-<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

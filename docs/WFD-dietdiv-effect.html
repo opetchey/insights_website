@@ -24,7 +24,7 @@
 <meta name="author" content="Petchey, Beckerman, Cooper, Childs" />
 
 
-<meta name="date" content="2021-01-13" />
+<meta name="date" content="2021-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,14 +33,15 @@
   
 <link rel="prev" href="additional-next-step-concepts.html"/>
 <link rel="next" href="WFD-food-pol.html"/>
-<script src="libs/jquery/jquery.min.js"></script>
-<link href="libs/gitbook/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -50,24 +51,22 @@
 
 
 
-<script src="libs/accessible-code-block/empty-anchor.js"></script>
-<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,7 +136,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="insights-workflow.html"><a href="insights-workflow.html"><i class="fa fa-check"></i><b>2</b> Insights Workflow</a><ul>
+<li class="chapter" data-level="2" data-path="insights-workflow.html"><a href="insights-workflow.html"><i class="fa fa-check"></i><b>2</b> Insights Workflow</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="insights-workflow.html"><a href="insights-workflow.html#preparing-the-data"><i class="fa fa-check"></i><b>2.1</b> Preparing the data</a></li>
 <li class="chapter" data-level="2.2" data-path="insights-workflow.html"><a href="insights-workflow.html#prepare-your-computer-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Prepare your computer, R, and RStudio</a></li>
 <li class="chapter" data-level="2.3" data-path="insights-workflow.html"><a href="insights-workflow.html#read-the-data-into-r"><i class="fa fa-check"></i><b>2.3</b> Read the data into R</a></li>
@@ -146,34 +146,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="insights-workflow.html"><a href="insights-workflow.html#initial-insights"><i class="fa fa-check"></i><b>2.6</b> Initial insights</a></li>
 <li class="chapter" data-level="2.7" data-path="insights-workflow.html"><a href="insights-workflow.html#insights-about-question-posed"><i class="fa fa-check"></i><b>2.7</b> Insights about question posed</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a><ul>
+<li class="chapter" data-level="3" data-path="questions-exercises.html"><a href="questions-exercises.html"><i class="fa fa-check"></i><b>3</b> Questions and exercises</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="questions-exercises.html"><a href="questions-exercises.html#preface"><i class="fa fa-check"></i><b>3.1</b> Preface</a></li>
 <li class="chapter" data-level="3.2" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-1-introduction"><i class="fa fa-check"></i><b>3.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="3.3" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-2-getting-acquainted"><i class="fa fa-check"></i><b>3.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="3.4" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-3-workflow-demonstrationpart-1"><i class="fa fa-check"></i><b>3.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="3.5" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-4-workflow-demonstrationpart-2"><i class="fa fa-check"></i><b>3.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
-<li class="chapter" data-level="3.6" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-5-dealing-with-data-1digging-into-dplyr"><i class="fa fa-check"></i><b>3.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a><ul>
+<li class="chapter" data-level="3.6" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-5-dealing-with-data-1digging-into-dplyr"><i class="fa fa-check"></i><b>3.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a>
+<ul>
 <li class="chapter" data-level="3.6.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises"><i class="fa fa-check"></i><b>3.6.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.6.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises"><i class="fa fa-check"></i><b>3.6.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-6-dealing-with-data-2expanding-your-toolkit"><i class="fa fa-check"></i><b>3.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a><ul>
+<li class="chapter" data-level="3.7" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-6-dealing-with-data-2expanding-your-toolkit"><i class="fa fa-check"></i><b>3.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a>
+<ul>
 <li class="chapter" data-level="3.7.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-1"><i class="fa fa-check"></i><b>3.7.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.7.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises-1"><i class="fa fa-check"></i><b>3.7.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-7-getting-to-grips-with-ggplot2"><i class="fa fa-check"></i><b>3.8</b> Chapter 7 (Getting to grips with ggplot2)</a><ul>
+<li class="chapter" data-level="3.8" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-7-getting-to-grips-with-ggplot2"><i class="fa fa-check"></i><b>3.8</b> Chapter 7 (Getting to grips with ggplot2)</a>
+<ul>
 <li class="chapter" data-level="3.8.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-2"><i class="fa fa-check"></i><b>3.8.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.8.2" data-path="questions-exercises.html"><a href="questions-exercises.html#bat-diet-workflow-questions-and-exercises-2"><i class="fa fa-check"></i><b>3.8.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.9" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables"><i class="fa fa-check"></i><b>3.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a><ul>
+<li class="chapter" data-level="3.9" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables"><i class="fa fa-check"></i><b>3.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a>
+<ul>
 <li class="chapter" data-level="3.9.1" data-path="questions-exercises.html"><a href="questions-exercises.html#general-questions-and-exercises-3"><i class="fa fa-check"></i><b>3.9.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="3.9.2" data-path="questions-exercises.html"><a href="questions-exercises.html#workflow-demonstration-questions-and-exercises"><i class="fa fa-check"></i><b>3.9.2</b> Workflow demonstration questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3.10" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables"><i class="fa fa-check"></i><b>3.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a><ul>
+<li class="chapter" data-level="3.10" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables"><i class="fa fa-check"></i><b>3.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a>
+<ul>
 <li class="chapter" data-level="3.10.1" data-path="questions-exercises.html"><a href="questions-exercises.html#workflow-questions-and-exercises"><i class="fa fa-check"></i><b>3.10.1</b> Workflow questions and exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="3.11" data-path="questions-exercises.html"><a href="questions-exercises.html#chapter-10-looking-back-and-looking-forward"><i class="fa fa-check"></i><b>3.11</b> Chapter 10 (Looking back and looking forward)</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="more-R.html"><a href="more-R.html"><i class="fa fa-check"></i><b>4</b> More R</a><ul>
+<li class="chapter" data-level="4" data-path="more-R.html"><a href="more-R.html"><i class="fa fa-check"></i><b>4</b> More R</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="more-R.html"><a href="more-R.html#rstudio-project-setup"><i class="fa fa-check"></i><b>4.1</b> RStudio Project setup</a></li>
 <li class="chapter" data-level="4.2" data-path="more-R.html"><a href="more-R.html#baseclassic-and-tidyverse-comparison"><i class="fa fa-check"></i><b>4.2</b> Base/classic and tidyverse comparison</a></li>
 <li class="chapter" data-level="4.3" data-path="more-R.html"><a href="more-R.html#multiple-graphs-in-one-figure"><i class="fa fa-check"></i><b>4.3</b> Multiple graphs in one figure</a></li>
@@ -184,7 +191,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8" data-path="more-R.html"><a href="more-R.html#syntax-highlighting"><i class="fa fa-check"></i><b>4.8</b> Syntax highlighting</a></li>
 <li class="chapter" data-level="4.9" data-path="more-R.html"><a href="more-R.html#summarise-more-than-one-variable"><i class="fa fa-check"></i><b>4.9</b> Summarise more than one variable</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html"><i class="fa fa-check"></i><b>5</b> Additional &amp; next step concepts</a><ul>
+<li class="chapter" data-level="5" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html"><i class="fa fa-check"></i><b>5</b> Additional &amp; next step concepts</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#distributions"><i class="fa fa-check"></i><b>5.1</b> Distributions</a></li>
 <li class="chapter" data-level="5.2" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#interactions-and-complexity"><i class="fa fa-check"></i><b>5.2</b> Interactions and complexity</a></li>
 <li class="chapter" data-level="5.3" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#lurking-variables"><i class="fa fa-check"></i><b>5.3</b> Lurking variables</a></li>
@@ -199,7 +207,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.12" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#interoperability"><i class="fa fa-check"></i><b>5.12</b> Interoperability / standardising terms</a></li>
 <li class="chapter" data-level="5.13" data-path="additional-next-step-concepts.html"><a href="additional-next-step-concepts.html#comparing-descriptive-statistics"><i class="fa fa-check"></i><b>5.13</b> Comparing descriptive statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html"><i class="fa fa-check"></i><b>6</b> How does dietary diversity affect populations?</a><ul>
+<li class="chapter" data-level="6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html"><i class="fa fa-check"></i><b>6</b> How does dietary diversity affect populations?</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#about-this-workflow-demonstration"><i class="fa fa-check"></i><b>6.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="6.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#going-to-the-next-level"><i class="fa fa-check"></i><b>6.2</b> Going to the next level</a></li>
 <li class="chapter" data-level="6.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#introduction-to-the-study-and-data"><i class="fa fa-check"></i><b>6.3</b> Introduction to the study and data</a></li>
@@ -208,7 +217,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#acquire-the-dataset"><i class="fa fa-check"></i><b>6.6</b> Acquire the dataset</a></li>
 <li class="chapter" data-level="6.7" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#import-the-dataset"><i class="fa fa-check"></i><b>6.7</b> Import the dataset</a></li>
 <li class="chapter" data-level="6.8" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#checking-the-import-worked-correctly"><i class="fa fa-check"></i><b>6.8</b> Checking the import worked correctly</a></li>
-<li class="chapter" data-level="6.9" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>6.9</b> Cleaning and tidying</a><ul>
+<li class="chapter" data-level="6.9" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>6.9</b> Cleaning and tidying</a>
+<ul>
 <li class="chapter" data-level="6.9.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#recode-some-names"><i class="fa fa-check"></i><b>6.9.1</b> Recode some names</a></li>
 <li class="chapter" data-level="6.9.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#factors-predstab"><i class="fa fa-check"></i><b>6.9.2</b> Make the <code>prey_composition</code> variable a factor with specific order</a></li>
 <li class="chapter" data-level="6.9.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#fix-those-variable-names"><i class="fa fa-check"></i><b>6.9.3</b> Fix those variable names</a></li>
@@ -219,7 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.9.8" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#calculate-the-three-response-variables"><i class="fa fa-check"></i><b>6.9.8</b> Calculate the three response variables</a></li>
 </ul></li>
 <li class="chapter" data-level="6.10" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#shapes"><i class="fa fa-check"></i><b>6.10</b> Shapes</a></li>
-<li class="chapter" data-level="6.11" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#relationships"><i class="fa fa-check"></i><b>6.11</b> Relationships</a><ul>
+<li class="chapter" data-level="6.11" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#relationships"><i class="fa fa-check"></i><b>6.11</b> Relationships</a>
+<ul>
 <li class="chapter" data-level="6.11.1" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#maximum-predator-density"><i class="fa fa-check"></i><b>6.11.1</b> Maximum predator density</a></li>
 <li class="chapter" data-level="6.11.2" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#predator-population-variability-cv"><i class="fa fa-check"></i><b>6.11.2</b> Predator population variability (CV)</a></li>
 <li class="chapter" data-level="6.11.3" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#predator-persistence-time"><i class="fa fa-check"></i><b>6.11.3</b> Predator persistence time</a></li>
@@ -227,12 +238,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.12" data-path="WFD-dietdiv-effect.html"><a href="WFD-dietdiv-effect.html#wrapping-up"><i class="fa fa-check"></i><b>6.12</b> Wrapping up</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html"><i class="fa fa-check"></i><b>7</b> Are diets more diverse in more democratic countries?</a><ul>
+<li class="chapter" data-level="7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html"><i class="fa fa-check"></i><b>7</b> Are diets more diverse in more democratic countries?</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#about-this-workflow-demonstration-1"><i class="fa fa-check"></i><b>7.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="7.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#introduction-to-the-study-and-data-1"><i class="fa fa-check"></i><b>7.2</b> Introduction to the study and data</a></li>
 <li class="chapter" data-level="7.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#understanding-the-data"><i class="fa fa-check"></i><b>7.3</b> Understanding the data</a></li>
 <li class="chapter" data-level="7.4" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#a-little-preparation-1"><i class="fa fa-check"></i><b>7.4</b> A little preparation</a></li>
-<li class="chapter" data-level="7.5" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><i class="fa fa-check"></i><b>7.5</b> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a><ul>
+<li class="chapter" data-level="7.5" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-data-origins-acquire-import-clean-tidy-nas-duplicates"><i class="fa fa-check"></i><b>7.5</b> Polity data: origins, acquire, import, clean, tidy, NAs, duplicates</a>
+<ul>
 <li class="chapter" data-level="7.5.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#data-origins-and-acquisition"><i class="fa fa-check"></i><b>7.5.1</b> Data origins and acquisition</a></li>
 <li class="chapter" data-level="7.5.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#data-import"><i class="fa fa-check"></i><b>7.5.2</b> Data import</a></li>
 <li class="chapter" data-level="7.5.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#tidy-and-clean"><i class="fa fa-check"></i><b>7.5.3</b> Tidy and clean</a></li>
@@ -241,7 +254,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#check-ranges-of-numeric-variables"><i class="fa fa-check"></i><b>7.5.6</b> Check ranges of numeric variables</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#first-insights-from-the-polity-data"><i class="fa fa-check"></i><b>7.6</b> First insights from the polity data</a></li>
-<li class="chapter" data-level="7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#acquire-import-check-the-fao-food-balance-sheet-data"><i class="fa fa-check"></i><b>7.7</b> Acquire, import, check the FAO Food balance sheet data</a><ul>
+<li class="chapter" data-level="7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#acquire-import-check-the-fao-food-balance-sheet-data"><i class="fa fa-check"></i><b>7.7</b> Acquire, import, check the FAO Food balance sheet data</a>
+<ul>
 <li class="chapter" data-level="7.7.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#tidying-FAO"><i class="fa fa-check"></i><b>7.7.1</b> Tidy the FAO data</a></li>
 <li class="chapter" data-level="7.7.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#clean-the-fao-data"><i class="fa fa-check"></i><b>7.7.2</b> Clean the FAO data</a></li>
 <li class="chapter" data-level="7.7.3" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#check-for-innapropriate-duplicate-observations-1"><i class="fa fa-check"></i><b>7.7.3</b> Check for innapropriate duplicate observations</a></li>
@@ -250,7 +264,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.7.6" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#more-cleaning"><i class="fa fa-check"></i><b>7.7.6</b> More cleaning</a></li>
 <li class="chapter" data-level="7.7.7" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#calculating-our-response-variables"><i class="fa fa-check"></i><b>7.7.7</b> Calculating our response variables</a></li>
 </ul></li>
-<li class="chapter" data-level="7.8" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#merge-the-two-datasets-aaaaaargh"><i class="fa fa-check"></i><b>7.8</b> Merge the two datasets (aaaaaargh!!)</a><ul>
+<li class="chapter" data-level="7.8" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#merge-the-two-datasets-aaaaaargh"><i class="fa fa-check"></i><b>7.8</b> Merge the two datasets (aaaaaargh!!)</a>
+<ul>
 <li class="chapter" data-level="7.8.1" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#polity-standardisation"><i class="fa fa-check"></i><b>7.8.1</b> Polity standardisation</a></li>
 <li class="chapter" data-level="7.8.2" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#the-final-merge"><i class="fa fa-check"></i><b>7.8.2</b> The final merge</a></li>
 </ul></li>
@@ -260,7 +275,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.12" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#wrapping-up-1"><i class="fa fa-check"></i><b>7.12</b> Wrapping up</a></li>
 <li class="chapter" data-level="7.13" data-path="WFD-food-pol.html"><a href="WFD-food-pol.html#and-a-challenge-for-you"><i class="fa fa-check"></i><b>7.13</b> And a challenge for you…</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html"><i class="fa fa-check"></i><b>8</b> What are the effects of dietary restriction?</a><ul>
+<li class="chapter" data-level="8" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html"><i class="fa fa-check"></i><b>8</b> What are the effects of dietary restriction?</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#about-this-workflow-demonstration-2"><i class="fa fa-check"></i><b>8.1</b> About this Workflow Demonstration</a></li>
 <li class="chapter" data-level="8.2" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#introduction-1"><i class="fa fa-check"></i><b>8.2</b> Introduction</a></li>
 <li class="chapter" data-level="8.3" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#the-question"><i class="fa fa-check"></i><b>8.3</b> The question</a></li>
@@ -283,8 +299,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.20" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#inspect-shapes-distributions"><i class="fa fa-check"></i><b>8.20</b> Inspect shapes (distributions)</a></li>
 <li class="chapter" data-level="8.21" data-path="WFD-diet-restrict.html"><a href="WFD-diet-restrict.html#inspect-relationships"><i class="fa fa-check"></i><b>8.21</b> Inspect relationships</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html"><i class="fa fa-check"></i><b>9</b> Solutions: What are the effects of dietary restriction?</a><ul>
-<li class="chapter" data-level="9.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#about-these-solutions"><i class="fa fa-check"></i><b>9.1</b> About these solutions</a><ul>
+<li class="chapter" data-level="9" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html"><i class="fa fa-check"></i><b>9</b> Solutions: What are the effects of dietary restriction?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#about-these-solutions"><i class="fa fa-check"></i><b>9.1</b> About these solutions</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#nas-variable-entries-e.g.-levels-of-characters-ranges-of-numerics-numbers-of-things-1"><i class="fa fa-check"></i><b>9.1.1</b> NAs, variable entries, e.g. levels of characters, ranges of numerics, numbers of “things”*</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#independence-1"><i class="fa fa-check"></i><b>9.2</b> Independence</a></li>
@@ -298,7 +316,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.10" data-path="WFD-diet-restrict-solutions.html"><a href="WFD-diet-restrict-solutions.html#moatt-et-al-data-s15-length-weight-and-condition-index-data"><i class="fa fa-check"></i><b>9.10</b> Moatt et al Data S15 – Length, Weight and Condition Index Data</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="modelwf-scripts.html"><a href="modelwf-scripts.html"><i class="fa fa-check"></i><b>10</b> Workflow demonstration R scripts</a></li>
-<li class="chapter" data-level="11" data-path="live-data-demo.html"><a href="live-data-demo.html"><i class="fa fa-check"></i><b>11</b> Live data analysis demonstration</a><ul>
+<li class="chapter" data-level="11" data-path="live-data-demo.html"><a href="live-data-demo.html"><i class="fa fa-check"></i><b>11</b> Live data analysis demonstration</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="live-data-demo.html"><a href="live-data-demo.html#introduction-for-intructors"><i class="fa fa-check"></i><b>11.1</b> Introduction for intructors</a></li>
 <li class="chapter" data-level="" data-path="live-data-demo.html"><a href="live-data-demo.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="11.2" data-path="live-data-demo.html"><a href="live-data-demo.html#meta-task"><i class="fa fa-check"></i><b>11.2</b> Meta-task</a></li>
@@ -311,7 +330,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.9" data-path="live-data-demo.html"><a href="live-data-demo.html#data-collection"><i class="fa fa-check"></i><b>11.9</b> Data collection</a></li>
 <li class="chapter" data-level="11.10" data-path="live-data-demo.html"><a href="live-data-demo.html#look-at-the-data"><i class="fa fa-check"></i><b>11.10</b> Look at the data!</a></li>
 <li class="chapter" data-level="11.11" data-path="live-data-demo.html"><a href="live-data-demo.html#lets-get-the-data-into-our-data-analysis-software-of-choice-r-via-rstudio"><i class="fa fa-check"></i><b>11.11</b> Lets get the data into our data analysis software of choice (R, via RStudio)</a></li>
-<li class="chapter" data-level="11.12" data-path="live-data-demo.html"><a href="live-data-demo.html#now-we-need-to-do-some-data-wrangling-cleaning-and-tidying"><i class="fa fa-check"></i><b>11.12</b> Now we need to do some data wrangling (cleaning and tidying)</a><ul>
+<li class="chapter" data-level="11.12" data-path="live-data-demo.html"><a href="live-data-demo.html#now-we-need-to-do-some-data-wrangling-cleaning-and-tidying"><i class="fa fa-check"></i><b>11.12</b> Now we need to do some data wrangling (cleaning and tidying)</a>
+<ul>
 <li class="chapter" data-level="11.12.1" data-path="live-data-demo.html"><a href="live-data-demo.html#clean-up-the-column-variable-names"><i class="fa fa-check"></i><b>11.12.1</b> Clean up the column / variable names:</a></li>
 <li class="chapter" data-level="11.12.2" data-path="live-data-demo.html"><a href="live-data-demo.html#check-the-variable-types-are-correct."><i class="fa fa-check"></i><b>11.12.2</b> Check the variable types are correct.</a></li>
 <li class="chapter" data-level="11.12.3" data-path="live-data-demo.html"><a href="live-data-demo.html#correct-or-exclude-problematic-data"><i class="fa fa-check"></i><b>11.12.3</b> Correct or exclude problematic data</a></li>
@@ -321,20 +341,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.13" data-path="live-data-demo.html"><a href="live-data-demo.html#visualise-the-data"><i class="fa fa-check"></i><b>11.13</b> Visualise the data</a></li>
 <li class="chapter" data-level="11.14" data-path="live-data-demo.html"><a href="live-data-demo.html#get-the-means"><i class="fa fa-check"></i><b>11.14</b> Get the means</a></li>
 <li class="chapter" data-level="11.15" data-path="live-data-demo.html"><a href="live-data-demo.html#effect-size-and-practical-importance"><i class="fa fa-check"></i><b>11.15</b> Effect size and practical importance?</a></li>
-<li class="chapter" data-level="11.16" data-path="live-data-demo.html"><a href="live-data-demo.html#assess-assumptions"><i class="fa fa-check"></i><b>11.16</b> Assess assumptions</a><ul>
+<li class="chapter" data-level="11.16" data-path="live-data-demo.html"><a href="live-data-demo.html#assess-assumptions"><i class="fa fa-check"></i><b>11.16</b> Assess assumptions</a>
+<ul>
 <li class="chapter" data-level="11.16.1" data-path="live-data-demo.html"><a href="live-data-demo.html#independence-2"><i class="fa fa-check"></i><b>11.16.1</b> Independence</a></li>
 <li class="chapter" data-level="11.16.2" data-path="live-data-demo.html"><a href="live-data-demo.html#normally-distributed-residuals"><i class="fa fa-check"></i><b>11.16.2</b> Normally distributed residuals</a></li>
 <li class="chapter" data-level="11.16.3" data-path="live-data-demo.html"><a href="live-data-demo.html#equal-variance"><i class="fa fa-check"></i><b>11.16.3</b> Equal variance</a></li>
 </ul></li>
 <li class="chapter" data-level="11.17" data-path="live-data-demo.html"><a href="live-data-demo.html#do-the-statistical-test"><i class="fa fa-check"></i><b>11.17</b> Do the statistical test</a></li>
 <li class="chapter" data-level="11.18" data-path="live-data-demo.html"><a href="live-data-demo.html#critical-thinking"><i class="fa fa-check"></i><b>11.18</b> Critical thinking</a></li>
-<li class="chapter" data-level="11.19" data-path="live-data-demo.html"><a href="live-data-demo.html#report-and-communicate-the-results"><i class="fa fa-check"></i><b>11.19</b> Report and communicate the results</a><ul>
+<li class="chapter" data-level="11.19" data-path="live-data-demo.html"><a href="live-data-demo.html#report-and-communicate-the-results"><i class="fa fa-check"></i><b>11.19</b> Report and communicate the results</a>
+<ul>
 <li class="chapter" data-level="11.19.1" data-path="live-data-demo.html"><a href="live-data-demo.html#the-results-as-a-sentence"><i class="fa fa-check"></i><b>11.19.1</b> The results as a sentence</a></li>
 <li class="chapter" data-level="11.19.2" data-path="live-data-demo.html"><a href="live-data-demo.html#the-results-graphically"><i class="fa fa-check"></i><b>11.19.2</b> The results graphically</a></li>
 <li class="chapter" data-level="11.19.3" data-path="live-data-demo.html"><a href="live-data-demo.html#do-not-use-a-table"><i class="fa fa-check"></i><b>11.19.3</b> Do not use a table</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="more-questions-data.html"><a href="more-questions-data.html"><i class="fa fa-check"></i><b>12</b> More datasets</a><ul>
+<li class="chapter" data-level="12" data-path="more-questions-data.html"><a href="more-questions-data.html"><i class="fa fa-check"></i><b>12</b> More datasets</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="more-questions-data.html"><a href="more-questions-data.html#hungry-ladybirds"><i class="fa fa-check"></i><b>12.1</b> Hungry ladybirds</a></li>
 <li class="chapter" data-level="12.2" data-path="more-questions-data.html"><a href="more-questions-data.html#seal-suppers"><i class="fa fa-check"></i><b>12.2</b> Seal suppers</a></li>
 <li class="chapter" data-level="12.3" data-path="more-questions-data.html"><a href="more-questions-data.html#more-bat-poop"><i class="fa fa-check"></i><b>12.3</b> More bat poop</a></li>
@@ -346,34 +369,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.9" data-path="more-questions-data.html"><a href="more-questions-data.html#cervical-spine-compression-and-mri-not-food-related"><i class="fa fa-check"></i><b>12.9</b> Cervical spine compression and MRI (not food related)</a></li>
 <li class="chapter" data-level="12.10" data-path="more-questions-data.html"><a href="more-questions-data.html#lots-of-other-datasets-here"><i class="fa fa-check"></i><b>12.10</b> Lots of other datasets here:</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a><ul>
+<li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a>
+<ul>
 <li class="chapter" data-level="13.1" data-path="related-reading.html"><a href="related-reading.html#data-science-related-reading"><i class="fa fa-check"></i><b>13.1</b> Data science related reading</a></li>
 <li class="chapter" data-level="13.2" data-path="related-reading.html"><a href="related-reading.html#study-design-related-reading"><i class="fa fa-check"></i><b>13.2</b> Study design related reading</a></li>
 <li class="chapter" data-level="13.3" data-path="related-reading.html"><a href="related-reading.html#web-sites-pages"><i class="fa fa-check"></i><b>13.3</b> Web sites / pages</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a><ul>
+<li class="chapter" data-level="14" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>14</b> Answers and solutions</a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="answers.html"><a href="answers.html#preface-1"><i class="fa fa-check"></i><b>14.1</b> Preface</a></li>
 <li class="chapter" data-level="14.2" data-path="answers.html"><a href="answers.html#chapter-1-introduction-1"><i class="fa fa-check"></i><b>14.2</b> Chapter 1 (Introduction)</a></li>
 <li class="chapter" data-level="14.3" data-path="answers.html"><a href="answers.html#chapter-2-getting-acquainted-1"><i class="fa fa-check"></i><b>14.3</b> Chapter 2 (Getting Acquainted)</a></li>
 <li class="chapter" data-level="14.4" data-path="answers.html"><a href="answers.html#chapter-3-workflow-demonstrationpart-1-1"><i class="fa fa-check"></i><b>14.4</b> Chapter 3 (Workflow Demonstration–Part 1)</a></li>
 <li class="chapter" data-level="14.5" data-path="answers.html"><a href="answers.html#chapter-4-workflow-demonstrationpart-2-1"><i class="fa fa-check"></i><b>14.5</b> Chapter 4 (Workflow Demonstration–Part 2)</a></li>
-<li class="chapter" data-level="14.6" data-path="answers.html"><a href="answers.html#chapter-5-dealing-with-data-1digging-into-dplyr-1"><i class="fa fa-check"></i><b>14.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a><ul>
+<li class="chapter" data-level="14.6" data-path="answers.html"><a href="answers.html#chapter-5-dealing-with-data-1digging-into-dplyr-1"><i class="fa fa-check"></i><b>14.6</b> Chapter 5 (Dealing with data 1—Digging into dplyr)</a>
+<ul>
 <li class="chapter" data-level="14.6.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-4"><i class="fa fa-check"></i><b>14.6.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.6.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-3"><i class="fa fa-check"></i><b>14.6.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.7" data-path="answers.html"><a href="answers.html#chapter-6-dealing-with-data-2expanding-your-toolkit-1"><i class="fa fa-check"></i><b>14.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a><ul>
+<li class="chapter" data-level="14.7" data-path="answers.html"><a href="answers.html#chapter-6-dealing-with-data-2expanding-your-toolkit-1"><i class="fa fa-check"></i><b>14.7</b> Chapter 6 (Dealing with data 2—Expanding your toolkit)</a>
+<ul>
 <li class="chapter" data-level="14.7.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-5"><i class="fa fa-check"></i><b>14.7.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.7.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-4"><i class="fa fa-check"></i><b>14.7.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.8" data-path="answers.html"><a href="answers.html#chapter-7-getting-to-grips-with-ggplot2-1"><i class="fa fa-check"></i><b>14.8</b> Chapter 7 (Getting to grips with ggplot2)</a><ul>
+<li class="chapter" data-level="14.8" data-path="answers.html"><a href="answers.html#chapter-7-getting-to-grips-with-ggplot2-1"><i class="fa fa-check"></i><b>14.8</b> Chapter 7 (Getting to grips with ggplot2)</a>
+<ul>
 <li class="chapter" data-level="14.8.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-6"><i class="fa fa-check"></i><b>14.8.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.8.2" data-path="answers.html"><a href="answers.html#bat-diet-workflow-questions-and-exercises-5"><i class="fa fa-check"></i><b>14.8.2</b> Bat diet workflow questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.9" data-path="answers.html"><a href="answers.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables-1"><i class="fa fa-check"></i><b>14.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a><ul>
+<li class="chapter" data-level="14.9" data-path="answers.html"><a href="answers.html#chapter-8-making-deeper-insights-part-1---working-with-single-variables-1"><i class="fa fa-check"></i><b>14.9</b> Chapter 8 (Making Deeper Insights: Part 1 - working with single variables)</a>
+<ul>
 <li class="chapter" data-level="14.9.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-7"><i class="fa fa-check"></i><b>14.9.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.9.2" data-path="answers.html"><a href="answers.html#workflow-demonstration-questions-and-exercises-1"><i class="fa fa-check"></i><b>14.9.2</b> Workflow demonstration questions and exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="14.10" data-path="answers.html"><a href="answers.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables-1"><i class="fa fa-check"></i><b>14.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a><ul>
+<li class="chapter" data-level="14.10" data-path="answers.html"><a href="answers.html#chapter-9-making-deeper-insights-part-2-relationships-among-many-variables-1"><i class="fa fa-check"></i><b>14.10</b> Chapter 9 (Making Deeper Insights Part 2: Relationships among (many) variables)</a>
+<ul>
 <li class="chapter" data-level="14.10.1" data-path="answers.html"><a href="answers.html#general-questions-and-exercises-8"><i class="fa fa-check"></i><b>14.10.1</b> General questions and exercises</a></li>
 <li class="chapter" data-level="14.10.2" data-path="answers.html"><a href="answers.html#workflow-questions-and-exercises-1"><i class="fa fa-check"></i><b>14.10.2</b> Workflow questions and exercises</a></li>
 </ul></li>
@@ -401,21 +431,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="WFD-dietdiv-effect" class="section level1">
+<div id="WFD-dietdiv-effect" class="section level1" number="6">
 <h1><span class="header-section-number">Chapter 6</span> How does dietary diversity affect populations?</h1>
 <p><img src="images/WF2_icon.jpg" width="60"/></p>
-<div id="about-this-workflow-demonstration" class="section level2">
+<div id="about-this-workflow-demonstration" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> About this Workflow Demonstration</h2>
 <p>This Workflow Demonstation (WD) is primarily a supplement to the material in the book <em>Insights from Data with R</em> by Petchey, Beckerman, Childs, and Cooper. If you don’t understand something here, have a look at that book (perhaps again), or search for help, or get in touch with us.</p>
 <p>At the time of publication (early 2021) there are likely some improvements that could be made to this demonstration, in terms of the description of what we do in it, why we do it, and how we do it. If anything seems odd, unclear, or sub-optimal, please don’t hesitate to get in touch, and we will quickly make improvements.</p>
 </div>
-<div id="going-to-the-next-level" class="section level2">
+<div id="going-to-the-next-level" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Going to the next level</h2>
 <p>This case study includes a little bit more complexity than the first one (bat diets) and covers a few new topics in R and in general. The complexity mainly occurs in the calculations we do to obtain the response variables (i.e. the variables we examine to answer our biological question). The calculations involve some conceptually challenging manipulations, and the corresponding pipelines of <strong>dplyr</strong> functions will at first seem complex and daunting.</p>
 <p>It’s fine to be concerned, even a bit stressed, by this complexity. If you feel so, just take a break, have a chat with friends, and while doing that think about how we only travel great distances and climb high peaks by taking one small step at a time. The same applies to what seem like complex and daunting tasks in getting insights from data. It’s amazing how far we get taking one step at a time. When we show you what seems like a complex task, like a complex pipeline of functions, break it down into its component steps. Let’s take a first step by introducing the case study and data that was collected.</p>
 <p>Again: as you work through this chapter, try following along with the <a href="insights-workflow.html#insights-workflow">workflow/checklist here</a>.</p>
 </div>
-<div id="introduction-to-the-study-and-data" class="section level2">
+<div id="introduction-to-the-study-and-data" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Introduction to the study and data</h2>
 <p>The data comes from <a href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2656.2000.00446.x">a study of how the number of available prey species for a predator consume affects the stability of the predator population dynamics</a>. The study was designed to address the hypotheses that more pathways of energy flow to a predator (i.e. more prey species) would stabilise the predator population dynamics, 1) by increasing the abundance of the predator, 2) by reducing how much it varies, and 3) by delaying extinction.</p>
 <div class="figure" style="text-align: center"><span id="fig:insight-sketch-4"></span>
@@ -448,32 +478,32 @@ FIGURE 6.1: A hypothetical outcome of the demonstration study of how a manipulat
 <li>How independent are the observations. Here we need to be a bit careful. There were 35 experimental units, so there should be 35 data points in our analyses. Multiple samples through time were taken from each experimental unit, however—we have repeated measures. We will take care of this, and not fall into a trap of trying to interpret patterns in graphs with lots of non-independent data points.</li>
 </ul>
 </div>
-<div id="what-type-of-response-variable" class="section level2">
+<div id="what-type-of-response-variable" class="section level2" number="6.4">
 <h2><span class="header-section-number">6.4</span> What type of response variable?</h2>
 <p>This question is worth asking at the beginning of a study. There were, in fact, three main response variables used in this study and these correspond to the three hypotheses mentioned above. I.e. there is one response variable for each of the three hypotheses/questions. These response variables were: 1) the population size of the predator population, 2) the temporal variability of the predator population size, and 3) the amount of time for which the predator population persisted. Each of these is an component/influence on the stability of the predator population. Each will have to be calculated from the time series of predator population density (number of individuals predators per ml) in each replicate. First though we will have to calculate population density from <code>count</code>, <code>w1</code>, <code>w2</code>, and <code>w3</code>, because during the experiment the volume of liquid in which the number of individuals of each species was counted varied (i.e. <code>w1</code>, <code>w2</code>, and <code>w3</code> are not constant). The reason for this variation is that dilution is required when populations are very dense, otherwise the dense swarm of individuals would be near impossible to count. But first…</p>
 </div>
-<div id="a-little-preparation" class="section level2">
+<div id="a-little-preparation" class="section level2" number="6.5">
 <h2><span class="header-section-number">6.5</span> A little preparation</h2>
 <p>Make a new folder for this case study, and in it a folder called <code>data</code> (this will contain any datasets for this case study/project). In RStudio create an RStudio project and save it in the project folder (not the <code>data</code> folder). Close RStudio and double click on the project file to re-open RStudio. Create a new R script file and load the libraries we will use:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="WFD-dietdiv-effect.html#cb28-1"></a><span class="co"># Load the libraries we use</span></span>
-<span id="cb28-2"><a href="WFD-dietdiv-effect.html#cb28-2"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb28-3"><a href="WFD-dietdiv-effect.html#cb28-3"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb28-4"><a href="WFD-dietdiv-effect.html#cb28-4"></a><span class="kw">library</span>(readr)</span>
-<span id="cb28-5"><a href="WFD-dietdiv-effect.html#cb28-5"></a><span class="kw">library</span>(stringr)</span>
-<span id="cb28-6"><a href="WFD-dietdiv-effect.html#cb28-6"></a><span class="kw">library</span>(lubridate)</span>
-<span id="cb28-7"><a href="WFD-dietdiv-effect.html#cb28-7"></a><span class="kw">library</span>(tidyr)</span>
-<span id="cb28-8"><a href="WFD-dietdiv-effect.html#cb28-8"></a><span class="kw">library</span>(forcats)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="WFD-dietdiv-effect.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the libraries we use</span></span>
+<span id="cb28-2"><a href="WFD-dietdiv-effect.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb28-3"><a href="WFD-dietdiv-effect.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb28-4"><a href="WFD-dietdiv-effect.html#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb28-5"><a href="WFD-dietdiv-effect.html#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb28-6"><a href="WFD-dietdiv-effect.html#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb28-7"><a href="WFD-dietdiv-effect.html#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb28-8"><a href="WFD-dietdiv-effect.html#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span></code></pre></div>
 <div class="action">
 <p>
 Install the <code>forcats</code> library if you have not already done so, otherwise <code>library(forcats)</code> will not work. Look at the Packages section of the Getting Acquainted chapter if you need help with installation.
 </p>
 </div>
 </div>
-<div id="acquire-the-dataset" class="section level2">
+<div id="acquire-the-dataset" class="section level2" number="6.6">
 <h2><span class="header-section-number">6.6</span> Acquire the dataset</h2>
 <p>Get the data file <code>dileptus expt data.csv</code> from the <a href="https://datadryad.org/resource/doi:10.5061/dryad.7h62c8t.2">dryad repository</a> associated with the publication about the data (make sure you get version 2 of the dataset). The dataset is stored on dryad in comma separated value (csv) format. Put the file in your <code>data</code> folder for this project.</p>
 </div>
-<div id="import-the-dataset" class="section level2">
+<div id="import-the-dataset" class="section level2" number="6.7">
 <h2><span class="header-section-number">6.7</span> Import the dataset</h2>
 <p>Import the dataset using the <code>read_csv()</code> function from the <code>readr</code> package.</p>
 <div class="warning">
@@ -481,7 +511,7 @@ Install the <code>forcats</code> library if you have not already done so, otherw
 Make sure you opened RStudio by clicking on your project file for this case study (or switch to the RProject in the top right of the RStudio window. This will ensure RStudio is looking at the correct folder, and that the <code>relative path</code> used before the file name will be correct:
 </p>
 </div>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="WFD-dietdiv-effect.html#cb29-1"></a>stab &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/dileptus_predator_prey_data.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="WFD-dietdiv-effect.html#cb29-1" aria-hidden="true" tabindex="-1"></a>stab <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/dileptus_predator_prey_data.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## ── Column specification ───────────────────────────────
 ## cols(
@@ -499,10 +529,10 @@ Make sure you opened RStudio by clicking on your project file for this case stud
 <p>Great, we didn’t get an error. The <code>read_csv()</code> function has done two things. It read in the data and the <code>stab &lt;-</code> assigns the data to a new object called <code>stab</code> (you could give it a name other than <code>stab</code> if you wish).</p>
 <p>The <code>read_csv()</code> function also gives a summary of what it found.</p>
 </div>
-<div id="checking-the-import-worked-correctly" class="section level2">
+<div id="checking-the-import-worked-correctly" class="section level2" number="6.8">
 <h2><span class="header-section-number">6.8</span> Checking the import worked correctly</h2>
 <p>Now we should check some basic things about the imported data. Let’s start by checking if it has the correct number of rows and variables, and if variables are the expected (i.e. correct type). We can look at these features of the imported data in many ways. One useful method is to type the name of the data object in the Console and press enter:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="WFD-dietdiv-effect.html#cb31-1"></a>stab</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="WFD-dietdiv-effect.html#cb31-1" aria-hidden="true" tabindex="-1"></a>stab</span></code></pre></div>
 <pre><code>## # A tibble: 806 x 10
 ##     day count    w1    w2     w3 species prey.richness
 ##   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;         &lt;dbl&gt;
@@ -515,7 +545,7 @@ Make sure you opened RStudio by clicking on your project file for this case stud
 ## #   prey.composition &lt;dbl&gt;, replicate &lt;dbl&gt;, jar &lt;dbl&gt;</code></pre>
 <p>We are told the object is <code>A tibble: 806 x 10</code>. This is what we expect if we look at the datafile. All looks good so far then.</p>
 <p>Not all is well, however, as some of the variables that should be numeric are character, and vice versa. We expect <code>count</code> to be numeric. Looking that the <code>count</code> variable we see some entries are a full stop. This is because the dataset was originally made to be used by software (SAS) which by default uses the full stop to indicate a missing value. So we need to repeat the import the a full stop as the missing value indicator:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="WFD-dietdiv-effect.html#cb33-1"></a>stab &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/dileptus_predator_prey_data.csv&quot;</span>, <span class="dt">na =</span> <span class="st">&quot;.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="WFD-dietdiv-effect.html#cb33-1" aria-hidden="true" tabindex="-1"></a>stab <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/dileptus_predator_prey_data.csv&quot;</span>, <span class="at">na =</span> <span class="st">&quot;.&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## ── Column specification ───────────────────────────────
 ## cols(
@@ -532,28 +562,28 @@ Make sure you opened RStudio by clicking on your project file for this case stud
 ## )</code></pre>
 <p>Good, now <code>count</code> is a numeric type variable.</p>
 </div>
-<div id="cleaning-and-tidying" class="section level2">
+<div id="cleaning-and-tidying" class="section level2" number="6.9">
 <h2><span class="header-section-number">6.9</span> Cleaning and tidying</h2>
-<div id="recode-some-names" class="section level3">
+<div id="recode-some-names" class="section level3" number="6.9.1">
 <h3><span class="header-section-number">6.9.1</span> Recode some names</h3>
 <p>We expect the <code>species</code> and the <code>prey.composition</code> variables should probably be character variables. Indeed, they really should be characters, but they appear to be integers. Always use the proper word when you have one —don’t ever use codes like this (the person who entered this data was probably not thinking about this carefully enough! Or was constrained by time. Or both.). Let’s fix this by replacing the species code numbers with their names (we found the correct names for each code in the lab book for this experiment; they are not in the dataset):</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="WFD-dietdiv-effect.html#cb35-1"></a>stab &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb35-2"><a href="WFD-dietdiv-effect.html#cb35-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">species =</span> <span class="kw">recode</span>(species,</span>
-<span id="cb35-3"><a href="WFD-dietdiv-effect.html#cb35-3"></a>                          <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;Colpidium&quot;</span>,</span>
-<span id="cb35-4"><a href="WFD-dietdiv-effect.html#cb35-4"></a>                          <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;Collodictyon&quot;</span>,</span>
-<span id="cb35-5"><a href="WFD-dietdiv-effect.html#cb35-5"></a>                          <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;Paramecium&quot;</span>,</span>
-<span id="cb35-6"><a href="WFD-dietdiv-effect.html#cb35-6"></a>                          <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;Dileptus&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="WFD-dietdiv-effect.html#cb35-1" aria-hidden="true" tabindex="-1"></a>stab <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="WFD-dietdiv-effect.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">species =</span> <span class="fu">recode</span>(species,</span>
+<span id="cb35-3"><a href="WFD-dietdiv-effect.html#cb35-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&quot;1&quot;</span> <span class="ot">=</span> <span class="st">&quot;Colpidium&quot;</span>,</span>
+<span id="cb35-4"><a href="WFD-dietdiv-effect.html#cb35-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&quot;2&quot;</span> <span class="ot">=</span> <span class="st">&quot;Collodictyon&quot;</span>,</span>
+<span id="cb35-5"><a href="WFD-dietdiv-effect.html#cb35-5" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&quot;3&quot;</span> <span class="ot">=</span> <span class="st">&quot;Paramecium&quot;</span>,</span>
+<span id="cb35-6"><a href="WFD-dietdiv-effect.html#cb35-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&quot;4&quot;</span> <span class="ot">=</span> <span class="st">&quot;Dileptus&quot;</span>))</span></code></pre></div>
 <p>Here we do a <code>mutate</code> to make a new version of the <code>species</code> variable, and the <code>recode</code> function to change the numbers to the species names. We first give <code>recode</code> the variable to work on (<code>species</code>) and then tell it to change each 1 to “Colpidium” and so on for the other numbers.</p>
 <p>Next we work on the <code>prey.composition</code> variable. In fact, we’re just going to throw it away as it is redundant, because we can construct it from the species variable. Let’s do that. While we’re at it, let’s also get the prey richness from the other columns, rather than use the existing imported <code>prey.richness</code> column.</p>
 <p>The first thing we’ll do is make a new dataset containing these two new variables, <code>community_composition</code> and <code>prey_richness</code>, and we’ll get these variables for each prey composition and replicate combination:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="WFD-dietdiv-effect.html#cb36-1"></a>comm_comp &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb36-2"><a href="WFD-dietdiv-effect.html#cb36-2"></a><span class="st">  </span><span class="kw">group_by</span>(prey.composition, replicate) <span class="op">%&gt;%</span></span>
-<span id="cb36-3"><a href="WFD-dietdiv-effect.html#cb36-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">community_composition =</span> <span class="kw">paste</span>(<span class="kw">unique</span>(species), <span class="dt">collapse =</span> <span class="st">&quot;, &quot;</span>),</span>
-<span id="cb36-4"><a href="WFD-dietdiv-effect.html#cb36-4"></a>            <span class="dt">prey_richness =</span> <span class="kw">length</span>(<span class="kw">unique</span>(species)) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="WFD-dietdiv-effect.html#cb36-1" aria-hidden="true" tabindex="-1"></a>comm_comp <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb36-2"><a href="WFD-dietdiv-effect.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prey.composition, replicate) <span class="sc">%&gt;%</span></span>
+<span id="cb36-3"><a href="WFD-dietdiv-effect.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">community_composition =</span> <span class="fu">paste</span>(<span class="fu">unique</span>(species), <span class="at">collapse =</span> <span class="st">&quot;, &quot;</span>),</span>
+<span id="cb36-4"><a href="WFD-dietdiv-effect.html#cb36-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">prey_richness =</span> <span class="fu">length</span>(<span class="fu">unique</span>(species)) <span class="sc">-</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;prey.composition&#39; (override with `.groups` argument)</code></pre>
 <p>Let’s break this down. We’re doing a <code>group_by</code>—<code>summarise</code>. The <code>group_by</code> is by <code>prey.composition</code> (seven compositions) and <code>replicate</code> (five replicates), so we’re expecting 7 * 5 = 35 rows in this new dataset. Then in the <code>summarise</code> we create in the first line the new <code>community_composition</code> variable, and in the second the new <code>prey_richness</code> variable. To make the new <code>community_composition</code> variable we paste together the species present in the group (composition by replicate combination); we use <code>unique</code> to remove repeats of the species names, and <code>collapse</code> to make the species names in a group be pasted together into one string. Take a look at the new <code>community_composition</code> variable, and then look again at the code above and the description of how we just made this new <code>prey_composition</code> variable.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="WFD-dietdiv-effect.html#cb38-1"></a>comm_comp <span class="op">%&gt;%</span></span>
-<span id="cb38-2"><a href="WFD-dietdiv-effect.html#cb38-2"></a><span class="st">  </span><span class="kw">select</span>(community_composition)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="WFD-dietdiv-effect.html#cb38-1" aria-hidden="true" tabindex="-1"></a>comm_comp <span class="sc">%&gt;%</span></span>
+<span id="cb38-2"><a href="WFD-dietdiv-effect.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(community_composition)</span></code></pre></div>
 <pre><code>## Adding missing grouping variables: `prey.composition`</code></pre>
 <pre><code>## # A tibble: 35 x 2
 ##   prey.composition community_composition
@@ -566,31 +596,31 @@ Make sure you opened RStudio by clicking on your project file for this case stud
 ## # … with 30 more rows</code></pre>
 <p>We also make the new <code>prey_richness</code> variable. The code was <code>prey_richness = length(unique(species)) - 1</code>. The <code>length</code> function tells us the number of unique (because we used the <code>unique</code> function) species, and we subtract the 1 to remove the 1 added by the predator species being present.</p>
 <p>Next we do more or less the same thing to get a new variable <code>prey_composition</code>. This will be the same as the community composition variable we just made, but without the predator species name included. The code is more or less the same, but with the predator (<em>Dileptus</em>) rows filtered out before the <code>summarise</code>.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="WFD-dietdiv-effect.html#cb41-1"></a>prey_comp &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb41-2"><a href="WFD-dietdiv-effect.html#cb41-2"></a><span class="st">  </span><span class="kw">group_by</span>(prey.composition, replicate) <span class="op">%&gt;%</span></span>
-<span id="cb41-3"><a href="WFD-dietdiv-effect.html#cb41-3"></a><span class="st">  </span><span class="kw">filter</span>(species <span class="op">!=</span><span class="st"> &quot;Dileptus&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb41-4"><a href="WFD-dietdiv-effect.html#cb41-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">prey_composition =</span> <span class="kw">paste</span>(<span class="kw">unique</span>(species), <span class="dt">collapse =</span> <span class="st">&quot;, &quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="WFD-dietdiv-effect.html#cb41-1" aria-hidden="true" tabindex="-1"></a>prey_comp <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb41-2"><a href="WFD-dietdiv-effect.html#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prey.composition, replicate) <span class="sc">%&gt;%</span></span>
+<span id="cb41-3"><a href="WFD-dietdiv-effect.html#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">!=</span> <span class="st">&quot;Dileptus&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb41-4"><a href="WFD-dietdiv-effect.html#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">prey_composition =</span> <span class="fu">paste</span>(<span class="fu">unique</span>(species), <span class="at">collapse =</span> <span class="st">&quot;, &quot;</span>))</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;prey.composition&#39; (override with `.groups` argument)</code></pre>
 <p>The final thing to do is to add the new variables to the original dataset. We do this by merging (joining) the datasets with the new variables into the original dataset, one then the other, then we clean a bit by removing the old <code>prey.composition</code> and <code>prey.richness</code> variables, and by removing the <code>comm_comp</code> and <code>prey_comp</code> datasets which were only of temporary use.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="WFD-dietdiv-effect.html#cb43-1"></a>stab &lt;-<span class="st"> </span><span class="kw">full_join</span>(stab, comm_comp) <span class="op">%&gt;%</span></span>
-<span id="cb43-2"><a href="WFD-dietdiv-effect.html#cb43-2"></a><span class="st">  </span><span class="kw">full_join</span>(prey_comp) <span class="op">%&gt;%</span></span>
-<span id="cb43-3"><a href="WFD-dietdiv-effect.html#cb43-3"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>prey.composition, <span class="op">-</span>prey.richness) <span class="op">%&gt;%</span></span>
-<span id="cb43-4"><a href="WFD-dietdiv-effect.html#cb43-4"></a><span class="st">  </span><span class="kw">ungroup</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="WFD-dietdiv-effect.html#cb43-1" aria-hidden="true" tabindex="-1"></a>stab <span class="ot">&lt;-</span> <span class="fu">full_join</span>(stab, comm_comp) <span class="sc">%&gt;%</span></span>
+<span id="cb43-2"><a href="WFD-dietdiv-effect.html#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(prey_comp) <span class="sc">%&gt;%</span></span>
+<span id="cb43-3"><a href="WFD-dietdiv-effect.html#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>prey.composition, <span class="sc">-</span>prey.richness) <span class="sc">%&gt;%</span></span>
+<span id="cb43-4"><a href="WFD-dietdiv-effect.html#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
 <pre><code>## Joining, by = c(&quot;prey.composition&quot;, &quot;replicate&quot;)
 ## Joining, by = c(&quot;prey.composition&quot;, &quot;replicate&quot;)</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="WFD-dietdiv-effect.html#cb45-1"></a><span class="kw">rm</span>(comm_comp, prey_comp)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="WFD-dietdiv-effect.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(comm_comp, prey_comp)</span></code></pre></div>
 <div class="info">
 <p>
 It’s not necessary to remove variables and datasets that we’re not interested in using anymore, but is often a good idea to do so. It can prevent us accidentally using them, or just from getting confused about what they are and if they are in fact important when we come back to our work after a gap of a few months, as often happens. If we have a rather large dataset, keeping only the essential variables can usefully reduce the size of the dataset.
 </p>
 </div>
 </div>
-<div id="factors-predstab" class="section level3">
+<div id="factors-predstab" class="section level3" number="6.9.2">
 <h3><span class="header-section-number">6.9.2</span> Make the <code>prey_composition</code> variable a factor with specific order</h3>
 <p>What on earth did that section title mean? So far we have not mentioned <em>factors</em>. These are a type of variable that contains words (a bit like character variables) but in which the different words/categories are referred to as <em>levels</em> and have an explicit order. This order affects how some things are done in R, and this is why we want to determine the specific order of the levels of the <code>prey_composition</code> variable. For example, when we make a graph with <code>prey_composition</code> on the x axis we would like the three single-species prey compositions first on the left, then the three two-species prey compositions, then the three-species prey composition on the right.</p>
 <p>Before we do this, look at the <code>prey_composition</code> variable in its current state:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="WFD-dietdiv-effect.html#cb46-1"></a>stab <span class="op">%&gt;%</span></span>
-<span id="cb46-2"><a href="WFD-dietdiv-effect.html#cb46-2"></a><span class="st">  </span><span class="kw">select</span>(prey_composition)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="WFD-dietdiv-effect.html#cb46-1" aria-hidden="true" tabindex="-1"></a>stab <span class="sc">%&gt;%</span></span>
+<span id="cb46-2"><a href="WFD-dietdiv-effect.html#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(prey_composition)</span></code></pre></div>
 <pre><code>## # A tibble: 806 x 1
 ##   prey_composition
 ##   &lt;chr&gt;           
@@ -601,26 +631,26 @@ It’s not necessary to remove variables and datasets that we’re not intereste
 ## 5 Collodictyon    
 ## # … with 801 more rows</code></pre>
 <p>It is a character variable (<code>&lt;chr&gt;</code>). If we try to see what the levels of this variable are, we get <code>NULL</code>; there are no levels:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="WFD-dietdiv-effect.html#cb48-1"></a>stab <span class="op">%&gt;%</span></span>
-<span id="cb48-2"><a href="WFD-dietdiv-effect.html#cb48-2"></a><span class="st">  </span><span class="kw">pull</span>(prey_composition) <span class="op">%&gt;%</span></span>
-<span id="cb48-3"><a href="WFD-dietdiv-effect.html#cb48-3"></a><span class="st">  </span><span class="kw">levels</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="WFD-dietdiv-effect.html#cb48-1" aria-hidden="true" tabindex="-1"></a>stab <span class="sc">%&gt;%</span></span>
+<span id="cb48-2"><a href="WFD-dietdiv-effect.html#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(prey_composition) <span class="sc">%&gt;%</span></span>
+<span id="cb48-3"><a href="WFD-dietdiv-effect.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">levels</span>()</span></code></pre></div>
 <pre><code>## NULL</code></pre>
 <p>To change this to an ordered factor type variable, we use the <code>fct_relevel</code> function from the <strong>forcats</strong> package inside a <code>mutate</code> change the <code>prey_composition</code> variable:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="WFD-dietdiv-effect.html#cb50-1"></a>stab &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb50-2"><a href="WFD-dietdiv-effect.html#cb50-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">prey_composition =</span></span>
-<span id="cb50-3"><a href="WFD-dietdiv-effect.html#cb50-3"></a>           <span class="kw">fct_relevel</span>(prey_composition,</span>
-<span id="cb50-4"><a href="WFD-dietdiv-effect.html#cb50-4"></a>                       <span class="st">&quot;Collodictyon&quot;</span>,</span>
-<span id="cb50-5"><a href="WFD-dietdiv-effect.html#cb50-5"></a>                       <span class="st">&quot;Colpidium&quot;</span>,</span>
-<span id="cb50-6"><a href="WFD-dietdiv-effect.html#cb50-6"></a>                       <span class="st">&quot;Paramecium&quot;</span>,</span>
-<span id="cb50-7"><a href="WFD-dietdiv-effect.html#cb50-7"></a>                       <span class="st">&quot;Colpidium, Collodictyon&quot;</span>,</span>
-<span id="cb50-8"><a href="WFD-dietdiv-effect.html#cb50-8"></a>                       <span class="st">&quot;Colpidium, Paramecium&quot;</span>,</span>
-<span id="cb50-9"><a href="WFD-dietdiv-effect.html#cb50-9"></a>                       <span class="st">&quot;Collodictyon, Paramecium&quot;</span>,</span>
-<span id="cb50-10"><a href="WFD-dietdiv-effect.html#cb50-10"></a>                       <span class="st">&quot;Colpidium, Collodictyon, Paramecium&quot;</span>)</span>
-<span id="cb50-11"><a href="WFD-dietdiv-effect.html#cb50-11"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="WFD-dietdiv-effect.html#cb50-1" aria-hidden="true" tabindex="-1"></a>stab <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb50-2"><a href="WFD-dietdiv-effect.html#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prey_composition =</span></span>
+<span id="cb50-3"><a href="WFD-dietdiv-effect.html#cb50-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">fct_relevel</span>(prey_composition,</span>
+<span id="cb50-4"><a href="WFD-dietdiv-effect.html#cb50-4" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&quot;Collodictyon&quot;</span>,</span>
+<span id="cb50-5"><a href="WFD-dietdiv-effect.html#cb50-5" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&quot;Colpidium&quot;</span>,</span>
+<span id="cb50-6"><a href="WFD-dietdiv-effect.html#cb50-6" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&quot;Paramecium&quot;</span>,</span>
+<span id="cb50-7"><a href="WFD-dietdiv-effect.html#cb50-7" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&quot;Colpidium, Collodictyon&quot;</span>,</span>
+<span id="cb50-8"><a href="WFD-dietdiv-effect.html#cb50-8" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&quot;Colpidium, Paramecium&quot;</span>,</span>
+<span id="cb50-9"><a href="WFD-dietdiv-effect.html#cb50-9" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&quot;Collodictyon, Paramecium&quot;</span>,</span>
+<span id="cb50-10"><a href="WFD-dietdiv-effect.html#cb50-10" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&quot;Colpidium, Collodictyon, Paramecium&quot;</span>)</span>
+<span id="cb50-11"><a href="WFD-dietdiv-effect.html#cb50-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Now let’s see how the <code>prey_composition</code> variable looks:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="WFD-dietdiv-effect.html#cb51-1"></a>stab <span class="op">%&gt;%</span></span>
-<span id="cb51-2"><a href="WFD-dietdiv-effect.html#cb51-2"></a><span class="st">  </span><span class="kw">pull</span>(prey_composition) <span class="op">%&gt;%</span></span>
-<span id="cb51-3"><a href="WFD-dietdiv-effect.html#cb51-3"></a><span class="st">  </span><span class="kw">levels</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="WFD-dietdiv-effect.html#cb51-1" aria-hidden="true" tabindex="-1"></a>stab <span class="sc">%&gt;%</span></span>
+<span id="cb51-2"><a href="WFD-dietdiv-effect.html#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(prey_composition) <span class="sc">%&gt;%</span></span>
+<span id="cb51-3"><a href="WFD-dietdiv-effect.html#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">levels</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;Collodictyon&quot;                       
 ## [2] &quot;Colpidium&quot;                          
 ## [3] &quot;Paramecium&quot;                         
@@ -635,11 +665,11 @@ Do not worry if it’s not immediately apparent why we made this variable an ord
 </p>
 </div>
 </div>
-<div id="fix-those-variable-names" class="section level3">
+<div id="fix-those-variable-names" class="section level3" number="6.9.3">
 <h3><span class="header-section-number">6.9.3</span> Fix those variable names</h3>
 <p>We don’t have any spaces, brackets, or other special characters in variable names, and there is no date variable we need to correctly format. Great – the person who entered the data did something right!</p>
 </div>
-<div id="calculate-an-important-variable" class="section level3">
+<div id="calculate-an-important-variable" class="section level3" number="6.9.4">
 <h3><span class="header-section-number">6.9.4</span> Calculate an important variable</h3>
 <p>When we first introduced the data, we identified four variables that would be used to calculate the number of individual organisms <em>per ml</em>. We must do this because different volumes and dilutions of liquid were counted at different times in the experiment. Standardising the abundance measures to number of individuals per ml will also allow interoperability with data from other studies that have also been standardised.</p>
 <p>Look at the definitions of the four variables <code>count</code>, <code>w1</code>, <code>w2</code>, and <code>w3</code> and see if you can figure out how to convert the count to per ml. It’s not easy, but not too difficult perhaps. Really, give it a go. The challenge of getting insights from data is in large part about being able to solve problems like these. After solving them on paper we can then move to R to implement the solution.</p>
@@ -647,8 +677,8 @@ Do not worry if it’s not immediately apparent why we made this variable an ord
 <p>Now think about if we sampled 1 ml (<code>w1</code> = 1 ml), added 1 ml of diluent (<code>w2</code> = 2 ml), and then counted 1 ml of that diluted sample (<code>w3</code> = 1). We have diluted by a factor of 2 (<code>w2 / w1</code> = 2) and counted 1 ml of that dilution, so we need to multiply the count by 2 to get to per ml. That is, we multiply the count by the dilution factor to get the count per ml (so long as <code>w3</code> = 1 ml).</p>
 <p>Finally, think about if we count only 0.1 ml of the diluted sample (<code>w3</code> = 0.1 ml). That is a tenth of a ml, so we need to multiply by ten (or divide by 0.1). That is, we divide by <code>w3</code> to correct to count per ml when <code>w3</code> is not 1 ml.</p>
 <p>Putting these parts together we see that we multiply by the dilution factor <code>w2/w1</code> and then divide by the volume counted (<code>w3</code>). We, of course, add the new <code>dens_per_ml</code> variable and calculation using the <code>mutate</code> function:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="WFD-dietdiv-effect.html#cb53-1"></a>stab &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb53-2"><a href="WFD-dietdiv-effect.html#cb53-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">dens_per_ml =</span> count <span class="op">*</span><span class="st"> </span>w2 <span class="op">/</span><span class="st"> </span>w1 <span class="op">/</span><span class="st"> </span>w3)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="WFD-dietdiv-effect.html#cb53-1" aria-hidden="true" tabindex="-1"></a>stab <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb53-2"><a href="WFD-dietdiv-effect.html#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dens_per_ml =</span> count <span class="sc">*</span> w2 <span class="sc">/</span> w1 <span class="sc">/</span> w3)</span></code></pre></div>
 <p>Super-simple! Now we have a standardised, comparable, and interoperable measurement of population size of each species.</p>
 <div class="info">
 <p>
@@ -656,39 +686,39 @@ Actually, the data entry was done so to make this calculation work very easily. 
 </p>
 </div>
 </div>
-<div id="remove-nas" class="section level3">
+<div id="remove-nas" class="section level3" number="6.9.5">
 <h3><span class="header-section-number">6.9.5</span> Remove NAs</h3>
 <p>When we imported the data we noticed some values of <code>count</code> were missing (<code>NA</code>). The reason these particular counts are NA while there are still values of <code>w1</code>, <code>w2</code>, and <code>w3</code> is a bit of a puzzle. One might imagine that the <code>NA</code> should really be a zero. In fact, what the researcher did was to sometimes enter <code>NA</code> after a species had become apparently extinct, because after not seeing individuals of a species for several days there was no attempt to observe that species, even though a sample was taken to observe any other still extant species in that community. So these <code>NA</code> values are when a species has gone extinct, and so could be zero, but since no count was attempted, it was appropriate to enter missing value <code>NA</code>. A consequence of all that is that we can remove all observations/rows containing an <code>NA</code>.</p>
 <p>We can do this with a <code>filter</code> so that we remove only rows with an <code>NA</code> in the <code>count</code> variable:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="WFD-dietdiv-effect.html#cb54-1"></a>temp1 &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb54-2"><a href="WFD-dietdiv-effect.html#cb54-2"></a><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(count))</span>
-<span id="cb54-3"><a href="WFD-dietdiv-effect.html#cb54-3"></a><span class="kw">nrow</span>(temp1)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="WFD-dietdiv-effect.html#cb54-1" aria-hidden="true" tabindex="-1"></a>temp1 <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb54-2"><a href="WFD-dietdiv-effect.html#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(count))</span>
+<span id="cb54-3"><a href="WFD-dietdiv-effect.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(temp1)</span></code></pre></div>
 <pre><code>## [1] 680</code></pre>
 <p>Or remove we can remove rows with and <code>NA</code> in any of the variables:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="WFD-dietdiv-effect.html#cb56-1"></a>temp2 &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb56-2"><a href="WFD-dietdiv-effect.html#cb56-2"></a><span class="st">  </span><span class="kw">na.omit</span>()</span>
-<span id="cb56-3"><a href="WFD-dietdiv-effect.html#cb56-3"></a><span class="kw">nrow</span>(temp2)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="WFD-dietdiv-effect.html#cb56-1" aria-hidden="true" tabindex="-1"></a>temp2 <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb56-2"><a href="WFD-dietdiv-effect.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb56-3"><a href="WFD-dietdiv-effect.html#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(temp2)</span></code></pre></div>
 <pre><code>## [1] 680</code></pre>
 <p>Since the number of remaining rows is the same for both approaches we know there we no observations in which a variable other than <code>count</code> contained an <code>NA</code> when the <code>count</code> variable did not. So we’re safe doing it either way. Let’s overwrite <code>stab</code> with a new version with no <code>NA</code> values.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="WFD-dietdiv-effect.html#cb58-1"></a>stab &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb58-2"><a href="WFD-dietdiv-effect.html#cb58-2"></a><span class="st">  </span><span class="kw">na.omit</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="WFD-dietdiv-effect.html#cb58-1" aria-hidden="true" tabindex="-1"></a>stab <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb58-2"><a href="WFD-dietdiv-effect.html#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span></code></pre></div>
 </div>
-<div id="checking-some-specifics" class="section level3">
+<div id="checking-some-specifics" class="section level3" number="6.9.6">
 <h3><span class="header-section-number">6.9.6</span> Checking some specifics</h3>
 <p>We should check some feature of the dataset specific to the study.</p>
 <p>Which days were samples taken on? To find this we <code>pull</code> the <code>day</code> variable from the tibble <code>stab</code> and get its <code>unique</code> values:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="WFD-dietdiv-effect.html#cb59-1"></a>stab <span class="op">%&gt;%</span></span>
-<span id="cb59-2"><a href="WFD-dietdiv-effect.html#cb59-2"></a><span class="st">  </span><span class="kw">pull</span>(day) <span class="op">%&gt;%</span></span>
-<span id="cb59-3"><a href="WFD-dietdiv-effect.html#cb59-3"></a><span class="st">  </span><span class="kw">unique</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="WFD-dietdiv-effect.html#cb59-1" aria-hidden="true" tabindex="-1"></a>stab <span class="sc">%&gt;%</span></span>
+<span id="cb59-2"><a href="WFD-dietdiv-effect.html#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(day) <span class="sc">%&gt;%</span></span>
+<span id="cb59-3"><a href="WFD-dietdiv-effect.html#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>()</span></code></pre></div>
 <pre><code>##  [1]  2  4  6  8 10 12 14 16 18 20</code></pre>
 <p>Samples were taken every two days from day two until a maximum of day 20. So we expect a maximum number of counts of species abundances in a particular replicate to be 10 multiplied by the number of species in a replicate community. I.e. the maximum number of counts in a community with two prey species and the predator (recall that all communities contained the predator) will be 30. Maximum number of counts will be 20 for communities with only one prey species. Note that this is the maximum because we know some values of count were <code>NA</code>.</p>
 <p>Let’s now get the number of counts for each replicate community, and while we’re at it, the last day sampled for each replicate. We do this with a <code>group_by %&gt;% summarise</code> pipeline, grouping by the <code>jar</code> and <code>prey_composition</code> variables. We include the <code>prey_composition</code> variable in the grouping so that we have it to refer to in the resulting summary dataset, and place it first in the <code>group_by</code> function so that the summary dataset is arranged by this variable.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="WFD-dietdiv-effect.html#cb61-1"></a>temp1 &lt;-stab <span class="op">%&gt;%</span></span>
-<span id="cb61-2"><a href="WFD-dietdiv-effect.html#cb61-2"></a><span class="st">  </span><span class="kw">group_by</span>(prey_composition, jar) <span class="op">%&gt;%</span></span>
-<span id="cb61-3"><a href="WFD-dietdiv-effect.html#cb61-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_samples =</span> <span class="kw">n</span>(),</span>
-<span id="cb61-4"><a href="WFD-dietdiv-effect.html#cb61-4"></a>            <span class="dt">max_day =</span> <span class="kw">max</span>(day))</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="WFD-dietdiv-effect.html#cb61-1" aria-hidden="true" tabindex="-1"></a>temp1 <span class="ot">&lt;-</span>stab <span class="sc">%&gt;%</span></span>
+<span id="cb61-2"><a href="WFD-dietdiv-effect.html#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prey_composition, jar) <span class="sc">%&gt;%</span></span>
+<span id="cb61-3"><a href="WFD-dietdiv-effect.html#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_samples =</span> <span class="fu">n</span>(),</span>
+<span id="cb61-4"><a href="WFD-dietdiv-effect.html#cb61-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_day =</span> <span class="fu">max</span>(day))</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;prey_composition&#39; (override with `.groups` argument)</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="WFD-dietdiv-effect.html#cb63-1"></a>temp1</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="WFD-dietdiv-effect.html#cb63-1" aria-hidden="true" tabindex="-1"></a>temp1</span></code></pre></div>
 <pre><code>## # A tibble: 35 x 4
 ##   prey_composition   jar num_samples max_day
 ##   &lt;fct&gt;            &lt;dbl&gt;       &lt;int&gt;   &lt;dbl&gt;
@@ -705,9 +735,9 @@ Notice how the dataset is arranged in the same order as the levels of the <code>
 </div>
 <p>Looking at the summary tibble <code>temp1</code> (remember you can use <code>View(temp1)</code> or click on <code>temp1</code> in the <em>Environment</em> tab) we see that each of the prey compositions has five replicates, exactly as expected. And, also as expected, the maximum number of samples is 10 times the number of species, though often this maximum was not realised. We also see that some communities were sampled for longer than others (we assume this is due to sampling ceasing when all species went extinct).</p>
 <p>We can have R confirm the number of replicates per prey composition with a quick <code>group_by %&gt;% summarise</code> pipeline working on <code>temp1</code>:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="WFD-dietdiv-effect.html#cb65-1"></a>temp1 <span class="op">%&gt;%</span></span>
-<span id="cb65-2"><a href="WFD-dietdiv-effect.html#cb65-2"></a><span class="st">  </span><span class="kw">group_by</span>(prey_composition) <span class="op">%&gt;%</span></span>
-<span id="cb65-3"><a href="WFD-dietdiv-effect.html#cb65-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">number_of_replicate =</span> <span class="kw">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="WFD-dietdiv-effect.html#cb65-1" aria-hidden="true" tabindex="-1"></a>temp1 <span class="sc">%&gt;%</span></span>
+<span id="cb65-2"><a href="WFD-dietdiv-effect.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prey_composition) <span class="sc">%&gt;%</span></span>
+<span id="cb65-3"><a href="WFD-dietdiv-effect.html#cb65-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">number_of_replicate =</span> <span class="fu">n</span>())</span></code></pre></div>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 7 x 2
 ##   prey_composition        number_of_replicate
@@ -719,12 +749,12 @@ Notice how the dataset is arranged in the same order as the levels of the <code>
 ## 5 Colpidium, Paramecium                     5
 ## # … with 2 more rows</code></pre>
 <p>We can also get the number of counts made of each species by using the same code with <code>species</code> added as a grouping variable:</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="WFD-dietdiv-effect.html#cb68-1"></a>temp2 &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb68-2"><a href="WFD-dietdiv-effect.html#cb68-2"></a><span class="st">  </span><span class="kw">group_by</span>(prey_composition, jar, species) <span class="op">%&gt;%</span></span>
-<span id="cb68-3"><a href="WFD-dietdiv-effect.html#cb68-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">num_samples =</span> <span class="kw">n</span>(),</span>
-<span id="cb68-4"><a href="WFD-dietdiv-effect.html#cb68-4"></a>            <span class="dt">max_day =</span> <span class="kw">max</span>(day))</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="WFD-dietdiv-effect.html#cb68-1" aria-hidden="true" tabindex="-1"></a>temp2 <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb68-2"><a href="WFD-dietdiv-effect.html#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prey_composition, jar, species) <span class="sc">%&gt;%</span></span>
+<span id="cb68-3"><a href="WFD-dietdiv-effect.html#cb68-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_samples =</span> <span class="fu">n</span>(),</span>
+<span id="cb68-4"><a href="WFD-dietdiv-effect.html#cb68-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_day =</span> <span class="fu">max</span>(day))</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;prey_composition&#39;, &#39;jar&#39; (override with `.groups` argument)</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="WFD-dietdiv-effect.html#cb70-1"></a>temp2</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="WFD-dietdiv-effect.html#cb70-1" aria-hidden="true" tabindex="-1"></a>temp2</span></code></pre></div>
 <pre><code>## # A tibble: 95 x 5
 ##   prey_composition   jar species    num_samples max_day
 ##   &lt;fct&gt;            &lt;dbl&gt; &lt;chr&gt;            &lt;int&gt;   &lt;dbl&gt;
@@ -741,14 +771,14 @@ All this might seem like overkill, particularly if we imagine that we had collec
 </p>
 </div>
 </div>
-<div id="a-closer-look-at-the-data" class="section level3">
+<div id="a-closer-look-at-the-data" class="section level3" number="6.9.7">
 <h3><span class="header-section-number">6.9.7</span> A closer look at the data</h3>
 <p>We so far have not looked at the species abundances and have not yet calculated the three required response variables. Let’s begin by looking at the species abundances, and do this by plotting the dynamics of the species in each microcosm. Now you will begin to see the power, elegance, and amazingness of <code>ggplot</code>. We will map the log 10 transformed abundance data onto the y-axis. We will map the <code>day</code> variable onto the x-axis. We will plot the data as points and lines (so use <code>geom_line</code> and <code>geom_point</code>) and we will map the <code>species</code> variable onto the colour of the points and lines. And we will make a grid of facets using <code>facet_grid</code> with rows of the grid corresponding to prey composition and columns for the replicates. Translating that into <code>ggplot</code> terms we get the following code (producing Figure <a href="WFD-dietdiv-effect.html#fig:microbe1">6.2</a>):</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="WFD-dietdiv-effect.html#cb72-1"></a>stab <span class="op">%&gt;%</span></span>
-<span id="cb72-2"><a href="WFD-dietdiv-effect.html#cb72-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> day, <span class="dt">y =</span> <span class="kw">log10</span>(dens_per_ml), <span class="dt">col =</span> species)) <span class="op">+</span></span>
-<span id="cb72-3"><a href="WFD-dietdiv-effect.html#cb72-3"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb72-4"><a href="WFD-dietdiv-effect.html#cb72-4"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb72-5"><a href="WFD-dietdiv-effect.html#cb72-5"></a><span class="st">  </span><span class="kw">facet_grid</span>(prey_composition <span class="op">~</span><span class="st"> </span>replicate)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="WFD-dietdiv-effect.html#cb72-1" aria-hidden="true" tabindex="-1"></a>stab <span class="sc">%&gt;%</span></span>
+<span id="cb72-2"><a href="WFD-dietdiv-effect.html#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> day, <span class="at">y =</span> <span class="fu">log10</span>(dens_per_ml), <span class="at">col =</span> species)) <span class="sc">+</span></span>
+<span id="cb72-3"><a href="WFD-dietdiv-effect.html#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb72-4"><a href="WFD-dietdiv-effect.html#cb72-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb72-5"><a href="WFD-dietdiv-effect.html#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(prey_composition <span class="sc">~</span> replicate)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:microbe1"></span>
 <img src="insights_website_files/figure-html/microbe1-1.svg" alt="Population dynamics observed during the experiment." width="100%" />
 <p class="caption">
@@ -768,7 +798,7 @@ Notice the order of the rows of facets in the graph—it is from top to bottom t
 <p>The dynamics in Figure <a href="WFD-dietdiv-effect.html#fig:microbe1">6.2</a> are those shown in figure 1 of the original publication. Everything seems reasonable, though I (Owen) wish I’d recorded more information about why I stopped sampling the microcosms when I did.</p>
 <p>The predator (<em>Dileptus</em>) does not seem to grow well when <em>Collodictyon</em> is the only available prey species, but grows very well on and decimates <em>Colpidium</em>, after which the predator appears to go extinct and then the <em>Colpidium</em> population recovers. We can also notice that the predator population persists to the end of the experiment on day 20 only when all three prey species are present. It is probably worth emphasising that 20 days corresponds to around 20 generations of these organisms; this is a lot of time for birth and death to affect population abundances (if each individual divided into two daughters each day, the population would increase in size by a factor of 2^20, i.e. grow to be 1 million times larger).</p>
 </div>
-<div id="calculate-the-three-response-variables" class="section level3">
+<div id="calculate-the-three-response-variables" class="section level3" number="6.9.8">
 <h3><span class="header-section-number">6.9.8</span> Calculate the three response variables</h3>
 <p>There are three response variables corresponding to the three hypotheses about why increased prey diversity might increase predator population stability:</p>
 <ul>
@@ -776,15 +806,15 @@ Notice the order of the rows of facets in the graph—it is from top to bottom t
 <li>Predator population variability.</li>
 <li>Predator population persistence time.</li>
 </ul>
-<div id="calculating-predator-dileptus-abundance" class="section level4">
+<div id="calculating-predator-dileptus-abundance" class="section level4" number="6.9.8.1">
 <h4><span class="header-section-number">6.9.8.1</span> Calculating predator (<em>Dileptus</em>) abundance</h4>
-<p>You might be thinking “we already have predator abundance”, and you’d be correct. We have estimates of the number per ml on each of the sample days. The issue that we now have to deal with, and solve somehow, is that of independence of observations. When we take repeated measures of the same thing, here the same predator population in the same experimental community, the repeated measures are not independent, and measures closer together in time are less independent than are those further apart in time. There are some rather complex and perhaps sophisticated ways of accounting for the non-independence in repeated measures, but they are beyond the scope of what we want to cover. Instead we are going to use a rather crude, but also quite valid solution. That is to use the maximum predator abundance in each of the experimental unit (communities). There are 35 experimental communities, so we expect to have 35 estimates of average predator abundance.</p>
+<p>You might be thinking “we already have predator abundance,” and you’d be correct. We have estimates of the number per ml on each of the sample days. The issue that we now have to deal with, and solve somehow, is that of independence of observations. When we take repeated measures of the same thing, here the same predator population in the same experimental community, the repeated measures are not independent, and measures closer together in time are less independent than are those further apart in time. There are some rather complex and perhaps sophisticated ways of accounting for the non-independence in repeated measures, but they are beyond the scope of what we want to cover. Instead we are going to use a rather crude, but also quite valid solution. That is to use the maximum predator abundance in each of the experimental unit (communities). There are 35 experimental communities, so we expect to have 35 estimates of average predator abundance.</p>
 <p>To make the calculation in R we will use a <code>filter %&gt;% group_by %&gt;% summarise</code> pipeline. We filter to keep only the observations of the predator (<em>Dileptus</em>), then group the data by <code>prey_richness</code>, <code>prey_composition</code>, and <code>replicate</code>, then calculate two summary values. The first summary value, named by us <code>pred_max_dens</code> is the maximum density of the predator population observed in each experimental community. The second variable calculated, named by us <code>all_zero</code> is TRUE if all the predator densities were zero, or is otherwise FALSE. Here is the R code:</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="WFD-dietdiv-effect.html#cb73-1"></a>pred_max_dens &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb73-2"><a href="WFD-dietdiv-effect.html#cb73-2"></a><span class="st">  </span><span class="kw">filter</span>(species <span class="op">==</span><span class="st"> &quot;Dileptus&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb73-3"><a href="WFD-dietdiv-effect.html#cb73-3"></a><span class="st">  </span><span class="kw">group_by</span>(prey_richness, prey_composition, replicate) <span class="op">%&gt;%</span></span>
-<span id="cb73-4"><a href="WFD-dietdiv-effect.html#cb73-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">max_dens =</span> <span class="kw">max</span>(dens_per_ml),</span>
-<span id="cb73-5"><a href="WFD-dietdiv-effect.html#cb73-5"></a>            <span class="dt">all_zero =</span> <span class="kw">sum</span>(dens_per_ml <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="WFD-dietdiv-effect.html#cb73-1" aria-hidden="true" tabindex="-1"></a>pred_max_dens <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb73-2"><a href="WFD-dietdiv-effect.html#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Dileptus&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb73-3"><a href="WFD-dietdiv-effect.html#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prey_richness, prey_composition, replicate) <span class="sc">%&gt;%</span></span>
+<span id="cb73-4"><a href="WFD-dietdiv-effect.html#cb73-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">max_dens =</span> <span class="fu">max</span>(dens_per_ml),</span>
+<span id="cb73-5"><a href="WFD-dietdiv-effect.html#cb73-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">all_zero =</span> <span class="fu">sum</span>(dens_per_ml <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">==</span> <span class="dv">0</span>) </span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;prey_richness&#39;, &#39;prey_composition&#39; (override with `.groups` argument)</code></pre>
 <p>As expected, the resulting tibble contains 35 observations and four variables. Lovely. We will look at the values after we calculate the other two response variables.</p>
 <div class="info">
@@ -803,15 +833,15 @@ We must make sure our insights are robust to subjective decisions about how to r
 </p>
 </div>
 </div>
-<div id="calculating-predator-dileptus-population-variability" class="section level4">
+<div id="calculating-predator-dileptus-population-variability" class="section level4" number="6.9.8.2">
 <h4><span class="header-section-number">6.9.8.2</span> Calculating predator (<em>Dileptus</em>) population variability</h4>
 <p>We will use the coefficient of variation as the measure of predator population variable. The coefficient of variation, or CV for short, is the standard deviation of the abundances divided by the mean of the abundances. What values might we expect? Well, one thing to expect is some undefined values, since we know that in six of the communities there were no predators observed. The mean will therefore be zero, and the result of division by zero is undefined. So we expect the CV to be <code>NaN</code> for the six communities in which the predator was never observed.</p>
 <p>The R code is very similar to that used in the previous section to calculate maximum predator abundance:</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="WFD-dietdiv-effect.html#cb75-1"></a>pred_CV &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb75-2"><a href="WFD-dietdiv-effect.html#cb75-2"></a><span class="st">  </span><span class="kw">filter</span>(species <span class="op">==</span><span class="st"> &quot;Dileptus&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb75-3"><a href="WFD-dietdiv-effect.html#cb75-3"></a><span class="st">  </span><span class="kw">group_by</span>(prey_richness, prey_composition, replicate) <span class="op">%&gt;%</span></span>
-<span id="cb75-4"><a href="WFD-dietdiv-effect.html#cb75-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">CV =</span> <span class="kw">sd</span>(dens_per_ml) <span class="op">/</span><span class="st"> </span><span class="kw">mean</span>(dens_per_ml),</span>
-<span id="cb75-5"><a href="WFD-dietdiv-effect.html#cb75-5"></a>            <span class="dt">all_zero =</span> <span class="kw">sum</span>(dens_per_ml <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="WFD-dietdiv-effect.html#cb75-1" aria-hidden="true" tabindex="-1"></a>pred_CV <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb75-2"><a href="WFD-dietdiv-effect.html#cb75-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Dileptus&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb75-3"><a href="WFD-dietdiv-effect.html#cb75-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prey_richness, prey_composition, replicate) <span class="sc">%&gt;%</span></span>
+<span id="cb75-4"><a href="WFD-dietdiv-effect.html#cb75-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">CV =</span> <span class="fu">sd</span>(dens_per_ml) <span class="sc">/</span> <span class="fu">mean</span>(dens_per_ml),</span>
+<span id="cb75-5"><a href="WFD-dietdiv-effect.html#cb75-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">all_zero =</span> <span class="fu">sum</span>(dens_per_ml <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">==</span> <span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;prey_richness&#39;, &#39;prey_composition&#39; (override with `.groups` argument)</code></pre>
 <p>Looking at the data (e.g. with <code>View(pred_CV</code>) shows us that indeed there are six <code>NaN</code> values of CV. We will look at the other CV values after we calculate the third response variable.</p>
 <div class="effrel">
@@ -820,28 +850,28 @@ We must make sure our insights are robust to subjective decisions about how to r
 </p>
 </div>
 </div>
-<div id="calculating-predator-dileptus-persistence-time" class="section level4">
+<div id="calculating-predator-dileptus-persistence-time" class="section level4" number="6.9.8.3">
 <h4><span class="header-section-number">6.9.8.3</span> Calculating predator (<em>Dileptus</em>) persistence time</h4>
 <p>Before we do, what type of variable is this? One characteristic is that it is “time to event” data… we are observing the amount of time taken for a particular event (here extinction) to occur. The values can’t be negative. They could be continuous, but in this case are not, because we sampled only every other day. Hence the variable is discrete numbers. We will go into a bit more detail about this nature of values of persistence time after we calculate them.</p>
 <p>We get the last day on which <em>Dileptus</em> was observed with a <code>filter %&gt;% group_by %&gt;% summarise</code> pipeline. We filter to retain only observations of <em>Dileptus</em> being present (i.e. we exclude observations when <em>Dileptus</em> had zero count/density per ml). Then we group the data by prey richness, prey composition, and replicate (prey richness is redundant but we want to keep it to work with later). Then we use <code>summarise</code> to get the maximum value of the <code>day</code> variable in the filtered data. Translated into R this looks like:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="WFD-dietdiv-effect.html#cb77-1"></a>temp_persistence_time &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb77-2"><a href="WFD-dietdiv-effect.html#cb77-2"></a><span class="st">  </span><span class="kw">filter</span>(species <span class="op">==</span><span class="st"> &quot;Dileptus&quot;</span>, dens_per_ml <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span></span>
-<span id="cb77-3"><a href="WFD-dietdiv-effect.html#cb77-3"></a><span class="st">  </span><span class="kw">group_by</span>(prey_richness, prey_composition, replicate) <span class="op">%&gt;%</span></span>
-<span id="cb77-4"><a href="WFD-dietdiv-effect.html#cb77-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">last_day_observed =</span> <span class="kw">max</span>(day))</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="WFD-dietdiv-effect.html#cb77-1" aria-hidden="true" tabindex="-1"></a>temp_persistence_time <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb77-2"><a href="WFD-dietdiv-effect.html#cb77-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Dileptus&quot;</span>, dens_per_ml <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb77-3"><a href="WFD-dietdiv-effect.html#cb77-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prey_richness, prey_composition, replicate) <span class="sc">%&gt;%</span></span>
+<span id="cb77-4"><a href="WFD-dietdiv-effect.html#cb77-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">last_day_observed =</span> <span class="fu">max</span>(day))</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;prey_richness&#39;, &#39;prey_composition&#39; (override with `.groups` argument)</code></pre>
 <p>Note that the created tibble has only 29 observations, whereas there were 35 experimental communities. This difference occurs because <em>Dileptus</em> was never observed in six of the experimental communities and so these are filtered out of this analysis. We will add them in below as a side effect of another manipulation, so don’t need to take care of this further here.</p>
 <p>Next we need to recognise that the last day on which <em>Dileptus</em> was observed might have been the last day observed because it was after that observed to be extinct, or that it was never sampled again (e.g. if the last day observed was day 20). If we stop an experiment before we observe the event being watched for (e.g. before we observe extinction) then we say that the observation is <em>censored</em>.</p>
 <p>We really should include this information in the persistence time dataset. To do so we need to get and add the day of last sample of <em>Dileptus</em>. We do this with the same pipeline as we used to get the last day observed, except we don’t exclude the observations when <em>Dileptus</em> was sampled and found to have zero abundance:</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="WFD-dietdiv-effect.html#cb79-1"></a>pred_last_day &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb79-2"><a href="WFD-dietdiv-effect.html#cb79-2"></a><span class="st">  </span><span class="kw">filter</span>(species<span class="op">==</span><span class="st">&quot;Dileptus&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb79-3"><a href="WFD-dietdiv-effect.html#cb79-3"></a><span class="st">  </span><span class="kw">group_by</span>(prey_richness, prey_composition, replicate) <span class="op">%&gt;%</span></span>
-<span id="cb79-4"><a href="WFD-dietdiv-effect.html#cb79-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">last_sample=</span><span class="kw">max</span>(day))</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="WFD-dietdiv-effect.html#cb79-1" aria-hidden="true" tabindex="-1"></a>pred_last_day <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb79-2"><a href="WFD-dietdiv-effect.html#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species<span class="sc">==</span><span class="st">&quot;Dileptus&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb79-3"><a href="WFD-dietdiv-effect.html#cb79-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prey_richness, prey_composition, replicate) <span class="sc">%&gt;%</span></span>
+<span id="cb79-4"><a href="WFD-dietdiv-effect.html#cb79-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">last_sample=</span><span class="fu">max</span>(day))</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;prey_richness&#39;, &#39;prey_composition&#39; (override with `.groups` argument)</code></pre>
 <p>The created tibble has the expected number of observations: 35.</p>
 <p>We then join the two created tibbles and create a new variable that contains <code>TRUE</code> if the observation of persistence time was censored (indicated if the persistence time is the same as the last day sampled) or <code>FALSE</code> if a sample was taken after the observed persistence time (i.e. the observation is not censored).</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="WFD-dietdiv-effect.html#cb81-1"></a>pred_persistence_time &lt;-<span class="st"> </span>temp_persistence_time <span class="op">%&gt;%</span></span>
-<span id="cb81-2"><a href="WFD-dietdiv-effect.html#cb81-2"></a><span class="st">  </span><span class="kw">full_join</span>(pred_last_day) <span class="op">%&gt;%</span></span>
-<span id="cb81-3"><a href="WFD-dietdiv-effect.html#cb81-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">censored=</span><span class="kw">ifelse</span>(last_day_observed<span class="op">==</span>last_sample, T, F))</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="WFD-dietdiv-effect.html#cb81-1" aria-hidden="true" tabindex="-1"></a>pred_persistence_time <span class="ot">&lt;-</span> temp_persistence_time <span class="sc">%&gt;%</span></span>
+<span id="cb81-2"><a href="WFD-dietdiv-effect.html#cb81-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(pred_last_day) <span class="sc">%&gt;%</span></span>
+<span id="cb81-3"><a href="WFD-dietdiv-effect.html#cb81-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">censored=</span><span class="fu">ifelse</span>(last_day_observed<span class="sc">==</span>last_sample, T, F))</span></code></pre></div>
 <pre><code>## Joining, by = c(&quot;prey_richness&quot;, &quot;prey_composition&quot;, &quot;replicate&quot;)</code></pre>
 <p>Because we used <code>full_join</code> we have 35 observations in the resulting tibble, with six <code>NA</code> values of persistence time (and also therefore <code>censored</code>) corresponding to the six communities that are missing from the <code>persistence_time</code> tibble because <em>Dileptus</em> was never observed in those communities.</p>
 <div class="info">
@@ -850,35 +880,35 @@ We must make sure our insights are robust to subjective decisions about how to r
 </p>
 </div>
 </div>
-<div id="put-them-all-together" class="section level4">
+<div id="put-them-all-together" class="section level4" number="6.9.8.4">
 <h4><span class="header-section-number">6.9.8.4</span> Put them all together</h4>
-<p>Let’s put all three response variables into the same tibble, since it will make some of the subsequent things easier and more efficient. We want them all in the same column. “But wait”, you say! If all three response variables are in the same column/variable, how will we know which is which. Easy—we make another variable that tells us the response variable in each row. The new tibble will have 35 * 3 = 105 rows. There are lots of ways to do this. The approach we show is to merge/join the three tibbles containing each of the response variables (<code>pred_max_dens</code>, <code>pred_CV</code>, and <code>pred_persistence_time</code>) which creates a wide-formatted arrangement of the data (a different variable for each of the response variables). And then we’ll transform it into tidy (long) format by gather the information from each of the three separate response variables into one variable.</p>
+<p>Let’s put all three response variables into the same tibble, since it will make some of the subsequent things easier and more efficient. We want them all in the same column. “But wait,” you say! If all three response variables are in the same column/variable, how will we know which is which. Easy—we make another variable that tells us the response variable in each row. The new tibble will have 35 * 3 = 105 rows. There are lots of ways to do this. The approach we show is to merge/join the three tibbles containing each of the response variables (<code>pred_max_dens</code>, <code>pred_CV</code>, and <code>pred_persistence_time</code>) which creates a wide-formatted arrangement of the data (a different variable for each of the response variables). And then we’ll transform it into tidy (long) format by gather the information from each of the three separate response variables into one variable.</p>
 <p>The first step is to merge all three tibbles:</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="WFD-dietdiv-effect.html#cb83-1"></a>wider_rv &lt;-<span class="st"> </span>pred_max_dens <span class="op">%&gt;%</span></span>
-<span id="cb83-2"><a href="WFD-dietdiv-effect.html#cb83-2"></a><span class="st">  </span><span class="kw">full_join</span>(pred_CV) <span class="op">%&gt;%</span></span>
-<span id="cb83-3"><a href="WFD-dietdiv-effect.html#cb83-3"></a><span class="st">  </span><span class="kw">full_join</span>(pred_persistence_time)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="WFD-dietdiv-effect.html#cb83-1" aria-hidden="true" tabindex="-1"></a>wider_rv <span class="ot">&lt;-</span> pred_max_dens <span class="sc">%&gt;%</span></span>
+<span id="cb83-2"><a href="WFD-dietdiv-effect.html#cb83-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(pred_CV) <span class="sc">%&gt;%</span></span>
+<span id="cb83-3"><a href="WFD-dietdiv-effect.html#cb83-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(pred_persistence_time)</span></code></pre></div>
 <pre><code>## Joining, by = c(&quot;prey_richness&quot;, &quot;prey_composition&quot;, &quot;replicate&quot;, &quot;all_zero&quot;)</code></pre>
 <pre><code>## Joining, by = c(&quot;prey_richness&quot;, &quot;prey_composition&quot;, &quot;replicate&quot;)</code></pre>
 <p>We get told both joins are being done by <code>prey_richness</code>, <code>prey_composition</code>, and <code>replicate</code> and also <code>all_zero</code> for the first of the two joins. Lovely—thanks very much. (The join is done by these because R looks for variables shared by the two tibbles being joined, and by default joins by these.)</p>
 <p>Next step is to gather the three response variables into one variable:</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="WFD-dietdiv-effect.html#cb86-1"></a>rv &lt;-<span class="st"> </span>wider_rv <span class="op">%&gt;%</span></span>
-<span id="cb86-2"><a href="WFD-dietdiv-effect.html#cb86-2"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;Response_type&quot;</span>,</span>
-<span id="cb86-3"><a href="WFD-dietdiv-effect.html#cb86-3"></a>               <span class="dt">values_to =</span> <span class="st">&quot;Value&quot;</span>,</span>
-<span id="cb86-4"><a href="WFD-dietdiv-effect.html#cb86-4"></a>               <span class="dt">cols =</span> <span class="kw">c</span>(max_dens, CV, last_day_observed))</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="WFD-dietdiv-effect.html#cb86-1" aria-hidden="true" tabindex="-1"></a>rv <span class="ot">&lt;-</span> wider_rv <span class="sc">%&gt;%</span></span>
+<span id="cb86-2"><a href="WFD-dietdiv-effect.html#cb86-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">names_to =</span> <span class="st">&quot;Response_type&quot;</span>,</span>
+<span id="cb86-3"><a href="WFD-dietdiv-effect.html#cb86-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;Value&quot;</span>,</span>
+<span id="cb86-4"><a href="WFD-dietdiv-effect.html#cb86-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">cols =</span> <span class="fu">c</span>(max_dens, CV, last_day_observed))</span></code></pre></div>
 <p>We tell <code>pivot_longer</code> that we’d like the values in the variables <code>max_dens</code>, <code>CV</code>, and <code>last_day_observed</code> gathered together an put into one variable called <code>Values</code> and that we’d like the <code>key</code> variable, i.e. the one that says which response variable each observation is about, to be named <code>Response_type</code>. If how <code>pivot_longer</code> works is unclear then please refer to the section of the book that covers this.</p>
 <p>Excellent. We now have a tibble <code>rv</code> with 105 observations (as expected), a variable named <code>Response_type</code> with entries <code>max_dens</code>, <code>CV</code>, and <code>last_day_observed</code>, and the values of each of these in the <code>Value</code> variable. We have the other variables <code>all_zero</code>, <code>last_sample</code>, and <code>censored</code> also (which is just fine).</p>
 </div>
 </div>
 </div>
-<div id="shapes" class="section level2">
+<div id="shapes" class="section level2" number="6.10">
 <h2><span class="header-section-number">6.10</span> Shapes</h2>
 <p>Let’s get the mean, standard deviation, and number of observations of each of the response variables for each prey composition. You have seen how to do this before. Take a look back through the book/your notes/your brain to remind yourself.</p>
 <p>Yes… it’s a pretty straightforward <code>group_by %&gt;% summarise</code> pipeline:</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="WFD-dietdiv-effect.html#cb87-1"></a>summry_rv &lt;-<span class="st"> </span>rv <span class="op">%&gt;%</span></span>
-<span id="cb87-2"><a href="WFD-dietdiv-effect.html#cb87-2"></a><span class="st">  </span><span class="kw">group_by</span>(prey_richness, prey_composition, Response_type) <span class="op">%&gt;%</span></span>
-<span id="cb87-3"><a href="WFD-dietdiv-effect.html#cb87-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(Value, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb87-4"><a href="WFD-dietdiv-effect.html#cb87-4"></a>            <span class="dt">sd =</span> <span class="kw">sd</span>(Value, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
-<span id="cb87-5"><a href="WFD-dietdiv-effect.html#cb87-5"></a>            <span class="dt">n =</span> <span class="kw">sum</span>(<span class="op">!</span><span class="kw">is.na</span>(Value)))</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="WFD-dietdiv-effect.html#cb87-1" aria-hidden="true" tabindex="-1"></a>summry_rv <span class="ot">&lt;-</span> rv <span class="sc">%&gt;%</span></span>
+<span id="cb87-2"><a href="WFD-dietdiv-effect.html#cb87-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prey_richness, prey_composition, Response_type) <span class="sc">%&gt;%</span></span>
+<span id="cb87-3"><a href="WFD-dietdiv-effect.html#cb87-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(Value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb87-4"><a href="WFD-dietdiv-effect.html#cb87-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(Value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb87-5"><a href="WFD-dietdiv-effect.html#cb87-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(Value)))</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;prey_richness&#39;, &#39;prey_composition&#39; (override with `.groups` argument)</code></pre>
 <p>The resulting tibble <code>summry_rv</code> has 21 observations (7 prey compositions by 3 response variables) and six variables, three of which are the calculated mean, standard deviation, and number of non-NA values.</p>
 <div class="info">
@@ -888,10 +918,10 @@ We counted the number of non-NA values by asking which of the entries in <code>V
 </div>
 <p>Take a look at the resulting tibble (<code>View(summry_rv)</code>). Can you see any patterns? Do you get clear insights? Probably not. The lesson here is tables are quite difficult to interpret. We need some visualisations of relationships between the response variables differ and the treatments. Before we do this, let’s have a look at the distributions of the response variables. Try to think about how you would produce graphs of the frequency distributions of each of the response variables.</p>
 <p>Here is how we did it (producing Figure <a href="WFD-dietdiv-effect.html#fig:microbe2">6.3</a>):</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="WFD-dietdiv-effect.html#cb89-1"></a>rv <span class="op">%&gt;%</span></span>
-<span id="cb89-2"><a href="WFD-dietdiv-effect.html#cb89-2"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb89-3"><a href="WFD-dietdiv-effect.html#cb89-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Value), <span class="dt">bins =</span> <span class="dv">5</span>) <span class="op">+</span></span>
-<span id="cb89-4"><a href="WFD-dietdiv-effect.html#cb89-4"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>Response_type, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="WFD-dietdiv-effect.html#cb89-1" aria-hidden="true" tabindex="-1"></a>rv <span class="sc">%&gt;%</span></span>
+<span id="cb89-2"><a href="WFD-dietdiv-effect.html#cb89-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb89-3"><a href="WFD-dietdiv-effect.html#cb89-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> Value), <span class="at">bins =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb89-4"><a href="WFD-dietdiv-effect.html#cb89-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Response_type, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 12 rows containing non-finite values
 ## (stat_bin).</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:microbe2"></span>
@@ -912,10 +942,10 @@ FIGURE 6.4: Histogram of log10 maximum abundance. We thought that log transforma
 </div>
 <p>There are two reasons why we need to be cautious, however, about interpreting much about these distributions. First, they each contain data from seven different treatments (<code>prey_composition</code>)—only five of the values in each distribution might be expected to come from the same population. In effect, we might be looking at seven distributions superimposed on top of each other. Second, sure, we could plot a separate distribution for each of the prey compositions, but we would only have five values per distribution, and that is not enough to say much about their shapes. I.e. we could not say with any confidence if they are symmetric of not. All is not lost, however, as you will see in the next section in which we look at relationships.</p>
 </div>
-<div id="relationships" class="section level2">
+<div id="relationships" class="section level2" number="6.11">
 <h2><span class="header-section-number">6.11</span> Relationships</h2>
 <p>Recall the question we’re interested in. Do predators have more stable populations when they have more prey to feed on. We expected this to be so if maximum predator population was greater, if predator population variability was lower, and if predator population persistence was longer when there were more prey available. For each of these we must look at the relationship between the response variable and prey richness (the explanatory variable). We can also look at prey composition as an explanatory variable, to see if there is much difference between effects of prey communities with same number of prey species, but different compositions of prey species.</p>
-<div id="maximum-predator-density" class="section level3">
+<div id="maximum-predator-density" class="section level3" number="6.11.1">
 <h3><span class="header-section-number">6.11.1</span> Maximum predator density</h3>
 <p>Recall that we have one tibble <code>rv</code> with all three response variables. Clearly then, if we want to plot data about only maximum prey density we will need to filter the data according to <code>Response_type == "max_dens</code>. We then do a pretty straightforward <code>ggplot</code> with <code>prey_richness</code> mapped onto the x-axis, the <code>Value</code> of maximum density mapped onto the y-axis, and then a <code>geom_jitter</code> with jitter only along the x-axis (<code>width</code>). Here’s the code, and the result is in Figure <a href="WFD-dietdiv-effect.html#fig:microbe4-0">6.5</a>:</p>
 <div class="figure" style="text-align: center"><span id="fig:microbe4-0"></span>
@@ -925,22 +955,22 @@ FIGURE 6.5: A not so useful graph due to the y-axis label being totally uninform
 </p>
 </div>
 <p>There is a big problem with this. Our figure does not tell us what is on the y-axis (“Value” is not particularly informative!) We could fix this by changing the y-axis like this (no figure is presented for this code):</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="WFD-dietdiv-effect.html#cb92-1"></a>rv <span class="op">%&gt;%</span></span>
-<span id="cb92-2"><a href="WFD-dietdiv-effect.html#cb92-2"></a><span class="st">  </span><span class="kw">filter</span>(Response_type <span class="op">==</span><span class="st"> &quot;max_dens&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb92-3"><a href="WFD-dietdiv-effect.html#cb92-3"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb92-4"><a href="WFD-dietdiv-effect.html#cb92-4"></a><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="kw">aes</span>(<span class="dt">x =</span> prey_richness, <span class="dt">y =</span> Value, <span class="dt">col =</span> prey_composition),</span>
-<span id="cb92-5"><a href="WFD-dietdiv-effect.html#cb92-5"></a>              <span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">height =</span> <span class="dv">0</span>) <span class="op">+</span></span>
-<span id="cb92-6"><a href="WFD-dietdiv-effect.html#cb92-6"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;max_dens&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="WFD-dietdiv-effect.html#cb92-1" aria-hidden="true" tabindex="-1"></a>rv <span class="sc">%&gt;%</span></span>
+<span id="cb92-2"><a href="WFD-dietdiv-effect.html#cb92-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Response_type <span class="sc">==</span> <span class="st">&quot;max_dens&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb92-3"><a href="WFD-dietdiv-effect.html#cb92-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb92-4"><a href="WFD-dietdiv-effect.html#cb92-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">x =</span> prey_richness, <span class="at">y =</span> Value, <span class="at">col =</span> prey_composition),</span>
+<span id="cb92-5"><a href="WFD-dietdiv-effect.html#cb92-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb92-6"><a href="WFD-dietdiv-effect.html#cb92-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;max_dens&quot;</span>)</span></code></pre></div>
 <p>This is a bit dangerous, in fact, because we have to make sure we have <code>max_dens</code> written in two places. If we accidentally to write <code>max_dens</code> in the filter and <code>CV</code> in the <code>ylab</code> we will get no warning, no error, and have no idea we did anything wrong. We should spot the error if we carefully compare the graphs among the three different response variables, as there should be some inconsistencies (e.g. exactly the same data plotted in two, or two with different data but the same <code>ylab</code>).</p>
 <p>Let’s do the graph so we making this error is impossible. First we define an object (we name it <code>rv_oi</code> which is an abbreviation of “response variable of interest”) and assign to it the name of the response variable we want to graph (<code>max_dens</code> in this case):</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="WFD-dietdiv-effect.html#cb93-1"></a>rv_oi &lt;-<span class="st"> &quot;max_dens&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="WFD-dietdiv-effect.html#cb93-1" aria-hidden="true" tabindex="-1"></a>rv_oi <span class="ot">&lt;-</span> <span class="st">&quot;max_dens&quot;</span></span></code></pre></div>
 <p>Then we use the same <code>ggplot</code> code as before, but with <code>rv_oi</code> in place of <code>"max_dens"</code> (the resulting graph is in Figure <a href="WFD-dietdiv-effect.html#fig:microbe4-1">6.6</a>):</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="WFD-dietdiv-effect.html#cb94-1"></a>rv <span class="op">%&gt;%</span></span>
-<span id="cb94-2"><a href="WFD-dietdiv-effect.html#cb94-2"></a><span class="st">  </span><span class="kw">filter</span>(Response_type <span class="op">==</span><span class="st"> </span>rv_oi) <span class="op">%&gt;%</span></span>
-<span id="cb94-3"><a href="WFD-dietdiv-effect.html#cb94-3"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb94-4"><a href="WFD-dietdiv-effect.html#cb94-4"></a><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="kw">aes</span>(<span class="dt">x =</span> prey_richness, <span class="dt">y =</span> Value, <span class="dt">col =</span> prey_composition),</span>
-<span id="cb94-5"><a href="WFD-dietdiv-effect.html#cb94-5"></a>              <span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">height =</span> <span class="dv">0</span>) <span class="op">+</span></span>
-<span id="cb94-6"><a href="WFD-dietdiv-effect.html#cb94-6"></a><span class="st">  </span><span class="kw">ylab</span>(rv_oi)</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="WFD-dietdiv-effect.html#cb94-1" aria-hidden="true" tabindex="-1"></a>rv <span class="sc">%&gt;%</span></span>
+<span id="cb94-2"><a href="WFD-dietdiv-effect.html#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Response_type <span class="sc">==</span> rv_oi) <span class="sc">%&gt;%</span></span>
+<span id="cb94-3"><a href="WFD-dietdiv-effect.html#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb94-4"><a href="WFD-dietdiv-effect.html#cb94-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">x =</span> prey_richness, <span class="at">y =</span> Value, <span class="at">col =</span> prey_composition),</span>
+<span id="cb94-5"><a href="WFD-dietdiv-effect.html#cb94-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb94-6"><a href="WFD-dietdiv-effect.html#cb94-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(rv_oi)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:microbe4-1"></span>
 <img src="insights_website_files/figure-html/microbe4-1-1.svg" alt="A reasonably nice graph of maximum predator density in a community against the number of prey available to the predator." width="100%" />
 <p class="caption">
@@ -962,15 +992,15 @@ FIGURE 6.7: This time maximum predator density plotted against prey composition,
 </div>
 <p>Some things are a bit clearer. 1) The predator seems to like the prey <em>Colpidium</em> when alone more than either of the other two when alone. 2) Adding <em>Paramecium</em> into a mix with <em>Colpidium</em> gets rid of the beneficial nature of <em>Colpidium</em> (i.e. these two act non-additively). 3) There is huge variation in predator abundance when feeding on a mixture of <em>Colpdium</em> and <em>Collodictyon</em>. Overall, there are strong effects of prey composition, and they sometimes involve non-additive effects, but little evidence of increases in predator abundance with increases in prey richness. Let’s move on to the next response variable.</p>
 </div>
-<div id="predator-population-variability-cv" class="section level3">
+<div id="predator-population-variability-cv" class="section level3" number="6.11.2">
 <h3><span class="header-section-number">6.11.2</span> Predator population variability (CV)</h3>
 <p>Making the graphs for CV is now a doddle. We just set <code>rv_oi = "CV</code> and then run exactly the same code as before, resulting in Figure <a href="WFD-dietdiv-effect.html#fig:microbe5-1">6.8</a>:</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="WFD-dietdiv-effect.html#cb95-1"></a>rv_oi &lt;-<span class="st"> &quot;CV&quot;</span></span>
-<span id="cb95-2"><a href="WFD-dietdiv-effect.html#cb95-2"></a>rv <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Response_type <span class="op">==</span><span class="st"> </span>rv_oi) <span class="op">%&gt;%</span></span>
-<span id="cb95-3"><a href="WFD-dietdiv-effect.html#cb95-3"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb95-4"><a href="WFD-dietdiv-effect.html#cb95-4"></a><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="kw">aes</span>(<span class="dt">x =</span> prey_richness, <span class="dt">y =</span> Value, <span class="dt">col =</span> prey_composition),</span>
-<span id="cb95-5"><a href="WFD-dietdiv-effect.html#cb95-5"></a>              <span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">height =</span> <span class="dv">0</span>) <span class="op">+</span></span>
-<span id="cb95-6"><a href="WFD-dietdiv-effect.html#cb95-6"></a><span class="st">  </span><span class="kw">ylab</span>(rv_oi)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="WFD-dietdiv-effect.html#cb95-1" aria-hidden="true" tabindex="-1"></a>rv_oi <span class="ot">&lt;-</span> <span class="st">&quot;CV&quot;</span></span>
+<span id="cb95-2"><a href="WFD-dietdiv-effect.html#cb95-2" aria-hidden="true" tabindex="-1"></a>rv <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Response_type <span class="sc">==</span> rv_oi) <span class="sc">%&gt;%</span></span>
+<span id="cb95-3"><a href="WFD-dietdiv-effect.html#cb95-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb95-4"><a href="WFD-dietdiv-effect.html#cb95-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">x =</span> prey_richness, <span class="at">y =</span> Value, <span class="at">col =</span> prey_composition),</span>
+<span id="cb95-5"><a href="WFD-dietdiv-effect.html#cb95-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb95-6"><a href="WFD-dietdiv-effect.html#cb95-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(rv_oi)</span></code></pre></div>
 <pre><code>## Warning: Removed 6 rows containing missing values
 ## (geom_point).</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:microbe5-1"></span>
@@ -995,16 +1025,16 @@ FIGURE 6.9: Predator population variability (CV) for each of the prey compositio
 <li><p>What if anything should we do about data points that seem rather extreme?</p></li>
 </ol>
 <p>Let’s deal with number 1 first. We can put on the jar number as a labels on the facets of <a href="WFD-dietdiv-effect.html#fig:microbe1">6.2</a> and beside the data points in Figure <a href="WFD-dietdiv-effect.html#fig:microbe5-2">6.9</a>. Here’s the code for putting the jar numbers onto the facets. First we get a tibble with the <code>jar</code> number for each <code>prey_composition</code> and <code>replicate</code>, by selecting only those three columns and getting unique rows:</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="WFD-dietdiv-effect.html#cb98-1"></a>jar_text &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb98-2"><a href="WFD-dietdiv-effect.html#cb98-2"></a><span class="st">  </span><span class="kw">select</span>(prey_composition, replicate, jar) <span class="op">%&gt;%</span></span>
-<span id="cb98-3"><a href="WFD-dietdiv-effect.html#cb98-3"></a><span class="st">  </span><span class="kw">unique</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="WFD-dietdiv-effect.html#cb98-1" aria-hidden="true" tabindex="-1"></a>jar_text <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb98-2"><a href="WFD-dietdiv-effect.html#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(prey_composition, replicate, jar) <span class="sc">%&gt;%</span></span>
+<span id="cb98-3"><a href="WFD-dietdiv-effect.html#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>()</span></code></pre></div>
 <p>The resulting tibble has 35 rows, one for each jar (microcosm). Then we use the same code as before but with an extra <code>geom_text</code> in which we give the data to use <code>jar_text</code>, tell it the x and y positions for the label, and then give the aesthetic mappings <code>label = jar</code> (i.e. make the <code>label</code> aesthetic correspond to <code>jar</code>) and the aesthetic mapping <code>col = NULL</code> (so that the previously defined <code>col = species</code> mapping is not used). Here’s the code, and the resulting graph is in Figure <a href="WFD-dietdiv-effect.html#fig:microbe1-1">6.10</a>:</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="WFD-dietdiv-effect.html#cb99-1"></a>stab <span class="op">%&gt;%</span></span>
-<span id="cb99-2"><a href="WFD-dietdiv-effect.html#cb99-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> day, <span class="dt">y =</span> <span class="kw">log10</span>(dens_per_ml), <span class="dt">col =</span> species)) <span class="op">+</span></span>
-<span id="cb99-3"><a href="WFD-dietdiv-effect.html#cb99-3"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb99-4"><a href="WFD-dietdiv-effect.html#cb99-4"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb99-5"><a href="WFD-dietdiv-effect.html#cb99-5"></a><span class="st">  </span><span class="kw">facet_grid</span>(prey_composition <span class="op">~</span><span class="st"> </span>replicate) <span class="op">+</span></span>
-<span id="cb99-6"><a href="WFD-dietdiv-effect.html#cb99-6"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">data =</span> jar_text, <span class="dt">x =</span> <span class="dv">18</span>, <span class="dt">y =</span> <span class="fl">3.5</span>, <span class="kw">aes</span>(<span class="dt">label =</span> jar, <span class="dt">col =</span> <span class="ot">NULL</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="WFD-dietdiv-effect.html#cb99-1" aria-hidden="true" tabindex="-1"></a>stab <span class="sc">%&gt;%</span></span>
+<span id="cb99-2"><a href="WFD-dietdiv-effect.html#cb99-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> day, <span class="at">y =</span> <span class="fu">log10</span>(dens_per_ml), <span class="at">col =</span> species)) <span class="sc">+</span></span>
+<span id="cb99-3"><a href="WFD-dietdiv-effect.html#cb99-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb99-4"><a href="WFD-dietdiv-effect.html#cb99-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb99-5"><a href="WFD-dietdiv-effect.html#cb99-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(prey_composition <span class="sc">~</span> replicate) <span class="sc">+</span></span>
+<span id="cb99-6"><a href="WFD-dietdiv-effect.html#cb99-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> jar_text, <span class="at">x =</span> <span class="dv">18</span>, <span class="at">y =</span> <span class="fl">3.5</span>, <span class="fu">aes</span>(<span class="at">label =</span> jar, <span class="at">col =</span> <span class="cn">NULL</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:microbe1-1"></span>
 <img src="insights_website_files/figure-html/microbe1-1-1.svg" alt="Jar numbers added to the plot of population dynamics observed during the experiment." width="100%" />
 <p class="caption">
@@ -1012,11 +1042,11 @@ FIGURE 6.10: Jar numbers added to the plot of population dynamics observed durin
 </p>
 </div>
 <p>Next we add points to the graph of the CV (Figure <a href="WFD-dietdiv-effect.html#fig:microbe5-2">6.9</a>). First we need to remake the tibble containing the CVs, this time keeping the <code>jar</code> variable by adding it as a (albeit redundant) variable in the <code>group_by</code>:</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="WFD-dietdiv-effect.html#cb100-1"></a>pred_CV &lt;-<span class="st"> </span>stab <span class="op">%&gt;%</span></span>
-<span id="cb100-2"><a href="WFD-dietdiv-effect.html#cb100-2"></a><span class="st">  </span><span class="kw">filter</span>(species <span class="op">==</span><span class="st"> &quot;Dileptus&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb100-3"><a href="WFD-dietdiv-effect.html#cb100-3"></a><span class="st">  </span><span class="kw">group_by</span>(jar, prey_richness, prey_composition, replicate) <span class="op">%&gt;%</span></span>
-<span id="cb100-4"><a href="WFD-dietdiv-effect.html#cb100-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">CV =</span> <span class="kw">sd</span>(dens_per_ml) <span class="op">/</span><span class="st"> </span><span class="kw">mean</span>(dens_per_ml),</span>
-<span id="cb100-5"><a href="WFD-dietdiv-effect.html#cb100-5"></a>            <span class="dt">all_zero =</span> <span class="kw">sum</span>(dens_per_ml <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="WFD-dietdiv-effect.html#cb100-1" aria-hidden="true" tabindex="-1"></a>pred_CV <span class="ot">&lt;-</span> stab <span class="sc">%&gt;%</span></span>
+<span id="cb100-2"><a href="WFD-dietdiv-effect.html#cb100-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Dileptus&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb100-3"><a href="WFD-dietdiv-effect.html#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jar, prey_richness, prey_composition, replicate) <span class="sc">%&gt;%</span></span>
+<span id="cb100-4"><a href="WFD-dietdiv-effect.html#cb100-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">CV =</span> <span class="fu">sd</span>(dens_per_ml) <span class="sc">/</span> <span class="fu">mean</span>(dens_per_ml),</span>
+<span id="cb100-5"><a href="WFD-dietdiv-effect.html#cb100-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">all_zero =</span> <span class="fu">sum</span>(dens_per_ml <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">==</span> <span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;jar&#39;, &#39;prey_richness&#39;, &#39;prey_composition&#39; (override with `.groups` argument)</code></pre>
 <div class="action">
 <p>
@@ -1024,12 +1054,12 @@ Install the <strong>ggrepel</strong> add-on package. It moves labels on graphs s
 </p>
 </div>
 <p>Now we remake the CV figure with the jar numbers labeling the data points. We simply add a <code>geom_text_repel</code> with the <code>jar</code> numbers mapped onto the <code>label</code> aesthetic. Here’s the code, and the resulting graph is in Figure <a href="WFD-dietdiv-effect.html#fig:microbe5-3">6.11</a>.</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="WFD-dietdiv-effect.html#cb102-1"></a><span class="kw">library</span>(ggrepel)</span>
-<span id="cb102-2"><a href="WFD-dietdiv-effect.html#cb102-2"></a>pred_CV <span class="op">%&gt;%</span></span>
-<span id="cb102-3"><a href="WFD-dietdiv-effect.html#cb102-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> prey_composition, <span class="dt">y =</span> CV)) <span class="op">+</span></span>
-<span id="cb102-4"><a href="WFD-dietdiv-effect.html#cb102-4"></a><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">height =</span> <span class="dv">0</span>) <span class="op">+</span></span>
-<span id="cb102-5"><a href="WFD-dietdiv-effect.html#cb102-5"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
-<span id="cb102-6"><a href="WFD-dietdiv-effect.html#cb102-6"></a><span class="st">  </span><span class="kw">geom_text_repel</span>(<span class="kw">aes</span>(<span class="dt">label =</span> jar))</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="WFD-dietdiv-effect.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb102-2"><a href="WFD-dietdiv-effect.html#cb102-2" aria-hidden="true" tabindex="-1"></a>pred_CV <span class="sc">%&gt;%</span></span>
+<span id="cb102-3"><a href="WFD-dietdiv-effect.html#cb102-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> prey_composition, <span class="at">y =</span> CV)) <span class="sc">+</span></span>
+<span id="cb102-4"><a href="WFD-dietdiv-effect.html#cb102-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb102-5"><a href="WFD-dietdiv-effect.html#cb102-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb102-6"><a href="WFD-dietdiv-effect.html#cb102-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> jar))</span></code></pre></div>
 <pre><code>## Warning: Removed 6 rows containing missing values
 ## (geom_point).</code></pre>
 <pre><code>## Warning: Removed 6 rows containing missing values
@@ -1060,7 +1090,7 @@ FIGURE 6.12: The same graph twice, but with the axis flipped between them. Do yo
 </p>
 </div>
 </div>
-<div id="predator-persistence-time" class="section level3">
+<div id="predator-persistence-time" class="section level3" number="6.11.3">
 <h3><span class="header-section-number">6.11.3</span> Predator persistence time</h3>
 <p>Visualising predator persistence time (the last day on which a predator was observed) uses the same code as the previous two response variables, but with one tweek. We should differentiate in the visualisation data points that are and are not censored. One method is to make their data points have different shapes. That is, we map the shape aesthetic to the <code>censored</code> variable (the resulting graph is in Figure <a href="WFD-dietdiv-effect.html#fig:microbe7-1">6.13</a>):</p>
 <pre><code>## Warning: Removed 6 rows containing missing values
@@ -1092,20 +1122,20 @@ FIGURE 6.15: Notice how the prey compositions are ordered when we let R choose t
 </p>
 </div>
 </div>
-<div id="all-three-at-once" class="section level3">
+<div id="all-three-at-once" class="section level3" number="6.11.4">
 <h3><span class="header-section-number">6.11.4</span> All three at once</h3>
 <p>You might be wondering why we went to the lengths of putting all three response variables into one tibble and the having to filter in order to plot each of the three graphs. This was a bit of a faff. We could have just continued using the three separate tibbles we made. Here comes the answer, or at least here comes one answer. If we put all three response variables into the same tibble the we can plot all three graphs at the same time, in one ggplot with three facets (Figure <a href="WFD-dietdiv-effect.html#fig:microbe8-1">6.16</a>):</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="WFD-dietdiv-effect.html#cb107-1"></a>rv <span class="op">%&gt;%</span></span>
-<span id="cb107-2"><a href="WFD-dietdiv-effect.html#cb107-2"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb107-3"><a href="WFD-dietdiv-effect.html#cb107-3"></a><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="kw">aes</span>(<span class="dt">x =</span> prey_richness,</span>
-<span id="cb107-4"><a href="WFD-dietdiv-effect.html#cb107-4"></a>                  <span class="dt">y =</span> Value,</span>
-<span id="cb107-5"><a href="WFD-dietdiv-effect.html#cb107-5"></a>                  <span class="dt">col =</span> prey_composition),</span>
-<span id="cb107-6"><a href="WFD-dietdiv-effect.html#cb107-6"></a>              <span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">height =</span> <span class="dv">0</span>) <span class="op">+</span></span>
-<span id="cb107-7"><a href="WFD-dietdiv-effect.html#cb107-7"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>Response_type, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>)  <span class="op">+</span></span>
-<span id="cb107-8"><a href="WFD-dietdiv-effect.html#cb107-8"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;top&quot;</span>) <span class="op">+</span></span>
-<span id="cb107-9"><a href="WFD-dietdiv-effect.html#cb107-9"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">colour =</span> <span class="kw">guide_legend</span>(<span class="dt">title.position =</span> <span class="st">&quot;top&quot;</span>,</span>
-<span id="cb107-10"><a href="WFD-dietdiv-effect.html#cb107-10"></a>                               <span class="dt">nrow =</span> <span class="dv">3</span>,</span>
-<span id="cb107-11"><a href="WFD-dietdiv-effect.html#cb107-11"></a>                               <span class="dt">position =</span> <span class="st">&quot;top&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="WFD-dietdiv-effect.html#cb107-1" aria-hidden="true" tabindex="-1"></a>rv <span class="sc">%&gt;%</span></span>
+<span id="cb107-2"><a href="WFD-dietdiv-effect.html#cb107-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb107-3"><a href="WFD-dietdiv-effect.html#cb107-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">x =</span> prey_richness,</span>
+<span id="cb107-4"><a href="WFD-dietdiv-effect.html#cb107-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">y =</span> Value,</span>
+<span id="cb107-5"><a href="WFD-dietdiv-effect.html#cb107-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">col =</span> prey_composition),</span>
+<span id="cb107-6"><a href="WFD-dietdiv-effect.html#cb107-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb107-7"><a href="WFD-dietdiv-effect.html#cb107-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Response_type, <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>)  <span class="sc">+</span></span>
+<span id="cb107-8"><a href="WFD-dietdiv-effect.html#cb107-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>) <span class="sc">+</span></span>
+<span id="cb107-9"><a href="WFD-dietdiv-effect.html#cb107-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">colour =</span> <span class="fu">guide_legend</span>(<span class="at">title.position =</span> <span class="st">&quot;top&quot;</span>,</span>
+<span id="cb107-10"><a href="WFD-dietdiv-effect.html#cb107-10" aria-hidden="true" tabindex="-1"></a>                               <span class="at">nrow =</span> <span class="dv">3</span>,</span>
+<span id="cb107-11"><a href="WFD-dietdiv-effect.html#cb107-11" aria-hidden="true" tabindex="-1"></a>                               <span class="at">position =</span> <span class="st">&quot;top&quot;</span>))</span></code></pre></div>
 <pre><code>## Warning: Removed 12 rows containing missing values
 ## (geom_point).</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:microbe8-1"></span>
@@ -1117,7 +1147,7 @@ FIGURE 6.16: All three reponse variables efficiently made in one call to ggplot 
 <p>How useful is it to be able to plot all response variables in one go like this? We’re not too sure. We now have the problem of how to show the censored data points in the <code>last_day_observed</code> data. We also see that the order of the facets is different from the order of the response variables presented in the text above. This would need changing for consistency (you can probably guess how we would do this… the same thing we did with the <code>prey_composition</code> variable). We’ll leave this for you to do. And also to make the version of this graph with <code>prey_composition</code> as the explanatory variable.</p>
 </div>
 </div>
-<div id="wrapping-up" class="section level2">
+<div id="wrapping-up" class="section level2" number="6.12">
 <h2><span class="header-section-number">6.12</span> Wrapping up</h2>
 <p>The published paper on this dataset had a few other analyses, but not too many. So what you learned above is very much a replica of a real and quite complete representation of the results and insights in the that study. Yes, we didn’t do the statistics here, but our conclusions are pretty much the same (though this could easily be in part influenced by Owen knowing the conclusions before he wrote this demonstration).</p>
 <p>One important thing. It would be very very wrong for you to get the impression that one can think through all the likely issues with the data and in a lovely linear process work from the data to the Insights. Probably this impression comes from this chapter and those of the first case study (though we made the same point there). For example, we do things early on in the data manipulation in order to make things easier later on. It looks like we anticipate a problem that will arise and prevent it ever occurring.</p>
@@ -1134,15 +1164,15 @@ FIGURE 6.16: All three reponse variables efficiently made in one call to ggplot 
 <a href="WFD-food-pol.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook/js/app.min.js"></script>
-<script src="libs/gitbook/js/lunr.js"></script>
-<script src="libs/gitbook/js/clipboard.min.js"></script>
-<script src="libs/gitbook/js/plugin-search.js"></script>
-<script src="libs/gitbook/js/plugin-sharing.js"></script>
-<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook/js/jquery.highlight.js"></script>
-<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

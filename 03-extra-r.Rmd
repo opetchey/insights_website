@@ -36,7 +36,7 @@ https://patchwork.data-imaginist.com/index.html
 
 ## Factors
 
-Variables that contain categories can, if one likes, be made factor type variables in R. This is useful when visualizing data, especially when we want to control the order in which categories are given in a figure. We describe this in detail in the Workflow Demonstration on prey diversity and predator population stability in the seciont [*Make the `prey_composition` variable a factor with specific order*](#factors-predstab).
+Variables that contain categories can, if one likes, be made factor type variables in R. This is useful when visualizing data, especially when we want to control the order in which categories are given in a figure. We describe this in detail in the Workflow Demonstration on prey diversity and predator population stability in the section [*Make the `prey_composition` variable a factor with specific order*](#factors-predstab).
 
 Please note that it used to be that commonly used data import functions in R would automatically convert character variables to factors... so we just about always needed to deal with factors. But R changed, so now this doesn't happen, and we are left with character variables. And we need to make variables factors if we want them to be so. As mentioned above, we mostly do this when we want to control the presentation order of categories in figures.
 
