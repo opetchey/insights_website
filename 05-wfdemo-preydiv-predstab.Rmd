@@ -20,7 +20,7 @@ Again: as you work through this chapter, try following along with the [workflow/
 
 The data comes from [a study of how the number of available prey species for a predator consume affects the stability of the predator population dynamics](https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2656.2000.00446.x). The study was designed to address the hypotheses that more pathways of energy flow to a predator (i.e. more prey species) would stabilise the predator population dynamics, 1) by increasing the abundance of the predator, 2) by reducing how much it varies, and 3) by delaying extinction.
 
-```{r insight-sketch-4, fig.cap='A hypothetical outcome of the demonstration study of how a manipulation of diet composition and amount affect the lifespan of fish.', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r insight-sketch-4, fig.cap='A hypothetical outcome of the demonstration study of how a manipulation of diet composition and amount affect the lifespan of fish.', out.width='70%', fig.asp=.85, fig.align='center', echo=FALSE}
 knitr::include_graphics("images/insights_sketches_004.jpeg")
 ```
 
@@ -516,7 +516,7 @@ Take a look at the resulting tibble (`View(summry_rv)`). Can you see any pattern
 
 Here is how we did it (producing Figure \@ref(fig:microbe2)):
 
-```{r microbe2, fig.cap='Histograms of the three response variables.', out.width='100%', fig.align='center', fig.height=3}
+```{r microbe2, fig.cap='Histograms of the three response variables.', out.width='70%', fig.align='center', fig.height=2}
 rv %>%
   ggplot() +
   geom_histogram(aes(x = Value), bins = 5) +
@@ -527,7 +527,7 @@ First note that we are told that 12 non-finite values have been removed and ther
 
 What do you think about the shapes of these distributions? Maximum density looks quite skewed, with lots of small values and few large. This might be expected for an abundance type variable, since growth is a multiplicative process. We would expect a more symmetric distribution of logged abundance (though see Figure \@ref(fig:microbe3)).
 
-```{r microbe3, echo=FALSE, fig.cap='Histogram of log10 maximum abundance. We thought that log transformation would make the distribution more symmetric, but it has not... it just made it asymmetric in the opposite direction!', out.width='70%', fig.align='center'}
+```{r microbe3, echo=FALSE, fig.cap='Histogram of log10 maximum abundance. We thought that log transformation would make the distribution more symmetric, but it has not... it just made it asymmetric in the opposite direction!', out.width='50%', fig.align='center'}
 rv %>%
   filter(Response_type == "max_dens") %>%
   ggplot() +

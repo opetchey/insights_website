@@ -1,4 +1,4 @@
-#  Are diets more diverse in more democratic countries? {#WFD-food-pol}
+# Are diets more diverse in more democratic countries? {#WFD-food-pol}
 
 <img src="images/WF3_icon.jpg" width="60"/>
 
@@ -8,8 +8,7 @@ This Workflow Demonstation (WD) is primarily a supplement to the material in the
 
 At the time of publication (early 2021) there are likely some improvements that could be made to this demonstration, in terms of the description of what we do in it, why we do it, and how we do it. If anything seems odd, unclear, or sub-optimal, please don't hesitate to get in touch, and we will quickly make improvements.
 
-
-##  Introduction to the study and data
+## Introduction to the study and data
 
 In this WD we will look at the diversity of food available to people living in different countries. And we will explore one potential influence of this diversity---the political system (e.g. democratic) of the country. Why this? Why not?
 
@@ -17,43 +16,31 @@ There are likely lots of factors governing the diversity of food available to th
 
 To be clear, we are asking the question of whether the diversity of food available to the population of a country is associated with the political system of that country. We hypothesise that more freedom will result in more diversity of food availability (figure \@ref(fig:insight-sketch-2)). We will restrict ourselves to two variables: diversity of food available and political system. Let's explore two measures of diversity: the richness of food items, which is just the number of different food types, and a measure of diversity known as the Shannon index, which is greater if there are more food types and if the amount of each is more evenly distributed among them. As far as we know, the analyses are novel. Any insights will be new! Though, since the findings are not published / peer reviewed, they should be treated as preliminary and (as usual) be critically assessed.
 
-```{r insight-sketch-2, fig.cap='A hypothetical outcome of the demonstration study of relationship between the political system of a country and the diversity of food available.', out.width='70%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r insight-sketch-2, fig.cap='A hypothetical outcome of the demonstration study of relationship between the political system of a country and the diversity of food available.', out.width='70%', fig.asp=.85, fig.align='center', echo=FALSE}
 knitr::include_graphics("images/insights_sketches_002.jpeg")
 ```
 
+The data about what food is available to the people of a country is from the *FAO Food balance data* and that about the political system is from the *Polity™ IV Project dataset*. Hence there will be something fundamentally new in this WD: importing two different datasets and then merging them together. This turns out to be quite a lot of work, a large part of which is making the two datasets *interoperable* [we mentioned interoperability here](#interoperability).
 
-
-The data about what food is available to the people of a country is from the *FAO Food balance data* and that about the political system is from the *Polity&trade; IV Project dataset*. Hence there will be something fundamentally new in this WD: importing two different datasets and then merging them together. This turns out to be quite a lot of work, a large part of which is making the two datasets *interoperable* [we mentioned interoperability here](#interoperability).
-
-As you work through this chapter, try following along with the [workflow/checklist on this web page](#insights-workflow). 
-
+As you work through this chapter, try following along with the [workflow/checklist on this web page](#insights-workflow).
 
 ## Understanding the data
 
 As mentioned in the book, a number of features of data determine the types of insights we can get from it, and how much we might trust those insights. Though we start with two datasets, we will have only one after we merge them. Here are the features of that one dataset, and how these affect the insights we might reveal.
 
-* **Number of variables:** We will have only three variables, the food diversity, the political system, and the year. This is to keep the question and how to answer it simple. It is likely, however, that factors as well as, or other than, the political system of a country affect the food diversity available. Further analyses should explore these other factors (though we do not attempt them here). 
+-   **Number of variables:** We will have only three variables, the food diversity, the political system, and the year. This is to keep the question and how to answer it simple. It is likely, however, that factors as well as, or other than, the political system of a country affect the food diversity available. Further analyses should explore these other factors (though we do not attempt them here).
 
+-   **Number of observations:** You will see that we have nearly 200 observations (the number of countries in the final dataset) for each year in the study. So in total we have multiple hundreds of observations (later we see exactly how many), which is quite a lot when one has only two variables. This means we have quite good potential to see patterns that could (if there were fewer observation) otherwise be unclear.
 
-* **Number of observations:** You will see that we have nearly 200 observations (the number of countries in the final dataset) for each year in the study. So in total we have multiple hundreds of observations (later we see exactly how many), which is quite a lot when one has only two variables. This means we have quite good potential to see patterns that could (if there were fewer observation) otherwise be unclear.
+-   **Variables describing interventions/manipulations**: This is not a randomised experiment; none of the variables describes a manipulation/intervention that is accompanied by a control. Hence we are exploring relationships and will not be able to make inferences about causation.
 
+-   **Amount of correlation among explanatory variables:** We will only have two explanatory variables (political system and year). Because we will remove the year variable (explore data independent of year), in a sense, we will have no correlation between explanatory variables. Recall that inference is harder if we have multiple explanatory variables and there was some correlation among them. So we are keeping things simple and easy, at least in terms of inference.
 
-* **Variables describing interventions/manipulations**: This is not a randomised experiment; none of the variables describes a manipulation/intervention that is accompanied by a control. Hence we are exploring relationships and will not be able to make inferences about causation.
+-   **How independent are observations:** Each observation is of a country in a year. I.e. we have multiple observations for each country, and these make up a time series. Put another way, we have "repeated measures" of each country. Hence two observations close together in time are less independent than two far apart in time, and two from the same country are less independent than two from different countries. There are other sources of non-independence that we will pay less attention to, such as geographic closeness, political history, and climate. It would be interesting to investigate their importance, however.
 
-
-* **Amount of correlation among explanatory variables:** We will only have two explanatory variables (political system and year). Because we will remove the year variable (explore data independent of year), in a sense, we will have no correlation between explanatory variables. Recall that inference is harder if we have multiple explanatory variables and there was some correlation among them. So we are keeping things simple and easy, at least in terms of inference.
-
-
-* **How independent are observations:** Each observation is of a country in a year. I.e. we have multiple observations for each country, and these make up a time series. Put another way, we have "repeated measures" of each country. Hence two observations close together in time are less independent than two far apart in time, and two from the same country are less independent than two from different countries. There are other sources of non-independence that we will pay less attention to, such as geographic closeness, political history, and climate. It would be interesting to investigate their importance, however.
-
-
-
-
-##  A little preparation
+## A little preparation
 
 Make a new folder for this Workflow Demonstration (WD), and in it a folder called in `data` (this will contain any datasets for this WD/project). In *RStudio* create an *RStudio* project and save it in the project folder (not the `data` folder). Close *RStudio* and double click on the project file to re-open *RStudio*. Create a new R script file. In this new script file make a comment about what it will contains, and then load some libraries.
-
-
 
 ```{r message=FALSE, warning=FALSE}
 # Load the libraries we use
@@ -67,27 +54,25 @@ library(vegan)
 library(ggbeeswarm)
 ```
 
-
 ```{block, type="action"}
 Install the `vegan` and `ggbeeswarm` library if you have not already done so, otherwise `library(vegan)` and `library(ggbeeswarm)` will not work. Look at the **Packages** section of the *Getting Acquainted* chapter of the book if you need help with installation.
 ```
 
 Then save the file and give it a filename that is intuitive, unique, and memorable, so it is easy to search for and find.
 
-
-##   Polity data: origins, acquire, import, clean, tidy, NAs, duplicates
+## Polity data: origins, acquire, import, clean, tidy, NAs, duplicates
 
 ### Data origins and acquisition
 
- A *Polity* is a political entity. The Polity&trade; IV Project aimed to code the characteristics of states in the world for the purposes of comparative quantitative analysis (i.e. what we're about to do!). The project and resulting datasets are used for monitoring regime change and for studying effects of regime authority. Nevertheless, the data "should be treated and interpreted with due caution. Its primary utility is in investigative research which should be augmented by more detailed analysis."; quoted from page 16 of the [Dataset User's Manual](https://www.systemicpeace.org/inscr/p4manualv2016.pdf) by Monty G. Marshall, Ted Robert Gurr, and Keith Jaggers. Find out more about the project at the [Center for Systemic Peace](http://www.systemicpeace.org/polityproject.html) website. By the way, there is another study of the concept and quantification of democracy called [V-Dem](https://www.v-dem.net/).
+A *Polity* is a political entity. The Polity™ IV Project aimed to code the characteristics of states in the world for the purposes of comparative quantitative analysis (i.e. what we're about to do!). The project and resulting datasets are used for monitoring regime change and for studying effects of regime authority. Nevertheless, the data "should be treated and interpreted with due caution. Its primary utility is in investigative research which should be augmented by more detailed analysis."; quoted from page 16 of the [Dataset User's Manual](https://www.systemicpeace.org/inscr/p4manualv2016.pdf) by Monty G. Marshall, Ted Robert Gurr, and Keith Jaggers. Find out more about the project at the [Center for Systemic Peace](http://www.systemicpeace.org/polityproject.html) website. By the way, there is another study of the concept and quantification of democracy called [V-Dem](https://www.v-dem.net/).
 
 You can acquire the complete dataset from [this web page of the Center for Systemic Peace](http://www.systemicpeace.org/inscrdata.html). Scroll down to the section *Polity IV: Regime Authority Characteristics and Transitions Datasets* and click on the *Excel Series* link to the right of the *Polity IV Annual Time-Series, 1800-2017* box. The downloaded file is an Excel spreadsheet. We recommend you open this in Excel and save it as a `csv` file, but we'll also show below how to read the Excel file into R.
 
 Looking at the dataset in Excel or something similar, you will see that the dataset has 17'061 observations and 36 variables. We will work with only three of the variables:
 
-* **country** - a character variable containing the country name.
-* **year** - a numeric variable containing the year.
-* **polity2** - a numeric variable giving the *revised combined polity score* from +10 (strongly democratic) to -10 (strongly autocratic).
+-   **country** - a character variable containing the country name.
+-   **year** - a numeric variable containing the year.
+-   **polity2** - a numeric variable giving the *revised combined polity score* from +10 (strongly democratic) to -10 (strongly autocratic).
 
 The *revised combined polity score*, according to the *Dataset User's Manual* is a score varying from -10 for the most autocratic of polities, up to +10 for the most democratic, that "provides a convenient avenue for examining general regime effects in analyses". (The manual also states a number of reasons for treating the variable with caution.)
 
@@ -100,7 +85,7 @@ rm(list = ls())
 pol <- read_csv("data/p4v2015.csv")
 ```
 
-If you want to read direct from the Excel file, use this (you will need to install the __readxl__ package if you have not already done so):
+If you want to read direct from the Excel file, use this (you will need to install the **readxl** package if you have not already done so):
 
 ```{r eval=FALSE}
 library(readxl)
@@ -119,7 +104,6 @@ pol <- pol %>%
          Year = year,
          Polity2 = polity2)
 ```
-
 
 ```{block, type="info"}
 Please note that here and below we do not describe at all or in much detail the R code used. This is because it is described in detail in the book.
@@ -141,7 +125,7 @@ pol_nas
 
 This dataset contains 235 rows, and viewing it we see that it is only the `polity2` variables that contains NAs. I.e. there are 235 missing `Polity2` values.
 
-A brief perusal of the *Dataset User's Manual* reveals a clue about why some of all of these NAs exist: "Cases of foreign “interruption” are treated as “system missing."
+A brief perusal of the *Dataset User's Manual* reveals a clue about why some of all of these NAs exist: "Cases of foreign "interruption" are treated as "system missing."
 
 Let us decide to treat these missing values as unimportant for further analyses, and to not include them in any further analyses, by removing them from the dataset. We know this should leave us with 17,061 - 235 = 16,826 rows of data:
 
@@ -157,7 +141,6 @@ We might now like to clean up a little, by removing the `pol_nas` dataset from R
 ```{r}
 rm(pol_nas)
 ```
-
 
 ### Check for innapropriate duplicate observations
 
@@ -200,8 +183,6 @@ pol <- pol %>%
   summarise(Polity2 = mean(Polity2))
 ```
 
-
-
 ```{block, type="warning"}
 We just made a decision about how to deal with the duplicated scores. We took the mean. There are other things we could have done (e.g. use a different measure of central tendency, such as the median). So we have made an arbitrary choice in our analysis pathway. We went down one path when we could have chosen another. We need to 1) recognise and record when we make decisions like this, and 2) check to see if our conclusions are robust to variation in what we choose to do. (Here, conclusions would not be affected by using the median, as there are only two values being averaged.)
 ```
@@ -235,36 +216,35 @@ We will now save this dataset so we don't have to run all that code every time:
 write_rds(pol, "data/pol.RDS")
 ```
 
-
 ## First insights from the polity data
 
-Before we move on to the FAO dataset, lets have quick look at some features of the Polity data. 
+Before we move on to the FAO dataset, lets have quick look at some features of the Polity data.
 
 Let's look at the frequency distributions of the two numeric variables. We will do this efficiently by first gathering the information in the two variables into one, then plotting. This is the method used and described in detail in the *Insights* book. Here is the code that produces figure \@ref(fig:pol1):
 
-```{r pol1, fig.cap='Frequency distributions of the polity score and of the year in which observations were made.', out.width='100%', fig.asp=.75, fig.align='center'}
+```{r pol1, fig.cap='Frequency distributions of the polity score and of the year in which observations were made.', fig.width = 5, fig.height=3,  fig.align='center'}
 pol %>%
   pivot_longer(names_to = "Variable", values_to = "Value", cols = 2:3) %>%
   ggplot() +
   geom_histogram(aes(x = Value), bins = 21) +
-  facet_wrap( ~ Variable, scales = "free", nrow = 2)
+  facet_wrap( ~ Variable, scales = "free", nrow = 1)
 ```
 
-The `Polity2` variable is numeric with a minimum values of -10 and a maximum of 10 (as we already knew). The most common polity score is very democratic (+10), there are relatively few moderately democratic polity score, and there are a number of several levels of autocratic polity scores. That is, the distribution appears somewhat bimodial. We must be aware, that these are distributions of each score, with many scores for each country. 
+The `Polity2` variable is numeric with a minimum values of -10 and a maximum of 10 (as we already knew). The most common polity score is very democratic (+10), there are relatively few moderately democratic polity score, and there are a number of several levels of autocratic polity scores. That is, the distribution appears somewhat bimodial. We must be aware, that these are distributions of each score, with many scores for each country.
 
 The `Year` variable is distributed with more values in the later years than earlier years---it makes some sense that we have more information about the recent than about the distant past. None of the three variables have any missing values, so we expect to see no warnings about excluded data points, and to not have to deal with any other issues caused by missing values. Great!
 
 Try to write code to find out each of these:
 
-* Number of countries in the dataset.
-* Number of years in the dataset, and first year, and last year.
-* How many records (years of data) for each country.
-* First and last year of data for each country.
-* Whether there are gaps (years without data) in each country.
-* Number of countries with gaps (i.e. no data in some years).
-* Number of countries with records in each year.
-* Temporal change in polity in some countries that interest you.
-* Graphs to visualise these where appropriate.
+-   Number of countries in the dataset.
+-   Number of years in the dataset, and first year, and last year.
+-   How many records (years of data) for each country.
+-   First and last year of data for each country.
+-   Whether there are gaps (years without data) in each country.
+-   Number of countries with gaps (i.e. no data in some years).
+-   Number of countries with records in each year.
+-   Temporal change in polity in some countries that interest you.
+-   Graphs to visualise these where appropriate.
 
 Answers for some of these are below.
 
@@ -297,8 +277,6 @@ per_country_pol %>%
   summarise(sum(gaps))
 ```
 
-
-
 Code for a graph of the number of countries with records in each year:
 
 ```{r eval=FALSE}
@@ -309,11 +287,9 @@ pol %>%
   geom_point(aes(x=Year, y=num_countries))
 ```
 
-
-
 Change in polity in some countries of interest (to the authors at least) (the code below produces figure \ref(fig:pol2):
 
-```{r pol2, fig.cap='Change in polity in some countries of interest (to the authors at least)', out.width='100%', fig.asp=.75, fig.align='center'}
+```{r pol2, fig.cap='Change in polity in some countries of interest (to the authors at least)', fig.width = 7, fig.height=5,  fig.align='center'}
 countries_of_interest <- c("Bhutan", "Brasil", "Cuba", "Cambodia",
                            "Estonia", "Yugoslavia", "Australia")
 pol %>%
@@ -326,32 +302,29 @@ pol %>%
 
 *Insight*: That the polity score of a country can change so greatly has implications for our subsequent analyses. For example, calculating and using a mean polity score for each country (average across years) may be unwise as it would ignore such temporal change.
 
-
-
-
 ## Acquire, import, check the FAO Food balance sheet data
 
 **Important note: the food balance sheet data available on the FAO website was updated since the writing of this section. The currently (November 2020) available dataset is not the same as that used below. Please be sure to get and use the data here: [direct download small FAO balance sheet data](data/FoodBalanceSheets_E_All_Data_reduced.Rdata). Do not use the data from the FAO website.**
 
-Let us now move on to the dataset we use to get the food diversity measure for each country. The dataset gives, for various *Areas* in the world, such as countries and continents, the annual supply and use of various food *Items* such as "Wheat and products", "Honey", and "Crustaceans". Supply and use includes what are called *Elements* of the food supply equation; elements such as "Production", Import Quantity", and "Food supply quantity (kg/capita/yr)". The words *Area*, *Item*, and *Element* are emphasised because they are variables in the dataset, as described further below. There is a lot of important information about this data available on the [FAO Food Balance Sheet Metadata]( http://www.fao.org/faostat/en/#data/FBS/metadata) web page web page. And even more in the [Food Balance Sheet Methodology Handbook](http://www.fao.org/economic/ess/fbs/ess-fbs02/en/).
+Let us now move on to the dataset we use to get the food diversity measure for each country. The dataset gives, for various *Areas* in the world, such as countries and continents, the annual supply and use of various food *Items* such as "Wheat and products", "Honey", and "Crustaceans". Supply and use includes what are called *Elements* of the food supply equation; elements such as "Production", Import Quantity", and "Food supply quantity (kg/capita/yr)". The words *Area*, *Item*, and *Element* are emphasised because they are variables in the dataset, as described further below. There is a lot of important information about this data available on the [FAO Food Balance Sheet Metadata](http://www.fao.org/faostat/en/#data/FBS/metadata) web page web page. And even more in the [Food Balance Sheet Methodology Handbook](http://www.fao.org/economic/ess/fbs/ess-fbs02/en/).
 
 The full dataset is 206 MB and can be downloaded from the FAO web page (this is no longer true since the update mentioned above). Importing this takes about 4 seconds on a reasonably fast laptop. As you will see below, we will make a smaller dataset (about 15 MB) and save it, so we don't have to work with the full dataset.
 
 The full dataset has 238,560 rows and 113 variables. The first nine variables are:
 
-* **Area.code** - A numeric variable containing number codes for the *Area* variable.
-* **Area** - A character variable containing the geographic area that a row is about, for example, a country name or a continent name.
-* **Item.code** - A numeric variable containing number codes for the food items in the *Item* variable.
-* **Item** - A character variable containing the food item a row is about.
-* **Element.code** - A numeric variable contains number codes for the *Element* variable.
-* **Element** - A character variable showing the particular supply or utlilisation element a row is about. These are the elements of the food balance equation.
-* **Unit** - The units of measure of the quantity in the row.
-* **Y1961** - A numeric variable giving the quantity in year 1961
-* **Y1961F** - A character variable giving information about the data (F is for Flag), such as "Official data", "FAO data", etc.
+-   **Area.code** - A numeric variable containing number codes for the *Area* variable.
+-   **Area** - A character variable containing the geographic area that a row is about, for example, a country name or a continent name.
+-   **Item.code** - A numeric variable containing number codes for the food items in the *Item* variable.
+-   **Item** - A character variable containing the food item a row is about.
+-   **Element.code** - A numeric variable contains number codes for the *Element* variable.
+-   **Element** - A character variable showing the particular supply or utlilisation element a row is about. These are the elements of the food balance equation.
+-   **Unit** - The units of measure of the quantity in the row.
+-   **Y1961** - A numeric variable giving the quantity in year 1961
+-   **Y1961F** - A character variable giving information about the data (F is for Flag), such as "Official data", "FAO data", etc.
 
-The *Definitions and standard button* on this web page http://www.fao.org/faostat/en/#data/FBS/metadata leads to much much more information about the variables and entries.
+The *Definitions and standard button* on this web page <http://www.fao.org/faostat/en/#data/FBS/metadata> leads to much much more information about the variables and entries.
 
-** Seems that the data have been updated online!!! and don't include many years.**
+\*\* Seems that the data have been updated online!!! and don't include many years.\*\*
 
 DO NOT get the FAO food balance data from the [FAO website](http://www.fao.org/faostat/en/#data/FBS/metadata). At the time of writing, the datafile you would get is called `FoodBalanceSheets_E_All_Data.csv` and is 206 MB, i.e. it is quite big. (Now there is a different dataset available.) We need, however, only a small amount of the information in this dataset. So to make things easier for ourselves and for you, we created a smaller dataset containing only the data we need, and saved it as an *RDS* type of file. This file type fits more data into a smaller space---the resulting file `FoodBalanceSheets_E_All_Data_reduced.Rdata` is 1.9MB. You can download that data here: [direct download small FAO balance sheet data](data/FoodBalanceSheets_E_All_Data_reduced.Rdata).
 
@@ -408,12 +381,11 @@ fbs %>%
             num_food_items = length(unique(Item)))
 ```
 
-
 There are 182 countries, so 11 fewer than in the Polity data. We will later check which ones are not in the Polity data, and if any in the Polity data are not in the FAO data. There are 114 food `Items`... wow, that's a lot of different types of food! Take a look at some of the values... it's quite interesting to see what's recorded.
 
-If the data contained every possible combination of country and item we would expect 182 * 114 = 20'748 observations. That there are only 17'953 tells us that some combinations are missing. We will find out which these are and deal with them appropriately!
+If the data contained every possible combination of country and item we would expect 182 \* 114 = 20'748 observations. That there are only 17'953 tells us that some combinations are missing. We will find out which these are and deal with them appropriately!
 
-The six variables we `glimpse` above, with names like `Y1961` each contain  amounts of food available (food supply quantities in kg per capita per year) in the year referred to in the variable name (i.e. 1961) and are, as expected, numeric.
+The six variables we `glimpse` above, with names like `Y1961` each contain amounts of food available (food supply quantities in kg per capita per year) in the year referred to in the variable name (i.e. 1961) and are, as expected, numeric.
 
 We will examine for missing values and duplicates after tidying the data, as it is then more efficient to do so.
 
@@ -427,10 +399,9 @@ It is not that this is a bad or unexpected arrangement for the data. It is, in f
 
 Before we make the data tidy, let's try to figure out how many rows it should have when tidy. We will gather food item quantity information that is currently spread across columns and put it in one column. A visualisation of a simplified version of the dataset is in Figure \@ref(fig:long-wide).
 
-Again, how many rows should there be: the answer is the amount of information that's in the columns that we want to gather into a single column. In the untidy/wide data there are 55 variables containing the data we wish to gather (because we are not gathering the information from `Country` or `Item`). Each of those variables has 17,953 rows, so we expect the long/tidy data to have 55 * 17,953 = 987,415 rows.
+Again, how many rows should there be: the answer is the amount of information that's in the columns that we want to gather into a single column. In the untidy/wide data there are 55 variables containing the data we wish to gather (because we are not gathering the information from `Country` or `Item`). Each of those variables has 17,953 rows, so we expect the long/tidy data to have 55 \* 17,953 = 987,415 rows.
 
-
-```{r long-wide, fig.cap='The same data (a) in long/tidy format and (b) in wide format, with colours and arrows linking the same data in the two different formats.', out.width='100%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r long-wide, fig.cap='The same data (a) in long/tidy format and (b) in wide format, with colours and arrows linking the same data in the two different formats.', out.width='90%', fig.asp=.75, fig.align='center', echo=FALSE}
 knitr::include_graphics("images/long_wide.jpg")
 ```
 
@@ -445,17 +416,16 @@ fbs_long <- fbs %>%
 glimpse(fbs_long)
 ```
 
-We see that as expected the new tibble contains 987,415 observations. Excellent! This near-magical gather function has done a lot of very tedious work for us, very quickly. 
+We see that as expected the new tibble contains 987,415 observations. Excellent! This near-magical gather function has done a lot of very tedious work for us, very quickly.
 
 Do a few things now for yourself:
 
-* Check we still have 182 countries and 114 food items (114).
-* Confirm that the data covers the years 1961 through 2015.
-* Confirm the distribution of the food supply quantity variable has lots of small values, and a few large. Is this what you would expect? Perhaps supply is large for a few basic foods (e.g. grains) and then there are lots of relatively rare food items.
-* Confirm that only the food supply quantity variable contains missing values, and that there are 158,307 of them.
+-   Check we still have 182 countries and 114 food items (114).
+-   Confirm that the data covers the years 1961 through 2015.
+-   Confirm the distribution of the food supply quantity variable has lots of small values, and a few large. Is this what you would expect? Perhaps supply is large for a few basic foods (e.g. grains) and then there are lots of relatively rare food items.
+-   Confirm that only the food supply quantity variable contains missing values, and that there are 158,307 of them.
 
 Beware that at present we are looking at the distribution including data from across years and countries. We will soon look more closely at this distribution.
-
 
 ### Clean the FAO data
 
@@ -468,8 +438,6 @@ fbs_long %>%
 ```
 
 Yes, every year from 1961 to 2015 is represented (by at least one observation). There are 55 years in the dataset.
-
-
 
 ### Check for innapropriate duplicate observations
 
@@ -497,7 +465,7 @@ There are 9,287 rows that are duplicated (not unique). Let's assume (somewhat da
 fbs_long <- unique(fbs_long)
 ```
 
-Now, if we're being really paranoid, we might wonder if there were ever two different values of food supply recorded for the same country in the same year. Put another way, if we look at only the Country, Year, and Item variables, do we see duplicated rows? 
+Now, if we're being really paranoid, we might wonder if there were ever two different values of food supply recorded for the same country in the same year. Put another way, if we look at only the Country, Year, and Item variables, do we see duplicated rows?
 
 ```{r dupe-3, cache = FALSE}
 part_duplicated_records <- fbs_long %>%
@@ -572,7 +540,6 @@ Yes! This is the same as the number of observations per year. All this pretty mu
 We didn't just now find out anything new about the data, but we did confirm that we understand it properly. Checks and balances increase confidence.
 ```
 
-
 ### Missing values
 
 Now let's look at the missing values:
@@ -597,7 +564,7 @@ obs_per_year <- fbs_long %>%
 
 And take a look at the data using `View(obs_per_year)`. We can also see quite a bit if we plot the summary data (\@ref(fig:long-wide)) with the following code:
 
-```{r fao-pol1, fig.cap='The number of observations, the number of missing values and the proportion of missing values in each year of the data.', out.width='100%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r fao-pol1, fig.cap='The number of observations, the number of missing values and the proportion of missing values in each year of the data.', fig.width = 6, fig.height=6,  fig.align='center', echo=FALSE}
 obs_per_year %>%
   pivot_longer(names_to = "Variable", values_to = "Value",
                cols = c(num, num_na, prop_na)) %>%
@@ -606,7 +573,7 @@ obs_per_year %>%
   facet_wrap(~ Variable, scales = "free", ncol = 1)
 ```
 
-We see that from 1961 to 1991 there are around 2,500 (15%) missing values per year.  From 1992 to 2011 there are less than 5% of the values are missing, and from 2012 to 2015 (the last year in the dataset) most or all the values are missing. Can you think of why there might be fewer missing values after 1991?
+We see that from 1961 to 1991 there are around 2,500 (15%) missing values per year. From 1992 to 2011 there are less than 5% of the values are missing, and from 2012 to 2015 (the last year in the dataset) most or all the values are missing. Can you think of why there might be fewer missing values after 1991?
 
 Let's look at one country (its identity might give you a clue)... Belarus. Let's get the number of values, missing values, and proportion of missing values for Belarus in each year.
 
@@ -619,13 +586,13 @@ Belarus_obs_per_year <- fbs_long %>%
             prop_na = num_na / num)
 ```
 
-Looking at this dataset we see that all values are missing until 1992, and then there are no missing values until 2012, when all are again missing. It's probably clear by now that all values are missing until 1992 because Belarus only became an independent state in 1991. Likely there are lots of other countries in the dataset that have missing values for this reason. 
+Looking at this dataset we see that all values are missing until 1992, and then there are no missing values until 2012, when all are again missing. It's probably clear by now that all values are missing until 1992 because Belarus only became an independent state in 1991. Likely there are lots of other countries in the dataset that have missing values for this reason.
 
 There's some stuff going on:
 
-* Belgium and Luxembourg did not separately report data during the period 1992-1999, and instead reported jointly. Then from 2000 until 2011 reported separately, so there we have lots of missing values.
-* Some countries ceased to exist in their former state, e.g. Czechoslovakia after 1993 contains only missing values due to its dissolution into the Czech Republic and Slovakia.
-* Similarly, the USSR reports only missing values after 1991 when the USSR ceased to exist.
+-   Belgium and Luxembourg did not separately report data during the period 1992-1999, and instead reported jointly. Then from 2000 until 2011 reported separately, so there we have lots of missing values.
+-   Some countries ceased to exist in their former state, e.g. Czechoslovakia after 1993 contains only missing values due to its dissolution into the Czech Republic and Slovakia.
+-   Similarly, the USSR reports only missing values after 1991 when the USSR ceased to exist.
 
 And why more missing values from 2012 to 2015? Actually, the description of the data on the FAO web site says the data is from 1961 to only 2013, so it's not surprising that 2014 and 2015 are empty. We will remove these years. We don't know why there are more missing values in 2012 and 2013, so let's also remove those:
 
@@ -654,7 +621,7 @@ Note that there are 8,272 combinations of years and countries in the dataset. Th
 
 Recall that we already decided to assume that when a country did not report a value for an item that this means there was always zero supply of that food item, so the country did not bother including it in the reported, i.e. it's really a zero. Hence we're going to pad out the data so that all countries report on all 114 items, with zero `Food Supply Quantity` for the items they did not report.
 
-First we make a dataset with all combinations of `Country`, `Year`, and `Item`. It should have 182 * 51 * 182 = 1,058,148 rows. We use the quite lovely `expand.grid` function, which creates all possible combinations of the variables it's given. We give it all the unique values of `Country`, `Year`, and `Item`, and it expands them to give all possible combinations. Each argument to `expand.grid` should be a name-value pair, and the name should be the same in the original data, to aid further operations:
+First we make a dataset with all combinations of `Country`, `Year`, and `Item`. It should have 182 \* 51 \* 182 = 1,058,148 rows. We use the quite lovely `expand.grid` function, which creates all possible combinations of the variables it's given. We give it all the unique values of `Country`, `Year`, and `Item`, and it expands them to give all possible combinations. Each argument to `expand.grid` should be a name-value pair, and the name should be the same in the original data, to aid further operations:
 
 ```{r}
 all_cases <- expand.grid(Country = unique(pull(fbs_long, Country)),
@@ -726,7 +693,7 @@ Yes! Wow! Can you believe so much effort was needed to make a solid foundation o
 
 ### Calculating our response variables
 
-The final step of preparation of the FAO data is to calculate our response variables. Our question is about food diversity so we need response variables that quantify this. We will use number of items available per year, and diversity of items available per year, where diversity accounts for the amount of each item as well as number of items using the Shannon index. 
+The final step of preparation of the FAO data is to calculate our response variables. Our question is about food diversity so we need response variables that quantify this. We will use number of items available per year, and diversity of items available per year, where diversity accounts for the amount of each item as well as number of items using the Shannon index.
 
 ```{r}
 fbs_div <- fbs_final %>%
@@ -744,10 +711,9 @@ We will now save this dataset so we don't have to run all that code every time:
 write_rds(fbs_div, "data/fbs_div.RDS")
 ```
 
-
 ## Merge the two datasets (aaaaaargh!!)
 
-The *aaaaaargh* above is because things now get a little sketchy, tedious, and generally unsatisfactory. The reason is that the two datasets do not use the same country names or codes--i.e. they are not interoperable. And it turns out to be a real pain to make them so. We do, but hang on, its a bit ugly and complicated. If you learn only one thing, it should be the importance of building interoperability into dataset from the beginning, which can only be achieved with [semantic standards](#interoperability). 
+The *aaaaaargh* above is because things now get a little sketchy, tedious, and generally unsatisfactory. The reason is that the two datasets do not use the same country names or codes--i.e. they are not interoperable. And it turns out to be a real pain to make them so. We do, but hang on, its a bit ugly and complicated. If you learn only one thing, it should be the importance of building interoperability into dataset from the beginning, which can only be achieved with [semantic standards](#interoperability).
 
 First let's clear R and reload the two datasets:
 
@@ -797,6 +763,7 @@ pol %>% filter(str_detect(Country, "Tanz")) %>%
   pull(Country) %>%
   unique()
 ```
+
 ```{r}
 fbs_div %>% filter(str_detect(Country, "Tanz")) %>%
   pull(Country) %>%
@@ -822,7 +789,7 @@ Let us put the code into the `fbs_div` dataset. There both contain the common `C
 fbs_div <- left_join(fbs_div, fbs_country)
 ```
 
-It is not immediately clear what this code is, however, i.e. what standard. Digging into their metadata a bit we can find a page of *Definitions and Standards*: http://www.fao.org/faostat/en/#definitions. In the tab *Country/Region* we find a dataset with country names and various country codes, including ISO2 and ISO3 codes (of ISO 3166-1). Excellent. We downloaded this dataset and now read it into R and merge with the food balance sheet dataset `fbs_div`:
+It is not immediately clear what this code is, however, i.e. what standard. Digging into their metadata a bit we can find a page of *Definitions and Standards*: <http://www.fao.org/faostat/en/#definitions>. In the tab *Country/Region* we find a dataset with country names and various country codes, including ISO2 and ISO3 codes (of ISO 3166-1). Excellent. We downloaded this dataset and now read it into R and merge with the food balance sheet dataset `fbs_div`:
 
 ```{r}
 FAO_country_standards <- read_csv("data/FAOSTAT_data_country_name_standards.csv", na = "")
@@ -837,6 +804,7 @@ Before we do the merge, take a look at this:
 ```{r}
 FAO_country_standards %>% filter(str_detect(Country_name_FAO, "Swaz"))
 ```
+
 In the standard (ISO) there is no country named "Swaziland". There is in the FAO food balance sheet dataset, however:
 
 ```{r}
@@ -866,7 +834,7 @@ Excellent, the `fbs_div` dataset now contains the ISO standard codes. Now we nee
 
 ### Polity standardisation
 
-Good. Now let us look at the polity data. The original data file contains various country codes. Looking in the Polity user manual and a bit of further sleuthing reveals that the country codes are from the "Correlates of War" project: https://correlatesofwar.org/data-sets/cow-country-codes. The dataset there `COW country codes.csv" was developed before the ISO country codes, and so has does not use an international standard (a personal communication with a developer confirmed this). 
+Good. Now let us look at the polity data. The original data file contains various country codes. Looking in the Polity user manual and a bit of further sleuthing reveals that the country codes are from the "Correlates of War" project: <https://correlatesofwar.org/data-sets/cow-country-codes>. The dataset there \`COW country codes.csv" was developed before the ISO country codes, and so has does not use an international standard (a personal communication with a developer confirmed this).
 
 We decided, therefore, to make our own dataset that mapped the Polity country names to ISO standards. The steps to do this were to export the Polity country names as a csv file and import then into a spreadsheet programme (e.g. Excel). We then copy-pasted in the ISO standards. And then over about four hours of manual matching work made as many correspondences as possible. Yes, we did manipulate data in Excel... but the "data" is just the country names and codes. It was horrid, tedious, and risky (i.e. errors could easily be made and not seen) work. The resulting mapping carries no guarantees. It should be double, triple and quadruple checked. We will use it with great caution here...
 
@@ -886,8 +854,6 @@ pol_iso_mapping <- read_csv("data/pol_iso_mapping.csv",
 ```{block, type="beaware"}
 **Be aware** You may have noticed that in the `read_csv` just above we wrote `na = "."`. This is because when we created the spreadsheet of mapping between Polity and ISO country names we used "." and not "NA" as the missing value indicator. Can you guess why we did not use "NA"? The reason is that "NA" is the ISO2 code for Namibia. If we had used NA for missing value then Namibia would have been given a missing value for the ISO2 code. The general message here is to be careful when a variable contains entries that might include "NA" as a real value.
 ```
-
-
 
 ```{r eval = FALSE, echo = FALSE}
 setdiff(pull(pol_iso_mapping, Country),
@@ -927,8 +893,6 @@ fbs_pol <- inner_join(fbs_div_stand,
 
 This merged dataset has 7472 rows, because some of the country-year combinations in the food diversity dataset are not in the polity dataset. Note that many more of the country-year combinations in the polity data are not in the food diversity dataset. This is largely due to the polity data covering many more years, but also because it contains some countries that are not in the food diversity dataset.
 
-
-
 ## Tidying up
 
 Again, we have a lot of objects in R's brain. We only need one: `fbs_pol`. We can remove all the other variables. We don't need to run all the code above every time we do an analysis. Save the `fbs_pol` dataset, and in the next section we will start anew.
@@ -937,8 +901,7 @@ Again, we have a lot of objects in R's brain. We only need one: `fbs_pol`. We ca
 saveRDS(fbs_pol, "data/fbs_pol.Rdata")
 ```
 
-
-##  Shapes
+## Shapes
 
 We will not look at the shapes of the distributions of the variables. As usual, start by loading libraries and our dataset:
 
@@ -963,17 +926,17 @@ fbs_pol <- readRDS("data/fbs_pol.Rdata")
 
 First the distribution of number of food items available in each country, across all countries and all years. The code for this you are quite familiar with by now, using `ggplot` and `geom_histogram` (Figure \@ref(fig:fbs-pol2):
 
-```{r fbs-pol2, fig.cap='Frequency distribution of richness of food items across all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol2, fig.cap='Frequency distribution of richness of food items across all countries and years.', fig.width = 4, fig.height=3,  fig.align='center'}
 fbs_pol %>%
   ggplot() +
   geom_histogram(aes(x = Richness), bins = 10)
 ```
 
-Some countries in some years have only between 30 and 40 food items available, others have over 90. This is a large difference. The most common number is around 80. The distribution is somewhat left skewed, with a longer tail of smaller values. The distribution is not, however, horribly asymmetric. 
+Some countries in some years have only between 30 and 40 food items available, others have over 90. This is a large difference. The most common number is around 80. The distribution is somewhat left skewed, with a longer tail of smaller values. The distribution is not, however, horribly asymmetric.
 
 And looking at the distribution of diversity of food item quantities with the following code (Figure \@ref(fig:fbs-pol3):
 
-```{r fbs-pol3, fig.cap='Frequency distribution of diversity of food items across all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol3, fig.cap='Frequency distribution of diversity of food items across all countries and years.', fig.width = 4, fig.height=3, fig.align='center'}
 fbs_pol %>%
   ggplot() +
   geom_histogram(aes(x = Diversity), bins = 10)
@@ -983,7 +946,7 @@ The diversity distribution is quite similar to the richness distribution, with a
 
 And looking at the distribution of the Polity variable with the following code (Figure \@ref(fig:fbs-pol3x):
 
-```{r fbs-pol3x, fig.cap='Frequency distribution of Polity2 all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol3x, fig.cap='Frequency distribution of Polity2 all countries and years.', fig.width = 4, fig.height=3,  fig.align='center'}
 fbs_pol %>%
   ggplot() +
   geom_histogram(aes(x = Polity2), bins = 10)
@@ -993,18 +956,16 @@ Is this what you were expecting? A rather bimodal distribution with most countri
 
 We can also make the three histograms more efficiently by first gathering all the variables into one column and then creating a graph with a facet for each of the original variables (Figure \@ref(fig:fbs-pol3x1):
 
-```{r fbs-pol3x1, fig.cap='Frequency distribution of Polity2 all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol3x1, fig.cap='Frequency distribution of Polity2 all countries and years.', fig.align='center', fig.width=6, fig.height=2.5}
 fbs_pol %>%
   select(Richness, Diversity, Polity2) %>%
   pivot_longer(names_to = "Variable", values_to = "Value",
                col = 1:3) %>%
   ggplot() +
   geom_histogram(mapping = aes(x = Value), bins = 10) +
-  facet_wrap( ~ Variable, nrow = 3, scales = "free", )
+  facet_wrap( ~ Variable, nrow = 1, scales = "free", )
 
 ```
-
-
 
 ## Relationships
 
@@ -1012,7 +973,7 @@ This is what we've been waiting for. We are about to answer our question. Can yo
 
 First we'll look at the relationship between richness and diversity. We might imagine that they're quite closely associated since 1) diversity includes richness, and 2) their distributions look quite similar. By now the following code to make a scatter plot of richness against diversity should be familiar, though we add some transparency to the points since lots lie on top of each other (Figure \@ref(fig:fbs-pol4):
 
-```{r fbs-pol4, fig.cap='Relationship between the two response variables, richness of items and diversity of items, across all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol4, fig.cap='Relationship between the two response variables, richness of items and diversity of items, across all countries and years.', fig.width = 5, fig.height=4, fig.align='center'}
 fbs_pol %>%
 ggplot() +
   geom_point(aes(x = Richness, y = Diversity),
@@ -1021,7 +982,7 @@ ggplot() +
 
 We can also visualise the relationship with a two-dimensional histogram, such as that show in figure \@ref(fig:fbs-pol4) that was created with the following code:
 
-```{r fbs-pol4-1, fig.cap='Relationship between the two response variables, richness of items and diversity of items, across all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol4-1, fig.cap='Relationship between the two response variables, richness of items and diversity of items, across all countries and years.', fig.width = 5, fig.height=4,  fig.align='center'}
 fbs_pol %>%
 ggplot() +
   geom_hex(aes(x = Richness, y = Diversity))
@@ -1031,7 +992,7 @@ Not quite as close a relationship between richness and diversity as we expected.
 
 And now, drum-roll, for the answer to our question. Is there a relationship between the political system of a country and the richness of food available for human consumption? Again, by now the R-code is hopefully no challenge for you (and gives Figure \@ref(fig:fbs-pol5)):
 
-```{r fbs-pol5, fig.cap='Richness of food items available versus Polity score, across all countries and all available years.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol5, fig.cap='Richness of food items available versus Polity score, across all countries and all available years.', fig.width = 5, fig.height=4, fig.align='center'}
 fbs_pol %>%
 ggplot() +
   geom_point(aes(x = Polity2, y = Richness),
@@ -1040,7 +1001,7 @@ ggplot() +
 
 What do you think? Is there a relationship? And how confident are you that the relationship is not just the result of chance? Before we conclude, let's look at the relationship for diversity of food items (Figure \@ref(fig:fbs-pol6)).
 
-```{r fbs-pol6, fig.cap='Diversit of food items available versus Polity score, across all countries and all available years.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol6, fig.cap='Diversit of food items available versus Polity score, across all countries and all available years.', fig.width = 5, fig.height=4,  fig.align='center'}
 fbs_pol %>%
 ggplot() +
   geom_point(aes(x = Polity2, y = Diversity),
@@ -1061,13 +1022,13 @@ fbs_pol_year <- fbs_pol %>%
 
 We have gone from a dataset with 7,472 observations to one with 159, one data point for each country in the data. Here's the code for the graphs of Polity score and richness/diversity for this country level data:
 
-```{r fbs-pol7, fig.cap='Richness of food items available versus Polity score; average value for each country.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol7, fig.cap='Richness of food items available versus Polity score; average value for each country.', fig.width = 5, fig.height=4, fig.align='center'}
 fbs_pol_year %>%
   ggplot() +
   geom_point(aes(x = Ave_Polity2, y = Ave_Richness))
 ```
 
-```{r fbs-pol8, fig.cap='Diversity of food items available versus Polity score; average value for each country.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol8, fig.cap='Diversity of food items available versus Polity score; average value for each country.', fig.width = 5, fig.height=4,  fig.align='center'}
 fbs_pol_year %>%
   ggplot() +
   geom_point(aes(x = Ave_Polity2, y = Ave_Diversity))
@@ -1076,7 +1037,6 @@ fbs_pol_year %>%
 The country level data (Figures \@ref(fig:fbs-pol7) and \@ref(fig:fbs-pol8)) appear to show stronger evidence of a positive relationship between polity score and richness/diversity of food available, with more democratic countries (higher polity scores) having more diversity of food available than less democratic ones.
 
 Let's look at the data another way, by categorising the Polity score. To do this we make a new variable using `mutate` and use the `cut` function to cut the Polity scores into five categories, and we name the categories:
-
 
 ```{r}
 fbs_pol_year <- fbs_pol_year %>%
@@ -1091,7 +1051,7 @@ fbs_pol_year <- fbs_pol_year %>%
 
 Here, we will only show the figure for the richness of food items (Figures \@ref(fig:fbs-pol7)) and not diversity (you can make that graph yourself):
 
-```{r fbs-pol9, fig.cap='Frequency distribution of diversity of food items across all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol9, fig.cap='Frequency distribution of diversity of food items across all countries and years.', fig.width = 5, fig.height=4,  fig.align='center'}
 fbs_pol_year %>%
   ggplot() +
   geom_boxplot(aes(x = Ave_Polity2_cat, y = Ave_Richness)) +
@@ -1101,7 +1061,7 @@ fbs_pol_year %>%
   coord_flip()
 ```
 
-```{r fbs-pol10, fig.cap='Frequency distribution of diversity of food items across all countries and years.', out.width='75%', fig.asp=.75, fig.align='center'}
+```{r fbs-pol10, fig.cap='Frequency distribution of diversity of food items across all countries and years.', fig.width = 5, fig.height=4,  fig.align='center'}
 fbs_pol_year %>%
   ggplot() +
   geom_boxplot(aes(x = Ave_Polity2_cat, y = Ave_Diversity)) +
@@ -1118,8 +1078,6 @@ fbs_pol_year %>% group_by(Ave_Polity2_cat) %>%
   summarise(num_countries = n())
 ```
 
-
-
 ## Wrapping up
 
 So it does appear that more democratic countries have more diversity food available to its citizens. We cannot, however, say that the political system *causes* this pattern... the relationship is "only" a correlation. There is probably some causal pathway linking the two, but it could be via a third variable.
@@ -1132,22 +1090,18 @@ There are also lots of other explanatory variables we could have included in our
 
 Other things you could think about analysing, for which data are available (though we couldn't say exactly where):
 
-* Biodiversity.
-* Latitudinal gradients.
-* Species (country) area relationship.
-* GDP diversity relationship.
-* Causality by time lag relationships.
-* FAO Macroeconomic statistics (e.g. GDP by country by year) (http://www.fao.org/faostat/en/#data)
-* FAO Population data (e.g. population size by country by year) (http://www.fao.org/faostat/en/#data)
-* World Bank, e.g. country land area https://data.worldbank.org/indicator/AG.LND.TOTL.K2
-* Maybe: SDG indicators: http://data.un.org/Explorer.aspx?d=SDGs
-
-
-
+-   Biodiversity.
+-   Latitudinal gradients.
+-   Species (country) area relationship.
+-   GDP diversity relationship.
+-   Causality by time lag relationships.
+-   FAO Macroeconomic statistics (e.g. GDP by country by year) (<http://www.fao.org/faostat/en/#data>)
+-   FAO Population data (e.g. population size by country by year) (<http://www.fao.org/faostat/en/#data>)
+-   World Bank, e.g. country land area <https://data.worldbank.org/indicator/AG.LND.TOTL.K2>
+-   Maybe: SDG indicators: <http://data.un.org/Explorer.aspx?d=SDGs>
 
 ## And a challenge for you...
 
-Check to see if GDP or GDP per capita can explain variation in dietary diversity? What, if anything, would you imagine is the causation among political system, GDP, and dietary diversity (you might use the data to try to infer this, or just think about it)? You can get the GDP data from here: http://www.fao.org/faostat/en/#data/MK 
+Check to see if GDP or GDP per capita can explain variation in dietary diversity? What, if anything, would you imagine is the causation among political system, GDP, and dietary diversity (you might use the data to try to infer this, or just think about it)? You can get the GDP data from here: <http://www.fao.org/faostat/en/#data/MK>
 
-Our solution (code only) is at the [end of Answers chapter](##foodpolgdp) of this web site. 
-
+Our solution (code only) is at the [end of Answers chapter](##foodpolgdp) of this web site.

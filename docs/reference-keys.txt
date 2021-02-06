@@ -75,7 +75,7 @@ simulating-data
 avoiding-loops
 syntax-highlighting
 summarise-more-than-one-variable
-additional-next-step-concepts
+data-analysis-concepts
 distributions
 interactions-and-complexity
 lurking-variables

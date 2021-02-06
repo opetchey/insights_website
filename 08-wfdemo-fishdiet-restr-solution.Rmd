@@ -83,7 +83,7 @@ length_weight_condition <- read_csv("data/Moatt_et_al_Data_S15.csv")
 
 **Q9. Which of the datasets are tidy and which are not?**
 
-All four datasets appear tidy, at the moment.
+All four datasets appear tidy.
 
 **Q10. Rename the following variables to be more intepretable, and only keep necessary variables:**
 
@@ -577,7 +577,7 @@ dd %>%
 
 **Q29. Confirm in a graph the stated result: "Male mortality risk was lowest on intermediate lipid intakes".**
 
-```{r}
+```{r fig.width=6, fig.height=6}
 dd <- dd %>%
   mutate(period=cut(Lifespan, breaks=c(-1, 20, 60, 106, 120)))
 dd %>%
@@ -588,7 +588,7 @@ dd %>%
   facet_wrap(~period, nrow=3)
 ```
 
-```{r}
+```{r fig.width=6, fig.height=6}
 dd %>%
   filter(Sex=="Male") %>%
   ggplot() +
@@ -599,7 +599,7 @@ dd %>%
 
 Q30. Confirm in a graph the stated result: "Female risk was generally reduced by low protein intakes."
 
-```{r}
+```{r fig.width=6, fig.height=6}
 dd %>% 
   filter(Sex=="Female") %>%
   ggplot() +
@@ -610,7 +610,7 @@ dd %>%
 
 Q31. Confirm in a graph the stated result: "The effect of macronutrient intake on reproduction was similar between the sexes, with high protein intakes maximizing reproduction."
 
-```{r}
+```{r fig.width=6, fig.height=5}
 dd %>%
   filter(Sex=="Male") %>%
   ggplot() +
@@ -618,7 +618,7 @@ dd %>%
              position = position_jitterdodge(jitter.width=0.05))
 ```
 
-```{r}
+```{r fig.width=6, fig.height=5}
 dd %>%
   filter(Sex=="Female") %>%
   ggplot() +

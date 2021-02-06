@@ -1,4 +1,4 @@
-# Additional & next step concepts
+# Data analysis concepts
 
 In this chapter of this companion website to the Insights book we outline some of the conceptual issues we mentioned in the book, but did not then feel the need to cover. Some of these we only highlight below as next steps for you to take, rather than attempt to teach them here. If you would like more details below, some examples, or other topics covered, please let us know.
 

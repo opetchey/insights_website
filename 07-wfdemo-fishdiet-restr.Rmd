@@ -23,7 +23,7 @@ This Workflow Demonstation (WD) is primarily a supplement to the material in the
 
 At the time of publication (early 2021) there are likely some improvements that could be made to this demonstration, in terms of the description of what we do in it, why we do it, and how we do it. If anything seems odd, unclear, or sub-optimal, please don't hesitate to get in touch, and we will quickly make improvements.
 
-![](images/WF4_icon.png){width="100"}
+
 
 ## Introduction
 
