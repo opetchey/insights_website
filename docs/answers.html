@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 14 Answers and solutions | Companion Website — Insights from Data with R</title>
-  <meta name="description" content="To be completed" />
+  <meta name="description" content="Welcome!" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 14 Answers and solutions | Companion Website — Insights from Data with R" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="To be completed" />
+  <meta property="og:description" content="Welcome!" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 14 Answers and solutions | Companion Website — Insights from Data with R" />
   
-  <meta name="twitter:description" content="To be completed" />
+  <meta name="twitter:description" content="Welcome!" />
   
 
 <meta name="author" content="Petchey, Beckerman, Cooper, Childs" />
 
 
-<meta name="date" content="2021-02-06" />
+<meta name="date" content="2021-04-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -368,6 +368,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.8" data-path="more-questions-data.html"><a href="more-questions-data.html#diets-of-predatory-fish"><i class="fa fa-check"></i><b>12.8</b> Diets of predatory fish</a></li>
 <li class="chapter" data-level="12.9" data-path="more-questions-data.html"><a href="more-questions-data.html#cervical-spine-compression-and-mri-not-food-related"><i class="fa fa-check"></i><b>12.9</b> Cervical spine compression and MRI (not food related)</a></li>
 <li class="chapter" data-level="12.10" data-path="more-questions-data.html"><a href="more-questions-data.html#lots-of-other-datasets-here"><i class="fa fa-check"></i><b>12.10</b> Lots of other datasets here:</a></li>
+<li class="chapter" data-level="12.11" data-path="more-questions-data.html"><a href="more-questions-data.html#fish-eye-lens-diets"><i class="fa fa-check"></i><b>12.11</b> Fish eye lens diets</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a>
 <ul>
@@ -765,14 +766,14 @@ rows/observations in a dataset, according to the values in one of the
 variables?</p>
 <p>Answer: The <code>filter</code> function is used to keep a set of rows, according
 to values in a variable. E.g. keep the rows/observations for male bats:</p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="answers.html#cb379-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb379-2"><a href="answers.html#cb379-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="st">&quot;Male&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="answers.html#cb362-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb362-2"><a href="answers.html#cb362-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="st">&quot;Male&quot;</span>)</span></code></pre></div>
 <p><strong>Q5.3</strong> What is <code>%in%</code> used for?</p>
 <p>Answer: It is used to ask if a value (e.g., <code>Owen</code>) appears in a list of
 other values. E.g. try guessing what these will do, and then run them to
 check your guess:</p>
-<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="answers.html#cb380-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Owen&quot;</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Owen&quot;</span>, <span class="st">&quot;Natalie&quot;</span>, <span class="st">&quot;Dylan&quot;</span>, <span class="st">&quot;Andrew&quot;</span>)</span>
-<span id="cb380-2"><a href="answers.html#cb380-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;Owen&quot;</span>, <span class="st">&quot;Heath&quot;</span>) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Owen&quot;</span>, <span class="st">&quot;Natalie&quot;</span>, <span class="st">&quot;Dylan&quot;</span>, <span class="st">&quot;Andrew&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="answers.html#cb363-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Owen&quot;</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Owen&quot;</span>, <span class="st">&quot;Natalie&quot;</span>, <span class="st">&quot;Dylan&quot;</span>, <span class="st">&quot;Andrew&quot;</span>)</span>
+<span id="cb363-2"><a href="answers.html#cb363-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;Owen&quot;</span>, <span class="st">&quot;Heath&quot;</span>) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Owen&quot;</span>, <span class="st">&quot;Natalie&quot;</span>, <span class="st">&quot;Dylan&quot;</span>, <span class="st">&quot;Andrew&quot;</span>)</span></code></pre></div>
 <p><strong>Q5.4</strong> What What <strong>dplyr</strong> function do we use to add a new variable to
 a dataset that is a transformation of an existing variable?</p>
 <p>Answer: <code>mutate</code> – for example, it the book we used <code>mutate</code> to replace
@@ -788,9 +789,9 @@ online).</p>
 <p><strong>Q5.6</strong> Find the identity (<code>Bat_ID</code>) of the two bats that ate only the
 largest (52.5mm wingspan) type of prey.</p>
 <p>Answer:</p>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="answers.html#cb381-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb381-2"><a href="answers.html#cb381-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Wingspan_mm <span class="sc">==</span> <span class="fl">52.5</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb381-3"><a href="answers.html#cb381-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Bat_ID)</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="answers.html#cb364-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb364-2"><a href="answers.html#cb364-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Wingspan_mm <span class="sc">==</span> <span class="fl">52.5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb364-3"><a href="answers.html#cb364-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Bat_ID)</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 1
 ##   Bat_ID
 ##    &lt;dbl&gt;
@@ -800,8 +801,8 @@ largest (52.5mm wingspan) type of prey.</p>
 <p>Calculate the total number of prey species by counting the number of
 unique values in the prey <code>Species</code> variable:</p>
 <p>Answer:</p>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="answers.html#cb383-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb383-2"><a href="answers.html#cb383-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_num_prey_species =</span> <span class="fu">length</span>(<span class="fu">unique</span>(Species)))</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="answers.html#cb366-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb366-2"><a href="answers.html#cb366-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_num_prey_species =</span> <span class="fu">length</span>(<span class="fu">unique</span>(Species)))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   total_num_prey_species
 ##                    &lt;int&gt;
@@ -809,46 +810,43 @@ unique values in the prey <code>Species</code> variable:</p>
 <p><strong>Q5.8</strong> The following code is intended to calculate the number of prey
 items found in each poop. Find and correct the three intentional errors
 it contains:</p>
-<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="answers.html#cb385-1" aria-hidden="true" tabindex="-1"></a> prey_stats <span class="sc">&lt;</span> bats <span class="sc">%&gt;%</span></span>
-<span id="cb385-2"><a href="answers.html#cb385-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_Id) <span class="sc">%&gt;%</span></span>
-<span id="cb385-3"><a href="answers.html#cb385-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_prey =</span> <span class="fu">n</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="answers.html#cb368-1" aria-hidden="true" tabindex="-1"></a> prey_stats <span class="sc">&lt;</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb368-2"><a href="answers.html#cb368-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_Id) <span class="sc">%&gt;%</span></span>
+<span id="cb368-3"><a href="answers.html#cb368-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_prey =</span> <span class="fu">n</span>()</span></code></pre></div>
 <p>Answer: The assignment arrow was missing its <code>-</code>, the <code>d</code> of <code>Bat_Id</code>
 should be capital <code>D</code>, and an additional closing bracket was needed at
 the end of the third line:</p>
-<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="answers.html#cb386-1" aria-hidden="true" tabindex="-1"></a> prey_stats <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
-<span id="cb386-2"><a href="answers.html#cb386-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
-<span id="cb386-3"><a href="answers.html#cb386-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_prey =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="answers.html#cb369-1" aria-hidden="true" tabindex="-1"></a> prey_stats <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb369-2"><a href="answers.html#cb369-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
+<span id="cb369-3"><a href="answers.html#cb369-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_prey =</span> <span class="fu">n</span>())</span></code></pre></div>
 <p><strong>Q5.9</strong> Calculate the number of times each prey item was observed.</p>
 <p>Answer:</p>
-<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="answers.html#cb387-1" aria-hidden="true" tabindex="-1"></a>num_times <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
-<span id="cb387-2"><a href="answers.html#cb387-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
-<span id="cb387-3"><a href="answers.html#cb387-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_times_obs =</span> <span class="fu">n</span>())</span></code></pre></div>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="answers.html#cb370-1" aria-hidden="true" tabindex="-1"></a>num_times <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb370-2"><a href="answers.html#cb370-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb370-3"><a href="answers.html#cb370-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_times_obs =</span> <span class="fu">n</span>())</span></code></pre></div>
 <p><strong>Q5.10</strong> Calculate number of migratory and non-migratory prey species,
 and pest or non-pest, and each combination of migratory and pest.</p>
 <p>Answers:</p>
-<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="answers.html#cb389-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb389-2"><a href="answers.html#cb389-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Migratory) <span class="sc">%&gt;%</span></span>
-<span id="cb389-3"><a href="answers.html#cb389-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_num_prey_species =</span> <span class="fu">length</span>(<span class="fu">unique</span>(Species)))</span></code></pre></div>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="answers.html#cb371-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb371-2"><a href="answers.html#cb371-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Migratory) <span class="sc">%&gt;%</span></span>
+<span id="cb371-3"><a href="answers.html#cb371-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_num_prey_species =</span> <span class="fu">length</span>(<span class="fu">unique</span>(Species)))</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   Migratory total_num_prey_species
 ##   &lt;chr&gt;                      &lt;int&gt;
 ## 1 no                            94
 ## 2 yes                           21</code></pre>
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="answers.html#cb392-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb392-2"><a href="answers.html#cb392-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Pest) <span class="sc">%&gt;%</span></span>
-<span id="cb392-3"><a href="answers.html#cb392-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_num_prey_species =</span> <span class="fu">length</span>(<span class="fu">unique</span>(Species)))</span></code></pre></div>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="answers.html#cb373-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb373-2"><a href="answers.html#cb373-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Pest) <span class="sc">%&gt;%</span></span>
+<span id="cb373-3"><a href="answers.html#cb373-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_num_prey_species =</span> <span class="fu">length</span>(<span class="fu">unique</span>(Species)))</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   Pest  total_num_prey_species
 ##   &lt;chr&gt;                  &lt;int&gt;
 ## 1 no                        86
 ## 2 yes                       29</code></pre>
-<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="answers.html#cb395-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb395-2"><a href="answers.html#cb395-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Migratory, Pest) <span class="sc">%&gt;%</span></span>
-<span id="cb395-3"><a href="answers.html#cb395-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_num_prey_species =</span> <span class="fu">length</span>(<span class="fu">unique</span>(Species)))</span></code></pre></div>
-<pre><code>## `summarise()` regrouping output by &#39;Migratory&#39; (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="answers.html#cb375-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb375-2"><a href="answers.html#cb375-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Migratory, Pest) <span class="sc">%&gt;%</span></span>
+<span id="cb375-3"><a href="answers.html#cb375-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_num_prey_species =</span> <span class="fu">length</span>(<span class="fu">unique</span>(Species)))</span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;Migratory&#39;. You can override using the `.groups` argument.</code></pre>
 <pre><code>## # A tibble: 4 x 3
 ##   Migratory Pest  total_num_prey_species
 ##   &lt;chr&gt;     &lt;chr&gt;                  &lt;int&gt;
@@ -859,15 +857,15 @@ and pest or non-pest, and each combination of migratory and pest.</p>
 <p><strong>Q5.11</strong> What was the maximum number of times a prey species could have
 been observed?</p>
 <p>Answer: This is the number of bat poops observed (143):</p>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="answers.html#cb398-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb398-2"><a href="answers.html#cb398-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
-<span id="cb398-3"><a href="answers.html#cb398-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb398-4"><a href="answers.html#cb398-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">length</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="answers.html#cb378-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb378-2"><a href="answers.html#cb378-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
+<span id="cb378-3"><a href="answers.html#cb378-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb378-4"><a href="answers.html#cb378-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">length</span>()</span></code></pre></div>
 <pre><code>## [1] 143</code></pre>
 <p><strong>Q5.12</strong> What proportion of prey species were observed in only one poo?</p>
 <p>Answer:</p>
-<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="answers.html#cb400-1" aria-hidden="true" tabindex="-1"></a>num_times <span class="sc">%&gt;%</span></span>
-<span id="cb400-2"><a href="answers.html#cb400-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">prop_singletons =</span> <span class="fu">sum</span>(num_times_obs <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="answers.html#cb380-1" aria-hidden="true" tabindex="-1"></a>num_times <span class="sc">%&gt;%</span></span>
+<span id="cb380-2"><a href="answers.html#cb380-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">prop_singletons =</span> <span class="fu">sum</span>(num_times_obs <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">n</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   prop_singletons
 ##             &lt;dbl&gt;
@@ -878,63 +876,62 @@ with <code>Bat_ID</code> and <code>Date_proper</code> as the grouping variables.
 result into a <code>summarise</code> to get the unique <code>Bat_ID</code>s, then make another
 <code>group_by</code> but this time on the <code>Date_proper</code> variable only and use the
 <code>n()</code> function to count the number of bats per date:</p>
-<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="answers.html#cb402-1" aria-hidden="true" tabindex="-1"></a>bats_per_date <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
-<span id="cb402-2"><a href="answers.html#cb402-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID, Date_proper) <span class="sc">%&gt;%</span></span>
-<span id="cb402-3"><a href="answers.html#cb402-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Unique_Bat_ID =</span> <span class="fu">unique</span>(Bat_ID)) <span class="sc">%&gt;%</span></span>
-<span id="cb402-4"><a href="answers.html#cb402-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Date_proper) <span class="sc">%&gt;%</span></span>
-<span id="cb402-5"><a href="answers.html#cb402-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Number =</span> <span class="fu">n</span>())</span></code></pre></div>
-<pre><code>## `summarise()` regrouping output by &#39;Bat_ID&#39; (override with `.groups` argument)</code></pre>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="answers.html#cb382-1" aria-hidden="true" tabindex="-1"></a>bats_per_date <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb382-2"><a href="answers.html#cb382-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID, Date_proper) <span class="sc">%&gt;%</span></span>
+<span id="cb382-3"><a href="answers.html#cb382-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Unique_Bat_ID =</span> <span class="fu">unique</span>(Bat_ID)) <span class="sc">%&gt;%</span></span>
+<span id="cb382-4"><a href="answers.html#cb382-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Date_proper) <span class="sc">%&gt;%</span></span>
+<span id="cb382-5"><a href="answers.html#cb382-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Number =</span> <span class="fu">n</span>())</span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;Bat_ID&#39;. You can override using the `.groups` argument.</code></pre>
 <p>Here is a graph of number of bats caught on each date:</p>
-<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="answers.html#cb405-1" aria-hidden="true" tabindex="-1"></a>bats_per_date <span class="sc">%&gt;%</span></span>
-<span id="cb405-2"><a href="answers.html#cb405-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb405-3"><a href="answers.html#cb405-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Date_proper, <span class="at">y =</span> Number)) <span class="sc">+</span></span>
-<span id="cb405-4"><a href="answers.html#cb405-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Number of bats caught on each date.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="answers.html#cb384-1" aria-hidden="true" tabindex="-1"></a>bats_per_date <span class="sc">%&gt;%</span></span>
+<span id="cb384-2"><a href="answers.html#cb384-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb384-3"><a href="answers.html#cb384-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Date_proper, <span class="at">y =</span> Number)) <span class="sc">+</span></span>
+<span id="cb384-4"><a href="answers.html#cb384-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Number of bats caught on each date.&quot;</span>)</span></code></pre></div>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-227-1.svg" width="336" style="display: block; margin: auto;" /></p>
 <p><strong>Q5.14</strong> The Abstract of the paper states that Lepidoptera were mostly
 from the Noctuidae and Geometridae familes. How many species of
 Noctuidae and Geometridae are there in the dataset? Get the number of
 species of Noctuidae and Geometridae in the dataset.</p>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="answers.html#cb406-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
-<span id="cb406-2"><a href="answers.html#cb406-2" aria-hidden="true" tabindex="-1"></a>families <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
-<span id="cb406-3"><a href="answers.html#cb406-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Species, Order, Family) <span class="sc">%&gt;%</span></span>
-<span id="cb406-4"><a href="answers.html#cb406-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb406-5"><a href="answers.html#cb406-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Order, Family) <span class="sc">%&gt;%</span></span>
-<span id="cb406-6"><a href="answers.html#cb406-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">num_spp=</span><span class="fu">n</span>())</span>
-<span id="cb406-7"><a href="answers.html#cb406-7" aria-hidden="true" tabindex="-1"></a>families <span class="sc">%&gt;%</span></span>
-<span id="cb406-8"><a href="answers.html#cb406-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Family <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Noctuidae&quot;</span>, <span class="st">&quot;Geometridae&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="answers.html#cb385-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
+<span id="cb385-2"><a href="answers.html#cb385-2" aria-hidden="true" tabindex="-1"></a>families <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb385-3"><a href="answers.html#cb385-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Species, Order, Family) <span class="sc">%&gt;%</span></span>
+<span id="cb385-4"><a href="answers.html#cb385-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb385-5"><a href="answers.html#cb385-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Order, Family) <span class="sc">%&gt;%</span></span>
+<span id="cb385-6"><a href="answers.html#cb385-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">num_spp=</span><span class="fu">n</span>())</span>
+<span id="cb385-7"><a href="answers.html#cb385-7" aria-hidden="true" tabindex="-1"></a>families <span class="sc">%&gt;%</span></span>
+<span id="cb385-8"><a href="answers.html#cb385-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Family <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Noctuidae&quot;</span>, <span class="st">&quot;Geometridae&quot;</span>))</span></code></pre></div>
 <p><strong>Q5.15</strong> The paper states that <em>56.9±36.7% were migratory moth
 species</em>. Calculate this yourself.</p>
 <p>Answer: In this solution we calculate the proportion migratory in the
 diet of each bat, then calculate the mean and standard deviation of
 these proportions. The answer we find is not the same as in the paper,
 though we are not sure why.</p>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="answers.html#cb407-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb407-2"><a href="answers.html#cb407-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID, Migratory) <span class="sc">%&gt;%</span></span>
-<span id="cb407-3"><a href="answers.html#cb407-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_prey=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb407-4"><a href="answers.html#cb407-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(<span class="at">key=</span>Migratory, <span class="at">value=</span>num_prey) <span class="sc">%&gt;%</span></span>
-<span id="cb407-5"><a href="answers.html#cb407-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">no=</span><span class="fu">ifelse</span>(<span class="fu">is.na</span>(no), <span class="dv">0</span>, no),</span>
-<span id="cb407-6"><a href="answers.html#cb407-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">yes=</span><span class="fu">ifelse</span>(<span class="fu">is.na</span>(yes), <span class="dv">0</span>, yes),</span>
-<span id="cb407-7"><a href="answers.html#cb407-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">perc_migratory=</span>yes<span class="sc">/</span>(yes<span class="sc">+</span>no)) <span class="sc">%&gt;%</span></span>
-<span id="cb407-8"><a href="answers.html#cb407-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb407-9"><a href="answers.html#cb407-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(perc_migratory),</span>
-<span id="cb407-10"><a href="answers.html#cb407-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sd</span>(perc_migratory))</span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="answers.html#cb386-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb386-2"><a href="answers.html#cb386-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID, Migratory) <span class="sc">%&gt;%</span></span>
+<span id="cb386-3"><a href="answers.html#cb386-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_prey=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb386-4"><a href="answers.html#cb386-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(<span class="at">key=</span>Migratory, <span class="at">value=</span>num_prey) <span class="sc">%&gt;%</span></span>
+<span id="cb386-5"><a href="answers.html#cb386-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">no=</span><span class="fu">ifelse</span>(<span class="fu">is.na</span>(no), <span class="dv">0</span>, no),</span>
+<span id="cb386-6"><a href="answers.html#cb386-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">yes=</span><span class="fu">ifelse</span>(<span class="fu">is.na</span>(yes), <span class="dv">0</span>, yes),</span>
+<span id="cb386-7"><a href="answers.html#cb386-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">perc_migratory=</span>yes<span class="sc">/</span>(yes<span class="sc">+</span>no)) <span class="sc">%&gt;%</span></span>
+<span id="cb386-8"><a href="answers.html#cb386-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb386-9"><a href="answers.html#cb386-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(perc_migratory),</span>
+<span id="cb386-10"><a href="answers.html#cb386-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sd</span>(perc_migratory))</span></code></pre></div>
 <p><strong>Q5.16</strong> Confirm the results from the paper: <em>Moths (Lepidoptera;
 mainly Noctuidae and Geometridae) were by far the most frequently
 recorded prey, occurring in nearly all samples and accounting for 96 out
 of 115 prey taxa.</em></p>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="answers.html#cb408-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb408-2"><a href="answers.html#cb408-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Species, Order) <span class="sc">%&gt;%</span></span>
-<span id="cb408-3"><a href="answers.html#cb408-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb408-4"><a href="answers.html#cb408-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Order) <span class="sc">%&gt;%</span></span>
-<span id="cb408-5"><a href="answers.html#cb408-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">num_spp=</span><span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="answers.html#cb387-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb387-2"><a href="answers.html#cb387-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Species, Order) <span class="sc">%&gt;%</span></span>
+<span id="cb387-3"><a href="answers.html#cb387-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb387-4"><a href="answers.html#cb387-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Order) <span class="sc">%&gt;%</span></span>
+<span id="cb387-5"><a href="answers.html#cb387-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">num_spp=</span><span class="fu">n</span>())</span></code></pre></div>
 <p><strong>Q5.17</strong> Confirm the results from the paper: <em>Each pellet [poo]
 contained on average 4.1 ± 2.2 prey items</em></p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="answers.html#cb409-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb409-2"><a href="answers.html#cb409-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
-<span id="cb409-3"><a href="answers.html#cb409-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_prey=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb409-4"><a href="answers.html#cb409-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(num_prey),</span>
-<span id="cb409-5"><a href="answers.html#cb409-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sd</span>(num_prey))</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="answers.html#cb388-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb388-2"><a href="answers.html#cb388-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
+<span id="cb388-3"><a href="answers.html#cb388-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_prey=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb388-4"><a href="answers.html#cb388-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(num_prey),</span>
+<span id="cb388-5"><a href="answers.html#cb388-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sd</span>(num_prey))</span></code></pre></div>
 <p>A slightly different answer to that in the paper. We are not sure why.</p>
 </div>
 </div>
@@ -1020,13 +1017,12 @@ Insights book, that will calculate the number of prey species in the
 poop of each bat, and the average number of prey per bat for each
 taxonomic Order.</p>
 <p>Answer:</p>
-<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="answers.html#cb410-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb410-2"><a href="answers.html#cb410-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID, Order) <span class="sc">%&gt;%</span></span>
-<span id="cb410-3"><a href="answers.html#cb410-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Num_prey =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb410-4"><a href="answers.html#cb410-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Order) <span class="sc">%&gt;%</span></span>
-<span id="cb410-5"><a href="answers.html#cb410-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Mean_num_prey =</span> <span class="fu">mean</span>(Num_prey))</span></code></pre></div>
-<pre><code>## `summarise()` regrouping output by &#39;Bat_ID&#39; (override with `.groups` argument)</code></pre>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="answers.html#cb389-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb389-2"><a href="answers.html#cb389-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID, Order) <span class="sc">%&gt;%</span></span>
+<span id="cb389-3"><a href="answers.html#cb389-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Num_prey =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb389-4"><a href="answers.html#cb389-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Order) <span class="sc">%&gt;%</span></span>
+<span id="cb389-5"><a href="answers.html#cb389-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Mean_num_prey =</span> <span class="fu">mean</span>(Num_prey))</span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;Bat_ID&#39;. You can override using the `.groups` argument.</code></pre>
 <pre><code>## # A tibble: 7 x 2
 ##   Order       Mean_num_prey
 ##   &lt;chr&gt;               &lt;dbl&gt;
@@ -1041,17 +1037,17 @@ E.g. “Adult-Female,” “Adult-Male,” and so on.</p>
 <p>Answer: There are a number of ways to do this. A <code>mutate</code> and <code>paste</code>
 within that would work. In our answer we use the <code>unite</code> function from
 the <code>tidyr</code> add-on package…</p>
-<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="answers.html#cb414-1" aria-hidden="true" tabindex="-1"></a>bats <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
-<span id="cb414-2"><a href="answers.html#cb414-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="at">col =</span> Age_Sex,</span>
-<span id="cb414-3"><a href="answers.html#cb414-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Sex&quot;</span>),</span>
-<span id="cb414-4"><a href="answers.html#cb414-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">sep =</span> <span class="st">&quot;-&quot;</span>,</span>
-<span id="cb414-5"><a href="answers.html#cb414-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="answers.html#cb392-1" aria-hidden="true" tabindex="-1"></a>bats <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb392-2"><a href="answers.html#cb392-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="at">col =</span> Age_Sex,</span>
+<span id="cb392-3"><a href="answers.html#cb392-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Sex&quot;</span>),</span>
+<span id="cb392-4"><a href="answers.html#cb392-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">sep =</span> <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb392-5"><a href="answers.html#cb392-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><strong>Q6.12</strong> How long did the fieldwork take, from the first sample to the
 last?</p>
 <p>Answer: We used summarise to subtract the maximum value of the date
 variable from the minimum…</p>
-<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="answers.html#cb415-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb415-2"><a href="answers.html#cb415-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">duration =</span> <span class="fu">max</span>(Date_proper) <span class="sc">-</span> <span class="fu">min</span>(Date_proper))</span></code></pre></div>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="answers.html#cb393-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb393-2"><a href="answers.html#cb393-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">duration =</span> <span class="fu">max</span>(Date_proper) <span class="sc">-</span> <span class="fu">min</span>(Date_proper))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   duration
 ##   &lt;drtn&gt;  
@@ -1065,20 +1061,20 @@ each of the possible prey species, with number of reads at the entry.</p>
 <p>Answer: Use the <code>pivot_wider</code> function. Be careful to give <em>all</em> the
 columns that identify the rows (<code>id_cols</code>), the just specify which
 column contains the names, and which column contains the values…</p>
-<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="answers.html#cb417-1" aria-hidden="true" tabindex="-1"></a>bats_wide <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
-<span id="cb417-2"><a href="answers.html#cb417-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">&quot;Bat_ID&quot;</span>, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Date_proper&quot;</span>),</span>
-<span id="cb417-3"><a href="answers.html#cb417-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_from =</span> <span class="st">&quot;Species&quot;</span>,</span>
-<span id="cb417-4"><a href="answers.html#cb417-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> <span class="st">&quot;No._Reads&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="answers.html#cb395-1" aria-hidden="true" tabindex="-1"></a>bats_wide <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb395-2"><a href="answers.html#cb395-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">&quot;Bat_ID&quot;</span>, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Date_proper&quot;</span>),</span>
+<span id="cb395-3"><a href="answers.html#cb395-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_from =</span> <span class="st">&quot;Species&quot;</span>,</span>
+<span id="cb395-4"><a href="answers.html#cb395-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> <span class="st">&quot;No._Reads&quot;</span>)</span></code></pre></div>
 <p><strong>Q6.14</strong> If you have NA’s in the wide dataset you made for the answer
 to the previous question, figure out how to replace these with zeros.
 Hint: you do not need to use another function or operation.</p>
 <p>Answer: Add the argument <code>values_fill = 0</code> to the use of the
 <code>pivot_longer</code> function:</p>
-<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="answers.html#cb418-1" aria-hidden="true" tabindex="-1"></a>bats_wide <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
-<span id="cb418-2"><a href="answers.html#cb418-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">&quot;Bat_ID&quot;</span>, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Date_proper&quot;</span>),</span>
-<span id="cb418-3"><a href="answers.html#cb418-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_from =</span> <span class="st">&quot;Species&quot;</span>,</span>
-<span id="cb418-4"><a href="answers.html#cb418-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> <span class="st">&quot;No._Reads&quot;</span>,</span>
-<span id="cb418-5"><a href="answers.html#cb418-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_fill =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="answers.html#cb396-1" aria-hidden="true" tabindex="-1"></a>bats_wide <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb396-2"><a href="answers.html#cb396-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">&quot;Bat_ID&quot;</span>, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Date_proper&quot;</span>),</span>
+<span id="cb396-3"><a href="answers.html#cb396-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_from =</span> <span class="st">&quot;Species&quot;</span>,</span>
+<span id="cb396-4"><a href="answers.html#cb396-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> <span class="st">&quot;No._Reads&quot;</span>,</span>
+<span id="cb396-5"><a href="answers.html#cb396-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_fill =</span> <span class="dv">0</span>)</span></code></pre></div>
 <p><strong>Q6.15</strong> How many rows will there be when we change this <code>bats_wide</code>
 dataset back to long format?</p>
 <p>Answer: It will be the number of rows in <code>bats_wide</code> (143) multiplied by
@@ -1088,16 +1084,16 @@ So we should have 16’445 rows.</p>
 and the make a new column that is a binary prey presence/absence
 variable.</p>
 <p>Answer:</p>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="answers.html#cb419-1" aria-hidden="true" tabindex="-1"></a>bats_long <span class="ot">&lt;-</span> bats_wide <span class="sc">%&gt;%</span></span>
-<span id="cb419-2"><a href="answers.html#cb419-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">names_to =</span> <span class="st">&quot;Prey_species&quot;</span>,</span>
-<span id="cb419-3"><a href="answers.html#cb419-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;Num_reads&quot;</span>,</span>
-<span id="cb419-4"><a href="answers.html#cb419-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">cols =</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">119</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb419-5"><a href="answers.html#cb419-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Pres_abs =</span> <span class="fu">ifelse</span>(Num_reads <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="answers.html#cb397-1" aria-hidden="true" tabindex="-1"></a>bats_long <span class="ot">&lt;-</span> bats_wide <span class="sc">%&gt;%</span></span>
+<span id="cb397-2"><a href="answers.html#cb397-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">names_to =</span> <span class="st">&quot;Prey_species&quot;</span>,</span>
+<span id="cb397-3"><a href="answers.html#cb397-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;Num_reads&quot;</span>,</span>
+<span id="cb397-4"><a href="answers.html#cb397-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">cols =</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">119</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb397-5"><a href="answers.html#cb397-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Pres_abs =</span> <span class="fu">ifelse</span>(Num_reads <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div>
 <p><strong>Q6.17</strong> Confirm that the number of presences is the same as in the
 original dataset.</p>
 <p>Answer:</p>
-<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="answers.html#cb420-1" aria-hidden="true" tabindex="-1"></a>bats_long <span class="sc">%&gt;%</span></span>
-<span id="cb420-2"><a href="answers.html#cb420-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_prey =</span> <span class="fu">sum</span>(Pres_abs))</span></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="answers.html#cb398-1" aria-hidden="true" tabindex="-1"></a>bats_long <span class="sc">%&gt;%</span></span>
+<span id="cb398-2"><a href="answers.html#cb398-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_prey =</span> <span class="fu">sum</span>(Pres_abs))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   total_prey
 ##        &lt;dbl&gt;
@@ -1144,9 +1140,9 @@ subset of the data.</p>
 <p><strong>Q7.6</strong> Plot at the shape of the distribution of number of poops
 collected on each sampling date.</p>
 <p>Answer:</p>
-<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="answers.html#cb422-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb422-2"><a href="answers.html#cb422-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb422-3"><a href="answers.html#cb422-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> Date_proper))</span></code></pre></div>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="answers.html#cb400-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb400-2"><a href="answers.html#cb400-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb400-3"><a href="answers.html#cb400-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> Date_proper))</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value
 ## with `binwidth`.</code></pre>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-239-1.svg" width="336" style="display: block; margin: auto;" /></p>
@@ -1157,63 +1153,62 @@ For extra credit, add two vertical lines to the graph, one where the
 mean is, and one where the median is (hint, use the <code>geom_vline</code>
 function).</p>
 <p>Answer:</p>
-<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="answers.html#cb424-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb424-2"><a href="answers.html#cb424-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb424-3"><a href="answers.html#cb424-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> No._Reads))</span></code></pre></div>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="answers.html#cb402-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb402-2"><a href="answers.html#cb402-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb402-3"><a href="answers.html#cb402-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> No._Reads))</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value
 ## with `binwidth`.</code></pre>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-240-1.svg" width="336" style="display: block; margin: auto;" /></p>
 <p>Because the distribution has a few very large values, the mean will be
 pulled to the right (be larger), relative to the median. Lets check if
 we’re correct:</p>
-<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="answers.html#cb426-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb426-2"><a href="answers.html#cb426-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_num_reads =</span> <span class="fu">mean</span>(No._Reads),</span>
-<span id="cb426-3"><a href="answers.html#cb426-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">median_num_reads =</span> <span class="fu">median</span>(No._Reads))</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="answers.html#cb404-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb404-2"><a href="answers.html#cb404-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_num_reads =</span> <span class="fu">mean</span>(No._Reads),</span>
+<span id="cb404-3"><a href="answers.html#cb404-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">median_num_reads =</span> <span class="fu">median</span>(No._Reads))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 2
 ##   mean_num_reads median_num_reads
 ##            &lt;dbl&gt;            &lt;dbl&gt;
 ## 1          7700.             2741</code></pre>
 <p>Yes, the mean is much much larger than the median.</p>
-<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="answers.html#cb428-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb428-2"><a href="answers.html#cb428-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb428-3"><a href="answers.html#cb428-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> No._Reads)) <span class="sc">+</span></span>
-<span id="cb428-4"><a href="answers.html#cb428-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">7700</span>) <span class="sc">+</span></span>
-<span id="cb428-5"><a href="answers.html#cb428-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">2741</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="answers.html#cb406-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb406-2"><a href="answers.html#cb406-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb406-3"><a href="answers.html#cb406-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> No._Reads)) <span class="sc">+</span></span>
+<span id="cb406-4"><a href="answers.html#cb406-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">7700</span>) <span class="sc">+</span></span>
+<span id="cb406-5"><a href="answers.html#cb406-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">2741</span>)</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value
 ## with `binwidth`.</code></pre>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-242-1.svg" width="336" style="display: block; margin: auto;" /></p>
-<pre><code>## `summarise()` regrouping output by &#39;Bat_ID&#39;, &#39;Sex&#39; (override with `.groups` argument)</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;Bat_ID&#39;, &#39;Sex&#39;. You can override using the `.groups` argument.</code></pre>
 <p><strong>Q7.8</strong> The following code is intended to create a plot of the wingspan
 of prey found in male and female bat poops. Find and correct the three
 intentional errors it contains:</p>
-<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="answers.html#cb431-1" aria-hidden="true" tabindex="-1"></a> prey_stats <span class="sc">%&gt;%</span></span>
-<span id="cb431-2"><a href="answers.html#cb431-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb431-3"><a href="answers.html#cb431-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_beewarm</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sex <span class="at">y =</span> mean_wingspan))</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="answers.html#cb409-1" aria-hidden="true" tabindex="-1"></a> prey_stats <span class="sc">%&gt;%</span></span>
+<span id="cb409-2"><a href="answers.html#cb409-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb409-3"><a href="answers.html#cb409-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_beewarm</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sex <span class="at">y =</span> mean_wingspan))</span></code></pre></div>
 <p>Answer: The second pipe should be a plus sign <code>+</code>: we are <em>adding</em> a
 layer to the <code>ggplot</code>; we are not piping. This is a common error we
 make. There is an <code>s</code> missing in the <code>geom_beeswarm</code>. Finally, the comma
 that must separate the two arguments in the <code>aes</code> function is missing.
 Here is the corrected code (though it will not work if you have not
 already made the <code>prey_stats</code> object):</p>
-<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="answers.html#cb432-1" aria-hidden="true" tabindex="-1"></a> prey_stats <span class="sc">%&gt;%</span></span>
-<span id="cb432-2"><a href="answers.html#cb432-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb432-3"><a href="answers.html#cb432-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_beeswarm</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sex, <span class="at">y =</span> mean_wingspan))</span></code></pre></div>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="answers.html#cb410-1" aria-hidden="true" tabindex="-1"></a> prey_stats <span class="sc">%&gt;%</span></span>
+<span id="cb410-2"><a href="answers.html#cb410-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb410-3"><a href="answers.html#cb410-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_beeswarm</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sex, <span class="at">y =</span> mean_wingspan))</span></code></pre></div>
 <p><strong>Q7.9</strong> Calculate and plot a histogram of the probability of observing
 each of the prey species across the whole study.</p>
 <p>Answer: The probability is the number of times observed divided by the
 number of times a species could have been observed:</p>
-<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="answers.html#cb433-1" aria-hidden="true" tabindex="-1"></a>max_poss_obs <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
-<span id="cb433-2"><a href="answers.html#cb433-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
-<span id="cb433-3"><a href="answers.html#cb433-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb433-4"><a href="answers.html#cb433-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">length</span>()</span>
-<span id="cb433-5"><a href="answers.html#cb433-5" aria-hidden="true" tabindex="-1"></a>prob_obs <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
-<span id="cb433-6"><a href="answers.html#cb433-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
-<span id="cb433-7"><a href="answers.html#cb433-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">prob =</span> <span class="fu">n</span>() <span class="sc">/</span> max_poss_obs)</span></code></pre></div>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="answers.html#cb411-1" aria-hidden="true" tabindex="-1"></a>max_poss_obs <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb411-2"><a href="answers.html#cb411-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
+<span id="cb411-3"><a href="answers.html#cb411-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb411-4"><a href="answers.html#cb411-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">length</span>()</span>
+<span id="cb411-5"><a href="answers.html#cb411-5" aria-hidden="true" tabindex="-1"></a>prob_obs <span class="ot">&lt;-</span> bats <span class="sc">%&gt;%</span></span>
+<span id="cb411-6"><a href="answers.html#cb411-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb411-7"><a href="answers.html#cb411-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">prob =</span> <span class="fu">n</span>() <span class="sc">/</span> max_poss_obs)</span></code></pre></div>
 <p>And the histogram:</p>
-<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="answers.html#cb435-1" aria-hidden="true" tabindex="-1"></a>prob_obs <span class="sc">%&gt;%</span></span>
-<span id="cb435-2"><a href="answers.html#cb435-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb435-3"><a href="answers.html#cb435-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> prob))</span></code></pre></div>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="answers.html#cb412-1" aria-hidden="true" tabindex="-1"></a>prob_obs <span class="sc">%&gt;%</span></span>
+<span id="cb412-2"><a href="answers.html#cb412-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb412-3"><a href="answers.html#cb412-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> prob))</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value
 ## with `binwidth`.</code></pre>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-247-1.svg" width="336" style="display: block; margin: auto;" /></p>
@@ -1225,24 +1220,24 @@ in female compared to male poos. Calculate how many, and see how close
 is your guess. (Hint: it may be worthwhile to plot log2 of the odds
 ratio.)</p>
 <p>Answer:</p>
-<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="answers.html#cb437-1" aria-hidden="true" tabindex="-1"></a>odds_ratios <span class="sc">%&gt;%</span></span>
-<span id="cb437-2"><a href="answers.html#cb437-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb437-3"><a href="answers.html#cb437-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Odds_ratio))</span></code></pre></div>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="answers.html#cb414-1" aria-hidden="true" tabindex="-1"></a>odds_ratios <span class="sc">%&gt;%</span></span>
+<span id="cb414-2"><a href="answers.html#cb414-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb414-3"><a href="answers.html#cb414-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Odds_ratio))</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value
 ## with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 22 rows containing non-finite values
 ## (stat_bin).</code></pre>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-249-1.svg" width="336" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="answers.html#cb440-1" aria-hidden="true" tabindex="-1"></a>odds_ratios <span class="sc">%&gt;%</span></span>
-<span id="cb440-2"><a href="answers.html#cb440-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb440-3"><a href="answers.html#cb440-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log2</span>(Odds_ratio)))</span></code></pre></div>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="answers.html#cb417-1" aria-hidden="true" tabindex="-1"></a>odds_ratios <span class="sc">%&gt;%</span></span>
+<span id="cb417-2"><a href="answers.html#cb417-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb417-3"><a href="answers.html#cb417-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log2</span>(Odds_ratio)))</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value
 ## with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 65 rows containing non-finite values
 ## (stat_bin).</code></pre>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-250-1.svg" width="336" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="answers.html#cb443-1" aria-hidden="true" tabindex="-1"></a>odds_ratios <span class="sc">%&gt;%</span></span>
-<span id="cb443-2"><a href="answers.html#cb443-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">ans =</span> <span class="fu">sum</span>(<span class="at">less_than_half_or_twice =</span> <span class="fu">abs</span>(<span class="fu">log2</span>(Odds_ratio)) <span class="sc">&lt;</span> <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="answers.html#cb420-1" aria-hidden="true" tabindex="-1"></a>odds_ratios <span class="sc">%&gt;%</span></span>
+<span id="cb420-2"><a href="answers.html#cb420-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">ans =</span> <span class="fu">sum</span>(<span class="at">less_than_half_or_twice =</span> <span class="fu">abs</span>(<span class="fu">log2</span>(Odds_ratio)) <span class="sc">&lt;</span> <span class="dv">1</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##     ans
 ##   &lt;int&gt;
@@ -1353,25 +1348,25 @@ might be useful to sort/arrange the dataset by ascending values of the
 wingspan variable; and you will need to know the number of observations.
 Then use the <code>quantile</code> function to check your answer.</p>
 <p>Answer:</p>
-<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="answers.html#cb445-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb445-2"><a href="answers.html#cb445-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_obs =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(Wingspan_mm)))</span></code></pre></div>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="answers.html#cb422-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb422-2"><a href="answers.html#cb422-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_obs =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(Wingspan_mm)))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   num_obs
 ##     &lt;int&gt;
 ## 1     555</code></pre>
-<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="answers.html#cb447-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 555 observations</span></span>
-<span id="cb447-2"><a href="answers.html#cb447-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 25% of 555 is 139</span></span>
-<span id="cb447-3"><a href="answers.html#cb447-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 50% of 555 is 278 (for the median)</span></span>
-<span id="cb447-4"><a href="answers.html#cb447-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 75% of 555 is 416</span></span>
-<span id="cb447-5"><a href="answers.html#cb447-5" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb447-6"><a href="answers.html#cb447-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Wingspan_mm)) <span class="sc">%&gt;%</span></span>
-<span id="cb447-7"><a href="answers.html#cb447-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Wingspan_mm) <span class="sc">%&gt;%</span></span>
-<span id="cb447-8"><a href="answers.html#cb447-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="fu">c</span>(<span class="dv">139</span>, <span class="dv">278</span>, <span class="dv">416</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb447-9"><a href="answers.html#cb447-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Wingspan_mm)</span></code></pre></div>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="answers.html#cb424-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 555 observations</span></span>
+<span id="cb424-2"><a href="answers.html#cb424-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 25% of 555 is 139</span></span>
+<span id="cb424-3"><a href="answers.html#cb424-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 50% of 555 is 278 (for the median)</span></span>
+<span id="cb424-4"><a href="answers.html#cb424-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 75% of 555 is 416</span></span>
+<span id="cb424-5"><a href="answers.html#cb424-5" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb424-6"><a href="answers.html#cb424-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Wingspan_mm)) <span class="sc">%&gt;%</span></span>
+<span id="cb424-7"><a href="answers.html#cb424-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Wingspan_mm) <span class="sc">%&gt;%</span></span>
+<span id="cb424-8"><a href="answers.html#cb424-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="fu">c</span>(<span class="dv">139</span>, <span class="dv">278</span>, <span class="dv">416</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb424-9"><a href="answers.html#cb424-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Wingspan_mm)</span></code></pre></div>
 <pre><code>## [1] 29 35 39</code></pre>
 <p>And check using a function:</p>
-<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="answers.html#cb449-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">quantile =</span> scales<span class="sc">::</span><span class="fu">percent</span>(<span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>)),</span>
-<span id="cb449-2"><a href="answers.html#cb449-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">q_wing =</span> <span class="fu">quantile</span>(Wingspan_mm, <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="answers.html#cb426-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">quantile =</span> scales<span class="sc">::</span><span class="fu">percent</span>(<span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>)),</span>
+<span id="cb426-2"><a href="answers.html#cb426-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">q_wing =</span> <span class="fu">quantile</span>(Wingspan_mm, <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 3 x 2
 ##   quantile q_wing
 ##   &lt;chr&gt;     &lt;dbl&gt;
@@ -1421,11 +1416,11 @@ is evidence of an association between two categorical variables?</p>
 combination of the two categorical variables would work. Here is the
 graph we can use for the <code>Migratory</code> variable and the <code>Family</code> variable
 in the bat diet dataset:</p>
-<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="answers.html#cb451-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb451-2"><a href="answers.html#cb451-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data =</span> bats,</span>
-<span id="cb451-3"><a href="answers.html#cb451-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Family, <span class="at">fill =</span> Migratory),</span>
-<span id="cb451-4"><a href="answers.html#cb451-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span> <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb451-5"><a href="answers.html#cb451-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Family&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Number of Observations&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="answers.html#cb428-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb428-2"><a href="answers.html#cb428-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data =</span> bats,</span>
+<span id="cb428-3"><a href="answers.html#cb428-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Family, <span class="at">fill =</span> Migratory),</span>
+<span id="cb428-4"><a href="answers.html#cb428-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span> <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb428-5"><a href="answers.html#cb428-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Family&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Number of Observations&quot;</span>)</span></code></pre></div>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-254-1.svg" width="672" style="display: block; margin: auto;" /></p>
 <p>We could make the counts proportions and plot these:</p>
 <pre rfig.width="7"><code>ggplot(bats, aes(x = Family, fill = Migratory)) +
@@ -1473,13 +1468,13 @@ poop. Hint: you will first need to calculate the number of prey, if you
 have not already. Make sure to take care that all data points are very
 likely visible.</p>
 <p>Answer:</p>
-<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="answers.html#cb453-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
-<span id="cb453-2"><a href="answers.html#cb453-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
-<span id="cb453-3"><a href="answers.html#cb453-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_prey =</span> <span class="fu">length</span>(Species),</span>
-<span id="cb453-4"><a href="answers.html#cb453-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">num_reads =</span> <span class="fu">sum</span>(No._Reads)) <span class="sc">%&gt;%</span></span>
-<span id="cb453-5"><a href="answers.html#cb453-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb453-6"><a href="answers.html#cb453-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">x =</span> num_reads, <span class="at">y =</span> num_prey),</span>
-<span id="cb453-7"><a href="answers.html#cb453-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">width =</span> <span class="dv">0</span>, <span class="at">height =</span> <span class="fl">0.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="answers.html#cb430-1" aria-hidden="true" tabindex="-1"></a>bats <span class="sc">%&gt;%</span></span>
+<span id="cb430-2"><a href="answers.html#cb430-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Bat_ID) <span class="sc">%&gt;%</span></span>
+<span id="cb430-3"><a href="answers.html#cb430-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_prey =</span> <span class="fu">length</span>(Species),</span>
+<span id="cb430-4"><a href="answers.html#cb430-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">num_reads =</span> <span class="fu">sum</span>(No._Reads)) <span class="sc">%&gt;%</span></span>
+<span id="cb430-5"><a href="answers.html#cb430-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb430-6"><a href="answers.html#cb430-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">x =</span> num_reads, <span class="at">y =</span> num_prey),</span>
+<span id="cb430-7"><a href="answers.html#cb430-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">width =</span> <span class="dv">0</span>, <span class="at">height =</span> <span class="fl">0.2</span>)</span></code></pre></div>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-255-1.svg" width="336" style="display: block; margin: auto;" /></p>
 </div>
 </div>
@@ -1540,38 +1535,38 @@ try to infer this, or just think about it)? You can get the GDP data
 from here: <a href="http://www.fao.org/faostat/en/#data/MK" class="uri">http://www.fao.org/faostat/en/#data/MK</a></p>
 <p>Our solution (code only) is at the end of <a href="answers.html#answers">Answers chapter</a> of
 this web site.</p>
-<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="answers.html#cb454-1" aria-hidden="true" tabindex="-1"></a>gdp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/Macro-Statistics_Key_Indicators_E_All_Data.csv&quot;</span>,</span>
-<span id="cb454-2"><a href="answers.html#cb454-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">&#39;ISO-8859-1&#39;</span>))</span>
-<span id="cb454-3"><a href="answers.html#cb454-3" aria-hidden="true" tabindex="-1"></a><span class="co"># First fix some variable names:</span></span>
-<span id="cb454-4"><a href="answers.html#cb454-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(gdp) <span class="ot">&lt;-</span> <span class="fu">str_replace_all</span>(<span class="fu">names</span>(gdp), <span class="fu">c</span>(<span class="st">&quot; &quot;</span> <span class="ot">=</span> <span class="st">&quot;_&quot;</span>))</span>
-<span id="cb454-5"><a href="answers.html#cb454-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove all non-countries</span></span>
-<span id="cb454-6"><a href="answers.html#cb454-6" aria-hidden="true" tabindex="-1"></a><span class="co"># keep only some of the elements</span></span>
-<span id="cb454-7"><a href="answers.html#cb454-7" aria-hidden="true" tabindex="-1"></a><span class="co">#gdp &lt;-   filter(gdp, Item_Code==22008 &amp; Element_Code==6110)</span></span>
-<span id="cb454-8"><a href="answers.html#cb454-8" aria-hidden="true" tabindex="-1"></a>gdp <span class="ot">&lt;-</span>   <span class="fu">filter</span>(gdp, Item_Code<span class="sc">==</span><span class="dv">22014</span> <span class="sc">&amp;</span> Element_Code<span class="sc">==</span><span class="dv">6119</span>)</span>
-<span id="cb454-9"><a href="answers.html#cb454-9" aria-hidden="true" tabindex="-1"></a>gdp <span class="ot">&lt;-</span> <span class="fu">select</span>(gdp, <span class="sc">-</span>Item_Code, <span class="sc">-</span>Area_Code,</span>
-<span id="cb454-10"><a href="answers.html#cb454-10" aria-hidden="true" tabindex="-1"></a>             <span class="sc">-</span>Element_Code, <span class="sc">-</span>Element, <span class="sc">-</span>Unit, <span class="sc">-</span>Item,</span>
-<span id="cb454-11"><a href="answers.html#cb454-11" aria-hidden="true" tabindex="-1"></a>             <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">&quot;F&quot;</span>), <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">&quot;N&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb454-12"><a href="answers.html#cb454-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">names_to =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;GDP&quot;</span>, <span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">49</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb454-13"><a href="answers.html#cb454-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Year=</span><span class="fu">as.numeric</span>(<span class="fu">substr</span>(Year, <span class="dv">2</span>, <span class="dv">5</span>))) <span class="sc">%&gt;%</span></span>
-<span id="cb454-14"><a href="answers.html#cb454-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Country=</span>Area)</span>
-<span id="cb454-15"><a href="answers.html#cb454-15" aria-hidden="true" tabindex="-1"></a>fbs_pol_all <span class="ot">&lt;-</span> <span class="fu">full_join</span>(fbs_pol, gdp)</span>
-<span id="cb454-16"><a href="answers.html#cb454-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb454-17"><a href="answers.html#cb454-17" aria-hidden="true" tabindex="-1"></a>fbs_pol_sum <span class="ot">&lt;-</span> <span class="fu">group_by</span>(fbs_pol_all, Country) <span class="sc">%&gt;%</span></span>
-<span id="cb454-18"><a href="answers.html#cb454-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_div=</span><span class="fu">mean</span>(Diversity, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb454-19"><a href="answers.html#cb454-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_pol=</span><span class="fu">mean</span>(Polity2, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb454-20"><a href="answers.html#cb454-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_GDP=</span><span class="fu">mean</span>(GDP, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
-<span id="cb454-21"><a href="answers.html#cb454-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb454-22"><a href="answers.html#cb454-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb454-23"><a href="answers.html#cb454-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fbs_pol_sum,</span>
-<span id="cb454-24"><a href="answers.html#cb454-24" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log10</span>(mean_GDP), <span class="at">y=</span>mean_div, <span class="at">col=</span>mean_pol), <span class="at">size=</span><span class="dv">3</span>)</span>
-<span id="cb454-25"><a href="answers.html#cb454-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb454-26"><a href="answers.html#cb454-26" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb454-27"><a href="answers.html#cb454-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fbs_pol_sum,</span>
-<span id="cb454-28"><a href="answers.html#cb454-28" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>mean_pol, <span class="at">y=</span>mean_div, <span class="at">col=</span><span class="fu">log10</span>(mean_GDP)), <span class="at">size=</span><span class="dv">3</span>)</span>
-<span id="cb454-29"><a href="answers.html#cb454-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb454-30"><a href="answers.html#cb454-30" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb454-31"><a href="answers.html#cb454-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fbs_pol_sum,</span>
-<span id="cb454-32"><a href="answers.html#cb454-32" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x=</span>mean_pol, <span class="at">y=</span><span class="fu">log10</span>(mean_GDP), <span class="at">col=</span>mean_div), <span class="at">size=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="answers.html#cb431-1" aria-hidden="true" tabindex="-1"></a>gdp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/Macro-Statistics_Key_Indicators_E_All_Data.csv&quot;</span>,</span>
+<span id="cb431-2"><a href="answers.html#cb431-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">&#39;ISO-8859-1&#39;</span>))</span>
+<span id="cb431-3"><a href="answers.html#cb431-3" aria-hidden="true" tabindex="-1"></a><span class="co"># First fix some variable names:</span></span>
+<span id="cb431-4"><a href="answers.html#cb431-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(gdp) <span class="ot">&lt;-</span> <span class="fu">str_replace_all</span>(<span class="fu">names</span>(gdp), <span class="fu">c</span>(<span class="st">&quot; &quot;</span> <span class="ot">=</span> <span class="st">&quot;_&quot;</span>))</span>
+<span id="cb431-5"><a href="answers.html#cb431-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove all non-countries</span></span>
+<span id="cb431-6"><a href="answers.html#cb431-6" aria-hidden="true" tabindex="-1"></a><span class="co"># keep only some of the elements</span></span>
+<span id="cb431-7"><a href="answers.html#cb431-7" aria-hidden="true" tabindex="-1"></a><span class="co">#gdp &lt;-   filter(gdp, Item_Code==22008 &amp; Element_Code==6110)</span></span>
+<span id="cb431-8"><a href="answers.html#cb431-8" aria-hidden="true" tabindex="-1"></a>gdp <span class="ot">&lt;-</span>   <span class="fu">filter</span>(gdp, Item_Code<span class="sc">==</span><span class="dv">22014</span> <span class="sc">&amp;</span> Element_Code<span class="sc">==</span><span class="dv">6119</span>)</span>
+<span id="cb431-9"><a href="answers.html#cb431-9" aria-hidden="true" tabindex="-1"></a>gdp <span class="ot">&lt;-</span> <span class="fu">select</span>(gdp, <span class="sc">-</span>Item_Code, <span class="sc">-</span>Area_Code,</span>
+<span id="cb431-10"><a href="answers.html#cb431-10" aria-hidden="true" tabindex="-1"></a>             <span class="sc">-</span>Element_Code, <span class="sc">-</span>Element, <span class="sc">-</span>Unit, <span class="sc">-</span>Item,</span>
+<span id="cb431-11"><a href="answers.html#cb431-11" aria-hidden="true" tabindex="-1"></a>             <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">&quot;F&quot;</span>), <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">&quot;N&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb431-12"><a href="answers.html#cb431-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">names_to =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;GDP&quot;</span>, <span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">49</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb431-13"><a href="answers.html#cb431-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Year=</span><span class="fu">as.numeric</span>(<span class="fu">substr</span>(Year, <span class="dv">2</span>, <span class="dv">5</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb431-14"><a href="answers.html#cb431-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Country=</span>Area)</span>
+<span id="cb431-15"><a href="answers.html#cb431-15" aria-hidden="true" tabindex="-1"></a>fbs_pol_all <span class="ot">&lt;-</span> <span class="fu">full_join</span>(fbs_pol, gdp)</span>
+<span id="cb431-16"><a href="answers.html#cb431-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb431-17"><a href="answers.html#cb431-17" aria-hidden="true" tabindex="-1"></a>fbs_pol_sum <span class="ot">&lt;-</span> <span class="fu">group_by</span>(fbs_pol_all, Country) <span class="sc">%&gt;%</span></span>
+<span id="cb431-18"><a href="answers.html#cb431-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_div=</span><span class="fu">mean</span>(Diversity, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb431-19"><a href="answers.html#cb431-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_pol=</span><span class="fu">mean</span>(Polity2, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb431-20"><a href="answers.html#cb431-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_GDP=</span><span class="fu">mean</span>(GDP, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
+<span id="cb431-21"><a href="answers.html#cb431-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb431-22"><a href="answers.html#cb431-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb431-23"><a href="answers.html#cb431-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fbs_pol_sum,</span>
+<span id="cb431-24"><a href="answers.html#cb431-24" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log10</span>(mean_GDP), <span class="at">y=</span>mean_div, <span class="at">col=</span>mean_pol), <span class="at">size=</span><span class="dv">3</span>)</span>
+<span id="cb431-25"><a href="answers.html#cb431-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb431-26"><a href="answers.html#cb431-26" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb431-27"><a href="answers.html#cb431-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fbs_pol_sum,</span>
+<span id="cb431-28"><a href="answers.html#cb431-28" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>mean_pol, <span class="at">y=</span>mean_div, <span class="at">col=</span><span class="fu">log10</span>(mean_GDP)), <span class="at">size=</span><span class="dv">3</span>)</span>
+<span id="cb431-29"><a href="answers.html#cb431-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb431-30"><a href="answers.html#cb431-30" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb431-31"><a href="answers.html#cb431-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> fbs_pol_sum,</span>
+<span id="cb431-32"><a href="answers.html#cb431-32" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x=</span>mean_pol, <span class="at">y=</span><span class="fu">log10</span>(mean_GDP), <span class="at">col=</span>mean_div), <span class="at">size=</span><span class="dv">3</span>)</span></code></pre></div>
 
 </div>
 </div>

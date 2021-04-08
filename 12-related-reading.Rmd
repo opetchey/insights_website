@@ -31,6 +31,8 @@ Venables, Smith, et al (2009) An Introduction to R. Reference book for the R Lan
 
 ## Data science related reading
 
+* This awesome web site (take a few seconds to start-up): [Wrangling penguins: some basic data wrangling in R with dplyr](https://allisonhorst.shinyapps.io/dplyr-learnr/#section-welcome)
+
 * [*Data Science for Undergraduates: Opportunities and Options. (2018) National Academies Press, Washington, D.C.*](https://www.nap.edu/catalog/25104/data-science-for-undergraduates-opportunities-and-options)
 
 * https://teachdatascience.com/peerj/

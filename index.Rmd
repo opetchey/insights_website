@@ -14,7 +14,7 @@ lof: no
 fontsize: 8pt
 monofont: "Source Code Pro"
 monofontoptions: "Scale=0.7"
-description: "To be completed"
+description: "Welcome!"
 site: bookdown::bookdown_site
 ---
 

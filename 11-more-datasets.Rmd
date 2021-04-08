@@ -69,4 +69,8 @@ and here:
 
 https://cran.r-project.org/web/packages/TH.data
 
+## Fish eye lens diets
+
+* Original publication: https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13543
+* Data: https://datadryad.org/stash/dataset/doi:10.25338/B8WW5D
 

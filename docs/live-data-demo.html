@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 Live data analysis demonstration | Companion Website — Insights from Data with R</title>
-  <meta name="description" content="To be completed" />
+  <meta name="description" content="Welcome!" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 Live data analysis demonstration | Companion Website — Insights from Data with R" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="To be completed" />
+  <meta property="og:description" content="Welcome!" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 11 Live data analysis demonstration | Companion Website — Insights from Data with R" />
   
-  <meta name="twitter:description" content="To be completed" />
+  <meta name="twitter:description" content="Welcome!" />
   
 
 <meta name="author" content="Petchey, Beckerman, Cooper, Childs" />
 
 
-<meta name="date" content="2021-02-06" />
+<meta name="date" content="2021-04-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -368,6 +368,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.8" data-path="more-questions-data.html"><a href="more-questions-data.html#diets-of-predatory-fish"><i class="fa fa-check"></i><b>12.8</b> Diets of predatory fish</a></li>
 <li class="chapter" data-level="12.9" data-path="more-questions-data.html"><a href="more-questions-data.html#cervical-spine-compression-and-mri-not-food-related"><i class="fa fa-check"></i><b>12.9</b> Cervical spine compression and MRI (not food related)</a></li>
 <li class="chapter" data-level="12.10" data-path="more-questions-data.html"><a href="more-questions-data.html#lots-of-other-datasets-here"><i class="fa fa-check"></i><b>12.10</b> Lots of other datasets here:</a></li>
+<li class="chapter" data-level="12.11" data-path="more-questions-data.html"><a href="more-questions-data.html#fish-eye-lens-diets"><i class="fa fa-check"></i><b>12.11</b> Fish eye lens diets</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a>
 <ul>
@@ -506,21 +507,21 @@ And we should be able to collect the data, within our current constraints, neces
 <h2><span class="header-section-number">11.11</span> Lets get the data into our data analysis software of choice (R, via RStudio)</h2>
 <p>First note that Owen has gone to the responses googlesheet, and in the “File” menu, clicked on “Publish to web…” and chosen to publish as “Comma separate values.”</p>
 <p>Now we can read that web page of comma separated values into R:</p>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="live-data-demo.html#cb357-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First we load a required package (we need to install this if we haven&#39;t already)</span></span>
-<span id="cb357-2"><a href="live-data-demo.html#cb357-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb357-3"><a href="live-data-demo.html#cb357-3" aria-hidden="true" tabindex="-1"></a><span class="co"># also we will use some other packages</span></span>
-<span id="cb357-4"><a href="live-data-demo.html#cb357-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb357-5"><a href="live-data-demo.html#cb357-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb357-6"><a href="live-data-demo.html#cb357-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb357-7"><a href="live-data-demo.html#cb357-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Now read in the data, using the read_csv() function. We give it the URL of the published version of the google sheet data.</span></span>
-<span id="cb357-8"><a href="live-data-demo.html#cb357-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructors: update the url to be for your googlesheet</span></span>
-<span id="cb357-9"><a href="live-data-demo.html#cb357-9" aria-hidden="true" tabindex="-1"></a>the_URL <span class="ot">&lt;-</span> <span class="st">&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vT-Uvx2LYX3APsXgjKw1XnIi-jKOi-QNAINmMu234JLvyDZezABPfO-_QnJ5ZtC3wed9pYdxs8-pyK7/pub?output=csv&quot;</span></span>
-<span id="cb357-10"><a href="live-data-demo.html#cb357-10" aria-hidden="true" tabindex="-1"></a>class_RTs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(the_URL)</span>
-<span id="cb357-11"><a href="live-data-demo.html#cb357-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb357-12"><a href="live-data-demo.html#cb357-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Have a look at the data in R</span></span>
-<span id="cb357-13"><a href="live-data-demo.html#cb357-13" aria-hidden="true" tabindex="-1"></a><span class="co">#View(class_RTs)</span></span>
-<span id="cb357-14"><a href="live-data-demo.html#cb357-14" aria-hidden="true" tabindex="-1"></a><span class="co"># or just do</span></span>
-<span id="cb357-15"><a href="live-data-demo.html#cb357-15" aria-hidden="true" tabindex="-1"></a>class_RTs</span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="live-data-demo.html#cb341-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First we load a required package (we need to install this if we haven&#39;t already)</span></span>
+<span id="cb341-2"><a href="live-data-demo.html#cb341-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb341-3"><a href="live-data-demo.html#cb341-3" aria-hidden="true" tabindex="-1"></a><span class="co"># also we will use some other packages</span></span>
+<span id="cb341-4"><a href="live-data-demo.html#cb341-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb341-5"><a href="live-data-demo.html#cb341-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb341-6"><a href="live-data-demo.html#cb341-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb341-7"><a href="live-data-demo.html#cb341-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Now read in the data, using the read_csv() function. We give it the URL of the published version of the google sheet data.</span></span>
+<span id="cb341-8"><a href="live-data-demo.html#cb341-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructors: update the url to be for your googlesheet</span></span>
+<span id="cb341-9"><a href="live-data-demo.html#cb341-9" aria-hidden="true" tabindex="-1"></a>the_URL <span class="ot">&lt;-</span> <span class="st">&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vT-Uvx2LYX3APsXgjKw1XnIi-jKOi-QNAINmMu234JLvyDZezABPfO-_QnJ5ZtC3wed9pYdxs8-pyK7/pub?output=csv&quot;</span></span>
+<span id="cb341-10"><a href="live-data-demo.html#cb341-10" aria-hidden="true" tabindex="-1"></a>class_RTs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(the_URL)</span>
+<span id="cb341-11"><a href="live-data-demo.html#cb341-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb341-12"><a href="live-data-demo.html#cb341-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Have a look at the data in R</span></span>
+<span id="cb341-13"><a href="live-data-demo.html#cb341-13" aria-hidden="true" tabindex="-1"></a><span class="co">#View(class_RTs)</span></span>
+<span id="cb341-14"><a href="live-data-demo.html#cb341-14" aria-hidden="true" tabindex="-1"></a><span class="co"># or just do</span></span>
+<span id="cb341-15"><a href="live-data-demo.html#cb341-15" aria-hidden="true" tabindex="-1"></a>class_RTs</span></code></pre></div>
 <pre><code>## # A tibble: 14 x 16
 ##   Timestamp `Please enter t… `What was your …
 ##   &lt;chr&gt;     &lt;chr&gt;            &lt;chr&gt;           
@@ -563,14 +564,14 @@ And we should be able to collect the data, within our current constraints, neces
 <h2><span class="header-section-number">11.12</span> Now we need to do some data wrangling (cleaning and tidying)</h2>
 <div id="clean-up-the-column-variable-names" class="section level3" number="11.12.1">
 <h3><span class="header-section-number">11.12.1</span> Clean up the column / variable names:</h3>
-<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="live-data-demo.html#cb359-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Must be very careful to get the next line right!!! Really important!!!</span></span>
-<span id="cb359-2"><a href="live-data-demo.html#cb359-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(class_RTs) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Timestamp&quot;</span>, <span class="st">&quot;ID&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Pref_Reaction_time_1&quot;</span>,</span>
-<span id="cb359-3"><a href="live-data-demo.html#cb359-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Verbal_memory_score&quot;</span>, <span class="st">&quot;Number_memory_score&quot;</span>,</span>
-<span id="cb359-4"><a href="live-data-demo.html#cb359-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Visual_memory_score&quot;</span>,</span>
-<span id="cb359-5"><a href="live-data-demo.html#cb359-5" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Weight_kgs&quot;</span>, <span class="st">&quot;Handed&quot;</span>, <span class="st">&quot;Nonpref_Reaction_time_ave&quot;</span>,  <span class="st">&quot;Pref_Reaction_time_2&quot;</span>,</span>
-<span id="cb359-6"><a href="live-data-demo.html#cb359-6" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Pref_Reaction_time_3&quot;</span>,  <span class="st">&quot;Pref_Reaction_time_4&quot;</span>, <span class="st">&quot;Pref_Reaction_time_5&quot;</span>,</span>
-<span id="cb359-7"><a href="live-data-demo.html#cb359-7" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Pref_Reaction_time&quot;</span>, <span class="st">&quot;Random_number&quot;</span>)</span>
-<span id="cb359-8"><a href="live-data-demo.html#cb359-8" aria-hidden="true" tabindex="-1"></a>class_RTs</span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="live-data-demo.html#cb343-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Must be very careful to get the next line right!!! Really important!!!</span></span>
+<span id="cb343-2"><a href="live-data-demo.html#cb343-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(class_RTs) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Timestamp&quot;</span>, <span class="st">&quot;ID&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Pref_Reaction_time_1&quot;</span>,</span>
+<span id="cb343-3"><a href="live-data-demo.html#cb343-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Verbal_memory_score&quot;</span>, <span class="st">&quot;Number_memory_score&quot;</span>,</span>
+<span id="cb343-4"><a href="live-data-demo.html#cb343-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Visual_memory_score&quot;</span>,</span>
+<span id="cb343-5"><a href="live-data-demo.html#cb343-5" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Weight_kgs&quot;</span>, <span class="st">&quot;Handed&quot;</span>, <span class="st">&quot;Nonpref_Reaction_time_ave&quot;</span>,  <span class="st">&quot;Pref_Reaction_time_2&quot;</span>,</span>
+<span id="cb343-6"><a href="live-data-demo.html#cb343-6" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Pref_Reaction_time_3&quot;</span>,  <span class="st">&quot;Pref_Reaction_time_4&quot;</span>, <span class="st">&quot;Pref_Reaction_time_5&quot;</span>,</span>
+<span id="cb343-7"><a href="live-data-demo.html#cb343-7" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Pref_Reaction_time&quot;</span>, <span class="st">&quot;Random_number&quot;</span>)</span>
+<span id="cb343-8"><a href="live-data-demo.html#cb343-8" aria-hidden="true" tabindex="-1"></a>class_RTs</span></code></pre></div>
 <pre><code>## # A tibble: 14 x 16
 ##   Timestamp ID    Sex   Pref_Reaction_t…
 ##   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
@@ -598,7 +599,7 @@ And we should be able to collect the data, within our current constraints, neces
 <li>Sex should be a character</li>
 <li>The remaining four variables should be numeric (<dbl> if fractional, <int> if whole numbers).</li>
 </ul>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="live-data-demo.html#cb361-1" aria-hidden="true" tabindex="-1"></a>class_RTs</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="live-data-demo.html#cb345-1" aria-hidden="true" tabindex="-1"></a>class_RTs</span></code></pre></div>
 <pre><code>## # A tibble: 14 x 16
 ##   Timestamp ID    Sex   Pref_Reaction_t…
 ##   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
@@ -622,16 +623,16 @@ And we should be able to collect the data, within our current constraints, neces
 <h3><span class="header-section-number">11.12.3</span> Correct or exclude problematic data</h3>
 <p>This section should not be necessary, as the google form allows only numeric entries in fields that should have numbers.</p>
 <p>If we have problems here, with variables of the wrong type, it probably means some of the data entry is a bit messed up.</p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="live-data-demo.html#cb363-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Have to do this live!!!</span></span>
-<span id="cb363-2"><a href="live-data-demo.html#cb363-2" aria-hidden="true" tabindex="-1"></a><span class="co"># e.g. to exclude observations with character entries in Reaction_time variable</span></span>
-<span id="cb363-3"><a href="live-data-demo.html#cb363-3" aria-hidden="true" tabindex="-1"></a>class_RTs <span class="ot">&lt;-</span> <span class="fu">filter</span>(class_RTs, <span class="sc">!</span><span class="fu">is.na</span>(<span class="fu">as.numeric</span>(Pref_Reaction_time)))</span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="live-data-demo.html#cb347-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Have to do this live!!!</span></span>
+<span id="cb347-2"><a href="live-data-demo.html#cb347-2" aria-hidden="true" tabindex="-1"></a><span class="co"># e.g. to exclude observations with character entries in Reaction_time variable</span></span>
+<span id="cb347-3"><a href="live-data-demo.html#cb347-3" aria-hidden="true" tabindex="-1"></a>class_RTs <span class="ot">&lt;-</span> <span class="fu">filter</span>(class_RTs, <span class="sc">!</span><span class="fu">is.na</span>(<span class="fu">as.numeric</span>(Pref_Reaction_time)))</span></code></pre></div>
 <p>Once fixed, we need to make the variable have the correct type</p>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="live-data-demo.html#cb364-1" aria-hidden="true" tabindex="-1"></a><span class="co"># try using type_convert() from readr package.</span></span>
-<span id="cb364-2"><a href="live-data-demo.html#cb364-2" aria-hidden="true" tabindex="-1"></a>class_RTs <span class="ot">&lt;-</span> <span class="fu">type_convert</span>(class_RTs)</span></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="live-data-demo.html#cb348-1" aria-hidden="true" tabindex="-1"></a><span class="co"># try using type_convert() from readr package.</span></span>
+<span id="cb348-2"><a href="live-data-demo.html#cb348-2" aria-hidden="true" tabindex="-1"></a>class_RTs <span class="ot">&lt;-</span> <span class="fu">type_convert</span>(class_RTs)</span></code></pre></div>
 </div>
 <div id="check-numbers-of-data-points-in-each-sex" class="section level3" number="11.12.4">
 <h3><span class="header-section-number">11.12.4</span> Check numbers of data points in each sex</h3>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="live-data-demo.html#cb365-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(class_RTs<span class="sc">$</span>Sex)</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="live-data-demo.html#cb349-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(class_RTs<span class="sc">$</span>Sex)</span></code></pre></div>
 <pre><code>## 
 ## Female   Male 
 ##     10      4</code></pre>
@@ -640,7 +641,7 @@ And we should be able to collect the data, within our current constraints, neces
 <h3><span class="header-section-number">11.12.5</span> Check the number of observations</h3>
 <p>Should be the same as we saw in the datasheet, which should be number of you in this classroom.</p>
 <p>The number of observations and variables is given by R in the first line of output when we type the name of the data object:</p>
-<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="live-data-demo.html#cb367-1" aria-hidden="true" tabindex="-1"></a>class_RTs</span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="live-data-demo.html#cb351-1" aria-hidden="true" tabindex="-1"></a>class_RTs</span></code></pre></div>
 <pre><code>## # A tibble: 14 x 16
 ##   Timestamp ID    Sex   Pref_Reaction_t…
 ##   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
@@ -667,32 +668,31 @@ And we should be able to collect the data, within our current constraints, neces
 <p>We’re not trying to make the most beautiful graph in the world, so we can put it in our report / presentation etc. We just want to clearly see the data.</p>
 <p>We are trying to 1) do further checks for possible errors in the data, 2) making some initial assessments of how the data is distributed, 3) see what we think is the answer to our question.</p>
 <p>A histogram of all the data:</p>
-<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="live-data-demo.html#cb369-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb369-2"><a href="live-data-demo.html#cb369-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> class_RTs, <span class="fu">aes</span>(<span class="at">x=</span>Pref_Reaction_time))</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="live-data-demo.html#cb353-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb353-2"><a href="live-data-demo.html#cb353-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> class_RTs, <span class="fu">aes</span>(<span class="at">x=</span>Pref_Reaction_time))</span></code></pre></div>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-203-1.svg" width="336" style="display: block; margin: auto;" /></p>
 <p>Separate histograms for each sex:</p>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="live-data-demo.html#cb370-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb370-2"><a href="live-data-demo.html#cb370-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> class_RTs, <span class="fu">aes</span>(<span class="at">x=</span>Pref_Reaction_time)) <span class="sc">+</span></span>
-<span id="cb370-3"><a href="live-data-demo.html#cb370-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Sex)</span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="live-data-demo.html#cb354-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb354-2"><a href="live-data-demo.html#cb354-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> class_RTs, <span class="fu">aes</span>(<span class="at">x=</span>Pref_Reaction_time)) <span class="sc">+</span></span>
+<span id="cb354-3"><a href="live-data-demo.html#cb354-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Sex)</span></code></pre></div>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-204-1.svg" width="336" style="display: block; margin: auto;" /></p>
 <p>A box and whisker plot:</p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="live-data-demo.html#cb371-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb371-2"><a href="live-data-demo.html#cb371-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">data =</span> class_RTs, <span class="fu">aes</span>(<span class="at">x=</span>Sex, <span class="at">y=</span>Pref_Reaction_time)) </span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="live-data-demo.html#cb355-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb355-2"><a href="live-data-demo.html#cb355-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">data =</span> class_RTs, <span class="fu">aes</span>(<span class="at">x=</span>Sex, <span class="at">y=</span>Pref_Reaction_time)) </span></code></pre></div>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-205-1.svg" width="336" style="display: block; margin: auto;" /></p>
 <p>Or just the data points (with some jitter, to separate overlapping points):</p>
-<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="live-data-demo.html#cb372-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb372-2"><a href="live-data-demo.html#cb372-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> class_RTs,</span>
-<span id="cb372-3"><a href="live-data-demo.html#cb372-3" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x=</span>Sex, <span class="at">y=</span>Pref_Reaction_time),</span>
-<span id="cb372-4"><a href="live-data-demo.html#cb372-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">width=</span><span class="fl">0.05</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="live-data-demo.html#cb356-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb356-2"><a href="live-data-demo.html#cb356-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> class_RTs,</span>
+<span id="cb356-3"><a href="live-data-demo.html#cb356-3" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x=</span>Sex, <span class="at">y=</span>Pref_Reaction_time),</span>
+<span id="cb356-4"><a href="live-data-demo.html#cb356-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">width=</span><span class="fl">0.05</span>)</span></code></pre></div>
 <p><img src="insights_website_files/figure-html/unnamed-chunk-206-1.svg" width="336" style="display: block; margin: auto;" /></p>
 <p>What do we think about the three things? Any likely errors? How is the data distributed (within and between groups)? Does it look like there is a difference in reaction times (if so, by how much on average, and which group is faster)?</p>
 </div>
 <div id="get-the-means" class="section level2" number="11.14">
 <h2><span class="header-section-number">11.14</span> Get the means</h2>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="live-data-demo.html#cb373-1" aria-hidden="true" tabindex="-1"></a>class_RTs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Sex) <span class="sc">%&gt;%</span></span>
-<span id="cb373-2"><a href="live-data-demo.html#cb373-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_RT=</span><span class="fu">mean</span>(Pref_Reaction_time),</span>
-<span id="cb373-3"><a href="live-data-demo.html#cb373-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_RT=</span><span class="fu">sd</span>(Pref_Reaction_time))</span></code></pre></div>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="live-data-demo.html#cb357-1" aria-hidden="true" tabindex="-1"></a>class_RTs <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Sex) <span class="sc">%&gt;%</span></span>
+<span id="cb357-2"><a href="live-data-demo.html#cb357-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_RT=</span><span class="fu">mean</span>(Pref_Reaction_time),</span>
+<span id="cb357-3"><a href="live-data-demo.html#cb357-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_RT=</span><span class="fu">sd</span>(Pref_Reaction_time))</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 3
 ##   Sex    mean_RT sd_RT
 ##   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;
@@ -729,8 +729,8 @@ And we should be able to collect the data, within our current constraints, neces
 <p>We’ll do this with a T-test, as we already planned.
 Before we go on, there is something very important we should figure out, and we should do this every time before we run a statistical test. Figure out the degrees of freedom.</p>
 <p>There will be learning about this later in the course. For now, know that for a t-test the degrees of freedom are the number of observations minus two. Here that is 12. This is really important to figure out in advance, as its a great way to check that R is doing the test we think we’re telling it to do.</p>
-<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="live-data-demo.html#cb376-1" aria-hidden="true" tabindex="-1"></a>my_ttest <span class="ot">&lt;-</span> <span class="fu">t.test</span>(Pref_Reaction_time <span class="sc">~</span> Sex, <span class="at">data=</span>class_RTs, <span class="at">var.equal=</span><span class="cn">TRUE</span>)</span>
-<span id="cb376-2"><a href="live-data-demo.html#cb376-2" aria-hidden="true" tabindex="-1"></a>my_ttest</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="live-data-demo.html#cb359-1" aria-hidden="true" tabindex="-1"></a>my_ttest <span class="ot">&lt;-</span> <span class="fu">t.test</span>(Pref_Reaction_time <span class="sc">~</span> Sex, <span class="at">data=</span>class_RTs, <span class="at">var.equal=</span><span class="cn">TRUE</span>)</span>
+<span id="cb359-2"><a href="live-data-demo.html#cb359-2" aria-hidden="true" tabindex="-1"></a>my_ttest</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -768,10 +768,10 @@ And the difference between the means: -82.65 and the lower (4.488) and upper (16
 <div id="the-results-graphically" class="section level3" number="11.19.2">
 <h3><span class="header-section-number">11.19.2</span> The results graphically</h3>
 <p>The aim here is to make a beautiful graph that very clearly communicates the findings! This doesn’t mean “fancy” and or “complex.” Often simpler is better. Getting the basic right is essential, of course.</p>
-<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="live-data-demo.html#cb378-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb378-2"><a href="live-data-demo.html#cb378-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">data =</span> class_RTs,</span>
-<span id="cb378-3"><a href="live-data-demo.html#cb378-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x=</span>Sex, <span class="at">y=</span>Pref_Reaction_time)) <span class="sc">+</span></span>
-<span id="cb378-4"><a href="live-data-demo.html#cb378-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Reaction time (seconds)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="live-data-demo.html#cb361-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb361-2"><a href="live-data-demo.html#cb361-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">data =</span> class_RTs,</span>
+<span id="cb361-3"><a href="live-data-demo.html#cb361-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x=</span>Sex, <span class="at">y=</span>Pref_Reaction_time)) <span class="sc">+</span></span>
+<span id="cb361-4"><a href="live-data-demo.html#cb361-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Reaction time (seconds)&quot;</span>)</span></code></pre></div>
 <p>Wow! That was easy.</p>
 </div>
 <div id="do-not-use-a-table" class="section level3" number="11.19.3">

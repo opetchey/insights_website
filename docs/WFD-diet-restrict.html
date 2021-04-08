@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 What are the effects of dietary restriction? | Companion Website — Insights from Data with R</title>
-  <meta name="description" content="To be completed" />
+  <meta name="description" content="Welcome!" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 What are the effects of dietary restriction? | Companion Website — Insights from Data with R" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="To be completed" />
+  <meta property="og:description" content="Welcome!" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 8 What are the effects of dietary restriction? | Companion Website — Insights from Data with R" />
   
-  <meta name="twitter:description" content="To be completed" />
+  <meta name="twitter:description" content="Welcome!" />
   
 
 <meta name="author" content="Petchey, Beckerman, Cooper, Childs" />
 
 
-<meta name="date" content="2021-02-06" />
+<meta name="date" content="2021-04-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -368,6 +368,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.8" data-path="more-questions-data.html"><a href="more-questions-data.html#diets-of-predatory-fish"><i class="fa fa-check"></i><b>12.8</b> Diets of predatory fish</a></li>
 <li class="chapter" data-level="12.9" data-path="more-questions-data.html"><a href="more-questions-data.html#cervical-spine-compression-and-mri-not-food-related"><i class="fa fa-check"></i><b>12.9</b> Cervical spine compression and MRI (not food related)</a></li>
 <li class="chapter" data-level="12.10" data-path="more-questions-data.html"><a href="more-questions-data.html#lots-of-other-datasets-here"><i class="fa fa-check"></i><b>12.10</b> Lots of other datasets here:</a></li>
+<li class="chapter" data-level="12.11" data-path="more-questions-data.html"><a href="more-questions-data.html#fish-eye-lens-diets"><i class="fa fa-check"></i><b>12.11</b> Fish eye lens diets</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a>
 <ul>
@@ -573,18 +574,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Q30. Confirm in a graph the stated result: “Female risk was generally reduced by low protein intakes.”</p>
 <p>Q31. Confirm in a graph the stated result: “The effect of macronutrient intake on reproduction was similar between the sexes, with high protein intakes maximizing reproduction.”</p>
 
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="WFD-diet-restrict.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the libraries we use</span></span>
-<span id="cb240-2"><a href="WFD-diet-restrict.html#cb240-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb240-3"><a href="WFD-diet-restrict.html#cb240-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb240-4"><a href="WFD-diet-restrict.html#cb240-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb240-5"><a href="WFD-diet-restrict.html#cb240-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb240-6"><a href="WFD-diet-restrict.html#cb240-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb240-7"><a href="WFD-diet-restrict.html#cb240-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb240-8"><a href="WFD-diet-restrict.html#cb240-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb240-9"><a href="WFD-diet-restrict.html#cb240-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggbeeswarm)</span>
-<span id="cb240-10"><a href="WFD-diet-restrict.html#cb240-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(taxize)</span>
-<span id="cb240-11"><a href="WFD-diet-restrict.html#cb240-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
-<span id="cb240-12"><a href="WFD-diet-restrict.html#cb240-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="WFD-diet-restrict.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the libraries we use</span></span>
+<span id="cb226-2"><a href="WFD-diet-restrict.html#cb226-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb226-3"><a href="WFD-diet-restrict.html#cb226-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb226-4"><a href="WFD-diet-restrict.html#cb226-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb226-5"><a href="WFD-diet-restrict.html#cb226-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb226-6"><a href="WFD-diet-restrict.html#cb226-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb226-7"><a href="WFD-diet-restrict.html#cb226-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb226-8"><a href="WFD-diet-restrict.html#cb226-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb226-9"><a href="WFD-diet-restrict.html#cb226-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggbeeswarm)</span>
+<span id="cb226-10"><a href="WFD-diet-restrict.html#cb226-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(taxize)</span>
+<span id="cb226-11"><a href="WFD-diet-restrict.html#cb226-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb226-12"><a href="WFD-diet-restrict.html#cb226-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span></code></pre></div>
 </div>
 </div>
             </section>

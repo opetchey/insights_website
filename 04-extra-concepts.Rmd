@@ -198,6 +198,7 @@ A few things here are worth noting:
 
 * One bat (Bat_ID 1320) ate only one prey item and this was non-Lepidopera (check this again by viewing the data, or using the `filter` function). Hence this bat has a NA entry when we calculate the mean wingspan of prey it ate. The other 142 bats all have a non-NA mean wingspan entry. This means that when we answer questions about mean wingspan we will be working with only 142 data points, and for other response variables we'll have 143.
 
+For more about missing values, please have a look at this awesome online tutorial: [Exploring missing values in naniar by Allison Horst](https://allisonhorst.shinyapps.io/missingexplorer/)
 
 ```{block, type="beaware"}
 __R functions will usually take care of NAs__ . They will then often give a warning like "5 rows with missing values removed". If you see such a warning, absolutely, without a doubt, 100% make sure you know why these are being removed, and put a note in your code. To be clear, if you let functions take care of NAs then make sure you know what they're doing. And its probably better to take care of them yourself, explicitly.

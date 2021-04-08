@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Questions and exercises | Companion Website — Insights from Data with R</title>
-  <meta name="description" content="To be completed" />
+  <meta name="description" content="Welcome!" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Questions and exercises | Companion Website — Insights from Data with R" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="To be completed" />
+  <meta property="og:description" content="Welcome!" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 3 Questions and exercises | Companion Website — Insights from Data with R" />
   
-  <meta name="twitter:description" content="To be completed" />
+  <meta name="twitter:description" content="Welcome!" />
   
 
 <meta name="author" content="Petchey, Beckerman, Cooper, Childs" />
 
 
-<meta name="date" content="2021-02-06" />
+<meta name="date" content="2021-04-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -368,6 +368,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.8" data-path="more-questions-data.html"><a href="more-questions-data.html#diets-of-predatory-fish"><i class="fa fa-check"></i><b>12.8</b> Diets of predatory fish</a></li>
 <li class="chapter" data-level="12.9" data-path="more-questions-data.html"><a href="more-questions-data.html#cervical-spine-compression-and-mri-not-food-related"><i class="fa fa-check"></i><b>12.9</b> Cervical spine compression and MRI (not food related)</a></li>
 <li class="chapter" data-level="12.10" data-path="more-questions-data.html"><a href="more-questions-data.html#lots-of-other-datasets-here"><i class="fa fa-check"></i><b>12.10</b> Lots of other datasets here:</a></li>
+<li class="chapter" data-level="12.11" data-path="more-questions-data.html"><a href="more-questions-data.html#fish-eye-lens-diets"><i class="fa fa-check"></i><b>12.11</b> Fish eye lens diets</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="related-reading.html"><a href="related-reading.html"><i class="fa fa-check"></i><b>13</b> Related reading</a>
 <ul>
@@ -604,7 +605,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">3.8.2</span> Bat diet workflow questions and exercises</h3>
 <p><strong>Q7.6</strong> Plot at the shape of the distribution of number of poops collected on each sampling date.</p>
 <p><strong>Q7.7</strong> Plot the distribution of number of reads. What shape is it? From looking at the distribution, predict whether the mean or median is larger. Then check your prediction by calculating the median and mean. For extra credit, add two vertical lines to the graph, one where the mean is, and one where the median is (hint, use the <code>geom_vline</code> function).</p>
-<pre><code>## `summarise()` regrouping output by &#39;Bat_ID&#39;, &#39;Sex&#39; (override with `.groups` argument)</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;Bat_ID&#39;, &#39;Sex&#39;. You can override using the `.groups` argument.</code></pre>
 <p><strong>Q7.8</strong> The following code is intended to create a plot of the wingspan of prey found in male and female bat poops. Find and correct the three intentional errors it contains:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="questions-exercises.html#cb4-1" aria-hidden="true" tabindex="-1"></a> prey_stats <span class="sc">%&gt;%</span></span>
 <span id="cb4-2"><a href="questions-exercises.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">%&gt;%</span></span>
